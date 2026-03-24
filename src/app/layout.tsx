@@ -73,7 +73,7 @@ export default function RootLayout({
       <head>
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="theme-color" content="#1B4D6E" />
+        <meta name="theme-color" content="#14507c" />
       </head>
       <body className="font-sans antialiased">
         <Header />

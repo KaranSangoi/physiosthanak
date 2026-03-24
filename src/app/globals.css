@@ -2,13 +2,24 @@
 
 /* CSS Custom Properties for Brand Colors */
 :root {
-  --primary: #1B4D6E;
-  --primary-dark: #143a54;
-  --accent: #E8919A;
-  --text-dark: #1f2937;
+  /* Main Colors */
+  --primary: #14507c;
+  --primary-dark: #0e3a5a;
+  --primary-light: #1a6699;
+  --accent-pink: #e8899c;
+
+  /* Accent Colors */
+  --accent-yellow: #f4d35e;
+  --accent-orange: #ffb367;
+  --accent-teal: #6ed3cf;
+  --accent-green: #24aa90;
+  --accent-purple: #9f74c1;
+
+  /* Neutral Colors */
+  --text-dark: #4a4a4a;
   --text-light: #6b7280;
-  --bg-light: #f9fafb;
-  --bg-lighter: #f3f4f6;
+  --bg-light: #f4f4f4;
+  --bg-lighter: #f9f9f9;
   --border-light: #e5e7eb;
   --white: #ffffff;
 }
