@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+/* CSS Custom Properties for Brand Colors */
+:root {
+  --primary: #1B4D6E;
+  --primary-dark: #143a54;
+  --accent: #E8919A;
+  --text-dark: #1f2937;
+  --text-light: #6b7280;
+  --bg-light: #f9fafb;
+  --bg-lighter: #f3f4f6;
+  --border-light: #e5e7eb;
+  --white: #ffffff;
+}
+
+/* Typography Overrides */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans antialiased;
+    background-color: var(--white);
+    color: var(--text-dark);
+  }
+
+  h1 {
+    @apply text-4xl font-bold leading-tight tracking-tight;
+  }
+
+  h2 {
+    @apply text-3xl font-bold leading-tight;
+  }
+
+  h3 {
+    @apply text-2xl font-semibold leading-snug;
+  }
+
+  h4 {
+    @apply text-xl font-semibold;
+  }
+
+  p {
+    @apply leading-relaxed;
+    color: var(--text-light);
+  }
+
+  a {
+    @apply transition-colors duration-200;
+  }
+
+  button {
+    @apply transition-all duration-200;
+  }
+}
+
+/* Utility Classes */
+@layer components {
+  .section-padding {
+    @apply py-16 px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding-lg {
+    @apply py-20 px-4 sm:px-6 lg:px-8;
+  }
+
+  .container-max {
+    @apply w-full max-w-6xl mx-auto;
+  }
+
+  .btn-primary {
+    @apply inline-block px-6 py-3 text-white font-semibold rounded-lg transition-colors duration-200;
+    background-color: var(--primary);
+  }
+
+  .btn-primary:hover {
+    background-color: var(--primary-dark);
+  }
+
+  .btn-outline {
+    @apply inline-block px-6 py-3 font-semibold rounded-lg transition-colors duration-200;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+  }
+
+  .btn-outline:hover {
+    background-color: var(--primary);
+    color: white;
+  }
+
+  .card-shadow {
+    @apply shadow-md hover:shadow-lg transition-shadow duration-200;
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .underline-accent {
+    text-decoration: underline;
+    text-decoration-color: var(--primary);
+    text-decoration-thickness: 3px;
+    text-underline-offset: 8px;
+  }
+}
+
+/* Responsive */
+@layer utilities {
+  .max-w-2xl {
+    max-width: 42rem;
+  }
+
+  .max-w-4xl {
+    max-width: 56rem;
+  }
+}

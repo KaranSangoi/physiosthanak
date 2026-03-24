@@ -1,0 +1,19 @@
+export { siteConfig } from './site-config';
+export { services } from './services';
+export { servicesExtended } from './services-extended';
+export { servicesExtended2 } from './services-extended2';
+export { servicesExtended3 } from './services-extended3';
+export { serviceAreas } from './service-areas';
+
+// Combined services export for convenience
+import { services } from './services';
+import { servicesExtended } from './services-extended';
+import { servicesExtended2 } from './services-extended2';
+import { servicesExtended3 } from './services-extended3';
+
+export const allServices = [
+  ...services,
+  ...servicesExtended,
+  ...servicesExtended2,
+  ...servicesExtended3,
+];
