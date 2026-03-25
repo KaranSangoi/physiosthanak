@@ -38,8 +38,9 @@ export default function FAQSection({
       />
       <section className="section-padding bg-white">
         <div className="container-max max-w-4xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-accent mb-4">
+          <div className="text-center mb-14">
+            <span className="section-eyebrow">FAQ</span>
+            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-accent mb-4 uppercase">
               {heading}
             </h2>
             {subheading && (
@@ -53,13 +54,13 @@ export default function FAQSection({
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className="border border-border-light rounded-lg overflow-hidden"
+                className="border border-border-light rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow"
               >
                 <button
                   onClick={() =>
                     setOpenIndex(openIndex === index ? null : index)
                   }
-                  className="w-full px-6 py-4 text-left font-semibold text-accent hover:bg-bg-light transition-colors flex items-center justify-between"
+                  className="w-full px-6 py-5 text-left font-heading font-bold text-accent hover:bg-bg-light transition-colors flex items-center justify-between"
                   aria-expanded={openIndex === index}
                 >
                   <span>{faq.question}</span>

@@ -2,28 +2,29 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { siteConfig } from '@/data/site-config';
 import { Menu, X } from 'lucide-react';
 
 const serviceCategories = [
-  { name: 'Pain Management', href: '/services/pain-management' },
-  { name: 'Sports Injuries', href: '/services/sports-injuries' },
-  { name: 'Orthopaedic Rehabilitation', href: '/services/orthopaedic-rehabilitation' },
-  { name: 'Neurological Conditions', href: '/services/neurological-conditions' },
-  { name: 'Post-Operative Recovery', href: '/services/post-operative-recovery' },
-  { name: 'Women Health', href: '/services/women-health' },
-  { name: 'Corporate Wellness', href: '/services/corporate-wellness' },
-  { name: 'Senior Care', href: '/services/senior-care' },
-  { name: 'Pediatric Physiotherapy', href: '/services/pediatric-physiotherapy' },
-  { name: 'Yoga & Wellness', href: '/services/yoga-wellness' },
-  { name: 'Manual Therapy', href: '/services/manual-therapy' },
+  { name: 'Physiotherapy', href: '/services/physiotherapy' },
+  { name: 'Home Visit Physiotherapy', href: '/services/home-visit-physiotherapy' },
+  { name: 'Sports Physiotherapy', href: '/services/sports-physiotherapy' },
+  { name: 'Back Pain', href: '/services/back-pain-physiotherapy' },
+  { name: 'Neck Pain', href: '/services/neck-pain-physiotherapy' },
+  { name: 'Neurological', href: '/services/neurological-physiotherapy' },
+  { name: 'Orthopedic', href: '/services/orthopedic-physiotherapy' },
+  { name: 'Post-Surgery Rehab', href: '/services/post-surgery-rehabilitation' },
+  { name: 'Pediatric', href: '/services/pediatric-physiotherapy' },
+  { name: 'Women\'s Health', href: '/services/womens-health-physiotherapy' },
+  { name: 'Hand & Wrist', href: '/services/hand-wrist-physiotherapy' },
 ];
 
 const serviceAreas = [
   { name: 'Borivali', href: '/service-areas/borivali' },
-  { name: 'Malad', href: '/service-areas/malad' },
   { name: 'Dahisar', href: '/service-areas/dahisar' },
-  { name: 'Mira Road', href: '/service-areas/mira-road' },
+  { name: 'Kandivali', href: '/service-areas/kandivali' },
+  { name: 'Malad', href: '/service-areas/malad' },
 ];
 
 export default function Header() {
@@ -42,45 +43,55 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full transition-all duration-200 ${
+      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
         isScrolled
-          ? 'bg-white shadow-md'
+          ? 'bg-white shadow-lg'
           : 'bg-white shadow-sm'
       }`}
     >
-      <div className="container-max section-padding py-4">
+      <div className="container-max px-4 sm:px-6 lg:px-8 py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link
             href="/"
-            className="text-2xl font-bold text-accent hover:text-primary transition-colors"
+            className="flex items-center hover:opacity-90 transition-opacity"
           >
-            PhysioSthanak
+            <Image
+              src="/images/logo-header.png"
+              alt="PhysioSthanak - Move · Heal · Improve"
+              width={406}
+              height={130}
+              className="h-12 sm:h-14 w-auto"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-6">
             <Link
               href="/"
-              className="text-text-dark hover:text-primary transition-colors font-medium"
+              className="font-heading uppercase tracking-wide text-text-dark hover:text-primary font-bold text-sm transition-colors"
             >
               Home
             </Link>
 
             {/* Services Dropdown */}
             <div className="relative group">
-              <button className="text-text-dark hover:text-primary transition-colors font-medium flex items-center gap-2">
+              <Link
+                href="/services"
+                className="font-heading uppercase tracking-wide text-text-dark hover:text-primary font-bold text-sm flex items-center gap-1 transition-colors"
+              >
                 Services
-                <svg className="w-4 h-4 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                <svg className="w-3.5 h-3.5 group-hover:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
-              </button>
-              <div className="absolute left-0 mt-2 w-56 bg-white border border-border-light rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+              </Link>
+              <div className="absolute left-0 mt-2 w-60 bg-white border border-border-light rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-2">
                 {serviceCategories.map((cat) => (
                   <Link
                     key={cat.href}
                     href={cat.href}
-                    className="block px-4 py-3 text-sm text-text-dark hover:bg-bg-light hover:text-primary transition-colors first:rounded-t-lg last:rounded-b-lg border-b border-border-light last:border-b-0"
+                    className="block px-4 py-2.5 text-sm text-text-dark hover:bg-bg-light hover:text-primary transition-colors"
                   >
                     {cat.name}
                   </Link>
@@ -90,18 +101,21 @@ export default function Header() {
 
             {/* Service Areas Dropdown */}
             <div className="relative group">
-              <button className="text-text-dark hover:text-primary transition-colors font-medium flex items-center gap-2">
+              <Link
+                href="/service-areas"
+                className="font-heading uppercase tracking-wide text-text-dark hover:text-primary font-bold text-sm flex items-center gap-1 transition-colors"
+              >
                 Service Areas
-                <svg className="w-4 h-4 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                <svg className="w-3.5 h-3.5 group-hover:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
-              </button>
-              <div className="absolute left-0 mt-2 w-48 bg-white border border-border-light rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+              </Link>
+              <div className="absolute left-0 mt-2 w-48 bg-white border border-border-light rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-2">
                 {serviceAreas.map((area) => (
                   <Link
                     key={area.href}
                     href={area.href}
-                    className="block px-4 py-3 text-sm text-text-dark hover:bg-bg-light hover:text-primary transition-colors first:rounded-t-lg last:rounded-b-lg border-b border-border-light last:border-b-0"
+                    className="block px-4 py-2.5 text-sm text-text-dark hover:bg-bg-light hover:text-primary transition-colors"
                   >
                     {area.name}
                   </Link>
@@ -110,15 +124,8 @@ export default function Header() {
             </div>
 
             <Link
-              href="/about"
-              className="text-text-dark hover:text-primary transition-colors font-medium"
-            >
-              About
-            </Link>
-
-            <Link
               href="/contact"
-              className="text-text-dark hover:text-primary transition-colors font-medium"
+              className="font-heading uppercase tracking-wide text-text-dark hover:text-primary font-bold text-sm transition-colors"
             >
               Contact
             </Link>
@@ -136,7 +143,7 @@ export default function Header() {
             {/* Mobile Menu Toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg hover:bg-bg-light transition-colors"
+              className="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-md hover:bg-bg-light transition-colors"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? (
@@ -153,7 +160,7 @@ export default function Header() {
           <nav className="lg:hidden mt-4 pt-4 border-t border-border-light space-y-1">
             <Link
               href="/"
-              className="block px-3 py-2 text-text-dark hover:bg-bg-light hover:text-primary rounded-lg transition-colors"
+              className="block px-3 py-2.5 text-text-dark hover:bg-bg-light hover:text-primary rounded-md transition-colors font-heading font-bold uppercase tracking-wide text-sm"
               onClick={() => setMobileMenuOpen(false)}
             >
               Home
@@ -163,11 +170,11 @@ export default function Header() {
             <div>
               <button
                 onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
-                className="w-full text-left px-3 py-2 text-text-dark hover:bg-bg-light hover:text-primary rounded-lg transition-colors font-medium flex items-center justify-between"
+                className="w-full text-left px-3 py-2.5 text-text-dark hover:bg-bg-light hover:text-primary rounded-md transition-colors font-heading font-bold uppercase tracking-wide text-sm flex items-center justify-between"
               >
                 Services
                 <svg className={`w-4 h-4 transition-transform ${servicesDropdownOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
               {servicesDropdownOpen && (
@@ -176,7 +183,7 @@ export default function Header() {
                     <Link
                       key={cat.href}
                       href={cat.href}
-                      className="block px-3 py-2 text-sm text-text-dark hover:bg-bg-light hover:text-primary rounded-lg transition-colors"
+                      className="block px-3 py-2 text-sm text-text-dark hover:bg-bg-light hover:text-primary rounded-md transition-colors"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       {cat.name}
@@ -190,11 +197,11 @@ export default function Header() {
             <div>
               <button
                 onClick={() => setAreasDropdownOpen(!areasDropdownOpen)}
-                className="w-full text-left px-3 py-2 text-text-dark hover:bg-bg-light hover:text-primary rounded-lg transition-colors font-medium flex items-center justify-between"
+                className="w-full text-left px-3 py-2.5 text-text-dark hover:bg-bg-light hover:text-primary rounded-md transition-colors font-heading font-bold uppercase tracking-wide text-sm flex items-center justify-between"
               >
                 Service Areas
                 <svg className={`w-4 h-4 transition-transform ${areasDropdownOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
               {areasDropdownOpen && (
@@ -203,7 +210,7 @@ export default function Header() {
                     <Link
                       key={area.href}
                       href={area.href}
-                      className="block px-3 py-2 text-sm text-text-dark hover:bg-bg-light hover:text-primary rounded-lg transition-colors"
+                      className="block px-3 py-2 text-sm text-text-dark hover:bg-bg-light hover:text-primary rounded-md transition-colors"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       {area.name}
@@ -214,16 +221,8 @@ export default function Header() {
             </div>
 
             <Link
-              href="/about"
-              className="block px-3 py-2 text-text-dark hover:bg-bg-light hover:text-primary rounded-lg transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              About
-            </Link>
-
-            <Link
               href="/contact"
-              className="block px-3 py-2 text-text-dark hover:bg-bg-light hover:text-primary rounded-lg transition-colors"
+              className="block px-3 py-2.5 text-text-dark hover:bg-bg-light hover:text-primary rounded-md transition-colors font-heading font-bold uppercase tracking-wide text-sm"
               onClick={() => setMobileMenuOpen(false)}
             >
               Contact
@@ -231,7 +230,7 @@ export default function Header() {
 
             <a
               href={`tel:${siteConfig.phone}`}
-              className="block sm:hidden px-3 py-2 mt-4 text-center btn-primary text-sm"
+              className="block sm:hidden px-3 py-3 mt-4 text-center btn-primary text-sm"
               onClick={() => setMobileMenuOpen(false)}
             >
               {siteConfig.phone}

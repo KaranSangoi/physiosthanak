@@ -40,7 +40,7 @@ export default function AreaCard({
           <p className="text-text-light text-sm leading-relaxed mb-4 line-clamp-3">
             {description}
           </p>
-          <div className="flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all">
+          <div className="flex items-center gap-2 text-accent-pink font-heading font-bold text-sm uppercase tracking-wide group-hover:gap-3 transition-all">
             Explore Services
             <ArrowRight className="w-4 h-4" />
           </div>

@@ -69,6 +69,12 @@ export interface SubArea {
   keywords: string[];
   metaDescription: string;
   h1: string;
+  heroDescription: string;
+  benefits: Benefit[];
+  whyPoints: WhyPoint[];
+  faqs: FAQ[];
+  mapDescription: string;
+  externalLink?: { url: string; text: string };
 }
 
 export interface ServiceArea {
@@ -78,5 +84,11 @@ export interface ServiceArea {
   keywords: string[];
   metaDescription: string;
   h1: string;
+  heroDescription: string;
+  benefits: Benefit[];
+  whyPoints: WhyPoint[];
+  faqs: FAQ[];
+  mapDescription: string;
+  externalLink?: { url: string; text: string };
   subAreas: SubArea[];
 }

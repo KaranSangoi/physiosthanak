@@ -1,27 +1,20 @@
 @import "tailwindcss";
 
-/* CSS Custom Properties for Brand Colors */
-:root {
-  /* Main Colors */
-  --primary: #14507c;
-  --primary-dark: #0e3a5a;
-  --primary-light: #1a6699;
-  --accent-pink: #e8899c;
+@theme {
+  --font-heading: "Poppins", sans-serif;
+  --font-sans: "Inter", sans-serif;
 
-  /* Accent Colors */
-  --accent-yellow: #f4d35e;
-  --accent-orange: #ffb367;
-  --accent-teal: #6ed3cf;
-  --accent-green: #24aa90;
-  --accent-purple: #9f74c1;
+  --color-primary: #14507c;
+  --color-primary-dark: #0e3a5a;
+  --color-primary-light: #1a6699;
+  --color-accent: #14507c;
+  --color-accent-pink: #e8899c;
 
-  /* Neutral Colors */
-  --text-dark: #4a4a4a;
-  --text-light: #6b7280;
-  --bg-light: #f4f4f4;
-  --bg-lighter: #f9f9f9;
-  --border-light: #e5e7eb;
-  --white: #ffffff;
+  --color-text-dark: #1e293b;
+  --color-text-light: #475569;
+  --color-bg-light: #f1f5f9;
+  --color-bg-lighter: #f8fafc;
+  --color-border-light: #e2e8f0;
 }
 
 /* Typography Overrides */
@@ -31,30 +24,35 @@
   }
 
   body {
-    @apply font-sans antialiased;
-    background-color: var(--white);
-    color: var(--text-dark);
+    font-family: var(--font-sans);
+    @apply antialiased;
+    background-color: #ffffff;
+    color: var(--color-text-dark);
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-heading);
   }
 
   h1 {
-    @apply text-4xl font-bold leading-tight tracking-tight;
+    @apply text-4xl md:text-5xl font-bold leading-tight uppercase tracking-wide;
   }
 
   h2 {
-    @apply text-3xl font-bold leading-tight;
+    @apply text-3xl md:text-4xl font-bold leading-tight uppercase;
   }
 
   h3 {
-    @apply text-2xl font-semibold leading-snug;
+    @apply text-xl font-bold leading-snug;
   }
 
   h4 {
-    @apply text-xl font-semibold;
+    @apply text-lg font-semibold;
   }
 
   p {
     @apply leading-relaxed;
-    color: var(--text-light);
+    color: var(--color-text-light);
   }
 
   a {
@@ -69,63 +67,69 @@
 /* Utility Classes */
 @layer components {
   .section-padding {
-    @apply py-16 px-4 sm:px-6 lg:px-8;
+    @apply py-20 px-4 sm:px-6 lg:px-8;
   }
 
   .section-padding-lg {
-    @apply py-20 px-4 sm:px-6 lg:px-8;
+    @apply py-24 px-4 sm:px-6 lg:px-8;
   }
 
   .container-max {
     @apply w-full max-w-6xl mx-auto;
   }
 
+  .font-heading {
+    font-family: var(--font-heading);
+  }
+
   .btn-primary {
-    @apply inline-block px-6 py-3 text-white font-semibold rounded-lg transition-colors duration-200;
-    background-color: var(--primary);
+    @apply inline-block px-8 py-3.5 text-white font-bold rounded-md uppercase tracking-wider transition-all duration-200 shadow-lg hover:shadow-xl;
+    font-family: var(--font-heading);
+    background-color: var(--color-accent-pink);
   }
 
   .btn-primary:hover {
-    background-color: var(--primary-dark);
+    background-color: #d4778a;
   }
 
   .btn-outline {
-    @apply inline-block px-6 py-3 font-semibold rounded-lg transition-colors duration-200;
-    border: 2px solid var(--primary);
-    color: var(--primary);
+    @apply inline-block px-8 py-3.5 font-bold rounded-md uppercase tracking-wider transition-all duration-200;
+    font-family: var(--font-heading);
+    border: 2px solid var(--color-accent-pink);
+    color: var(--color-accent-pink);
   }
 
   .btn-outline:hover {
-    background-color: var(--primary);
+    background-color: var(--color-accent-pink);
     color: white;
   }
 
+  .btn-outline-white {
+    @apply inline-block px-8 py-3.5 font-bold rounded-md uppercase tracking-wider transition-all duration-200;
+    font-family: var(--font-heading);
+    border: 2px solid white;
+    color: white;
+  }
+
+  .btn-outline-white:hover {
+    background-color: white;
+    color: var(--color-primary);
+  }
+
   .card-shadow {
-    @apply shadow-md hover:shadow-lg transition-shadow duration-200;
+    @apply shadow-lg hover:shadow-xl transition-shadow duration-300;
   }
 
   .gradient-text {
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent-pink));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  .underline-accent {
-    text-decoration: underline;
-    text-decoration-color: var(--primary);
-    text-decoration-thickness: 3px;
-    text-underline-offset: 8px;
-  }
-}
-
-/* Responsive */
-@layer utilities {
-  .max-w-2xl {
-    max-width: 42rem;
-  }
-
-  .max-w-4xl {
-    max-width: 56rem;
+  .section-eyebrow {
+    @apply font-bold tracking-widest uppercase mb-3 text-sm block;
+    font-family: var(--font-heading);
+    color: var(--color-accent-pink);
   }
 }

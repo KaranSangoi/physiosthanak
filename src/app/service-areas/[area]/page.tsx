@@ -7,9 +7,17 @@ import FAQSection from '@/components/sections/FAQSection';
 import CTASection from '@/components/sections/CTASection';
 import MapSection from '@/components/sections/MapSection';
 import Link from 'next/link';
+import { MapPin, ArrowRight } from 'lucide-react';
 import { serviceAreas, siteConfig } from '@/data';
 import { getAreaBySlug, generateBreadcrumbs } from '@/lib/utils';
-import { Benefit, WhyPoint } from '@/types';
+
+// Rotating physio images for Why section with SEO-optimized alt tags
+const whyImages = [
+  { src: '/images/services/physiotherapy.jpg', altTemplate: 'Professional physiotherapy treatment session in' },
+  { src: '/images/services/back-pain-physiotherapy.jpg', altTemplate: 'Back pain physiotherapy and rehabilitation near' },
+  { src: '/images/services/sports-physiotherapy.jpg', altTemplate: 'Sports injury physiotherapy treatment in' },
+  { src: '/images/services/orthopedic-physiotherapy.jpg', altTemplate: 'Orthopedic physiotherapy consultation near me in' },
+];
 
 interface PageProps {
   params: Promise<{
@@ -69,55 +77,6 @@ export default async function AreaPage({ params }: PageProps) {
 
   const breadcrumbs = generateBreadcrumbs(`/service-areas/${area}`);
 
-  const areaBenefits: Benefit[] = [
-    {
-      title: 'Convenient Location',
-      description: `Located in the heart of ${areaData.name}, our clinic is easily accessible with ample parking and convenient public transport options.`,
-    },
-    {
-      title: 'Professional Home Visit Services',
-      description: `We provide professional physiotherapy at your home in ${areaData.name}, perfect for elderly patients, post-surgery recovery, and those with mobility limitations.`,
-    },
-    {
-      title: 'All Services Available',
-      description: `Access our complete range of physiotherapy services in ${areaData.name}, from pain management to sports injuries and post-operative care.`,
-    },
-  ];
-
-  const whyChooseArea: WhyPoint[] = [
-    {
-      title: 'Local Expert Care',
-      description: `Our clinic in ${areaData.name} serves the local community with personalized, expert physiotherapy treatment by experienced professionals.`,
-    },
-    {
-      title: 'Flexible Scheduling',
-      description: `We offer flexible appointment times and home visit options to fit your schedule and lifestyle in ${areaData.name}.`,
-    },
-    {
-      title: 'Quick Access to Expert Care',
-      description: `No need to travel far for expert physiotherapy. Get professional treatment right in your area with convenient location and home services.`,
-    },
-  ];
-
-  const areaFaqs = [
-    {
-      question: `Do you provide services in ${areaData.name}?`,
-      answer: `Yes, we provide comprehensive physiotherapy services in ${areaData.name} including clinic-based treatment and home visit services for your convenience.`,
-    },
-    {
-      question: 'What areas within your service region do you cover?',
-      answer: `We serve multiple sub-areas within the ${areaData.name} region. Contact us to confirm if your specific location is covered by our home visit services.`,
-    },
-    {
-      question: 'How do I book a home visit in my area?',
-      answer: `Simply call us or use our online booking system to schedule a home visit. We'll confirm availability for your specific location in ${areaData.name}.`,
-    },
-    {
-      question: 'Are travel charges included for home visits?',
-      answer: 'Travel charges may apply for areas beyond 10 kilometers from our clinic. Please contact us for specific pricing for your location.',
-    },
-  ];
-
   const schemaMarkup = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
@@ -148,23 +107,26 @@ export default async function AreaPage({ params }: PageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
       />
 
-      {/* Hero Section */}
+      {/* HERO SECTION - per SOP: H1 with location+service, hero desc 35-40 words, form with tracking */}
       <HeroSection
         h1={areaData.h1}
-        description={areaData.description}
+        description={areaData.heroDescription}
         breadcrumbs={breadcrumbs}
+        pageName={`Area: ${areaData.name}`}
       />
 
-      {/* Benefits Section */}
+      {/* BENEFITS SECTION - per SOP: 3 unique USP bullets, 35+ words each, with location+service */}
       <BenefitsSection
         heading={`Physiotherapy Services in ${areaData.name}`}
-        benefits={areaBenefits}
+        benefits={areaData.benefits}
       />
 
-      {/* Why Section */}
+      {/* WHY SECTION - per SOP: 3 unique points about why physio matters in this location */}
       <WhySection
-        heading={`Why Choose PhysioSthanak in ${areaData.name}?`}
-        whyPoints={whyChooseArea}
+        heading={`Why Physiotherapy Matters in ${areaData.name}`}
+        whyPoints={areaData.whyPoints}
+        image={whyImages[serviceAreas.indexOf(areaData) % whyImages.length].src}
+        imageAlt={`${whyImages[serviceAreas.indexOf(areaData) % whyImages.length].altTemplate} ${areaData.name}`}
       />
 
       {/* Sub-Areas Grid */}
@@ -184,14 +146,22 @@ export default async function AreaPage({ params }: PageProps) {
                 <Link
                   key={subArea.slug}
                   href={`/service-areas/${areaData.slug}/${subArea.slug}`}
+                  className="group"
                 >
-                  <div className="bg-white rounded-lg overflow-hidden card-shadow h-full hover:shadow-xl transition-all duration-300 p-6">
-                    <h3 className="text-xl font-bold text-accent mb-3 hover:text-primary transition-colors">
-                      {subArea.name}
-                    </h3>
-                    <p className="text-text-light text-sm leading-relaxed">
+                  <div className="bg-white rounded-lg overflow-hidden card-shadow h-full hover:shadow-xl transition-all duration-300 p-6 flex flex-col">
+                    <div className="flex items-start gap-2 mb-3">
+                      <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                      <h3 className="text-xl font-heading font-bold text-accent group-hover:text-primary transition-colors uppercase">
+                        {subArea.name}
+                      </h3>
+                    </div>
+                    <p className="text-text-light text-sm leading-relaxed mb-4 flex-grow">
                       {subArea.description}
                     </p>
+                    <div className="flex items-center gap-2 text-accent-pink font-heading font-bold text-sm uppercase tracking-wide group-hover:gap-3 transition-all">
+                      Explore Service Area
+                      <ArrowRight className="w-4 h-4" />
+                    </div>
                   </div>
                 </Link>
               ))}
@@ -200,43 +170,62 @@ export default async function AreaPage({ params }: PageProps) {
         </section>
       )}
 
-      {/* FAQ Section */}
+      {/* FAQ SECTION - per SOP: 3 unique SEO-optimized Q&As specific to location */}
       <FAQSection
         heading="Frequently Asked Questions"
         subheading={`About our services in ${areaData.name}`}
-        faqs={areaFaqs}
+        faqs={areaData.faqs}
       />
 
-      {/* Map Section */}
+      {/* MAP SECTION - per SOP: 50+ word description with primary keyword, location-specific map */}
       <MapSection
         heading={`Visit Our Clinic Serving ${areaData.name}`}
-        description={`Located in Borivali West, our clinic serves ${areaData.name} and surrounding areas with professional physiotherapy treatment and home visit services.`}
-        location="Borivali, Mumbai"
+        description={areaData.mapDescription}
+        location={`${areaData.name}, Mumbai`}
+        mapQuery={`${areaData.name} Mumbai Maharashtra`}
       />
 
-      {/* CTA with External Link */}
+      {/* CTA SECTION - per SOP: 1 external link (Wikipedia) + 1 internal link (homepage) */}
       <section className="section-padding bg-gradient-to-r from-primary to-primary-dark text-white">
         <div className="container-max text-center">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
             Book Your Appointment in {areaData.name}
           </h2>
-          <p className="text-lg text-gray-100 max-w-2xl mx-auto mb-8">
+          <p className="text-lg text-gray-100 max-w-2xl mx-auto mb-4">
             Get expert physiotherapy services right in {areaData.name}. Call us
-            today or book online for clinic or home visit services.
+            today or book online for clinic or home visit services at{' '}
+            <Link href="/" className="underline hover:text-gray-200">
+              PhysioSthanak
+            </Link>
+            .
           </p>
+          {areaData.externalLink && (
+            <p className="text-sm text-gray-200 max-w-2xl mx-auto mb-8">
+              Learn more about{' '}
+              <a
+                href={areaData.externalLink.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-white"
+              >
+                {areaData.externalLink.text}
+              </a>{' '}
+              and the community we proudly serve.
+            </p>
+          )}
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href={siteConfig.bookingUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-8 py-4 bg-white text-primary font-semibold rounded-lg hover:bg-gray-100 transition-colors"
+              className="inline-block px-8 py-4 bg-accent-pink text-white font-heading font-bold rounded-md uppercase tracking-wider hover:bg-accent-pink/90 transition-all shadow-lg hover:shadow-xl"
             >
               Book Appointment
             </a>
             <a
               href={`tel:${siteConfig.phone}`}
-              className="inline-block px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-primary transition-colors"
+              className="btn-outline-white"
             >
               Call Now
             </a>

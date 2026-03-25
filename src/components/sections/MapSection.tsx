@@ -1,23 +1,27 @@
 interface MapSectionProps {
   heading: string;
   description: string;
-  location: string; // Google Maps embed URL or location identifier
+  location: string;
+  mapQuery?: string;
 }
 
 export default function MapSection({
   heading,
   description,
   location,
+  mapQuery,
 }: MapSectionProps) {
-  // Google Maps embed for Borivali, Mumbai location
-  const mapEmbedUrl =
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3765.614771934446!2d72.81638!3d19.23068!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b0f8f0f0f0f%3A0xf0f0f0f0f0f0f0f!2sBorivali%20West!5e0!3m2!1sen!2sin!4v1234567890';
+  const query = mapQuery
+    ? encodeURIComponent(mapQuery)
+    : 'PhysioSthanak+Borivali+West+Mumbai';
+
+  const mapSrc = `https://www.google.com/maps?q=${query}&output=embed`;
 
   const schemaMarkup = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     name: 'PhysioSthanak',
-    image: 'https://physiosthanak.com/logo.png',
+    image: 'https://physiosthanak.com/images/Logo.png',
     description: description,
     address: {
       '@type': 'PostalAddress',
@@ -29,6 +33,23 @@ export default function MapSection({
     },
     telephone: '+919324254297',
     url: 'https://physiosthanak.com',
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: '19.2288',
+      longitude: '72.8563',
+    },
+    areaServed: {
+      '@type': 'Place',
+      name: location,
+    },
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+        opens: '09:00',
+        closes: '20:00',
+      },
+    ],
   };
 
   return (
@@ -37,58 +58,61 @@ export default function MapSection({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
       />
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-bg-light">
         <div className="container-max">
-          <h2 className="text-3xl sm:text-4xl font-bold text-accent mb-4 text-center">
-            {heading}
-          </h2>
+          <div className="text-center mb-14">
+            <span className="section-eyebrow">Find Us</span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-accent mb-4 uppercase">
+              {heading}
+            </h2>
+          </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Description */}
             <div>
-              <p className="text-lg text-text-light leading-relaxed mb-6">
+              <p className="text-lg text-text-light leading-relaxed mb-8">
                 {description}
               </p>
 
-              <div className="space-y-4">
-                <div>
-                  <h3 className="font-semibold text-accent mb-2">
-                    Visit Us In Person
+              <div className="space-y-6">
+                <div className="bg-white rounded-lg p-6 shadow-md border border-border-light">
+                  <h3 className="font-bold text-accent mb-3 uppercase font-heading text-base">
+                    Clinic Address
                   </h3>
-                  <p className="text-text-light">
+                  <p className="text-text-light leading-relaxed">
                     Shop No. 14, Ground Floor, Hari-Smruti Premises, Sardar
                     Vallabhbhai Patel Rd, opp. HDFC Bank, Borivali West,
                     Mumbai, Maharashtra 400092
                   </p>
                 </div>
 
-                <div>
-                  <h3 className="font-semibold text-accent mb-2">
+                <div className="bg-white rounded-lg p-6 shadow-md border border-border-light">
+                  <h3 className="font-bold text-accent mb-3 uppercase font-heading text-base">
                     Get Directions
                   </h3>
                   <a
-                    href={`https://maps.google.com/?q=PhysioSthanak+Borivali`}
+                    href={`https://maps.google.com/?q=${query}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-primary hover:text-primary-dark font-medium underline-accent"
+                    className="inline-block btn-primary text-sm"
                   >
-                    Open in Google Maps →
+                    Open in Google Maps
                   </a>
                 </div>
               </div>
             </div>
 
             {/* Map Embed */}
-            <div className="w-full h-96 rounded-lg overflow-hidden shadow-lg">
+            <div className="w-full h-[280px] sm:h-[350px] md:h-[450px] rounded-lg overflow-hidden shadow-xl border border-border-light">
               <iframe
-                src={mapEmbedUrl}
+                src={mapSrc}
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="PhysioSthanak Location"
+                title={`PhysioSthanak - ${location}`}
               />
             </div>
           </div>

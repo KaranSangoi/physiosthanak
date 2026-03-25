@@ -127,6 +127,7 @@ export default async function ConditionPage({ params }: PageProps) {
         h1={conditionData.h1}
         description={conditionData.heroDescription}
         breadcrumbs={breadcrumbs}
+        pageName={`Condition: ${conditionData.name}`}
       />
 
       {/* Benefits Section */}
@@ -176,13 +177,13 @@ export default async function ConditionPage({ params }: PageProps) {
               href={siteConfig.bookingUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-8 py-4 bg-white text-primary font-semibold rounded-lg hover:bg-gray-100 transition-colors"
+              className="inline-block px-8 py-4 bg-accent-pink text-white font-heading font-bold rounded-md uppercase tracking-wider hover:bg-accent-pink/90 transition-all shadow-lg hover:shadow-xl"
             >
               Book Appointment
             </a>
             <a
               href={`tel:${siteConfig.phone}`}
-              className="inline-block px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-primary transition-colors"
+              className="btn-outline-white"
             >
               Call Now
             </a>

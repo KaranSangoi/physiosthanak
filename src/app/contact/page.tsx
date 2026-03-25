@@ -51,6 +51,7 @@ export default function ContactPage() {
         h1="Contact PhysioSthanak"
         description="Get in touch with us to book your physiotherapy appointment. We're here to answer your questions and help you start your recovery journey."
         breadcrumbs={breadcrumbs}
+        pageName="Contact"
       />
 
       {/* Contact Information */}
@@ -80,9 +81,12 @@ export default function ContactPage() {
               <h3 className="text-lg font-semibold text-accent mb-2">
                 Email
               </h3>
-              <p className="text-text-light text-sm">
-                Email us for non-urgent inquiries
-              </p>
+              <a
+                href={`mailto:${siteConfig.email}`}
+                className="text-primary hover:text-primary-dark font-medium text-sm"
+              >
+                {siteConfig.email}
+              </a>
               <p className="text-sm text-text-light mt-2">
                 Response within 24 hours
               </p>

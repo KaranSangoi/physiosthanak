@@ -7,9 +7,24 @@ import FAQSection from '@/components/sections/FAQSection';
 import CTASection from '@/components/sections/CTASection';
 import MapSection from '@/components/sections/MapSection';
 import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 import { serviceAreas, siteConfig, allServices } from '@/data';
 import { getSubAreaBySlug, generateBreadcrumbs } from '@/lib/utils';
-import { Benefit, WhyPoint } from '@/types';
+
+// Rotating physio images for Why section with SEO-optimized alt tags
+const whyImages = [
+  { src: '/images/services/physiotherapy.jpg', altTemplate: 'Physiotherapy treatment near me in' },
+  { src: '/images/services/home-visit-physiotherapy.jpg', altTemplate: 'Home visit physiotherapy services in' },
+  { src: '/images/services/neck-pain-physiotherapy.jpg', altTemplate: 'Neck pain physiotherapy near' },
+  { src: '/images/services/back-pain-physiotherapy.jpg', altTemplate: 'Back pain rehabilitation treatment in' },
+  { src: '/images/services/sports-physiotherapy.jpg', altTemplate: 'Sports physiotherapy and injury recovery in' },
+  { src: '/images/services/orthopedic-physiotherapy.jpg', altTemplate: 'Orthopedic physiotherapy services near' },
+  { src: '/images/services/post-surgery-rehabilitation.jpg', altTemplate: 'Post-surgery rehabilitation physiotherapy in' },
+  { src: '/images/services/neurological-physiotherapy.jpg', altTemplate: 'Neurological physiotherapy consultation in' },
+  { src: '/images/services/hand-physiotherapy.jpg', altTemplate: 'Hand and wrist physiotherapy treatment near' },
+  { src: '/images/services/pediatric-physiotherapy.jpg', altTemplate: 'Pediatric physiotherapy care in' },
+  { src: '/images/services/womens-health-physiotherapy.jpg', altTemplate: 'Women health physiotherapy services in' },
+];
 
 interface PageProps {
   params: Promise<{
@@ -81,54 +96,9 @@ export default async function SubAreaPage({ params }: PageProps) {
 
   const breadcrumbs = generateBreadcrumbs(`/service-areas/${area}/${subarea}`);
 
-  const subAreaBenefits: Benefit[] = [
-    {
-      title: 'Easy Access to Care',
-      description: `Located right in ${subAreaData.name}, we provide convenient access to expert physiotherapy without long travel times.`,
-    },
-    {
-      title: 'Home Visit Services',
-      description: `Professional physiotherapy delivered to your home in ${subAreaData.name}. Perfect for elderly, post-surgery, and mobility-limited patients.`,
-    },
-    {
-      title: 'Comprehensive Services',
-      description: `All our physiotherapy services are available in ${subAreaData.name}, from pain management to sports injury treatment.`,
-    },
-  ];
-
-  const whyChooseSubArea: WhyPoint[] = [
-    {
-      title: 'Local Expert Treatment',
-      description: `Get expert care from Dr. Shiva Jain right in your ${subAreaData.name} neighborhood with personalized treatment plans.`,
-    },
-    {
-      title: 'Flexible Options',
-      description: `Choose between clinic-based treatment or convenient home visit services, both available in ${subAreaData.name}.`,
-    },
-    {
-      title: 'Quick Recovery',
-      description: `Timely access to expert physiotherapy in ${subAreaData.name} helps you recover faster and prevent complications.`,
-    },
-  ];
-
-  const subAreaFaqs = [
-    {
-      question: `Do you provide home physiotherapy in ${subAreaData.name}?`,
-      answer: `Yes, we provide professional home visit physiotherapy services in ${subAreaData.name}. Call us to schedule your appointment.`,
-    },
-    {
-      question: 'How do I book an appointment?',
-      answer: `You can book online through our Google Calendar link or call us directly. We offer flexible scheduling for clinic and home visits.`,
-    },
-    {
-      question: 'What conditions are treated?',
-      answer: `We treat all conditions including back pain, neck pain, sports injuries, post-surgery recovery, arthritis, and more in ${subAreaData.name}.`,
-    },
-    {
-      question: 'Is a doctor referral required?',
-      answer: 'No, a doctor referral is not mandatory, though it can help with insurance claims. We accept patients with or without referral.',
-    },
-  ];
+  // Pick a rotating image based on slug hash for unique images per page
+  const imgIndex = subarea.split('').reduce((acc, c) => acc + c.charCodeAt(0), 0) % whyImages.length;
+  const whyImage = whyImages[imgIndex];
 
   const schemaMarkup = {
     '@context': 'https://schema.org',
@@ -160,23 +130,26 @@ export default async function SubAreaPage({ params }: PageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
       />
 
-      {/* Hero Section */}
+      {/* HERO SECTION - per SOP: H1 with location+service, hero desc 35-40 words, form with tracking */}
       <HeroSection
         h1={subAreaData.h1}
-        description={subAreaData.description}
+        description={subAreaData.heroDescription}
         breadcrumbs={breadcrumbs}
+        pageName={`SubArea: ${subAreaData.name} (${subAreaData.parentArea})`}
       />
 
-      {/* Benefits Section */}
+      {/* BENEFITS SECTION - per SOP: 3 unique USP bullets, 35+ words each */}
       <BenefitsSection
         heading={`Physiotherapy Services in ${subAreaData.name}`}
-        benefits={subAreaBenefits}
+        benefits={subAreaData.benefits}
       />
 
-      {/* Why Section */}
+      {/* WHY SECTION - per SOP: 3 unique points about why physio matters in this location */}
       <WhySection
-        heading={`Why Choose PhysioSthanak in ${subAreaData.name}?`}
-        whyPoints={whyChooseSubArea}
+        heading={`Why Physiotherapy Matters in ${subAreaData.name}`}
+        whyPoints={subAreaData.whyPoints}
+        image={whyImage.src}
+        imageAlt={`${whyImage.altTemplate} ${subAreaData.name}`}
       />
 
       {/* Services Available */}
@@ -194,41 +167,46 @@ export default async function SubAreaPage({ params }: PageProps) {
               <Link
                 key={service.slug}
                 href={`/services/${service.slug}`}
-                className="bg-white rounded-lg p-6 card-shadow hover:shadow-lg transition-shadow"
+                className="bg-white rounded-lg p-6 card-shadow hover:shadow-lg transition-shadow group flex flex-col"
               >
-                <h3 className="text-lg font-semibold text-accent mb-2 hover:text-primary transition-colors">
+                <h3 className="text-lg font-heading font-bold text-accent mb-2 group-hover:text-primary transition-colors uppercase">
                   {service.name}
                 </h3>
-                <p className="text-text-light text-sm line-clamp-2">
+                <p className="text-text-light text-sm line-clamp-2 mb-4 flex-grow">
                   {service.description}
                 </p>
+                <div className="flex items-center gap-2 text-accent-pink font-heading font-bold text-sm uppercase tracking-wide group-hover:gap-3 transition-all">
+                  Explore Service
+                  <ArrowRight className="w-4 h-4" />
+                </div>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* FAQ Section */}
+      {/* FAQ SECTION - per SOP: 3 unique SEO-optimized Q&As specific to location */}
       <FAQSection
         heading="Frequently Asked Questions"
         subheading={`About physiotherapy services in ${subAreaData.name}`}
-        faqs={subAreaFaqs}
+        faqs={subAreaData.faqs}
       />
 
-      {/* Map Section */}
+      {/* MAP SECTION - per SOP: 50+ word description with primary keyword, location-specific map */}
       <MapSection
         heading={`Physiotherapy Care for ${subAreaData.name}`}
-        description={`Our clinic in Borivali West serves ${subAreaData.name} with convenient location and home visit options for expert physiotherapy treatment.`}
-        location="Borivali, Mumbai"
+        description={subAreaData.mapDescription}
+        location={`${subAreaData.name}, Mumbai`}
+        mapQuery={`${subAreaData.name} ${subAreaData.parentArea} Mumbai Maharashtra`}
       />
 
-      {/* CTA with Links */}
+      {/* CTA SECTION - per SOP: 1 external link (Wikipedia) + 1 internal link (homepage) */}
       <section className="section-padding bg-gradient-to-r from-primary to-primary-dark text-white">
         <div className="container-max text-center">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
             Ready for Expert Physiotherapy in {subAreaData.name}?
           </h2>
-          <p className="text-lg text-gray-100 max-w-2xl mx-auto mb-8">
+          <p className="text-lg text-gray-100 max-w-2xl mx-auto mb-4">
             Book your consultation with Dr. Shiva Jain today. Available for
             clinic visits and home physiotherapy services in{' '}
             {subAreaData.name}. Also explore our complete{' '}
@@ -237,19 +215,33 @@ export default async function SubAreaPage({ params }: PageProps) {
             </Link>
             .
           </p>
+          {subAreaData.externalLink && (
+            <p className="text-sm text-gray-200 max-w-2xl mx-auto mb-8">
+              Learn more about{' '}
+              <a
+                href={subAreaData.externalLink.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-white"
+              >
+                {subAreaData.externalLink.text}
+              </a>{' '}
+              and the surrounding areas we serve.
+            </p>
+          )}
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href={siteConfig.bookingUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-8 py-4 bg-white text-primary font-semibold rounded-lg hover:bg-gray-100 transition-colors"
+              className="inline-block px-8 py-4 bg-accent-pink text-white font-heading font-bold rounded-md uppercase tracking-wider hover:bg-accent-pink/90 transition-all shadow-lg hover:shadow-xl"
             >
               Book Appointment
             </a>
             <a
               href={`tel:${siteConfig.phone}`}
-              className="inline-block px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-primary transition-colors"
+              className="btn-outline-white"
             >
               Call Now
             </a>

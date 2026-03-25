@@ -585,7 +585,7 @@ export const servicesExtended3: ServiceCategory[] = [
     metaDescription: 'Hand and wrist physiotherapy in Borivali. Expert treatment for hand injuries and conditions.',
     h1: 'Hand & Wrist Physiotherapy Services',
     heroDescription: 'Expert hand and wrist physiotherapy in Borivali for injury recovery, function restoration, and pain relief.',
-    image: '/images/services/hand-physiotherapy.jpg',
+    image: '/images/services/hand-wrist-physiotherapy.jpg',
     benefits: [
       {
         title: 'Restored Hand Function & Dexterity',

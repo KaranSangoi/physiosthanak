@@ -6,7 +6,7 @@ import WhySection from '@/components/sections/WhySection';
 import FAQSection from '@/components/sections/FAQSection';
 import CTASection from '@/components/sections/CTASection';
 import ServiceCard from '@/components/sections/ServiceCard';
-import { services, siteConfig } from '@/data';
+import { allServices, siteConfig } from '@/data';
 import { getServiceBySlug, generateBreadcrumbs, getAllServiceSlugs } from '@/lib/utils';
 
 interface PageProps {
@@ -16,7 +16,7 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  return services.map((service) => ({
+  return allServices.map((service) => ({
     category: service.slug,
   }));
 }
@@ -109,6 +109,7 @@ export default async function ServiceCategoryPage({ params }: PageProps) {
         description={service.heroDescription}
         breadcrumbs={breadcrumbs}
         backgroundImage={service.image}
+        pageName={`Service: ${service.name}`}
       />
 
       {/* Benefits Section */}

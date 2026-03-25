@@ -9,6 +9,7 @@ import ServiceCard from '@/components/sections/ServiceCard';
 import AreaCard from '@/components/sections/AreaCard';
 import { siteConfig, allServices, serviceAreas } from '@/data';
 import { Benefit, WhyPoint } from '@/types';
+import { Clock, Users, Home } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Best Physiotherapist in Borivali | PhysioSthanak',
@@ -52,21 +53,24 @@ export const metadata: Metadata = {
   },
 };
 
-const trustIndicators: Benefit[] = [
+const trustIndicators = [
   {
-    title: '9+ Years Experience',
-    description:
-      'Trusted by thousands of patients with proven expertise in physiotherapy and rehabilitation.',
+    icon: 'clock',
+    number: '9+',
+    title: 'Years Experience',
+    description: 'Trusted by thousands of patients with proven expertise in physiotherapy.',
   },
   {
-    title: '8000+ Cases Treated',
-    description:
-      'Successfully treated over 8000 patients with diverse conditions and requirements.',
+    icon: 'users',
+    number: '8000+',
+    title: 'Cases Treated',
+    description: 'Successfully treated patients with diverse conditions and requirements.',
   },
   {
+    icon: 'home',
+    number: '∞',
     title: 'Home Visits Available',
-    description:
-      'Convenient home-based physiotherapy services for patients with mobility limitations.',
+    description: 'Convenient home-based physiotherapy for patients with mobility limitations.',
   },
 ];
 
@@ -74,7 +78,7 @@ const aboutPoints: WhyPoint[] = [
   {
     title: 'Dr. Shiva Jain Sangoi',
     description:
-      'BPTh with 9+ years of clinical experience in comprehensive physiotherapy and rehabilitation services.',
+      'MPTh (Ortho), BPTh with FIFA Diploma in Football Medicine. 9+ years of clinical experience in comprehensive physiotherapy and rehabilitation services.',
   },
   {
     title: 'Evidence-Based Treatment',
@@ -88,7 +92,7 @@ const aboutPoints: WhyPoint[] = [
   },
 ];
 
-const whyChoose: WhyPoint[] = [
+const whyChoose: Benefit[] = [
   {
     title: 'Expert Personalized Care',
     description:
@@ -134,30 +138,98 @@ const homeFaqs = [
   },
 ];
 
+const IconMap = ({ icon }: { icon: string }) => {
+  const className = "w-6 h-6 text-white";
+  switch (icon) {
+    case 'clock': return <Clock className={className} />;
+    case 'users': return <Users className={className} />;
+    case 'home': return <Home className={className} />;
+    default: return null;
+  }
+};
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'PhysioSthanak',
+  url: 'https://physiosthanak.com',
+  logo: 'https://physiosthanak.com/images/Logo.png',
+  image: 'https://physiosthanak.com/og-image.jpg',
+  description:
+    'Expert physiotherapy services in Borivali, Mumbai by Dr. Shiva Jain Sangoi. 9+ years experience, 8000+ cases treated.',
+  founder: {
+    '@type': 'Person',
+    name: 'Dr. Shiva Jain Sangoi',
+    jobTitle: 'Physiotherapist',
+    description:
+      'MPTh (Ortho), BPTh, FIFA Diploma in Football Medicine. 9+ years of clinical experience.',
+  },
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress:
+      'Shop No. 14, Ground Floor, Hari-Smruti Premises, Sardar Vallabhbhai Patel Rd, opp. HDFC Bank',
+    addressLocality: 'Borivali West',
+    addressRegion: 'Maharashtra',
+    postalCode: '400092',
+    addressCountry: 'IN',
+  },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: '+91-9324254297',
+    contactType: 'customer service',
+    availableLanguage: ['English', 'Hindi', 'Marathi'],
+  },
+  telephone: '+91-9324254297',
+  email: 'physiosthanak@gmail.com',
+  sameAs: [
+    'https://www.instagram.com/physiosthanak',
+    'http://www.linkedin.com/in/drshivajain',
+  ],
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '5.0',
+    bestRating: '5',
+    worstRating: '1',
+    ratingCount: '50',
+    reviewCount: '50',
+  },
+};
+
 export default function HomePage() {
   return (
     <>
+      {/* Organization + AggregateRating JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+
       {/* Hero Section */}
       <HeroSection
         h1="Best Physiotherapist in Borivali"
         description="Expert physiotherapy services for pain relief, injury recovery, and improved mobility. 9+ years experience, 8000+ cases treated. Personalized treatment plans in clinic and at home."
         breadcrumbs={[]}
-        showForm={false}
+        isHome
+        showForm
+        pageName="Homepage"
       />
 
       {/* Trust Indicators */}
-      <section className="section-padding bg-bg-lighter">
+      <section className="section-padding bg-white border-b border-slate-100">
         <div className="container-max">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {trustIndicators.map((indicator, index) => (
-              <div key={index} className="text-center">
-                <div className="text-4xl font-bold text-primary mb-3">
-                  {['9+', '8000+', '∞'][index]}
+              <div key={index} className="flex flex-col items-center p-6 rounded-lg hover:bg-bg-light transition-colors text-center">
+                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-4">
+                  <IconMap icon={indicator.icon} />
                 </div>
-                <h3 className="text-xl font-bold text-accent mb-2">
+                <div className="text-3xl font-heading font-bold text-primary mb-2">
+                  {indicator.number}
+                </div>
+                <h3 className="text-lg font-heading font-bold text-accent uppercase mb-2">
                   {indicator.title}
                 </h3>
-                <p className="text-text-light">{indicator.description}</p>
+                <p className="text-text-light text-sm">{indicator.description}</p>
               </div>
             ))}
           </div>
@@ -165,10 +237,11 @@ export default function HomePage() {
       </section>
 
       {/* Services Overview */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-bg-light">
         <div className="container-max">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-accent mb-4">
+          <div className="text-center mb-14">
+            <span className="section-eyebrow">What We Offer</span>
+            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-accent mb-4 uppercase">
               Our Physiotherapy Services
             </h2>
             <p className="text-lg text-text-light max-w-2xl mx-auto">
@@ -193,57 +266,56 @@ export default function HomePage() {
 
       {/* About Dr. Shiva */}
       <WhySection
+        eyebrow="About the Expert"
         heading="About Dr. Shiva Jain Sangoi"
         subheading="Expert physiotherapist with proven results and patient trust"
         whyPoints={aboutPoints}
+        image="/images/about/dr-shiva-jain.png"
+        imageAlt="Dr. Shiva Jain Sangoi - MPTh Ortho, FIFA Diploma - Best Physiotherapist in Borivali"
       />
 
       {/* Why Choose Section */}
       <BenefitsSection
         heading="Why Choose PhysioSthanak?"
         subheading="The best physiotherapy care in Borivali for your recovery"
-        benefits={whyChoose.map((point) => ({
-          title: point.title,
-          description: point.description,
-        }))}
+        benefits={whyChoose}
       />
 
-      {/* Testimonials Placeholder */}
-      <section className="section-padding bg-bg-lighter">
+      {/* Testimonials - Google Reviews via Elfsight */}
+      <section className="section-padding bg-bg-light">
         <div className="container-max text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-accent mb-4">
-            Patient Testimonials
+          <span className="section-eyebrow">Testimonials</span>
+          <h2 className="text-3xl sm:text-4xl font-heading font-bold text-accent mb-4 uppercase">
+            Real Results from Real Patients
           </h2>
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <div className="flex gap-1">
+              {[1,2,3,4,5].map((star) => (
+                <span key={star} className="text-yellow-400 text-xl">★</span>
+              ))}
+            </div>
+            <span className="font-heading font-bold text-accent uppercase tracking-wide text-sm">
+              5.0 Rating
+            </span>
+          </div>
           <p className="text-lg text-text-light mb-12 max-w-2xl mx-auto">
             Join thousands of satisfied patients who have benefited from our
             expert physiotherapy services
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="bg-white rounded-lg p-8 card-shadow">
-                <div className="flex gap-1 mb-4">
-                  {[1, 2, 3, 4, 5].map((star) => (
-                    <span key={star} className="text-yellow-400">
-                      ★
-                    </span>
-                  ))}
-                </div>
-                <p className="text-text-light mb-4">
-                  &quot;Excellent physiotherapy services. Dr. Shiva is very
-                  professional and caring. Highly recommended!&quot;
-                </p>
-                <p className="font-semibold text-accent">Patient {i}</p>
-              </div>
-            ))}
-          </div>
+
+          <div
+            id="featurable-8f844505-6165-4a48-bebf-6a5e4aceaa54"
+            data-featurable-async
+          />
         </div>
       </section>
 
       {/* Service Areas */}
       <section className="section-padding bg-white">
         <div className="container-max">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-accent mb-4">
+          <div className="text-center mb-14">
+            <span className="section-eyebrow">Coverage</span>
+            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-accent mb-4 uppercase">
               Service Areas
             </h2>
             <p className="text-lg text-text-light max-w-2xl mx-auto">

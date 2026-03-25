@@ -7,9 +7,10 @@ interface BreadcrumbItem {
 
 interface BreadcrumbsProps {
   items: BreadcrumbItem[];
+  dark?: boolean;
 }
 
-export default function Breadcrumbs({ items }: BreadcrumbsProps) {
+export default function Breadcrumbs({ items, dark = false }: BreadcrumbsProps) {
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -29,18 +30,18 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
       />
       <nav
         aria-label="Breadcrumb"
-        className="flex items-center gap-2 text-sm text-text-light"
+        className={`flex flex-wrap items-center gap-1 sm:gap-2 text-xs sm:text-sm ${dark ? 'text-slate-400' : 'text-text-light'}`}
       >
         {items.map((item, index) => (
           <div key={item.href} className="flex items-center gap-2">
             <Link
               href={item.href}
-              className="text-primary hover:text-primary-dark transition-colors underline"
+              className={`${dark ? 'text-accent-pink hover:text-white' : 'text-primary hover:text-primary-dark'} transition-colors underline`}
             >
               {item.label}
             </Link>
             {index < items.length - 1 && (
-              <span className="text-text-light">/</span>
+              <span className={dark ? 'text-slate-500' : 'text-text-light'}>/</span>
             )}
           </div>
         ))}
