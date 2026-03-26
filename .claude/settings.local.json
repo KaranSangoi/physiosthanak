@@ -43,7 +43,10 @@
       "Bash(grep -h h1= /c/Users/karan/Desktop/physiosthanak/src/app/*/page.tsx /c/Users/karan/Desktop/physiosthanak/src/app/*/*/page.tsx)",
       "Bash(npx vercel:*)",
       "Bash(nslookup:*)",
-      "Bash(ipconfig /flushdns)"
+      "Bash(ipconfig /flushdns)",
+      "Bash(ssh:*)",
+      "Bash(ls ~/.ssh/id_ed25519*)",
+      "Bash(ssh-add ~/.ssh/id_ed25519_karansangoi89)"
     ]
   }
 }

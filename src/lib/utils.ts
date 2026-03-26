@@ -106,18 +106,18 @@ export function generateBreadcrumbs(
       }
     }
 
-    // Handle areas
-    if (segment === 'areas') {
-      breadcrumbs.push({ label: 'Service Areas', href: '/areas' });
-    } else if (i > 0 && segments[i - 1] === 'areas') {
-      // Area
+    // Handle service-areas
+    if (segment === 'service-areas') {
+      breadcrumbs.push({ label: 'Service Areas', href: '/service-areas' });
+    } else if (i > 0 && segments[i - 1] === 'service-areas') {
+      // Area page
       const areaSlug = segment;
       const area = getAreaBySlug(areaSlug);
       if (area) {
         breadcrumbs.push({ label: area.name, href: currentPath });
       }
-    } else if (i > 1 && segments[i - 2] === 'areas' && segments[i - 1] !== 'areas') {
-      // Sub-area
+    } else if (i > 1 && segments[i - 2] !== 'services') {
+      // Sub-area page (3rd segment that isn't under /services/)
       const areaSlug = segments[i - 1];
       const subAreaSlug = segment;
       const subArea = getSubAreaBySlug(areaSlug, subAreaSlug);

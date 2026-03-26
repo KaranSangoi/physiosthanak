@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next';
-import { services, serviceAreas, siteConfig } from '@/data';
+import { allServices, serviceAreas, siteConfig } from '@/data';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = siteConfig.domain;
@@ -30,10 +30,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.8,
     },
+    {
+      url: `${baseUrl}/privacy`,
+      lastModified: today,
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/terms`,
+      lastModified: today,
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
   ];
 
-  // Add service category pages
-  services.forEach((service) => {
+  // Add ALL service category pages (11 categories)
+  allServices.forEach((service) => {
     routes.push({
       url: `${baseUrl}/services/${service.slug}`,
       lastModified: today,

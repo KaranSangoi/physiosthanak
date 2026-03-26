@@ -59,41 +59,46 @@ export default function ContactPage() {
         <div className="container-max">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Phone */}
-            <div className="bg-white rounded-lg p-6 card-shadow text-center">
+            <a
+              href={`tel:${siteConfig.phone}`}
+              className="bg-white rounded-lg p-6 card-shadow text-center block hover:shadow-xl hover:border-primary/20 border border-transparent transition-all cursor-pointer"
+            >
               <Phone className="w-8 h-8 text-primary mx-auto mb-4" />
               <h3 className="text-lg font-semibold text-accent mb-2">
                 Phone
               </h3>
-              <a
-                href={`tel:${siteConfig.phone}`}
-                className="text-primary hover:text-primary-dark font-medium"
-              >
+              <p className="text-primary font-medium">
                 {siteConfig.phone}
-              </a>
+              </p>
               <p className="text-sm text-text-light mt-2">
                 Available Mon-Sat, 9 AM - 6 PM
               </p>
-            </div>
+            </a>
 
             {/* Email */}
-            <div className="bg-white rounded-lg p-6 card-shadow text-center">
+            <a
+              href={`mailto:${siteConfig.email}`}
+              className="bg-white rounded-lg p-6 card-shadow text-center block hover:shadow-xl hover:border-primary/20 border border-transparent transition-all cursor-pointer"
+            >
               <Mail className="w-8 h-8 text-primary mx-auto mb-4" />
               <h3 className="text-lg font-semibold text-accent mb-2">
                 Email
               </h3>
-              <a
-                href={`mailto:${siteConfig.email}`}
-                className="text-primary hover:text-primary-dark font-medium text-sm"
-              >
+              <p className="text-primary font-medium text-sm">
                 {siteConfig.email}
-              </a>
+              </p>
               <p className="text-sm text-text-light mt-2">
                 Response within 24 hours
               </p>
-            </div>
+            </a>
 
             {/* Address */}
-            <div className="bg-white rounded-lg p-6 card-shadow text-center">
+            <a
+              href="https://maps.google.com/?q=PhysioSthanak+Borivali"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white rounded-lg p-6 card-shadow text-center block hover:shadow-xl hover:border-primary/20 border border-transparent transition-all cursor-pointer"
+            >
               <MapPin className="w-8 h-8 text-primary mx-auto mb-4" />
               <h3 className="text-lg font-semibold text-accent mb-2">
                 Address
@@ -101,18 +106,18 @@ export default function ContactPage() {
               <p className="text-sm text-text-light">
                 Borivali West, Mumbai
               </p>
-              <a
-                href="https://maps.google.com/?q=PhysioSthanak+Borivali"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary hover:text-primary-dark text-sm font-medium mt-2 inline-block"
-              >
+              <p className="text-primary text-sm font-medium mt-2">
                 Get Directions →
-              </a>
-            </div>
+              </p>
+            </a>
 
             {/* Hours */}
-            <div className="bg-white rounded-lg p-6 card-shadow text-center">
+            <a
+              href={siteConfig.bookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white rounded-lg p-6 card-shadow text-center block hover:shadow-xl hover:border-primary/20 border border-transparent transition-all cursor-pointer"
+            >
               <Clock className="w-8 h-8 text-primary mx-auto mb-4" />
               <h3 className="text-lg font-semibold text-accent mb-2">
                 Hours
@@ -123,7 +128,7 @@ export default function ContactPage() {
               <p className="text-sm text-text-light">
                 Sunday: By Appointment
               </p>
-            </div>
+            </a>
           </div>
         </div>
       </section>
