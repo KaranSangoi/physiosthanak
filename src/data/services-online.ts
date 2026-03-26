@@ -5,9 +5,9 @@ export const servicesOnline: ServiceCategory[] = [
     slug: 'online-physiotherapy',
     name: 'Online Physiotherapy',
     description: 'Professional online physiotherapy consultations and tele-rehabilitation via Google Meet. Get expert treatment from anywhere with an introductory offer of just ₹99 for 20 minutes.',
-    keywords: ['online physiotherapy', 'virtual physiotherapy', 'tele-rehabilitation', 'online physio consultation', 'physiotherapy Google Meet', 'remote physiotherapy Mumbai', 'online physiotherapy Borivali'],
+    keywords: ['online physiotherapy', 'virtual physiotherapy', 'tele-rehabilitation', 'online physio consultation', 'physiotherapy Google Meet', 'remote physiotherapy India', 'online physiotherapy consultation'],
     metaDescription: 'Online physiotherapy via Google Meet by Dr. Shiva Jain (MPTh). ₹99 intro offer for 20 min. Expert care from anywhere. Book now!',
-    h1: 'Online Physiotherapy Consultation in Mumbai & Borivali',
+    h1: 'Online Physiotherapy Consultation — Expert Care from Anywhere',
     heroDescription: 'Get expert physiotherapy from the comfort of your home via Google Meet. Introductory offer at just ₹99 for a 20-minute session with Dr. Shiva Jain Sangoi, MPTh (Ortho).',
     image: '/images/services/home-visit-physiotherapy.jpg',
     benefits: [
@@ -68,7 +68,7 @@ export const servicesOnline: ServiceCategory[] = [
         description: 'Initial assessment and follow-up physiotherapy consultations via Google Meet with personalized treatment planning.',
         keywords: ['virtual physiotherapy consultation', 'online physio assessment', 'video physiotherapy', 'remote consultation Mumbai', 'online physiotherapy Borivali'],
         metaDescription: 'Virtual physiotherapy consultation via Google Meet. ₹99 intro session with Dr. Shiva Jain. Expert assessment from home. Book now!',
-        h1: 'Virtual Physiotherapy Consultation Online in Mumbai',
+        h1: 'Virtual Physiotherapy Consultation Online',
         heroDescription: 'Get a comprehensive physiotherapy assessment via Google Meet from anywhere. Start with our ₹99 introductory session for expert diagnosis and personalized treatment guidance.',
         benefits: [
           {
@@ -120,7 +120,7 @@ export const servicesOnline: ServiceCategory[] = [
         description: 'Guided rehabilitation programs delivered remotely via video calls for patients who cannot visit the clinic regularly.',
         keywords: ['tele-rehabilitation', 'remote rehabilitation', 'online rehab physiotherapy', 'video call physio sessions', 'telehealth physiotherapy Mumbai'],
         metaDescription: 'Tele-rehabilitation by Dr. Shiva Jain (MPTh). Guided online rehab programs via Google Meet. Expert remote recovery. Book today!',
-        h1: 'Tele-Rehabilitation & Remote Physiotherapy Programs in Mumbai',
+        h1: 'Tele-Rehabilitation & Remote Physiotherapy Programs',
         heroDescription: 'Receive structured rehabilitation programs via Google Meet with real-time expert guidance. Ideal for patients recovering from surgery, injuries, or chronic conditions who need consistent professional support.',
         benefits: [
           {
@@ -276,7 +276,7 @@ export const servicesOnline: ServiceCategory[] = [
         description: 'Continued physiotherapy care and progress monitoring after clinic treatment ends, delivered via online follow-up sessions.',
         keywords: ['post-discharge follow-up', 'online physiotherapy follow-up', 'remote progress monitoring', 'after treatment care', 'continued physiotherapy Mumbai'],
         metaDescription: 'Post-discharge physiotherapy follow-up online. Continue recovery after clinic treatment with Dr. Shiva Jain via Google Meet.',
-        h1: 'Post-Discharge Physiotherapy Follow-up Online in Mumbai',
+        h1: 'Post-Discharge Physiotherapy Follow-up Online',
         heroDescription: 'Continue your recovery journey after clinic treatment ends with scheduled online follow-ups via Google Meet. Dr. Shiva monitors your progress, adjusts exercises, and ensures sustained results.',
         benefits: [
           {
