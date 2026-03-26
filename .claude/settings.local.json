@@ -42,7 +42,8 @@
       "Bash(grep -r \"image:\" /c/Users/karan/Desktop/physiosthanak/src/data/*.ts)",
       "Bash(grep -h h1= /c/Users/karan/Desktop/physiosthanak/src/app/*/page.tsx /c/Users/karan/Desktop/physiosthanak/src/app/*/*/page.tsx)",
       "Bash(npx vercel:*)",
-      "Bash(nslookup:*)"
+      "Bash(nslookup:*)",
+      "Bash(ipconfig /flushdns)"
     ]
   }
 }
