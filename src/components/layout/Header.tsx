@@ -17,7 +17,7 @@ const serviceCategories = [
   { name: 'Post-Surgery Rehab', href: '/services/post-surgery-rehabilitation' },
   { name: 'Pediatric', href: '/services/pediatric-physiotherapy' },
   { name: 'Women\'s Health', href: '/services/womens-health-physiotherapy' },
-  { name: 'Hand & Wrist', href: '/services/hand-wrist-physiotherapy' },
+  { name: 'Hand & Wrist', href: '/services/hand-physiotherapy' },
 ];
 
 const serviceAreas = [
