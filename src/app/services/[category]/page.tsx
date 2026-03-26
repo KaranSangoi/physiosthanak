@@ -110,7 +110,6 @@ export default async function ServiceCategoryPage({ params }: PageProps) {
         breadcrumbs={breadcrumbs}
         backgroundImage={service.image}
         pageName={`Service: ${service.name}`}
-        bookingUrl={service.slug === 'online-physiotherapy' ? 'https://topmate.io/dr_shiva_jain_sangoi/1995923' : undefined}
       />
 
       {/* Benefits Section */}

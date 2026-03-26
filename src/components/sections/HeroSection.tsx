@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Breadcrumbs from '@/components/ui/Breadcrumbs';
 
 const WEB3FORMS_KEY = '97e35895-6350-4c20-982e-f2fdb1996900';
-const BOOKING_URL = 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1q9Iju5qCiKCskcNXk9tY-7JAD4HANfuNpFPigzU3-4cK6KcZQfLfFbV5NdWNwx6KhQ1jlCZNQ';
+const BOOKING_URL = 'https://topmate.io/dr_shiva_jain_sangoi/1995923';
 
 interface HeroSectionProps {
   h1: string;

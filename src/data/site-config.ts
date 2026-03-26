@@ -6,7 +6,7 @@ export const siteConfig: SiteConfig = {
   phone: '+91 9324254297',
   email: 'physiosthanak@gmail.com',
   address: 'Shop No. 14, Ground Floor, Hari-Smruti Premises, Sardar Vallabhbhai Patel Rd, opp. HDFC Bank, Borivali West, Mumbai, Maharashtra 400092',
-  bookingUrl: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1q9Iju5qCiKCskcNXk9tY-7JAD4HANfuNpFPigzU3-4cK6KcZQfLfFbV5NdWNwx6KhQ1jlCZNQ',
+  bookingUrl: 'https://topmate.io/dr_shiva_jain_sangoi/1995923',
   social: {
     instagram: 'https://www.instagram.com/physiosthanak',
     linkedin: 'http://www.linkedin.com/in/drshivajain',

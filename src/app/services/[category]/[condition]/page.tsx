@@ -128,7 +128,6 @@ export default async function ConditionPage({ params }: PageProps) {
         description={conditionData.heroDescription}
         breadcrumbs={breadcrumbs}
         pageName={`Condition: ${conditionData.name}`}
-        bookingUrl={conditionData.parentCategory === 'online-physiotherapy' ? 'https://topmate.io/dr_shiva_jain_sangoi/1995923' : undefined}
       />
 
       {/* Benefits Section */}
