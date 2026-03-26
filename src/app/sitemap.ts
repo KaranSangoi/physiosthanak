@@ -44,7 +44,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  // Add ALL service category pages (11 categories)
+  // Add ALL service category pages (12 categories)
   allServices.forEach((service) => {
     routes.push({
       url: `${baseUrl}/services/${service.slug}`,

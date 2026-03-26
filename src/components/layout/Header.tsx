@@ -18,6 +18,7 @@ const serviceCategories = [
   { name: 'Pediatric', href: '/services/pediatric-physiotherapy' },
   { name: 'Women\'s Health', href: '/services/womens-health-physiotherapy' },
   { name: 'Hand & Wrist', href: '/services/hand-physiotherapy' },
+  { name: 'Online Physiotherapy', href: '/services/online-physiotherapy' },
 ];
 
 const serviceAreas = [

@@ -7,7 +7,7 @@ import FAQSection from '@/components/sections/FAQSection';
 import CTASection from '@/components/sections/CTASection';
 import MapSection from '@/components/sections/MapSection';
 import Link from 'next/link';
-import { services, siteConfig } from '@/data';
+import { allServices, siteConfig } from '@/data';
 import {
   getConditionBySlug,
   generateBreadcrumbs,
@@ -24,7 +24,7 @@ interface PageProps {
 export async function generateStaticParams() {
   const slugs: { category: string; condition: string }[] = [];
 
-  services.forEach((service) => {
+  allServices.forEach((service) => {
     if (service.conditions && service.conditions.length > 0) {
       service.conditions.forEach((condition) => {
         slugs.push({
@@ -128,6 +128,7 @@ export default async function ConditionPage({ params }: PageProps) {
         description={conditionData.heroDescription}
         breadcrumbs={breadcrumbs}
         pageName={`Condition: ${conditionData.name}`}
+        bookingUrl={conditionData.parentCategory === 'online-physiotherapy' ? 'https://topmate.io/dr_shiva_jain_sangoi/1995923' : undefined}
       />
 
       {/* Benefits Section */}

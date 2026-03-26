@@ -61,7 +61,7 @@ See `ROADMAP.md` for the phased plan with all pending features.
 9. **Dr. Shiva is MPTh (Ortho)** — always include this credential
 10. **No AI attribution** in commits, code comments, or anywhere visible
 
-## Service Categories (11 live)
+## Service Categories (12 live)
 1. Physiotherapy (General)
 2. Home Visit Physiotherapy
 3. Sports Injury Physiotherapy
@@ -73,9 +73,10 @@ See `ROADMAP.md` for the phased plan with all pending features.
 9. Pediatric Physiotherapy
 10. Women's Health Physiotherapy
 11. Hand & Wrist Physiotherapy
+12. Online Physiotherapy
 
 ## TODO (Next Steps)
-- [ ] **Online Physiotherapy** — Add as 12th service category
+- [x] **Online Physiotherapy** — Added as 12th service category
 - [ ] **About page** — Dedicated page for Dr. Shiva's profile
 - [ ] **Content review by Shiva** — verify medical accuracy
 - [ ] **Cal.com migration** — For payments + 20-min slots (see memory)

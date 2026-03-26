@@ -2,6 +2,7 @@ import { services } from '@/data/services';
 import { servicesExtended } from '@/data/services-extended';
 import { servicesExtended2 } from '@/data/services-extended2';
 import { servicesExtended3 } from '@/data/services-extended3';
+import { servicesOnline } from '@/data/services-online';
 import { serviceAreas } from '@/data/service-areas';
 import { ServiceCategory, ServiceArea, SubArea, ConditionPage } from '@/types';
 
@@ -10,6 +11,7 @@ const allServicesInternal: ServiceCategory[] = [
   ...servicesExtended,
   ...servicesExtended2,
   ...servicesExtended3,
+  ...servicesOnline,
 ];
 
 export function getServiceBySlug(slug: string): ServiceCategory | undefined {

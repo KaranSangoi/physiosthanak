@@ -15,6 +15,7 @@ interface HeroSectionProps {
   showForm?: boolean;
   isHome?: boolean;
   pageName?: string;
+  bookingUrl?: string;
 }
 
 export default function HeroSection({
@@ -25,7 +26,9 @@ export default function HeroSection({
   showForm = true,
   isHome = false,
   pageName = 'Unknown Page',
+  bookingUrl: customBookingUrl,
 }: HeroSectionProps) {
+  const activeBookingUrl = customBookingUrl || BOOKING_URL;
   const [formState, setFormState] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const [formData, setFormData] = useState({ name: '', phone: '', email: '' });
 
@@ -54,7 +57,7 @@ export default function HeroSection({
       if (data.success) {
         setFormState('success');
         // Open Google Calendar booking in new tab
-        window.open(BOOKING_URL, '_blank');
+        window.open(activeBookingUrl, '_blank');
         // Reset after 5 seconds
         setTimeout(() => {
           setFormState('idle');
@@ -123,7 +126,7 @@ export default function HeroSection({
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <a
-                href={BOOKING_URL}
+                href={activeBookingUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary text-center"
@@ -173,7 +176,7 @@ export default function HeroSection({
                     Your details have been sent. Please pick a time slot in the booking page that just opened.
                   </p>
                   <a
-                    href={BOOKING_URL}
+                    href={activeBookingUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-accent-pink font-heading font-bold text-sm uppercase tracking-wide hover:underline"
