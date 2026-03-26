@@ -148,42 +148,100 @@ const IconMap = ({ icon }: { icon: string }) => {
   }
 };
 
-const organizationSchema = {
+const medicalBusinessSchema = {
   '@context': 'https://schema.org',
-  '@type': 'Organization',
+  '@type': 'MedicalBusiness',
+  '@id': 'https://physiosthanak.com/#business',
   name: 'PhysioSthanak',
+  alternateName: 'PhysioSthanak - Physiotherapy Center',
   url: 'https://physiosthanak.com',
   logo: 'https://physiosthanak.com/images/Logo.png',
-  image: 'https://physiosthanak.com/og-image.jpg',
-  description:
-    'Expert physiotherapy services in Borivali, Mumbai by Dr. Shiva Jain Sangoi. 9+ years experience, 8000+ cases treated.',
+  image: [
+    'https://physiosthanak.com/og-image.jpg',
+    'https://physiosthanak.com/images/Logo.png',
+    'https://physiosthanak.com/images/about/dr-shiva-jain.png',
+  ],
+  description: 'Expert physiotherapy clinic in Borivali West, Mumbai led by Dr. Shiva Jain Sangoi, MPTh (Ortho) with FIFA Diploma in Football Medicine. Specializing in orthopedic rehabilitation, sports injuries, neurological physiotherapy, and home visit services. 9+ years experience, 8000+ cases treated.',
+  medicalSpecialty: [
+    'Musculoskeletal',
+    'Orthopedic',
+    'Sports Medicine',
+    'Neurological',
+    'Pediatric',
+  ],
+  availableService: [
+    { '@type': 'MedicalTherapy', name: 'Physiotherapy', serviceType: 'Physical Therapy' },
+    { '@type': 'MedicalTherapy', name: 'Home Visit Physiotherapy', serviceType: 'Home Health Care' },
+    { '@type': 'MedicalTherapy', name: 'Sports Physiotherapy', serviceType: 'Sports Medicine' },
+    { '@type': 'MedicalTherapy', name: 'Post-Surgery Rehabilitation', serviceType: 'Rehabilitation' },
+    { '@type': 'MedicalTherapy', name: 'Neurological Physiotherapy', serviceType: 'Neurological Therapy' },
+    { '@type': 'MedicalTherapy', name: 'Orthopedic Physiotherapy', serviceType: 'Orthopedic Therapy' },
+    { '@type': 'MedicalTherapy', name: 'Pediatric Physiotherapy', serviceType: 'Pediatric Therapy' },
+    { '@type': 'MedicalTherapy', name: 'Women\'s Health Physiotherapy', serviceType: 'Women Health' },
+    { '@type': 'MedicalTherapy', name: 'Hand & Wrist Physiotherapy', serviceType: 'Hand Therapy' },
+    { '@type': 'MedicalTherapy', name: 'Online Physiotherapy', serviceType: 'Telehealth' },
+  ],
   founder: {
     '@type': 'Person',
     name: 'Dr. Shiva Jain Sangoi',
-    jobTitle: 'Physiotherapist',
-    description:
-      'MPTh (Ortho), BPTh, FIFA Diploma in Football Medicine. 9+ years of clinical experience.',
+    jobTitle: 'Physiotherapist & Founder',
+    description: 'MPTh (Ortho), BPTh, FIFA Diploma in Football Medicine. 9+ years of clinical experience with 8000+ cases treated.',
+    image: 'https://physiosthanak.com/images/about/dr-shiva-jain.png',
+    hasCredential: [
+      { '@type': 'EducationalOccupationalCredential', credentialCategory: 'degree', name: 'MPTh (Orthopaedics)' },
+      { '@type': 'EducationalOccupationalCredential', credentialCategory: 'degree', name: 'BPTh' },
+      { '@type': 'EducationalOccupationalCredential', credentialCategory: 'certificate', name: 'FIFA Diploma in Football Medicine' },
+    ],
   },
   address: {
     '@type': 'PostalAddress',
-    streetAddress:
-      'Shop No. 14, Ground Floor, Hari-Smruti Premises, Sardar Vallabhbhai Patel Rd, opp. HDFC Bank',
+    streetAddress: 'Shop No. 14, Ground Floor, Hari-Smruti Premises, Sardar Vallabhbhai Patel Rd, opp. HDFC Bank',
     addressLocality: 'Borivali West',
     addressRegion: 'Maharashtra',
     postalCode: '400092',
     addressCountry: 'IN',
   },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: '19.2288',
+    longitude: '72.8563',
+  },
   contactPoint: {
     '@type': 'ContactPoint',
     telephone: '+91-9324254297',
-    contactType: 'customer service',
+    contactType: 'appointments',
     availableLanguage: ['English', 'Hindi', 'Marathi'],
   },
   telephone: '+91-9324254297',
   email: 'physiosthanak@gmail.com',
+  priceRange: '₹₹',
+  currenciesAccepted: 'INR',
+  paymentAccepted: 'Cash, UPI, Debit Card, Credit Card',
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+      opens: '09:00',
+      closes: '18:00',
+    },
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: 'Sunday',
+      opens: '00:00',
+      closes: '00:00',
+      description: 'By Appointment Only',
+    },
+  ],
+  areaServed: [
+    { '@type': 'City', name: 'Borivali' },
+    { '@type': 'City', name: 'Dahisar' },
+    { '@type': 'City', name: 'Kandivali' },
+    { '@type': 'City', name: 'Malad' },
+  ],
   sameAs: [
     'https://www.instagram.com/physiosthanak',
     'http://www.linkedin.com/in/drshivajain',
+    'https://topmate.io/dr_shiva_jain_sangoi/1995923',
   ],
   aggregateRating: {
     '@type': 'AggregateRating',
@@ -193,15 +251,16 @@ const organizationSchema = {
     ratingCount: '50',
     reviewCount: '50',
   },
+  isAcceptingNewPatients: true,
 };
 
 export default function HomePage() {
   return (
     <>
-      {/* Organization + AggregateRating JSON-LD */}
+      {/* MedicalBusiness + AggregateRating JSON-LD */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(medicalBusinessSchema) }}
       />
 
       {/* Hero Section */}
