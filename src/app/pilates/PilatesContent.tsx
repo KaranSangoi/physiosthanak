@@ -43,17 +43,17 @@ const FAQS = [
   {
     question: 'Who can join these classes?',
     answer:
-      'Our Mat Pilates classes are suitable for all fitness levels — from complete beginners to experienced practitioners. Whether you are recovering from an injury, managing chronic pain, looking to improve posture, or simply want a structured fitness routine, Dr. Shiva designs exercises around your abilities. People with conditions like back pain, joint stiffness, post-surgery recovery, and even pregnancy can benefit, as every exercise is modified to suit individual needs.',
+      'Our Mat Pilates classes are suitable for all fitness levels — from complete beginners to experienced practitioners. Whether you are recovering from an injury, managing chronic pain, looking to improve posture, or simply want a structured fitness routine, Dr. Shiva and team design exercises around your abilities. People with conditions like back pain, joint stiffness, post-surgery recovery, and even pregnancy can benefit, as every exercise is modified to suit individual needs.',
   },
   {
     question: 'What happens during the free consultation?',
     answer:
-      'Before your first class, Dr. Shiva conducts a one-on-one clinical biomechanical assessment. This includes evaluating your posture, spinal alignment, joint mobility, muscle strength, flexibility, and any existing injuries or medical conditions. Based on this assessment, she creates a personalized exercise plan so that even in a group setting, the movements are tailored to your body. This is what makes our Pilates genuinely different from a generic fitness class.',
+      'Before your first class, Dr. Shiva and team conduct a one-on-one clinical biomechanical assessment. This includes evaluating your posture, spinal alignment, joint mobility, muscle strength, flexibility, and any existing injuries or medical conditions. Based on this assessment, she creates a personalized exercise plan so that even in a group setting, the movements are tailored to your body. This is what makes our Pilates genuinely different from a generic fitness class.',
   },
   {
     question: "What's the difference between online and offline batches?",
     answer:
-      'Offline batches are held at our clinic in Borivali West, Mumbai, where Dr. Shiva personally supervises your form and technique in real time. Online batches are conducted via video call, allowing you to join from anywhere in India. Both formats include the same biomechanical assessment, personalized modifications, and Dr. Shiva\'s direct guidance. The online batch is ideal if you live outside Mumbai or prefer the convenience of exercising at home.',
+      'Offline batches are held at our clinic in Borivali West, Mumbai, where Dr. Shiva and team personally supervise your form and technique in real time. Online batches are conducted via video call, allowing you to join from anywhere in India. Both formats include the same biomechanical assessment, personalized modifications, and direct guidance from the team. The online batch is ideal if you live outside Mumbai or prefer the convenience of exercising at home.',
   },
   {
     question: 'What should I wear/bring to class?',
@@ -171,12 +171,12 @@ function WhyDifferentSection() {
     {
       title: 'Free Biomechanical Assessment',
       description:
-        'Every student gets a free physiotherapy consultation before their first class. Dr. Shiva evaluates your posture, joint mobility, muscle imbalances, and injuries before designing your program. This clinical-grade assessment ensures your Pilates practice addresses the root causes of pain and dysfunction, not just surface-level movement patterns.',
+        'Every student gets a free physiotherapy consultation before their first class. Dr. Shiva and team evaluate your posture, joint mobility, muscle imbalances, and injuries before designing your program. This clinical-grade assessment ensures your Pilates practice addresses the root causes of pain and dysfunction, not just surface-level movement patterns.',
     },
     {
       title: 'Personalized Group Classes',
       description:
-        'Even in a group class, your exercises are customized to YOUR body. Injuries, limitations, and posture issues are accounted for — making it almost a 1-on-1 experience. Dr. Shiva modifies movements in real time based on your assessment, so you get the affordability of a group with the precision of a private physiotherapy session.',
+        'Even in a group class, your exercises are customized to YOUR body. Injuries, limitations, and posture issues are accounted for — making it almost a 1-on-1 experience. Dr. Shiva and team modify movements in real time based on your assessment, so you get the affordability of a group with the precision of a private physiotherapy session.',
     },
   ];
 
@@ -346,12 +346,12 @@ function AboutDrShivaSection() {
     {
       title: 'FIFA Diploma in Football Medicine',
       description:
-        'Certified by FIFA in sports rehabilitation, Dr. Shiva brings elite-level movement training principles into every Pilates session — whether you are an athlete or a desk worker.',
+        'Certified by FIFA in sports rehabilitation, Dr. Shiva and team bring elite-level movement training principles into every Pilates session — whether you are an athlete or a desk worker.',
     },
     {
       title: '9+ Years, 8000+ Cases',
       description:
-        'With nearly a decade of clinical experience treating thousands of patients, Dr. Shiva understands how different bodies move, compensate, and recover — making her Pilates instruction uniquely precise.',
+        'With nearly a decade of clinical experience treating thousands of patients, Dr. Shiva and team understand how different bodies move, compensate, and recover — making their Pilates instruction uniquely precise.',
     },
   ];
 
@@ -766,7 +766,7 @@ function CTASectionLocal() {
           Start Your Pilates Journey Today
         </h2>
         <p className="text-lg text-slate-300 max-w-2xl mx-auto mb-10">
-          Register now and get a free physiotherapy consultation with Dr. Shiva before your first
+          Register now and get a free physiotherapy consultation with Dr. Shiva and team before your first
           class. Limited spots available in each batch.
         </p>
 
