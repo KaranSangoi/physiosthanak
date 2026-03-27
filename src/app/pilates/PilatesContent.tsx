@@ -150,7 +150,7 @@ function HeroSection() {
               ))}
             </div>
             <span className="text-slate-400 text-sm font-medium">
-              8000+ Patients Treated by Dr. Shiva
+              8000+ Patients Treated by Dr. Shiva &amp; Team
             </span>
           </div>
         </div>
@@ -226,7 +226,7 @@ function HowItWorksSection() {
     {
       title: 'Free Consultation',
       description:
-        'Dr. Shiva conducts a clinical biomechanical assessment — evaluating your posture, flexibility, strength, and any existing conditions to create your personalized plan.',
+        'Dr. Shiva and team conduct a clinical biomechanical assessment — evaluating your posture, flexibility, strength, and any existing conditions to create your personalized plan.',
     },
     {
       title: 'Join Your Batch',
@@ -363,10 +363,10 @@ function AboutDrShivaSection() {
           <div>
             <span className="section-eyebrow">Your Instructor</span>
             <h2 className="text-3xl sm:text-4xl font-heading font-bold text-accent mb-4 uppercase">
-              Meet Dr. Shiva Jain Sangoi
+              Meet Dr. Shiva Jain Sangoi &amp; Team
             </h2>
             <p className="text-lg text-text-light mb-8">
-              BPTh, MPTh (Ortho), FIFA Diploma in Football Medicine
+              BPTh, MPTh (Ortho), FIFA Diploma in Football Medicine — leading a dedicated team of physiotherapy professionals
             </p>
 
             <div className="space-y-6">
