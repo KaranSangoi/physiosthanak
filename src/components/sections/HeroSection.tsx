@@ -158,7 +158,7 @@ export default function HeroSection({
           {showForm && (
             <div className="bg-white/95 backdrop-blur-sm rounded-lg shadow-2xl p-4 sm:p-6 md:p-8 border-t-4 border-t-accent-pink">
               <h3 className="text-2xl font-heading font-bold text-accent mb-2 uppercase">
-                Get Your Free Consultation
+                Book Your Slot
               </h3>
               <p className="text-text-light text-sm mb-6">
                 Fill in your details and we&apos;ll help you book a slot
@@ -223,7 +223,7 @@ export default function HeroSection({
                     disabled={formState === 'submitting'}
                     className="w-full btn-primary disabled:opacity-60 disabled:cursor-not-allowed"
                   >
-                    {formState === 'submitting' ? 'Sending...' : 'Book Free Consultation'}
+                    {formState === 'submitting' ? 'Sending...' : 'Book Your Slot'}
                   </button>
 
                   {formState === 'error' && (

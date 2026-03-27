@@ -77,6 +77,7 @@ See `ROADMAP.md` for the phased plan with all pending features.
 
 ## TODO (Next Steps)
 - [x] **Online Physiotherapy** — Added as 12th service category
+- [ ] **Mat Pilates Classes** — Landing page + registration form + admin panel + Supabase backend. See `PILATES-PLAN.md` for full spec.
 - [ ] **About page** — Dedicated page for Dr. Shiva's profile
 - [ ] **Content review by Shiva** — verify medical accuracy
 - [ ] **Cal.com migration** — For payments + 20-min slots (see memory)
