@@ -58,8 +58,8 @@ export default function TermsOfServicePage() {
                 part of these terms, please do not use our services or website.
               </p>
               <p className="text-text-light leading-relaxed">
-                PhysioSthanak is a physiotherapy clinic operated by{' '}
-                {siteConfig.doctorName}, located at {siteConfig.address}.
+                PhysioSthanak is a physiotherapy clinic founded by{' '}
+                {siteConfig.doctorName} (MPTh Ortho, BPTh, FIFA Diploma in Football Medicine), located at {siteConfig.address}.
               </p>
             </div>
 
@@ -69,8 +69,8 @@ export default function TermsOfServicePage() {
                 2. Services Provided
               </h2>
               <p className="text-text-light leading-relaxed mb-3">
-                PhysioSthanak provides professional physiotherapy and rehabilitation
-                services, including but not limited to:
+                PhysioSthanak provides professional physiotherapy, rehabilitation,
+                and Mat Pilates services, including but not limited to:
               </p>
               <ul className="list-disc list-inside text-text-light space-y-1 mb-4 ml-4">
                 <li>Orthopaedic and musculoskeletal physiotherapy</li>
@@ -80,12 +80,22 @@ export default function TermsOfServicePage() {
                 <li>Geriatric physiotherapy</li>
                 <li>Pain management (back pain, neck pain, joint pain)</li>
                 <li>Home visit physiotherapy</li>
+                <li>Online physiotherapy (tele-rehabilitation)</li>
+                <li>Mat Pilates classes (online and offline batches)</li>
                 <li>Preventive physiotherapy and ergonomic assessment</li>
               </ul>
+              <p className="text-text-light leading-relaxed mb-3">
+                {siteConfig.doctorName} is the founder and lead physiotherapist at PhysioSthanak.
+                While Dr. Shiva personally oversees all clinical programs, patient assessments,
+                and treatment protocols, services may be delivered by qualified and registered
+                physiotherapy professionals on her team under her supervision and guidance.
+              </p>
               <p className="text-text-light leading-relaxed">
-                All services are provided by qualified and registered physiotherapy
-                professionals. Treatment plans are tailored to each patient&apos;s
-                individual condition and needs.
+                By booking an appointment or registering for classes at PhysioSthanak, you
+                acknowledge that your treatment or sessions may be conducted by a team member
+                trained and supervised by {siteConfig.doctorName}. All team members are
+                qualified physiotherapy professionals. Treatment plans are tailored to each
+                patient&apos;s individual condition and needs.
               </p>
             </div>
 
