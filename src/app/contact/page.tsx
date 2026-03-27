@@ -104,7 +104,7 @@ export default function ContactPage() {
                 Address
               </h3>
               <p className="text-sm text-text-light">
-                Borivali West, Mumbai
+                <a href="https://en.wikipedia.org/wiki/Borivali" target="_blank" rel="noopener noreferrer" className="text-accent-pink hover:underline">Borivali</a> West, Mumbai
               </p>
               <p className="text-primary text-sm font-medium mt-2">
                 Get Directions →

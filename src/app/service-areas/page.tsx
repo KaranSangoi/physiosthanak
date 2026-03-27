@@ -69,7 +69,9 @@ export default function ServiceAreasPage() {
           </h1>
           <p className="text-xl text-text-light max-w-3xl">
             We provide professional physiotherapy services across Borivali and
-            surrounding areas. Choose your location to explore our services and
+            surrounding areas of{' '}
+            <a href="https://en.wikipedia.org/wiki/Mumbai" target="_blank" rel="noopener noreferrer" className="text-accent-pink hover:underline">Mumbai</a>.
+            Choose your location to explore our services and
             convenient home visit options.
           </p>
         </div>

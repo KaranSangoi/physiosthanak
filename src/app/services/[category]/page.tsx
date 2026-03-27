@@ -162,6 +162,7 @@ export default async function ServiceCategoryPage({ params }: PageProps) {
       <CTASection
         heading={`Ready for Expert ${service.name} Treatment?`}
         description="Book your consultation with Dr. Shiva Jain today and start your path to recovery."
+        externalLink={service.externalLink}
       />
     </>
   );

@@ -67,8 +67,9 @@ export default function ServicesPage() {
             Physiotherapy Services in Borivali
           </h1>
           <p className="text-xl text-text-light max-w-3xl">
-            Explore our comprehensive range of physiotherapy services designed
-            to address various conditions and patient needs. From pain management
+            Explore our comprehensive range of{' '}
+            <a href="https://en.wikipedia.org/wiki/Physical_therapy" target="_blank" rel="noopener noreferrer" className="text-accent-pink hover:underline">physical therapy</a>{' '}
+            services designed to address various conditions and patient needs. From pain management
             to sports injuries and post-operative recovery, we provide
             evidence-based treatment delivered by experienced professionals.
           </p>

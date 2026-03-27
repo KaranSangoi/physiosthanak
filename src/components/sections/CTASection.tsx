@@ -3,9 +3,10 @@ import { siteConfig } from '@/data/site-config';
 interface CTASectionProps {
   heading: string;
   description: string;
+  externalLink?: { url: string; text: string };
 }
 
-export default function CTASection({ heading, description }: CTASectionProps) {
+export default function CTASection({ heading, description, externalLink }: CTASectionProps) {
   return (
     <section className="section-padding-lg bg-[#0e1b2d] text-white relative overflow-hidden">
       {/* Subtle dot pattern */}
@@ -23,6 +24,19 @@ export default function CTASection({ heading, description }: CTASectionProps) {
         </h2>
         <p className="text-lg text-slate-300 max-w-2xl mx-auto mb-10">
           {description}
+          {externalLink && (
+            <>
+              {' '}Learn more about{' '}
+              <a
+                href={externalLink.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent-pink hover:underline"
+              >
+                {externalLink.text}
+              </a>.
+            </>
+          )}
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">

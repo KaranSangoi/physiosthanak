@@ -170,6 +170,19 @@ export default async function ConditionPage({ params }: PageProps) {
               PhysioSthanak
             </Link>
             . Book your consultation now.
+            {conditionData.externalLink && (
+              <>
+                {' '}Learn more about{' '}
+                <a
+                  href={conditionData.externalLink.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-accent-pink hover:underline"
+                >
+                  {conditionData.externalLink.text}
+                </a>.
+              </>
+            )}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

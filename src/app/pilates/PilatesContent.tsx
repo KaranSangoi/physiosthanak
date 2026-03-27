@@ -189,7 +189,9 @@ function WhyDifferentSection() {
             Pilates Led by a Physiotherapist, Not Just an Instructor
           </h2>
           <p className="text-lg text-text-light max-w-2xl mx-auto">
-            What makes PhysioSthanak Pilates genuinely clinical-grade.
+            What makes PhysioSthanak{' '}
+            <a href="https://en.wikipedia.org/wiki/Pilates" target="_blank" rel="noopener noreferrer" className="text-accent-pink hover:underline">Pilates</a>{' '}
+            genuinely clinical-grade.
           </p>
         </div>
 

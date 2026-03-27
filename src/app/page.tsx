@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import HeroSection from '@/components/sections/HeroSection';
 import BenefitsSection from '@/components/sections/BenefitsSection';
-import WhySection from '@/components/sections/WhySection';
 import FAQSection from '@/components/sections/FAQSection';
 import CTASection from '@/components/sections/CTASection';
 import MapSection from '@/components/sections/MapSection';
@@ -324,14 +324,64 @@ export default function HomePage() {
       </section>
 
       {/* About Dr. Shiva */}
-      <WhySection
-        eyebrow="About the Expert"
-        heading="About Dr. Shiva Jain Sangoi"
-        subheading="Expert physiotherapist with proven results and patient trust"
-        whyPoints={aboutPoints}
-        image="/images/about/dr-shiva-jain.png"
-        imageAlt="Dr. Shiva Jain Sangoi - MPTh Ortho, FIFA Diploma - Best Physiotherapist in Borivali"
-      />
+      <section className="section-padding bg-bg-light">
+        <div className="container-max">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+            <div>
+              <span className="section-eyebrow">About the Expert</span>
+              <h2 className="text-3xl sm:text-4xl font-heading font-bold text-accent mb-4 uppercase">
+                About Dr. Shiva Jain Sangoi
+              </h2>
+              <p className="text-lg text-text-light mb-8">
+                Expert physiotherapist with proven results and patient trust
+              </p>
+
+              <div className="space-y-6">
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-heading font-bold text-sm">
+                    1
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-heading font-bold text-accent mb-2 uppercase">
+                      {aboutPoints[0].title}
+                    </h3>
+                    <p className="text-text-light leading-relaxed text-sm">
+                      MPTh (Ortho), BPTh with FIFA Diploma in Football Medicine. 9+ years of clinical experience in comprehensive{' '}
+                      <a href="https://en.wikipedia.org/wiki/Physiotherapy" target="_blank" rel="noopener noreferrer" className="text-accent-pink hover:underline">physiotherapy</a>{' '}
+                      and rehabilitation services.
+                    </p>
+                  </div>
+                </div>
+                {aboutPoints.slice(1).map((point, index) => (
+                  <div key={index} className="flex gap-4">
+                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-heading font-bold text-sm">
+                      {index + 2}
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-heading font-bold text-accent mb-2 uppercase">
+                        {point.title}
+                      </h3>
+                      <p className="text-text-light leading-relaxed text-sm">
+                        {point.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="relative h-[250px] sm:h-[350px] md:h-[450px] rounded-lg overflow-hidden shadow-xl bg-bg-lighter">
+              <Image
+                src="/images/about/dr-shiva-jain.png"
+                alt="Dr. Shiva Jain Sangoi - MPTh Ortho, FIFA Diploma - Best Physiotherapist in Borivali"
+                fill
+                className="object-contain object-top"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Why Choose Section */}
       <BenefitsSection

@@ -41,6 +41,7 @@ export interface Service {
   whyPoints: WhyPoint[];
   faqs: FAQ[];
   image: string;
+  externalLink?: { url: string; text: string };
 }
 
 export interface ConditionPage {
@@ -55,6 +56,7 @@ export interface ConditionPage {
   benefits: Benefit[];
   whyPoints: WhyPoint[];
   faqs: FAQ[];
+  externalLink?: { url: string; text: string };
 }
 
 export interface ServiceCategory extends Service {
