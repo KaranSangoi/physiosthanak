@@ -310,7 +310,7 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {allServices.slice(0, 11).map((service) => (
+            {allServices.map((service) => (
               <ServiceCard
                 key={service.slug}
                 name={service.name}
