@@ -17,12 +17,17 @@ export const metadata: Metadata = {
     'Expert physiotherapy services in Borivali by Dr. Shiva Jain. 9+ years experience, 8000+ cases treated. Book your consultation today.',
   keywords: [
     'physiotherapy Borivali',
+    'physiotherapist Borivali',
     'best physiotherapist Borivali',
-    'physical therapy',
+    'best physiotherapy clinic Borivali',
+    'physiotherapist near me',
+    'physiotherapy near me',
+    'physical therapy Mumbai',
     'pain management',
     'sports injuries',
     'rehabilitation',
-    'home physiotherapy',
+    'home physiotherapy Borivali',
+    'physiotherapist in Borivali West',
   ],
   openGraph: {
     title: 'Best Physiotherapist in Borivali | PhysioSthanak',
@@ -261,6 +266,23 @@ export default function HomePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(medicalBusinessSchema) }}
+      />
+
+      {/* Speakable schema for voice search (Google Assistant, Alexa) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            name: 'Best Physiotherapist in Borivali | PhysioSthanak',
+            speakable: {
+              '@type': 'SpeakableSpecification',
+              cssSelector: ['h1', '.section-eyebrow', '[data-speakable]'],
+            },
+            url: 'https://physiosthanak.com',
+          }),
+        }}
       />
 
       {/* Hero Section */}

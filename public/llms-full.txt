@@ -1,0 +1,124 @@
+# PhysioSthanak — Full Site Information for LLMs
+
+> Expert physiotherapy clinic in Borivali West, Mumbai, India. Founded by Dr. Shiva Jain Sangoi (MPTh Ortho, BPTh, FIFA Diploma in Football Medicine). 9+ years experience, 8000+ cases treated. Clinic, home visit, and online physiotherapy services.
+
+## Business Details
+
+- Name: PhysioSthanak
+- Type: Physiotherapy Clinic (MedicalBusiness)
+- Founded by: Dr. Shiva Jain Sangoi
+- Tagline: Move . Heal . Improve
+- Phone: +91 9324254297
+- Email: physiosthanak@gmail.com
+- Website: https://physiosthanak.com
+- Booking: https://topmate.io/dr_shiva_jain_sangoi/1995923
+- Address: Shop No. 14, Ground Floor, Hari-Smruti Premises, Sardar Vallabhbhai Patel Rd, opp. HDFC Bank, Borivali West, Mumbai, Maharashtra 400092, India
+- Hours: Mon-Sat 9:00 AM - 6:00 PM, Sunday by appointment
+- Rating: 5.0/5 stars
+- Payment: Cash, UPI, Debit Card, Credit Card
+- Instagram: https://www.instagram.com/physiosthanak
+- LinkedIn: https://www.linkedin.com/in/drshivajain
+
+## Doctor Profile
+
+Dr. Shiva Jain Sangoi is the founder and lead physiotherapist at PhysioSthanak. She holds a Master of Physiotherapy in Orthopaedics (MPTh Ortho) and a Bachelor of Physiotherapy (BPTh). She also holds a FIFA Diploma in Football Medicine, making her one of the few physiotherapists in Mumbai with international sports medicine certification. With over 9 years of clinical experience and 8000+ successfully treated cases, Dr. Shiva specializes in orthopedic rehabilitation, sports injury treatment, neurological physiotherapy, and home visit physiotherapy services. She also leads Physiotherapist-Led Mat Pilates classes at PhysioSthanak.
+
+## 12 Service Categories
+
+### 1. Physiotherapy (General)
+URL: /services/physiotherapy
+Comprehensive physiotherapy services for pain relief, mobility improvement, and recovery from injuries and conditions. Evidence-based treatment protocols tailored to individual patient needs.
+
+### 2. Home Visit Physiotherapy
+URL: /services/home-visit-physiotherapy
+Professional physiotherapy delivered at the patient's home. Ideal for elderly patients, post-surgery cases, and those with mobility limitations. Covers Borivali, Dahisar, Kandivali, and Malad.
+Conditions: Post-Surgery Home Rehab, Elderly Home Physiotherapy, Bedridden Patient Physiotherapy
+
+### 3. Sports Physiotherapy
+URL: /services/sports-physiotherapy
+Sports injury treatment and athletic rehabilitation by a FIFA-certified physiotherapist. Covers ACL injuries, muscle tears, ligament sprains, and overuse injuries.
+Conditions: ACL Injury Treatment, Muscle Strain Recovery, Ligament Sprain Treatment, Tennis Elbow Treatment, Runner's Knee Treatment
+
+### 4. Back Pain & Spine
+URL: /services/back-pain-physiotherapy
+Expert treatment for all types of back pain including disc problems, sciatica, spondylosis, and postural issues. Non-surgical approaches to spinal conditions.
+Conditions: Disc Bulge Treatment, Sciatica Treatment, Spondylosis Treatment, Postural Back Pain
+
+### 5. Neck Pain & Cervical
+URL: /services/neck-pain-physiotherapy
+Treatment for cervical pain, spondylosis, whiplash, and neck stiffness. Includes ergonomic assessment and postural correction.
+Conditions: Cervical Spondylosis Treatment, Whiplash Injury Treatment, Neck Stiffness Treatment, Tech Neck Treatment
+
+### 6. Post-Surgery Rehabilitation
+URL: /services/post-surgery-rehabilitation
+Comprehensive rehabilitation after orthopedic and neurological surgeries. Structured recovery protocols for knee replacement, hip replacement, spine surgery, and more.
+Conditions: Knee Replacement Rehab, Hip Replacement Rehab, Spine Surgery Rehab, Shoulder Surgery Rehab, ACL Surgery Rehab, Brachial Plexus Post-Surgery Rehab
+
+### 7. Neurological Physiotherapy
+URL: /services/neurological-physiotherapy
+Specialized rehabilitation for stroke, Parkinson's disease, multiple sclerosis, spinal cord injuries, and peripheral nerve injuries.
+Conditions: Stroke Rehabilitation, Parkinson's Disease Physiotherapy, Bell's Palsy Treatment, Peripheral Neuropathy Treatment, Brachial Plexus Injury Treatment, Guillain-Barre Syndrome Rehab
+
+### 8. Orthopedic Physiotherapy
+URL: /services/orthopedic-physiotherapy
+Treatment for joint conditions, fractures, arthritis, and musculoskeletal disorders. Includes pre and post-operative rehabilitation.
+Conditions: Frozen Shoulder Treatment, Arthritis Management, Fracture Rehabilitation, Joint Pain Treatment
+
+### 9. Pediatric Physiotherapy
+URL: /services/pediatric-physiotherapy
+Specialized physiotherapy for children including developmental delay intervention, cerebral palsy treatment, and sports injuries in young athletes.
+Conditions: Developmental Delay Intervention, Cerebral Palsy Physiotherapy, Torticollis Treatment, Pediatric Sports Injury Treatment
+
+### 10. Women's Health Physiotherapy
+URL: /services/womens-health-physiotherapy
+Prenatal exercise guidance, postnatal recovery, pelvic floor rehabilitation, and treatment for conditions specific to women's musculoskeletal health.
+Conditions: Prenatal Physiotherapy, Postnatal Recovery, Pelvic Floor Rehabilitation, Diastasis Recti Treatment, PCOD/PCOS Exercise Management
+
+### 11. Hand & Wrist Physiotherapy
+URL: /services/hand-physiotherapy
+Specialized treatment for hand, wrist, and finger injuries and conditions including carpal tunnel syndrome, tendon injuries, and post-surgical rehabilitation.
+Conditions: Carpal Tunnel Treatment, De Quervain's Tenosynovitis, Trigger Finger Treatment
+
+### 12. Online Physiotherapy
+URL: /services/online-physiotherapy
+Virtual consultations and tele-rehabilitation via Google Meet. Accessible from anywhere. Introductory offer at ₹99 for 20 minutes.
+Conditions: Virtual Consultation, Tele-Rehabilitation, Remote Exercise Guidance, Online Ergonomic Assessment, Post-Discharge Follow-up
+Booking: https://topmate.io/dr_shiva_jain_sangoi/1995923
+
+## Mat Pilates Classes
+URL: /pilates
+Physiotherapist-Led Mat Pilates classes (online and offline batches). Every student receives a free physiotherapy consultation and biomechanical assessment before starting. Classes are customized to each student's body based on clinical evaluation. Led by Dr. Shiva Jain Sangoi and team.
+
+## Service Areas (4 main areas, 64+ sub-areas)
+
+### Borivali (22 sub-areas)
+Borivali West, Borivali East, IC Colony, Yogi Nagar, Vazira Naka, Gorai, Eksar, MHB Colony, Ashok Nagar, Chikoowadi, Maharashtra Nagar, Daulat Nagar, Saibaba Nagar, Shimpoli, Rajendra Nagar, Kastur Park, LIC Colony, Mandapeshwar, Kajupada, Magathane, Asha Nagar, Dattapada
+
+### Dahisar (15 sub-areas)
+Dahisar West, Dahisar East, Kandarpada, Mhatre Wadi, Parbat Nagar, Ashok Van, Ekta Nagar, Shanti Nagar, Anand Nagar, Maratha Colony, Rawalpada, Gokul Nagar, Shailendra Nagar, Ketkipada, Ovaripada
+
+### Kandivali (16 sub-areas)
+Kandivali West, Kandivali East, Mahavir Nagar, Dahanukar Wadi, Charkop, Parekh Nagar, Gandhi Nagar, Kamla Nagar, Mathuradas Road, Thakur Village, Lokhandwala Township, Poisar, Hanuman Nagar, Samata Nagar, Damu Nagar, Akurli
+
+### Malad (11 sub-areas)
+Malad West, Malad East, Evershine Nagar, Orlem, Chincholi Bunder, Link Road, Marve Road, Kurar Village, Dindoshi, Gokuldham, Nivara Nagari
+
+## Frequently Asked Questions
+
+Q: What conditions can physiotherapy treat?
+A: Physiotherapy treats back pain, neck pain, sports injuries, post-surgery recovery, neurological conditions, arthritis, mobility issues, and more. PhysioSthanak offers 12 specialized service categories.
+
+Q: Does PhysioSthanak offer home visit physiotherapy?
+A: Yes, home visit physiotherapy is available across Borivali, Dahisar, Kandivali, and Malad for elderly patients, post-surgery cases, and those with mobility limitations.
+
+Q: Does PhysioSthanak offer online physiotherapy?
+A: Yes, online physiotherapy consultations are available via Google Meet. Introductory sessions start at ₹99 for 20 minutes. Book at topmate.io/dr_shiva_jain_sangoi/1995923.
+
+Q: What are PhysioSthanak's working hours?
+A: Monday to Saturday, 9:00 AM to 6:00 PM. Sunday by appointment only.
+
+Q: Where is PhysioSthanak located?
+A: Shop No. 14, Ground Floor, Hari-Smruti Premises, Sardar Vallabhbhai Patel Rd, opposite HDFC Bank, Borivali West, Mumbai 400092.
+
+Q: What is PhysioSthanak Mat Pilates?
+A: Physiotherapist-Led Mat Pilates classes with a free biomechanical assessment before starting. Classes are customized to each student's body. Available in online and offline batches.

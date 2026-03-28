@@ -1,0 +1,58 @@
+# PhysioSthanak
+
+> Expert physiotherapy clinic in Borivali West, Mumbai, led by Dr. Shiva Jain Sangoi (MPTh Ortho, BPTh, FIFA Diploma in Football Medicine). 9+ years experience, 8000+ cases treated.
+
+## About
+
+PhysioSthanak is a physiotherapy clinic founded by Dr. Shiva Jain Sangoi, offering 12 specialized physiotherapy services across Borivali, Dahisar, Kandivali, and Malad in Mumbai's western suburbs. The clinic provides both in-clinic treatment and home visit physiotherapy services, as well as online physiotherapy consultations via Google Meet. PhysioSthanak also offers Physiotherapist-Led Mat Pilates classes (online and offline batches).
+
+## Services
+
+- [Physiotherapy](/services/physiotherapy): Comprehensive physiotherapy for pain relief, mobility improvement, and recovery
+- [Home Visit Physiotherapy](/services/home-visit-physiotherapy): Professional physiotherapy delivered at your home
+- [Sports Physiotherapy](/services/sports-physiotherapy): Sports injury treatment and athletic rehabilitation
+- [Back Pain & Spine](/services/back-pain-physiotherapy): Treatment for back pain, disc problems, sciatica
+- [Neck Pain & Cervical](/services/neck-pain-physiotherapy): Cervical pain, spondylosis, and neck injury treatment
+- [Post-Surgery Rehabilitation](/services/post-surgery-rehabilitation): Recovery after orthopedic and neurological surgeries
+- [Neurological Physiotherapy](/services/neurological-physiotherapy): Stroke rehabilitation, Parkinson's, nerve injuries
+- [Orthopedic Physiotherapy](/services/orthopedic-physiotherapy): Joint replacements, fractures, arthritis management
+- [Pediatric Physiotherapy](/services/pediatric-physiotherapy): Developmental delays, cerebral palsy, sports injuries in children
+- [Women's Health Physiotherapy](/services/womens-health-physiotherapy): Prenatal, postnatal, pelvic floor rehabilitation
+- [Hand & Wrist Physiotherapy](/services/hand-physiotherapy): Carpal tunnel, tendon injuries, post-surgical hand rehab
+- [Online Physiotherapy](/services/online-physiotherapy): Virtual consultations and tele-rehabilitation via Google Meet
+- [Mat Pilates Classes](/pilates): Physiotherapist-led Mat Pilates with free biomechanical assessment
+
+## Service Areas
+
+- [Borivali](/service-areas/borivali): Including Borivali West, Borivali East, IC Colony, Yogi Nagar, and 18 more sub-areas
+- [Dahisar](/service-areas/dahisar): Including Dahisar West, Dahisar East, Kandarpada, and 12 more sub-areas
+- [Kandivali](/service-areas/kandivali): Including Kandivali West, Kandivali East, Charkop, Thakur Village, and 12 more sub-areas
+- [Malad](/service-areas/malad): Including Malad West, Malad East, Evershine Nagar, Dindoshi, and 7 more sub-areas
+
+## Doctor
+
+Dr. Shiva Jain Sangoi
+- Qualifications: MPTh (Orthopaedics), BPTh, FIFA Diploma in Football Medicine
+- Experience: 9+ years clinical experience
+- Cases Treated: 8000+
+- Specializations: Orthopedic rehabilitation, sports injuries, neurological physiotherapy
+- [LinkedIn](https://www.linkedin.com/in/drshivajain)
+
+## Contact
+
+- Phone: +91 9324254297
+- Email: physiosthanak@gmail.com
+- Address: Shop No. 14, Ground Floor, Hari-Smruti Premises, Sardar Vallabhbhai Patel Rd, opp. HDFC Bank, Borivali West, Mumbai, Maharashtra 400092
+- Website: https://physiosthanak.com
+- Instagram: https://www.instagram.com/physiosthanak
+- Booking: https://topmate.io/dr_shiva_jain_sangoi/1995923
+
+## Key Pages
+
+- [Home](/)
+- [All Services](/services)
+- [Service Areas](/service-areas)
+- [Contact](/contact)
+- [Mat Pilates](/pilates)
+- [Privacy Policy](/privacy)
+- [Terms of Service](/terms)

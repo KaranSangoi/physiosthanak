@@ -84,6 +84,38 @@ export default function PilatesContent() {
         }}
       />
 
+      {/* HowTo Schema for AEO — "How to start Pilates" featured snippets */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'HowTo',
+            name: 'How to Start Physiotherapist-Led Mat Pilates at PhysioSthanak',
+            description: 'Join Mat Pilates classes led by a qualified physiotherapist in Borivali, Mumbai. Every student gets a free biomechanical assessment before starting.',
+            totalTime: 'P7D',
+            step: [
+              {
+                '@type': 'HowToStep',
+                name: 'Register Online',
+                text: 'Fill out the registration form on our website with your name, phone, email, age, and preferred batch (online or offline). Choose a schedule that fits your routine.',
+                url: 'https://physiosthanak.com/pilates#register',
+              },
+              {
+                '@type': 'HowToStep',
+                name: 'Free Physiotherapy Consultation',
+                text: 'Dr. Shiva Jain Sangoi and team conduct a clinical biomechanical assessment evaluating your posture, joint mobility, muscle imbalances, flexibility, and any existing injuries or medical conditions.',
+              },
+              {
+                '@type': 'HowToStep',
+                name: 'Join Your Customized Batch',
+                text: 'Start your Mat Pilates journey with exercises tailored to your body based on the clinical assessment. Every session is customized even in a group setting, progressively improving your strength, flexibility, and posture.',
+              },
+            ],
+          }),
+        }}
+      />
+
       <HeroSection />
       <WhyDifferentSection />
       <HowItWorksSection />
