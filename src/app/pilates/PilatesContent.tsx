@@ -103,17 +103,17 @@ const FAQS = [
   {
     question: 'Who can join these classes?',
     answer:
-      'Our Mat Pilates classes are suitable for all fitness levels — from complete beginners to experienced practitioners. Whether you are recovering from an injury, managing chronic pain, looking to improve posture, or simply want a structured fitness routine, Dr. Shiva and team design exercises around your abilities. People with conditions like back pain, joint stiffness, post-surgery recovery, and even pregnancy can benefit, as every exercise is modified to suit individual needs.',
+      'Our Mat Pilates classes are suitable for all fitness levels — from complete beginners to experienced practitioners. Whether you are recovering from an injury, managing chronic pain, looking to improve posture, or simply want a structured fitness routine, our physiotherapist-instructors design exercises around your abilities. People with conditions like back pain, joint stiffness, post-surgery recovery, and even pregnancy can benefit, as every exercise is modified to suit individual needs.',
   },
   {
     question: 'What happens during the free consultation?',
     answer:
-      'Before your first class, Dr. Shiva and team conduct a one-on-one clinical biomechanical assessment. This includes evaluating your posture, spinal alignment, joint mobility, muscle strength, flexibility, and any existing injuries or medical conditions. Based on this assessment, she creates a personalized exercise plan so that even in a group setting, the movements are tailored to your body. This is what makes our Pilates genuinely different from a generic fitness class.',
+      'Before your first class, Dr. Shiva personally conducts a one-on-one clinical biomechanical assessment. This includes evaluating your posture, spinal alignment, joint mobility, muscle strength, flexibility, and any existing injuries or medical conditions. Based on this assessment, she creates a personalized exercise plan that your physiotherapist-instructors follow — so even in a group setting, the movements are tailored to your body. This is what makes our Pilates genuinely different from a generic fitness class.',
   },
   {
     question: "What's the difference between online and offline batches?",
     answer:
-      'Offline batches are held at our clinic in Borivali West, Mumbai, where Dr. Shiva and team personally supervise your form and technique in real time. Online batches are conducted via video call, allowing you to join from anywhere in India. Both formats include the same biomechanical assessment, personalized modifications, and direct guidance from the team. The online batch is ideal if you live outside Mumbai or prefer the convenience of exercising at home.',
+      'Offline batches are held at our clinic in Borivali West, Mumbai, where our physiotherapist-instructors personally supervise your form and technique in real time. Online batches are conducted via video call, allowing you to join from anywhere in India. Both formats include the same biomechanical assessment by Dr. Shiva, personalized modifications, and direct guidance from qualified instructors. The online batch is ideal if you live outside Mumbai or prefer the convenience of exercising at home.',
   },
   {
     question: 'What should I wear/bring to class?',
@@ -164,12 +164,12 @@ export default function PilatesContent() {
               {
                 '@type': 'HowToStep',
                 name: 'Free Physiotherapy Consultation',
-                text: 'Dr. Shiva Jain Sangoi and team conduct a clinical biomechanical assessment evaluating your posture, joint mobility, muscle imbalances, flexibility, and any existing injuries or medical conditions.',
+                text: 'Dr. Shiva Jain Sangoi personally conducts a clinical biomechanical assessment evaluating your posture, joint mobility, muscle imbalances, flexibility, and any existing injuries or medical conditions. She creates your personalized plan.',
               },
               {
                 '@type': 'HowToStep',
                 name: 'Join Your Customized Batch',
-                text: 'Start your Mat Pilates journey with exercises tailored to your body based on the clinical assessment. Every session is customized even in a group setting, progressively improving your strength, flexibility, and posture.',
+                text: 'Start your Mat Pilates journey led by qualified physiotherapist-instructors who follow Dr. Shiva\u2019s personalized plan for your body. Every session is customized even in a group setting, progressively improving your strength, flexibility, and posture.',
               },
             ],
           }),
@@ -220,7 +220,7 @@ function HeroSection() {
           </h1>
 
           <p className="text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl mx-auto">
-            Free consultation. Biomechanical assessment. Classes customized to your body.
+            Free consultation by Dr. Shiva. Classes by qualified physiotherapist-instructors. Customized to your body.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
@@ -256,19 +256,19 @@ function HeroSection() {
 function WhyDifferentSection() {
   const usps = [
     {
-      title: 'Clinical Expertise',
+      title: 'Every Instructor Is a Physiotherapist',
       description:
-        'Most Pilates instructors have a fitness certification. Your instructor has a Master\u2019s in Physiotherapy (MPTh Ortho) and 9+ years treating 8000+ patients. Dr. Shiva understands anatomy, biomechanics, and rehabilitation at a level that no standard Pilates certification covers — meaning every exercise is grounded in clinical science, not just fitness trends.',
+        'Unlike most studios where instructors hold a fitness certification, every PhysioSthanak Pilates instructor is a qualified physiotherapist (BPTh). They understand anatomy, biomechanics, and rehabilitation at a clinical level — meaning every exercise is grounded in medical science, not just fitness trends. The entire program is designed and supervised by Dr. Shiva Jain Sangoi, MPTh (Ortho).',
     },
     {
-      title: 'Free Biomechanical Assessment',
+      title: 'Free Biomechanical Assessment by Dr. Shiva',
       description:
-        'Every student gets a free physiotherapy consultation before their first class. Dr. Shiva and team evaluate your posture, joint mobility, muscle imbalances, and injuries before designing your program. This clinical-grade assessment ensures your Pilates practice addresses the root causes of pain and dysfunction, not just surface-level movement patterns.',
+        'Every student gets a free one-on-one physiotherapy consultation with Dr. Shiva before their first class. She personally evaluates your posture, joint mobility, muscle imbalances, and injuries. Based on this clinical-grade assessment, your Pilates program is customized — so your instructors know exactly how to modify exercises for your body.',
     },
     {
       title: 'Personalized Group Classes',
       description:
-        'Even in a group class, your exercises are customized to YOUR body. Injuries, limitations, and posture issues are accounted for — making it almost a 1-on-1 experience. Dr. Shiva and team modify movements in real time based on your assessment, so you get the affordability of a group with the precision of a private physiotherapy session.',
+        'Even in a group class, your exercises are customized to YOUR body. Your physiotherapist-instructor knows your assessment results, injuries, and limitations — making it almost a 1-on-1 experience. They modify movements in real time based on Dr. Shiva\u2019s assessment plan, so you get the affordability of a group with the precision of a private physiotherapy session.',
     },
   ];
 
@@ -318,14 +318,14 @@ function HowItWorksSection() {
         'Fill out the registration form below with your details and preferred batch — choose between online or offline classes based on your schedule and location.',
     },
     {
-      title: 'Free Consultation',
+      title: 'Free Consultation with Dr. Shiva',
       description:
-        'Dr. Shiva and team conduct a clinical biomechanical assessment — evaluating your posture, flexibility, strength, and any existing conditions to create your personalized plan.',
+        'Dr. Shiva personally conducts a clinical biomechanical assessment — evaluating your posture, flexibility, strength, and any existing conditions. She creates your personalized plan that your instructors follow.',
     },
     {
       title: 'Join Your Batch',
       description:
-        'Start your customized Mat Pilates journey with exercises tailored to your body\u2019s specific needs and goals. Every session builds on the last, progressively improving your strength and mobility.',
+        'Start your customized Mat Pilates journey led by qualified physiotherapist-instructors. Your exercises are tailored to your body based on Dr. Shiva\u2019s assessment. Every session builds on the last, progressively improving your strength and mobility.',
     },
   ];
 
@@ -433,19 +433,19 @@ function BatchesSection() {
 function AboutDrShivaSection() {
   const points = [
     {
-      title: 'Master of Physiotherapy (Ortho)',
+      title: 'Program Designed by Dr. Shiva (MPTh Ortho)',
       description:
-        'Dr. Shiva holds an MPTh in Orthopedics, giving her deep expertise in musculoskeletal conditions, posture correction, and movement science — the foundation of effective Pilates instruction.',
+        'Dr. Shiva Jain Sangoi personally designs every student\u2019s Pilates program based on her clinical biomechanical assessment. With an MPTh in Orthopedics, she brings deep expertise in musculoskeletal conditions, posture correction, and movement science to the program design.',
     },
     {
-      title: 'FIFA Diploma in Football Medicine',
+      title: 'Classes Led by Physiotherapist-Instructors',
       description:
-        'Certified by FIFA in sports rehabilitation, Dr. Shiva and team bring elite-level movement training principles into every Pilates session — whether you are an athlete or a desk worker.',
+        'Your daily classes are conducted by qualified physiotherapists (BPTh) who are also certified Pilates instructors. They follow Dr. Shiva\u2019s personalized plan for each student, modifying exercises in real time based on your clinical assessment results.',
     },
     {
-      title: '9+ Years, 8000+ Cases',
+      title: 'A Team That Understands Your Body Clinically',
       description:
-        'With nearly a decade of clinical experience treating thousands of patients, Dr. Shiva and team understand how different bodies move, compensate, and recover — making their Pilates instruction uniquely precise.',
+        'With 9+ years of clinical experience and 8000+ cases across the team, every instructor understands how different bodies move, compensate, and recover. This clinical depth makes PhysioSthanak Pilates genuinely different from fitness-only studios.',
     },
   ];
 
@@ -455,12 +455,12 @@ function AboutDrShivaSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Content */}
           <div>
-            <span className="section-eyebrow">Your Instructor</span>
+            <span className="section-eyebrow">Your Team</span>
             <h2 className="text-3xl sm:text-4xl font-heading font-bold text-accent mb-4 uppercase">
-              Meet Dr. Shiva Jain Sangoi &amp; Team
+              Designed by Dr. Shiva, Delivered by Expert Physiotherapist-Instructors
             </h2>
             <p className="text-lg text-text-light mb-8">
-              BPTh, MPTh (Ortho), FIFA Diploma in Football Medicine — leading a dedicated team of physiotherapy professionals
+              Every instructor at PhysioSthanak is a qualified physiotherapist (BPTh) and certified Pilates instructor, trained and supervised by Dr. Shiva Jain Sangoi (MPTh Ortho, FIFA Diploma)
             </p>
 
             <div className="space-y-6">
