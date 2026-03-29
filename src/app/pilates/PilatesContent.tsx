@@ -720,28 +720,53 @@ function RegistrationFormSection() {
                 </div>
               </div>
 
-              {/* Batch dropdown (filtered by preference) */}
+              {/* Batch selection — grouped time slot cards */}
               <div>
-                <label
-                  htmlFor="pilates-batch"
-                  className="block text-sm font-heading font-bold text-accent mb-1.5 uppercase tracking-wide"
-                >
-                  Preferred Batch <span className="text-accent-pink">*</span>
+                <label className="block text-sm font-heading font-bold text-accent mb-3 uppercase tracking-wide">
+                  Select Your Batch <span className="text-accent-pink">*</span>
                 </label>
-                <select
-                  id="pilates-batch"
+
+                {/* Group batches by days */}
+                {['Mon & Thu', 'Tue & Fri'].map((dayGroup) => {
+                  const dayBatches = filteredBatches.filter((b) => b.days === dayGroup);
+                  if (dayBatches.length === 0) return null;
+
+                  return (
+                    <div key={dayGroup} className="mb-4">
+                      <p className="text-xs font-heading font-bold text-text-light uppercase tracking-widest mb-2">
+                        {dayGroup}
+                      </p>
+                      <div className="flex flex-wrap gap-2">
+                        {dayBatches.map((batch) => (
+                          <button
+                            key={batch.id}
+                            type="button"
+                            onClick={() => setFormData({ ...formData, batch: batch.id })}
+                            className={`px-4 py-2.5 rounded-md border-2 text-sm font-heading font-bold transition-all ${
+                              formData.batch === batch.id
+                                ? 'border-accent-pink bg-accent-pink/10 text-accent-pink shadow-sm'
+                                : 'border-primary/15 text-text-light hover:border-primary/30 hover:bg-primary/5'
+                            }`}
+                          >
+                            <Clock className="w-3.5 h-3.5 inline mr-1.5 -mt-0.5" />
+                            {batch.time}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })}
+
+                {/* Hidden required input for form validation */}
+                <input
+                  type="text"
                   value={formData.batch}
-                  onChange={(e) => setFormData({ ...formData, batch: e.target.value })}
-                  className={inputClass}
                   required
-                >
-                  <option value="">Select a batch</option>
-                  {filteredBatches.map((batch) => (
-                    <option key={batch.id} value={batch.id}>
-                      {batch.name} — {batch.days}, {batch.time}
-                    </option>
-                  ))}
-                </select>
+                  className="sr-only"
+                  tabIndex={-1}
+                  onChange={() => {}}
+                  aria-hidden="true"
+                />
               </div>
 
               {/* Medical History */}
