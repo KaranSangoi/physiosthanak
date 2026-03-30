@@ -84,6 +84,12 @@ See `ROADMAP.md` for the phased plan with all pending features.
 - [ ] **Blog section** — For content marketing
 - [ ] **MedicalBusiness schema** — Enhanced schema markup
 
+## Indexing & SEO Automation
+- **IndexNow**: Key file at `public/68176f477911441489c5b483050d6cf7.txt`. Submit script: `npx tsx scripts/submit-indexnow.ts`. Covers Bing, Yandex, Seznam, Naver. Run after every deploy.
+- **Google Indexing API**: Script at `scripts/submit-google-indexing.ts`. Requires one-time setup: GCP service account + "Web Search Indexing API" enabled. See script comments for step-by-step. 200 URLs/day free.
+- **GSC**: Property is under physiosthanak@gmail.com. karansangoi89@gmail.com needs Owner-level access to use URL Inspection.
+- **Sitemap**: Auto-generated at `/sitemap.xml` via `src/app/sitemap.ts` (142 URLs). Submitted to GSC on March 26, 2026.
+
 ## Deployment
 - Vercel account: karansangoi (scope: karansangois-projects)
 - Deploy command: `npx vercel --prod --scope karansangois-projects`

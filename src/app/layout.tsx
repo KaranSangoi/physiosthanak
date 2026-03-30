@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Poppins, Inter } from 'next/font/google';
+import Script from 'next/script';
 import './globals.css';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
@@ -7,14 +8,14 @@ import { siteConfig } from '@/data/site-config';
 
 const poppins = Poppins({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800'],
+  weight: ['400', '500', '600', '700'],
   variable: '--font-heading',
   display: 'swap',
 });
 
 const inter = Inter({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
+  weight: ['400', '500', '600', '700'],
   variable: '--font-body',
   display: 'swap',
 });
@@ -99,15 +100,6 @@ export default function RootLayout({
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="theme-color" content="#14507c" />
-        {/* Google Analytics (GA4) */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-5M0KHWWZ42" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5M0KHWWZ42');`,
-          }}
-        />
-        {/* Featurable Google Reviews Widget */}
-        <script src="https://featurable.com/assets/bundle.js" defer charSet="UTF-8" />
       </head>
       <body className={`${poppins.variable} ${inter.variable} font-sans antialiased`}>
         <Header />
@@ -115,6 +107,15 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+
+        {/* Google Analytics (GA4) — loaded after page is interactive, not render-blocking */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-5M0KHWWZ42"
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5M0KHWWZ42');`}
+        </Script>
       </body>
     </html>
   );

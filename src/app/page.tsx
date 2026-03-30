@@ -1,15 +1,19 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
+import Script from 'next/script';
 import HeroSection from '@/components/sections/HeroSection';
-import BenefitsSection from '@/components/sections/BenefitsSection';
-import FAQSection from '@/components/sections/FAQSection';
-import CTASection from '@/components/sections/CTASection';
-import MapSection from '@/components/sections/MapSection';
 import ServiceCard from '@/components/sections/ServiceCard';
-import AreaCard from '@/components/sections/AreaCard';
 import { siteConfig, allServices, serviceAreas } from '@/data';
 import { Benefit, WhyPoint } from '@/types';
 import { Clock, Users, Home } from 'lucide-react';
+
+// Lazy load below-fold components to reduce initial JS bundle
+const BenefitsSection = dynamic(() => import('@/components/sections/BenefitsSection'));
+const FAQSection = dynamic(() => import('@/components/sections/FAQSection'));
+const CTASection = dynamic(() => import('@/components/sections/CTASection'));
+const MapSection = dynamic(() => import('@/components/sections/MapSection'));
+const AreaCard = dynamic(() => import('@/components/sections/AreaCard'));
 
 export const metadata: Metadata = {
   title: 'Best Physiotherapist in Borivali | PhysioSthanak',
@@ -437,6 +441,11 @@ export default function HomePage() {
           <div
             id="featurable-8f844505-6165-4a48-bebf-6a5e4aceaa54"
             data-featurable-async
+          />
+          {/* Featurable Reviews Widget — lazy loaded, only on homepage */}
+          <Script
+            src="https://featurable.com/assets/bundle.js"
+            strategy="lazyOnload"
           />
         </div>
       </section>
