@@ -43,12 +43,14 @@ export default function HeroSection({
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           access_key: WEB3FORMS_KEY,
+          cc: formData.email,
+          replyto: formData.email,
           name: formData.name,
           phone: formData.phone,
           email: formData.email,
           source_page: pageName,
-          subject: `New Consultation Request from ${pageName} - PhysioSthanak`,
-          from_name: 'PhysioSthanak Website',
+          subject: `Consultation Request Received — PhysioSthanak`,
+          from_name: 'PhysioSthanak',
           botcheck: '',
         }),
       });

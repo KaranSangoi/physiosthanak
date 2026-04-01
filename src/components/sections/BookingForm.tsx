@@ -23,14 +23,16 @@ export default function BookingForm() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           access_key: WEB3FORMS_KEY,
+          cc: formData.get('email'),
+          replyto: formData.get('email'),
           name: formData.get('name'),
           phone: formData.get('phone'),
           email: formData.get('email'),
           service: formData.get('service'),
           message: formData.get('message'),
           source_page: 'Contact Page',
-          subject: 'New Contact Form Submission - PhysioSthanak',
-          from_name: 'PhysioSthanak Website',
+          subject: 'Consultation Request Received — PhysioSthanak',
+          from_name: 'PhysioSthanak',
           botcheck: '',
         }),
       });

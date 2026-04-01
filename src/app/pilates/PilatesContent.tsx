@@ -614,6 +614,8 @@ function RegistrationFormSection({ batches }: { batches: PilatesBatch[] }) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           access_key: WEB3FORMS_KEY,
+          cc: formData.email,
+          replyto: formData.email,
           name: formData.name,
           phone: formData.phone,
           email: formData.email,
@@ -624,8 +626,8 @@ function RegistrationFormSection({ batches }: { batches: PilatesBatch[] }) {
           medical_history: formData.medicalHistory || 'None provided',
           status: registration?.status || 'registered',
           source_page: 'Pilates Landing Page',
-          subject: `New Mat Pilates Registration — ${formData.name}${registration?.status === 'waitlisted' ? ' (WAITLISTED)' : ''}`,
-          from_name: 'PhysioSthanak Website',
+          subject: `Mat Pilates Registration Confirmed — ${formData.name}`,
+          from_name: 'PhysioSthanak',
           botcheck: '',
         }),
       }).catch(() => {
