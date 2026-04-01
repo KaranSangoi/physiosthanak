@@ -586,7 +586,7 @@ function RegistrationFormSection({ batches }: { batches: PilatesBatch[] }) {
       const { data: registration, error: supabaseError } = await supabase
         .from('pilates_registrations')
         .insert({
-          batch_id: batchType === 'group' ? (formData.batch || null) : null,
+          batch_id: batchType === 'group' ? formData.batch : null,
           name: formData.name,
           phone: formData.phone,
           email: formData.email,
