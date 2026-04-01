@@ -46,7 +46,15 @@
       "Bash(ipconfig /flushdns)",
       "Bash(ssh:*)",
       "Bash(ls ~/.ssh/id_ed25519*)",
-      "Bash(ssh-add ~/.ssh/id_ed25519_karansangoi89)"
+      "Bash(ssh-add ~/.ssh/id_ed25519_karansangoi89)",
+      "Bash(node scripts/run-migration.mjs)",
+      "Bash(claude mcp:*)",
+      "WebFetch(domain:supabase.com)",
+      "Bash(npx tsc:*)"
     ]
-  }
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "supabase"
+  ]
 }

@@ -1,6 +1,10 @@
 import type { Metadata } from 'next';
+import { createClient } from '@supabase/supabase-js';
 import { siteConfig } from '@/data/site-config';
+import type { PilatesBatch } from '@/types/pilates';
 import PilatesContent from './PilatesContent';
+
+export const revalidate = 60; // ISR — revalidate every 60 seconds
 
 export const metadata: Metadata = {
   title: 'Mat Pilates Classes in Borivali | Physiotherapist-Led',
@@ -47,6 +51,20 @@ export const metadata: Metadata = {
   },
 };
 
-export default function PilatesPage() {
-  return <PilatesContent />;
+export default async function PilatesPage() {
+  // Use base Supabase client (no cookies) so the page stays ISR-compatible
+  const supabase = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+  );
+
+  const { data: batches } = await supabase
+    .from('pilates_batches')
+    .select('id, name, type, schedule, days, time, capacity, current_count, is_active')
+    .eq('is_active', true)
+    .order('type', { ascending: true })
+    .order('days', { ascending: true })
+    .order('time', { ascending: true });
+
+  return <PilatesContent batches={(batches as PilatesBatch[]) ?? []} />;
 }

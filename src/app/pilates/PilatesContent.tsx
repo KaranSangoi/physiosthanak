@@ -3,96 +3,10 @@
 import { useState, FormEvent } from 'react';
 import Image from 'next/image';
 import { CheckCircle, ChevronDown, Clock, MapPin, Users, Monitor, Building } from 'lucide-react';
+import { createClient } from '@/lib/supabase/client';
+import type { PilatesBatch } from '@/types/pilates';
 
 const WEB3FORMS_KEY = '97e35895-6350-4c20-982e-f2fdb1996900';
-
-// TODO: Replace with dynamic batches from Supabase
-const BATCHES = [
-  // Offline batches — Mon & Thu
-  {
-    id: 'offline-mon-thu-9am',
-    name: 'Offline — 9:00 AM Batch',
-    mode: 'Offline' as const,
-    days: 'Mon & Thu',
-    time: '9:00 AM - 9:45 AM',
-    spots: 12,
-  },
-  {
-    id: 'offline-mon-thu-10am',
-    name: 'Offline — 10:00 AM Batch',
-    mode: 'Offline' as const,
-    days: 'Mon & Thu',
-    time: '10:00 AM - 10:45 AM',
-    spots: 12,
-  },
-  // Offline batches — Tue & Fri
-  {
-    id: 'offline-tue-fri-9am',
-    name: 'Offline — 9:00 AM Batch',
-    mode: 'Offline' as const,
-    days: 'Tue & Fri',
-    time: '9:00 AM - 9:45 AM',
-    spots: 12,
-  },
-  {
-    id: 'offline-tue-fri-10am',
-    name: 'Offline — 10:00 AM Batch',
-    mode: 'Offline' as const,
-    days: 'Tue & Fri',
-    time: '10:00 AM - 10:45 AM',
-    spots: 12,
-  },
-  // Online batches — Mon & Thu
-  {
-    id: 'online-mon-thu-8am',
-    name: 'Online — 8:00 AM Batch',
-    mode: 'Online' as const,
-    days: 'Mon & Thu',
-    time: '8:00 AM - 8:45 AM',
-    spots: 15,
-  },
-  {
-    id: 'online-mon-thu-9am',
-    name: 'Online — 9:00 AM Batch',
-    mode: 'Online' as const,
-    days: 'Mon & Thu',
-    time: '9:00 AM - 9:45 AM',
-    spots: 15,
-  },
-  {
-    id: 'online-mon-thu-10am',
-    name: 'Online — 10:00 AM Batch',
-    mode: 'Online' as const,
-    days: 'Mon & Thu',
-    time: '10:00 AM - 10:45 AM',
-    spots: 15,
-  },
-  // Online batches — Tue & Fri
-  {
-    id: 'online-tue-fri-8am',
-    name: 'Online — 8:00 AM Batch',
-    mode: 'Online' as const,
-    days: 'Tue & Fri',
-    time: '8:00 AM - 8:45 AM',
-    spots: 15,
-  },
-  {
-    id: 'online-tue-fri-9am',
-    name: 'Online — 9:00 AM Batch',
-    mode: 'Online' as const,
-    days: 'Tue & Fri',
-    time: '9:00 AM - 9:45 AM',
-    spots: 15,
-  },
-  {
-    id: 'online-tue-fri-10am',
-    name: 'Online — 10:00 AM Batch',
-    mode: 'Online' as const,
-    days: 'Tue & Fri',
-    time: '10:00 AM - 10:45 AM',
-    spots: 15,
-  },
-];
 
 const FAQS = [
   {
@@ -122,7 +36,11 @@ const FAQS = [
   },
 ];
 
-export default function PilatesContent() {
+interface PilatesContentProps {
+  batches: PilatesBatch[];
+}
+
+export default function PilatesContent({ batches }: PilatesContentProps) {
   return (
     <>
       {/* FAQ Schema */}
@@ -179,9 +97,9 @@ export default function PilatesContent() {
       <HeroSection />
       <WhyDifferentSection />
       <HowItWorksSection />
-      <BatchesSection />
+      <BatchesSection batches={batches} />
       <AboutDrShivaSection />
-      <RegistrationFormSection />
+      <RegistrationFormSection batches={batches} />
       <FAQSectionLocal />
       <CTASectionLocal />
     </>
@@ -361,7 +279,7 @@ function HowItWorksSection() {
 
 /* ─────────────────── 4. AVAILABLE BATCHES ─────────────────── */
 
-function BatchesSection() {
+function BatchesSection({ batches }: { batches: PilatesBatch[] }) {
   return (
     <section className="section-padding bg-white">
       <div className="container-max">
@@ -377,51 +295,73 @@ function BatchesSection() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {BATCHES.map((batch) => (
-            <div
-              key={batch.id}
-              className="bg-white rounded-lg p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 hover:border-primary/20 flex flex-col"
-            >
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-heading font-bold text-accent uppercase">
-                  {batch.name}
-                </h3>
-                <span
-                  className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-heading font-bold uppercase tracking-wider ${
-                    batch.mode === 'Online'
-                      ? 'bg-blue-50 text-blue-700 border border-blue-200'
-                      : 'bg-green-50 text-green-700 border border-green-200'
-                  }`}
-                >
-                  {batch.mode === 'Online' ? (
-                    <Monitor className="w-3 h-3" />
-                  ) : (
-                    <Building className="w-3 h-3" />
-                  )}
-                  {batch.mode}
-                </span>
-              </div>
+          {batches.map((batch) => {
+            const spotsRemaining = batch.capacity - batch.current_count;
+            const isFull = spotsRemaining <= 0;
+            const mode = batch.type === 'online' ? 'Online' : 'Offline';
 
-              <div className="space-y-3 mb-6 flex-1">
-                <div className="flex items-center gap-3 text-text-light text-sm">
-                  <Clock className="w-4 h-4 text-primary flex-shrink-0" />
-                  <span>{batch.time}</span>
+            return (
+              <div
+                key={batch.id}
+                className={`bg-white rounded-lg p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300 border flex flex-col ${
+                  isFull
+                    ? 'border-slate-200 opacity-75'
+                    : 'border-slate-100 hover:border-primary/20'
+                }`}
+              >
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-lg font-heading font-bold text-accent uppercase">
+                    {batch.name}
+                  </h3>
+                  <span
+                    className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-heading font-bold uppercase tracking-wider ${
+                      mode === 'Online'
+                        ? 'bg-blue-50 text-blue-700 border border-blue-200'
+                        : 'bg-green-50 text-green-700 border border-green-200'
+                    }`}
+                  >
+                    {mode === 'Online' ? (
+                      <Monitor className="w-3 h-3" />
+                    ) : (
+                      <Building className="w-3 h-3" />
+                    )}
+                    {mode}
+                  </span>
                 </div>
-                <div className="flex items-center gap-3 text-text-light text-sm">
-                  <MapPin className="w-4 h-4 text-primary flex-shrink-0" />
-                  <span>{batch.days}</span>
-                </div>
-                <div className="flex items-center gap-3 text-text-light text-sm">
-                  <Users className="w-4 h-4 text-primary flex-shrink-0" />
-                  <span>{batch.spots} spots available</span>
-                </div>
-              </div>
 
-              <a href="#register" className="btn-primary text-center text-sm w-full">
-                Register
-              </a>
-            </div>
-          ))}
+                <div className="space-y-3 mb-6 flex-1">
+                  <div className="flex items-center gap-3 text-text-light text-sm">
+                    <Clock className="w-4 h-4 text-primary flex-shrink-0" />
+                    <span>{batch.time}</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-text-light text-sm">
+                    <MapPin className="w-4 h-4 text-primary flex-shrink-0" />
+                    <span>{batch.days}</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-text-light text-sm">
+                    <Users className="w-4 h-4 text-primary flex-shrink-0" />
+                    {isFull ? (
+                      <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-heading font-bold uppercase tracking-wider bg-red-50 text-red-600 border border-red-200">
+                        Batch Full
+                      </span>
+                    ) : (
+                      <span>{spotsRemaining} {spotsRemaining === 1 ? 'spot' : 'spots'} remaining</span>
+                    )}
+                  </div>
+                </div>
+
+                {isFull ? (
+                  <span className="btn-primary text-center text-sm w-full opacity-50 cursor-not-allowed pointer-events-none">
+                    Batch Full
+                  </span>
+                ) : (
+                  <a href="#register" className="btn-primary text-center text-sm w-full">
+                    Register
+                  </a>
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -498,8 +438,9 @@ function AboutDrShivaSection() {
 
 /* ─────────────── 6. REGISTRATION FORM ─────────────── */
 
-function RegistrationFormSection() {
+function RegistrationFormSection({ batches }: { batches: PilatesBatch[] }) {
   const [formState, setFormState] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [registrationStatus, setRegistrationStatus] = useState<'registered' | 'waitlisted' | null>(null);
   const [preference, setPreference] = useState<'Offline' | 'Online'>('Offline');
   const [formData, setFormData] = useState({
     name: '',
@@ -510,15 +451,43 @@ function RegistrationFormSection() {
     medicalHistory: '',
   });
 
-  const filteredBatches = BATCHES.filter((b) => b.mode === preference);
+  const filteredBatches = batches.filter((b) => b.type === preference.toLowerCase());
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setFormState('submitting');
 
     try {
-      const selectedBatch = BATCHES.find((b) => b.id === formData.batch);
-      const res = await fetch('https://api.web3forms.com/submit', {
+      const selectedBatch = batches.find((b) => b.id === formData.batch);
+      const mode = selectedBatch ? (selectedBatch.type === 'online' ? 'Online' : 'Offline') : preference;
+
+      // 1. Save to Supabase
+      const supabase = createClient();
+      const { data: registration, error: supabaseError } = await supabase
+        .from('pilates_registrations')
+        .insert({
+          batch_id: formData.batch,
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          age: parseInt(formData.age, 10),
+          preference: preference.toLowerCase(),
+          medical_history: formData.medicalHistory || null,
+        })
+        .select('status')
+        .single();
+
+      if (supabaseError) {
+        console.error('Supabase registration error:', supabaseError);
+        setFormState('error');
+        return;
+      }
+
+      // Track whether registered or waitlisted
+      setRegistrationStatus(registration?.status === 'waitlisted' ? 'waitlisted' : 'registered');
+
+      // 2. Send to Web3Forms for email notification (parallel, non-blocking)
+      fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -528,22 +497,19 @@ function RegistrationFormSection() {
           email: formData.email,
           age: formData.age,
           preference: preference,
-          batch: selectedBatch ? `${selectedBatch.name} (${selectedBatch.mode}) — ${selectedBatch.days}, ${selectedBatch.time}` : 'Not selected',
+          batch: selectedBatch ? `${selectedBatch.name} (${mode}) — ${selectedBatch.days}, ${selectedBatch.time}` : 'Not selected',
           medical_history: formData.medicalHistory || 'None provided',
+          status: registration?.status || 'registered',
           source_page: 'Pilates Landing Page',
-          subject: `New Mat Pilates Registration — ${formData.name}`,
+          subject: `New Mat Pilates Registration — ${formData.name}${registration?.status === 'waitlisted' ? ' (WAITLISTED)' : ''}`,
           from_name: 'PhysioSthanak Website',
           botcheck: '',
         }),
+      }).catch(() => {
+        // Web3Forms is a backup — don't fail the registration if it errors
       });
 
-      const data = await res.json();
-
-      if (data.success) {
-        setFormState('success');
-      } else {
-        setFormState('error');
-      }
+      setFormState('success');
     } catch {
       setFormState('error');
     }
@@ -575,9 +541,11 @@ function RegistrationFormSection() {
         <div className="bg-white rounded-lg shadow-xl p-6 sm:p-8 md:p-10 border-t-4 border-t-accent-pink">
           {formState === 'success' ? (
             <div className="text-center py-8">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 ${
+                registrationStatus === 'waitlisted' ? 'bg-yellow-100' : 'bg-green-100'
+              }`}>
                 <svg
-                  className="w-8 h-8 text-green-600"
+                  className={`w-8 h-8 ${registrationStatus === 'waitlisted' ? 'text-yellow-600' : 'text-green-600'}`}
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -586,17 +554,31 @@ function RegistrationFormSection() {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth={2}
-                    d="M5 13l4 4L19 7"
+                    d={registrationStatus === 'waitlisted' ? 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z' : 'M5 13l4 4L19 7'}
                   />
                 </svg>
               </div>
-              <p className="text-lg font-heading font-bold text-accent mb-2">
-                Registration Received!
-              </p>
-              <p className="text-text-light text-sm max-w-md mx-auto">
-                Thanks for registering! You&apos;ll receive a call from Dr. Shiva&apos;s team to
-                schedule your free physiotherapy consultation.
-              </p>
+              {registrationStatus === 'waitlisted' ? (
+                <>
+                  <p className="text-lg font-heading font-bold text-accent mb-2">
+                    You&apos;re on the Waitlist!
+                  </p>
+                  <p className="text-text-light text-sm max-w-md mx-auto">
+                    This batch is currently full, but we&apos;ve added you to the waitlist.
+                    We&apos;ll call you as soon as a spot opens up, or suggest an alternative batch.
+                  </p>
+                </>
+              ) : (
+                <>
+                  <p className="text-lg font-heading font-bold text-accent mb-2">
+                    Registration Received!
+                  </p>
+                  <p className="text-text-light text-sm max-w-md mx-auto">
+                    Thanks for registering! You&apos;ll receive a call from Dr. Shiva&apos;s team to
+                    schedule your free physiotherapy consultation.
+                  </p>
+                </>
+              )}
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-5">
@@ -727,35 +709,47 @@ function RegistrationFormSection() {
                 </label>
 
                 {/* Group batches by days */}
-                {['Mon & Thu', 'Tue & Fri'].map((dayGroup) => {
-                  const dayBatches = filteredBatches.filter((b) => b.days === dayGroup);
-                  if (dayBatches.length === 0) return null;
+                {(() => {
+                  const dayGroups = [...new Set(filteredBatches.map((b) => b.days))];
+                  return dayGroups.map((dayGroup) => {
+                    const dayBatches = filteredBatches.filter((b) => b.days === dayGroup);
+                    if (dayBatches.length === 0) return null;
 
-                  return (
-                    <div key={dayGroup} className="mb-4">
-                      <p className="text-xs font-heading font-bold text-text-light uppercase tracking-widest mb-2">
-                        {dayGroup}
-                      </p>
-                      <div className="flex flex-wrap gap-2">
-                        {dayBatches.map((batch) => (
-                          <button
-                            key={batch.id}
-                            type="button"
-                            onClick={() => setFormData({ ...formData, batch: batch.id })}
-                            className={`px-4 py-2.5 rounded-md border-2 text-sm font-heading font-bold transition-all ${
-                              formData.batch === batch.id
-                                ? 'border-accent-pink bg-accent-pink/10 text-accent-pink shadow-sm'
-                                : 'border-primary/15 text-text-light hover:border-primary/30 hover:bg-primary/5'
-                            }`}
-                          >
-                            <Clock className="w-3.5 h-3.5 inline mr-1.5 -mt-0.5" />
-                            {batch.time}
-                          </button>
-                        ))}
+                    return (
+                      <div key={dayGroup} className="mb-4">
+                        <p className="text-xs font-heading font-bold text-text-light uppercase tracking-widest mb-2">
+                          {dayGroup}
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {dayBatches.map((batch) => {
+                            const spotsRemaining = batch.capacity - batch.current_count;
+                            const isFull = spotsRemaining <= 0;
+
+                            return (
+                              <button
+                                key={batch.id}
+                                type="button"
+                                disabled={isFull}
+                                onClick={() => setFormData({ ...formData, batch: batch.id })}
+                                className={`px-4 py-2.5 rounded-md border-2 text-sm font-heading font-bold transition-all ${
+                                  isFull
+                                    ? 'border-slate-200 text-slate-400 cursor-not-allowed bg-slate-50 line-through'
+                                    : formData.batch === batch.id
+                                      ? 'border-accent-pink bg-accent-pink/10 text-accent-pink shadow-sm'
+                                      : 'border-primary/15 text-text-light hover:border-primary/30 hover:bg-primary/5'
+                                }`}
+                              >
+                                <Clock className="w-3.5 h-3.5 inline mr-1.5 -mt-0.5" />
+                                {batch.time}
+                                {isFull && <span className="ml-1.5 text-xs no-underline">(Full)</span>}
+                              </button>
+                            );
+                          })}
+                        </div>
                       </div>
-                    </div>
-                  );
-                })}
+                    );
+                  });
+                })()}
 
                 {/* Hidden required input for form validation */}
                 <input
