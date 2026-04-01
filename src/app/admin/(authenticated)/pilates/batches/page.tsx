@@ -34,8 +34,10 @@ export default function BatchesPage() {
   const [form, setForm] = useState<BatchForm>(EMPTY_FORM);
   const [saving, setSaving] = useState(false);
   const [toast, setToast] = useState<{ message: string; type: 'success' | 'error' } | null>(null);
-  const [sortKey, setSortKey] = useState<SortKey>('time');
-  const [sortDir, setSortDir] = useState<SortDir>('asc');
+  const [offlineSortKey, setOfflineSortKey] = useState<SortKey>('time');
+  const [offlineSortDir, setOfflineSortDir] = useState<SortDir>('asc');
+  const [onlineSortKey, setOnlineSortKey] = useState<SortKey>('time');
+  const [onlineSortDir, setOnlineSortDir] = useState<SortDir>('asc');
 
   useEffect(() => {
     loadBatches();
@@ -161,12 +163,21 @@ export default function BatchesPage() {
     }
   };
 
-  const handleSort = (key: SortKey) => {
-    if (sortKey === key) {
-      setSortDir(sortDir === 'asc' ? 'desc' : 'asc');
+  const handleSort = (type: 'offline' | 'online', key: SortKey) => {
+    if (type === 'offline') {
+      if (offlineSortKey === key) {
+        setOfflineSortDir(offlineSortDir === 'asc' ? 'desc' : 'asc');
+      } else {
+        setOfflineSortKey(key);
+        setOfflineSortDir('asc');
+      }
     } else {
-      setSortKey(key);
-      setSortDir('asc');
+      if (onlineSortKey === key) {
+        setOnlineSortDir(onlineSortDir === 'asc' ? 'desc' : 'asc');
+      } else {
+        setOnlineSortKey(key);
+        setOnlineSortDir('asc');
+      }
     }
   };
 
@@ -217,21 +228,24 @@ export default function BatchesPage() {
           No batches yet. Create your first batch to get started.
         </div>
       ) : (
-        <>
+        <div className="space-y-8">
           {(['offline', 'online'] as const).map((type) => {
             const grouped = batches.filter((b) => b.type === type);
             if (grouped.length === 0) return null;
 
+            const currentSortKey = type === 'offline' ? offlineSortKey : onlineSortKey;
+            const currentSortDir = type === 'offline' ? offlineSortDir : onlineSortDir;
+
             const sorted = [...grouped].sort((a, b) => {
               let cmp = 0;
-              if (sortKey === 'time') {
+              if (currentSortKey === 'time') {
                 cmp = a.time.localeCompare(b.time);
-              } else if (sortKey === 'capacity') {
+              } else if (currentSortKey === 'capacity') {
                 cmp = (a.current_count / a.capacity) - (b.current_count / b.capacity);
-              } else if (sortKey === 'status') {
+              } else if (currentSortKey === 'status') {
                 cmp = (a.is_active === b.is_active) ? 0 : a.is_active ? -1 : 1;
               }
-              return sortDir === 'asc' ? cmp : -cmp;
+              return currentSortDir === 'asc' ? cmp : -cmp;
             });
 
             return (
@@ -247,9 +261,9 @@ export default function BatchesPage() {
                       <tr className="border-b border-gray-200 bg-gray-50">
                         <th className="text-left py-3 px-4 font-medium text-gray-600">Name</th>
                         <th className="text-left py-3 px-4 font-medium text-gray-600">Days</th>
-                        <SortableHeader label="Time" sortKey="time" currentKey={sortKey} dir={sortDir} onSort={handleSort} />
-                        <SortableHeader label="Capacity" sortKey="capacity" currentKey={sortKey} dir={sortDir} onSort={handleSort} />
-                        <SortableHeader label="Status" sortKey="status" currentKey={sortKey} dir={sortDir} onSort={handleSort} />
+                        <SortableHeader label="Time" sortKey="time" currentKey={currentSortKey} dir={currentSortDir} onSort={(key) => handleSort(type, key)} />
+                        <SortableHeader label="Capacity" sortKey="capacity" currentKey={currentSortKey} dir={currentSortDir} onSort={(key) => handleSort(type, key)} />
+                        <SortableHeader label="Status" sortKey="status" currentKey={currentSortKey} dir={currentSortDir} onSort={(key) => handleSort(type, key)} />
                         <th className="text-left py-3 px-4 font-medium text-gray-600">Actions</th>
                       </tr>
                     </thead>
@@ -310,7 +324,7 @@ export default function BatchesPage() {
               </div>
             );
           })}
-        </>
+        </div>
       )}
 
       {/* Modal */}
