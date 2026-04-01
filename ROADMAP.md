@@ -92,6 +92,14 @@
 - [ ] Build Phase 3 cross-product pages for winning keywords
 - [ ] Target: 400+ indexed pages within 3 months
 
+### 3D — GEO/AEO KPI Monitoring [COMPLETED]
+- [x] Bot traffic monitoring — middleware detects AI crawlers (GPTBot, ChatGPT-User, PerplexityBot, ClaudeBot, etc.)
+- [x] Bot visit logging — API route logs crawl events to Supabase `bot_visits` table
+- [x] Admin analytics dashboard — `/admin/analytics` shows bot visit stats, daily trends, bot breakdown, top pages
+- [x] GEO audit checklist — `/admin/analytics/geo-audit` with 15 pre-populated prompts across ChatGPT, Perplexity, Google AI
+- [x] Audit history — view past audit results grouped by date
+- [x] Database tables — `bot_visits` and `geo_audit_results` with RLS policies and indexes
+
 ---
 
 ## Phase 4: Monetization & Growth

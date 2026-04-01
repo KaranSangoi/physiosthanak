@@ -50,7 +50,8 @@
       "Bash(node scripts/run-migration.mjs)",
       "Bash(claude mcp:*)",
       "WebFetch(domain:supabase.com)",
-      "Bash(npx tsc:*)"
+      "Bash(npx tsc:*)",
+      "Bash(node scripts/run-migration-002.mjs)"
     ]
   },
   "enableAllProjectMcpServers": true,

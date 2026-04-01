@@ -3,10 +3,12 @@
 import { useState, useEffect, FormEvent } from 'react';
 import { createClient } from '@/lib/supabase/client';
 import type { PilatesAdminSetting } from '@/types/pilates';
+import { X, Plus } from 'lucide-react';
 
 export default function SettingsPage() {
   const [settings, setSettings] = useState<PilatesAdminSetting[]>([]);
-  const [notificationEmail, setNotificationEmail] = useState('');
+  const [emails, setEmails] = useState<string[]>([]);
+  const [newEmail, setNewEmail] = useState('');
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [toast, setToast] = useState<{ message: string; type: 'success' | 'error' } | null>(null);
@@ -30,44 +32,71 @@ export default function SettingsPage() {
 
     if (!error && data) {
       setSettings(data);
-      const emailSetting = data.find((s) => s.key === 'notification_email');
-      if (emailSetting) {
-        setNotificationEmail(emailSetting.value);
+      // Check both key names (notification_emails and notification_email)
+      const emailSetting = data.find((s) => s.key === 'notification_emails' || s.key === 'notification_email');
+      if (emailSetting && emailSetting.value) {
+        setEmails(emailSetting.value.split(',').map((e: string) => e.trim()).filter(Boolean));
       }
     }
     setLoading(false);
   };
 
+  const addEmail = () => {
+    const trimmed = newEmail.trim().toLowerCase();
+    if (!trimmed) return;
+    // Basic email validation
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmed)) {
+      setToast({ message: 'Invalid email format', type: 'error' });
+      return;
+    }
+    if (emails.includes(trimmed)) {
+      setToast({ message: 'Email already added', type: 'error' });
+      return;
+    }
+    setEmails([...emails, trimmed]);
+    setNewEmail('');
+  };
+
+  const removeEmail = (emailToRemove: string) => {
+    setEmails(emails.filter((e) => e !== emailToRemove));
+  };
+
   const handleSave = async (e: FormEvent) => {
     e.preventDefault();
+    if (emails.length === 0) {
+      setToast({ message: 'Add at least one email', type: 'error' });
+      return;
+    }
     setSaving(true);
 
     const supabase = createClient();
+    const emailValue = emails.join(', ');
 
-    // Check if setting exists
-    const existing = settings.find((s) => s.key === 'notification_email');
+    // Check if setting exists (try both key names)
+    const existing = settings.find((s) => s.key === 'notification_emails' || s.key === 'notification_email');
 
     if (existing) {
       const { error } = await supabase
         .from('pilates_admin_settings')
-        .update({ value: notificationEmail })
+        .update({ value: emailValue, key: 'notification_emails' })
         .eq('id', existing.id);
 
       if (error) {
-        setToast({ message: 'Failed to save settings', type: 'error' });
+        setToast({ message: 'Failed to save: ' + error.message, type: 'error' });
       } else {
-        setToast({ message: 'Settings saved', type: 'success' });
+        setToast({ message: 'Settings saved successfully', type: 'success' });
+        loadSettings();
       }
     } else {
       const { error } = await supabase.from('pilates_admin_settings').insert({
-        key: 'notification_email',
-        value: notificationEmail,
+        key: 'notification_emails',
+        value: emailValue,
       });
 
       if (error) {
-        setToast({ message: 'Failed to save settings', type: 'error' });
+        setToast({ message: 'Failed to save: ' + error.message, type: 'error' });
       } else {
-        setToast({ message: 'Settings saved', type: 'success' });
+        setToast({ message: 'Settings saved successfully', type: 'success' });
         loadSettings();
       }
     }
@@ -103,20 +132,60 @@ export default function SettingsPage() {
       <h2 className="text-xl font-semibold text-gray-800 normal-case">Settings</h2>
 
       <div className="bg-white rounded-lg shadow-sm border border-gray-100 p-6 max-w-lg">
-        <form onSubmit={handleSave} className="space-y-4">
+        <form onSubmit={handleSave} className="space-y-5">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              Notification Email
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Notification Emails
             </label>
-            <input
-              type="email"
-              value={notificationEmail}
-              onChange={(e) => setNotificationEmail(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-[#14507c] focus:border-transparent"
-              placeholder="admin@physiosthanak.com"
-            />
-            <p className="text-xs text-gray-500 mt-1">
-              Email address for receiving registration notifications.
+
+            {/* Existing emails as pills */}
+            {emails.length > 0 && (
+              <div className="flex flex-wrap gap-2 mb-3">
+                {emails.map((email) => (
+                  <span
+                    key={email}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#14507c]/10 text-[#14507c] rounded-full text-sm"
+                  >
+                    {email}
+                    <button
+                      type="button"
+                      onClick={() => removeEmail(email)}
+                      className="hover:bg-[#14507c]/20 rounded-full p-0.5 transition-colors"
+                    >
+                      <X className="w-3.5 h-3.5" />
+                    </button>
+                  </span>
+                ))}
+              </div>
+            )}
+
+            {/* Add new email */}
+            <div className="flex gap-2">
+              <input
+                type="text"
+                value={newEmail}
+                onChange={(e) => setNewEmail(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') {
+                    e.preventDefault();
+                    addEmail();
+                  }
+                }}
+                className="flex-1 px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-[#14507c] focus:border-transparent"
+                placeholder="Add email address"
+              />
+              <button
+                type="button"
+                onClick={addEmail}
+                className="px-3 py-2 bg-[#14507c] text-white text-sm rounded-md hover:bg-[#0e3a5a] transition-colors flex items-center gap-1"
+              >
+                <Plus className="w-4 h-4" />
+                Add
+              </button>
+            </div>
+
+            <p className="text-xs text-gray-500 mt-2">
+              All listed emails will receive registration notifications. Press Enter or click Add to add an email.
             </p>
           </div>
 

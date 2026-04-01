@@ -13,6 +13,7 @@ import {
   LogOut,
   Menu,
   X,
+  BarChart3,
 } from 'lucide-react';
 import type { User } from '@supabase/supabase-js';
 
@@ -22,6 +23,7 @@ const NAV_ITEMS = [
   { href: '/admin/pilates/registrations', label: 'Registrations', icon: Users },
   { href: '/admin/pilates/waitlist', label: 'Waitlist', icon: Clock },
   { href: '/admin/pilates/settings', label: 'Settings', icon: Settings },
+  { href: '/admin/analytics', label: 'Analytics', icon: BarChart3 },
 ];
 
 export default function AdminShell({
@@ -76,7 +78,7 @@ export default function AdminShell({
 
         <nav className="mt-4 px-2 space-y-1">
           {NAV_ITEMS.map((item) => {
-            const isActive = pathname === item.href;
+            const isActive = pathname === item.href || (item.href === '/admin/analytics' && pathname.startsWith('/admin/analytics'));
             const Icon = item.icon;
             return (
               <Link
