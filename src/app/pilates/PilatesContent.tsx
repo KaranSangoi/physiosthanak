@@ -546,7 +546,7 @@ function RegistrationFormSection({ batches }: { batches: PilatesBatch[] }) {
   const [errorDetail, setErrorDetail] = useState<string>('');
   const [registrationStatus, setRegistrationStatus] = useState<'registered' | 'waitlisted' | null>(null);
   const [preference, setPreference] = useState<'Offline' | 'Online'>('Offline');
-  const [batchType, setBatchType] = useState<'group' | '1:1'>('group');
+  const [batchType, setBatchType] = useState<'group' | '1:1' | ''>('');
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -556,10 +556,17 @@ function RegistrationFormSection({ batches }: { batches: PilatesBatch[] }) {
     medicalHistory: '',
   });
 
-  const filteredBatches = batches.filter((b) => b.type === preference.toLowerCase());
+  const filteredBatches = batchType === 'group' ? batches.filter((b) => b.type === preference.toLowerCase()) : [];
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+
+    // Validate session type
+    if (!batchType) {
+      setErrorDetail('Please select a session type (Group or 1:1)');
+      setFormState('error');
+      return;
+    }
 
     // Validate batch selection for group
     if (batchType === 'group' && !formData.batch) {
@@ -791,7 +798,7 @@ function RegistrationFormSection({ batches }: { batches: PilatesBatch[] }) {
                   Session Type <span className="text-accent-pink">*</span>
                 </label>
                 <div className="flex gap-4">
-                  {([{ value: 'group', label: 'Group (₹3,000)', sub: '50% off launch' }, { value: '1:1', label: '1:1 Private (₹10,000)', sub: '' }] as const).map((option) => (
+                  {([{ value: 'group' as const, label: 'Group (₹3,000)', sub: '50% off launch' }, { value: '1:1' as const, label: '1:1 Private (₹10,000)', sub: '' }]).map((option) => (
                     <label
                       key={option.value}
                       className={`flex-1 flex flex-col items-center justify-center px-4 py-3 rounded-md border-2 cursor-pointer transition-all text-sm font-heading font-bold uppercase tracking-wide ${
