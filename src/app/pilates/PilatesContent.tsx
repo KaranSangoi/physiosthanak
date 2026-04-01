@@ -543,6 +543,7 @@ function AboutDrShivaSection() {
 
 function RegistrationFormSection({ batches }: { batches: PilatesBatch[] }) {
   const [formState, setFormState] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [errorDetail, setErrorDetail] = useState<string>('');
   const [registrationStatus, setRegistrationStatus] = useState<'registered' | 'waitlisted' | null>(null);
   const [preference, setPreference] = useState<'Offline' | 'Online'>('Offline');
   const [batchType, setBatchType] = useState<'group' | '1:1'>('group');
@@ -584,6 +585,7 @@ function RegistrationFormSection({ batches }: { batches: PilatesBatch[] }) {
 
       if (supabaseError) {
         console.error('Supabase registration error:', supabaseError);
+        setErrorDetail(`Supabase: ${supabaseError.message} (code: ${supabaseError.code})`);
         setFormState('error');
         return;
       }
@@ -616,7 +618,8 @@ function RegistrationFormSection({ batches }: { batches: PilatesBatch[] }) {
       });
 
       setFormState('success');
-    } catch {
+    } catch (err) {
+      setErrorDetail(err instanceof Error ? err.message : String(err));
       setFormState('error');
     }
   }
@@ -945,9 +948,14 @@ function RegistrationFormSection({ batches }: { batches: PilatesBatch[] }) {
               </button>
 
               {formState === 'error' && (
-                <p className="text-red-500 text-sm text-center">
-                  Something went wrong. Please try again or call us at +91 9324254297.
-                </p>
+                <div className="text-red-500 text-sm text-center space-y-1">
+                  <p>Something went wrong. Please try again or call us at +91 9324254297.</p>
+                  {errorDetail && (
+                    <p className="text-xs text-red-400 bg-red-50 p-2 rounded font-mono break-all">
+                      Debug: {errorDetail}
+                    </p>
+                  )}
+                </div>
               )}
             </form>
           )}

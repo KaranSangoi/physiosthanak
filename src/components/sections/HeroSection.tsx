@@ -30,6 +30,7 @@ export default function HeroSection({
 }: HeroSectionProps) {
   const activeBookingUrl = customBookingUrl || BOOKING_URL;
   const [formState, setFormState] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [errorDetail, setErrorDetail] = useState<string>('');
   const [formData, setFormData] = useState({ name: '', phone: '', email: '' });
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -64,9 +65,11 @@ export default function HeroSection({
           setFormData({ name: '', phone: '', email: '' });
         }, 5000);
       } else {
+        setErrorDetail(`Web3Forms: ${data.message || 'Unknown error'}`);
         setFormState('error');
       }
-    } catch {
+    } catch (err) {
+      setErrorDetail(err instanceof Error ? err.message : String(err));
       setFormState('error');
     }
   }
@@ -227,9 +230,14 @@ export default function HeroSection({
                   </button>
 
                   {formState === 'error' && (
-                    <p className="text-red-500 text-sm text-center">
-                      Something went wrong. Please call us directly.
-                    </p>
+                    <div className="text-red-500 text-sm text-center space-y-1">
+                      <p>Something went wrong. Please call us directly.</p>
+                      {errorDetail && (
+                        <p className="text-xs text-red-400 bg-red-50 p-2 rounded font-mono break-all">
+                          Debug: {errorDetail}
+                        </p>
+                      )}
+                    </div>
                   )}
                 </form>
               )}
