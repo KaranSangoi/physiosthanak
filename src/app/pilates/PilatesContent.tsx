@@ -560,6 +560,14 @@ function RegistrationFormSection({ batches }: { batches: PilatesBatch[] }) {
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+
+    // Validate batch selection for group
+    if (batchType === 'group' && !formData.batch) {
+      setErrorDetail('Please select a batch time slot');
+      setFormState('error');
+      return;
+    }
+
     setFormState('submitting');
 
     try {
