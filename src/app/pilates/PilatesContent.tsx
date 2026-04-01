@@ -872,7 +872,9 @@ function RegistrationFormSection({ batches }: { batches: PilatesBatch[] }) {
                 {(() => {
                   const dayGroups = [...new Set(filteredBatches.map((b) => b.days))];
                   return dayGroups.map((dayGroup) => {
-                    const dayBatches = filteredBatches.filter((b) => b.days === dayGroup);
+                    const dayBatches = filteredBatches
+                      .filter((b) => b.days === dayGroup)
+                      .sort((a, b) => a.time.localeCompare(b.time));
                     if (dayBatches.length === 0) return null;
 
                     return (
