@@ -2,8 +2,11 @@
 
 import { useState, useEffect, FormEvent } from 'react';
 import { createClient } from '@/lib/supabase/client';
-import { Plus, Pencil, ToggleLeft, ToggleRight, X } from 'lucide-react';
+import { Plus, Pencil, ToggleLeft, ToggleRight, X, ArrowUp, ArrowDown } from 'lucide-react';
 import type { PilatesBatch } from '@/types/pilates';
+
+type SortKey = 'time' | 'capacity' | 'status';
+type SortDir = 'asc' | 'desc';
 
 interface BatchForm {
   name: string;
@@ -31,6 +34,8 @@ export default function BatchesPage() {
   const [form, setForm] = useState<BatchForm>(EMPTY_FORM);
   const [saving, setSaving] = useState(false);
   const [toast, setToast] = useState<{ message: string; type: 'success' | 'error' } | null>(null);
+  const [sortKey, setSortKey] = useState<SortKey>('time');
+  const [sortDir, setSortDir] = useState<SortDir>('asc');
 
   useEffect(() => {
     loadBatches();
@@ -156,6 +161,15 @@ export default function BatchesPage() {
     }
   };
 
+  const handleSort = (key: SortKey) => {
+    if (sortKey === key) {
+      setSortDir(sortDir === 'asc' ? 'desc' : 'asc');
+    } else {
+      setSortKey(key);
+      setSortDir('asc');
+    }
+  };
+
   if (loading) {
     return (
       <div className="space-y-4">
@@ -197,76 +211,107 @@ export default function BatchesPage() {
         </button>
       </div>
 
-      {/* Table */}
-      <div className="bg-white rounded-lg shadow-sm border border-gray-100 overflow-x-auto">
-        {batches.length === 0 ? (
-          <div className="p-8 text-center text-gray-500 text-sm">
-            No batches yet. Create your first batch to get started.
-          </div>
-        ) : (
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="border-b border-gray-200 bg-gray-50">
-                <th className="text-left py-3 px-4 font-medium text-gray-600">Name</th>
-                <th className="text-left py-3 px-4 font-medium text-gray-600">Type</th>
-                <th className="text-left py-3 px-4 font-medium text-gray-600">Days</th>
-                <th className="text-left py-3 px-4 font-medium text-gray-600">Time</th>
-                <th className="text-left py-3 px-4 font-medium text-gray-600">Capacity</th>
-                <th className="text-left py-3 px-4 font-medium text-gray-600">Status</th>
-                <th className="text-left py-3 px-4 font-medium text-gray-600">Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              {batches.map((batch) => (
-                <tr key={batch.id} className="border-b border-gray-100 hover:bg-gray-50">
-                  <td className="py-3 px-4 font-medium text-gray-800">{batch.name}</td>
-                  <td className="py-3 px-4">
-                    <span className={`text-xs px-2 py-0.5 rounded-full ${
-                      batch.type === 'online' ? 'bg-blue-100 text-blue-700' : 'bg-green-100 text-green-700'
-                    }`}>
-                      {batch.type}
-                    </span>
-                  </td>
-                  <td className="py-3 px-4 text-gray-600">{batch.days}</td>
-                  <td className="py-3 px-4 text-gray-600">{batch.time}</td>
-                  <td className="py-3 px-4 text-gray-600">
-                    {batch.current_count}/{batch.capacity}
-                  </td>
-                  <td className="py-3 px-4">
-                    <span className={`text-xs px-2 py-0.5 rounded-full ${
-                      batch.is_active ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-500'
-                    }`}>
-                      {batch.is_active ? 'Active' : 'Inactive'}
-                    </span>
-                  </td>
-                  <td className="py-3 px-4">
-                    <div className="flex items-center gap-2">
-                      <button
-                        onClick={() => openEdit(batch)}
-                        className="p-1.5 text-gray-500 hover:text-[#14507c] hover:bg-blue-50 rounded transition-colors"
-                        title="Edit"
-                      >
-                        <Pencil size={15} />
-                      </button>
-                      <button
-                        onClick={() => toggleActive(batch)}
-                        className={`p-1.5 rounded transition-colors ${
-                          batch.is_active
-                            ? 'text-green-600 hover:text-red-600 hover:bg-red-50'
-                            : 'text-gray-400 hover:text-green-600 hover:bg-green-50'
-                        }`}
-                        title={batch.is_active ? 'Deactivate' : 'Activate'}
-                      >
-                        {batch.is_active ? <ToggleRight size={18} /> : <ToggleLeft size={18} />}
-                      </button>
-                    </div>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        )}
-      </div>
+      {/* Grouped Tables */}
+      {batches.length === 0 ? (
+        <div className="bg-white rounded-lg shadow-sm border border-gray-100 p-8 text-center text-gray-500 text-sm">
+          No batches yet. Create your first batch to get started.
+        </div>
+      ) : (
+        <>
+          {(['offline', 'online'] as const).map((type) => {
+            const grouped = batches.filter((b) => b.type === type);
+            if (grouped.length === 0) return null;
+
+            const sorted = [...grouped].sort((a, b) => {
+              let cmp = 0;
+              if (sortKey === 'time') {
+                cmp = a.time.localeCompare(b.time);
+              } else if (sortKey === 'capacity') {
+                cmp = (a.current_count / a.capacity) - (b.current_count / b.capacity);
+              } else if (sortKey === 'status') {
+                cmp = (a.is_active === b.is_active) ? 0 : a.is_active ? -1 : 1;
+              }
+              return sortDir === 'asc' ? cmp : -cmp;
+            });
+
+            return (
+              <div key={type} className="space-y-2">
+                <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider flex items-center gap-2">
+                  <span className={`w-2.5 h-2.5 rounded-full ${type === 'online' ? 'bg-blue-500' : 'bg-green-500'}`} />
+                  {type === 'offline' ? 'Offline (At Clinic)' : 'Online (Video Call)'}
+                  <span className="text-gray-400 font-normal">({grouped.length})</span>
+                </h3>
+                <div className="bg-white rounded-lg shadow-sm border border-gray-100 overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="border-b border-gray-200 bg-gray-50">
+                        <th className="text-left py-3 px-4 font-medium text-gray-600">Name</th>
+                        <th className="text-left py-3 px-4 font-medium text-gray-600">Days</th>
+                        <SortableHeader label="Time" sortKey="time" currentKey={sortKey} dir={sortDir} onSort={handleSort} />
+                        <SortableHeader label="Capacity" sortKey="capacity" currentKey={sortKey} dir={sortDir} onSort={handleSort} />
+                        <SortableHeader label="Status" sortKey="status" currentKey={sortKey} dir={sortDir} onSort={handleSort} />
+                        <th className="text-left py-3 px-4 font-medium text-gray-600">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {sorted.map((batch) => (
+                        <tr key={batch.id} className="border-b border-gray-100 hover:bg-gray-50">
+                          <td className="py-3 px-4 font-medium text-gray-800">{batch.name}</td>
+                          <td className="py-3 px-4 text-gray-600">{batch.days}</td>
+                          <td className="py-3 px-4 text-gray-600">{batch.time}</td>
+                          <td className="py-3 px-4 text-gray-600">
+                            <div className="flex items-center gap-2">
+                              <span>{batch.current_count}/{batch.capacity}</span>
+                              <div className="w-16 h-1.5 bg-gray-200 rounded-full overflow-hidden">
+                                <div
+                                  className={`h-full rounded-full ${
+                                    batch.current_count >= batch.capacity ? 'bg-red-500' :
+                                    batch.current_count >= batch.capacity * 0.8 ? 'bg-yellow-500' : 'bg-green-500'
+                                  }`}
+                                  style={{ width: `${Math.min((batch.current_count / batch.capacity) * 100, 100)}%` }}
+                                />
+                              </div>
+                            </div>
+                          </td>
+                          <td className="py-3 px-4">
+                            <span className={`text-xs px-2 py-0.5 rounded-full ${
+                              batch.is_active ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-500'
+                            }`}>
+                              {batch.is_active ? 'Active' : 'Inactive'}
+                            </span>
+                          </td>
+                          <td className="py-3 px-4">
+                            <div className="flex items-center gap-2">
+                              <button
+                                onClick={() => openEdit(batch)}
+                                className="p-1.5 text-gray-500 hover:text-[#14507c] hover:bg-blue-50 rounded transition-colors"
+                                title="Edit"
+                              >
+                                <Pencil size={15} />
+                              </button>
+                              <button
+                                onClick={() => toggleActive(batch)}
+                                className={`p-1.5 rounded transition-colors ${
+                                  batch.is_active
+                                    ? 'text-green-600 hover:text-red-600 hover:bg-red-50'
+                                    : 'text-gray-400 hover:text-green-600 hover:bg-green-50'
+                                }`}
+                                title={batch.is_active ? 'Deactivate' : 'Activate'}
+                              >
+                                {batch.is_active ? <ToggleRight size={18} /> : <ToggleLeft size={18} />}
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            );
+          })}
+        </>
+      )}
 
       {/* Modal */}
       {showModal && (
@@ -377,5 +422,36 @@ export default function BatchesPage() {
         </div>
       )}
     </div>
+  );
+}
+
+function SortableHeader({
+  label,
+  sortKey: key,
+  currentKey,
+  dir,
+  onSort,
+}: {
+  label: string;
+  sortKey: SortKey;
+  currentKey: SortKey;
+  dir: SortDir;
+  onSort: (key: SortKey) => void;
+}) {
+  const active = currentKey === key;
+  return (
+    <th
+      className="text-left py-3 px-4 font-medium text-gray-600 cursor-pointer hover:text-gray-900 select-none"
+      onClick={() => onSort(key)}
+    >
+      <span className="inline-flex items-center gap-1">
+        {label}
+        {active ? (
+          dir === 'asc' ? <ArrowUp size={13} /> : <ArrowDown size={13} />
+        ) : (
+          <span className="text-gray-300 text-xs">↕</span>
+        )}
+      </span>
+    </th>
   );
 }
