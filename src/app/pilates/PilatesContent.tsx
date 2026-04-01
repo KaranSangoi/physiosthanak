@@ -97,6 +97,7 @@ export default function PilatesContent({ batches }: PilatesContentProps) {
       <HeroSection />
       <WhyDifferentSection />
       <HowItWorksSection />
+      <PricingSection />
       <BatchesSection batches={batches} />
       <AboutDrShivaSection />
       <RegistrationFormSection batches={batches} />
@@ -277,6 +278,108 @@ function HowItWorksSection() {
   );
 }
 
+/* ─────────────────── 3B. PRICING ─────────────────── */
+
+function PricingSection() {
+  return (
+    <section className="section-padding bg-white">
+      <div className="container-max">
+        <div className="text-center mb-14">
+          <span className="section-eyebrow">Pricing</span>
+          <h2 className="text-3xl sm:text-4xl font-heading font-bold text-accent mb-4 uppercase">
+            Simple, Transparent Pricing
+          </h2>
+          <p className="text-lg text-text-light max-w-2xl mx-auto">
+            Includes free biomechanical assessment by Dr. Shiva before your first class
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+          {/* Group Batch */}
+          <div className="bg-white rounded-lg p-8 shadow-lg border-2 border-primary/20 hover:border-accent-pink/40 transition-all relative overflow-hidden">
+            <div className="absolute top-0 right-0 bg-accent-pink text-white text-xs font-heading font-bold uppercase tracking-wider px-4 py-1.5 rounded-bl-lg">
+              50% Off — First 10 Students
+            </div>
+            <h3 className="text-lg font-heading font-bold text-accent uppercase mb-2 mt-4">
+              Group Batch
+            </h3>
+            <p className="text-text-light text-sm mb-4">8 sessions over 4 weeks — twice a week</p>
+            <div className="flex items-baseline gap-2 mb-1">
+              <span className="text-3xl font-heading font-bold text-accent">₹3,000</span>
+              <span className="text-lg text-text-light line-through">₹6,000</span>
+            </div>
+            <p className="text-xs text-accent-pink font-medium mb-6">
+              50% off launch offer for first 10 registrations
+            </p>
+            <ul className="space-y-2 mb-6 text-sm text-text-light">
+              <li className="flex items-start gap-2">
+                <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                Free biomechanical assessment by Dr. Shiva
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                All instructors are qualified physiotherapists
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                Exercises customized to your body
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                Online (Google Meet) or Offline (at clinic)
+              </li>
+            </ul>
+            <a href="#register" className="btn-primary text-center text-sm w-full block">
+              Register Now
+            </a>
+          </div>
+
+          {/* 1:1 Batch */}
+          <div className="bg-white rounded-lg p-8 shadow-lg border border-slate-100 hover:border-primary/20 transition-all">
+            <h3 className="text-lg font-heading font-bold text-accent uppercase mb-2 mt-4">
+              1:1 Private Session
+            </h3>
+            <p className="text-text-light text-sm mb-4">8 sessions over 4 weeks — twice a week</p>
+            <div className="flex items-baseline gap-2 mb-1">
+              <span className="text-3xl font-heading font-bold text-accent">₹10,000</span>
+            </div>
+            <p className="text-xs text-text-light mb-6">
+              Personalized one-on-one with your physiotherapist-instructor
+            </p>
+            <ul className="space-y-2 mb-6 text-sm text-text-light">
+              <li className="flex items-start gap-2">
+                <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                Free biomechanical assessment by Dr. Shiva
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                Fully personalized program
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                Flexible scheduling
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                Ideal for rehab or specific conditions
+              </li>
+            </ul>
+            <a href="#register" className="btn-outline text-center text-sm w-full block">
+              Register for 1:1
+            </a>
+          </div>
+        </div>
+
+        <div className="text-center text-xs text-text-light mt-8 max-w-lg mx-auto space-y-1">
+          <p>Payment is collected during your first consultation call. No refunds after enrollment.</p>
+          <p>Missed sessions are not repeated or refunded. No recordings of sessions permitted.</p>
+          <p>See our <a href="/terms" className="text-accent-pink hover:underline">Terms of Service</a> for full details.</p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ─────────────────── 4. AVAILABLE BATCHES ─────────────────── */
 
 function BatchesSection({ batches }: { batches: PilatesBatch[] }) {
@@ -442,6 +545,7 @@ function RegistrationFormSection({ batches }: { batches: PilatesBatch[] }) {
   const [formState, setFormState] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const [registrationStatus, setRegistrationStatus] = useState<'registered' | 'waitlisted' | null>(null);
   const [preference, setPreference] = useState<'Offline' | 'Online'>('Offline');
+  const [batchType, setBatchType] = useState<'group' | '1:1'>('group');
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -466,12 +570,13 @@ function RegistrationFormSection({ batches }: { batches: PilatesBatch[] }) {
       const { data: registration, error: supabaseError } = await supabase
         .from('pilates_registrations')
         .insert({
-          batch_id: formData.batch || null,
+          batch_id: batchType === 'group' ? (formData.batch || null) : null,
           name: formData.name,
           phone: formData.phone,
           email: formData.email,
           age: parseInt(formData.age, 10),
           preference: preference.toLowerCase(),
+          batch_type: batchType,
           medical_history: formData.medicalHistory || null,
         })
         .select('status')
@@ -497,7 +602,8 @@ function RegistrationFormSection({ batches }: { batches: PilatesBatch[] }) {
           email: formData.email,
           age: formData.age,
           preference: preference,
-          batch: selectedBatch ? `${selectedBatch.name} (${mode}) — ${selectedBatch.days}, ${selectedBatch.time}` : 'Not selected',
+          batch_type: batchType === '1:1' ? '1:1 Private Session' : 'Group Batch',
+          batch: batchType === '1:1' ? 'N/A (1:1 — schedule during consultation)' : (selectedBatch ? `${selectedBatch.name} (${mode}) — ${selectedBatch.days}, ${selectedBatch.time}` : 'Not selected'),
           medical_history: formData.medicalHistory || 'None provided',
           status: registration?.status || 'registered',
           source_page: 'Pilates Landing Page',
@@ -668,10 +774,46 @@ function RegistrationFormSection({ batches }: { batches: PilatesBatch[] }) {
                 />
               </div>
 
-              {/* Preference — Online / Offline */}
+              {/* Batch Type — Group / 1:1 */}
               <div>
                 <label className="block text-sm font-heading font-bold text-accent mb-2 uppercase tracking-wide">
-                  Preference <span className="text-accent-pink">*</span>
+                  Session Type <span className="text-accent-pink">*</span>
+                </label>
+                <div className="flex gap-4">
+                  {([{ value: 'group', label: 'Group (₹3,000)', sub: '50% off launch' }, { value: '1:1', label: '1:1 Private (₹10,000)', sub: '' }] as const).map((option) => (
+                    <label
+                      key={option.value}
+                      className={`flex-1 flex flex-col items-center justify-center px-4 py-3 rounded-md border-2 cursor-pointer transition-all text-sm font-heading font-bold uppercase tracking-wide ${
+                        batchType === option.value
+                          ? 'border-primary bg-primary/5 text-primary'
+                          : 'border-primary/20 text-text-light hover:border-primary/40'
+                      }`}
+                    >
+                      <input
+                        type="radio"
+                        name="batchType"
+                        value={option.value}
+                        checked={batchType === option.value}
+                        onChange={() => {
+                          setBatchType(option.value);
+                          if (option.value === '1:1') {
+                            setFormData({ ...formData, batch: '' });
+                          }
+                        }}
+                        className="sr-only"
+                      />
+                      <span>{option.label}</span>
+                      {option.sub && <span className="text-xs text-accent-pink font-normal normal-case mt-0.5">{option.sub}</span>}
+                    </label>
+                  ))}
+                </div>
+              </div>
+
+              {/* Preference — Online / Offline + Batch selector (only for group) */}
+              {batchType === 'group' && (<>
+              <div>
+                <label className="block text-sm font-heading font-bold text-accent mb-2 uppercase tracking-wide">
+                  Mode <span className="text-accent-pink">*</span>
                 </label>
                 <div className="flex gap-4">
                   {(['Offline', 'Online'] as const).map((option) => (
@@ -762,6 +904,15 @@ function RegistrationFormSection({ batches }: { batches: PilatesBatch[] }) {
                   aria-hidden="true"
                 />
               </div>
+              </>)}
+
+              {/* 1:1 info message */}
+              {batchType === '1:1' && (
+                <div className="bg-primary/5 border border-primary/20 rounded-md p-4 text-sm text-text-light">
+                  <p className="font-heading font-bold text-accent mb-1 uppercase text-xs tracking-wide">1:1 Private Sessions</p>
+                  <p>Schedule and timing will be discussed during your free consultation with Dr. Shiva. Flexible slots available based on your preference.</p>
+                </div>
+              )}
 
               {/* Medical History */}
               <div>

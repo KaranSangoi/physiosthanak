@@ -346,10 +346,68 @@ export default function TermsOfServicePage() {
               </p>
             </div>
 
+            {/* Mat Pilates Classes */}
+            <div>
+              <h2 className="text-2xl font-heading font-bold text-accent uppercase mb-4">
+                11. Mat Pilates Classes — Additional Terms
+              </h2>
+              <p className="text-text-light leading-relaxed mb-3">
+                The following additional terms apply specifically to students enrolled in
+                PhysioSthanak Mat Pilates classes (Group or 1:1 Private Sessions):
+              </p>
+              <ul className="list-disc list-inside text-text-light space-y-2 ml-4 mb-4">
+                <li>
+                  <strong>Program Structure:</strong> Each batch consists of 8 sessions spread
+                  over 4 weeks (twice per week). Sessions are 45 minutes each.
+                </li>
+                <li>
+                  <strong>Pricing:</strong> Group Batch is ₹6,000 per batch (introductory
+                  offer of ₹3,000 for the first 10 registrations). 1:1 Private Sessions are
+                  ₹10,000 per batch of 8 sessions.
+                </li>
+                <li>
+                  <strong>Payment:</strong> Full payment is collected during the first
+                  consultation call with Dr. Shiva Jain Sangoi or her team. Payment must be
+                  completed before the first class.
+                </li>
+                <li>
+                  <strong>No Refunds:</strong> All payments are non-refundable once enrollment
+                  is confirmed. No exceptions.
+                </li>
+                <li>
+                  <strong>Missed Sessions:</strong> Sessions missed by the student for any
+                  reason (personal, health, schedule conflict) are not repeated, rescheduled,
+                  or refunded. The batch continues as scheduled.
+                </li>
+                <li>
+                  <strong>No Recordings:</strong> Recording of sessions (audio, video, or
+                  screen capture) is strictly prohibited. Students found recording will be
+                  removed from the program without refund.
+                </li>
+                <li>
+                  <strong>Instructor Assignment:</strong> Classes may be conducted by qualified
+                  physiotherapist-instructors (BPTh, Certified Pilates Instructors) trained
+                  and supervised by {siteConfig.doctorName}. Dr. Shiva personally designs
+                  each student&apos;s program and conducts the initial biomechanical assessment.
+                </li>
+                <li>
+                  <strong>Medical Clearance:</strong> Students must disclose all medical
+                  conditions, injuries, and medications during the free consultation.
+                  PhysioSthanak reserves the right to decline enrollment if participation
+                  poses a health risk.
+                </li>
+                <li>
+                  <strong>Waitlist:</strong> If a batch is full at the time of registration,
+                  students are placed on a waitlist. Waitlisted students are contacted when a
+                  spot becomes available. No payment is collected until enrollment is confirmed.
+                </li>
+              </ul>
+            </div>
+
             {/* Governing Law */}
             <div>
               <h2 className="text-2xl font-heading font-bold text-accent uppercase mb-4">
-                11. Governing Law and Jurisdiction
+                12. Governing Law and Jurisdiction
               </h2>
               <p className="text-text-light leading-relaxed">
                 These Terms of Service are governed by and construed in accordance with
@@ -362,7 +420,7 @@ export default function TermsOfServicePage() {
             {/* Changes to Terms */}
             <div>
               <h2 className="text-2xl font-heading font-bold text-accent uppercase mb-4">
-                12. Changes to These Terms
+                13. Changes to These Terms
               </h2>
               <p className="text-text-light leading-relaxed">
                 We reserve the right to update or modify these Terms of Service at any
@@ -375,7 +433,7 @@ export default function TermsOfServicePage() {
             {/* Contact Information */}
             <div>
               <h2 className="text-2xl font-heading font-bold text-accent uppercase mb-4">
-                13. Contact Us
+                14. Contact Us
               </h2>
               <p className="text-text-light leading-relaxed mb-4">
                 If you have any questions about these Terms of Service, please contact us:
