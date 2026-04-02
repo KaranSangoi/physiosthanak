@@ -2,6 +2,7 @@
 
 import { useState, FormEvent } from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 import { createClient } from '@/lib/supabase/client';
 
 export default function AdminLoginPage() {
@@ -37,10 +38,14 @@ export default function AdminLoginPage() {
         <div className="bg-white rounded-lg shadow-lg p-8">
           {/* Branding */}
           <div className="text-center mb-8">
-            <h1 className="text-2xl font-bold text-[#14507c] font-heading tracking-wide normal-case">
-              PhysioSthanak
-            </h1>
-            <p className="text-sm text-gray-500 mt-1">Admin Panel</p>
+            <Image
+              src="/images/Logo - Physiosthanak (1).png"
+              alt="PhysioSthanak"
+              width={957}
+              height={1101}
+              className="h-24 w-auto mx-auto mb-3"
+            />
+            <p className="text-sm text-gray-500">Admin Panel</p>
           </div>
 
           {/* Error */}
