@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
 import {
@@ -64,8 +65,14 @@ export default function AdminShell({
         `}
       >
         <div className="flex items-center justify-between h-16 px-4 border-b border-white/10">
-          <Link href="/admin/pilates" className="font-heading text-lg font-bold tracking-wide uppercase">
-            PhysioSthanak
+          <Link href="/admin/pilates">
+            <Image
+              src="/images/logo-header.png"
+              alt="PhysioSthanak Admin"
+              width={406}
+              height={130}
+              className="h-10 w-auto brightness-0 invert"
+            />
           </Link>
           <button
             onClick={() => setSidebarOpen(false)}
