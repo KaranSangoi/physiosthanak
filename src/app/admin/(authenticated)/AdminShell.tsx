@@ -9,6 +9,7 @@ import {
   LayoutDashboard,
   Calendar,
   Users,
+  UserCheck,
   Clock,
   Settings,
   LogOut,
@@ -22,6 +23,7 @@ const NAV_ITEMS = [
   { href: '/admin/pilates', label: 'Dashboard', icon: LayoutDashboard },
   { href: '/admin/pilates/batches', label: 'Batches', icon: Calendar },
   { href: '/admin/pilates/registrations', label: 'Registrations', icon: Users },
+  { href: '/admin/pilates/students', label: 'Students', icon: UserCheck },
   { href: '/admin/pilates/waitlist', label: 'Waitlist', icon: Clock },
   { href: '/admin/pilates/settings', label: 'Settings', icon: Settings },
   { href: '/admin/analytics', label: 'Analytics', icon: BarChart3 },
@@ -85,7 +87,7 @@ export default function AdminShell({
 
         <nav className="mt-4 px-2 space-y-1">
           {NAV_ITEMS.map((item) => {
-            const isActive = pathname === item.href || (item.href === '/admin/analytics' && pathname.startsWith('/admin/analytics'));
+            const isActive = pathname === item.href || (item.href !== '/admin/pilates' && pathname.startsWith(item.href));
             const Icon = item.icon;
             return (
               <Link

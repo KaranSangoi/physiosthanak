@@ -51,7 +51,11 @@
       "Bash(claude mcp:*)",
       "WebFetch(domain:supabase.com)",
       "Bash(npx tsc:*)",
-      "Bash(node scripts/run-migration-002.mjs)"
+      "Bash(node scripts/run-migration-002.mjs)",
+      "Bash(npx tsx:*)",
+      "Bash(mkdir -p \"C:/Users/karan/Desktop/physiosthanak/src/app/admin/\\(authenticated\\)/pilates/students/[id]/assess\")",
+      "Bash(mkdir -p \"C:/Users/karan/Desktop/physiosthanak/src/app/admin/\\(authenticated\\)/pilates/students/[id]/progress\")",
+      "Bash(mkdir -p \"C:/Users/karan/Desktop/physiosthanak/src/app/admin/\\(authenticated\\)/pilates/students/[id]/assessments/[aid]\")"
     ]
   },
   "enableAllProjectMcpServers": true,
