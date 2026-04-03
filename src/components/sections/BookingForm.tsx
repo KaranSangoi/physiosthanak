@@ -23,8 +23,8 @@ export default function BookingForm() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           access_key: WEB3FORMS_KEY,
-          // cc: formData.get('email'), // TODO: uncomment after testing
-          // replyto: formData.get('email'),
+          cc: formData.get('email'),
+          replyto: formData.get('email'),
           name: formData.get('name'),
           phone: formData.get('phone'),
           email: formData.get('email'),
