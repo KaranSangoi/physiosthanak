@@ -4,7 +4,8 @@ import { useState, useEffect } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
 import { ArrowLeft, Save, ChevronLeft, ChevronRight, Check } from 'lucide-react';
-import type { PilatesRegistration, PilatesBatch, PilatesAssessment } from '@/types/pilates';
+import type { PilatesRegistration, PilatesBatch, PilatesAssessment, BodyMapMarker } from '@/types/pilates';
+import BodyMap from '@/components/admin/BodyMap';
 
 const STEPS = [
   { id: 1, label: 'Client Details' },
@@ -1020,16 +1021,16 @@ function StepPosture({
         />
       </div>
 
+      {/* Interactive Body Map */}
       <div>
-        <Label htmlFor="body_map_notes">Body Map Notes</Label>
-        <p className="text-xs text-gray-500 mb-1">Describe areas of pain, tightness, weakness, numbness, or swelling</p>
-        <TextArea
-          id="body_map_notes"
-          value={form.additional_tests || ''}
-          onChange={(v) => updateForm('additional_tests', v)}
-          placeholder="e.g. Tightness in right hip flexor, weakness in left glute medius, numbness in left hand..."
-          rows={4}
-        />
+        <Label>Body Map</Label>
+        <p className="text-xs text-gray-500 mb-2">Tap on body regions to mark areas of pain, tightness, weakness, or other findings</p>
+        <div className="border border-gray-200 rounded-lg p-4 bg-gray-50/50">
+          <BodyMap
+            markers={(form.body_map?.markers as BodyMapMarker[]) || []}
+            onChange={(markers) => updateForm('body_map', { markers })}
+          />
+        </div>
       </div>
     </div>
   );

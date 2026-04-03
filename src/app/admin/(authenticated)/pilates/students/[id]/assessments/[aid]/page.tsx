@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { createClient } from '@/lib/supabase/client';
 import { ArrowLeft, Edit, Calendar, User } from 'lucide-react';
 import type { PilatesRegistration, PilatesAssessment } from '@/types/pilates';
+import { BodyMapReadOnly } from '@/components/admin/BodyMap';
 
 export default function AssessmentDetailPage() {
   const params = useParams();
@@ -235,6 +236,14 @@ export default function AssessmentDetailPage() {
                     {f}
                   </span>
                 ))}
+              </div>
+            </div>
+          )}
+          {assessment.body_map && assessment.body_map.markers && assessment.body_map.markers.length > 0 && (
+            <div className="mt-4">
+              <span className="text-xs text-gray-500 block mb-2">Body Map</span>
+              <div className="border border-gray-200 rounded-lg p-4 bg-gray-50/50">
+                <BodyMapReadOnly markers={assessment.body_map.markers} />
               </div>
             </div>
           )}

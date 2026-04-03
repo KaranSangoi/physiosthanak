@@ -4,7 +4,8 @@ import { useState, useEffect } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
 import { ArrowLeft, Save, ChevronLeft, ChevronRight, Check } from 'lucide-react';
-import type { PilatesRegistration, PilatesBatch, PilatesAssessment } from '@/types/pilates';
+import type { PilatesRegistration, PilatesBatch, PilatesAssessment, BodyMapMarker } from '@/types/pilates';
+import { BodyMapComparison } from '@/components/admin/BodyMap';
 
 const STEPS = [
   { id: 1, label: 'Pain Re-assessment' },
@@ -557,6 +558,19 @@ function ProgressStepPain({
           className="w-full px-3 py-2.5 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-[#14507c] focus:border-transparent resize-none"
           placeholder="What makes it better now..."
         />
+      </div>
+
+      {/* Body Map comparison */}
+      <div>
+        <Label>Body Map</Label>
+        <p className="text-xs text-gray-500 mb-2">Compare current findings against the initial assessment</p>
+        <div className="border border-gray-200 rounded-lg p-4 bg-gray-50/50">
+          <BodyMapComparison
+            initialMarkers={initial.body_map?.markers || []}
+            currentMarkers={((form.body_map as { markers: BodyMapMarker[] })?.markers as BodyMapMarker[]) || []}
+            onChange={(markers) => updateForm('body_map', { markers })}
+          />
+        </div>
       </div>
     </div>
   );
