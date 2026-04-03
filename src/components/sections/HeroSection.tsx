@@ -43,8 +43,8 @@ export default function HeroSection({
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           access_key: WEB3FORMS_KEY,
-          cc: formData.email,
-          replyto: formData.email,
+          // cc: formData.email, // TODO: uncomment after testing
+          // replyto: formData.email,
           name: formData.name,
           phone: formData.phone,
           email: formData.email,
