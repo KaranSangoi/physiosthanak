@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { createClient } from '@/lib/supabase/client';
-import { ArrowLeft, Edit, Calendar, User } from 'lucide-react';
+import { ArrowLeft, Edit, Calendar, User, Download } from 'lucide-react';
 import type { PilatesRegistration, PilatesAssessment } from '@/types/pilates';
 import { BodyMapReadOnly } from '@/components/admin/BodyMap';
 
@@ -89,15 +89,24 @@ export default function AssessmentDetailPage() {
           </div>
         </div>
 
-        <Link
-          href={isInitial
-            ? `/admin/pilates/students/${studentId}/assess`
-            : `/admin/pilates/students/${studentId}/progress`}
-          className="inline-flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-[#14507c] border border-[#14507c] rounded-md hover:bg-blue-50 transition-colors"
-        >
-          <Edit size={14} />
-          Edit
-        </Link>
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() => window.open(`/api/assessment-pdf?id=${assessmentId}`, '_blank')}
+            className="inline-flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-white bg-[#14507c] rounded-md hover:bg-[#0f3e61] transition-colors"
+          >
+            <Download size={14} />
+            Download PDF
+          </button>
+          <Link
+            href={isInitial
+              ? `/admin/pilates/students/${studentId}/assess`
+              : `/admin/pilates/students/${studentId}/progress`}
+            className="inline-flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-[#14507c] border border-[#14507c] rounded-md hover:bg-blue-50 transition-colors"
+          >
+            <Edit size={14} />
+            Edit
+          </Link>
+        </div>
       </div>
 
       {/* Assessment Meta */}

@@ -13,6 +13,7 @@ import {
   Phone,
   Mail,
   Activity,
+  Download,
 } from 'lucide-react';
 import type { PilatesRegistration, PilatesAssessment } from '@/types/pilates';
 
@@ -197,12 +198,14 @@ export default function StudentProfilePage() {
         ) : (
           <div className="divide-y divide-gray-100">
             {assessments.map((a) => (
-              <Link
+              <div
                 key={a.id}
-                href={`/admin/pilates/students/${studentId}/assessments/${a.id}`}
                 className="flex items-center justify-between px-6 py-4 hover:bg-blue-50 transition-colors"
               >
-                <div className="flex items-center gap-4">
+                <Link
+                  href={`/admin/pilates/students/${studentId}/assessments/${a.id}`}
+                  className="flex items-center gap-4 flex-1 min-w-0"
+                >
                   <div className={`w-2 h-2 rounded-full shrink-0 ${
                     a.type === 'initial' ? 'bg-blue-500' : 'bg-green-500'
                   }`} />
@@ -228,9 +231,27 @@ export default function StudentProfilePage() {
                       {a.session_number ? ` | Session #${a.session_number}` : ''}
                     </p>
                   </div>
+                </Link>
+                <div className="flex items-center gap-3 shrink-0">
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      window.open(`/api/assessment-pdf?id=${a.id}`, '_blank');
+                    }}
+                    className="p-1.5 text-gray-400 hover:text-[#14507c] hover:bg-blue-50 rounded-md transition-colors"
+                    title="Download PDF"
+                    aria-label="Download PDF"
+                  >
+                    <Download size={14} />
+                  </button>
+                  <Link
+                    href={`/admin/pilates/students/${studentId}/assessments/${a.id}`}
+                    className="text-gray-400 text-xs hover:text-[#14507c]"
+                  >
+                    View &rarr;
+                  </Link>
                 </div>
-                <span className="text-gray-400 text-xs">View &rarr;</span>
-              </Link>
+              </div>
             ))}
           </div>
         )}
