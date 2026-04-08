@@ -404,10 +404,60 @@ export default function TermsOfServicePage() {
               </ul>
             </div>
 
+            {/* Termination Without Refund */}
+            <div>
+              <h2 className="text-2xl font-heading font-bold text-accent uppercase mb-4">
+                12. Right to Terminate Enrollment Without Refund
+              </h2>
+              <p className="text-text-light leading-relaxed mb-3">
+                PhysioSthanak reserves the right to immediately terminate a patient&apos;s
+                or student&apos;s enrollment — in physiotherapy services, Mat Pilates classes,
+                or any other program — without refund, if the individual engages in any of
+                the following:
+              </p>
+              <ul className="list-disc list-inside text-text-light space-y-2 ml-4 mb-4">
+                <li>
+                  <strong>Misconduct During Sessions:</strong> Disruptive, abusive, or
+                  threatening behavior (verbal or physical) toward instructors, staff, or
+                  fellow students/patients, whether in online or offline sessions.
+                </li>
+                <li>
+                  <strong>Violation of Recording Policy:</strong> Recording, screen-capturing,
+                  or live-streaming any session (online or offline) despite the strict
+                  no-recording rule.
+                </li>
+                <li>
+                  <strong>Non-Disclosure of Medical Conditions:</strong> Deliberately hiding
+                  injuries, medical conditions, surgeries, or medications that could affect
+                  the safety of the individual or others during treatment or classes.
+                </li>
+                <li>
+                  <strong>Unauthorized Sharing of Access:</strong> Sharing online class links,
+                  login credentials, session recordings, exercise plans, or any proprietary
+                  PhysioSthanak material with unauthorized persons.
+                </li>
+                <li>
+                  <strong>Harassment:</strong> Any form of harassment, discrimination, or
+                  inappropriate behavior toward PhysioSthanak staff, instructors, or other
+                  students/patients — online or in person.
+                </li>
+                <li>
+                  <strong>Violation of Any Other Terms:</strong> Any other breach of these
+                  Terms of Service that PhysioSthanak deems significant enough to warrant
+                  termination.
+                </li>
+              </ul>
+              <p className="text-text-light leading-relaxed">
+                In such cases, PhysioSthanak will notify the individual of the termination.
+                No refunds — partial or full — will be issued. PhysioSthanak&apos;s decision
+                in such matters is final.
+              </p>
+            </div>
+
             {/* Governing Law */}
             <div>
               <h2 className="text-2xl font-heading font-bold text-accent uppercase mb-4">
-                12. Governing Law and Jurisdiction
+                13. Governing Law and Jurisdiction
               </h2>
               <p className="text-text-light leading-relaxed">
                 These Terms of Service are governed by and construed in accordance with
@@ -420,7 +470,7 @@ export default function TermsOfServicePage() {
             {/* Changes to Terms */}
             <div>
               <h2 className="text-2xl font-heading font-bold text-accent uppercase mb-4">
-                13. Changes to These Terms
+                14. Changes to These Terms
               </h2>
               <p className="text-text-light leading-relaxed">
                 We reserve the right to update or modify these Terms of Service at any
@@ -433,7 +483,7 @@ export default function TermsOfServicePage() {
             {/* Contact Information */}
             <div>
               <h2 className="text-2xl font-heading font-bold text-accent uppercase mb-4">
-                14. Contact Us
+                15. Contact Us
               </h2>
               <p className="text-text-light leading-relaxed mb-4">
                 If you have any questions about these Terms of Service, please contact us:

@@ -32,10 +32,10 @@ export const metadata: Metadata = {
     locale: 'en_IN',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/images/pilates-og.jpg',
         width: 1200,
         height: 630,
-        alt: 'PhysioSthanak Mat Pilates Classes in Borivali',
+        alt: 'Mat Pilates Classes in Borivali by PhysioSthanak',
       },
     ],
   },
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     title: 'Mat Pilates Classes in Borivali | PhysioSthanak',
     description:
       'Physiotherapist-led Mat Pilates with free biomechanical assessment. Online & offline batches available.',
-    images: ['/og-image.jpg'],
+    images: ['/images/pilates-og.jpg'],
   },
   alternates: {
     canonical: `${siteConfig.domain}/pilates`,
