@@ -32,6 +32,8 @@ export const metadata: Metadata = {
     'rehabilitation',
     'home physiotherapy Borivali',
     'physiotherapist in Borivali West',
+    'pilates classes Borivali',
+    'mat pilates Borivali West',
   ],
   openGraph: {
     title: 'Best Physiotherapist in Borivali | PhysioSthanak',
@@ -345,6 +347,31 @@ export default function HomePage() {
                 image={service.image}
               />
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Mat Pilates CTA Banner */}
+      <section className="section-padding bg-gradient-to-r from-accent-pink/10 to-primary/10">
+        <div className="container-max">
+          <div className="bg-white rounded-xl shadow-lg p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 border-l-4 border-accent-pink">
+            <div className="flex-1">
+              <span className="inline-block bg-accent-pink/20 text-accent-pink px-3 py-1 rounded-full text-sm font-heading font-medium uppercase tracking-wider mb-3">
+                New at PhysioSthanak
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-heading font-bold text-accent mb-3 uppercase">
+                Mat Pilates Classes in Borivali West
+              </h2>
+              <p className="text-text-light leading-relaxed mb-4">
+                Strengthen your core, improve posture, and reduce back pain with our expert-led Mat Pilates group classes. Guided by Dr. Shiva Jain (MPTh Ortho) — combining physiotherapy expertise with Pilates for safe, effective results.
+              </p>
+              <a
+                href="/pilates"
+                className="btn-primary inline-block"
+              >
+                Explore Mat Pilates Classes →
+              </a>
+            </div>
           </div>
         </div>
       </section>

@@ -68,6 +68,52 @@ const nextConfig: NextConfig = {
                       destination: '/',
                       permanent: true,
             },
+                  // WordPress paths returning 403 on Vercel — redirect to homepage
+            {
+                      source: '/wp-includes/:path*',
+                      destination: '/',
+                      permanent: true,
+            },
+            {
+                      source: '/wp-json/:path*',
+                      destination: '/',
+                      permanent: true,
+            },
+            {
+                      source: '/wp-cron.php',
+                      destination: '/',
+                      permanent: true,
+            },
+            {
+                      source: '/wp-config.php',
+                      destination: '/',
+                      permanent: true,
+            },
+            {
+                      source: '/wp-comments-post.php',
+                      destination: '/',
+                      permanent: true,
+            },
+            {
+                      source: '/wp-signup.php',
+                      destination: '/',
+                      permanent: true,
+            },
+            {
+                      source: '/wp-trackback.php',
+                      destination: '/',
+                      permanent: true,
+            },
+            {
+                      source: '/wp-links-opml.php',
+                      destination: '/',
+                      permanent: true,
+            },
+            {
+                      source: '/wp-mail.php',
+                      destination: '/',
+                      permanent: true,
+            },
                 ];
     },
 };
