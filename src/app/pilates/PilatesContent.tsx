@@ -96,6 +96,7 @@ export default function PilatesContent({ batches }: PilatesContentProps) {
 
       <HeroSection />
       <WhyDifferentSection />
+      <ImageStripSection />
       <HowItWorksSection />
       <PricingSection />
       <BatchesSection batches={batches} />
@@ -112,20 +113,18 @@ export default function PilatesContent({ batches }: PilatesContentProps) {
 function HeroSection() {
   return (
     <section className="relative overflow-hidden py-20 md:py-28 bg-[#0e1b2d]">
-      {/* Background gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0e1b2d]/95 to-[#0e1b2d]/60 z-10" />
+      {/* Background image */}
+      <Image
+        src="/images/pilates/hero-bg.jpg"
+        alt=""
+        fill
+        className="object-cover object-center z-0"
+        priority
+        sizes="100vw"
+      />
 
-      {/* Subtle dot pattern */}
-      <div className="absolute inset-0 z-0 opacity-5">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage:
-              'radial-gradient(circle at 25px 25px, rgba(255,255,255,0.15) 2px, transparent 0)',
-            backgroundSize: '50px 50px',
-          }}
-        />
-      </div>
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0e1b2d]/90 to-[#0e1b2d]/70 z-10" />
 
       <div className="container-max px-4 relative z-20">
         <div className="max-w-3xl mx-auto text-center space-y-6">
@@ -206,21 +205,80 @@ function WhyDifferentSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
-          {usps.map((usp, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-lg p-5 sm:p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 hover:border-primary/20"
-            >
-              <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-5">
-                <CheckCircle className="w-7 h-7 text-primary" />
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 md:gap-10 items-center">
+          {/* USP cards */}
+          <div className="lg:col-span-3 grid grid-cols-1 gap-5">
+            {usps.map((usp, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-lg p-5 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 hover:border-primary/20 flex gap-5"
+              >
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <CheckCircle className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-base font-heading font-bold text-accent uppercase mb-2">
+                    {usp.title}
+                  </h3>
+                  <p className="text-text-light leading-relaxed text-sm">{usp.description}</p>
+                </div>
               </div>
-              <h3 className="text-lg font-heading font-bold text-accent uppercase mb-3">
-                {usp.title}
-              </h3>
-              <p className="text-text-light leading-relaxed text-sm">{usp.description}</p>
+            ))}
+          </div>
+
+          {/* Side image */}
+          <div className="lg:col-span-2 hidden lg:block">
+            <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+              <Image
+                src="/images/pilates/pilates-stretch.jpg"
+                alt="Woman performing a pilates lunge stretch on a mat"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 0vw, 40vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0e1b2d]/30 to-transparent" />
             </div>
-          ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─────────────── IMAGE STRIP ─────────────── */
+
+function ImageStripSection() {
+  return (
+    <section className="py-2 bg-white">
+      <div className="container-max">
+        <div className="grid grid-cols-3 gap-2 md:gap-4 rounded-xl overflow-hidden">
+          <div className="relative h-[150px] sm:h-[200px] md:h-[250px]">
+            <Image
+              src="/images/pilates/pilates-core.jpg"
+              alt="Woman doing core exercises on a pilates mat"
+              fill
+              className="object-cover"
+              sizes="33vw"
+            />
+          </div>
+          <div className="relative h-[150px] sm:h-[200px] md:h-[250px]">
+            <Image
+              src="/images/pilates/pilates-mat.jpg"
+              alt="Woman in child's pose on a pink pilates mat"
+              fill
+              className="object-cover"
+              sizes="33vw"
+            />
+          </div>
+          <div className="relative h-[150px] sm:h-[200px] md:h-[250px]">
+            <Image
+              src="/images/pilates/pilates-plank.jpg"
+              alt="Woman stretching on a pilates mat"
+              fill
+              className="object-cover"
+              sizes="33vw"
+            />
+          </div>
         </div>
       </div>
     </section>
@@ -1044,17 +1102,17 @@ function FAQSectionLocal() {
 function CTASectionLocal() {
   return (
     <section className="section-padding-lg bg-[#0e1b2d] text-white relative overflow-hidden">
-      {/* Subtle dot pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage:
-              'radial-gradient(circle at 25px 25px, rgba(255,255,255,0.15) 2px, transparent 0)',
-            backgroundSize: '50px 50px',
-          }}
-        />
-      </div>
+      {/* Background image */}
+      <Image
+        src="/images/pilates/cta-bg.jpg"
+        alt=""
+        fill
+        className="object-cover object-center z-0"
+        sizes="100vw"
+      />
+
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-[#0e1b2d]/80 z-[1]" />
 
       <div className="container-max text-center relative z-10">
         <span className="section-eyebrow">Start Today</span>
