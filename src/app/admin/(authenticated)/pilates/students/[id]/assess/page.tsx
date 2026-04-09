@@ -99,7 +99,7 @@ function getInitialForm(studentId: string): FormData {
     type: 'initial',
     assessment_date: new Date().toISOString().split('T')[0],
     assessor_name: 'Dr. Shiva Jain Sangoi',
-    gender: '',
+    gender: 'female',
     occupation: '',
     referred_by: '',
     emergency_contact: '',
@@ -224,13 +224,22 @@ export default function InitialAssessmentPage() {
     setSaving(true);
     const supabase = createClient();
 
-    // Clean up empty strings from arrays
-    const cleanForm = {
-      ...form,
-      short_term_goals: (form.short_term_goals || []).filter((g) => g.trim()),
-      long_term_goals: (form.long_term_goals || []).filter((g) => g.trim()),
-      assigned_batch_id: form.assigned_batch_id || null,
-    };
+    // Clean up empty strings — convert to null for DB CHECK constraints
+    const cleanForm: Record<string, unknown> = {};
+    for (const [key, value] of Object.entries(form)) {
+      if (value === '') {
+        cleanForm[key] = null;
+      } else {
+        cleanForm[key] = value;
+      }
+    }
+    // Clean arrays
+    cleanForm.short_term_goals = (form.short_term_goals || []).filter((g) => g.trim());
+    cleanForm.long_term_goals = (form.long_term_goals || []).filter((g) => g.trim());
+    // Ensure null for empty optional UUIDs
+    if (!form.assigned_batch_id) cleanForm.assigned_batch_id = null;
+    // pain_vas should be number not null
+    if (form.pain_vas === 0) cleanForm.pain_vas = 0;
 
     if (draftId) {
       const { error } = await supabase
@@ -239,7 +248,8 @@ export default function InitialAssessmentPage() {
         .eq('id', draftId);
 
       if (error) {
-        setToast({ message: 'Failed to save draft', type: 'error' });
+        console.error('Draft update error:', error);
+        setToast({ message: `Failed to save draft: ${error.message}`, type: 'error' });
       } else {
         setToast({ message: 'Draft saved', type: 'success' });
       }
@@ -251,7 +261,8 @@ export default function InitialAssessmentPage() {
         .single();
 
       if (error) {
-        setToast({ message: 'Failed to save draft', type: 'error' });
+        console.error('Draft insert error:', error);
+        setToast({ message: `Failed to save draft: ${error.message}`, type: 'error' });
       } else {
         setDraftId(data.id);
         setToast({ message: 'Draft saved', type: 'success' });
@@ -270,14 +281,21 @@ export default function InitialAssessmentPage() {
     setSaving(true);
     const supabase = createClient();
 
-    const cleanForm = {
-      ...form,
-      consent_given: true,
-      short_term_goals: (form.short_term_goals || []).filter((g) => g.trim()),
-      long_term_goals: (form.long_term_goals || []).filter((g) => g.trim()),
-      assigned_batch_id: form.assigned_batch_id || null,
-      updated_at: new Date().toISOString(),
-    };
+    // Clean up empty strings — convert to null for DB CHECK constraints
+    const cleanForm: Record<string, unknown> = {};
+    for (const [key, value] of Object.entries(form)) {
+      if (value === '') {
+        cleanForm[key] = null;
+      } else {
+        cleanForm[key] = value;
+      }
+    }
+    cleanForm.consent_given = true;
+    cleanForm.short_term_goals = (form.short_term_goals || []).filter((g) => g.trim());
+    cleanForm.long_term_goals = (form.long_term_goals || []).filter((g) => g.trim());
+    if (!form.assigned_batch_id) cleanForm.assigned_batch_id = null;
+    if (form.pain_vas === 0) cleanForm.pain_vas = 0;
+    cleanForm.updated_at = new Date().toISOString();
 
     let error;
 
@@ -643,18 +661,6 @@ function StepClientDetails({
             type="date"
             value={form.assessment_date}
             onChange={(v) => updateForm('assessment_date', v)}
-          />
-        </div>
-        <div>
-          <Label htmlFor="gender">Gender</Label>
-          <RadioGroup
-            value={form.gender || ''}
-            onChange={(v) => updateForm('gender', v)}
-            options={[
-              { value: 'male', label: 'Male' },
-              { value: 'female', label: 'Female' },
-              { value: 'other', label: 'Other' },
-            ]}
           />
         </div>
         <div>
@@ -1325,12 +1331,12 @@ function StepGoals({
       </div>
 
       <div>
-        <Label htmlFor="patient_own_goals">Patient&apos;s Own Goals</Label>
+        <Label htmlFor="patient_own_goals">Her Own Goals</Label>
         <TextArea
           id="patient_own_goals"
           value={form.patient_own_goals || ''}
           onChange={(v) => updateForm('patient_own_goals', v)}
-          placeholder="What the patient wants to achieve in their own words..."
+          placeholder="What she wants to achieve in her own words..."
           rows={3}
         />
       </div>
@@ -1474,7 +1480,7 @@ function StepProgramme({
             id="client_signature"
             value={form.client_signature || ''}
             onChange={(v) => updateForm('client_signature', v)}
-            placeholder="Client types their full name as signature"
+            placeholder="She types her full name as signature"
           />
         </div>
 
@@ -1486,8 +1492,8 @@ function StepProgramme({
             className="mt-1 w-5 h-5 rounded border-gray-300 text-[#14507c] focus:ring-[#14507c]"
           />
           <span className="text-sm text-gray-700">
-            I have explained the assessment findings, recommended programme, and treatment plan to the client.
-            The client understands and consents to participate in the Pilates programme.
+            I have explained the assessment findings, recommended programme, and treatment plan to her.
+            She understands and consents to participate in the Pilates programme.
           </span>
         </label>
       </div>

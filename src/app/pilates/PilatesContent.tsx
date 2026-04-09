@@ -17,7 +17,7 @@ const FAQS = [
   {
     question: 'Who can join these classes?',
     answer:
-      'Our Mat Pilates classes are suitable for all fitness levels — from complete beginners to experienced practitioners. Whether you are recovering from an injury, managing chronic pain, looking to improve posture, or simply want a structured fitness routine, our physiotherapist-instructors design exercises around your abilities. People with conditions like back pain, joint stiffness, post-surgery recovery, and even pregnancy can benefit, as every exercise is modified to suit individual needs.',
+      'Our Mat Pilates classes are exclusively for women of all fitness levels — from complete beginners to experienced practitioners. Whether you are recovering from an injury, managing chronic pain, looking to improve posture, or simply want a structured fitness routine, our physiotherapist-instructors design exercises around your abilities. Women with conditions like back pain, joint stiffness, post-surgery recovery, and even pregnancy can benefit, as every exercise is modified to suit individual needs.',
   },
   {
     question: 'What happens during the free consultation?',
@@ -69,8 +69,8 @@ export default function PilatesContent({ batches }: PilatesContentProps) {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'HowTo',
-            name: 'How to Start Physiotherapist-Led Mat Pilates at PhysioSthanak',
-            description: 'Join Mat Pilates classes led by a qualified physiotherapist in Borivali, Mumbai. Every student gets a free biomechanical assessment before starting.',
+            name: 'How to Start Women-Only Physiotherapist-Led Mat Pilates at PhysioSthanak',
+            description: 'Join women-only Mat Pilates classes led by a qualified physiotherapist in Borivali, Mumbai. Every student gets a free biomechanical assessment before starting.',
             totalTime: 'P7D',
             step: [
               {
@@ -131,15 +131,15 @@ function HeroSection() {
         <div className="max-w-3xl mx-auto text-center space-y-6">
           {/* Badge */}
           <span className="inline-block bg-accent-pink/20 text-accent-pink border border-accent-pink/30 px-4 py-1.5 rounded-full text-sm font-heading font-medium uppercase tracking-wider">
-            NEW — Mat Pilates Classes
+            Women-Only Mat Pilates Classes
           </span>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-tight uppercase">
-            Physiotherapist-Led Mat Pilates in Borivali
+            Physiotherapist-Led Mat Pilates for Women in Borivali
           </h1>
 
           <p className="text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl mx-auto">
-            Free consultation by Dr. Shiva. Classes by qualified physiotherapist-instructors. Customized to your body.
+            Women-only classes led by qualified physiotherapist-instructors. Free consultation by Dr. Shiva. Customized to your body.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
@@ -161,7 +161,7 @@ function HeroSection() {
               ))}
             </div>
             <span className="text-slate-400 text-sm font-medium">
-              8000+ Patients Treated by Dr. Shiva &amp; Team
+              8000+ Women &amp; Patients Treated by Dr. Shiva &amp; Team
             </span>
           </div>
         </div>
@@ -389,7 +389,7 @@ function BatchesSection({ batches }: { batches: PilatesBatch[] }) {
         <div className="text-center mb-14">
           <span className="section-eyebrow">Batches</span>
           <h2 className="text-3xl sm:text-4xl font-heading font-bold text-accent mb-4 uppercase">
-            Available Mat Pilates Batches
+            Available Women-Only Batches
           </h2>
           <p className="text-lg text-text-light max-w-2xl mx-auto">
             Choose a batch that fits your schedule. All batches include the free biomechanical
@@ -656,7 +656,7 @@ function RegistrationFormSection({ batches }: { batches: PilatesBatch[] }) {
         <div className="text-center mb-10">
           <span className="section-eyebrow">Register</span>
           <h2 className="text-3xl sm:text-4xl font-heading font-bold text-accent mb-4 uppercase">
-            Register for Mat Pilates
+            Register for Women-Only Mat Pilates
           </h2>
           <p className="text-lg text-text-light max-w-xl mx-auto">
             Fill out the form below and we&apos;ll call you to schedule your free physiotherapy
@@ -1062,8 +1062,8 @@ function CTASectionLocal() {
           Start Your Pilates Journey Today
         </h2>
         <p className="text-lg text-slate-300 max-w-2xl mx-auto mb-10">
-          Register now and get a free physiotherapy consultation with Dr. Shiva and team before your first
-          class. Limited spots available in each batch.
+          Register now and get a free physiotherapy consultation with Dr. Shiva before your first
+          class. Women-only batches with limited spots available.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
