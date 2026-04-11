@@ -43,6 +43,9 @@ export const metadata: Metadata = {
   ],
   creator: siteConfig.businessName,
   publisher: siteConfig.businessName,
+  verification: {
+    google: 'H0GKBQSKXy--f3idl1hm8Z2Tgpygi-OyS4pO-65THUY',
+  },
   metadataBase: new URL(siteConfig.domain),
   openGraph: {
     type: 'website',
