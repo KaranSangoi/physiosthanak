@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
@@ -16,17 +16,24 @@ import {
   Menu,
   X,
   BarChart3,
+  ArrowLeft,
 } from 'lucide-react';
 import type { User } from '@supabase/supabase-js';
 
-const NAV_ITEMS = [
+const MAIN_NAV_ITEMS = [
+  { href: '/admin/dashboard', label: 'Dashboard', icon: LayoutDashboard },
+  { href: '/admin/patients', label: 'Patients', icon: UserCheck },
+  { href: '/admin/pilates', label: 'Pilates', icon: Calendar },
+  { href: '/admin/analytics', label: 'Analytics', icon: BarChart3 },
+];
+
+const PILATES_NAV_ITEMS = [
   { href: '/admin/pilates', label: 'Dashboard', icon: LayoutDashboard },
   { href: '/admin/pilates/batches', label: 'Batches', icon: Calendar },
   { href: '/admin/pilates/registrations', label: 'Registrations', icon: Users },
   { href: '/admin/pilates/students', label: 'Students', icon: UserCheck },
   { href: '/admin/pilates/waitlist', label: 'Waitlist', icon: Clock },
   { href: '/admin/pilates/settings', label: 'Settings', icon: Settings },
-  { href: '/admin/analytics', label: 'Analytics', icon: BarChart3 },
 ];
 
 export default function AdminShell({
@@ -40,6 +47,18 @@ export default function AdminShell({
   const router = useRouter();
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [loggingOut, setLoggingOut] = useState(false);
+
+  // Defer mode detection until after mount. usePathname() can return values
+  // that don't match what the server rendered during the first paint, which
+  // makes the conditional Pilates back-button cause a hydration mismatch.
+  // Render the main-mode shell first, then swap on the client.
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
+  const isPilatesMode = mounted && pathname.startsWith('/admin/pilates');
+  const navItems = isPilatesMode ? PILATES_NAV_ITEMS : MAIN_NAV_ITEMS;
+  const logoHref = isPilatesMode ? '/admin/pilates' : '/admin/dashboard';
+  const headerTitle = isPilatesMode ? 'Pilates Admin' : 'PhysioSthanak Admin';
 
   const handleLogout = async () => {
     setLoggingOut(true);
@@ -67,7 +86,7 @@ export default function AdminShell({
         `}
       >
         <div className="flex items-center justify-between h-16 px-4 border-b border-white/10">
-          <Link href="/admin/pilates">
+          <Link href={logoHref}>
             <Image
               src="/images/logo-header.png"
               alt="PhysioSthanak Admin"
@@ -85,9 +104,26 @@ export default function AdminShell({
           </button>
         </div>
 
+        {isPilatesMode && (
+          <div className="px-3 pt-4 pb-3 border-b border-white/10">
+            <Link
+              href="/admin/dashboard"
+              onClick={() => setSidebarOpen(false)}
+              className="group flex items-center gap-2 w-full px-3 py-2 rounded-md text-sm font-medium bg-[#e8899c]/15 text-[#f5b8c5] border border-[#e8899c]/30 hover:bg-[#e8899c]/25 hover:text-white hover:border-[#e8899c]/60 transition-all"
+            >
+              <ArrowLeft size={15} className="group-hover:-translate-x-0.5 transition-transform" />
+              Back to Main
+            </Link>
+          </div>
+        )}
+
         <nav className="mt-4 px-2 space-y-1">
-          {NAV_ITEMS.map((item) => {
-            const isActive = pathname === item.href || (item.href !== '/admin/pilates' && pathname.startsWith(item.href));
+          {navItems.map((item) => {
+            const isActive =
+              pathname === item.href ||
+              (item.href !== '/admin/pilates' &&
+                item.href !== '/admin/dashboard' &&
+                pathname.startsWith(item.href));
             const Icon = item.icon;
             return (
               <Link
@@ -131,7 +167,7 @@ export default function AdminShell({
             <Menu size={20} />
           </button>
           <h1 className="text-lg font-semibold text-gray-800 font-heading normal-case">
-            Pilates Admin
+            {headerTitle}
           </h1>
           <div className="text-sm text-gray-500 hidden sm:block">
             {user.email}
