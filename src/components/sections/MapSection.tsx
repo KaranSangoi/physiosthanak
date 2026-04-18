@@ -1,3 +1,5 @@
+import { siteConfig } from '@/data/site-config';
+
 interface MapSectionProps {
   heading: string;
   description: string;
@@ -91,7 +93,7 @@ export default function MapSection({
                     Get Directions
                   </h3>
                   <a
-                    href={`https://maps.google.com/?q=${query}`}
+                    href={siteConfig.googleMapsPlaceUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block btn-primary text-sm"

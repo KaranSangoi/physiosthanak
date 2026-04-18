@@ -127,6 +127,17 @@ export default function Footer() {
                 </div>
                 <span className="leading-relaxed">{siteConfig.address}</span>
               </div>
+              <a
+                href={siteConfig.googleReviewUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-slate-400 text-sm hover:text-accent-pink transition-colors group mt-2"
+              >
+                <div className="w-10 h-10 bg-yellow-500 rounded-full flex items-center justify-center shrink-0">
+                  <span className="text-white text-lg">★</span>
+                </div>
+                <span>Leave a Google Review</span>
+              </a>
             </div>
           </div>
         </div>

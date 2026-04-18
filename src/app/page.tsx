@@ -474,6 +474,22 @@ export default function HomePage() {
             src="https://featurable.com/assets/bundle.js"
             strategy="lazyOnload"
           />
+
+          {/* Google Review CTA — drives GBP engagement */}
+          <div className="mt-10 flex flex-col items-center gap-3">
+            <a
+              href={siteConfig.googleReviewUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary inline-flex items-center gap-2"
+            >
+              <span className="text-lg">★</span>
+              Leave Us a Google Review
+            </a>
+            <p className="text-sm text-text-light">
+              Your feedback helps us serve you better
+            </p>
+          </div>
         </div>
       </section>
 

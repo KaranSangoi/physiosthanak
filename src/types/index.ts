@@ -27,6 +27,8 @@ export interface SiteConfig {
   domain: string;
   doctorName: string;
   doctorCredentials: string;
+  googleReviewUrl: string;
+  googleMapsPlaceUrl: string;
 }
 
 export interface Service {

@@ -94,7 +94,7 @@ export default function ContactPage() {
 
             {/* Address */}
             <a
-              href="https://maps.google.com/?q=PhysioSthanak+Borivali"
+              href={siteConfig.googleMapsPlaceUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white rounded-lg p-6 card-shadow text-center block hover:shadow-xl hover:border-primary/20 border border-transparent transition-all cursor-pointer"
