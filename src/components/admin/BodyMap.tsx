@@ -1,6 +1,8 @@
 'use client';
 
 import { useState, useRef, useCallback, useEffect } from 'react';
+import Body from '@/lib/body-map/Body';
+import type { ExtendedBodyPart, Slug } from '@/lib/body-map/types';
 import type { BodyMapMarker } from '@/types/pilates';
 
 // ─── TYPES ──────────────────────────────────────────────────────────────────────
@@ -8,6 +10,7 @@ import type { BodyMapMarker } from '@/types/pilates';
 type IssueType = BodyMapMarker['type'];
 type Severity = BodyMapMarker['severity'];
 type View = 'front' | 'back';
+type Gender = 'male' | 'female';
 
 interface BodyMapProps {
   markers: BodyMapMarker[];
@@ -29,148 +32,245 @@ interface PopoverState {
 // ─── CONSTANTS ──────────────────────────────────────────────────────────────────
 
 const ISSUE_TYPES: { value: IssueType; label: string; color: string }[] = [
-  { value: 'pain', label: 'Pain', color: '#ef4444' },
-  { value: 'tightness', label: 'Tightness', color: '#f97316' },
-  { value: 'weakness', label: 'Weakness', color: '#eab308' },
-  { value: 'swelling', label: 'Swelling', color: '#3b82f6' },
-  { value: 'numbness', label: 'Numbness', color: '#8b5cf6' },
-  { value: 'other', label: 'Other', color: '#6b7280' },
+  { value: 'pain', label: 'Pain', color: '#ef4444' },        // red
+  { value: 'tightness', label: 'Tightness', color: '#16a34a' }, // green (was orange — too close to red)
+  { value: 'weakness', label: 'Weakness', color: '#eab308' },   // yellow
+  { value: 'swelling', label: 'Swelling', color: '#3b82f6' },   // blue
+  { value: 'numbness', label: 'Numbness', color: '#d946ef' },   // magenta (was purple — too close to blue)
+  { value: 'other', label: 'Other', color: '#6b7280' },         // gray
 ];
 
 const SEVERITY_OPTIONS: { value: Severity; label: string; size: number }[] = [
-  { value: 'mild', label: 'Mild', size: 6 },
-  { value: 'moderate', label: 'Moderate', size: 9 },
-  { value: 'severe', label: 'Severe', size: 12 },
+  { value: 'mild', label: 'Mild', size: 4 },
+  { value: 'moderate', label: 'Moderate', size: 6 },
+  { value: 'severe', label: 'Severe', size: 8 },
 ];
 
 function getMarkerColor(type: IssueType): string {
   return ISSUE_TYPES.find((t) => t.value === type)?.color || '#6b7280';
 }
 
-function getMarkerSize(severity: Severity): number {
-  return SEVERITY_OPTIONS.find((s) => s.value === severity)?.size || 9;
+const SEVERITY_OPACITY: Record<Severity, number> = {
+  mild: 0.4,
+  moderate: 0.7,
+  severe: 1.0,
+};
+
+const severityRank: Record<Severity, number> = {
+  mild: 1,
+  moderate: 2,
+  severe: 3,
+};
+
+/**
+ * Convert a hex color (#rrggbb) + opacity (0..1) to an rgba() string.
+ * Falls back to the original color if parsing fails.
+ */
+function hexToRgba(hex: string, opacity: number): string {
+  const m = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  if (!m) return hex;
+  const r = parseInt(m[1], 16);
+  const g = parseInt(m[2], 16);
+  const b = parseInt(m[3], 16);
+  return `rgba(${r}, ${g}, ${b}, ${opacity})`;
 }
 
-// ─── BODY REGION DEFINITIONS ────────────────────────────────────────────────────
-// Regions are rectangles defined as { x, y, w, h } in SVG viewBox (200x400) coordinates.
-// The label is what gets auto-filled when the user clicks.
+// ─── SLUG → REGION MAPPINGS ─────────────────────────────────────────────────────
+// The package fires onBodyPartPress with a `slug` and an optional `side` ("left",
+// "right", or undefined for `common` paths). We map every (slug, side) combo to a
+// region { id, label } so users get a friendly name in the popover and the data
+// stays consistent in the database.
+//
+// Where the package has finer granularity than our existing FRONT_REGIONS /
+// BACK_REGIONS, we share the same id (e.g. chest|left and chest|right both map
+// to id "f-chest" / label "Chest"). Where the package has parts we didn't have
+// before (obliques, forearm, adductors), we create new ids/labels.
 
-interface BodyRegion {
+interface RegionInfo {
   id: string;
   label: string;
-  x: number;
-  y: number;
-  w: number;
-  h: number;
 }
 
-const FRONT_REGIONS: BodyRegion[] = [
-  { id: 'f-head', label: 'Head / Face', x: 80, y: 5, w: 40, h: 35 },
-  { id: 'f-neck', label: 'Neck', x: 85, y: 40, w: 30, h: 18 },
-  { id: 'f-r-shoulder', label: 'Right Shoulder', x: 48, y: 58, w: 30, h: 22 },
-  { id: 'f-l-shoulder', label: 'Left Shoulder', x: 122, y: 58, w: 30, h: 22 },
-  { id: 'f-r-upper-arm', label: 'Right Upper Arm', x: 35, y: 80, w: 20, h: 40 },
-  { id: 'f-l-upper-arm', label: 'Left Upper Arm', x: 145, y: 80, w: 20, h: 40 },
-  { id: 'f-chest', label: 'Chest', x: 78, y: 58, w: 44, h: 40 },
-  { id: 'f-abdomen', label: 'Abdomen', x: 78, y: 98, w: 44, h: 42 },
-  { id: 'f-r-elbow', label: 'Right Elbow', x: 28, y: 120, w: 20, h: 20 },
-  { id: 'f-l-elbow', label: 'Left Elbow', x: 152, y: 120, w: 20, h: 20 },
-  { id: 'f-r-forearm', label: 'Right Forearm', x: 22, y: 140, w: 20, h: 35 },
-  { id: 'f-l-forearm', label: 'Left Forearm', x: 158, y: 140, w: 20, h: 35 },
-  { id: 'f-r-hand', label: 'Right Wrist / Hand', x: 15, y: 175, w: 22, h: 25 },
-  { id: 'f-l-hand', label: 'Left Wrist / Hand', x: 163, y: 175, w: 22, h: 25 },
-  { id: 'f-r-hip', label: 'Right Hip', x: 72, y: 140, w: 28, h: 30 },
-  { id: 'f-l-hip', label: 'Left Hip', x: 100, y: 140, w: 28, h: 30 },
-  { id: 'f-r-thigh', label: 'Right Thigh', x: 72, y: 170, w: 28, h: 55 },
-  { id: 'f-l-thigh', label: 'Left Thigh', x: 100, y: 170, w: 28, h: 55 },
-  { id: 'f-r-knee', label: 'Right Knee', x: 72, y: 225, w: 28, h: 25 },
-  { id: 'f-l-knee', label: 'Left Knee', x: 100, y: 225, w: 28, h: 25 },
-  { id: 'f-r-shin', label: 'Right Shin', x: 72, y: 250, w: 28, h: 55 },
-  { id: 'f-l-shin', label: 'Left Shin', x: 100, y: 250, w: 28, h: 55 },
-  { id: 'f-r-ankle', label: 'Right Ankle / Foot', x: 68, y: 305, w: 32, h: 30 },
-  { id: 'f-l-ankle', label: 'Left Ankle / Foot', x: 100, y: 305, w: 32, h: 30 },
+// key format: `${slug}|${side}` where side is "left" | "right" | "common"
+type SlugSideKey = string;
+
+function makeKey(slug: Slug, side: 'left' | 'right' | 'common'): SlugSideKey {
+  return `${slug}|${side}`;
+}
+
+const FRONT_SLUG_MAP: Record<SlugSideKey, RegionInfo> = {
+  // Head
+  [makeKey('head', 'common')]: { id: 'f-head', label: 'Head / Face' },
+  [makeKey('hair', 'common')]: { id: 'f-head', label: 'Head / Face' },
+  // Neck
+  [makeKey('neck', 'common')]: { id: 'f-neck', label: 'Neck' },
+  [makeKey('neck', 'left')]: { id: 'f-neck', label: 'Neck' },
+  [makeKey('neck', 'right')]: { id: 'f-neck', label: 'Neck' },
+  // FRONT VIEW: package's "left" path renders on viewer's LEFT side of screen,
+  // which corresponds to the body's anatomical RIGHT (because in front view we
+  // face the person). So package "left" → "Right [Part]", package "right" → "Left [Part]".
+  // Shoulders (deltoids)
+  [makeKey('deltoids', 'left')]: { id: 'f-r-shoulder', label: 'Right Shoulder' },
+  [makeKey('deltoids', 'right')]: { id: 'f-l-shoulder', label: 'Left Shoulder' },
+  // Trapezius (visible at front, near shoulder/neck)
+  [makeKey('trapezius', 'left')]: { id: 'f-r-trapezius', label: 'Right Trapezius' },
+  [makeKey('trapezius', 'right')]: { id: 'f-l-trapezius', label: 'Left Trapezius' },
+  // Chest
+  [makeKey('chest', 'left')]: { id: 'f-chest', label: 'Chest' },
+  [makeKey('chest', 'right')]: { id: 'f-chest', label: 'Chest' },
+  // Upper arm (biceps)
+  [makeKey('biceps', 'left')]: { id: 'f-r-upper-arm', label: 'Right Upper Arm' },
+  [makeKey('biceps', 'right')]: { id: 'f-l-upper-arm', label: 'Left Upper Arm' },
+  // Triceps (some visible from front)
+  [makeKey('triceps', 'left')]: { id: 'f-r-upper-arm', label: 'Right Upper Arm' },
+  [makeKey('triceps', 'right')]: { id: 'f-l-upper-arm', label: 'Left Upper Arm' },
+  // Forearm
+  [makeKey('forearm', 'left')]: { id: 'f-r-forearm', label: 'Right Forearm' },
+  [makeKey('forearm', 'right')]: { id: 'f-l-forearm', label: 'Left Forearm' },
+  // Hands
+  [makeKey('hands', 'left')]: { id: 'f-r-hand', label: 'Right Wrist / Hand' },
+  [makeKey('hands', 'right')]: { id: 'f-l-hand', label: 'Left Wrist / Hand' },
+  // Abdomen (abs) — both sides share the same region
+  [makeKey('abs', 'left')]: { id: 'f-abdomen', label: 'Abdomen' },
+  [makeKey('abs', 'right')]: { id: 'f-abdomen', label: 'Abdomen' },
+  [makeKey('abs', 'common')]: { id: 'f-abdomen', label: 'Abdomen' },
+  // Obliques
+  [makeKey('obliques', 'left')]: { id: 'f-r-oblique', label: 'Right Oblique' },
+  [makeKey('obliques', 'right')]: { id: 'f-l-oblique', label: 'Left Oblique' },
+  // Quadriceps → thighs
+  [makeKey('quadriceps', 'left')]: { id: 'f-r-thigh', label: 'Right Thigh' },
+  [makeKey('quadriceps', 'right')]: { id: 'f-l-thigh', label: 'Left Thigh' },
+  // Adductors (inner thigh)
+  [makeKey('adductors', 'left')]: { id: 'f-r-adductor', label: 'Right Inner Thigh (Adductor)' },
+  [makeKey('adductors', 'right')]: { id: 'f-l-adductor', label: 'Left Inner Thigh (Adductor)' },
+  // Knees
+  [makeKey('knees', 'left')]: { id: 'f-r-knee', label: 'Right Knee' },
+  [makeKey('knees', 'right')]: { id: 'f-l-knee', label: 'Left Knee' },
+  // Tibialis (shin)
+  [makeKey('tibialis', 'left')]: { id: 'f-r-shin', label: 'Right Shin' },
+  [makeKey('tibialis', 'right')]: { id: 'f-l-shin', label: 'Left Shin' },
+  // Calves (lower leg from front)
+  [makeKey('calves', 'left')]: { id: 'f-r-shin', label: 'Right Shin' },
+  [makeKey('calves', 'right')]: { id: 'f-l-shin', label: 'Left Shin' },
+  // Ankles + feet
+  [makeKey('ankles', 'left')]: { id: 'f-r-ankle', label: 'Right Ankle / Foot' },
+  [makeKey('ankles', 'right')]: { id: 'f-l-ankle', label: 'Left Ankle / Foot' },
+  [makeKey('feet', 'left')]: { id: 'f-r-ankle', label: 'Right Ankle / Foot' },
+  [makeKey('feet', 'right')]: { id: 'f-l-ankle', label: 'Left Ankle / Foot' },
+};
+
+const BACK_SLUG_MAP: Record<SlugSideKey, RegionInfo> = {
+  // Head
+  [makeKey('hair', 'common')]: { id: 'b-head', label: 'Head (posterior)' },
+  // Neck
+  [makeKey('neck', 'left')]: { id: 'b-neck', label: 'Neck (posterior)' },
+  [makeKey('neck', 'right')]: { id: 'b-neck', label: 'Neck (posterior)' },
+  [makeKey('neck', 'common')]: { id: 'b-neck', label: 'Neck (posterior)' },
+  // Shoulders (deltoids)
+  [makeKey('deltoids', 'left')]: { id: 'b-l-shoulder', label: 'Left Shoulder (posterior)' },
+  [makeKey('deltoids', 'right')]: { id: 'b-r-shoulder', label: 'Right Shoulder (posterior)' },
+  // Trapezius
+  [makeKey('trapezius', 'left')]: { id: 'b-l-trapezius', label: 'Left Trapezius' },
+  [makeKey('trapezius', 'right')]: { id: 'b-r-trapezius', label: 'Right Trapezius' },
+  // Upper back
+  [makeKey('upper-back', 'left')]: { id: 'b-upper-back', label: 'Upper Back' },
+  [makeKey('upper-back', 'right')]: { id: 'b-upper-back', label: 'Upper Back' },
+  [makeKey('upper-back', 'common')]: { id: 'b-upper-back', label: 'Upper Back' },
+  // Lower back / Lumbar
+  [makeKey('lower-back', 'left')]: { id: 'b-lower-back', label: 'Lower Back / Lumbar' },
+  [makeKey('lower-back', 'right')]: { id: 'b-lower-back', label: 'Lower Back / Lumbar' },
+  [makeKey('lower-back', 'common')]: { id: 'b-lower-back', label: 'Lower Back / Lumbar' },
+  // Triceps → upper arm
+  [makeKey('triceps', 'left')]: { id: 'b-l-upper-arm', label: 'Left Upper Arm (posterior)' },
+  [makeKey('triceps', 'right')]: { id: 'b-r-upper-arm', label: 'Right Upper Arm (posterior)' },
+  // Forearm — NEW
+  [makeKey('forearm', 'left')]: { id: 'b-l-forearm', label: 'Left Forearm (posterior)' },
+  [makeKey('forearm', 'right')]: { id: 'b-r-forearm', label: 'Right Forearm (posterior)' },
+  // Hands
+  [makeKey('hands', 'left')]: { id: 'b-l-hand', label: 'Left Hand (posterior)' },
+  [makeKey('hands', 'right')]: { id: 'b-r-hand', label: 'Right Hand (posterior)' },
+  // Glutes (gluteal)
+  [makeKey('gluteal', 'left')]: { id: 'b-l-glute', label: 'Left Glute' },
+  [makeKey('gluteal', 'right')]: { id: 'b-r-glute', label: 'Right Glute' },
+  // Hamstrings
+  [makeKey('hamstring', 'left')]: { id: 'b-l-hamstring', label: 'Left Hamstring' },
+  [makeKey('hamstring', 'right')]: { id: 'b-r-hamstring', label: 'Right Hamstring' },
+  // Adductors — NEW (inner thigh, posterior)
+  [makeKey('adductors', 'left')]: { id: 'b-l-adductor', label: 'Left Inner Thigh (Adductor)' },
+  [makeKey('adductors', 'right')]: { id: 'b-r-adductor', label: 'Right Inner Thigh (Adductor)' },
+  // Calves
+  [makeKey('calves', 'left')]: { id: 'b-l-calf', label: 'Left Calf' },
+  [makeKey('calves', 'right')]: { id: 'b-r-calf', label: 'Right Calf' },
+  // Feet
+  [makeKey('feet', 'left')]: { id: 'b-l-ankle', label: 'Left Ankle / Foot (posterior)' },
+  [makeKey('feet', 'right')]: { id: 'b-r-ankle', label: 'Right Ankle / Foot (posterior)' },
+};
+
+// ─── OVERLAY REGIONS (PHYSIO-SPECIFIC) ──────────────────────────────────────────
+// The package's <Body> covers gross muscle groups. These overlay buttons add
+// physio-specific click zones the package doesn't have (TMJ, AC joint, patella,
+// SI joint, plantar, achilles, spinal segments, pelvis, groin, lateral hip).
+//
+// Positions are percentages relative to the body wrapper (200×400 base svg).
+// Anatomical convention: "left" = body's anatomical left = viewer's RIGHT in
+// front view, viewer's LEFT in back view. The percentage `left` on the wrapper
+// is purely visual placement; the LABEL says which side anatomically.
+
+interface OverlayRegion {
+  id: string;
+  label: string;
+  position: { left: string; top: string; width: string; height: string };
+}
+
+// Anatomical proportions in the rendered Body component (head to feet ≈ 0% to 100%):
+// head 4-13, neck 13-17, shoulders 17-21, chest 21-30, abs 30-43, pelvis 43-48,
+// groin 48-52, hip lateral 43-49, thigh 50-65, knee 65-71, shin 71-86, ankle 86-92, foot 92-100.
+
+// Front view: viewer's left half (small `left%`) shows body's anatomical right.
+const FRONT_OVERLAY_REGIONS: OverlayRegion[] = [
+  // TMJ — jaw joint, just in front of the ear
+  { id: 'f-r-tmj', label: 'Right TMJ (Jaw)', position: { left: '40%', top: '13%', width: '7%', height: '4%' } },
+  { id: 'f-l-tmj', label: 'Left TMJ (Jaw)', position: { left: '53%', top: '13%', width: '7%', height: '4%' } },
+  // AC joint — between the trapezius (closer to neck) and the shoulder tip (deltoid)
+  { id: 'f-r-ac-joint', label: 'Right AC Joint', position: { left: '34%', top: '20%', width: '6%', height: '3%' } },
+  { id: 'f-l-ac-joint', label: 'Left AC Joint', position: { left: '60%', top: '20%', width: '6%', height: '3%' } },
+  // Elbow joint — between biceps (upper arm) and forearm
+  { id: 'f-r-elbow', label: 'Right Elbow', position: { left: '25%', top: '33%', width: '8%', height: '4%' } },
+  { id: 'f-l-elbow', label: 'Left Elbow', position: { left: '67%', top: '33%', width: '8%', height: '4%' } },
+  // Pelvis — below abs, just above where legs meet
+  { id: 'f-pelvis', label: 'Pelvis', position: { left: '42%', top: '44%', width: '16%', height: '4%' } },
+  // Groin — inguinal area (where leg meets body), split L/R
+  { id: 'f-r-groin', label: 'Right Groin', position: { left: '42%', top: '49%', width: '8%', height: '3%' } },
+  { id: 'f-l-groin', label: 'Left Groin', position: { left: '50%', top: '49%', width: '8%', height: '3%' } },
+  // Hip (lateral) — outer hip, waist level
+  { id: 'f-r-hip', label: 'Right Hip (lateral)', position: { left: '33%', top: '43%', width: '7%', height: '5%' } },
+  { id: 'f-l-hip', label: 'Left Hip (lateral)', position: { left: '60%', top: '43%', width: '7%', height: '5%' } },
+  // Patella — kneecap
+  { id: 'f-r-patella', label: 'Right Patella (Kneecap)', position: { left: '40%', top: '67%', width: '7%', height: '4%' } },
+  { id: 'f-l-patella', label: 'Left Patella (Kneecap)', position: { left: '53%', top: '67%', width: '7%', height: '4%' } },
+  // Plantar — top of foot (front view)
+  { id: 'f-r-plantar', label: 'Right Plantar / Foot', position: { left: '38%', top: '94%', width: '9%', height: '5%' } },
+  { id: 'f-l-plantar', label: 'Left Plantar / Foot', position: { left: '53%', top: '94%', width: '9%', height: '5%' } },
 ];
 
-const BACK_REGIONS: BodyRegion[] = [
-  { id: 'b-head', label: 'Head (posterior)', x: 80, y: 5, w: 40, h: 35 },
-  { id: 'b-neck', label: 'Neck (posterior)', x: 85, y: 40, w: 30, h: 18 },
-  { id: 'b-r-shoulder', label: 'Right Shoulder (posterior)', x: 48, y: 58, w: 30, h: 22 },
-  { id: 'b-l-shoulder', label: 'Left Shoulder (posterior)', x: 122, y: 58, w: 30, h: 22 },
-  { id: 'b-upper-back', label: 'Upper Back', x: 78, y: 58, w: 44, h: 30 },
-  { id: 'b-mid-back', label: 'Mid Back', x: 78, y: 88, w: 44, h: 30 },
-  { id: 'b-lower-back', label: 'Lower Back / Lumbar', x: 78, y: 118, w: 44, h: 30 },
-  { id: 'b-r-upper-arm', label: 'Right Upper Arm (posterior)', x: 35, y: 80, w: 20, h: 40 },
-  { id: 'b-l-upper-arm', label: 'Left Upper Arm (posterior)', x: 145, y: 80, w: 20, h: 40 },
-  { id: 'b-r-elbow', label: 'Right Elbow (posterior)', x: 28, y: 120, w: 20, h: 20 },
-  { id: 'b-l-elbow', label: 'Left Elbow (posterior)', x: 152, y: 120, w: 20, h: 20 },
-  { id: 'b-r-forearm', label: 'Right Forearm (posterior)', x: 22, y: 140, w: 20, h: 35 },
-  { id: 'b-l-forearm', label: 'Left Forearm (posterior)', x: 158, y: 140, w: 20, h: 35 },
-  { id: 'b-r-hand', label: 'Right Hand (posterior)', x: 15, y: 175, w: 22, h: 25 },
-  { id: 'b-l-hand', label: 'Left Hand (posterior)', x: 163, y: 175, w: 22, h: 25 },
-  { id: 'b-r-glute', label: 'Right Glute', x: 72, y: 148, w: 28, h: 30 },
-  { id: 'b-l-glute', label: 'Left Glute', x: 100, y: 148, w: 28, h: 30 },
-  { id: 'b-r-hamstring', label: 'Right Hamstring', x: 72, y: 178, w: 28, h: 55 },
-  { id: 'b-l-hamstring', label: 'Left Hamstring', x: 100, y: 178, w: 28, h: 55 },
-  { id: 'b-r-knee', label: 'Right Knee (posterior)', x: 72, y: 233, w: 28, h: 20 },
-  { id: 'b-l-knee', label: 'Left Knee (posterior)', x: 100, y: 233, w: 28, h: 20 },
-  { id: 'b-r-calf', label: 'Right Calf', x: 72, y: 253, w: 28, h: 52 },
-  { id: 'b-l-calf', label: 'Left Calf', x: 100, y: 253, w: 28, h: 52 },
-  { id: 'b-r-ankle', label: 'Right Ankle / Foot (posterior)', x: 68, y: 305, w: 32, h: 30 },
-  { id: 'b-l-ankle', label: 'Left Ankle / Foot (posterior)', x: 100, y: 305, w: 32, h: 30 },
+// Back view: viewer's left half shows body's anatomical left.
+const BACK_OVERLAY_REGIONS: OverlayRegion[] = [
+  // Cervical spine — back of neck (top of spine)
+  { id: 'b-cervical', label: 'Cervical Spine (posterior)', position: { left: '45%', top: '15%', width: '10%', height: '3%' } },
+  // Thoracic spine — upper-mid back centerline (between scapulae down to mid-back)
+  { id: 'b-thoracic', label: 'Thoracic Spine', position: { left: '47%', top: '22%', width: '6%', height: '14%' } },
+  // Lumbar spine — lower back centerline
+  { id: 'b-lumbar', label: 'Lumbar Spine', position: { left: '47%', top: '37%', width: '6%', height: '7%' } },
+  // SI joint — either side of the sacrum (between lumbar and glutes)
+  { id: 'b-l-si-joint', label: 'Left SI Joint', position: { left: '42%', top: '42%', width: '8%', height: '5%' } },
+  { id: 'b-r-si-joint', label: 'Right SI Joint', position: { left: '50%', top: '42%', width: '8%', height: '5%' } },
+  // Elbow joint — back of elbow (olecranon), between triceps and forearm
+  { id: 'b-l-elbow', label: 'Left Elbow (posterior)', position: { left: '25%', top: '33%', width: '8%', height: '4%' } },
+  { id: 'b-r-elbow', label: 'Right Elbow (posterior)', position: { left: '67%', top: '33%', width: '8%', height: '4%' } },
+  // Achilles — behind each ankle
+  { id: 'b-l-achilles', label: 'Left Achilles', position: { left: '40%', top: '88%', width: '6%', height: '4%' } },
+  { id: 'b-r-achilles', label: 'Right Achilles', position: { left: '54%', top: '88%', width: '6%', height: '4%' } },
 ];
-
-// ─── SVG BODY OUTLINE ───────────────────────────────────────────────────────────
-// Simplified gender-neutral body outline as SVG paths.
-// ViewBox is 200x340. The body is centered horizontally.
-
-function BodyOutlineFront() {
-  return (
-    <g stroke="#14507c" strokeWidth="1.8" fill="#f0f7ff" strokeLinejoin="round" strokeLinecap="round">
-      {/* Head */}
-      <ellipse cx="100" cy="24" rx="18" ry="22" />
-      {/* Neck */}
-      <rect x="92" y="44" width="16" height="14" rx="3" />
-      {/* Torso */}
-      <path d="M78,58 L68,62 L62,80 L58,100 L60,140 L72,148 L72,170 L128,170 L128,148 L140,140 L142,100 L138,80 L132,62 L122,58 Z" />
-      {/* Right arm */}
-      <path d="M62,80 L50,78 L42,90 L35,120 L30,145 L25,175 L22,190 L28,192 L34,178 L38,150 L42,130 L48,110 L55,95" fill="#f0f7ff" />
-      {/* Left arm */}
-      <path d="M138,80 L150,78 L158,90 L165,120 L170,145 L175,175 L178,190 L172,192 L166,178 L162,150 L158,130 L152,110 L145,95" fill="#f0f7ff" />
-      {/* Right leg */}
-      <path d="M72,170 L72,225 L70,260 L68,305 L68,330 L80,332 L82,310 L86,260 L88,225 L92,170" fill="#f0f7ff" />
-      {/* Left leg */}
-      <path d="M108,170 L112,225 L114,260 L118,310 L120,332 L132,330 L132,305 L130,260 L128,225 L128,170" fill="#f0f7ff" />
-      {/* Midline reference */}
-      <line x1="100" y1="58" x2="100" y2="170" stroke="#14507c" strokeWidth="0.3" strokeDasharray="2,4" />
-    </g>
-  );
-}
-
-function BodyOutlineBack() {
-  return (
-    <g stroke="#14507c" strokeWidth="1.8" fill="#f0f7ff" strokeLinejoin="round" strokeLinecap="round">
-      {/* Head */}
-      <ellipse cx="100" cy="24" rx="18" ry="22" />
-      {/* Neck */}
-      <rect x="92" y="44" width="16" height="14" rx="3" />
-      {/* Torso */}
-      <path d="M78,58 L68,62 L62,80 L58,100 L60,140 L72,148 L72,178 L128,178 L128,148 L140,140 L142,100 L138,80 L132,62 L122,58 Z" />
-      {/* Spine line */}
-      <line x1="100" y1="58" x2="100" y2="148" stroke="#14507c" strokeWidth="0.5" strokeDasharray="3,3" />
-      {/* Scapulae hints */}
-      <path d="M82,68 L78,80 L82,92 L94,88 L92,75 Z" fill="none" strokeWidth="0.6" />
-      <path d="M118,68 L122,80 L118,92 L106,88 L108,75 Z" fill="none" strokeWidth="0.6" />
-      {/* Right arm */}
-      <path d="M62,80 L50,78 L42,90 L35,120 L30,145 L25,175 L22,190 L28,192 L34,178 L38,150 L42,130 L48,110 L55,95" fill="#f0f7ff" />
-      {/* Left arm */}
-      <path d="M138,80 L150,78 L158,90 L165,120 L170,145 L175,175 L178,190 L172,192 L166,178 L162,150 L158,130 L152,110 L145,95" fill="#f0f7ff" />
-      {/* Right leg */}
-      <path d="M72,178 L72,233 L70,265 L68,305 L68,330 L80,332 L82,310 L86,265 L88,233 L92,178" fill="#f0f7ff" />
-      {/* Left leg */}
-      <path d="M108,178 L112,233 L114,265 L118,310 L120,332 L132,330 L132,305 L130,265 L128,233 L128,178" fill="#f0f7ff" />
-    </g>
-  );
-}
 
 // ─── POPOVER COMPONENT ──────────────────────────────────────────────────────────
 
@@ -340,104 +440,153 @@ function MarkerPopover({
 function BodyView({
   view,
   label,
-  regions,
   markers,
   readOnly,
-  onRegionClick,
-  onMarkerClick,
+  onPartPress,
   faded,
+  gender = 'female',
 }: {
   view: View;
   label: string;
-  regions: BodyRegion[];
   markers: BodyMapMarker[];
   readOnly?: boolean;
-  onRegionClick: (e: React.MouseEvent<SVGRectElement>, region: BodyRegion, view: View) => void;
-  onMarkerClick: (e: React.MouseEvent<SVGCircleElement>, marker: BodyMapMarker) => void;
+  onPartPress: (region: RegionInfo, view: View, screenX: number, screenY: number) => void;
   faded?: boolean;
+  gender?: Gender;
 }) {
-  const [hoveredRegion, setHoveredRegion] = useState<string | null>(null);
+  // Capture click position via mousedown on a wrapping div. The package's
+  // <Body> renders SVG <path>s; their onClick fires AFTER mousedown bubbles to
+  // our wrapper, so we can read the captured coords inside onBodyPartPress.
+  const lastPointer = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
 
+  const slugMap = view === 'front' ? FRONT_SLUG_MAP : BACK_SLUG_MAP;
+
+  // Build the data prop dynamically. Our vendored <Body> keys user data by
+  // (slug, side), so each slug+side combo can be painted independently — left
+  // thigh red and right thigh blue can both render at the same time.
+  const data: ExtendedBodyPart[] = [];
   const viewMarkers = markers.filter((m) => m.view === view);
+
+  for (const key of Object.keys(slugMap)) {
+    const region = slugMap[key];
+    const matching = viewMarkers.filter((m) => m.region === region.label);
+    if (matching.length === 0) continue;
+    const top = matching.reduce((best, m) =>
+      severityRank[m.severity] > severityRank[best.severity] ? m : best
+    );
+    const fill = hexToRgba(getMarkerColor(top.type), SEVERITY_OPACITY[top.severity]);
+    const [slug, side] = key.split('|') as [Slug, 'left' | 'right' | 'common'];
+    const entry: ExtendedBodyPart = { slug, styles: { fill } };
+    if (side === 'left' || side === 'right') entry.side = side;
+    data.push(entry);
+  }
+
+  const handleBodyPartPress = useCallback(
+    (part: ExtendedBodyPart, side?: 'left' | 'right') => {
+      if (readOnly) return;
+      if (!part.slug) return;
+      const sideKey: 'left' | 'right' | 'common' = side ?? 'left';
+      // Try the actual side first; fall back to "common" if not present
+      let region = slugMap[makeKey(part.slug, sideKey)];
+      if (!region) region = slugMap[makeKey(part.slug, 'common')];
+      if (!region && side) {
+        // Try the other side as a last resort
+        region = slugMap[makeKey(part.slug, side === 'left' ? 'right' : 'left')];
+      }
+      if (!region) return; // Unmapped slug — ignore the click
+      onPartPress(region, view, lastPointer.current.x, lastPointer.current.y);
+    },
+    [readOnly, slugMap, onPartPress, view]
+  );
+
+  const overlays = view === 'front' ? FRONT_OVERLAY_REGIONS : BACK_OVERLAY_REGIONS;
 
   return (
     <div className={`flex flex-col items-center ${faded ? 'opacity-40' : ''}`}>
       <p className="text-xs font-semibold text-gray-600 mb-2 uppercase tracking-wider">{label}</p>
-      <svg
-        viewBox="0 0 200 340"
-        className="w-full max-w-[220px] h-auto select-none"
-        style={{ touchAction: 'manipulation' }}
+      <div
+        className="relative"
+        style={{ width: 200, height: 400, touchAction: 'manipulation' }}
+        onMouseDownCapture={(e) => {
+          lastPointer.current = { x: e.clientX, y: e.clientY };
+        }}
+        onTouchStartCapture={(e) => {
+          const t = e.touches[0];
+          if (t) lastPointer.current = { x: t.clientX, y: t.clientY };
+        }}
       >
-        {/* Body outline */}
-        {view === 'front' ? <BodyOutlineFront /> : <BodyOutlineBack />}
+        <Body
+          gender={gender}
+          side={view}
+          scale={1}
+          data={data}
+          defaultFill="#454545"
+          defaultStroke="#94a3b8"
+          defaultStrokeWidth={0.5}
+          border="none"
+          onBodyPartPress={handleBodyPartPress}
+        />
 
-        {/* Clickable regions (transparent overlays) */}
+        {/* Physio-specific overlay click zones (TMJ, AC joint, patella, etc.).
+            Anatomical positions are roughly the same for both genders, so we
+            use one set of percentages. The `<Body>` SVG keeps its natural
+            aspect ratio inside the wrapper, so percentage-based positioning
+            scales with the wrapper width. */}
         {!readOnly &&
-          regions.map((region) => (
-            <rect
-              key={region.id}
-              x={region.x}
-              y={region.y}
-              width={region.w}
-              height={region.h}
-              fill={hoveredRegion === region.id ? 'rgba(20,80,124,0.1)' : 'transparent'}
-              stroke={hoveredRegion === region.id ? 'rgba(20,80,124,0.3)' : 'transparent'}
-              strokeWidth="1"
-              rx="2"
-              className="cursor-pointer"
-              onMouseEnter={() => setHoveredRegion(region.id)}
-              onMouseLeave={() => setHoveredRegion(null)}
-              onClick={(e) => onRegionClick(e, region, view)}
-            />
-          ))}
+          overlays.map((o) => {
+            // Find any markers tagged with this overlay's label (could be multiple)
+            const overlayMarkers = viewMarkers.filter((m) => m.region === o.label);
+            const top = overlayMarkers.length
+              ? overlayMarkers.reduce((best, m) =>
+                  severityRank[m.severity] > severityRank[best.severity] ? m : best
+                )
+              : null;
+            const fill = top ? hexToRgba(getMarkerColor(top.type), SEVERITY_OPACITY[top.severity]) : null;
+            const border = top ? hexToRgba(getMarkerColor(top.type), 0.9) : 'transparent';
 
-        {/* Markers */}
-        {viewMarkers.map((marker) => {
-          const size = getMarkerSize(marker.severity);
-          const color = getMarkerColor(marker.type);
-          return (
-            <g key={marker.id}>
-              {/* Outer glow */}
-              <circle
-                cx={marker.x}
-                cy={marker.y}
-                r={size + 2}
-                fill={color}
-                opacity={0.25}
-              />
-              {/* Main circle */}
-              <circle
-                cx={marker.x}
-                cy={marker.y}
-                r={size}
-                fill={color}
-                stroke="white"
-                strokeWidth="1.5"
-                className={readOnly ? '' : 'cursor-pointer'}
+            return (
+              <button
+                key={o.id}
+                type="button"
+                title={o.label}
+                aria-label={o.label}
                 onClick={(e) => {
-                  if (!readOnly) onMarkerClick(e, marker);
+                  e.stopPropagation();
+                  onPartPress(
+                    { id: o.id, label: o.label },
+                    view,
+                    e.clientX,
+                    e.clientY
+                  );
+                }}
+                className="absolute rounded cursor-pointer transition-colors"
+                style={{
+                  left: o.position.left,
+                  top: o.position.top,
+                  width: o.position.width,
+                  height: o.position.height,
+                  background: fill ?? 'transparent',
+                  border: top ? `1.5px solid ${border}` : '2px dashed transparent',
+                  pointerEvents: 'auto',
+                }}
+                onMouseEnter={(e) => {
+                  if (top) return;
+                  (e.currentTarget as HTMLButtonElement).style.borderColor =
+                    'rgba(20,80,124,0.5)';
+                  (e.currentTarget as HTMLButtonElement).style.background =
+                    'rgba(20,80,124,0.08)';
+                }}
+                onMouseLeave={(e) => {
+                  if (top) return;
+                  (e.currentTarget as HTMLButtonElement).style.borderColor =
+                    'transparent';
+                  (e.currentTarget as HTMLButtonElement).style.background =
+                    'transparent';
                 }}
               />
-              {/* Severity indicator: inner dot for severe, ring for moderate */}
-              {marker.severity === 'severe' && (
-                <circle cx={marker.x} cy={marker.y} r={3} fill="white" opacity={0.8} pointerEvents="none" />
-              )}
-              {marker.severity === 'mild' && (
-                <circle
-                  cx={marker.x}
-                  cy={marker.y}
-                  r={size - 2}
-                  fill="none"
-                  stroke="white"
-                  strokeWidth="0.8"
-                  opacity={0.5}
-                  pointerEvents="none"
-                />
-              )}
-            </g>
-          );
-        })}
-      </svg>
+            );
+          })}
+      </div>
     </div>
   );
 }
@@ -459,15 +608,24 @@ function Legend() {
       <span className="text-gray-300 mx-1">|</span>
       <div className="flex items-center gap-3 text-xs text-gray-500">
         <span className="flex items-center gap-1">
-          <span className="inline-block w-2 h-2 rounded-full bg-gray-400" />
+          <span
+            className="inline-block w-3 h-3 rounded-full border border-gray-300"
+            style={{ backgroundColor: hexToRgba('#6b7280', SEVERITY_OPACITY.mild) }}
+          />
           Mild
         </span>
         <span className="flex items-center gap-1">
-          <span className="inline-block w-3 h-3 rounded-full bg-gray-400" />
+          <span
+            className="inline-block w-3 h-3 rounded-full border border-gray-300"
+            style={{ backgroundColor: hexToRgba('#6b7280', SEVERITY_OPACITY.moderate) }}
+          />
           Moderate
         </span>
         <span className="flex items-center gap-1">
-          <span className="inline-block w-4 h-4 rounded-full bg-gray-400" />
+          <span
+            className="inline-block w-3 h-3 rounded-full border border-gray-300"
+            style={{ backgroundColor: hexToRgba('#6b7280', SEVERITY_OPACITY.severe) }}
+          />
           Severe
         </span>
       </div>
@@ -479,55 +637,27 @@ function Legend() {
 
 export default function BodyMap({ markers, onChange, readOnly = false }: BodyMapProps) {
   const [popover, setPopover] = useState<PopoverState | null>(null);
+  const [gender, setGender] = useState<Gender>('female');
 
   const generateId = useCallback(() => {
     return `bm-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`;
   }, []);
 
-  const handleRegionClick = useCallback(
-    (e: React.MouseEvent<SVGRectElement>, region: BodyRegion, view: View) => {
+  const handlePartPress = useCallback(
+    (region: RegionInfo, view: View, screenX: number, screenY: number) => {
       if (readOnly) return;
-
-      // Get SVG coordinates for marker placement (center of the clicked region)
-      const svgX = region.x + region.w / 2;
-      const svgY = region.y + region.h / 2;
-
-      // Get screen coordinates for popover positioning
-      const rect = (e.target as SVGRectElement).getBoundingClientRect();
-      const screenX = rect.left + rect.width / 2;
-      const screenY = rect.top + rect.height / 2;
-
+      // Always open in "add new marker" mode. Multiple markers per region are
+      // allowed (e.g. pain + tightness on the same shoulder). To edit an
+      // existing marker, click its row in the marker list below.
       setPopover({
         open: true,
         x: screenX,
         y: screenY,
-        svgX,
-        svgY,
+        svgX: 0,
+        svgY: 0,
         view,
         region: region.label,
         editingId: null,
-      });
-    },
-    [readOnly]
-  );
-
-  const handleMarkerClick = useCallback(
-    (e: React.MouseEvent<SVGCircleElement>, marker: BodyMapMarker) => {
-      if (readOnly) return;
-      e.stopPropagation();
-
-      const circle = e.target as SVGCircleElement;
-      const rect = circle.getBoundingClientRect();
-
-      setPopover({
-        open: true,
-        x: rect.left + rect.width / 2,
-        y: rect.top + rect.height / 2,
-        svgX: marker.x,
-        svgY: marker.y,
-        view: marker.view as View,
-        region: marker.region,
-        editingId: marker.id,
       });
     },
     [readOnly]
@@ -545,13 +675,13 @@ export default function BodyMap({ markers, onChange, readOnly = false }: BodyMap
             : m
         );
       } else {
-        // Adding new
+        // Adding new — x/y are unused now (region drives display) so store 0,0
         const newMarker: BodyMapMarker = {
           id: generateId(),
           view: data.view,
           region: data.region,
-          x: data.x,
-          y: data.y,
+          x: 0,
+          y: 0,
           type: data.type,
           severity: data.severity,
           note: data.note,
@@ -579,25 +709,45 @@ export default function BodyMap({ markers, onChange, readOnly = false }: BodyMap
 
   return (
     <div className="space-y-2">
+      {/* Gender toggle (segmented control) */}
+      {!readOnly && (
+        <div className="flex justify-center mb-2">
+          <div className="inline-flex rounded-md border border-gray-200 bg-gray-50 p-0.5">
+            {(['female', 'male'] as const).map((g) => (
+              <button
+                key={g}
+                type="button"
+                onClick={() => setGender(g)}
+                className={`text-xs font-medium px-3 py-1.5 rounded transition-colors min-w-[64px] ${
+                  gender === g
+                    ? 'bg-[#14507c] text-white'
+                    : 'text-gray-600 hover:text-gray-800'
+                }`}
+              >
+                {g === 'female' ? 'Female' : 'Male'}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* Body views side by side */}
       <div className="grid grid-cols-2 gap-4">
         <BodyView
           view="front"
           label="Front View"
-          regions={FRONT_REGIONS}
           markers={markers}
           readOnly={readOnly}
-          onRegionClick={handleRegionClick}
-          onMarkerClick={handleMarkerClick}
+          onPartPress={handlePartPress}
+          gender={gender}
         />
         <BodyView
           view="back"
           label="Back View"
-          regions={BACK_REGIONS}
           markers={markers}
           readOnly={readOnly}
-          onRegionClick={handleRegionClick}
-          onMarkerClick={handleMarkerClick}
+          onPartPress={handlePartPress}
+          gender={gender}
         />
       </div>
 
@@ -617,21 +767,17 @@ export default function BodyMap({ markers, onChange, readOnly = false }: BodyMap
                 className={`flex items-center gap-2 px-3 py-2 text-xs ${!readOnly ? 'cursor-pointer hover:bg-gray-50' : ''}`}
                 onClick={(e) => {
                   if (!readOnly) {
-                    // Find the marker on the SVG and create a popover near it
-                    const container = (e.currentTarget as HTMLElement).closest('.space-y-2');
-                    if (container) {
-                      const rect = container.getBoundingClientRect();
-                      setPopover({
-                        open: true,
-                        x: rect.left + rect.width / 2,
-                        y: rect.top + 100,
-                        svgX: m.x,
-                        svgY: m.y,
-                        view: m.view as View,
-                        region: m.region,
-                        editingId: m.id,
-                      });
-                    }
+                    const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
+                    setPopover({
+                      open: true,
+                      x: rect.left + rect.width / 2,
+                      y: rect.top + rect.height / 2,
+                      svgX: m.x,
+                      svgY: m.y,
+                      view: m.view as View,
+                      region: m.region,
+                      editingId: m.id,
+                    });
                   }
                 }}
               >
@@ -704,21 +850,17 @@ export function BodyMapComparison({
             <BodyView
               view="front"
               label="Front (Initial)"
-              regions={FRONT_REGIONS}
               markers={initialMarkers}
               readOnly
-              onRegionClick={() => {}}
-              onMarkerClick={() => {}}
+              onPartPress={() => {}}
               faded
             />
             <BodyView
               view="back"
               label="Back (Initial)"
-              regions={BACK_REGIONS}
               markers={initialMarkers}
               readOnly
-              onRegionClick={() => {}}
-              onMarkerClick={() => {}}
+              onPartPress={() => {}}
               faded
             />
           </div>
