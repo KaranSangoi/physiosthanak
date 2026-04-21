@@ -519,7 +519,7 @@ export default function CarouselPreview({
         });
 
         const blob = await new Promise<Blob>((resolve) => {
-          canvas.toBlob((b) => resolve(b as Blob));
+          canvas.toBlob((b: Blob | null) => resolve(b as Blob));
         });
 
         folder?.file(`slide-${String(i + 1).padStart(2, '0')}.png`, blob);
