@@ -113,30 +113,9 @@ export async function GET(request: Request) {
   }
 
   // Fetch Automation Log from Notion
-  // Debug: test Notion API directly
-  let notionDebug = '';
-  try {
-    const testResp = await fetch(
-      `https://api.notion.com/v1/blocks/${AUTOMATION_LOG_PAGE_ID}/children?page_size=5`,
-      {
-        headers: {
-          Authorization: `Bearer ${notionToken}`,
-          'Notion-Version': '2022-06-28',
-        },
-      },
-    );
-    notionDebug = `status=${testResp.status}, token_prefix=${notionToken.substring(0, 10)}...`;
-    if (!testResp.ok) {
-      const errBody = await testResp.text();
-      return NextResponse.json({ status: 'error', reason: 'Notion API failed', debug: notionDebug, body: errBody.substring(0, 200) });
-    }
-  } catch (err) {
-    return NextResponse.json({ status: 'error', reason: 'Notion fetch threw', debug: String(err).substring(0, 200) });
-  }
-
   const logText = await fetchAutomationLog(notionToken);
   if (!logText) {
-    return NextResponse.json({ status: 'skip', reason: 'No log content or API error', debug: notionDebug });
+    return NextResponse.json({ status: 'skip', reason: 'No log content or API error' });
   }
 
   // Extract latest entry
