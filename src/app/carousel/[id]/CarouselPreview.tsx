@@ -69,31 +69,52 @@ export default function CarouselPreview({
           <div className="absolute bottom-[-80px] left-[-80px] w-[350px] h-[350px] rounded-full bg-[rgba(232,137,156,0.03)]"></div>
           <div className="absolute top-1/2 left-[-200px] w-[400px] h-[400px] rounded-full border-2 border-[rgba(20,80,124,0.15)]"></div>
 
-          <div className="relative z-20">
+          <div className="relative z-20 flex flex-col items-center justify-center text-center px-12">
             <div className="text-[#e8899c] font-poppins text-2xl font-bold tracking-widest uppercase mb-8">
               PhysioSthanak
             </div>
-            <div className="text-white font-poppins text-[180px] font-black leading-none drop-shadow-xl">
-              {c.number || ''}
-            </div>
-            <div className="text-[#94a3b8] font-inter text-[44px] font-normal text-center">
+
+            {c.mainWord ? (
+              <>
+                <div className="text-white font-poppins text-[180px] font-black leading-none drop-shadow-xl">
+                  {c.number || ''}
+                </div>
+                <div className="text-[#e8899c] font-poppins text-[100px] font-black text-center drop-shadow-lg">
+                  {c.mainWord}
+                </div>
+              </>
+            ) : (
+              <div className="text-white font-poppins text-[52px] font-black leading-tight drop-shadow-xl mb-4">
+                {str('title')}
+              </div>
+            )}
+
+            <div className="text-[#94a3b8] font-inter text-[36px] font-normal text-center mt-4 mb-6">
               {c.subtitleLine || ''}
             </div>
-            <div className="text-[#e8899c] font-poppins text-[100px] font-black text-center drop-shadow-lg">
-              {c.mainWord || ''}
-            </div>
-            <div className="mt-10 bg-[rgba(239,68,68,0.15)] border-2 border-[rgba(239,68,68,0.4)] rounded-full px-10 py-4 text-center">
-              <div className="text-[#fca5a5] font-inter text-[28px] font-semibold">
-                {c.hook || ''}
-              </div>
-            </div>
 
-            <div className="absolute bottom-10 left-12 text-[#94a3b8] font-inter text-2xl">
-              {c.savePrompt || ''}
-            </div>
-            <div className="absolute bottom-10 right-12 text-[#e8899c] font-poppins text-2xl font-bold tracking-widest">
-              {c.swipePrompt || 'SWIPE →'}
-            </div>
+            {c.badge && (
+              <div className="bg-[rgba(232,137,156,0.2)] border-2 border-[rgba(232,137,156,0.5)] rounded-full px-10 py-4 text-center mb-6">
+                <div className="text-[#e8899c] font-poppins text-[32px] font-black tracking-wider">
+                  {c.badge}
+                </div>
+              </div>
+            )}
+
+            {c.hook && (
+              <div className="mt-4 bg-[rgba(239,68,68,0.15)] border-2 border-[rgba(239,68,68,0.4)] rounded-full px-10 py-4 text-center">
+                <div className="text-[#fca5a5] font-inter text-[28px] font-semibold">
+                  {c.hook}
+                </div>
+              </div>
+            )}
+          </div>
+
+          <div className="absolute bottom-10 left-12 text-[#94a3b8] font-inter text-2xl z-20">
+            {c.savePrompt || (str('footer').includes('Save') ? str('footer').split('|').find(p => (p as string).includes('Save'))?.trim() : '') || ''}
+          </div>
+          <div className="absolute bottom-10 right-12 text-[#e8899c] font-poppins text-2xl font-bold tracking-widest z-20">
+            {c.swipePrompt || (str('footer').includes('SWIPE') ? str('footer').split('|').find(p => (p as string).includes('SWIPE'))?.trim() : '') || 'SWIPE →'}
           </div>
 
           <div className="absolute bottom-0 left-0 w-1/5 h-1 bg-[#e8899c]"></div>
@@ -143,7 +164,20 @@ export default function CarouselPreview({
             </div>
 
             <div className="text-white text-[32px] leading-[1.6]">
-              {c.body || ''}
+              {Array.isArray(c.items) ? (
+                <div className="flex flex-col gap-3">
+                  {c.items.map((item, i) => (
+                    <div key={i} className="flex items-start gap-3">
+                      <span className="text-[#e8899c] mt-1">•</span>
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
+              ) : Array.isArray(c.body) ? (
+                c.body.map((line, i) => <div key={i}>{line}</div>)
+              ) : (
+                c.body || ''
+              )}
             </div>
           </div>
 
@@ -286,22 +320,36 @@ export default function CarouselPreview({
             </div>
 
             <div className="flex flex-col gap-[22px]">
-              {Array.isArray(c.items)
-                ? c.items.map((item, i) => {
-                    const [icon, text] = (typeof item === 'string' ? item : '').split('|').map((s) => s.trim());
-                    return (
-                      <div
-                        key={i}
-                        className="flex items-center gap-5 bg-[rgba(239,68,68,0.08)] border border-[rgba(239,68,68,0.15)] rounded-[16px] px-7 py-[22px]"
-                      >
-                        <div className="text-[36px] flex-shrink-0">{icon}</div>
-                        <div className="text-[rgba(255,255,255,0.9)] font-inter text-[30px] leading-[1.4] font-medium">
-                          {text}
-                        </div>
+              {(() => {
+                // Combine items and body lines for red flags
+                const allItems: string[] = [];
+                if (Array.isArray(c.items)) allItems.push(...c.items.map(i => typeof i === 'string' ? i : ''));
+                if (Array.isArray(c.body)) allItems.push(...c.body.map(i => typeof i === 'string' ? i : ''));
+                else if (typeof c.body === 'string' && c.body) {
+                  c.body.split('\n').forEach(line => { if (line.trim()) allItems.push(line.trim()); });
+                }
+                return allItems.map((item, i) => {
+                  // Try to split on | for icon|text format, otherwise use the whole line
+                  const pipeIdx = item.indexOf('|');
+                  let icon = '🚨';
+                  let text = item;
+                  if (pipeIdx > 0 && pipeIdx < 5) {
+                    icon = item.substring(0, pipeIdx).trim();
+                    text = item.substring(pipeIdx + 1).trim();
+                  }
+                  return (
+                    <div
+                      key={i}
+                      className="flex items-center gap-5 bg-[rgba(239,68,68,0.08)] border border-[rgba(239,68,68,0.15)] rounded-[16px] px-7 py-[22px]"
+                    >
+                      <div className="text-[36px] flex-shrink-0">{icon}</div>
+                      <div className="text-[rgba(255,255,255,0.9)] font-inter text-[30px] leading-[1.4] font-medium">
+                        {text}
                       </div>
-                    );
-                  })
-                : null}
+                    </div>
+                  );
+                });
+              })()}
             </div>
 
             <div className="mt-9 text-[#fca5a5] font-inter text-[28px] font-semibold text-center">

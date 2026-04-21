@@ -31,20 +31,31 @@ async function fetchNotionPage(pageId: string) {
     throw new Error('NOTION_TOKEN not configured');
   }
 
-  const apiUrl = `https://api.notion.com/v1/blocks/${pageId}/children?page_size=100`;
-  const response = await fetch(apiUrl, {
-    method: 'GET',
-    headers: {
-      Authorization: `Bearer ${token}`,
-      'Notion-Version': '2022-06-28',
-    },
-  });
+  const allResults: any[] = [];
+  let cursor: string | undefined = undefined;
+  let hasMore = true;
 
-  if (!response.ok) {
-    throw new Error(`Notion API error: ${response.status}`);
+  while (hasMore) {
+    const apiUrl: string = `https://api.notion.com/v1/blocks/${pageId}/children?page_size=100${cursor ? `&start_cursor=${cursor}` : ''}`;
+    const response: Response = await fetch(apiUrl, {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Notion-Version': '2022-06-28',
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error(`Notion API error: ${response.status}`);
+    }
+
+    const data: { results: any[]; has_more: boolean; next_cursor: string | null } = await response.json();
+    allResults.push(...(data.results || []));
+    hasMore = data.has_more;
+    cursor = data.next_cursor || undefined;
   }
 
-  return response.json();
+  return { results: allResults };
 }
 
 async function fetchNotionPageProperties(pageId: string) {
