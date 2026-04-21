@@ -53,6 +53,12 @@ export default function CarouselPreview({
   const renderSlide = (slide: Slide): React.ReactNode => {
     const idx = slide.id;
     const c = slide.content;
+    // Helper: safely get a string value from content (which may be string | string[])
+    const str = (key: string): string => {
+      const v = c[key];
+      if (!v) return '';
+      return Array.isArray(v) ? v.join('\n') : v;
+    };
 
     // Slide 1: Cover
     if (idx === 1) {
@@ -106,8 +112,8 @@ export default function CarouselPreview({
               {c.tag || '📊 THE REALITY'}
             </div>
             <div className="text-white font-poppins text-[56px] font-black leading-tight mb-9">
-              {c.title
-                ?.split(/<span>|<\/span>/)
+              {str('title')
+                .split(/<span>|<\/span>/)
                 .map((part, i) => (
                   <span key={i} className={i % 2 === 1 ? 'text-[#e8899c]' : ''}>
                     {part}
@@ -118,7 +124,7 @@ export default function CarouselPreview({
             <div className="flex gap-[30px] mb-10">
               {Array.isArray(c.stats)
                 ? c.stats.map((stat, i) => {
-                    const parts = stat.split('|');
+                    const parts = (typeof stat === 'string' ? stat : '').split('|');
                     return (
                       <div
                         key={i}
@@ -242,10 +248,10 @@ export default function CarouselPreview({
                     isUrgent ? 'text-[#ef4444]' : 'text-[#e8899c]'
                   }`}
                 >
-                  {c.stat.split('|')[0]?.trim()}
+                  {str('stat').split('|')[0]?.trim()}
                 </span>
                 <span className="text-[#64748b] font-inter text-[26px]">
-                  {c.stat.split('|')[1]?.trim()}
+                  {str('stat').split('|')[1]?.trim()}
                 </span>
               </div>
             )}
@@ -270,8 +276,8 @@ export default function CarouselPreview({
               {c.tag || '🚨 WARNING SIGNS'}
             </div>
             <div className="text-white font-poppins text-[54px] font-black leading-tight mb-10">
-              {c.title
-                ?.split(/<span>|<\/span>/)
+              {str('title')
+                .split(/<span>|<\/span>/)
                 .map((part, i) => (
                   <span key={i} className={i % 2 === 1 ? 'text-[#ef4444]' : ''}>
                     {part}
@@ -282,7 +288,7 @@ export default function CarouselPreview({
             <div className="flex flex-col gap-[22px]">
               {Array.isArray(c.items)
                 ? c.items.map((item, i) => {
-                    const [icon, text] = item.split('|').map((s) => s.trim());
+                    const [icon, text] = (typeof item === 'string' ? item : '').split('|').map((s) => s.trim());
                     return (
                       <div
                         key={i}
@@ -321,8 +327,8 @@ export default function CarouselPreview({
               {c.tag || '💾 SAVE THIS'}
             </div>
             <div className="text-white font-poppins text-[52px] font-black leading-tight mb-9">
-              {c.title
-                ?.split(/<span>|<\/span>/)
+              {str('title')
+                .split(/<span>|<\/span>/)
                 .map((part, i) => (
                   <span key={i} className={i % 2 === 1 ? 'text-[#e8899c]' : ''}>
                     {part}
@@ -350,8 +356,8 @@ export default function CarouselPreview({
 
             <div className="bg-[rgba(232,137,156,0.1)] border-2 border-[rgba(232,137,156,0.2)] rounded-[20px] px-[30px] py-[26px] text-center">
               <div className="text-white font-inter text-[28px] leading-[1.5] font-medium">
-                {c.resultText
-                  ?.split(/<span>|<\/span>/)
+                {str('resultText')
+                  .split(/<span>|<\/span>/)
                   .map((part, i) => (
                     <span key={i} className={i % 2 === 1 ? 'text-[#e8899c] font-bold' : ''}>
                       {part}
