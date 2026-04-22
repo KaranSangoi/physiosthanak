@@ -328,7 +328,49 @@ export default async function CarouselPage({ params }: { params: Promise<{ id: s
 
     const blocks = blocksData.results || [];
     const slides = parseCreativeContent(blocks);
-    const { caption, hashtags } = parseCaptionAndHashtags(blocks);
+
+    // Caption & hashtags come from database properties, not page body
+    const properties = pageData.properties || {};
+    let caption = '';
+    let hashtags = '';
+
+    // Caption is a rich_text property in the Content Calendar database
+    if (properties['Caption']?.rich_text?.length) {
+      const fullCaption = properties['Caption'].rich_text
+        .map((t: any) => t.plain_text)
+        .join('')
+        .replace(/<br\s*\/?>/gi, '\n'); // Notion may store <br> for line breaks
+      // Split caption and hashtags: hashtags start with # lines at the end
+      const lines = fullCaption.split('\n');
+      const captionLines: string[] = [];
+      const hashtagLines: string[] = [];
+      let inHashtags = false;
+      for (const line of lines) {
+        if (line.trim().startsWith('#') && !line.trim().startsWith('##')) {
+          inHashtags = true;
+        }
+        if (inHashtags) {
+          hashtagLines.push(line);
+        } else {
+          captionLines.push(line);
+        }
+      }
+      caption = captionLines.join('\n').trim();
+      hashtags = hashtagLines.join(' ').trim();
+    }
+
+    // Also check Hashtag Set property if no hashtags found in caption
+    if (!hashtags && properties['Hashtag Set']?.select?.name) {
+      // Hashtag Set is just a label like "Set A", not actual hashtags
+      // Actual hashtags would need to be in the caption text
+    }
+
+    // Fallback: try parsing from page body blocks if properties had nothing
+    if (!caption) {
+      const parsed = parseCaptionAndHashtags(blocks);
+      caption = parsed.caption;
+      hashtags = parsed.hashtags || hashtags;
+    }
 
     if (slides.length === 0) {
       return (
@@ -343,7 +385,6 @@ export default async function CarouselPage({ params }: { params: Promise<{ id: s
       );
     }
 
-    const properties = pageData.properties || {};
     let contentTitle = 'Carousel Preview';
     let publishDate: string | undefined;
     let status: string | undefined;

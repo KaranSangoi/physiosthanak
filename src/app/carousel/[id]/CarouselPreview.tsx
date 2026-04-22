@@ -116,7 +116,8 @@ const SLIDE_CSS = `
 .cs .mistake-stat-value { color: #e8899c; font-family: 'Poppins', sans-serif; font-size: 32px; font-weight: 800; }
 .cs .mistake-stat-value.urgent { color: #ef4444; }
 .cs .mistake-stat-label { color: #64748b; font-family: 'Inter', sans-serif; font-size: 26px; }
-.cs .slide-watermark { position: absolute; bottom: 36px; right: 50px; color: #fff; font-family: 'Poppins', sans-serif; font-size: 18px; letter-spacing: 4px; opacity: 0.08; text-transform: uppercase; font-weight: 600; z-index: 2; }
+.cs .slide-watermark { position: absolute; bottom: 30px; right: 40px; z-index: 2; opacity: 0.15; }
+.cs .slide-watermark img { height: 50px; width: auto; }
 .cs .slide-progress { position: absolute; bottom: 0; left: 0; height: 5px; background: #e8899c; z-index: 2; }
 
 /* ========== SLIDE 8: RED FLAGS ========== */
@@ -372,7 +373,7 @@ export default function CarouselPreview({
             ) : null}
           </div>
 
-          <div className="slide-watermark">PhysioSthanak</div>
+          <div className="slide-watermark"><img src="/images/horizontal-logo.png" alt="PhysioSthanak" /></div>
         </div>
       );
     }
@@ -415,7 +416,7 @@ export default function CarouselPreview({
           )}
 
           <div className="slide-progress" style={{width: progressPct}}></div>
-          <div className="slide-watermark">PhysioSthanak</div>
+          <div className="slide-watermark"><img src="/images/horizontal-logo.png" alt="PhysioSthanak" /></div>
         </div>
       );
     }
@@ -437,13 +438,11 @@ export default function CarouselPreview({
 
           <div className="redflag-items">
             {allItems.map((item, i) => {
-              const pipeIdx = item.indexOf('|');
-              let icon = '🚨';
-              let text = item;
-              if (pipeIdx > 0 && pipeIdx < 5) {
-                icon = item.substring(0, pipeIdx).trim();
-                text = item.substring(pipeIdx + 1).trim();
-              }
+              // Strip leading emoji if present to avoid doubling
+              const emojiRegex = /^(\p{Emoji_Presentation}|\p{Emoji}\uFE0F)\s*/u;
+              const emojiMatch = item.match(emojiRegex);
+              const icon = emojiMatch ? emojiMatch[0].trim() : '🚨';
+              const text = emojiMatch ? item.replace(emojiRegex, '') : item;
               return (
                 <div key={i} className="redflag-item">
                   <div className="redflag-item-icon">{icon}</div>
@@ -454,7 +453,7 @@ export default function CarouselPreview({
           </div>
 
           {c.bottom && <div className="redflag-bottom">{c.bottom}</div>}
-          <div className="slide-watermark">PhysioSthanak</div>
+          <div className="slide-watermark"><img src="/images/horizontal-logo.png" alt="PhysioSthanak" /></div>
         </div>
       );
     }
@@ -477,12 +476,16 @@ export default function CarouselPreview({
           <div className="selfcheck-title" dangerouslySetInnerHTML={{ __html: str('title').replace(/<span>/g, '<span>') }} />
 
           <div className="selfcheck-items">
-            {checkItems.map((item, i) => (
-              <div key={i} className="selfcheck-item">
-                <div className="selfcheck-checkbox">☐</div>
-                <div className="selfcheck-item-text">{item}</div>
-              </div>
-            ))}
+            {checkItems.map((item, i) => {
+              // Strip leading ☐ if present to avoid doubling
+              const cleanItem = item.replace(/^☐\s*/, '');
+              return (
+                <div key={i} className="selfcheck-item">
+                  <div className="selfcheck-checkbox">☐</div>
+                  <div className="selfcheck-item-text">{cleanItem}</div>
+                </div>
+              );
+            })}
           </div>
 
           {str('resultText') && (
@@ -491,7 +494,7 @@ export default function CarouselPreview({
             </div>
           )}
 
-          <div className="slide-watermark">PhysioSthanak</div>
+          <div className="slide-watermark"><img src="/images/horizontal-logo.png" alt="PhysioSthanak" /></div>
         </div>
       );
     }
