@@ -400,21 +400,30 @@ export default function CarouselPreview({
             </div>
 
             <div className="flex flex-col gap-[18px] mb-[34px]">
-              {Array.isArray(c.items)
-                ? c.items.map((item, i) => (
-                    <div
-                      key={i}
-                      className="flex items-center gap-[18px] bg-[rgba(20,80,124,0.35)] border border-[rgba(232,137,156,0.12)] rounded-[16px] px-7 py-[22px]"
-                    >
-                      <div className="w-[42px] h-[42px] rounded-[10px] border-[3px] border-[#e8899c] flex items-center justify-center text-[22px] font-bold text-[#e8899c] flex-shrink-0">
-                        ☐
-                      </div>
-                      <div className="text-[rgba(255,255,255,0.9)] font-inter text-[30px] leading-[1.35] font-medium">
-                        {item}
-                      </div>
+              {(() => {
+                // Use items if available, otherwise try body lines
+                let checkItems: string[] = [];
+                if (Array.isArray(c.items) && c.items.length > 0) {
+                  checkItems = c.items.map(i => typeof i === 'string' ? i : '');
+                } else if (Array.isArray(c.body)) {
+                  checkItems = c.body.map(i => typeof i === 'string' ? i : '');
+                } else if (typeof c.body === 'string' && c.body) {
+                  checkItems = c.body.split('\n').filter(l => l.trim());
+                }
+                return checkItems.map((item, i) => (
+                  <div
+                    key={i}
+                    className="flex items-center gap-[18px] bg-[rgba(20,80,124,0.35)] border border-[rgba(232,137,156,0.12)] rounded-[16px] px-7 py-[22px]"
+                  >
+                    <div className="w-[42px] h-[42px] rounded-[10px] border-[3px] border-[#e8899c] flex items-center justify-center text-[22px] font-bold text-[#e8899c] flex-shrink-0">
+                      ☐
                     </div>
-                  ))
-                : null}
+                    <div className="text-[rgba(255,255,255,0.9)] font-inter text-[30px] leading-[1.35] font-medium">
+                      {item}
+                    </div>
+                  </div>
+                ));
+              })()}
             </div>
 
             <div className="bg-[rgba(232,137,156,0.1)] border-2 border-[rgba(232,137,156,0.2)] rounded-[20px] px-[30px] py-[26px] text-center">
@@ -449,16 +458,22 @@ export default function CarouselPreview({
               {c.wantHelp || 'Want help with your back pain?'}
             </div>
             <div className="text-white font-poppins text-[56px] font-black leading-tight mb-7">
-              Comment{' '}
-              {c.ctaSpan ? (
-                <>
-                  <span className="text-[#e8899c]">{c.ctaSpan}</span>
-                  <br />
-                  & We&apos;ll DM You
-                </>
+              {c.title ? (
+                // Use full title from Notion, highlight quoted keyword in pink
+                str('title').split(/(".*?")/).map((part, i) =>
+                  part.startsWith('"') ? (
+                    <span key={i} className="text-[#e8899c]">{part}</span>
+                  ) : part.includes('\n') ? (
+                    <span key={i}>{part.split('\n').map((line, j) => (
+                      <React.Fragment key={j}>{j > 0 && <br />}{line}</React.Fragment>
+                    ))}</span>
+                  ) : (
+                    <span key={i}>{part}</span>
+                  )
+                )
               ) : (
                 <>
-                  <span className="text-[#e8899c]">"HELP"</span>
+                  Comment <span className="text-[#e8899c]">&quot;{c.keyword || 'HELP'}&quot;</span>
                   <br />& We&apos;ll DM You
                 </>
               )}
