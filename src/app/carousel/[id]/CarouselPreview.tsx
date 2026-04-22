@@ -14,6 +14,8 @@ interface CarouselPreviewProps {
   publishDate?: string;
   status?: string;
   pageId: string;
+  caption?: string;
+  hashtags?: string;
 }
 
 /* ============================================================
@@ -152,9 +154,7 @@ const SLIDE_CSS = `
   border: 1px solid rgba(232,137,156,0.12);
 }
 .cs .selfcheck-checkbox {
-  width: 42px; height: 42px; border-radius: 10px; border: 3px solid #e8899c;
-  flex-shrink: 0; display: flex; align-items: center; justify-content: center;
-  color: #e8899c; font-size: 22px; font-weight: 700;
+  flex-shrink: 0; color: #e8899c; font-size: 28px; font-weight: 700; line-height: 1;
 }
 .cs .selfcheck-item-text { color: rgba(255,255,255,0.9); font-family: 'Inter', sans-serif; font-size: 30px; line-height: 1.35; font-weight: 500; }
 .cs .selfcheck-result {
@@ -240,6 +240,8 @@ export default function CarouselPreview({
   publishDate,
   status,
   pageId,
+  caption,
+  hashtags,
 }: CarouselPreviewProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [downloading, setDownloading] = useState(false);
@@ -716,16 +718,12 @@ export default function CarouselPreview({
       {statusMessage && <div className="status-text">{statusMessage}</div>}
 
       {/* Caption Box */}
-      {slides[slides.length - 1]?.content?.caption && (
+      {caption && (
         <div className="caption-box">
           <div className="caption-label">Ready-to-Post Caption</div>
-          <div className="caption-text" id="captionContent">
-            {slides[slides.length - 1].content.caption}
-          </div>
-          {slides[slides.length - 1]?.content?.hashtags && (
-            <div className="caption-hashtags" id="captionHashtags">
-              {slides[slides.length - 1].content.hashtags}
-            </div>
+          <div className="caption-text" id="captionContent">{caption}</div>
+          {hashtags && (
+            <div className="caption-hashtags" id="captionHashtags">{hashtags}</div>
           )}
           <button className="copy-btn" onClick={copyCaption}>{copyLabel}</button>
         </div>

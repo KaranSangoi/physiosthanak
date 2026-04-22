@@ -245,6 +245,66 @@ function parseCreativeContent(blocks: Block[]): SlideContent[] {
   return slides;
 }
 
+function parseCaptionAndHashtags(blocks: Block[]): { caption: string; hashtags: string } {
+  let inCaptionSection = false;
+  let inHashtagSection = false;
+  const captionLines: string[] = [];
+  const hashtagLines: string[] = [];
+
+  for (const block of blocks) {
+    if (block.type === 'heading_2' || block.type === 'heading_3') {
+      const text = extractPlainText(
+        (block.type === 'heading_2' ? block.heading_2 : block.heading_3)?.rich_text || []
+      ).toLowerCase();
+      if (text.includes('caption')) {
+        inCaptionSection = true;
+        inHashtagSection = false;
+        continue;
+      }
+      if (text.includes('hashtag')) {
+        inCaptionSection = false;
+        inHashtagSection = true;
+        continue;
+      }
+      // Any other heading ends caption/hashtag sections
+      if (inCaptionSection || inHashtagSection) {
+        if (!text.includes('caption') && !text.includes('hashtag')) {
+          // Check if it's a slide heading — if so, we haven't reached caption yet
+          if (text.includes('slide')) continue;
+          inCaptionSection = false;
+          inHashtagSection = false;
+        }
+      }
+    }
+
+    if (inCaptionSection && block.type === 'paragraph') {
+      const text = extractPlainText(block.paragraph?.rich_text || []);
+      if (text.trim()) {
+        // If line starts with # it's likely hashtags
+        if (text.trim().startsWith('#')) {
+          hashtagLines.push(text.trim());
+          inHashtagSection = true;
+          inCaptionSection = false;
+        } else {
+          captionLines.push(text);
+        }
+      } else {
+        captionLines.push(''); // preserve empty lines
+      }
+    }
+
+    if (inHashtagSection && block.type === 'paragraph') {
+      const text = extractPlainText(block.paragraph?.rich_text || []);
+      if (text.trim()) hashtagLines.push(text.trim());
+    }
+  }
+
+  return {
+    caption: captionLines.join('\n').trim(),
+    hashtags: hashtagLines.join(' ').trim(),
+  };
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   return {
     title: 'Carousel Preview | PhysioSthanak',
@@ -268,6 +328,7 @@ export default async function CarouselPage({ params }: { params: Promise<{ id: s
 
     const blocks = blocksData.results || [];
     const slides = parseCreativeContent(blocks);
+    const { caption, hashtags } = parseCaptionAndHashtags(blocks);
 
     if (slides.length === 0) {
       return (
@@ -310,6 +371,8 @@ export default async function CarouselPage({ params }: { params: Promise<{ id: s
         publishDate={publishDate}
         status={status}
         pageId={pageId}
+        caption={caption}
+        hashtags={hashtags}
       />
     );
   } catch (error) {
