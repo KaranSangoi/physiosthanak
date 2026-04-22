@@ -188,6 +188,50 @@ const SLIDE_CSS = `
 .cs .cta-handle { color: #e8899c; font-family: 'Poppins', sans-serif; font-size: 26px; font-weight: 600; margin-top: 20px; z-index: 2; }
 .cs .cta-tagline { position: absolute; bottom: 30px; color: #fff; font-size: 18px; opacity: 0.12; letter-spacing: 6px; text-transform: uppercase; font-weight: 600; z-index: 2; }
 .cs .cta-share-prompt { z-index: 2; color: #94a3b8; font-family: 'Inter', sans-serif; font-size: 22px; margin-top: 18px; }
+
+/* ========== SLIDE CONTAINER & CONTROLS ========== */
+.cs .slide-container {
+  width: 1080px; height: 1080px;
+  position: relative; overflow: hidden;
+  border-radius: 8px;
+  transform: scale(0.45); transform-origin: top center;
+  margin-bottom: -594px;
+}
+.cs .controls { display: flex; align-items: center; gap: 16px; margin-top: 20px; justify-content: center; }
+.cs .nav-btn { background: #14507c; color: #fff; border: none; padding: 10px 24px; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.2s; }
+.cs .nav-btn:hover { background: #e8899c; }
+.cs .nav-btn:disabled { opacity: 0.3; cursor: default; }
+.cs .dots { display: flex; gap: 8px; }
+.cs .dot { width: 10px; height: 10px; border-radius: 5px; background: rgba(20,80,124,0.25); cursor: pointer; transition: all 0.3s; }
+.cs .dot.active { width: 24px; background: #e8899c; }
+.cs .slide-label-text { color: #64748b; font-size: 12px; margin-top: 8px; text-align: center; }
+.cs .dl-controls { display: flex; gap: 12px; margin-top: 16px; justify-content: center; }
+.cs .dl-btn { background: #14507c; color: #fff; border: none; padding: 12px 28px; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.2s; }
+.cs .dl-btn:hover { background: #e8899c; }
+.cs .dl-btn:disabled { opacity: 0.5; cursor: wait; }
+.cs .dl-btn.primary { background: #e8899c; }
+.cs .dl-btn.primary:hover { background: #d4768a; }
+.cs .status-text { color: #64748b; font-size: 12px; margin-top: 8px; text-align: center; }
+.cs .caption-box { margin-top: 24px; max-width: 500px; width: 100%; background: #111; border-radius: 12px; padding: 24px; border: 1px solid rgba(20,80,124,0.3); }
+.cs .caption-label { color: #e8899c; font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 12px; }
+.cs .caption-text { color: #e2e8f0; font-size: 13px; line-height: 1.8; white-space: pre-wrap; }
+.cs .caption-hashtags { color: #14507c; font-size: 11px; margin-top: 14px; line-height: 1.8; }
+.cs .copy-btn { margin-top: 12px; background: #14507c; color: #fff; border: none; padding: 8px 20px; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer; }
+.cs .copy-btn:hover { background: #e8899c; }
+
+/* Responsive scale */
+@media (max-width: 600px) {
+  .cs .slide-container { transform: scale(0.3); margin-bottom: -756px; }
+}
+@media (min-width: 601px) and (max-width: 900px) {
+  .cs .slide-container { transform: scale(0.4); margin-bottom: -648px; }
+}
+@media (min-width: 901px) and (max-width: 1200px) {
+  .cs .slide-container { transform: scale(0.45); margin-bottom: -594px; }
+}
+@media (min-width: 1201px) {
+  .cs .slide-container { transform: scale(0.5); margin-bottom: -540px; }
+}
 `;
 
 export default function CarouselPreview({
@@ -197,11 +241,19 @@ export default function CarouselPreview({
   status,
   pageId,
 }: CarouselPreviewProps) {
+  const [currentSlide, setCurrentSlide] = useState(0);
   const [downloading, setDownloading] = useState(false);
   const [statusMessage, setStatusMessage] = useState('');
   const slideRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const scaleObserverRef = useRef<HTMLDivElement>(null);
-  const [slideScale, setSlideScale] = useState(0.45);
+  const [copyLabel, setCopyLabel] = useState('📋 Copy Caption + Hashtags');
+
+  const total = slides.length;
+  const slideNames = ['Cover', 'Why This Matters', 'Mistake #1', 'Mistake #2', 'Mistake #3', 'Mistake #4', 'Mistake #5', 'Red Flags', 'Self-Check', 'CTA'];
+
+  const nav = (dir: number) => {
+    const n = currentSlide + dir;
+    if (n >= 0 && n < total) setCurrentSlide(n);
+  };
 
   // Load html2canvas and jszip from CDN
   useEffect(() => {
@@ -220,18 +272,15 @@ export default function CarouselPreview({
     };
   }, []);
 
-  // Measure grid column width and compute scale for 1080px slides
+  // Keyboard navigation
   useEffect(() => {
-    const el = scaleObserverRef.current;
-    if (!el) return;
-    const observer = new ResizeObserver((entries) => {
-      const width = entries[0].contentRect.width;
-      if (width > 0) setSlideScale(width / 1080);
-    });
-    observer.observe(el);
-    if (el.clientWidth > 0) setSlideScale(el.clientWidth / 1080);
-    return () => observer.disconnect();
-  }, []);
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowRight') nav(1);
+      if (e.key === 'ArrowLeft') nav(-1);
+    };
+    document.addEventListener('keydown', handleKey);
+    return () => document.removeEventListener('keydown', handleKey);
+  });
 
   /* ============================================================
      renderSlide — uses exact same HTML structure + CSS classes
@@ -495,16 +544,24 @@ export default function CarouselPreview({
       const slideEl = slideRefs.current[index];
       if (!slideEl) { setStatusMessage('Slide element not found'); return; }
 
-      const prevTransform = slideEl.style.transform;
+      // Temporarily show at full size for capture
+      slideEl.style.display = 'block';
       slideEl.style.transform = 'none';
-      await new Promise(r => setTimeout(r, 100));
+      slideEl.style.marginBottom = '0';
+      slideEl.style.borderRadius = '0';
+      await new Promise(r => setTimeout(r, 200));
 
-      const canvas = await html2canvas(slideEl, {
+      const innerSlide = slideEl.firstElementChild as HTMLElement;
+      const canvas = await html2canvas(innerSlide || slideEl, {
         width: 1080, height: 1080, scale: 1,
         useCORS: true, backgroundColor: null, allowTaint: true,
       });
 
-      slideEl.style.transform = prevTransform;
+      // Restore
+      slideEl.style.transform = '';
+      slideEl.style.marginBottom = '';
+      slideEl.style.borderRadius = '';
+      slideEl.style.display = index === currentSlide ? 'block' : 'none';
 
       canvas.toBlob((blob: Blob) => {
         const url = URL.createObjectURL(blob);
@@ -538,16 +595,24 @@ export default function CarouselPreview({
         const slideEl = slideRefs.current[i];
         if (!slideEl) continue;
 
-        const prevTransform = slideEl.style.transform;
+        // Temporarily show at full size for capture
+        slideEl.style.display = 'block';
         slideEl.style.transform = 'none';
-        await new Promise(r => setTimeout(r, 100));
+        slideEl.style.marginBottom = '0';
+        slideEl.style.borderRadius = '0';
+        await new Promise(r => setTimeout(r, 200));
 
-        const canvas = await html2canvas(slideEl, {
+        const innerSlide = slideEl.firstElementChild as HTMLElement;
+        const canvas = await html2canvas(innerSlide || slideEl, {
           width: 1080, height: 1080, scale: 1,
           useCORS: true, backgroundColor: null, allowTaint: true,
         });
 
-        slideEl.style.transform = prevTransform;
+        // Restore
+        slideEl.style.transform = '';
+        slideEl.style.marginBottom = '';
+        slideEl.style.borderRadius = '';
+        slideEl.style.display = i === currentSlide ? 'block' : 'none';
 
         const blob = await new Promise<Blob>(resolve => {
           canvas.toBlob((b: Blob | null) => resolve(b as Blob));
@@ -571,95 +636,104 @@ export default function CarouselPreview({
     }
   };
 
+  const copyCaption = () => {
+    const captionEl = document.getElementById('captionContent');
+    const hashtagsEl = document.getElementById('captionHashtags');
+    if (captionEl && hashtagsEl) {
+      const text = captionEl.textContent + '\n\n' + hashtagsEl.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        setCopyLabel('✅ Copied!');
+        setTimeout(() => setCopyLabel('📋 Copy Caption + Hashtags'), 2000);
+      });
+    }
+  };
+
   /* ============================================================
-     Render
+     Render — same layout as instagram-carousel.html
      ============================================================ */
   return (
-    <div className="cs" style={{ width: '100%', minHeight: '100vh', background: '#0a0a0a', color: '#fff', fontFamily: "'Inter', sans-serif" }}>
-      {/* Inject the exact CSS from instagram-carousel.html */}
+    <div className="cs" style={{ background: '#0a0a0a', color: '#fff', fontFamily: "'Inter', sans-serif", minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '30px 20px' }}>
       <style dangerouslySetInnerHTML={{ __html: SLIDE_CSS }} />
 
-      <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '48px 16px' }}>
-        {/* Header */}
-        <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-          <h1 style={{ color: '#e8899c', fontFamily: "'Poppins', sans-serif", fontSize: '14px', letterSpacing: '4px', textTransform: 'uppercase', marginBottom: '8px', fontWeight: 700 }}>
-            PhysioSthanak
-          </h1>
-          <h2 style={{ fontFamily: "'Poppins', sans-serif", fontSize: '36px', fontWeight: 900, marginBottom: '12px' }}>
-            {contentTitle}
-          </h2>
-          {publishDate && <p style={{ color: '#64748b', fontSize: '14px' }}>Publish Date: {publishDate}</p>}
-          {status && <p style={{ color: '#94a3b8', fontSize: '14px' }}>Status: {status}</p>}
-        </div>
+      {/* Header */}
+      <div style={{ textAlign: 'center', marginBottom: '30px' }}>
+        <h1 style={{ fontFamily: "'Poppins', sans-serif", fontSize: '14px', letterSpacing: '4px', textTransform: 'uppercase', color: '#e8899c', marginBottom: '6px', fontWeight: 700 }}>
+          PhysioSthanak
+        </h1>
+        <p style={{ color: '#64748b', fontSize: '12px', margin: 0 }}>
+          Instagram Carousel Preview — {total} slides at 1080×1080px
+        </p>
+        <h2 style={{ fontFamily: "'Poppins', sans-serif", fontSize: '20px', fontWeight: 800, marginTop: '12px', marginBottom: '4px' }}>
+          {contentTitle}
+        </h2>
+        {publishDate && <p style={{ color: '#64748b', fontSize: '11px', margin: '2px 0' }}>Publish: {publishDate}</p>}
+        {status && <p style={{ color: '#94a3b8', fontSize: '11px', margin: '2px 0' }}>Status: {status}</p>}
+      </div>
 
-        {/* Slides Grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '32px', marginBottom: '48px' }}>
-          {slides.map((slide, idx) => (
-            <div key={idx} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px' }}>
-              <div
-                ref={idx === 0 ? scaleObserverRef : undefined}
-                style={{
-                  width: '100%',
-                  aspectRatio: '1',
-                  position: 'relative',
-                  overflow: 'hidden',
-                  borderRadius: '8px',
-                  border: '1px solid #222',
-                  background: '#111',
-                }}
-              >
-                <div
-                  ref={el => { slideRefs.current[idx] = el; }}
-                  style={{
-                    width: '1080px',
-                    height: '1080px',
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    transformOrigin: 'top left',
-                    transform: `scale(${slideScale})`,
-                  }}
-                >
-                  {renderSlide(slide)}
-                </div>
-              </div>
-              <button
-                onClick={() => downloadSlide(idx)}
-                disabled={downloading}
-                style={{
-                  width: '100%', background: '#14507c', color: '#fff', border: 'none',
-                  padding: '10px 16px', borderRadius: '8px', fontFamily: "'Inter', sans-serif",
-                  fontSize: '14px', fontWeight: 600, cursor: 'pointer',
-                }}
-              >
-                📥 Download PNG
-              </button>
-            </div>
+      {/* Carousel — one slide at a time */}
+      <div className="carousel-wrapper">
+        {slides.map((slide, idx) => (
+          <div
+            key={idx}
+            ref={el => { slideRefs.current[idx] = el; }}
+            className="slide-container"
+            style={{ display: idx === currentSlide ? 'block' : 'none' }}
+          >
+            {renderSlide(slide)}
+          </div>
+        ))}
+      </div>
+
+      {/* Navigation Controls */}
+      <div className="controls">
+        <button className="nav-btn" onClick={() => nav(-1)} disabled={currentSlide === 0}>← Prev</button>
+        <div className="dots">
+          {slides.map((_, i) => (
+            <div
+              key={i}
+              className={`dot${i === currentSlide ? ' active' : ''}`}
+              onClick={() => setCurrentSlide(i)}
+            />
           ))}
         </div>
-
-        {/* Download All Button */}
-        <div style={{ textAlign: 'center', marginBottom: '32px' }}>
-          <button
-            onClick={downloadAllSlides}
-            disabled={downloading}
-            style={{
-              background: '#e8899c', color: '#0a0a0a', border: 'none',
-              padding: '14px 32px', borderRadius: '8px', fontFamily: "'Inter', sans-serif",
-              fontSize: '16px', fontWeight: 700, cursor: 'pointer',
-            }}
-          >
-            📥 Download All {slides.length} Slides as ZIP
-          </button>
-        </div>
-
-        {/* Status */}
-        {statusMessage && (
-          <div style={{ textAlign: 'center', color: '#94a3b8', fontFamily: "'Inter', sans-serif", fontSize: '14px' }}>
-            {statusMessage}
-          </div>
-        )}
+        <button className="nav-btn" onClick={() => nav(1)} disabled={currentSlide === total - 1}>Next →</button>
       </div>
+
+      <div className="slide-label-text">
+        Slide {currentSlide + 1} of {total} — {slideNames[currentSlide] || `Slide ${currentSlide + 1}`}
+      </div>
+
+      {/* Download Buttons */}
+      <div className="dl-controls">
+        <button className="dl-btn" onClick={() => downloadSlide(currentSlide)} disabled={downloading}>
+          📥 Download This Slide
+        </button>
+        <button className="dl-btn primary" onClick={downloadAllSlides} disabled={downloading}>
+          📥 Download All {total} Slides
+        </button>
+      </div>
+
+      {statusMessage && <div className="status-text">{statusMessage}</div>}
+
+      {/* Caption Box */}
+      {slides[slides.length - 1]?.content?.caption && (
+        <div className="caption-box">
+          <div className="caption-label">Ready-to-Post Caption</div>
+          <div className="caption-text" id="captionContent">
+            {slides[slides.length - 1].content.caption}
+          </div>
+          {slides[slides.length - 1]?.content?.hashtags && (
+            <div className="caption-hashtags" id="captionHashtags">
+              {slides[slides.length - 1].content.hashtags}
+            </div>
+          )}
+          <button className="copy-btn" onClick={copyCaption}>{copyLabel}</button>
+        </div>
+      )}
+
+      <p style={{ color: '#64748b', fontSize: '11px', marginTop: '16px', textAlign: 'center', maxWidth: '500px', lineHeight: 1.6 }}>
+        <strong style={{ color: '#e8899c' }}>Tip:</strong> Use arrow keys ← → to navigate. Download individual slides or all at once.
+      </p>
     </div>
   );
 }
