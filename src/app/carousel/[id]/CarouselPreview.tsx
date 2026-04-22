@@ -308,19 +308,10 @@ export default function CarouselPreview({
           <div className="cover-top-accent"></div>
           <div className="cover-brand">PhysioSthanak</div>
 
-          {c.mainWord || c.number ? (
-            <>
-              <div className="cover-number-big">{c.number || ''}</div>
-              {c.subtitleLine && <div className="cover-subtitle-line">{c.subtitleLine}</div>}
-              <div className="cover-main-word">{c.mainWord || ''}</div>
-            </>
-          ) : (
-            <div className="cover-title-text">{str('title')}</div>
-          )}
-
-          {c.subtitleLine && !c.mainWord && !c.number && (
-            <div className="cover-subtitle-line">{c.subtitleLine}</div>
-          )}
+          {c.number && <div className="cover-number-big">{c.number}</div>}
+          {str('title') && <div className="cover-title-text">{str('title')}</div>}
+          {c.subtitleLine && <div className="cover-subtitle-line">{c.subtitleLine}</div>}
+          {c.mainWord && <div className="cover-main-word">{c.mainWord}</div>}
 
           {c.badge && <div className="cover-badge">{c.badge}</div>}
 
@@ -393,7 +384,7 @@ export default function CarouselPreview({
 
           <div className="mistake-topbar">
             <div className="mistake-badge">
-              <div className={`mistake-icon${isUrgent ? ' urgent' : ''}`}>{c.icon || ''}</div>
+              <div className={`mistake-icon${isUrgent ? ' urgent' : ''}`}>{c.icon || '💡'}</div>
               <div className={`mistake-label${isUrgent ? ' urgent' : ''}`}>{c.label || 'MISTAKE'}</div>
             </div>
             <div className="mistake-counter">{c.counter || `${mistakeNum} of 5`}</div>
@@ -401,7 +392,7 @@ export default function CarouselPreview({
 
           <div className="mistake-number">{String(mistakeNum).padStart(2, '0')}</div>
           <div className={`mistake-title${isUrgent ? ' urgent' : ''}`}>{c.title || ''}</div>
-          <div className="mistake-desc">{c.description || ''}</div>
+          <div className="mistake-desc">{c.description || (typeof c.body === 'string' ? c.body : Array.isArray(c.body) ? c.body.join(' ') : '')}</div>
 
           <div className={`mistake-tipbox${isUrgent ? ' urgent' : ''}`}>
             <div className={`mistake-tipbox-label${isUrgent ? ' urgent' : ''}`}>{c.tipLabel || '✅ Do This Instead'}</div>
