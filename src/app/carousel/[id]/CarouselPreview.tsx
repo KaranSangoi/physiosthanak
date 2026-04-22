@@ -27,6 +27,8 @@ export default function CarouselPreview({
   const [downloading, setDownloading] = useState(false);
   const [statusMessage, setStatusMessage] = useState('');
   const slideRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const scaleObserverRef = useRef<HTMLDivElement>(null);
+  const [slideScale, setSlideScale] = useState(0.45);
 
   // Load html2canvas and jszip from CDN
   useEffect(() => {
@@ -50,6 +52,19 @@ export default function CarouselPreview({
     };
   }, []);
 
+  // Measure grid column width and compute scale for 1080px slides
+  useEffect(() => {
+    const el = scaleObserverRef.current;
+    if (!el) return;
+    const observer = new ResizeObserver((entries) => {
+      const width = entries[0].contentRect.width;
+      if (width > 0) setSlideScale(width / 1080);
+    });
+    observer.observe(el);
+    if (el.clientWidth > 0) setSlideScale(el.clientWidth / 1080);
+    return () => observer.disconnect();
+  }, []);
+
   const renderSlide = (slide: Slide): React.ReactNode => {
     const idx = slide.id;
     const c = slide.content;
@@ -70,7 +85,7 @@ export default function CarouselPreview({
           <div className="absolute top-1/2 left-[-200px] w-[400px] h-[400px] rounded-full border-2 border-[rgba(20,80,124,0.15)]"></div>
 
           <div className="relative z-20 flex flex-col items-center justify-center text-center px-12">
-            <div className="text-[#e8899c] font-poppins text-2xl font-bold tracking-widest uppercase mb-8">
+            <div className="text-[#e8899c] font-poppins text-[28px] font-bold tracking-[8px] uppercase mb-8">
               PhysioSthanak
             </div>
 
@@ -89,7 +104,7 @@ export default function CarouselPreview({
               </div>
             )}
 
-            <div className="text-[#94a3b8] font-inter text-[36px] font-normal text-center mt-4 mb-6">
+            <div className="text-[#94a3b8] font-inter text-[44px] font-normal text-center mt-1.5 mb-0">
               {c.subtitleLine || ''}
             </div>
 
@@ -110,10 +125,10 @@ export default function CarouselPreview({
             )}
           </div>
 
-          <div className="absolute bottom-10 left-12 text-[#94a3b8] font-inter text-2xl z-20">
+          <div className="absolute bottom-10 left-[50px] text-[#94a3b8] font-inter text-[22px] z-20">
             {c.savePrompt || (str('footer').includes('Save') ? str('footer').split('|').find(p => (p as string).includes('Save'))?.trim() : '') || ''}
           </div>
-          <div className="absolute bottom-10 right-12 text-[#e8899c] font-poppins text-2xl font-bold tracking-widest z-20">
+          <div className="absolute bottom-10 right-[50px] text-[#e8899c] font-poppins text-[28px] font-bold tracking-[4px] z-20">
             {c.swipePrompt || (str('footer').includes('SWIPE') ? str('footer').split('|').find(p => (p as string).includes('SWIPE'))?.trim() : '') || 'SWIPE →'}
           </div>
 
@@ -181,7 +196,7 @@ export default function CarouselPreview({
             </div>
           </div>
 
-          <div className="absolute bottom-9 right-12 text-white font-poppins text-lg opacity-8 uppercase font-semibold tracking-widest">
+          <div className="absolute bottom-9 right-12 text-white font-poppins text-[18px] opacity-[0.08] uppercase font-semibold tracking-[4px]">
             PhysioSthanak
           </div>
         </div>
@@ -292,7 +307,7 @@ export default function CarouselPreview({
           </div>
 
           <div className="absolute bottom-0 left-0 h-1 bg-[#e8899c]" style={{ width: progressWidth }}></div>
-          <div className="absolute bottom-9 right-12 text-white font-poppins text-lg opacity-8 uppercase font-semibold tracking-widest">
+          <div className="absolute bottom-9 right-12 text-white font-poppins text-[18px] opacity-[0.08] uppercase font-semibold tracking-[4px]">
             PhysioSthanak
           </div>
         </div>
@@ -357,7 +372,7 @@ export default function CarouselPreview({
             </div>
           </div>
 
-          <div className="absolute bottom-9 right-12 text-white font-poppins text-lg opacity-8 uppercase font-semibold tracking-widest">
+          <div className="absolute bottom-9 right-12 text-white font-poppins text-[18px] opacity-[0.08] uppercase font-semibold tracking-[4px]">
             PhysioSthanak
           </div>
         </div>
@@ -415,7 +430,7 @@ export default function CarouselPreview({
             </div>
           </div>
 
-          <div className="absolute bottom-9 right-12 text-white font-poppins text-lg opacity-8 uppercase font-semibold tracking-widest">
+          <div className="absolute bottom-9 right-12 text-white font-poppins text-[18px] opacity-[0.08] uppercase font-semibold tracking-[4px]">
             PhysioSthanak
           </div>
         </div>
@@ -480,7 +495,7 @@ export default function CarouselPreview({
             </div>
           </div>
 
-          <div className="absolute bottom-[30px] text-white text-lg opacity-12 tracking-widest uppercase font-semibold">
+          <div className="absolute bottom-[30px] text-white text-[18px] opacity-[0.12] tracking-[6px] uppercase font-semibold">
             Move · Heal · Improve
           </div>
         </div>
@@ -507,14 +522,22 @@ export default function CarouselPreview({
         return;
       }
 
+      // Temporarily remove scale transform for accurate capture
+      const prevTransform = slideEl.style.transform;
+      slideEl.style.transform = 'none';
+      await new Promise((r) => setTimeout(r, 100));
+
       const canvas = await html2canvas(slideEl, {
         width: 1080,
         height: 1080,
-        scale: 2,
+        scale: 1,
         useCORS: true,
         backgroundColor: null,
         allowTaint: true,
       });
+
+      // Restore transform
+      slideEl.style.transform = prevTransform;
 
       canvas.toBlob((blob: Blob) => {
         const url = URL.createObjectURL(blob);
@@ -557,14 +580,22 @@ export default function CarouselPreview({
         const slideEl = slideRefs.current[i];
         if (!slideEl) continue;
 
+        // Temporarily remove scale transform for accurate capture
+        const prevTransform = slideEl.style.transform;
+        slideEl.style.transform = 'none';
+        await new Promise((r) => setTimeout(r, 100));
+
         const canvas = await html2canvas(slideEl, {
           width: 1080,
           height: 1080,
-          scale: 2,
+          scale: 1,
           useCORS: true,
           backgroundColor: null,
           allowTaint: true,
         });
+
+        // Restore transform
+        slideEl.style.transform = prevTransform;
 
         const blob = await new Promise<Blob>((resolve) => {
           canvas.toBlob((b: Blob | null) => resolve(b as Blob));
@@ -611,15 +642,24 @@ export default function CarouselPreview({
           {slides.map((slide, idx) => (
             <div key={idx} className="flex flex-col items-center gap-4">
               <div
-                ref={(el) => {
-                  slideRefs.current[idx] = el;
-                }}
-                className="w-full bg-[#111] border border-[#333] rounded-lg overflow-hidden"
-                style={{
-                  aspectRatio: '1',
-                }}
+                ref={idx === 0 ? scaleObserverRef : undefined}
+                className="w-full relative overflow-hidden rounded-lg border border-[#222] bg-[#111]"
+                style={{ aspectRatio: '1' }}
               >
-                <div className="w-full h-full" style={{ fontSize: '16px' }}>
+                <div
+                  ref={(el) => {
+                    slideRefs.current[idx] = el;
+                  }}
+                  style={{
+                    width: '1080px',
+                    height: '1080px',
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    transformOrigin: 'top left',
+                    transform: `scale(${slideScale})`,
+                  }}
+                >
                   {renderSlide(slide)}
                 </div>
               </div>
