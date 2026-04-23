@@ -246,6 +246,9 @@ export default function CarouselPreview({
   hashtags,
   linkedinCaption,
 }: CarouselPreviewProps) {
+  // Logo as base64 data URI — avoids deployment path issues with large PNG
+  const LOGO_DATA_URI = 'data:image/png;base64,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';
+
   const [currentSlide, setCurrentSlide] = useState(0);
   const [downloading, setDownloading] = useState(false);
   const [statusMessage, setStatusMessage] = useState('');
@@ -261,25 +264,31 @@ export default function CarouselPreview({
     if (n >= 0 && n < total) setCurrentSlide(n);
   };
 
-  // Load html2canvas and jszip from CDN
+  // Load html2canvas, jszip and jspdf from CDN
   useEffect(() => {
     if (typeof window === 'undefined') return;
-    const script1 = document.createElement('script');
-    script1.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
-    script1.async = true;
-    document.head.appendChild(script1);
-    const script2 = document.createElement('script');
-    script2.src = 'https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js';
-    script2.async = true;
-    document.head.appendChild(script2);
-    const script3 = document.createElement('script');
-    script3.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js';
-    script3.async = true;
-    document.head.appendChild(script3);
-    return () => {
-      document.head.removeChild(script1);
-      document.head.removeChild(script2);
+    const loadScript = (src: string) => {
+      const script = document.createElement('script');
+      script.src = src;
+      script.async = true;
+      document.head.appendChild(script);
+      return script;
+    };
+    const script1 = loadScript('https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js');
+    const script2 = loadScript('https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js');
+    const script3 = loadScript('https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js');
+    // Fallback: if 2.5.1 fails, try 2.5.2
+    script3.onerror = () => {
       document.head.removeChild(script3);
+      const fallback = loadScript('https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js');
+      fallback.onerror = () => {
+        document.head.removeChild(fallback);
+        // Last resort: try unpkg
+        loadScript('https://unpkg.com/jspdf@2.5.1/dist/jspdf.umd.min.js');
+      };
+    };
+    return () => {
+      [script1, script2, script3].forEach(s => { try { document.head.removeChild(s); } catch {} });
     };
   }, []);
 
@@ -331,7 +340,7 @@ export default function CarouselPreview({
           <div className="cover-swipe">
             {c.swipePrompt || (str('footer').includes('SWIPE') ? str('footer').split('|').find(p => (p as string).includes('SWIPE'))?.trim() : '') || 'SWIPE →'}
           </div>
-          <div className="slide-watermark"><img src="/images/horizontal-logo.png" alt="PhysioSthanak" /></div>
+          <div className="slide-watermark"><img src={LOGO_DATA_URI} alt="PhysioSthanak" /></div>
         </div>
       );
     }
@@ -373,7 +382,7 @@ export default function CarouselPreview({
             ) : null}
           </div>
 
-          <div className="slide-watermark"><img src="/images/horizontal-logo.png" alt="PhysioSthanak" /></div>
+          <div className="slide-watermark"><img src={LOGO_DATA_URI} alt="PhysioSthanak" /></div>
         </div>
       );
     }
@@ -416,7 +425,7 @@ export default function CarouselPreview({
           )}
 
           <div className="slide-progress" style={{width: progressPct}}></div>
-          <div className="slide-watermark"><img src="/images/horizontal-logo.png" alt="PhysioSthanak" /></div>
+          <div className="slide-watermark"><img src={LOGO_DATA_URI} alt="PhysioSthanak" /></div>
         </div>
       );
     }
@@ -453,7 +462,7 @@ export default function CarouselPreview({
           </div>
 
           {c.bottom && <div className="redflag-bottom">{c.bottom}</div>}
-          <div className="slide-watermark"><img src="/images/horizontal-logo.png" alt="PhysioSthanak" /></div>
+          <div className="slide-watermark"><img src={LOGO_DATA_URI} alt="PhysioSthanak" /></div>
         </div>
       );
     }
@@ -494,7 +503,7 @@ export default function CarouselPreview({
             </div>
           )}
 
-          <div className="slide-watermark"><img src="/images/horizontal-logo.png" alt="PhysioSthanak" /></div>
+          <div className="slide-watermark"><img src={LOGO_DATA_URI} alt="PhysioSthanak" /></div>
         </div>
       );
     }
@@ -528,7 +537,7 @@ export default function CarouselPreview({
           <div className="cta-handle">{c.handle || '@physiosthanak'}</div>
           <div className="cta-share-prompt">{c.sharePrompt || '📤 Share with someone who needs this'}</div>
           <div className="cta-tagline">Move · Heal · Improve</div>
-          <div className="slide-watermark"><img src="/images/horizontal-logo.png" alt="PhysioSthanak" /></div>
+          <div className="slide-watermark"><img src={LOGO_DATA_URI} alt="PhysioSthanak" /></div>
         </div>
       );
     }
