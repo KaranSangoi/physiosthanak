@@ -372,6 +372,15 @@ export default async function CarouselPage({ params }: { params: Promise<{ id: s
       hashtags = parsed.hashtags || hashtags;
     }
 
+    // LinkedIn Caption from database property
+    let linkedinCaption = '';
+    if (properties['LinkedIn Caption']?.rich_text?.length) {
+      linkedinCaption = properties['LinkedIn Caption'].rich_text
+        .map((t: any) => t.plain_text)
+        .join('')
+        .replace(/<br\s*\/?>/gi, '\n');
+    }
+
     if (slides.length === 0) {
       return (
         <div className="w-full min-h-screen bg-[#0a0a0a] text-white flex items-center justify-center">
@@ -414,6 +423,7 @@ export default async function CarouselPage({ params }: { params: Promise<{ id: s
         pageId={pageId}
         caption={caption}
         hashtags={hashtags}
+        linkedinCaption={linkedinCaption}
       />
     );
   } catch (error) {

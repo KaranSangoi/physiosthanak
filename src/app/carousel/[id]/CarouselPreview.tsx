@@ -16,6 +16,7 @@ interface CarouselPreviewProps {
   pageId: string;
   caption?: string;
   hashtags?: string;
+  linkedinCaption?: string;
 }
 
 /* ============================================================
@@ -243,12 +244,14 @@ export default function CarouselPreview({
   pageId,
   caption,
   hashtags,
+  linkedinCaption,
 }: CarouselPreviewProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [downloading, setDownloading] = useState(false);
   const [statusMessage, setStatusMessage] = useState('');
   const slideRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [copyLabel, setCopyLabel] = useState('📋 Copy Caption + Hashtags');
+  const [copyLiLabel, setCopyLiLabel] = useState('📋 Copy LinkedIn Caption');
 
   const total = slides.length;
   const slideNames = ['Cover', 'Why This Matters', 'Mistake #1', 'Mistake #2', 'Mistake #3', 'Mistake #4', 'Mistake #5', 'Red Flags', 'Self-Check', 'CTA'];
@@ -269,9 +272,14 @@ export default function CarouselPreview({
     script2.src = 'https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js';
     script2.async = true;
     document.head.appendChild(script2);
+    const script3 = document.createElement('script');
+    script3.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js';
+    script3.async = true;
+    document.head.appendChild(script3);
     return () => {
       document.head.removeChild(script1);
       document.head.removeChild(script2);
+      document.head.removeChild(script3);
     };
   }, []);
 
@@ -323,6 +331,7 @@ export default function CarouselPreview({
           <div className="cover-swipe">
             {c.swipePrompt || (str('footer').includes('SWIPE') ? str('footer').split('|').find(p => (p as string).includes('SWIPE'))?.trim() : '') || 'SWIPE →'}
           </div>
+          <div className="slide-watermark"><img src="/images/horizontal-logo.png" alt="PhysioSthanak" /></div>
         </div>
       );
     }
@@ -519,6 +528,7 @@ export default function CarouselPreview({
           <div className="cta-handle">{c.handle || '@physiosthanak'}</div>
           <div className="cta-share-prompt">{c.sharePrompt || '📤 Share with someone who needs this'}</div>
           <div className="cta-tagline">Move · Heal · Improve</div>
+          <div className="slide-watermark"><img src="/images/horizontal-logo.png" alt="PhysioSthanak" /></div>
         </div>
       );
     }
@@ -632,6 +642,63 @@ export default function CarouselPreview({
     }
   };
 
+  const downloadPDF = async () => {
+    const html2canvas = (window as any).html2canvas;
+    const jspdf = (window as any).jspdf;
+    if (!html2canvas || !jspdf) { setStatusMessage('Libraries not loaded yet — wait a moment'); return; }
+
+    setDownloading(true);
+    setStatusMessage('Generating PDF for LinkedIn...');
+
+    try {
+      // 1080x1080 px at 72 DPI = 381mm x 381mm, but we use px units in jsPDF
+      const pdf = new jspdf.jsPDF({
+        orientation: 'portrait',
+        unit: 'px',
+        format: [1080, 1080],
+        hotfixes: ['px_scaling'],
+      });
+
+      for (let i = 0; i < slides.length; i++) {
+        setStatusMessage(`Rendering slide ${i + 1} of ${slides.length} for PDF...`);
+        const slideEl = slideRefs.current[i];
+        if (!slideEl) continue;
+
+        // Temporarily show at full size for capture
+        slideEl.style.display = 'block';
+        slideEl.style.transform = 'none';
+        slideEl.style.marginBottom = '0';
+        slideEl.style.borderRadius = '0';
+        await new Promise(r => setTimeout(r, 200));
+
+        const innerSlide = slideEl.firstElementChild as HTMLElement;
+        const canvas = await html2canvas(innerSlide || slideEl, {
+          width: 1080, height: 1080, scale: 1,
+          useCORS: true, backgroundColor: null, allowTaint: true,
+        });
+
+        // Restore
+        slideEl.style.transform = '';
+        slideEl.style.marginBottom = '';
+        slideEl.style.borderRadius = '';
+        slideEl.style.display = i === currentSlide ? 'block' : 'none';
+
+        const imgData = canvas.toDataURL('image/png');
+        if (i > 0) pdf.addPage([1080, 1080]);
+        pdf.addImage(imgData, 'PNG', 0, 0, 1080, 1080);
+
+        await new Promise(r => setTimeout(r, 300));
+      }
+
+      pdf.save('carousel-linkedin.pdf');
+      setStatusMessage('PDF downloaded — upload to LinkedIn as a document post');
+      setDownloading(false);
+    } catch (error) {
+      setStatusMessage(`Error: ${(error as Error).message}`);
+      setDownloading(false);
+    }
+  };
+
   const copyCaption = () => {
     const captionEl = document.getElementById('captionContent');
     const hashtagsEl = document.getElementById('captionHashtags');
@@ -640,6 +707,16 @@ export default function CarouselPreview({
       navigator.clipboard.writeText(text).then(() => {
         setCopyLabel('✅ Copied!');
         setTimeout(() => setCopyLabel('📋 Copy Caption + Hashtags'), 2000);
+      });
+    }
+  };
+
+  const copyLinkedinCaption = () => {
+    const liCaptionEl = document.getElementById('linkedinCaptionContent');
+    if (liCaptionEl) {
+      navigator.clipboard.writeText(liCaptionEl.textContent || '').then(() => {
+        setCopyLiLabel('✅ Copied!');
+        setTimeout(() => setCopyLiLabel('📋 Copy LinkedIn Caption'), 2000);
       });
     }
   };
@@ -707,6 +784,9 @@ export default function CarouselPreview({
         <button className="dl-btn primary" onClick={downloadAllSlides} disabled={downloading}>
           📥 Download All {total} Slides
         </button>
+        <button className="dl-btn" onClick={downloadPDF} disabled={downloading} style={{ background: '#0a66c2' }}>
+          📄 Download PDF for LinkedIn
+        </button>
       </div>
 
       {statusMessage && <div className="status-text">{statusMessage}</div>}
@@ -714,12 +794,20 @@ export default function CarouselPreview({
       {/* Caption Box */}
       {caption && (
         <div className="caption-box">
-          <div className="caption-label">Ready-to-Post Caption</div>
+          <div className="caption-label">Instagram Caption</div>
           <div className="caption-text" id="captionContent">{caption}</div>
           {hashtags && (
             <div className="caption-hashtags" id="captionHashtags">{hashtags}</div>
           )}
           <button className="copy-btn" onClick={copyCaption}>{copyLabel}</button>
+        </div>
+      )}
+
+      {linkedinCaption && (
+        <div className="caption-box" style={{ borderColor: 'rgba(10,102,194,0.3)' }}>
+          <div className="caption-label" style={{ color: '#0a66c2' }}>LinkedIn Caption</div>
+          <div className="caption-text" id="linkedinCaptionContent">{linkedinCaption}</div>
+          <button className="copy-btn" onClick={copyLinkedinCaption} style={{ background: '#0a66c2' }}>{copyLiLabel}</button>
         </div>
       )}
 
