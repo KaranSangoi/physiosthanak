@@ -340,7 +340,7 @@ export default function CarouselPreview({
           <div className="cover-swipe">
             {c.swipePrompt || (str('footer').includes('SWIPE') ? str('footer').split('|').find(p => (p as string).includes('SWIPE'))?.trim() : '') || 'SWIPE →'}
           </div>
-          <div className="slide-watermark"><img src={LOGO_DATA_URI} alt="PhysioSthanak" /></div>
+          <div className="slide-watermark" style={{ right: 'auto', left: '50%', transform: 'translateX(-50%)' }}><img src={LOGO_DATA_URI} alt="PhysioSthanak" /></div>
         </div>
       );
     }
@@ -548,6 +548,47 @@ export default function CarouselPreview({
   /* ============================================================
      Download functions
      ============================================================ */
+  // Helper: clone a slide into an off-screen container at full 1080x1080 for reliable html2canvas capture
+  const captureSlide = async (index: number): Promise<HTMLCanvasElement | null> => {
+    const html2canvas = (window as any).html2canvas;
+    if (!html2canvas) return null;
+
+    const slideEl = slideRefs.current[index];
+    if (!slideEl) return null;
+
+    const innerSlide = slideEl.firstElementChild as HTMLElement;
+    const source = innerSlide || slideEl;
+
+    // Clone the slide into an off-screen container so the browser fully renders it
+    const offscreen = document.createElement('div');
+    offscreen.style.cssText = 'position:fixed;left:-9999px;top:0;width:1080px;height:1080px;overflow:hidden;z-index:-1;';
+    document.body.appendChild(offscreen);
+
+    const clone = source.cloneNode(true) as HTMLElement;
+    clone.style.display = 'block';
+    clone.style.transform = 'none';
+    clone.style.margin = '0';
+    clone.style.borderRadius = '0';
+    clone.style.width = '1080px';
+    clone.style.height = '1080px';
+    offscreen.appendChild(clone);
+
+    // Wait for browser to fully reflow and render (fonts, images, flexbox)
+    await new Promise(r => setTimeout(r, 500));
+    // Force reflow
+    void clone.offsetHeight;
+    await new Promise(r => setTimeout(r, 200));
+
+    const canvas = await html2canvas(clone, {
+      width: 1080, height: 1080, scale: 1,
+      useCORS: true, backgroundColor: null, allowTaint: true,
+    });
+
+    // Cleanup
+    document.body.removeChild(offscreen);
+    return canvas;
+  };
+
   const downloadSlide = async (index: number) => {
     const html2canvas = (window as any).html2canvas;
     if (!html2canvas) { setStatusMessage('html2canvas not loaded yet'); return; }
@@ -556,27 +597,8 @@ export default function CarouselPreview({
     setStatusMessage(`Rendering slide ${index + 1}...`);
 
     try {
-      const slideEl = slideRefs.current[index];
-      if (!slideEl) { setStatusMessage('Slide element not found'); return; }
-
-      // Temporarily show at full size for capture
-      slideEl.style.display = 'block';
-      slideEl.style.transform = 'none';
-      slideEl.style.marginBottom = '0';
-      slideEl.style.borderRadius = '0';
-      await new Promise(r => setTimeout(r, 200));
-
-      const innerSlide = slideEl.firstElementChild as HTMLElement;
-      const canvas = await html2canvas(innerSlide || slideEl, {
-        width: 1080, height: 1080, scale: 1,
-        useCORS: true, backgroundColor: null, allowTaint: true,
-      });
-
-      // Restore
-      slideEl.style.transform = '';
-      slideEl.style.marginBottom = '';
-      slideEl.style.borderRadius = '';
-      slideEl.style.display = index === currentSlide ? 'block' : 'none';
+      const canvas = await captureSlide(index);
+      if (!canvas) { setStatusMessage('Slide element not found'); setDownloading(false); return; }
 
       canvas.toBlob((blob: Blob) => {
         const url = URL.createObjectURL(blob);
@@ -607,33 +629,13 @@ export default function CarouselPreview({
 
       for (let i = 0; i < slides.length; i++) {
         setStatusMessage(`Rendering slide ${i + 1} of ${slides.length}...`);
-        const slideEl = slideRefs.current[i];
-        if (!slideEl) continue;
-
-        // Temporarily show at full size for capture
-        slideEl.style.display = 'block';
-        slideEl.style.transform = 'none';
-        slideEl.style.marginBottom = '0';
-        slideEl.style.borderRadius = '0';
-        await new Promise(r => setTimeout(r, 200));
-
-        const innerSlide = slideEl.firstElementChild as HTMLElement;
-        const canvas = await html2canvas(innerSlide || slideEl, {
-          width: 1080, height: 1080, scale: 1,
-          useCORS: true, backgroundColor: null, allowTaint: true,
-        });
-
-        // Restore
-        slideEl.style.transform = '';
-        slideEl.style.marginBottom = '';
-        slideEl.style.borderRadius = '';
-        slideEl.style.display = i === currentSlide ? 'block' : 'none';
+        const canvas = await captureSlide(i);
+        if (!canvas) continue;
 
         const blob = await new Promise<Blob>(resolve => {
           canvas.toBlob((b: Blob | null) => resolve(b as Blob));
         });
         folder?.file(`slide-${String(i + 1).padStart(2, '0')}.png`, blob);
-        await new Promise(r => setTimeout(r, 300));
       }
 
       const zipBlob = await zip.generateAsync({ type: 'blob' });
@@ -660,7 +662,6 @@ export default function CarouselPreview({
     setStatusMessage('Generating PDF for LinkedIn...');
 
     try {
-      // 1080x1080 px at 72 DPI = 381mm x 381mm, but we use px units in jsPDF
       const pdf = new jspdf.jsPDF({
         orientation: 'portrait',
         unit: 'px',
@@ -670,33 +671,12 @@ export default function CarouselPreview({
 
       for (let i = 0; i < slides.length; i++) {
         setStatusMessage(`Rendering slide ${i + 1} of ${slides.length} for PDF...`);
-        const slideEl = slideRefs.current[i];
-        if (!slideEl) continue;
-
-        // Temporarily show at full size for capture
-        slideEl.style.display = 'block';
-        slideEl.style.transform = 'none';
-        slideEl.style.marginBottom = '0';
-        slideEl.style.borderRadius = '0';
-        await new Promise(r => setTimeout(r, 200));
-
-        const innerSlide = slideEl.firstElementChild as HTMLElement;
-        const canvas = await html2canvas(innerSlide || slideEl, {
-          width: 1080, height: 1080, scale: 1,
-          useCORS: true, backgroundColor: null, allowTaint: true,
-        });
-
-        // Restore
-        slideEl.style.transform = '';
-        slideEl.style.marginBottom = '';
-        slideEl.style.borderRadius = '';
-        slideEl.style.display = i === currentSlide ? 'block' : 'none';
+        const canvas = await captureSlide(i);
+        if (!canvas) continue;
 
         const imgData = canvas.toDataURL('image/png');
         if (i > 0) pdf.addPage([1080, 1080]);
         pdf.addImage(imgData, 'PNG', 0, 0, 1080, 1080);
-
-        await new Promise(r => setTimeout(r, 300));
       }
 
       pdf.save('carousel-linkedin.pdf');
