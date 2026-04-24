@@ -316,9 +316,11 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   };
 }
 
-export default async function CarouselPage({ params }: { params: Promise<{ id: string }> }) {
+export default async function CarouselPage({ params, searchParams }: { params: Promise<{ id: string }>; searchParams: Promise<{ render?: string }> }) {
   try {
     const { id } = await params;
+    const { render } = await searchParams;
+    const renderMode = render === 'true';
     const pageId = id.replace(/-/g, '');
 
     const [blocksData, pageData] = await Promise.all([
@@ -424,6 +426,7 @@ export default async function CarouselPage({ params }: { params: Promise<{ id: s
         caption={caption}
         hashtags={hashtags}
         linkedinCaption={linkedinCaption}
+        renderMode={renderMode}
       />
     );
   } catch (error) {

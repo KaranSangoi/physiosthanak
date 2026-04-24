@@ -6,15 +6,18 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "carousel": "npx tsx scripts/generate-carousel-pngs.ts"
   },
   "dependencies": {
     "@react-pdf/renderer": "^4.3.3",
+    "@sparticuz/chromium": "^147.0.2",
     "@supabase/ssr": "^0.10.0",
     "@supabase/supabase-js": "^2.101.0",
     "lucide-react": "^1.0.1",
     "next": "16.2.1",
     "postgres": "^3.4.8",
+    "puppeteer-core": "^24.42.0",
     "react": "19.2.4",
     "react-dom": "19.2.4"
   },
