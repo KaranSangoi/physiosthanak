@@ -14,21 +14,22 @@ export async function GET(request: NextRequest) {
     const chromium = await import('@sparticuz/chromium');
     const puppeteer = await import('puppeteer-core');
 
+    const executablePath = await chromium.default.executablePath();
+    console.log('Chromium executable path:', executablePath);
+
     const browser = await puppeteer.default.launch({
-      args: chromium.default.args,
+      args: [...chromium.default.args, '--no-sandbox', '--disable-setuid-sandbox'],
       defaultViewport: { width: 1080, height: 1080 },
-      executablePath: await chromium.default.executablePath(),
-      headless: true,
+      executablePath,
+      headless: 'shell' as any,
     });
 
     const page = await browser.newPage();
 
-    // Navigate to the carousel page with render=true to get full-size slides
-    const baseUrl = process.env.VERCEL_URL
-      ? `https://${process.env.VERCEL_URL}`
-      : process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
-
+    // Use the request's own origin for self-referencing URL
+    const baseUrl = request.nextUrl.origin;
     const renderUrl = `${baseUrl}/carousel/${pageId}?render=true`;
+    console.log('Navigating to render URL:', renderUrl);
 
     await page.goto(renderUrl, {
       waitUntil: 'networkidle0',
@@ -74,9 +75,13 @@ export async function GET(request: NextRequest) {
       },
     });
   } catch (error) {
-    console.error('Carousel PNG generation error:', error);
+    const err = error as Error;
+    console.error('Carousel PNG generation error:', err.message, err.stack);
     return NextResponse.json(
-      { error: `PNG generation failed: ${(error as Error).message}` },
+      {
+        error: `PNG generation failed: ${err.message}`,
+        stack: process.env.NODE_ENV === 'development' ? err.stack : undefined,
+      },
       { status: 500 }
     );
   }
