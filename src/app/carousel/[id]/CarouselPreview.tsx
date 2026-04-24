@@ -258,12 +258,6 @@ export default function CarouselPreview({
   const [copyLabel, setCopyLabel] = useState('📋 Copy Caption + Hashtags');
   const [copyLiLabel, setCopyLiLabel] = useState('📋 Copy LinkedIn Caption');
 
-  // AI Enhancement state
-  const [enhancedImages, setEnhancedImages] = useState<Record<number, string>>({});
-  const [enhancing, setEnhancing] = useState(false);
-  const [enhanceStatus, setEnhanceStatus] = useState('');
-  const [regenPrompt, setRegenPrompt] = useState('');
-  const [showRegenInput, setShowRegenInput] = useState(false);
 
   const total = slides.length;
   const slideNames = ['Cover', 'Why This Matters', 'Mistake #1', 'Mistake #2', 'Mistake #3', 'Mistake #4', 'Mistake #5', 'Red Flags', 'Self-Check', 'CTA'];
@@ -698,126 +692,6 @@ export default function CarouselPreview({
     }
   };
 
-  /* ============================================================
-     AI Image Generation — GPT Image
-     Extracts text content from slide data and sends to GPT to
-     generate a professional Instagram slide image from scratch.
-     ============================================================ */
-  const getSlideTextContent = (slide: Slide): string => {
-    const c = slide.content;
-    const parts: string[] = [];
-    const idx = slide.id;
-
-    if (idx === 1) {
-      parts.push('SLIDE TYPE: Cover slide');
-      if (c.number) parts.push(`Number: ${c.number}`);
-      if (c.title) parts.push(`Title: ${c.title}`);
-      if (c.subtitleLine) parts.push(`Subtitle: ${c.subtitleLine}`);
-      if (c.mainWord) parts.push(`Main word: ${c.mainWord}`);
-      if (c.badge) parts.push(`Badge: ${c.badge}`);
-      if (c.hook) parts.push(`Hook: ${c.hook}`);
-    } else if (idx === 2) {
-      parts.push('SLIDE TYPE: Introduction / Why This Matters');
-      if (c.tag) parts.push(`Tag: ${c.tag}`);
-      if (c.title) parts.push(`Title: ${c.title}`);
-      if (Array.isArray(c.stats)) parts.push(`Stats: ${c.stats.join(' | ')}`);
-      if (Array.isArray(c.items)) parts.push(`Points: ${c.items.join(' | ')}`);
-      if (c.body) parts.push(`Body: ${Array.isArray(c.body) ? c.body.join(' ') : c.body}`);
-    } else if (idx >= 3 && idx <= 7) {
-      const mistakeNum = idx - 2;
-      parts.push(`SLIDE TYPE: Mistake #${mistakeNum}`);
-      if (c.icon) parts.push(`Icon: ${c.icon}`);
-      if (c.title) parts.push(`Title: ${c.title}`);
-      if (c.description) parts.push(`Description: ${c.description}`);
-      if (c.body) parts.push(`Body: ${Array.isArray(c.body) ? c.body.join(' ') : c.body}`);
-      if (c.tipLabel) parts.push(`Tip label: ${c.tipLabel}`);
-      if (c.tipText) parts.push(`Tip: ${c.tipText}`);
-      if (c.stat) parts.push(`Stat: ${c.stat}`);
-    } else if (idx === 8) {
-      parts.push('SLIDE TYPE: Red Flags / Warning Signs');
-      if (c.tag) parts.push(`Tag: ${c.tag}`);
-      if (c.title) parts.push(`Title: ${c.title}`);
-      if (Array.isArray(c.items)) parts.push(`Items: ${c.items.join(' | ')}`);
-      if (c.body) parts.push(`Body: ${Array.isArray(c.body) ? c.body.join(' | ') : c.body}`);
-    } else if (idx === 9) {
-      parts.push('SLIDE TYPE: Self-Check Checklist');
-      if (c.tag) parts.push(`Tag: ${c.tag}`);
-      if (c.title) parts.push(`Title: ${c.title}`);
-      if (Array.isArray(c.items)) parts.push(`Checklist: ${c.items.join(' | ')}`);
-      if (c.resultText) parts.push(`Result: ${c.resultText}`);
-    } else if (idx === 10) {
-      parts.push('SLIDE TYPE: Call to Action (CTA)');
-      if (c.wantHelp) parts.push(`Hook: ${c.wantHelp}`);
-      if (c.title) parts.push(`Title: ${c.title}`);
-      if (c.keyword) parts.push(`CTA keyword: ${c.keyword}`);
-      if (c.doctor) parts.push(`Doctor: ${c.doctor}`);
-      if (c.creds) parts.push(`Credentials: ${c.creds}`);
-      if (c.experience) parts.push(`Experience: ${c.experience}`);
-    }
-
-    return parts.join('\n');
-  };
-
-  const generateSlideImage = async (index: number, customPrompt?: string) => {
-    setEnhancing(true);
-    setEnhanceStatus(`Generating slide ${index + 1} with AI...`);
-
-    try {
-      const slideContent = getSlideTextContent(slides[index]);
-
-      const response = await fetch('/api/carousel-enhance', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          slideContent,
-          customPrompt: customPrompt || undefined,
-        }),
-      });
-
-      if (!response.ok) {
-        const err = await response.json();
-        throw new Error((err as any).error || 'Generation failed');
-      }
-
-      const data = await response.json();
-      setEnhancedImages(prev => ({ ...prev, [index]: (data as any).image }));
-      setEnhanceStatus(`Slide ${index + 1} generated!`);
-    } catch (error) {
-      setEnhanceStatus(`Error: ${(error as Error).message}`);
-    }
-    setEnhancing(false);
-  };
-
-  const generateAllSlides = async () => {
-    setEnhancing(true);
-    for (let i = 0; i < slides.length; i++) {
-      setEnhanceStatus(`Generating slide ${i + 1} of ${slides.length}...`);
-      await generateSlideImage(i);
-      if (i < slides.length - 1) await new Promise(r => setTimeout(r, 1000));
-    }
-    setEnhanceStatus(`All ${slides.length} slides generated!`);
-    setEnhancing(false);
-  };
-
-  const clearEnhancement = (index: number) => {
-    setEnhancedImages(prev => {
-      const next = { ...prev };
-      delete next[index];
-      return next;
-    });
-  };
-
-  const downloadEnhancedSlide = (index: number) => {
-    const img = enhancedImages[index];
-    if (!img) return;
-    const a = document.createElement('a');
-    a.href = img;
-    a.download = `slide-${String(index + 1).padStart(2, '0')}-ai.png`;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-  };
-
   const copyCaption = () => {
     const captionEl = document.getElementById('captionContent');
     const hashtagsEl = document.getElementById('captionHashtags');
@@ -885,7 +759,7 @@ export default function CarouselPreview({
       </div>
 
       {/* Carousel — one slide at a time */}
-      <div className="carousel-wrapper" style={{ position: 'relative' }}>
+      <div className="carousel-wrapper">
         {slides.map((slide, idx) => (
           <div
             key={idx}
@@ -896,29 +770,6 @@ export default function CarouselPreview({
             {renderSlide(slide)}
           </div>
         ))}
-
-        {/* Enhanced image overlay — shown when AI enhancement exists for current slide */}
-        {enhancedImages[currentSlide] && (
-          <div style={{
-            position: 'absolute', top: 0, left: '50%', transform: 'translateX(-50%)',
-            width: '100%', maxWidth: '486px', aspectRatio: '1/1',
-            borderRadius: '8px', overflow: 'hidden', zIndex: 10,
-          }}>
-            <img
-              src={enhancedImages[currentSlide]}
-              alt={`Enhanced slide ${currentSlide + 1}`}
-              style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '8px' }}
-            />
-            <div style={{
-              position: 'absolute', top: '8px', right: '8px',
-              background: 'rgba(232,137,156,0.9)', color: '#fff',
-              padding: '4px 10px', borderRadius: '12px',
-              fontSize: '11px', fontWeight: 700, letterSpacing: '1px',
-            }}>
-              AI GENERATED
-            </div>
-          </div>
-        )}
       </div>
 
       {/* Navigation Controls */}
@@ -954,130 +805,6 @@ export default function CarouselPreview({
       </div>
 
       {statusMessage && <div className="status-text">{statusMessage}</div>}
-
-      {/* AI Image Generation Controls */}
-      <div style={{
-        marginTop: '20px', padding: '20px', background: '#111',
-        borderRadius: '12px', border: '1px solid rgba(232,137,156,0.2)',
-        maxWidth: '500px', width: '100%', textAlign: 'center',
-      }}>
-        <div style={{ color: '#e8899c', fontFamily: "'Poppins', sans-serif", fontSize: '11px', fontWeight: 700, letterSpacing: '3px', textTransform: 'uppercase', marginBottom: '12px' }}>
-          AI Slide Generator
-        </div>
-
-        <div style={{ display: 'flex', gap: '8px', justifyContent: 'center', flexWrap: 'wrap' }}>
-          {/* Generate / Download / Revert */}
-          {!enhancedImages[currentSlide] ? (
-            <button
-              className="dl-btn primary"
-              onClick={() => generateSlideImage(currentSlide)}
-              disabled={enhancing}
-              style={{ fontSize: '13px', padding: '10px 20px' }}
-            >
-              ✨ Generate with AI
-            </button>
-          ) : (
-            <>
-              <button
-                className="dl-btn"
-                onClick={() => downloadEnhancedSlide(currentSlide)}
-                style={{ fontSize: '13px', padding: '10px 20px', background: '#16a34a' }}
-              >
-                📥 Download AI Slide
-              </button>
-              <button
-                className="dl-btn"
-                onClick={() => clearEnhancement(currentSlide)}
-                style={{ fontSize: '13px', padding: '10px 20px', background: '#64748b' }}
-              >
-                ↩ Back to Original
-              </button>
-            </>
-          )}
-
-          {/* Regenerate with custom prompt */}
-          <button
-            className="dl-btn"
-            onClick={() => setShowRegenInput(!showRegenInput)}
-            disabled={enhancing}
-            style={{ fontSize: '13px', padding: '10px 20px', background: '#7c3aed' }}
-          >
-            🔄 Regenerate with Prompt
-          </button>
-        </div>
-
-        {/* Regenerate prompt input */}
-        {showRegenInput && (
-          <div style={{ marginTop: '12px' }}>
-            <input
-              type="text"
-              value={regenPrompt}
-              onChange={e => setRegenPrompt(e.target.value)}
-              placeholder="e.g. Add spine illustration, make text bigger, darker background..."
-              style={{
-                width: '100%', padding: '10px 14px', borderRadius: '8px',
-                border: '1px solid rgba(232,137,156,0.3)', background: '#1a1a1a',
-                color: '#fff', fontSize: '13px', fontFamily: "'Inter', sans-serif",
-                outline: 'none', boxSizing: 'border-box',
-              }}
-              onKeyDown={e => {
-                if (e.key === 'Enter' && regenPrompt.trim()) {
-                  generateSlideImage(currentSlide, regenPrompt.trim());
-                  setShowRegenInput(false);
-                  setRegenPrompt('');
-                }
-              }}
-            />
-            <div style={{ display: 'flex', gap: '8px', marginTop: '8px', justifyContent: 'center' }}>
-              <button
-                className="dl-btn primary"
-                onClick={() => {
-                  if (regenPrompt.trim()) {
-                    generateSlideImage(currentSlide, regenPrompt.trim());
-                    setShowRegenInput(false);
-                    setRegenPrompt('');
-                  }
-                }}
-                disabled={enhancing || !regenPrompt.trim()}
-                style={{ fontSize: '12px', padding: '8px 16px' }}
-              >
-                ✨ Generate
-              </button>
-              <button
-                className="dl-btn"
-                onClick={() => { setShowRegenInput(false); setRegenPrompt(''); }}
-                style={{ fontSize: '12px', padding: '8px 16px', background: '#64748b' }}
-              >
-                Cancel
-              </button>
-            </div>
-          </div>
-        )}
-
-        {/* Generate all slides */}
-        <div style={{ marginTop: '12px', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '12px' }}>
-          <button
-            className="dl-btn"
-            onClick={generateAllSlides}
-            disabled={enhancing}
-            style={{ fontSize: '12px', padding: '8px 20px', background: '#14507c' }}
-          >
-            ✨ Generate All {total} Slides
-          </button>
-          {Object.keys(enhancedImages).length > 0 && (
-            <span style={{ color: '#64748b', fontSize: '11px', marginLeft: '10px' }}>
-              {Object.keys(enhancedImages).length} of {total} generated
-            </span>
-          )}
-        </div>
-
-        {enhanceStatus && (
-          <div style={{ color: '#94a3b8', fontSize: '12px', marginTop: '10px' }}>
-            {enhancing && <span style={{ marginRight: '6px' }}>⏳</span>}
-            {enhanceStatus}
-          </div>
-        )}
-      </div>
 
       {/* Caption Box */}
       {caption && (
