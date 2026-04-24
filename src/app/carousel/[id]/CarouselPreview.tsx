@@ -600,7 +600,8 @@ export default function CarouselPreview({
       const canvas = await captureSlide(index);
       if (!canvas) { setStatusMessage('Slide element not found'); setDownloading(false); return; }
 
-      canvas.toBlob((blob: Blob) => {
+      canvas.toBlob((blob: Blob | null) => {
+        if (!blob) { setStatusMessage('Failed to render slide'); setDownloading(false); return; }
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url; a.download = `slide-${String(index + 1).padStart(2, '0')}.png`;
