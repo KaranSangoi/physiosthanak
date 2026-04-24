@@ -4,5 +4,11 @@
       "path": "/api/telegram-cron",
       "schedule": "30 8 * * *"
     }
-  ]
+  ],
+  "functions": {
+    "api/carousel-png": {
+      "maxDuration": 60,
+      "memory": 1024
+    }
+  }
 }
