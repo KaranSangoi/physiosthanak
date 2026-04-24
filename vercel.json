@@ -6,7 +6,7 @@
     }
   ],
   "functions": {
-    "api/carousel-png": {
+    "app/api/carousel-png/route": {
       "maxDuration": 60,
       "memory": 1024
     }
