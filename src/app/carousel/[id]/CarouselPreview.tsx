@@ -548,7 +548,7 @@ export default function CarouselPreview({
   /* ============================================================
      Download functions
      ============================================================ */
-  // Helper: clone a slide into an off-screen container at full 1080x1080 for reliable html2canvas capture
+  // Helper: capture a slide at full 1080x1080 using the original element
   const captureSlide = async (index: number): Promise<HTMLCanvasElement | null> => {
     const html2canvas = (window as any).html2canvas;
     if (!html2canvas) return null;
@@ -556,36 +556,34 @@ export default function CarouselPreview({
     const slideEl = slideRefs.current[index];
     if (!slideEl) return null;
 
+    // Save original styles
+    const origDisplay = slideEl.style.display;
+    const origTransform = slideEl.style.transform;
+    const origMarginBottom = slideEl.style.marginBottom;
+    const origBorderRadius = slideEl.style.borderRadius;
+
+    // Show at full size for capture
+    slideEl.style.display = 'block';
+    slideEl.style.transform = 'none';
+    slideEl.style.marginBottom = '0';
+    slideEl.style.borderRadius = '0';
+
+    // Force reflow and wait for browser to fully render layout + fonts
+    void slideEl.offsetHeight;
+    await new Promise(r => setTimeout(r, 800));
+
     const innerSlide = slideEl.firstElementChild as HTMLElement;
-    const source = innerSlide || slideEl;
-
-    // Clone the slide into an off-screen container so the browser fully renders it
-    const offscreen = document.createElement('div');
-    offscreen.style.cssText = 'position:fixed;left:-9999px;top:0;width:1080px;height:1080px;overflow:hidden;z-index:-1;';
-    document.body.appendChild(offscreen);
-
-    const clone = source.cloneNode(true) as HTMLElement;
-    clone.style.display = 'block';
-    clone.style.transform = 'none';
-    clone.style.margin = '0';
-    clone.style.borderRadius = '0';
-    clone.style.width = '1080px';
-    clone.style.height = '1080px';
-    offscreen.appendChild(clone);
-
-    // Wait for browser to fully reflow and render (fonts, images, flexbox)
-    await new Promise(r => setTimeout(r, 500));
-    // Force reflow
-    void clone.offsetHeight;
-    await new Promise(r => setTimeout(r, 200));
-
-    const canvas = await html2canvas(clone, {
+    const canvas = await html2canvas(innerSlide || slideEl, {
       width: 1080, height: 1080, scale: 1,
       useCORS: true, backgroundColor: null, allowTaint: true,
     });
 
-    // Cleanup
-    document.body.removeChild(offscreen);
+    // Restore original styles
+    slideEl.style.display = index === currentSlide ? 'block' : origDisplay;
+    slideEl.style.transform = origTransform;
+    slideEl.style.marginBottom = origMarginBottom;
+    slideEl.style.borderRadius = origBorderRadius;
+
     return canvas;
   };
 
