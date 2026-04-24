@@ -257,9 +257,6 @@ export default function CarouselPreview({
   const slideRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [copyLabel, setCopyLabel] = useState('📋 Copy Caption + Hashtags');
   const [copyLiLabel, setCopyLiLabel] = useState('📋 Copy LinkedIn Caption');
-  const [pngDataUrls, setPngDataUrls] = useState<string[]>([]);
-  const [pngLoading, setPngLoading] = useState(false);
-  const [pngError, setPngError] = useState('');
 
   const total = slides.length;
   const slideNames = ['Cover', 'Why This Matters', 'Mistake #1', 'Mistake #2', 'Mistake #3', 'Mistake #4', 'Mistake #5', 'Red Flags', 'Self-Check', 'CTA'];
@@ -269,7 +266,7 @@ export default function CarouselPreview({
     if (n >= 0 && n < total) setCurrentSlide(n);
   };
 
-  // Load html2canvas, jszip and jspdf from CDN
+  // Load jszip and jspdf from CDN (modern-screenshot is imported as ESM)
   useEffect(() => {
     if (typeof window === 'undefined') return;
     const loadScript = (src: string) => {
@@ -279,21 +276,14 @@ export default function CarouselPreview({
       document.head.appendChild(script);
       return script;
     };
-    const script1 = loadScript('https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js');
-    const script2 = loadScript('https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js');
-    const script3 = loadScript('https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js');
-    // Fallback: if 2.5.1 fails, try 2.5.2
-    script3.onerror = () => {
-      document.head.removeChild(script3);
-      const fallback = loadScript('https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js');
-      fallback.onerror = () => {
-        document.head.removeChild(fallback);
-        // Last resort: try unpkg
-        loadScript('https://unpkg.com/jspdf@2.5.1/dist/jspdf.umd.min.js');
-      };
+    const script1 = loadScript('https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js');
+    const script2 = loadScript('https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js');
+    script2.onerror = () => {
+      document.head.removeChild(script2);
+      loadScript('https://unpkg.com/jspdf@2.5.1/dist/jspdf.umd.min.js');
     };
     return () => {
-      [script1, script2, script3].forEach(s => { try { document.head.removeChild(s); } catch {} });
+      [script1, script2].forEach(s => { try { document.head.removeChild(s); } catch {} });
     };
   }, []);
 
@@ -306,27 +296,6 @@ export default function CarouselPreview({
     document.addEventListener('keydown', handleKey);
     return () => document.removeEventListener('keydown', handleKey);
   });
-
-  // Fetch server-rendered PNGs on mount (normal mode only)
-  useEffect(() => {
-    if (renderMode || typeof window === 'undefined') return;
-    setPngLoading(true);
-    setPngError('');
-    fetch(`/api/carousel-png?page=${pageId}`)
-      .then(res => {
-        if (!res.ok) throw new Error(`PNG generation failed (${res.status})`);
-        return res.json();
-      })
-      .then((data: { images: string[] }) => {
-        setPngDataUrls(data.images);
-        setPngLoading(false);
-      })
-      .catch(err => {
-        console.error('PNG generation error:', err);
-        setPngError(err.message || 'Failed to generate PNGs');
-        setPngLoading(false);
-      });
-  }, [pageId, renderMode]);
 
   /* ============================================================
      renderSlide — uses exact same HTML structure + CSS classes
@@ -572,12 +541,10 @@ export default function CarouselPreview({
   };
 
   /* ============================================================
-     Download functions
+     Download functions — using modern-screenshot (ESM import)
      ============================================================ */
-  // Helper: capture a slide at full 1080x1080 using the original element
-  const captureSlide = async (index: number): Promise<HTMLCanvasElement | null> => {
-    const html2canvas = (window as any).html2canvas;
-    if (!html2canvas) return null;
+  const captureSlide = async (index: number): Promise<Blob | null> => {
+    const { domToBlob } = await import('modern-screenshot');
 
     const slideEl = slideRefs.current[index];
     if (!slideEl) return null;
@@ -594,14 +561,14 @@ export default function CarouselPreview({
     slideEl.style.marginBottom = '0';
     slideEl.style.borderRadius = '0';
 
-    // Force reflow and wait for browser to fully render layout + fonts
+    // Force reflow and wait for fonts/layout
     void slideEl.offsetHeight;
-    await new Promise(r => setTimeout(r, 800));
+    await new Promise(r => setTimeout(r, 500));
 
-    const innerSlide = slideEl.firstElementChild as HTMLElement;
-    const canvas = await html2canvas(innerSlide || slideEl, {
+    const innerSlide = (slideEl.firstElementChild as HTMLElement) || slideEl;
+    const blob = await domToBlob(innerSlide, {
       width: 1080, height: 1080, scale: 1,
-      useCORS: true, backgroundColor: null, allowTaint: true,
+      style: { borderRadius: '0' },
     });
 
     // Restore original styles
@@ -610,30 +577,24 @@ export default function CarouselPreview({
     slideEl.style.marginBottom = origMarginBottom;
     slideEl.style.borderRadius = origBorderRadius;
 
-    return canvas;
+    return blob;
   };
 
   const downloadSlide = async (index: number) => {
-    const html2canvas = (window as any).html2canvas;
-    if (!html2canvas) { setStatusMessage('html2canvas not loaded yet'); return; }
-
     setDownloading(true);
     setStatusMessage(`Rendering slide ${index + 1}...`);
 
     try {
-      const canvas = await captureSlide(index);
-      if (!canvas) { setStatusMessage('Slide element not found'); setDownloading(false); return; }
+      const blob = await captureSlide(index);
+      if (!blob) { setStatusMessage('Slide element not found'); setDownloading(false); return; }
 
-      canvas.toBlob((blob: Blob | null) => {
-        if (!blob) { setStatusMessage('Failed to render slide'); setDownloading(false); return; }
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url; a.download = `slide-${String(index + 1).padStart(2, '0')}.png`;
-        document.body.appendChild(a); a.click(); document.body.removeChild(a);
-        URL.revokeObjectURL(url);
-        setStatusMessage(`Downloaded slide ${index + 1}`);
-        setDownloading(false);
-      });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = `slide-${String(index + 1).padStart(2, '0')}.png`;
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      setStatusMessage(`Downloaded slide ${index + 1}`);
+      setDownloading(false);
     } catch (error) {
       setStatusMessage(`Error: ${(error as Error).message}`);
       setDownloading(false);
@@ -641,9 +602,8 @@ export default function CarouselPreview({
   };
 
   const downloadAllSlides = async () => {
-    const html2canvas = (window as any).html2canvas;
     const JSZip = (window as any).JSZip;
-    if (!html2canvas || !JSZip) { setStatusMessage('Libraries not loaded yet'); return; }
+    if (!JSZip) { setStatusMessage('JSZip not loaded yet'); return; }
 
     setDownloading(true);
     setStatusMessage('Starting download of all slides...');
@@ -654,12 +614,8 @@ export default function CarouselPreview({
 
       for (let i = 0; i < slides.length; i++) {
         setStatusMessage(`Rendering slide ${i + 1} of ${slides.length}...`);
-        const canvas = await captureSlide(i);
-        if (!canvas) continue;
-
-        const blob = await new Promise<Blob>(resolve => {
-          canvas.toBlob((b: Blob | null) => resolve(b as Blob));
-        });
+        const blob = await captureSlide(i);
+        if (!blob) continue;
         folder?.file(`slide-${String(i + 1).padStart(2, '0')}.png`, blob);
       }
 
@@ -679,14 +635,14 @@ export default function CarouselPreview({
   };
 
   const downloadPDF = async () => {
-    const html2canvas = (window as any).html2canvas;
     const jspdf = (window as any).jspdf;
-    if (!html2canvas || !jspdf) { setStatusMessage('Libraries not loaded yet — wait a moment'); return; }
+    if (!jspdf) { setStatusMessage('jsPDF not loaded yet — wait a moment'); return; }
 
     setDownloading(true);
     setStatusMessage('Generating PDF for LinkedIn...');
 
     try {
+      const { domToDataUrl } = await import('modern-screenshot');
       const pdf = new jspdf.jsPDF({
         orientation: 'portrait',
         unit: 'px',
@@ -696,12 +652,34 @@ export default function CarouselPreview({
 
       for (let i = 0; i < slides.length; i++) {
         setStatusMessage(`Rendering slide ${i + 1} of ${slides.length} for PDF...`);
-        const canvas = await captureSlide(i);
-        if (!canvas) continue;
 
-        const imgData = canvas.toDataURL('image/png');
+        const slideEl = slideRefs.current[i];
+        if (!slideEl) continue;
+
+        const origDisplay = slideEl.style.display;
+        const origTransform = slideEl.style.transform;
+        const origMarginBottom = slideEl.style.marginBottom;
+        const origBorderRadius = slideEl.style.borderRadius;
+
+        slideEl.style.display = 'block';
+        slideEl.style.transform = 'none';
+        slideEl.style.marginBottom = '0';
+        slideEl.style.borderRadius = '0';
+        void slideEl.offsetHeight;
+        await new Promise(r => setTimeout(r, 300));
+
+        const innerSlide = (slideEl.firstElementChild as HTMLElement) || slideEl;
+        const dataUrl = await domToDataUrl(innerSlide, {
+          width: 1080, height: 1080, scale: 1,
+        });
+
+        slideEl.style.display = i === currentSlide ? 'block' : origDisplay;
+        slideEl.style.transform = origTransform;
+        slideEl.style.marginBottom = origMarginBottom;
+        slideEl.style.borderRadius = origBorderRadius;
+
         if (i > 0) pdf.addPage([1080, 1080]);
-        pdf.addImage(imgData, 'PNG', 0, 0, 1080, 1080);
+        pdf.addImage(dataUrl, 'PNG', 0, 0, 1080, 1080);
       }
 
       pdf.save('carousel-linkedin.pdf');
@@ -760,72 +738,6 @@ export default function CarouselPreview({
      Render — same layout as instagram-carousel.html
      ============================================================ */
 
-  // Helper: download a PNG from data URL
-  const downloadPngFromUrl = (dataUrl: string, filename: string) => {
-    const a = document.createElement('a');
-    a.href = dataUrl;
-    a.download = filename;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-  };
-
-  // PNG-based download functions (used when server PNGs are available)
-  const downloadSlidePng = (index: number) => {
-    if (!pngDataUrls[index]) return;
-    downloadPngFromUrl(pngDataUrls[index], `slide-${String(index + 1).padStart(2, '0')}.png`);
-  };
-
-  const downloadAllSlidesPng = async () => {
-    const JSZip = (window as any).JSZip;
-    if (!JSZip || pngDataUrls.length === 0) { setStatusMessage('PNGs not ready yet'); return; }
-    setDownloading(true);
-    setStatusMessage('Creating ZIP...');
-    try {
-      const zip = new JSZip();
-      const folder = zip.folder('carousel-slides');
-      for (let i = 0; i < pngDataUrls.length; i++) {
-        const base64 = pngDataUrls[i].split(',')[1];
-        folder?.file(`slide-${String(i + 1).padStart(2, '0')}.png`, base64, { base64: true });
-      }
-      const zipBlob = await zip.generateAsync({ type: 'blob' });
-      const url = URL.createObjectURL(zipBlob);
-      const a = document.createElement('a');
-      a.href = url; a.download = 'carousel-slides.zip';
-      document.body.appendChild(a); a.click(); document.body.removeChild(a);
-      URL.revokeObjectURL(url);
-      setStatusMessage('All slides downloaded as ZIP');
-    } catch (error) {
-      setStatusMessage(`Error: ${(error as Error).message}`);
-    }
-    setDownloading(false);
-  };
-
-  const downloadPdfFromPngs = async () => {
-    const jspdf = (window as any).jspdf;
-    if (!jspdf || pngDataUrls.length === 0) { setStatusMessage('Libraries not ready yet'); return; }
-    setDownloading(true);
-    setStatusMessage('Generating PDF for LinkedIn...');
-    try {
-      const pdf = new jspdf.jsPDF({
-        orientation: 'portrait', unit: 'px', format: [1080, 1080],
-        hotfixes: ['px_scaling'],
-      });
-      for (let i = 0; i < pngDataUrls.length; i++) {
-        if (i > 0) pdf.addPage([1080, 1080]);
-        pdf.addImage(pngDataUrls[i], 'PNG', 0, 0, 1080, 1080);
-      }
-      pdf.save('carousel-linkedin.pdf');
-      setStatusMessage('PDF downloaded — upload to LinkedIn as a document post');
-    } catch (error) {
-      setStatusMessage(`Error: ${(error as Error).message}`);
-    }
-    setDownloading(false);
-  };
-
-  // Determine if we use PNG mode (server-rendered) or fallback (html2canvas)
-  const hasPngs = pngDataUrls.length > 0;
-
   return (
     <div className="cs" style={{ background: '#0a0a0a', color: '#fff', fontFamily: "'Inter', sans-serif", minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '30px 20px' }}>
       <style dangerouslySetInnerHTML={{ __html: SLIDE_CSS }} />
@@ -845,48 +757,18 @@ export default function CarouselPreview({
         {status && <p style={{ color: '#94a3b8', fontSize: '11px', margin: '2px 0' }}>Status: {status}</p>}
       </div>
 
-      {/* Loading indicator for server-rendered PNGs */}
-      {pngLoading && (
-        <div style={{ color: '#e8899c', fontSize: '13px', marginBottom: '16px', textAlign: 'center' }}>
-          ⏳ Generating pixel-perfect slides... (this takes ~20 seconds on first load)
-        </div>
-      )}
-      {pngError && !hasPngs && (
-        <div style={{ color: '#ef4444', fontSize: '12px', marginBottom: '12px', textAlign: 'center' }}>
-          PNG generation failed: {pngError}. Using live preview instead.
-        </div>
-      )}
-
-      {/* Carousel — show PNGs if available, otherwise live HTML slides */}
+      {/* Carousel — one slide at a time */}
       <div className="carousel-wrapper">
-        {hasPngs ? (
-          /* Server-rendered PNG preview */
-          slides.map((_, idx) => (
-            <div
-              key={idx}
-              className="slide-container"
-              style={{ display: idx === currentSlide ? 'block' : 'none' }}
-            >
-              <img
-                src={pngDataUrls[idx]}
-                alt={`Slide ${idx + 1}`}
-                style={{ width: '1080px', height: '1080px', display: 'block' }}
-              />
-            </div>
-          ))
-        ) : (
-          /* Live HTML slide preview (fallback) */
-          slides.map((slide, idx) => (
-            <div
-              key={idx}
-              ref={el => { slideRefs.current[idx] = el; }}
-              className="slide-container"
-              style={{ display: idx === currentSlide ? 'block' : 'none' }}
-            >
-              {renderSlide(slide)}
-            </div>
-          ))
-        )}
+        {slides.map((slide, idx) => (
+          <div
+            key={idx}
+            ref={el => { slideRefs.current[idx] = el; }}
+            className="slide-container"
+            style={{ display: idx === currentSlide ? 'block' : 'none' }}
+          >
+            {renderSlide(slide)}
+          </div>
+        ))}
       </div>
 
       {/* Navigation Controls */}
@@ -910,21 +792,16 @@ export default function CarouselPreview({
 
       {/* Download Buttons */}
       <div className="dl-controls">
-        <button className="dl-btn" onClick={() => hasPngs ? downloadSlidePng(currentSlide) : downloadSlide(currentSlide)} disabled={downloading || (pngLoading && !hasPngs)}>
+        <button className="dl-btn" onClick={() => downloadSlide(currentSlide)} disabled={downloading}>
           📥 Download This Slide
         </button>
-        <button className="dl-btn primary" onClick={() => hasPngs ? downloadAllSlidesPng() : downloadAllSlides()} disabled={downloading || (pngLoading && !hasPngs)}>
+        <button className="dl-btn primary" onClick={downloadAllSlides} disabled={downloading}>
           📥 Download All {total} Slides
         </button>
-        <button className="dl-btn" onClick={() => hasPngs ? downloadPdfFromPngs() : downloadPDF()} disabled={downloading || (pngLoading && !hasPngs)} style={{ background: '#0a66c2' }}>
+        <button className="dl-btn" onClick={downloadPDF} disabled={downloading} style={{ background: '#0a66c2' }}>
           📄 Download PDF for LinkedIn
         </button>
       </div>
-      {hasPngs && (
-        <div style={{ color: '#22c55e', fontSize: '11px', marginTop: '4px', textAlign: 'center' }}>
-          ✅ Server-rendered PNGs — pixel-perfect downloads ready
-        </div>
-      )}
 
       {statusMessage && <div className="status-text">{statusMessage}</div>}
 
