@@ -699,75 +699,103 @@ export default function CarouselPreview({
   };
 
   /* ============================================================
-     AI Enhancement — GPT Image 2.0
+     AI Image Generation — GPT Image
+     Extracts text content from slide data and sends to GPT to
+     generate a professional Instagram slide image from scratch.
      ============================================================ */
-  const enhanceSlide = async (index: number, customPrompt?: string) => {
+  const getSlideTextContent = (slide: Slide): string => {
+    const c = slide.content;
+    const parts: string[] = [];
+    const idx = slide.id;
+
+    if (idx === 1) {
+      parts.push('SLIDE TYPE: Cover slide');
+      if (c.number) parts.push(`Number: ${c.number}`);
+      if (c.title) parts.push(`Title: ${c.title}`);
+      if (c.subtitleLine) parts.push(`Subtitle: ${c.subtitleLine}`);
+      if (c.mainWord) parts.push(`Main word: ${c.mainWord}`);
+      if (c.badge) parts.push(`Badge: ${c.badge}`);
+      if (c.hook) parts.push(`Hook: ${c.hook}`);
+    } else if (idx === 2) {
+      parts.push('SLIDE TYPE: Introduction / Why This Matters');
+      if (c.tag) parts.push(`Tag: ${c.tag}`);
+      if (c.title) parts.push(`Title: ${c.title}`);
+      if (Array.isArray(c.stats)) parts.push(`Stats: ${c.stats.join(' | ')}`);
+      if (Array.isArray(c.items)) parts.push(`Points: ${c.items.join(' | ')}`);
+      if (c.body) parts.push(`Body: ${Array.isArray(c.body) ? c.body.join(' ') : c.body}`);
+    } else if (idx >= 3 && idx <= 7) {
+      const mistakeNum = idx - 2;
+      parts.push(`SLIDE TYPE: Mistake #${mistakeNum}`);
+      if (c.icon) parts.push(`Icon: ${c.icon}`);
+      if (c.title) parts.push(`Title: ${c.title}`);
+      if (c.description) parts.push(`Description: ${c.description}`);
+      if (c.body) parts.push(`Body: ${Array.isArray(c.body) ? c.body.join(' ') : c.body}`);
+      if (c.tipLabel) parts.push(`Tip label: ${c.tipLabel}`);
+      if (c.tipText) parts.push(`Tip: ${c.tipText}`);
+      if (c.stat) parts.push(`Stat: ${c.stat}`);
+    } else if (idx === 8) {
+      parts.push('SLIDE TYPE: Red Flags / Warning Signs');
+      if (c.tag) parts.push(`Tag: ${c.tag}`);
+      if (c.title) parts.push(`Title: ${c.title}`);
+      if (Array.isArray(c.items)) parts.push(`Items: ${c.items.join(' | ')}`);
+      if (c.body) parts.push(`Body: ${Array.isArray(c.body) ? c.body.join(' | ') : c.body}`);
+    } else if (idx === 9) {
+      parts.push('SLIDE TYPE: Self-Check Checklist');
+      if (c.tag) parts.push(`Tag: ${c.tag}`);
+      if (c.title) parts.push(`Title: ${c.title}`);
+      if (Array.isArray(c.items)) parts.push(`Checklist: ${c.items.join(' | ')}`);
+      if (c.resultText) parts.push(`Result: ${c.resultText}`);
+    } else if (idx === 10) {
+      parts.push('SLIDE TYPE: Call to Action (CTA)');
+      if (c.wantHelp) parts.push(`Hook: ${c.wantHelp}`);
+      if (c.title) parts.push(`Title: ${c.title}`);
+      if (c.keyword) parts.push(`CTA keyword: ${c.keyword}`);
+      if (c.doctor) parts.push(`Doctor: ${c.doctor}`);
+      if (c.creds) parts.push(`Credentials: ${c.creds}`);
+      if (c.experience) parts.push(`Experience: ${c.experience}`);
+    }
+
+    return parts.join('\n');
+  };
+
+  const generateSlideImage = async (index: number, customPrompt?: string) => {
     setEnhancing(true);
-    setEnhanceStatus(`Enhancing slide ${index + 1} with AI...`);
+    setEnhanceStatus(`Generating slide ${index + 1} with AI...`);
 
     try {
-      // First capture the current slide as PNG
-      const { domToDataUrl } = await import('modern-screenshot');
-      const slideEl = slideRefs.current[index];
-      if (!slideEl) { setEnhanceStatus('Slide not found'); setEnhancing(false); return; }
+      const slideContent = getSlideTextContent(slides[index]);
 
-      const origDisplay = slideEl.style.display;
-      const origTransform = slideEl.style.transform;
-      const origMarginBottom = slideEl.style.marginBottom;
-      const origBorderRadius = slideEl.style.borderRadius;
-
-      slideEl.style.display = 'block';
-      slideEl.style.transform = 'none';
-      slideEl.style.marginBottom = '0';
-      slideEl.style.borderRadius = '0';
-      void slideEl.offsetHeight;
-      await new Promise(r => setTimeout(r, 300));
-
-      const innerSlide = (slideEl.firstElementChild as HTMLElement) || slideEl;
-      const dataUrl = await domToDataUrl(innerSlide, {
-        width: 1080, height: 1080, scale: 1,
-      });
-
-      slideEl.style.display = index === currentSlide ? 'block' : origDisplay;
-      slideEl.style.transform = origTransform;
-      slideEl.style.marginBottom = origMarginBottom;
-      slideEl.style.borderRadius = origBorderRadius;
-
-      // Send to API for AI enhancement
-      setEnhanceStatus(`Sending slide ${index + 1} to GPT Image 2.0...`);
       const response = await fetch('/api/carousel-enhance', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          image: dataUrl,
-          mode: customPrompt ? 'regenerate' : 'enhance',
-          prompt: customPrompt || undefined,
+          slideContent,
+          customPrompt: customPrompt || undefined,
         }),
       });
 
       if (!response.ok) {
         const err = await response.json();
-        throw new Error((err as any).error || 'Enhancement failed');
+        throw new Error((err as any).error || 'Generation failed');
       }
 
       const data = await response.json();
       setEnhancedImages(prev => ({ ...prev, [index]: (data as any).image }));
-      setEnhanceStatus(`Slide ${index + 1} enhanced!`);
+      setEnhanceStatus(`Slide ${index + 1} generated!`);
     } catch (error) {
       setEnhanceStatus(`Error: ${(error as Error).message}`);
     }
     setEnhancing(false);
   };
 
-  const enhanceAllSlides = async () => {
+  const generateAllSlides = async () => {
     setEnhancing(true);
     for (let i = 0; i < slides.length; i++) {
-      setEnhanceStatus(`Enhancing slide ${i + 1} of ${slides.length}...`);
-      await enhanceSlide(i);
-      // Small delay between calls to avoid rate limits
+      setEnhanceStatus(`Generating slide ${i + 1} of ${slides.length}...`);
+      await generateSlideImage(i);
       if (i < slides.length - 1) await new Promise(r => setTimeout(r, 1000));
     }
-    setEnhanceStatus(`All ${slides.length} slides enhanced!`);
+    setEnhanceStatus(`All ${slides.length} slides generated!`);
     setEnhancing(false);
   };
 
@@ -784,7 +812,7 @@ export default function CarouselPreview({
     if (!img) return;
     const a = document.createElement('a');
     a.href = img;
-    a.download = `slide-${String(index + 1).padStart(2, '0')}-enhanced.png`;
+    a.download = `slide-${String(index + 1).padStart(2, '0')}-ai.png`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -887,7 +915,7 @@ export default function CarouselPreview({
               padding: '4px 10px', borderRadius: '12px',
               fontSize: '11px', fontWeight: 700, letterSpacing: '1px',
             }}>
-              AI ENHANCED
+              AI GENERATED
             </div>
           </div>
         )}
@@ -927,26 +955,26 @@ export default function CarouselPreview({
 
       {statusMessage && <div className="status-text">{statusMessage}</div>}
 
-      {/* AI Enhancement Controls */}
+      {/* AI Image Generation Controls */}
       <div style={{
         marginTop: '20px', padding: '20px', background: '#111',
         borderRadius: '12px', border: '1px solid rgba(232,137,156,0.2)',
         maxWidth: '500px', width: '100%', textAlign: 'center',
       }}>
         <div style={{ color: '#e8899c', fontFamily: "'Poppins', sans-serif", fontSize: '11px', fontWeight: 700, letterSpacing: '3px', textTransform: 'uppercase', marginBottom: '12px' }}>
-          AI Enhancement (GPT Image 2.0)
+          AI Slide Generator
         </div>
 
         <div style={{ display: 'flex', gap: '8px', justifyContent: 'center', flexWrap: 'wrap' }}>
-          {/* Enhance current slide */}
+          {/* Generate / Download / Revert */}
           {!enhancedImages[currentSlide] ? (
             <button
               className="dl-btn primary"
-              onClick={() => enhanceSlide(currentSlide)}
+              onClick={() => generateSlideImage(currentSlide)}
               disabled={enhancing}
               style={{ fontSize: '13px', padding: '10px 20px' }}
             >
-              ✨ Enhance This Slide
+              ✨ Generate with AI
             </button>
           ) : (
             <>
@@ -955,14 +983,14 @@ export default function CarouselPreview({
                 onClick={() => downloadEnhancedSlide(currentSlide)}
                 style={{ fontSize: '13px', padding: '10px 20px', background: '#16a34a' }}
               >
-                📥 Download Enhanced
+                📥 Download AI Slide
               </button>
               <button
                 className="dl-btn"
                 onClick={() => clearEnhancement(currentSlide)}
                 style={{ fontSize: '13px', padding: '10px 20px', background: '#64748b' }}
               >
-                ↩ Revert to Original
+                ↩ Back to Original
               </button>
             </>
           )}
@@ -985,7 +1013,7 @@ export default function CarouselPreview({
               type="text"
               value={regenPrompt}
               onChange={e => setRegenPrompt(e.target.value)}
-              placeholder="e.g. Make the background lighter, add spine illustration..."
+              placeholder="e.g. Add spine illustration, make text bigger, darker background..."
               style={{
                 width: '100%', padding: '10px 14px', borderRadius: '8px',
                 border: '1px solid rgba(232,137,156,0.3)', background: '#1a1a1a',
@@ -994,7 +1022,7 @@ export default function CarouselPreview({
               }}
               onKeyDown={e => {
                 if (e.key === 'Enter' && regenPrompt.trim()) {
-                  enhanceSlide(currentSlide, regenPrompt.trim());
+                  generateSlideImage(currentSlide, regenPrompt.trim());
                   setShowRegenInput(false);
                   setRegenPrompt('');
                 }
@@ -1005,7 +1033,7 @@ export default function CarouselPreview({
                 className="dl-btn primary"
                 onClick={() => {
                   if (regenPrompt.trim()) {
-                    enhanceSlide(currentSlide, regenPrompt.trim());
+                    generateSlideImage(currentSlide, regenPrompt.trim());
                     setShowRegenInput(false);
                     setRegenPrompt('');
                   }
@@ -1026,19 +1054,19 @@ export default function CarouselPreview({
           </div>
         )}
 
-        {/* Enhance all slides */}
+        {/* Generate all slides */}
         <div style={{ marginTop: '12px', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '12px' }}>
           <button
             className="dl-btn"
-            onClick={enhanceAllSlides}
+            onClick={generateAllSlides}
             disabled={enhancing}
             style={{ fontSize: '12px', padding: '8px 20px', background: '#14507c' }}
           >
-            ✨ Enhance All {total} Slides
+            ✨ Generate All {total} Slides
           </button>
           {Object.keys(enhancedImages).length > 0 && (
             <span style={{ color: '#64748b', fontSize: '11px', marginLeft: '10px' }}>
-              {Object.keys(enhancedImages).length} of {total} enhanced
+              {Object.keys(enhancedImages).length} of {total} generated
             </span>
           )}
         </div>
