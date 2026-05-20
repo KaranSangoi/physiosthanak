@@ -125,6 +125,13 @@ export default function Header() {
             </div>
 
             <Link
+              href="/blog"
+              className="font-heading uppercase tracking-wide text-text-dark hover:text-primary font-bold text-sm transition-colors"
+            >
+              Blog
+            </Link>
+
+            <Link
               href="/contact"
               className="font-heading uppercase tracking-wide text-text-dark hover:text-primary font-bold text-sm transition-colors"
             >
@@ -220,6 +227,14 @@ export default function Header() {
                 </div>
               )}
             </div>
+
+            <Link
+              href="/blog"
+              className="block px-3 py-2.5 text-text-dark hover:bg-bg-light hover:text-primary rounded-md transition-colors font-heading font-bold uppercase tracking-wide text-sm"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Blog
+            </Link>
 
             <Link
               href="/contact"

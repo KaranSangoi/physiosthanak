@@ -16,9 +16,9 @@ const MapSection = dynamic(() => import('@/components/sections/MapSection'));
 const AreaCard = dynamic(() => import('@/components/sections/AreaCard'));
 
 export const metadata: Metadata = {
-  title: 'Best Physiotherapist in Borivali | 5.0★ Rated | PhysioSthanak',
+  title: 'Best Physiotherapist in Borivali | PhysioSthanak',
   description:
-    'Top-rated physiotherapy clinic in Borivali West by Dr. Shiva Jain. 5.0★ on Google, 9+ years experience, 8000+ patients treated. Clinic & home visits. Book now.',
+    'Expert physiotherapy services in Borivali by Dr. Shiva Jain. 9+ years experience, 8000+ cases treated. Book your consultation today.',
   keywords: [
     'physiotherapy Borivali',
     'physiotherapist Borivali',
@@ -36,9 +36,9 @@ export const metadata: Metadata = {
     'mat pilates Borivali West',
   ],
   openGraph: {
-    title: 'Best Physiotherapist in Borivali | 5.0★ Rated | PhysioSthanak',
+    title: 'Best Physiotherapist in Borivali | PhysioSthanak',
     description:
-      'Top-rated physiotherapy in Borivali West. 5.0★ Google rated, 9+ years exp, 8000+ cases. Clinic & home visits. Book now.',
+      'Expert physiotherapy services in Borivali by Dr. Shiva Jain. 9+ years experience, 8000+ cases treated. Book today.',
     type: 'website',
     locale: 'en_IN',
     url: `${siteConfig.domain}`,
