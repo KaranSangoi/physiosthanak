@@ -81,27 +81,6 @@ export interface SubArea {
   externalLink?: { url: string; text: string };
 }
 
-export interface BlogPost {
-  slug: string;
-  title: string;
-  metaTitle: string;
-  metaDescription: string;
-  keywords: string[];
-  publishDate: string;
-  updatedDate?: string;
-  author: string;
-  authorCredentials: string;
-  excerpt: string;
-  readTime: string;
-  category: string;
-  featuredImage?: string;
-  featuredImageAlt?: string;
-  content: string;
-  faqs: FAQ[];
-  relatedServices: string[];
-  relatedAreas?: string[];
-}
-
 export interface ServiceArea {
   slug: string;
   name: string;

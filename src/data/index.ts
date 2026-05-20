@@ -5,7 +5,6 @@ export { servicesExtended2 } from './services-extended2';
 export { servicesExtended3 } from './services-extended3';
 export { servicesOnline } from './services-online';
 export { serviceAreas } from './service-areas';
-export { blogPosts } from './blog';
 
 // Combined services export for convenience
 import { services } from './services';

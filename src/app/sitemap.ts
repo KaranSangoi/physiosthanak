@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next';
-import { allServices, serviceAreas, siteConfig } from '@/data';
+import { allServices, serviceAreas, blogPosts, siteConfig } from '@/data';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = siteConfig.domain;
@@ -49,6 +49,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.3,
     },
   ];
+
+  // Add blog listing page
+  routes.push({
+    url: `${baseUrl}/blog`,
+    lastModified: today,
+    changeFrequency: 'weekly',
+    priority: 0.8,
+  });
+
+  // Add individual blog posts
+  blogPosts.forEach((post) => {
+    routes.push({
+      url: `${baseUrl}/blog/${post.slug}`,
+      lastModified: post.updatedDate || post.publishDate,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    });
+  });
 
   // Add ALL service category pages (12 categories)
   allServices.forEach((service) => {

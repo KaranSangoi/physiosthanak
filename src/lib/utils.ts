@@ -108,11 +108,6 @@ export function generateBreadcrumbs(
       }
     }
 
-    // Handle blog
-    if (segment === 'blog') {
-      breadcrumbs.push({ label: 'Blog', href: '/blog' });
-    }
-
     // Handle service-areas
     if (segment === 'service-areas') {
       breadcrumbs.push({ label: 'Service Areas', href: '/service-areas' });
