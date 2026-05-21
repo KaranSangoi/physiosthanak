@@ -32,7 +32,7 @@ But it doesn't have to be. There are specific things you can check — before yo
 
 This is the most important thing to verify, and most people skip it entirely.
 
-In India, a qualified physiotherapist must have a **BPTh (Bachelor of Physiotherapy)** degree — that's a 4.5-year course inclusive of 6 months of internship. Many physiotherapists pursue a **MPTh (Master of Physiotherapy)** with a specialisation in areas like orthopaedics, neurology, sports medicine, or women's health.
+In India, a qualified physiotherapist must have a **BPTh (Bachelor of Physiotherapy)** degree — that's a 4.5-year course inclusive of 6 months of internship. Many physiotherapists pursue a **MPTh (Master of Physiotherapy)** with a specialisation in areas like orthopaedics, neurology, sports medicine, or women's health. They should be registered with the **Maharashtra State Council for Occupational Therapy and Physiotherapy** and ideally be a member of the **IAP (Indian Association of Physiotherapists)** — the national professional body.
 
 **Red flags to watch for:**
 - Someone calling themselves a "physio" with only a diploma or certificate course
@@ -134,7 +134,7 @@ If you're in Borivali West and want to start with a proper assessment, PhysioSth
       {
         question: 'How do I know if a physiotherapist in Borivali is qualified?',
         answer:
-          'Check for a BPTh (Bachelor of Physiotherapy) degree at minimum. A MPTh (Master of Physiotherapy) indicates additional specialisation. Ask to see their registration with the Maharashtra State Council for Occupational Therapy and Physiotherapy. Avoid clinics where treatment is done by technicians instead of qualified physiotherapists.',
+          'Check for a BPTh (Bachelor of Physiotherapy) degree at minimum. A MPTh (Master of Physiotherapy) indicates additional specialisation. Ask to see their registration with the Maharashtra State Council for Occupational Therapy and Physiotherapy. Membership in the IAP (Indian Association of Physiotherapists) is also a good sign. Avoid clinics where treatment is done by technicians instead of qualified physiotherapists.',
       },
       {
         question: 'How much does physiotherapy cost in Borivali West?',
