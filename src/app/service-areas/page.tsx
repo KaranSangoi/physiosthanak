@@ -5,21 +5,21 @@ import { serviceAreas, siteConfig } from '@/data';
 import { generateBreadcrumbs } from '@/lib/utils';
 
 export const metadata: Metadata = {
-  title: 'Physiotherapy Service Areas in Mumbai | PhysioSthanak',
+  title: 'Physiotherapy Near You in Borivali & Mumbai | Home Visits Available',
   description:
-    'Professional physiotherapy services across Borivali and surrounding areas in Mumbai. Home visit and clinic services available.',
+    'Find expert physiotherapy near you — Borivali, Kandivali, Dahisar & Malad. Clinic + home visit options. 5.0★ rated, 8000+ cases treated. Book today.',
   keywords: [
     'service areas',
     'Borivali',
     'Mumbai',
-    'physiotherapy',
-    'home visit',
+    'physiotherapy near me',
+    'home visit physiotherapy',
     'locations',
   ],
   openGraph: {
-    title: 'Physiotherapy Service Areas in Mumbai | PhysioSthanak',
+    title: 'Physiotherapy Near You in Borivali & Mumbai | Home Visits Available',
     description:
-      'Professional physiotherapy services across Borivali and surrounding areas with home visit options.',
+      'Expert physiotherapy across Borivali & surrounding areas. 5.0★ rated. Clinic + home visit options available.',
     type: 'website',
     locale: 'en_IN',
     url: `${siteConfig.domain}/service-areas`,

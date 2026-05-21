@@ -1,13 +1,16 @@
 import { NextResponse } from 'next/server';
 
-// Vercel Cron Job: Reads Director's Brief + Content Calendar → sends daily digest to Telegram
-// Runs daily at 2 PM IST (8:30 UTC) on Vercel infrastructure
-// Data sources: Director's Brief (department health), Content Calendar DB (pipeline counts)
+// Vercel Cron Job: Two responsibilities:
+// 1. Daily digest: Reads Director's Brief + Content Calendar → sends summary (once/day at ~2PM IST)
+// 2. Outbox relay: Reads Notion "Telegram Outbox" page → sends any pending messages from scheduled tasks
+// Runs every 4 hours. Scheduled tasks can't reach Telegram API (sandbox proxy blocks it),
+// so they write messages to the Notion outbox instead.
 
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || '';
 const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID || '1683559324';
 const DIRECTORS_BRIEF_PAGE_ID = '34caf2b61f0f818cbd70e4715b6ea038';
 const CONTENT_CALENDAR_DB_ID = '79a89ed233dd4263b092138312e7a2b2';
+const TELEGRAM_OUTBOX_PAGE_ID = '356af2b61f0f81c7b02dc744f33fdf15';
 
 let lastSentDate = '';
 
@@ -46,7 +49,7 @@ async function sendTelegram(message: string): Promise<boolean> {
 
 interface DepartmentHealth {
   name: string;
-  status: string; // 🟢 🟡 🔴
+  status: string;
   metric: string;
   priority: string;
 }
@@ -78,7 +81,6 @@ async function fetchDirectorsBrief(notionToken: string): Promise<DirectorsBriefD
     const data = await resp.json();
     const blocks = data.results || [];
 
-    // Extract all text content from blocks
     const allText: string[] = [];
     for (const block of blocks) {
       const text = extractBlockText(block);
@@ -87,7 +89,6 @@ async function fetchDirectorsBrief(notionToken: string): Promise<DirectorsBriefD
 
     const fullText = allText.join('\n');
 
-    // Parse department health from the table pattern
     const departments: DepartmentHealth[] = [];
     const deptRows = [
       { name: 'SEO', pattern: /SEO & Website[^\n]*?([🟢🟡🔴])[^\n]*?\|([^|]+)\|([^\n]+)/ },
@@ -109,9 +110,7 @@ async function fetchDirectorsBrief(notionToken: string): Promise<DirectorsBriefD
       }
     }
 
-    // If regex didn't work, try simpler extraction
     if (departments.length === 0) {
-      // Fallback: look for emoji + department name patterns
       const lines = fullText.split('\n');
       for (const line of lines) {
         for (const deptName of ['SEO', 'GBP', 'Instagram', 'Marketing', 'Operations']) {
@@ -130,7 +129,6 @@ async function fetchDirectorsBrief(notionToken: string): Promise<DirectorsBriefD
       }
     }
 
-    // Extract blocked items (lines with 🔴 in the blocked section)
     const blocked: string[] = [];
     const blockedSection = fullText.substring(fullText.indexOf('Blocked'));
     if (blockedSection) {
@@ -143,11 +141,9 @@ async function fetchDirectorsBrief(notionToken: string): Promise<DirectorsBriefD
       }
     }
 
-    // Extract last session info
     const sessionMatch = fullText.match(/Last Session[^\n]*Date:\s*([^|]+)/);
     const lastSession = sessionMatch ? sessionMatch[1].trim() : '';
 
-    // Extract phase info
     const phaseMatch = fullText.match(/Phase \d.*?(?:COMPLETE|starts|in progress)/i);
     const phase = phaseMatch ? phaseMatch[0].trim() : '';
 
@@ -164,7 +160,6 @@ function extractBlockText(block: Record<string, unknown>): string {
 
   const textTypes = ['heading_1', 'heading_2', 'heading_3', 'paragraph', 'bulleted_list_item', 'callout', 'quote'];
   if (!textTypes.includes(blockType)) {
-    // Handle table rows
     if (blockType === 'table_row') {
       const cells = (block.table_row as { cells?: Array<Array<{ plain_text?: string }>> })?.cells || [];
       return cells.map(cell =>
@@ -196,7 +191,6 @@ async function fetchContentPipeline(notionToken: string): Promise<PipelineCounts
   };
 
   try {
-    // Query the Content Calendar database
     const resp = await fetch(
       `https://api.notion.com/v1/databases/${CONTENT_CALENDAR_DB_ID}/query`,
       {
@@ -244,6 +238,71 @@ async function fetchContentPipeline(notionToken: string): Promise<PipelineCounts
   return counts;
 }
 
+// ── Notion: Read & clear Telegram Outbox ─────────────────
+
+interface OutboxMessage {
+  blockId: string;
+  text: string;
+}
+
+async function fetchOutboxMessages(notionToken: string): Promise<OutboxMessage[]> {
+  const messages: OutboxMessage[] = [];
+
+  try {
+    const resp = await fetch(
+      `https://api.notion.com/v1/blocks/${TELEGRAM_OUTBOX_PAGE_ID}/children?page_size=100`,
+      {
+        headers: {
+          Authorization: `Bearer ${notionToken}`,
+          'Notion-Version': '2022-06-28',
+        },
+      },
+    );
+
+    if (!resp.ok) {
+      console.error(`Notion API error (Outbox): ${resp.status}`);
+      return messages;
+    }
+
+    const data = await resp.json();
+    const blocks = data.results || [];
+
+    for (const block of blocks) {
+      const blockType = block.type as string;
+
+      // Look for code blocks — these contain Telegram HTML messages
+      if (blockType === 'code') {
+        const codeBlock = block.code as { rich_text?: Array<{ plain_text?: string }> };
+        const text = (codeBlock?.rich_text || [])
+          .map((rt: { plain_text?: string }) => rt.plain_text || '')
+          .join('');
+
+        if (text.trim()) {
+          messages.push({ blockId: block.id as string, text: text.trim() });
+        }
+      }
+    }
+  } catch (err) {
+    console.error('Failed to fetch outbox:', err);
+  }
+
+  return messages;
+}
+
+async function deleteBlock(notionToken: string, blockId: string): Promise<void> {
+  try {
+    await fetch(`https://api.notion.com/v1/blocks/${blockId}`, {
+      method: 'DELETE',
+      headers: {
+        Authorization: `Bearer ${notionToken}`,
+        'Notion-Version': '2022-06-28',
+      },
+    });
+  } catch (err) {
+    console.error(`Failed to delete block ${blockId}:`, err);
+  }
+}
+
 // ── Format the daily digest ───────────────────────────────
 
 function formatDailyDigest(
@@ -257,7 +316,6 @@ function formatDailyDigest(
 
   let msg = `<b>📊 PhysioSthanak Daily — ${today}</b>\n\n`;
 
-  // Department health
   if (brief && brief.departments.length > 0) {
     for (const dept of brief.departments) {
       const metricShort = dept.metric.length > 50
@@ -270,7 +328,6 @@ function formatDailyDigest(
     msg += `⚠️ Could not read department health from Director's Brief\n\n`;
   }
 
-  // Content pipeline (live from database)
   if (pipeline.total > 0) {
     msg += `📝 <b>Content Pipeline:</b>\n`;
     if (pipeline.creativeReady > 0) msg += `  ✅ ${pipeline.creativeReady} Creative Ready\n`;
@@ -281,7 +338,6 @@ function formatDailyDigest(
     msg += '\n';
   }
 
-  // Blocked items
   if (brief && brief.blocked.length > 0) {
     msg += `⚡ <b>Needs your action:</b>\n`;
     for (const item of brief.blocked) {
@@ -297,10 +353,19 @@ function formatDailyDigest(
   return msg;
 }
 
+// ── Check if it's daily digest time (around 2 PM IST) ────
+
+function isDailyDigestTime(): boolean {
+  const now = new Date();
+  const istHour = new Date(now.getTime() + 5.5 * 60 * 60 * 1000).getUTCHours();
+  // Cron runs every 4 hours (0,4,8,12,16,20 UTC = 5:30,9:30,13:30,17:30,21:30,1:30 IST)
+  // Send daily digest on the 8 UTC run (1:30 PM IST — closest to 2 PM)
+  return istHour >= 13 && istHour < 17;
+}
+
 // ── GET handler ───────────────────────────────────────────
 
 export async function GET(request: Request) {
-  // Verify cron secret
   const authHeader = request.headers.get('authorization');
   const url = new URL(request.url);
   const querySecret = url.searchParams.get('secret');
@@ -315,41 +380,54 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: 'NOTION_TOKEN not configured' }, { status: 500 });
   }
 
-  // Get today's date for dedup (IST)
+  const results: { dailyDigest?: string; outbox?: string } = {};
+
+  // ── 1. Process Telegram Outbox (every run) ──────────────
+  const outboxMessages = await fetchOutboxMessages(notionToken);
+
+  if (outboxMessages.length > 0) {
+    let sentCount = 0;
+    for (const msg of outboxMessages) {
+      const sent = await sendTelegram(msg.text);
+      if (sent) {
+        await deleteBlock(notionToken, msg.blockId);
+        sentCount++;
+      }
+    }
+    results.outbox = `${sentCount}/${outboxMessages.length} outbox messages sent`;
+  } else {
+    results.outbox = 'no pending messages';
+  }
+
+  // ── 2. Daily Digest (once per day, afternoon IST) ───────
   const now = new Date();
   const istDate = new Date(now.getTime() + 5.5 * 60 * 60 * 1000);
   const today = istDate.toISOString().split('T')[0];
 
-  if (today === lastSentDate) {
-    return NextResponse.json({ status: 'skip', reason: 'Already sent today' });
+  if (isDailyDigestTime() && today !== lastSentDate) {
+    const [briefData, pipelineData] = await Promise.all([
+      fetchDirectorsBrief(notionToken),
+      fetchContentPipeline(notionToken),
+    ]);
+
+    if (!briefData && pipelineData.total === 0) {
+      const fallback = `📊 <b>PhysioSthanak Daily</b>\n\n⚠️ Could not read Notion data. Check if NOTION_TOKEN is valid.`;
+      await sendTelegram(fallback);
+      lastSentDate = today;
+      results.dailyDigest = 'sent (fallback)';
+    } else {
+      const message = formatDailyDigest(briefData, pipelineData);
+      const sent = await sendTelegram(message);
+      if (sent) {
+        lastSentDate = today;
+        results.dailyDigest = 'sent';
+      } else {
+        results.dailyDigest = 'failed';
+      }
+    }
+  } else {
+    results.dailyDigest = today === lastSentDate ? 'already sent today' : 'not digest time';
   }
 
-  // Fetch data from both sources in parallel
-  const [briefData, pipelineData] = await Promise.all([
-    fetchDirectorsBrief(notionToken),
-    fetchContentPipeline(notionToken),
-  ]);
-
-  // Even if briefData is null, we can still send pipeline info
-  if (!briefData && pipelineData.total === 0) {
-    const fallback = `📊 <b>PhysioSthanak Daily</b>\n\n⚠️ Could not read Notion data. Check if NOTION_TOKEN is valid and Director's Brief exists.`;
-    await sendTelegram(fallback);
-    lastSentDate = today;
-    return NextResponse.json({ status: 'sent', type: 'fallback' });
-  }
-
-  // Format and send
-  const message = formatDailyDigest(briefData, pipelineData);
-  const sent = await sendTelegram(message);
-
-  if (sent) {
-    lastSentDate = today;
-    return NextResponse.json({
-      status: 'sent',
-      departments: briefData?.departments.length || 0,
-      pipelineTotal: pipelineData.total,
-    });
-  }
-
-  return NextResponse.json({ status: 'error', reason: 'Telegram send failed' }, { status: 500 });
+  return NextResponse.json({ status: 'ok', ...results });
 }

@@ -7,11 +7,12 @@ import { generateBreadcrumbs } from '@/lib/utils';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Contact PhysioSthanak | Book Physiotherapy Appointment',
+  title: 'Book Physiotherapy Appointment in Borivali | Call or Book Online',
   description:
-    'Contact PhysioSthanak for physiotherapy consultation in Borivali. Book your appointment, call us, or visit our clinic. Expert care by Dr. Shiva Jain.',
+    'Book your physiotherapy appointment at PhysioSthanak, Borivali West. Same-day slots available. 5.0★ Google rated. Call, WhatsApp, or book online instantly.',
   keywords: [
-    'contact',
+    'book physiotherapy appointment',
+    'contact physiotherapist Borivali',
     'appointment',
     'booking',
     'physiotherapy',
@@ -20,9 +21,9 @@ export const metadata: Metadata = {
     'address',
   ],
   openGraph: {
-    title: 'Contact PhysioSthanak | Book Physiotherapy Appointment',
+    title: 'Book Physiotherapy Appointment in Borivali | Call or Book Online',
     description:
-      'Get in touch with PhysioSthanak for expert physiotherapy services in Borivali. Book now.',
+      'Book your physiotherapy appointment at PhysioSthanak, Borivali. Same-day slots. 5.0★ rated.',
     type: 'website',
     locale: 'en_IN',
     url: `${siteConfig.domain}/contact`,
