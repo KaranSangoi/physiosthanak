@@ -32,7 +32,7 @@ But it doesn't have to be. There are specific things you can check — before yo
 
 This is the most important thing to verify, and most people skip it entirely.
 
-In India, a qualified physiotherapist must have a **BPTh (Bachelor of Physiotherapy)** degree — that's a 4.5-year course followed by 6 months of internship. Many physiotherapists pursue a **MPTh (Master of Physiotherapy)** with a specialisation in areas like orthopaedics, neurology, sports medicine, or women's health.
+In India, a qualified physiotherapist must have a **BPTh (Bachelor of Physiotherapy)** degree — that's a 4.5-year course inclusive of 6 months of internship. Many physiotherapists pursue a **MPTh (Master of Physiotherapy)** with a specialisation in areas like orthopaedics, neurology, sports medicine, or women's health.
 
 **Red flags to watch for:**
 - Someone calling themselves a "physio" with only a diploma or certificate course
@@ -75,7 +75,7 @@ When you walk into a physiotherapy clinic, look around. The setup tells you how 
 
 **Red flags:**
 - The physiotherapist starts treatment without asking about your history
-- They rely entirely on machines (IFT, ultrasound, TENS) without any manual therapy
+- They rely entirely on machines (IFT, ultrasound, TENS) without any manual therapy or without any exercises
 - Multiple patients being treated simultaneously by one therapist
 - No exercise prescription — just passive treatments
 
@@ -127,14 +127,14 @@ If a physiotherapist skips the assessment and goes straight to machines, that's 
 
 Choosing a physiotherapist is a decision that affects your recovery. Take 15 minutes to check qualifications, read reviews, and ask questions before committing. Your body will thank you.
 
-If you're in Borivali West and want to start with a proper assessment, PhysioSthanak offers consultations where Dr. Shiva Jain personally evaluates your condition and recommends a treatment plan — no commitments, no pressure.
+If you're in Borivali West and want to start with a proper assessment, PhysioSthanak offers consultations where Dr. Shiva Jain Sangoi personally evaluates your condition, explains what's going on, and recommends a clear treatment plan — so you know exactly what to expect before committing to anything.
 
 **Related reading:** Not sure whether you need a physiotherapist or an orthopaedic doctor first? Read our guide on [physiotherapy vs orthopaedic — who to see first](/blog/physiotherapy-vs-orthopaedic-who-to-see-first). And if you're dealing with back pain specifically, check out our article on [back pain treatment at home](/blog/back-pain-treatment-at-home-when-to-see-physiotherapist).`,
     faqs: [
       {
         question: 'How do I know if a physiotherapist in Borivali is qualified?',
         answer:
-          'Check for a BPTh (Bachelor of Physiotherapy) degree at minimum. A MPTh (Master of Physiotherapy) indicates additional specialisation. Ask to see their registration with the Maharashtra State Council of Physiotherapy. Avoid clinics where treatment is done by technicians instead of qualified physiotherapists.',
+          'Check for a BPTh (Bachelor of Physiotherapy) degree at minimum. A MPTh (Master of Physiotherapy) indicates additional specialisation. Ask to see their registration with the Maharashtra State Council for Occupational Therapy and Physiotherapy. Avoid clinics where treatment is done by technicians instead of qualified physiotherapists.',
       },
       {
         question: 'How much does physiotherapy cost in Borivali West?',
