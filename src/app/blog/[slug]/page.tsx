@@ -69,6 +69,14 @@ function renderMarkdown(content: string): string {
   html = html.replace(/^### (.*$)/gm, '<h3 class="text-xl font-heading font-bold text-accent mt-8 mb-3">$1</h3>');
   html = html.replace(/^## (.*$)/gm, '<h2 class="text-2xl font-heading font-bold text-accent mt-10 mb-4">$1</h2>');
 
+  // Links - internal and external
+  html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, text, url) => {
+    if (url.startsWith('/') || url.startsWith('https://physiosthanak.com')) {
+      return `<a href="${url}" class="text-accent-pink hover:underline font-medium">${text}</a>`;
+    }
+    return `<a href="${url}" target="_blank" rel="noopener noreferrer" class="text-accent-pink hover:underline font-medium">${text}</a>`;
+  });
+
   // Bold
   html = html.replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold text-accent">$1</strong>');
 

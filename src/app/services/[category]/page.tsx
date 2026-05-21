@@ -5,6 +5,7 @@ import BenefitsSection from '@/components/sections/BenefitsSection';
 import WhySection from '@/components/sections/WhySection';
 import FAQSection from '@/components/sections/FAQSection';
 import CTASection from '@/components/sections/CTASection';
+import RelatedBlogPosts from '@/components/sections/RelatedBlogPosts';
 import ServiceCard from '@/components/sections/ServiceCard';
 import { allServices, siteConfig } from '@/data';
 import { getServiceBySlug, generateBreadcrumbs, getAllServiceSlugs } from '@/lib/utils';
@@ -156,6 +157,12 @@ export default async function ServiceCategoryPage({ params }: PageProps) {
         heading="Frequently Asked Questions"
         subheading={`Common questions about ${service.name}`}
         faqs={service.faqs}
+      />
+
+      {/* Related Blog Posts */}
+      <RelatedBlogPosts
+        serviceSlug={service.slug}
+        heading={`Helpful Articles About ${service.name}`}
       />
 
       {/* CTA Section */}

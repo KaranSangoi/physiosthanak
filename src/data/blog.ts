@@ -127,7 +127,9 @@ If a physiotherapist skips the assessment and goes straight to machines, that's 
 
 Choosing a physiotherapist is a decision that affects your recovery. Take 15 minutes to check qualifications, read reviews, and ask questions before committing. Your body will thank you.
 
-If you're in Borivali West and want to start with a proper assessment, PhysioSthanak offers consultations where Dr. Shiva Jain personally evaluates your condition and recommends a treatment plan — no commitments, no pressure.`,
+If you're in Borivali West and want to start with a proper assessment, PhysioSthanak offers consultations where Dr. Shiva Jain personally evaluates your condition and recommends a treatment plan — no commitments, no pressure.
+
+**Related reading:** Not sure whether you need a physiotherapist or an orthopaedic doctor first? Read our guide on [physiotherapy vs orthopaedic — who to see first](/blog/physiotherapy-vs-orthopaedic-who-to-see-first). And if you're dealing with back pain specifically, check out our article on [back pain treatment at home](/blog/back-pain-treatment-at-home-when-to-see-physiotherapist).`,
     faqs: [
       {
         question: 'How do I know if a physiotherapist in Borivali is qualified?',
@@ -276,7 +278,9 @@ These could indicate nerve compression, disc issues, or joint problems that exer
 
 ## The bottom line
 
-Your body wasn't designed to sit at a desk for 8 hours. But with 3 minutes of targeted exercises twice a day, you can prevent most of the damage that desk work causes. Start today — your future self will thank you.`,
+Your body wasn't designed to sit at a desk for 8 hours. But with 3 minutes of targeted exercises twice a day, you can prevent most of the damage that desk work causes. Start today — your future self will thank you.
+
+**Related reading:** Already dealing with back pain from sitting all day? Read our detailed guide on [back pain treatment at home — and when to see a physiotherapist](/blog/back-pain-treatment-at-home-when-to-see-physiotherapist). Looking for a qualified physio in Borivali? Here's [how to choose the best physiotherapist](/blog/best-physiotherapist-in-borivali-west-how-to-choose).`,
     faqs: [
       {
         question: 'How often should I do posture correction exercises at work?',
@@ -407,7 +411,9 @@ What we won't do is keep treating a condition that isn't responding, just to fil
 
 ## The bottom line
 
-For 70% of musculoskeletal problems, a physiotherapist should be your first call. For the remaining 30%, starting with an orthopaedic doctor makes sense. When in doubt, call a physiotherapy clinic and describe your symptoms — a good clinic will tell you honestly whether they can help or whether you should see a doctor first.`,
+For 70% of musculoskeletal problems, a physiotherapist should be your first call. For the remaining 30%, starting with an orthopaedic doctor makes sense. When in doubt, call a physiotherapy clinic and describe your symptoms — a good clinic will tell you honestly whether they can help or whether you should see a doctor first.
+
+**Related reading:** If you're an athlete or gym-goer dealing with injuries, read our guide on [sports physiotherapy in Borivali](/blog/sports-physiotherapy-borivali-athletes-fitness). And if you're searching for a good physio, here's [how to choose the best physiotherapist in Borivali West](/blog/best-physiotherapist-in-borivali-west-how-to-choose).`,
     faqs: [
       {
         question: 'Can I see a physiotherapist without an orthopaedic referral?',
@@ -548,7 +554,9 @@ At PhysioSthanak, our approach to back pain follows a systematic process:
 
 ## The bottom line
 
-Start with home management for mild back pain — movement, ice/heat, gentle exercises, and postural corrections. Give it 2-4 weeks. If it improves, great. If not, or if you notice any of the warning signs above, don't wait — see a physiotherapist before the problem becomes chronic.`,
+Start with home management for mild back pain — movement, ice/heat, gentle exercises, and postural corrections. Give it 2-4 weeks. If it improves, great. If not, or if you notice any of the warning signs above, don't wait — see a physiotherapist before the problem becomes chronic.
+
+**Related reading:** If your back pain is linked to desk work, check out our [posture correction exercises for office workers](/blog/desk-posture-correction-exercises-office-workers). Not sure whether you need a physio or an orthopaedic doctor? Read [physiotherapy vs orthopaedic — who to see first](/blog/physiotherapy-vs-orthopaedic-who-to-see-first).`,
     faqs: [
       {
         question: 'How long does back pain take to heal on its own?',
@@ -680,7 +688,9 @@ Most sports injury rehabilitation takes 4-12 weeks depending on severity, with 2
 
 ## The bottom line
 
-Playing through pain isn't tough — it's how minor injuries become chronic problems. If you're active and dealing with a sports injury, get it assessed by a physiotherapist who understands the demands of your sport. The goal isn't just to stop the pain — it's to get you back doing what you love, stronger than before.`,
+Playing through pain isn't tough — it's how minor injuries become chronic problems. If you're active and dealing with a sports injury, get it assessed by a physiotherapist who understands the demands of your sport. The goal isn't just to stop the pain — it's to get you back doing what you love, stronger than before.
+
+**Related reading:** Wondering whether to see a physio or an orthopaedic doctor for your injury? Read [physiotherapy vs orthopaedic — who to see first](/blog/physiotherapy-vs-orthopaedic-who-to-see-first). And here's [how to choose the best physiotherapist in Borivali West](/blog/best-physiotherapist-in-borivali-west-how-to-choose).`,
     faqs: [
       {
         question: 'How is sports physiotherapy different from regular physiotherapy?',

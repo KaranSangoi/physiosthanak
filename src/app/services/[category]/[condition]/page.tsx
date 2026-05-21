@@ -6,6 +6,7 @@ import WhySection from '@/components/sections/WhySection';
 import FAQSection from '@/components/sections/FAQSection';
 import CTASection from '@/components/sections/CTASection';
 import MapSection from '@/components/sections/MapSection';
+import RelatedBlogPosts from '@/components/sections/RelatedBlogPosts';
 import Link from 'next/link';
 import { allServices, siteConfig } from '@/data';
 import {
@@ -154,6 +155,9 @@ export default async function ConditionPage({ params }: PageProps) {
         description="Located conveniently in Borivali West, our clinic is equipped to provide expert treatment for your condition."
         location="Borivali, Mumbai"
       />
+
+      {/* Related Blog Posts */}
+      <RelatedBlogPosts serviceSlug={category} />
 
       {/* CTA with Homepage Link */}
       <section className="section-padding bg-gradient-to-r from-primary to-primary-dark text-white">
