@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import HeroSection from '@/components/sections/HeroSection';
+import WhatIsSection from '@/components/sections/WhatIsSection';
 import BenefitsSection from '@/components/sections/BenefitsSection';
 import WhySection from '@/components/sections/WhySection';
 import FAQSection from '@/components/sections/FAQSection';
@@ -77,6 +78,7 @@ export default async function ServiceCategoryPage({ params }: PageProps) {
     description: service.description,
     url: `${siteConfig.domain}/services/${service.slug}`,
     telephone: siteConfig.phone,
+    dateModified: '2026-05-22',
     address: {
       '@type': 'PostalAddress',
       streetAddress:
@@ -95,6 +97,13 @@ export default async function ServiceCategoryPage({ params }: PageProps) {
         name: siteConfig.doctorName,
       },
     },
+    ...(service.whatIs && {
+      knowsAbout: service.name,
+      speakable: {
+        '@type': 'SpeakableSpecification',
+        cssSelector: ['h1', 'h2', '[data-speakable]'],
+      },
+    }),
   };
 
   return (
@@ -112,6 +121,14 @@ export default async function ServiceCategoryPage({ params }: PageProps) {
         backgroundImage={service.image}
         pageName={`Service: ${service.name}`}
       />
+
+      {/* What Is Section — targets featured snippets & PAA */}
+      {service.whatIs && (
+        <WhatIsSection
+          serviceName={service.name}
+          definition={service.whatIs}
+        />
+      )}
 
       {/* Benefits Section */}
       <BenefitsSection

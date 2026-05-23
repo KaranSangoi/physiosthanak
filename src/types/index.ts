@@ -63,6 +63,7 @@ export interface ConditionPage {
 
 export interface ServiceCategory extends Service {
   conditions: ConditionPage[];
+  whatIs?: string;
 }
 
 export interface SubArea {

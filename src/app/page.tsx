@@ -282,6 +282,7 @@ export default function HomePage() {
             '@context': 'https://schema.org',
             '@type': 'WebPage',
             name: 'Best Physiotherapist in Borivali | PhysioSthanak',
+            dateModified: '2026-05-22',
             speakable: {
               '@type': 'SpeakableSpecification',
               cssSelector: ['h1', '.section-eyebrow', '[data-speakable]'],

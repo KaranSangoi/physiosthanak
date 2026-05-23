@@ -4,6 +4,7 @@ export const servicesExtended: ServiceCategory[] = [
   {
     slug: 'post-surgery-rehabilitation',
     name: 'Post-Surgery Rehabilitation',
+    whatIs: 'Post-surgery rehabilitation is a structured physiotherapy programme that begins after a surgical procedure to restore strength, mobility, and function. It includes progressive exercises, pain management, scar tissue mobilisation, and functional retraining — all designed to help patients recover safely and return to daily activities faster than with rest alone.',
     description: 'Comprehensive post-operative rehabilitation to promote healing, restore function, and accelerate recovery after surgery.',
     keywords: ['post-surgery rehabilitation', 'post-operative therapy', 'surgical recovery', 'rehabilitation after surgery', 'Borivali post-surgery'],
     metaDescription: 'Post-surgery rehabilitation in Borivali. Expert physiotherapy for safe, effective surgical recovery.',

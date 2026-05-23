@@ -4,6 +4,7 @@ export const servicesExtended3: ServiceCategory[] = [
   {
     slug: 'pediatric-physiotherapy',
     name: 'Pediatric Physiotherapy',
+    whatIs: 'Pediatric physiotherapy is specialised treatment for infants, children, and adolescents with developmental, neurological, or musculoskeletal conditions. Pediatric physiotherapists use play-based therapy, developmental exercises, and family education to help children achieve motor milestones, improve coordination, and manage conditions like cerebral palsy, developmental delay, and scoliosis.',
     description: 'Specialized physiotherapy for children addressing developmental delays, cerebral palsy, and pediatric conditions.',
     keywords: ['pediatric physiotherapy', 'child physiotherapy', 'developmental delay', 'cerebral palsy', 'Borivali pediatric physio'],
     metaDescription: 'Pediatric physiotherapy in Borivali. Expert treatment for children\'s developmental and neurological conditions.',
@@ -271,6 +272,7 @@ export const servicesExtended3: ServiceCategory[] = [
   {
     slug: 'womens-health-physiotherapy',
     name: 'Women\'s Health Physiotherapy',
+    whatIs: 'Women\'s health physiotherapy addresses conditions unique to women across all life stages — from pregnancy and postpartum recovery to menopause-related issues. Treatment includes pelvic floor strengthening, prenatal exercise programmes, postnatal rehabilitation, diastasis recti correction, and PCOS management through targeted physical therapy.',
     description: 'Specialized physiotherapy addressing women\'s unique health needs including prenatal, postnatal, and pelvic floor care.',
     keywords: ['women\'s health physiotherapy', 'pelvic floor therapy', 'prenatal physiotherapy', 'postnatal rehabilitation', 'Borivali women\'s health'],
     metaDescription: 'Women\'s health physiotherapy in Borivali. Expert prenatal, postnatal, and pelvic floor care.',
@@ -591,6 +593,7 @@ export const servicesExtended3: ServiceCategory[] = [
   {
     slug: 'hand-physiotherapy',
     name: 'Hand & Wrist Physiotherapy',
+    whatIs: 'Hand and wrist physiotherapy is a subspecialty focused on rehabilitating injuries and conditions affecting the hand, wrist, and fingers — including carpal tunnel syndrome, trigger finger, de Quervain\'s tenosynovitis, and post-surgical recovery. Treatment involves fine motor exercises, splinting guidance, tendon gliding techniques, and grip strengthening to restore dexterity and function.',
     description: 'Specialized treatment for hand, wrist, and finger injuries and conditions.',
     keywords: ['hand physiotherapy', 'wrist injury', 'hand injury', 'carpal tunnel', 'hand rehabilitation', 'Borivali hand physio'],
     metaDescription: 'Hand and wrist physiotherapy in Borivali. Expert treatment for hand injuries and conditions.',

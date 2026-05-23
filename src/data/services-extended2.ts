@@ -4,6 +4,7 @@ export const servicesExtended2: ServiceCategory[] = [
   {
     slug: 'neurological-physiotherapy',
     name: 'Neurological Physiotherapy',
+    whatIs: 'Neurological physiotherapy is a specialised branch that treats movement disorders caused by conditions affecting the brain, spinal cord, or peripheral nerves — such as stroke, paralysis, Parkinson\'s disease, and Bell\'s palsy. Treatment uses neuroplasticity-based exercises and functional retraining to help patients regain motor control, balance, and independence in daily activities.',
     description: 'Specialized rehabilitation for neurological conditions including stroke, paralysis, and nerve injuries.',
     keywords: ['neurological physiotherapy', 'stroke rehabilitation', 'paralysis treatment', 'nerve injury therapy', 'Borivali neuro physio'],
     metaDescription: 'Neurological physiotherapy in Borivali. Expert stroke and paralysis rehabilitation services.',
@@ -377,6 +378,7 @@ export const servicesExtended2: ServiceCategory[] = [
   {
     slug: 'orthopedic-physiotherapy',
     name: 'Orthopedic Physiotherapy',
+    whatIs: 'Orthopedic physiotherapy focuses on treating conditions affecting the musculoskeletal system — bones, joints, muscles, ligaments, and tendons. It is the most common form of physiotherapy in India, addressing conditions like arthritis, joint pain, fractures, and osteoporosis through therapeutic exercises, joint mobilisation, and pain management techniques.',
     description: 'Treatment for orthopedic conditions including arthritis, joint pain, and musculoskeletal disorders.',
     keywords: ['orthopedic physiotherapy', 'joint pain', 'arthritis treatment', 'musculoskeletal therapy', 'Borivali orthopedic'],
     metaDescription: 'Orthopedic physiotherapy in Borivali. Expert treatment for arthritis and joint pain relief.',

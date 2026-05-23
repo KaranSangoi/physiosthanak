@@ -107,6 +107,7 @@ export default async function SubAreaPage({ params }: PageProps) {
     description: subAreaData.description,
     url: `${siteConfig.domain}/service-areas/${area}/${subarea}`,
     telephone: siteConfig.phone,
+    dateModified: '2026-05-22',
     address: {
       '@type': 'PostalAddress',
       streetAddress:

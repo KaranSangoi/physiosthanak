@@ -94,6 +94,7 @@ export default async function ConditionPage({ params }: PageProps) {
     '@type': 'Service',
     name: conditionData.name,
     description: conditionData.description,
+    dateModified: '2026-05-22',
     provider: {
       '@type': 'MedicalBusiness',
       name: siteConfig.businessName,

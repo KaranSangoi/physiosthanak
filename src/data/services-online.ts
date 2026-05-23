@@ -4,6 +4,7 @@ export const servicesOnline: ServiceCategory[] = [
   {
     slug: 'online-physiotherapy',
     name: 'Online Physiotherapy',
+    whatIs: 'Online physiotherapy — also called tele-rehabilitation or virtual physiotherapy — is a remote healthcare service where a qualified physiotherapist conducts assessments, prescribes exercises, and monitors recovery via video call. It is ideal for follow-up sessions, exercise guidance, ergonomic assessments, and patients in remote areas who cannot visit a clinic in person.',
     description: 'Professional online physiotherapy consultations and tele-rehabilitation via Google Meet. Get expert treatment from anywhere with an introductory offer of just ₹99 for 20 minutes.',
     keywords: ['online physiotherapy', 'virtual physiotherapy', 'tele-rehabilitation', 'online physio consultation', 'physiotherapy Google Meet', 'remote physiotherapy India', 'online physiotherapy consultation'],
     metaDescription: 'Online physiotherapy via Google Meet by Dr. Shiva Jain (MPTh). ₹99 intro offer for 20 min. Expert care from anywhere. Book now!',

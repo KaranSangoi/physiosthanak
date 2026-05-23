@@ -4,6 +4,7 @@ export const services: ServiceCategory[] = [
   {
     slug: 'physiotherapy',
     name: 'Physiotherapy',
+    whatIs: 'Physiotherapy is a healthcare profession that uses evidence-based physical techniques — including exercise therapy, manual therapy, and electrotherapy — to treat pain, restore movement, and prevent disability. In India, physiotherapists hold BPTh or MPTh degrees and are registered with state councils to practice independently.',
     description: 'Comprehensive physiotherapy services for pain relief, mobility improvement, and recovery from injuries and conditions.',
     keywords: ['physiotherapy', 'physical therapy', 'rehabilitation', 'pain relief', 'mobility improvement', 'Borivali physiotherapy'],
     metaDescription: 'Expert physiotherapy in Borivali for pain relief, injury recovery, and mobility. Personalized treatment plans by Dr. Shiva Jain.',
@@ -58,6 +59,7 @@ export const services: ServiceCategory[] = [
   {
     slug: 'home-visit-physiotherapy',
     name: 'Home Visit Physiotherapy',
+    whatIs: 'Home visit physiotherapy is professional rehabilitation treatment delivered at the patient\'s residence by a qualified physiotherapist. It is ideal for post-surgery patients, elderly individuals, bedridden patients, and anyone who cannot travel to a clinic. The therapist brings portable equipment and designs exercises suited to the home environment.',
     description: 'Professional physiotherapy treatment delivered to your home for convenience, comfort, and personalized care without travel stress.',
     keywords: ['home physiotherapy', 'home visit physiotherapy', 'in-home physical therapy', 'elderly care', 'post-surgery home therapy', 'Borivali home physiotherapy'],
     metaDescription: 'Home visit physiotherapy in Borivali for post-surgery, elderly care, and bedridden patients. Convenient care at your doorstep.',
@@ -271,6 +273,7 @@ export const services: ServiceCategory[] = [
   },
   {
     slug: 'sports-physiotherapy',
+    whatIs: 'Sports physiotherapy is a specialised branch of physiotherapy focused on preventing, diagnosing, and treating injuries related to sports and physical activity. Sports physiotherapists work with athletes of all levels — from weekend cricketers to professional footballers — using techniques like taping, dry needling, sport-specific rehabilitation, and return-to-play protocols.',
     name: 'Sports Injury Physiotherapy',
     description: 'Expert treatment for sports injuries focusing on rapid recovery, return to sport, and injury prevention for athletes.',
     keywords: ['sports injury physiotherapy', 'athletic injury treatment', 'sports rehab', 'athlete recovery', 'sports medicine', 'Borivali sports physiotherapy'],
@@ -645,6 +648,7 @@ export const services: ServiceCategory[] = [
   {
     slug: 'back-pain-physiotherapy',
     name: 'Back Pain & Spine Physiotherapy',
+    whatIs: 'Back pain physiotherapy is a non-surgical treatment approach that uses targeted exercises, manual therapy, and postural correction to relieve spinal pain and restore function. A physiotherapist assesses the root cause — whether it is a muscle strain, disc problem, or nerve compression — and creates a personalised rehabilitation plan to reduce pain and prevent recurrence.',
     description: 'Comprehensive treatment for back pain, spinal conditions, and posture problems with evidence-based rehabilitation.',
     keywords: ['back pain physiotherapy', 'spine treatment', 'lower back pain', 'back pain relief', 'spinal rehabilitation', 'Borivali back pain'],
     metaDescription: 'Back pain physiotherapy in Borivali. Expert treatment for lower back, sciatica, and spinal conditions with proven results.',
@@ -965,6 +969,7 @@ export const services: ServiceCategory[] = [
   {
     slug: 'neck-pain-physiotherapy',
     name: 'Neck Pain & Cervical Physiotherapy',
+    whatIs: 'Cervical physiotherapy is a specialised treatment for neck pain, stiffness, and related conditions like cervical spondylosis and headaches. The physiotherapist uses manual mobilisation, strengthening exercises, and ergonomic advice to reduce pain, improve neck mobility, and address the underlying causes — which often include prolonged screen use, poor posture, or degenerative changes in the cervical spine.',
     description: 'Specialized treatment for neck pain, cervical conditions, and associated headaches with targeted rehabilitation.',
     keywords: ['neck pain physiotherapy', 'cervical pain treatment', 'neck stiffness', 'cervical physiotherapy', 'Borivali neck pain'],
     metaDescription: 'Neck pain physiotherapy in Borivali. Expert cervical treatment for pain relief and improved mobility.',

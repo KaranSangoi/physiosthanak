@@ -84,6 +84,7 @@ export default async function AreaPage({ params }: PageProps) {
     description: areaData.description,
     url: `${siteConfig.domain}/service-areas/${areaData.slug}`,
     telephone: siteConfig.phone,
+    dateModified: '2026-05-22',
     address: {
       '@type': 'PostalAddress',
       streetAddress:
