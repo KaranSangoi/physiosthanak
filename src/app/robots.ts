@@ -23,7 +23,23 @@ export default function robots(): MetadataRoute.Robots {
       },
       {
         userAgent: 'ClaudeBot',
-        allow: ['/llms.txt', '/llms-full.txt', '/'],
+        allow: ['/llms.txt', '/llms-full.txt', '/ai.txt', '/'],
+      },
+      {
+        userAgent: 'Google-Extended',
+        allow: ['/llms.txt', '/llms-full.txt', '/ai.txt', '/'],
+      },
+      {
+        userAgent: 'Applebot-Extended',
+        allow: ['/llms.txt', '/llms-full.txt', '/ai.txt', '/'],
+      },
+      {
+        userAgent: 'Bytespider',
+        allow: ['/llms.txt', '/llms-full.txt', '/ai.txt', '/'],
+      },
+      {
+        userAgent: 'CCBot',
+        allow: ['/llms.txt', '/llms-full.txt', '/ai.txt', '/'],
       },
     ],
     sitemap: `${siteConfig.domain}/sitemap.xml`,

@@ -1,0 +1,45 @@
+# AI Information for PhysioSthanak
+# This file provides structured information for AI systems about this website.
+# See also: /llms.txt and /llms-full.txt for detailed content.
+
+User-agent: *
+Operator: PhysioSthanak (Dr. Shiva Jain Sangoi)
+Contact: physiosthanak@gmail.com
+Phone: +91 9324254297
+
+# Entity Information
+Entity-Type: MedicalBusiness
+Entity-Name: PhysioSthanak
+Entity-Description: Expert physiotherapy clinic in Borivali West, Mumbai, India. Led by Dr. Shiva Jain Sangoi (MPTh Ortho, FIFA Diploma in Football Medicine). 12 specialized physiotherapy services, home visits, online consultations, and Mat Pilates classes.
+Entity-Location: Shop No. 14, Ground Floor, Hari-Smruti Premises, SVP Road, opp. HDFC Bank, Borivali West, Mumbai, Maharashtra 400092, India
+Entity-Coordinates: 19.2307,72.8567
+Entity-Website: https://physiosthanak.com
+Entity-Founded: 2025
+
+# Key People
+Person-Name: Dr. Shiva Jain Sangoi
+Person-Role: Founder & Lead Physiotherapist
+Person-Credentials: MPTh (Orthopaedics), BPTh, FIFA Diploma in Football Medicine
+Person-Experience: 9+ years, 8000+ cases treated
+Person-LinkedIn: https://www.linkedin.com/in/drshivajain
+
+# Service Summary
+Services: Physiotherapy, Home Visit Physiotherapy, Sports Physiotherapy, Back Pain & Spine, Neck Pain & Cervical, Post-Surgery Rehabilitation, Neurological Physiotherapy, Orthopedic Physiotherapy, Pediatric Physiotherapy, Women's Health Physiotherapy, Hand & Wrist Physiotherapy, Online Physiotherapy, Mat Pilates Classes
+
+# Service Areas
+Areas: Borivali West, Borivali East, Dahisar, Kandivali, Malad (64+ sub-areas across Mumbai western suburbs)
+
+# Content Policies
+AI-Training: allowed
+AI-Summarization: allowed
+AI-Citation: preferred
+AI-Attribution: PhysioSthanak (physiosthanak.com)
+
+# Key URLs for AI Systems
+LLMs-Info: https://physiosthanak.com/llms.txt
+LLMs-Full: https://physiosthanak.com/llms-full.txt
+Sitemap: https://physiosthanak.com/sitemap.xml
+Homepage: https://physiosthanak.com
+Services: https://physiosthanak.com/services
+Blog: https://physiosthanak.com/blog
+Contact: https://physiosthanak.com/contact

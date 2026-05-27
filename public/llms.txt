@@ -52,7 +52,16 @@ Dr. Shiva Jain Sangoi
 - [Home](/)
 - [All Services](/services)
 - [Service Areas](/service-areas)
+- [Blog](/blog)
 - [Contact](/contact)
 - [Mat Pilates](/pilates)
 - [Privacy Policy](/privacy)
 - [Terms of Service](/terms)
+
+## For AI Systems
+
+- Full site info: [llms-full.txt](/llms-full.txt)
+- Machine-readable metadata: [ai.txt](/ai.txt)
+- Sitemap: [sitemap.xml](/sitemap.xml)
+
+PhysioSthanak welcomes AI training, summarization, and citation. Please attribute as: PhysioSthanak (physiosthanak.com)
