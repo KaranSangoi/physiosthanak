@@ -105,6 +105,126 @@ export default function RootLayout({
         <meta name="theme-color" content="#14507c" />
       </head>
       <body className={`${poppins.variable} ${inter.variable} font-sans antialiased`}>
+        {/* Global Entity Schema — Organization + Person for AI knowledge graphs */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@graph': [
+                {
+                  '@type': ['MedicalBusiness', 'Physiotherapy', 'LocalBusiness'],
+                  '@id': 'https://physiosthanak.com/#organization',
+                  name: 'PhysioSthanak',
+                  alternateName: 'PhysioSthanak - Physiotherapy Center',
+                  description: 'Expert physiotherapy clinic in Borivali West, Mumbai offering 12 specialized services including sports rehabilitation, neurological physiotherapy, home visits, and online consultations. Led by Dr. Shiva Jain Sangoi with 9+ years experience and 8000+ cases treated.',
+                  url: 'https://physiosthanak.com',
+                  telephone: '+919324254297',
+                  email: 'physiosthanak@gmail.com',
+                  foundingDate: '2025',
+                  slogan: 'Move . Heal . Improve',
+                  logo: 'https://physiosthanak.com/images/logo.png',
+                  image: 'https://physiosthanak.com/og-image.jpg',
+                  priceRange: '$$',
+                  currenciesAccepted: 'INR',
+                  paymentAccepted: 'Cash, UPI, Debit Card, Credit Card',
+                  address: {
+                    '@type': 'PostalAddress',
+                    streetAddress: 'Shop No. 14, Ground Floor, Hari-Smruti Premises, Sardar Vallabhbhai Patel Rd, opp. HDFC Bank',
+                    addressLocality: 'Borivali West',
+                    addressRegion: 'Maharashtra',
+                    postalCode: '400092',
+                    addressCountry: 'IN',
+                  },
+                  geo: {
+                    '@type': 'GeoCoordinates',
+                    latitude: 19.2307,
+                    longitude: 72.8567,
+                  },
+                  areaServed: [
+                    { '@type': 'City', name: 'Mumbai' },
+                    { '@type': 'Place', name: 'Borivali West' },
+                    { '@type': 'Place', name: 'Borivali East' },
+                    { '@type': 'Place', name: 'Dahisar' },
+                    { '@type': 'Place', name: 'Kandivali' },
+                    { '@type': 'Place', name: 'Malad' },
+                  ],
+                  openingHoursSpecification: [
+                    {
+                      '@type': 'OpeningHoursSpecification',
+                      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+                      opens: '09:00',
+                      closes: '18:00',
+                    },
+                  ],
+                  aggregateRating: {
+                    '@type': 'AggregateRating',
+                    ratingValue: '5.0',
+                    reviewCount: '54',
+                    bestRating: '5',
+                    worstRating: '1',
+                  },
+                  sameAs: [
+                    'https://www.instagram.com/physiosthanak',
+                    'https://www.linkedin.com/in/drshivajain',
+                    'https://g.co/kgs/PhysioSthanak',
+                  ],
+                  hasOfferCatalog: {
+                    '@type': 'OfferCatalog',
+                    name: 'Physiotherapy Services',
+                    itemListElement: [
+                      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Physiotherapy' } },
+                      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Home Visit Physiotherapy' } },
+                      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Sports Injury Physiotherapy' } },
+                      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Back Pain & Spine Treatment' } },
+                      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Neck Pain & Cervical Treatment' } },
+                      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Post-Surgery Rehabilitation' } },
+                      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Neurological Physiotherapy' } },
+                      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Orthopedic Physiotherapy' } },
+                      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Pediatric Physiotherapy' } },
+                      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: "Women's Health Physiotherapy" } },
+                      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Hand & Wrist Physiotherapy' } },
+                      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Online Physiotherapy' } },
+                    ],
+                  },
+                  founder: { '@id': 'https://physiosthanak.com/#doctor' },
+                  employee: { '@id': 'https://physiosthanak.com/#doctor' },
+                },
+                {
+                  '@type': 'Person',
+                  '@id': 'https://physiosthanak.com/#doctor',
+                  name: 'Dr. Shiva Jain Sangoi',
+                  jobTitle: 'Founder & Lead Physiotherapist',
+                  description: 'Dr. Shiva Jain Sangoi is a physiotherapist with MPTh in Orthopaedics and a FIFA Diploma in Football Medicine. With 9+ years of clinical experience and 8000+ successfully treated cases, she specializes in orthopedic rehabilitation, sports injury treatment, and neurological physiotherapy.',
+                  url: 'https://physiosthanak.com',
+                  image: 'https://physiosthanak.com/images/dr-shiva.jpg',
+                  telephone: '+919324254297',
+                  email: 'physiosthanak@gmail.com',
+                  alumniOf: [
+                    { '@type': 'EducationalOrganization', name: 'MPTh Orthopaedics Program' },
+                    { '@type': 'EducationalOrganization', name: 'BPTh Program' },
+                    { '@type': 'Organization', name: 'FIFA - Football Medicine Diploma' },
+                  ],
+                  hasCredential: [
+                    { '@type': 'EducationalOccupationalCredential', credentialCategory: 'degree', name: 'MPTh (Orthopaedics)' },
+                    { '@type': 'EducationalOccupationalCredential', credentialCategory: 'degree', name: 'BPTh' },
+                    { '@type': 'EducationalOccupationalCredential', credentialCategory: 'certificate', name: 'FIFA Diploma in Football Medicine' },
+                  ],
+                  knowsAbout: [
+                    'Physiotherapy', 'Orthopedic Rehabilitation', 'Sports Injury Treatment',
+                    'Neurological Physiotherapy', 'Back Pain Treatment', 'Sciatica Treatment',
+                    'Post-Surgery Rehabilitation', 'Mat Pilates', 'Home Visit Physiotherapy',
+                  ],
+                  worksFor: { '@id': 'https://physiosthanak.com/#organization' },
+                  sameAs: [
+                    'https://www.linkedin.com/in/drshivajain',
+                    'https://www.instagram.com/physiosthanak',
+                  ],
+                },
+              ],
+            }),
+          }}
+        />
         <Header />
         <main className="min-h-screen">
           {children}
