@@ -46,6 +46,11 @@ export interface Service {
   externalLink?: { url: string; text: string };
 }
 
+export interface PAAItem {
+  question: string;
+  answer: string;
+}
+
 export interface ConditionPage {
   slug: string;
   name: string;
@@ -59,6 +64,7 @@ export interface ConditionPage {
   whyPoints: WhyPoint[];
   faqs: FAQ[];
   externalLink?: { url: string; text: string };
+  paa?: PAAItem[];
 }
 
 export interface ServiceCategory extends Service {

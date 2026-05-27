@@ -7,6 +7,7 @@ import FAQSection from '@/components/sections/FAQSection';
 import CTASection from '@/components/sections/CTASection';
 import MapSection from '@/components/sections/MapSection';
 import RelatedBlogPosts from '@/components/sections/RelatedBlogPosts';
+import PeopleAlsoAskSection from '@/components/sections/PeopleAlsoAskSection';
 import Link from 'next/link';
 import { allServices, siteConfig } from '@/data';
 import {
@@ -149,6 +150,14 @@ export default async function ConditionPage({ params }: PageProps) {
         heading="Common Questions About This Condition"
         faqs={conditionData.faqs}
       />
+
+      {/* People Also Ask Section */}
+      {conditionData.paa && conditionData.paa.length > 0 && (
+        <PeopleAlsoAskSection
+          conditionName={conditionData.name}
+          items={conditionData.paa}
+        />
+      )}
 
       {/* Map Section */}
       <MapSection

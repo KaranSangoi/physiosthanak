@@ -751,6 +751,20 @@ export const services: ServiceCategory[] = [
             answer: 'Yes, significantly. Proper posture, regular exercise, strong core muscles, proper lifting technique, and regular movement breaks prevent most back pain. Preventive exercises are highly effective.',
           },
         ],
+        paa: [
+          {
+            question: 'Is physiotherapy effective for lower back pain?',
+            answer: 'Yes, physiotherapy is one of the most effective treatments for lower back pain. Clinical studies show that targeted exercises, manual therapy, and posture correction resolve 80-90% of mechanical back pain without surgery. A qualified physiotherapist identifies the root cause — whether it is a muscle imbalance, disc issue, or postural problem — and creates a personalised treatment plan that provides lasting relief rather than temporary pain masking.',
+          },
+          {
+            question: 'How long does it take to recover from lower back pain with physiotherapy?',
+            answer: 'Most patients with acute lower back pain see significant improvement within 2-4 weeks of consistent physiotherapy. Chronic lower back pain that has persisted for months may require 6-12 weeks of treatment. Recovery speed depends on the underlying cause, severity, how long the pain has been present, and adherence to prescribed home exercises. Early intervention leads to faster recovery — delaying treatment often makes the condition harder to treat.',
+          },
+          {
+            question: 'Should I rest or exercise when I have lower back pain?',
+            answer: 'Controlled movement and gentle exercise are better than bed rest for most types of lower back pain. Research consistently shows that prolonged bed rest weakens muscles and slows recovery. Your physiotherapist will prescribe specific exercises that are safe for your condition — such as pelvic tilts, gentle stretches, and core stabilisation movements — that reduce pain while strengthening the muscles that support your spine.',
+          },
+        ],
       },
       {
         slug: 'sciatica',
@@ -804,6 +818,20 @@ export const services: ServiceCategory[] = [
             answer: 'No, most sciatica resolves with physiotherapy without surgery. Surgery is considered only if severe symptoms persist after 6-12 weeks of conservative treatment and imaging confirms nerve compression.',
           },
         ],
+        paa: [
+          {
+            question: 'What is the fastest way to cure sciatica?',
+            answer: 'The fastest path to sciatica relief combines specific nerve gliding exercises, manual therapy to release the piriformis muscle and mobilise the spine, and activity modifications that reduce nerve irritation. Most patients experience significant pain reduction within 1-2 weeks when following a structured physiotherapy programme. Avoiding prolonged sitting, applying ice to the lower back, and performing gentle stretches like the knee-to-chest stretch help manage symptoms between sessions.',
+          },
+          {
+            question: 'Can sciatica be permanently cured?',
+            answer: 'Yes, most cases of sciatica can be permanently resolved with proper treatment. The key is addressing the root cause — whether it is a herniated disc, piriformis syndrome, or spinal stenosis — rather than just managing symptoms. Physiotherapy strengthens the muscles that support the spine, improves flexibility, and corrects movement patterns that caused the nerve compression. About 80-90% of sciatica patients recover fully without surgery when they follow a comprehensive rehabilitation programme.',
+          },
+          {
+            question: 'What should you not do with sciatica?',
+            answer: 'Avoid prolonged sitting (especially on soft sofas), heavy lifting with a rounded back, high-impact activities like running or jumping, and toe-touch stretches that flex the spine forward. These movements increase pressure on the sciatic nerve and worsen symptoms. Also avoid complete bed rest — while short rest periods are fine, prolonged inactivity weakens muscles and slows recovery. Your physiotherapist will guide you on which specific movements to avoid based on your condition.',
+          },
+        ],
       },
       {
         slug: 'slipped-disc',
@@ -855,6 +883,20 @@ export const services: ServiceCategory[] = [
           {
             question: 'How long until I can return to normal activities with slipped disc?',
             answer: 'Most patients gradually return to normal activities within 6-12 weeks. Progressive loading and activity modification allows gradual increase in activity as healing progresses.',
+          },
+        ],
+        paa: [
+          {
+            question: 'What is the best treatment for a slipped disc?',
+            answer: 'Physiotherapy is the most effective first-line treatment for slipped discs, with over 80% of patients recovering without surgery. Treatment includes spinal mobilization, core stabilization exercises, and nerve gliding techniques. At PhysioSthanak in Borivali, Dr. Shiva Jain Sangoi uses evidence-based McKenzie method and progressive loading protocols to reduce disc herniation symptoms within 4-8 weeks.',
+          },
+          {
+            question: 'Can a slipped disc heal on its own?',
+            answer: 'Yes, many slipped discs heal naturally as the body reabsorbs herniated disc material over 6-12 weeks. However, guided physiotherapy significantly accelerates recovery and prevents recurrence. Without proper rehabilitation, compensatory movement patterns develop that increase risk of future disc injuries and chronic pain.',
+          },
+          {
+            question: 'What are the warning signs of a serious slipped disc?',
+            answer: 'Seek immediate medical attention if you experience loss of bladder or bowel control, progressive leg weakness, or numbness in the saddle area — these indicate cauda equina syndrome requiring emergency care. Most slipped disc symptoms like leg pain, tingling, and mild weakness respond well to physiotherapy without surgical intervention.',
           },
         ],
       },
@@ -1072,6 +1114,20 @@ export const services: ServiceCategory[] = [
             answer: 'Severe cervical myelopathy causing progressive neurological symptoms may need surgery. However, most spondylosis cases remain stable with proper physiotherapy management.',
           },
         ],
+        paa: [
+          {
+            question: 'Is cervical spondylosis a serious condition?',
+            answer: 'Cervical spondylosis is common age-related wear affecting neck vertebrae and discs, present in over 85% of people above age 60. Most cases are manageable with physiotherapy and lifestyle modifications. It becomes serious only when nerve compression causes progressive weakness or myelopathy symptoms, which is rare. At PhysioSthanak in Borivali, Dr. Shiva Jain Sangoi assesses severity and creates targeted treatment plans.',
+          },
+          {
+            question: 'What is the best exercise for cervical spondylosis?',
+            answer: 'Gentle neck isometrics, chin tucks, and scapular stabilization exercises are most effective for cervical spondylosis. These strengthen deep neck flexors without stressing degenerative segments. Avoid aggressive neck rotations or heavy overhead exercises. A physiotherapist should prescribe specific exercises based on your imaging findings and symptom patterns.',
+          },
+          {
+            question: 'Can cervical spondylosis cause dizziness and headaches?',
+            answer: 'Yes, cervical spondylosis frequently causes cervicogenic headaches and dizziness through neck muscle tension and restricted blood flow. These symptoms respond well to manual therapy, postural correction, and targeted neck exercises. Physiotherapy addresses the cervical spine dysfunction causing these symptoms rather than just masking them with medication.',
+          },
+        ],
       },
       {
         slug: 'frozen-shoulder',
@@ -1123,6 +1179,20 @@ export const services: ServiceCategory[] = [
           {
             question: 'Can I do normal activities with frozen shoulder?',
             answer: 'Activities within pain limits should be continued. Gentle movement and progressive exercises accelerate recovery. Avoiding all activity delays healing.',
+          },
+        ],
+        paa: [
+          {
+            question: 'What is the fastest way to cure frozen shoulder?',
+            answer: 'The fastest recovery from frozen shoulder combines physiotherapy with progressive mobilization techniques. Stretching exercises, joint mobilization, and heat therapy can reduce recovery time from 18-36 months to 3-6 months. At PhysioSthanak in Borivali, Dr. Shiva Jain Sangoi uses Maitland mobilization and end-range stretching protocols that restore shoulder range of motion systematically.',
+          },
+          {
+            question: 'What are the 3 stages of frozen shoulder?',
+            answer: 'Frozen shoulder progresses through three stages: the Freezing stage (2-9 months) with increasing pain and stiffness, the Frozen stage (4-12 months) where pain plateaus but stiffness peaks, and the Thawing stage (5-24 months) with gradual improvement. Physiotherapy during the freezing stage can significantly shorten the overall duration and prevent severe range-of-motion loss.',
+          },
+          {
+            question: 'Should you force a frozen shoulder to move?',
+            answer: 'Never force a frozen shoulder through extreme pain — this can worsen inflammation and slow recovery. Instead, perform gentle sustained stretches at end-range within tolerable discomfort. A physiotherapist determines the optimal intensity and progression for each stage. Aggressive manipulation without proper technique can cause tissue damage and increased capsular scarring.',
           },
         ],
       },
