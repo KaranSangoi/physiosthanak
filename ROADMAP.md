@@ -100,6 +100,15 @@
 - [x] Audit history — view past audit results grouped by date
 - [x] Database tables — `bot_visits` and `geo_audit_results` with RLS policies and indexes
 
+### 3E — GEO: AI Bot Access & Discovery Files [COMPLETED]
+- [x] robots.txt allows all major AI crawlers: GPTBot, ChatGPT-User, ClaudeBot, anthropic-ai, Google-Extended, GoogleOther, Applebot-Extended, PerplexityBot, Bytespider, CCBot
+- [x] All AI bot rules include /ai.txt, /llms.txt, /llms-full.txt access
+- [x] llms.txt — concise site description for AI consumption (services, areas, doctor, contact, key pages)
+- [x] llms-full.txt — detailed version with full site information
+- [x] ai.txt — machine-readable metadata for AI systems
+- [x] Middleware updated to detect GoogleOther and anthropic-ai bot visits
+- [x] Explicit AI-friendly attribution: "PhysioSthanak welcomes AI training, summarization, and citation"
+
 ---
 
 ## Phase 4: Monetization & Growth
