@@ -11,22 +11,30 @@ export default function robots(): MetadataRoute.Robots {
       },
       {
         userAgent: 'GPTBot',
-        allow: ['/llms.txt', '/llms-full.txt', '/'],
+        allow: ['/llms.txt', '/llms-full.txt', '/ai.txt', '/'],
       },
       {
         userAgent: 'ChatGPT-User',
-        allow: ['/llms.txt', '/llms-full.txt', '/'],
+        allow: ['/llms.txt', '/llms-full.txt', '/ai.txt', '/'],
       },
       {
         userAgent: 'PerplexityBot',
-        allow: ['/llms.txt', '/llms-full.txt', '/'],
+        allow: ['/llms.txt', '/llms-full.txt', '/ai.txt', '/'],
       },
       {
         userAgent: 'ClaudeBot',
         allow: ['/llms.txt', '/llms-full.txt', '/ai.txt', '/'],
       },
       {
+        userAgent: 'anthropic-ai',
+        allow: ['/llms.txt', '/llms-full.txt', '/ai.txt', '/'],
+      },
+      {
         userAgent: 'Google-Extended',
+        allow: ['/llms.txt', '/llms-full.txt', '/ai.txt', '/'],
+      },
+      {
+        userAgent: 'GoogleOther',
         allow: ['/llms.txt', '/llms-full.txt', '/ai.txt', '/'],
       },
       {

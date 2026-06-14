@@ -12,6 +12,8 @@ const AI_BOT_PATTERNS: { pattern: RegExp; name: string }[] = [
   { pattern: /Applebot-Extended/i, name: 'Applebot-Extended' },
   { pattern: /Bytespider/i, name: 'Bytespider' },
   { pattern: /CCBot/i, name: 'CCBot' },
+  { pattern: /GoogleOther/i, name: 'GoogleOther' },
+  { pattern: /anthropic-ai/i, name: 'anthropic-ai' },
 ];
 
 function detectAIBot(userAgent: string): string | null {
