@@ -23,7 +23,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: {
     default: `${siteConfig.businessName} | ${siteConfig.tagline}`,
-    template: `%s | ${siteConfig.businessName}`,
+    template: `%s | 5.0★ ${siteConfig.businessName}`,
   },
   description: `${siteConfig.tagline}. Expert physiotherapy services by ${siteConfig.doctorName} in Borivali, Mumbai. Book your consultation today.`,
   keywords: [
@@ -160,7 +160,7 @@ export default function RootLayout({
                   aggregateRating: {
                     '@type': 'AggregateRating',
                     ratingValue: '5.0',
-                    reviewCount: '54',
+                    reviewCount: '57',
                     bestRating: '5',
                     worstRating: '1',
                   },

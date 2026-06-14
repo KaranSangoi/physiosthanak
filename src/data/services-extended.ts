@@ -7,7 +7,7 @@ export const servicesExtended: ServiceCategory[] = [
     whatIs: 'Post-surgery rehabilitation is a structured physiotherapy programme that begins after a surgical procedure to restore strength, mobility, and function. It includes progressive exercises, pain management, scar tissue mobilisation, and functional retraining — all designed to help patients recover safely and return to daily activities faster than with rest alone.',
     description: 'Comprehensive post-operative rehabilitation to promote healing, restore function, and accelerate recovery after surgery.',
     keywords: ['post-surgery rehabilitation', 'post-operative therapy', 'surgical recovery', 'rehabilitation after surgery', 'Borivali post-surgery'],
-    metaDescription: 'Post-surgery rehabilitation in Borivali. Expert physiotherapy for safe, effective surgical recovery.',
+    metaDescription: 'Post-surgery rehabilitation in Borivali. 5.0★ rated. Knee, hip, spine & ACL surgery recovery by Dr. Shiva Jain (MPTh Ortho). Book today.',
     h1: 'Post-Surgery Rehabilitation Services',
     heroDescription: 'Expert post-surgery rehabilitation in Borivali for safe healing, pain management, and complete functional recovery.',
     image: '/images/services/post-surgery-rehabilitation.jpg',
@@ -62,7 +62,7 @@ export const servicesExtended: ServiceCategory[] = [
         externalLink: { url: 'https://en.wikipedia.org/wiki/Knee_replacement', text: 'knee replacement' },
         description: 'Post-operative rehabilitation following knee replacement surgery for restoration of mobility and function.',
         keywords: ['knee replacement rehab', 'total knee replacement recovery', 'knee replacement physiotherapy', 'post-TKR therapy', 'Borivali knee replacement'],
-        metaDescription: 'Knee replacement rehabilitation in Borivali. Expert post-surgery therapy for mobility and strength recovery.',
+        metaDescription: 'Knee replacement rehab in Borivali. 5.0★ rated. Expert post-surgery recovery by Dr. Shiva Jain (MPTh Ortho). Home visits available. Book now.',
         h1: 'Knee Replacement Rehabilitation & Recovery',
         heroDescription: 'Expert knee replacement rehabilitation in Borivali for safe healing, restored mobility, and complete functional recovery.',
         benefits: [
