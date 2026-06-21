@@ -18,7 +18,7 @@ const AreaCard = dynamic(() => import('@/components/sections/AreaCard'));
 export const metadata: Metadata = {
   title: 'Best Physiotherapist in Borivali | 5.0★ Rated | PhysioSthanak',
   description:
-    'Top-rated physiotherapy clinic in Borivali West by Dr. Shiva Jain. 5.0★ on Google, 9+ years experience, 8000+ patients treated. Clinic & home visits. Book now.',
+    'Best physiotherapist in Borivali West. Dr. Shiva Jain — female physiotherapist, 5.0★ Google, 9+ yrs, 8000+ cases. Clinic & home service. Book now.',
   keywords: [
     'physiotherapy Borivali',
     'physiotherapist Borivali',

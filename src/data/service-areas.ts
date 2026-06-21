@@ -28,8 +28,11 @@ export const serviceAreas: ServiceArea[] = [
       'Borivali East physio',
       'physical therapy Borivali',
       'home physiotherapy Borivali',
+      'lady physiotherapist in Borivali',
+      'female physiotherapist Borivali',
+      'physiotherapist near me home service',
     ],
-    metaDescription: 'Expert physiotherapy in Borivali by Dr. Shiva Jain Sangoi, MPTh Ortho. Clinic & home visits for pain relief, sports injuries & rehab. Book at PhysioSthanak.',
+    metaDescription: 'Lady physiotherapist in Borivali — Dr. Shiva Jain, MPTh Ortho, FIFA certified. 5.0★ clinic & home service for pain, sports injuries & rehab. Book now.',
     h1: 'Physiotherapy Services in Borivali',
     heroDescription: 'PhysioSthanak is Borivali\'s trusted physiotherapy clinic led by Dr. Shiva Jain Sangoi, MPTh Ortho with FIFA Diploma credentials. We deliver expert orthopaedic rehabilitation, sports injury treatment, and home visit physiotherapy services across Borivali West and East.',
     benefits: [
