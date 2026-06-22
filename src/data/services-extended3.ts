@@ -4,7 +4,7 @@ export const servicesExtended3: ServiceCategory[] = [
   {
     slug: 'pediatric-physiotherapy',
     name: 'Pediatric Physiotherapy',
-    whatIs: 'Pediatric physiotherapy is specialised treatment for infants, children, and adolescents with developmental, neurological, or musculoskeletal conditions. Pediatric physiotherapists use play-based therapy, developmental exercises, and family education to help children achieve motor milestones, improve coordination, and manage conditions like cerebral palsy, developmental delay, and scoliosis.',
+    whatIs: 'Pediatric physiotherapy is specialised treatment for infants, children, and adolescents with developmental, neurological, or musculoskeletal conditions. A child physiotherapist uses play-based therapy, developmental exercises, and family education to help children achieve motor milestones, improve coordination, and manage conditions like cerebral palsy, developmental delay, and scoliosis.',
     description: 'Specialized physiotherapy for children addressing developmental delays, cerebral palsy, and pediatric conditions.',
     keywords: ['child physiotherapist near me', 'child physiotherapist', 'pediatric physiotherapist near me', 'pediatric physiotherapy', 'child physiotherapy', 'developmental delay', 'cerebral palsy', 'Borivali pediatric physio'],
     metaDescription: 'Child physiotherapist in Borivali. 5.0★ rated pediatric physio clinic. Developmental delays, cerebral palsy & sports injuries. Book now.',
@@ -15,7 +15,7 @@ export const servicesExtended3: ServiceCategory[] = [
     benefits: [
       {
         title: 'Optimized Development & Milestones',
-        description: 'Early intervention promotes optimal motor development and achievement of developmental milestones. Timely treatment prevents delays from worsening.',
+        description: 'Early intervention by a qualified child physiotherapist promotes optimal motor development and achievement of milestones. Timely treatment prevents delays from worsening.',
       },
       {
         title: 'Improved Functional Independence',
@@ -29,7 +29,7 @@ export const servicesExtended3: ServiceCategory[] = [
     whyPoints: [
       {
         title: 'Early Intervention Significantly Improves Outcomes',
-        description: 'Pediatric conditions respond best to early intervention. Delays in treatment reduce recovery potential and long-term outcomes.',
+        description: 'Pediatric conditions respond best to early intervention by an experienced child physiotherapist. Delays in seeking treatment reduce recovery potential and long-term outcomes.',
       },
       {
         title: 'Brain Plasticity Enables Development',
@@ -42,8 +42,8 @@ export const servicesExtended3: ServiceCategory[] = [
     ],
     faqs: [
       {
-        question: 'When should I seek physiotherapy for my child?',
-        answer: 'Consult if your child is delayed in developmental milestones, has movement problems, muscle tone abnormalities, or diagnosed conditions. Early assessment is important.',
+        question: 'When should I take my child to a child physiotherapist?',
+        answer: 'Consult a child physiotherapist if your child is delayed in developmental milestones, has movement problems, muscle tone abnormalities, or diagnosed conditions. Early assessment is important.',
       },
       {
         question: 'How often does my child need physiotherapy?',
@@ -272,7 +272,7 @@ export const servicesExtended3: ServiceCategory[] = [
   {
     slug: 'womens-health-physiotherapy',
     name: 'Women\'s Health Physiotherapy',
-    whatIs: 'Women\'s health physiotherapy addresses conditions unique to women across all life stages — from pregnancy and postpartum recovery to menopause-related issues. Treatment includes pelvic floor strengthening, prenatal exercise programmes, postnatal rehabilitation, diastasis recti correction, and PCOS management through targeted physical therapy.',
+    whatIs: 'Women\'s health physiotherapy addresses conditions unique to women across all life stages — from pregnancy and postpartum recovery to menopause-related issues. A lady physiotherapist like Dr. Shiva Jain understands these needs first-hand, creating a comfortable environment for sensitive treatments. Care includes pelvic floor strengthening, prenatal exercise programmes, postnatal rehabilitation, diastasis recti correction, and PCOS management through targeted physical therapy.',
     description: 'Specialized physiotherapy addressing women\'s unique health needs including prenatal, postnatal, and pelvic floor care.',
     keywords: ['lady physiotherapist', 'female physiotherapist', 'lady physiotherapist near me', 'women\'s health physiotherapy', 'pelvic floor physiotherapist near me', 'pelvic floor therapy', 'prenatal physiotherapy', 'postnatal rehabilitation', 'Borivali women\'s health'],
     metaDescription: 'Lady physiotherapist in Borivali. 5.0★ rated female physio. Prenatal, postnatal, pelvic floor & PCOS care by Dr. Shiva Jain. Book now.',
@@ -291,7 +291,7 @@ export const servicesExtended3: ServiceCategory[] = [
       },
       {
         title: 'Pelvic Floor Optimization',
-        description: 'Pelvic floor training improves continence, sexual function, and core stability. Most pelvic floor issues improve significantly with therapy.',
+        description: 'Pelvic floor training by a qualified female physiotherapist improves continence, sexual function, and core stability. Many women prefer a lady physiotherapist for these intimate treatments, and most pelvic floor issues improve significantly with therapy.',
       },
     ],
     whyPoints: [
@@ -301,7 +301,7 @@ export const servicesExtended3: ServiceCategory[] = [
       },
       {
         title: 'Postnatal Recovery Is Often Overlooked',
-        description: 'Many women don\'t receive proper postnatal rehabilitation. Early appropriate rehabilitation significantly improves recovery.',
+        description: 'Many women don\'t receive proper postnatal rehabilitation, partly because they can\'t find a lady physiotherapist nearby. With a female physio like Dr. Shiva, early rehabilitation significantly improves recovery outcomes.',
       },
       {
         title: 'Pelvic Floor Issues Are Common & Treatable',
@@ -320,6 +320,10 @@ export const servicesExtended3: ServiceCategory[] = [
       {
         question: 'Can physiotherapy treat incontinence?',
         answer: 'Yes, pelvic floor physiotherapy effectively treats incontinence. Success rates exceed 80% with proper compliance.',
+      },
+      {
+        question: 'Is there a lady physiotherapist available at PhysioSthanak?',
+        answer: 'Yes. Dr. Shiva Jain Sangoi is a qualified lady physiotherapist with MPTh (Ortho) and FIFA Diploma credentials. She treats all women\'s health conditions including pelvic floor, prenatal, postnatal, and PCOS-related issues at the clinic and via home visits.',
       },
     ],
     conditions: [
@@ -435,8 +439,8 @@ export const servicesExtended3: ServiceCategory[] = [
         parentCategory: 'womens-health-physiotherapy',
         externalLink: { url: 'https://en.wikipedia.org/wiki/Pelvic_floor', text: 'pelvic floor' },
         description: 'Specialized pelvic floor dysfunction treatment addressing incontinence and pelvic pain.',
-        keywords: ['pelvic floor therapy', 'pelvic floor dysfunction', 'incontinence treatment', 'pelvic pain', 'Borivali pelvic floor'],
-        metaDescription: 'Pelvic floor therapy in Borivali. Expert treatment for incontinence and pelvic floor dysfunction.',
+        keywords: ['pelvic floor therapy', 'pelvic floor physiotherapist near me', 'pelvic floor dysfunction', 'incontinence treatment', 'pelvic pain', 'lady physiotherapist pelvic floor', 'Borivali pelvic floor'],
+        metaDescription: 'Pelvic floor physiotherapist in Borivali — lady physiotherapist Dr. Shiva Jain. Expert treatment for incontinence & pelvic floor dysfunction. Book now.',
         h1: 'Pelvic Floor Therapy & Dysfunction Treatment',
         heroDescription: 'Expert pelvic floor therapy in Borivali treating incontinence and pelvic floor dysfunction effectively.',
         benefits: [
@@ -456,7 +460,7 @@ export const servicesExtended3: ServiceCategory[] = [
         whyPoints: [
           {
             title: 'Pelvic Floor Dysfunction Is Common & Often Undiagnosed',
-            description: 'Many women suffer unnecessarily with pelvic floor problems. Proper assessment and treatment resolve most cases.',
+            description: 'Many women suffer unnecessarily with pelvic floor problems because they can\'t find a pelvic floor physiotherapist nearby. A lady physiotherapist experienced in pelvic floor assessment can properly diagnose and treat most cases.',
           },
           {
             title: 'Conservative Treatment First Line',

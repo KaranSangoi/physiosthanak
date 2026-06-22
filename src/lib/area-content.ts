@@ -17,7 +17,7 @@ const heroDescriptionPool: ((area: string, sub: string) => string)[] = [
   (area, sub) =>
     `PhysioSthanak brings professional physiotherapy services to ${sub}, ${area}. From sports injury recovery to chronic pain management, Dr. Shiva Jain Sangoi provides evidence-based treatment with FIFA-certified sports rehabilitation expertise.`,
   (area, sub) =>
-    `Residents of ${sub}, ${area} can now access top-quality physiotherapy care at PhysioSthanak. Our clinic offers comprehensive musculoskeletal rehabilitation, post-surgical recovery, and home visit services under Dr. Shiva Jain Sangoi.`,
+    `Residents of ${sub}, ${area} can now access top-quality physiotherapy care at PhysioSthanak. Our clinic offers comprehensive musculoskeletal rehabilitation, post-surgical recovery, and physiotherapy at home under Dr. Shiva Jain Sangoi, a qualified lady physiotherapist.`,
   (area, sub) =>
     `Get effective physiotherapy treatment near ${sub}, ${area} at PhysioSthanak. Dr. Shiva Jain Sangoi combines nine years of clinical experience with modern rehabilitation methods to deliver lasting pain relief and faster recovery.`,
   (area, sub) =>
@@ -116,7 +116,7 @@ const benefitDescriptionPool: ((area: string, sub: string) => string)[] = [
   (area, sub) =>
     `At PhysioSthanak, every patient in ${sub}, ${area} receives a customized treatment plan designed after a thorough assessment. Dr. Shiva Jain evaluates your condition, lifestyle, and goals to create a personalized rehabilitation protocol that delivers measurable progress and lasting results.`,
   (area, sub) =>
-    `Patients in ${sub}, ${area} who have difficulty travelling can benefit from PhysioSthanak's professional home visit service. Dr. Shiva Jain brings the full range of physiotherapy techniques directly to your doorstep, ensuring uninterrupted care for elderly and post-surgery patients.`,
+    `Patients in ${sub}, ${area} who have difficulty travelling can benefit from PhysioSthanak's physiotherapy at home service. Dr. Shiva Jain — a qualified lady physiotherapist — brings the full range of treatment techniques directly to your doorstep, ensuring uninterrupted care for elderly and post-surgery patients.`,
   (area, sub) =>
     `PhysioSthanak employs advanced manual therapy methods including joint mobilization, myofascial release, and trigger point therapy for patients in ${sub}, ${area}. These hands-on techniques, applied by Dr. Shiva Jain, effectively reduce pain and restore normal movement patterns.`,
   (area, sub) =>
@@ -219,7 +219,7 @@ const whyDescriptionPool: ((area: string, sub: string) => string)[] = [
   (area, sub) =>
     `The sports culture in ${sub}, ${area} includes cricket at local grounds, morning joggers in parks, and fitness enthusiasts at neighbourhood gyms. Physiotherapy services ensure these athletes receive professional injury care and performance optimization without leaving their local area.`,
   (area, sub) =>
-    `Senior citizens living independently in ${sub}, ${area} often struggle with falls, joint stiffness, and balance problems. Nearby physiotherapy services, including home visits, ensure that elderly residents maintain their mobility and reduce fall risk through tailored rehabilitation programs.`,
+    `Senior citizens living independently in ${sub}, ${area} often struggle with falls, joint stiffness, and balance problems. PhysioSthanak's physiotherapy at home service ensures that elderly residents maintain their mobility and reduce fall risk through tailored rehabilitation programs delivered by a lady physiotherapist at their doorstep.`,
   (area, sub) =>
     `Mumbai's monsoon season brings increased slip-and-fall injuries, joint pain flare-ups, and humidity-related muscle stiffness for ${sub}, ${area} residents. Local physiotherapy access during these challenging months ensures prompt treatment when weather-related musculoskeletal complaints peak.`,
   (area, sub) =>
@@ -251,8 +251,8 @@ const faqPool: ((area: string, sub: string) => FAQ)[] = [
     answer: `PhysioSthanak provides comprehensive physiotherapy services for ${sub}, ${area} residents including orthopaedic rehabilitation, sports injury treatment, post-surgical recovery, chronic pain management, neurological physiotherapy, and geriatric care. Both clinic-based and home visit options are available.`,
   }),
   (area, sub) => ({
-    question: `Does PhysioSthanak provide home visit physiotherapy in ${sub}, ${area}?`,
-    answer: `Yes, PhysioSthanak offers professional home visit physiotherapy services in ${sub}, ${area}. This is especially beneficial for elderly patients, post-surgery recovery cases, and those with mobility limitations. Call us to schedule a convenient home session with Dr. Shiva Jain.`,
+    question: `Does PhysioSthanak provide physiotherapy at home in ${sub}, ${area}?`,
+    answer: `Yes, PhysioSthanak offers professional physiotherapy at home for ${sub}, ${area} residents. Our home service is especially beneficial for elderly patients, post-surgery recovery cases, and women who prefer a lady physiotherapist for treatment in the comfort of their home. Call us to schedule a session with Dr. Shiva Jain.`,
   }),
   (area, sub) => ({
     question: `How far is PhysioSthanak's clinic from ${sub}, ${area}?`,
@@ -455,6 +455,9 @@ export function generateSubAreaContent(
       `home physiotherapy ${subAreaName}`,
       `sports injury treatment ${subAreaName}`,
       `back pain physio ${subAreaName}`,
+      `lady physiotherapist in ${subAreaName}`,
+      `physiotherapist home service ${subAreaName}`,
+      `physiotherapy at home ${subAreaName}`,
     ],
     metaDescription: metaDescriptionPool[metaIdx](areaName, subAreaName),
     h1: `Physiotherapy Services in ${subAreaName}`,
