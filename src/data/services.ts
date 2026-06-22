@@ -6,8 +6,8 @@ export const services: ServiceCategory[] = [
     name: 'Physiotherapy',
     whatIs: 'Physiotherapy is a healthcare profession that uses evidence-based physical techniques — including exercise therapy, manual therapy, and electrotherapy — to treat pain, restore movement, and prevent disability. In India, physiotherapists hold BPTh or MPTh degrees and are registered with state councils to practice independently.',
     description: 'Comprehensive physiotherapy services for pain relief, mobility improvement, and recovery from injuries and conditions.',
-    keywords: ['physiotherapy', 'physical therapy', 'rehabilitation', 'pain relief', 'mobility improvement', 'Borivali physiotherapy'],
-    metaDescription: 'Best physiotherapy in Borivali West. 5.0★ rated, 8000+ cases by Dr. Shiva Jain (MPTh Ortho). Pain relief, rehab & recovery. Book today.',
+    keywords: ['physiotherapy', 'physiotherapy near me', 'physiotherapist near me', 'physical therapy', 'rehabilitation', 'pain relief', 'mobility improvement', 'Borivali physiotherapy'],
+    metaDescription: 'Best physiotherapy clinic in Borivali West. 5.0★, 8000+ cases. Dr. Shiva Jain (MPTh Ortho, FIFA). Clinic & home service. Book now.',
     h1: 'Professional Physiotherapy Services in Borivali',
     heroDescription: 'Comprehensive physiotherapy treatment for pain relief, injury recovery, and improved mobility in Borivali with proven results.',
     image: '/images/services/physiotherapy.jpg',
@@ -59,18 +59,18 @@ export const services: ServiceCategory[] = [
   {
     slug: 'home-visit-physiotherapy',
     name: 'Home Visit Physiotherapy',
-    whatIs: 'Home visit physiotherapy is professional rehabilitation treatment delivered at the patient\'s residence by a qualified physiotherapist. It is ideal for post-surgery patients, elderly individuals, bedridden patients, and anyone who cannot travel to a clinic. The therapist brings portable equipment and designs exercises suited to the home environment.',
+    whatIs: 'Physiotherapy at home is professional rehabilitation treatment delivered at the patient\'s residence by a qualified physiotherapist. This home service is ideal for post-surgery patients, elderly individuals, bedridden patients, and anyone who cannot travel to a clinic. The therapist brings portable equipment and designs exercises suited to the home environment.',
     description: 'Professional physiotherapy treatment delivered to your home for convenience, comfort, and personalized care without travel stress.',
-    keywords: ['physiotherapist near me home service', 'physiotherapist home service', 'home visit physiotherapy', 'home physiotherapy', 'in-home physical therapy', 'elderly care', 'post-surgery home therapy', 'Borivali home physiotherapy'],
+    keywords: ['physiotherapy at home', 'physiotherapy at home near me', 'physiotherapist near me home service', 'physiotherapist home service', 'home visit physiotherapy', 'home physiotherapy', 'in-home physical therapy', 'elderly care', 'post-surgery home therapy', 'Borivali home physiotherapy'],
     metaDescription: 'Physiotherapist home service in Borivali, Dahisar, Kandivali & Malad. 5.0★ rated home visit physio. Elderly & post-surgery care. Book now.',
     h1: 'Physiotherapist Home Service & Home Visit Physiotherapy in Borivali',
-    heroDescription: 'Professional physiotherapy delivered to your home in Borivali with expert care, convenience, and personalized treatment plans.',
+    heroDescription: 'Expert physiotherapy at home in Borivali, Dahisar, Kandivali & Malad. Dr. Shiva Jain delivers professional home visit physiotherapy with personalised care at your doorstep.',
     image: '/images/services/home-visit-physiotherapy.jpg',
     externalLink: { url: 'https://en.wikipedia.org/wiki/Home_care', text: 'home care' },
     benefits: [
       {
         title: 'Ultimate Convenience & Comfort',
-        description: 'Receive expert physiotherapy without traveling to a clinic. Our home-based sessions eliminate travel stress, especially beneficial for elderly patients, post-surgery cases, and bedridden individuals. Treatment happens in a familiar, comfortable environment.',
+        description: 'Receive expert physiotherapy at home without traveling to a clinic. Our home service sessions eliminate travel stress, especially beneficial for elderly patients, post-surgery cases, and bedridden individuals. Treatment happens in a familiar, comfortable environment.',
       },
       {
         title: 'Personalized Home Environment Assessment',
@@ -105,8 +105,8 @@ export const services: ServiceCategory[] = [
         answer: 'Frequency depends on your condition severity and recovery phase. Acute cases may need 3-4 sessions per week, while maintenance may require 1-2 sessions weekly. We recommend daily home exercises between professional sessions.',
       },
       {
-        question: 'Can home physiotherapy be as effective as clinic treatment?',
-        answer: 'Yes, home physiotherapy is equally effective when personalized properly. The main advantage is convenience and environmental relevance. However, clinic treatment may be preferred initially for complex assessments requiring equipment.',
+        question: 'Is physiotherapy at home as effective as clinic treatment?',
+        answer: 'Yes, physiotherapy at home is equally effective when personalised properly. Our home service provides the same evidence-based treatment in your own environment. However, clinic treatment may be preferred initially for complex assessments requiring specialised equipment.',
       },
     ],
     conditions: [
