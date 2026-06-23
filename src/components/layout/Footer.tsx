@@ -18,6 +18,103 @@ const services = [
   { name: 'Back Pain Treatment', href: '/services/back-pain-physiotherapy' },
   { name: 'Neck Pain Treatment', href: '/services/neck-pain-physiotherapy' },
   { name: 'Post-Surgery Rehab', href: '/services/post-surgery-rehabilitation' },
+  { name: 'Neurological Physiotherapy', href: '/services/neurological-physiotherapy' },
+  { name: 'Orthopedic Physiotherapy', href: '/services/orthopedic-physiotherapy' },
+  { name: 'Pediatric Physiotherapy', href: '/services/pediatric-physiotherapy' },
+  { name: "Women's Health", href: '/services/womens-health-physiotherapy' },
+  { name: 'Hand & Wrist Therapy', href: '/services/hand-physiotherapy' },
+  { name: 'Online Physiotherapy', href: '/services/online-physiotherapy' },
+];
+
+const serviceAreas = [
+  {
+    name: 'Borivali',
+    slug: 'borivali',
+    subAreas: [
+      { name: 'Borivali West', slug: 'borivali-west' },
+      { name: 'Borivali East', slug: 'borivali-east' },
+      { name: 'IC Colony', slug: 'ic-colony' },
+      { name: 'Yogi Nagar', slug: 'yogi-nagar' },
+      { name: 'Vazira Naka', slug: 'vazira-naka' },
+      { name: 'Gorai', slug: 'gorai' },
+      { name: 'Eksar', slug: 'eksar' },
+      { name: 'MHB Colony', slug: 'mhb-colony' },
+      { name: 'Ashok Nagar', slug: 'ashok-nagar' },
+      { name: 'Chikoowadi', slug: 'chikoowadi' },
+      { name: 'Maharashtra Nagar', slug: 'maharashtra-nagar' },
+      { name: 'Daulat Nagar', slug: 'daulat-nagar' },
+      { name: 'Saibaba Nagar', slug: 'saibaba-nagar' },
+      { name: 'Shimpoli', slug: 'shimpoli' },
+      { name: 'Rajendra Nagar', slug: 'rajendra-nagar' },
+      { name: 'Kastur Park', slug: 'kastur-park' },
+      { name: 'LIC Colony', slug: 'lic-colony' },
+      { name: 'Mandapeshwar', slug: 'mandapeshwar' },
+      { name: 'Kajupada', slug: 'kajupada' },
+      { name: 'Magathane', slug: 'magathane' },
+      { name: 'Asha Nagar', slug: 'asha-nagar' },
+      { name: 'Dattapada', slug: 'dattapada' },
+    ],
+  },
+  {
+    name: 'Dahisar',
+    slug: 'dahisar',
+    subAreas: [
+      { name: 'Dahisar West', slug: 'dahisar-west' },
+      { name: 'Dahisar East', slug: 'dahisar-east' },
+      { name: 'Kandarpada', slug: 'kandarpada' },
+      { name: 'Mhatre Wadi', slug: 'mhatre-wadi' },
+      { name: 'Parbat Nagar', slug: 'parbat-nagar' },
+      { name: 'Ashok Van', slug: 'ashok-van' },
+      { name: 'Ekta Nagar', slug: 'ekta-nagar' },
+      { name: 'Shanti Nagar', slug: 'shanti-nagar' },
+      { name: 'Anand Nagar', slug: 'anand-nagar' },
+      { name: 'Maratha Colony', slug: 'maratha-colony' },
+      { name: 'Rawalpada', slug: 'rawalpada' },
+      { name: 'Gokul Nagar', slug: 'gokul-nagar' },
+      { name: 'Shailendra Nagar', slug: 'shailendra-nagar' },
+      { name: 'Ketkipada', slug: 'ketkipada' },
+      { name: 'Ovaripada', slug: 'ovaripada' },
+    ],
+  },
+  {
+    name: 'Kandivali',
+    slug: 'kandivali',
+    subAreas: [
+      { name: 'Kandivali West', slug: 'kandivali-west' },
+      { name: 'Kandivali East', slug: 'kandivali-east' },
+      { name: 'Mahavir Nagar', slug: 'mahavir-nagar' },
+      { name: 'Dahanukar Wadi', slug: 'dahanukar-wadi' },
+      { name: 'Charkop', slug: 'charkop' },
+      { name: 'Parekh Nagar', slug: 'parekh-nagar' },
+      { name: 'Gandhi Nagar', slug: 'gandhi-nagar' },
+      { name: 'Kamla Nagar', slug: 'kamla-nagar' },
+      { name: 'Mathuradas Road', slug: 'mathuradas-road' },
+      { name: 'Thakur Village', slug: 'thakur-village' },
+      { name: 'Lokhandwala Township', slug: 'lokhandwala-township' },
+      { name: 'Poisar', slug: 'poisar' },
+      { name: 'Hanuman Nagar', slug: 'hanuman-nagar' },
+      { name: 'Samata Nagar', slug: 'samata-nagar' },
+      { name: 'Damu Nagar', slug: 'damu-nagar' },
+      { name: 'Akurli', slug: 'akurli' },
+    ],
+  },
+  {
+    name: 'Malad',
+    slug: 'malad',
+    subAreas: [
+      { name: 'Malad West', slug: 'malad-west' },
+      { name: 'Malad East', slug: 'malad-east' },
+      { name: 'Evershine Nagar', slug: 'evershine-nagar' },
+      { name: 'Orlem', slug: 'orlem' },
+      { name: 'Chincholi Bunder', slug: 'chincholi-bunder' },
+      { name: 'Link Road', slug: 'link-road' },
+      { name: 'Marve Road', slug: 'marve-road' },
+      { name: 'Kurar Village', slug: 'kurar-village' },
+      { name: 'Dindoshi', slug: 'dindoshi' },
+      { name: 'Gokuldham', slug: 'gokuldham' },
+      { name: 'Nivara Nagari', slug: 'nivara-nagari' },
+    ],
+  },
 ];
 
 export default function Footer() {
@@ -140,6 +237,39 @@ export default function Footer() {
                 <span>Leave a Google Review</span>
               </a>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Service Areas Link Block — SEO internal linking */}
+      <div className="border-t border-slate-800">
+        <div className="container-max px-4 sm:px-6 lg:px-8 py-10">
+          <h4 className="text-white font-heading font-bold uppercase tracking-wider mb-8 text-sm text-center">
+            Physiotherapy Near You
+          </h4>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {serviceAreas.map((area) => (
+              <div key={area.slug}>
+                <Link
+                  href={`/service-areas/${area.slug}`}
+                  className="text-white font-heading font-bold text-sm uppercase tracking-wider hover:text-accent-pink transition-colors"
+                >
+                  Physiotherapy in {area.name}
+                </Link>
+                <ul className="mt-3 space-y-1.5">
+                  {area.subAreas.map((sub) => (
+                    <li key={sub.slug}>
+                      <Link
+                        href={`/service-areas/${area.slug}/${sub.slug}`}
+                        className="text-slate-400 text-xs hover:text-accent-pink transition-colors"
+                      >
+                        {sub.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
       </div>
