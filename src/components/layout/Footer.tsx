@@ -263,7 +263,7 @@ export default function Footer() {
                         href={`/service-areas/${area.slug}/${sub.slug}`}
                         className="text-slate-400 text-xs hover:text-accent-pink transition-colors"
                       >
-                        {sub.name}
+                        Physiotherapy in {sub.name}
                       </Link>
                     </li>
                   ))}
