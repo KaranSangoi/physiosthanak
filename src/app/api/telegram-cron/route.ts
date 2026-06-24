@@ -267,26 +267,159 @@ async function fetchOutboxMessages(notionToken: string): Promise<OutboxMessage[]
     const data = await resp.json();
     const blocks = data.results || [];
 
+    // Strategy: collect messages in two ways:
+    // 1. Code blocks (original format — each code block = one message)
+    // 2. Text blocks grouped by "Message —" headings (heading_3)
+    //    Scheduled tasks may write as regular text instead of code blocks.
+
+    let currentMessageBlocks: { ids: string[]; lines: string[] } | null = null;
+    let inPendingSection = false;
+
     for (const block of blocks) {
       const blockType = block.type as string;
+      const blockId = block.id as string;
 
-      // Look for code blocks — these contain Telegram HTML messages
+      // Code blocks: standalone messages (original format)
       if (blockType === 'code') {
+        // Flush any text-based message in progress
+        if (currentMessageBlocks && currentMessageBlocks.lines.length > 0) {
+          messages.push({
+            blockId: currentMessageBlocks.ids[0],
+            text: currentMessageBlocks.lines.join('\n').trim(),
+          });
+          // Store all block IDs so we can delete the full message
+          for (let i = 1; i < currentMessageBlocks.ids.length; i++) {
+            messages.push({ blockId: currentMessageBlocks.ids[i], text: '' });
+          }
+          currentMessageBlocks = null;
+        }
+
         const codeBlock = block.code as { rich_text?: Array<{ plain_text?: string }> };
         const text = (codeBlock?.rich_text || [])
           .map((rt: { plain_text?: string }) => rt.plain_text || '')
           .join('');
 
         if (text.trim()) {
-          messages.push({ blockId: block.id as string, text: text.trim() });
+          messages.push({ blockId, text: text.trim() });
+        }
+        continue;
+      }
+
+      // Track "Pending Messages" section
+      if (blockType === 'heading_2') {
+        const h2Text = extractRichText(block.heading_2);
+        if (h2Text.includes('Pending Messages')) {
+          inPendingSection = true;
+          continue;
+        }
+        // Any other h2 ends the pending section
+        if (inPendingSection) {
+          inPendingSection = false;
+          // Flush current message
+          if (currentMessageBlocks && currentMessageBlocks.lines.length > 0) {
+            messages.push({
+              blockId: currentMessageBlocks.ids[0],
+              text: currentMessageBlocks.lines.join('\n').trim(),
+            });
+            for (let i = 1; i < currentMessageBlocks.ids.length; i++) {
+              messages.push({ blockId: currentMessageBlocks.ids[i], text: '' });
+            }
+            currentMessageBlocks = null;
+          }
+        }
+        continue;
+      }
+
+      if (!inPendingSection) continue;
+
+      // Dividers end current message and pending section
+      if (blockType === 'divider') {
+        if (currentMessageBlocks && currentMessageBlocks.lines.length > 0) {
+          messages.push({
+            blockId: currentMessageBlocks.ids[0],
+            text: currentMessageBlocks.lines.join('\n').trim(),
+          });
+          for (let i = 1; i < currentMessageBlocks.ids.length; i++) {
+            messages.push({ blockId: currentMessageBlocks.ids[i], text: '' });
+          }
+          currentMessageBlocks = null;
+        }
+        // Delete the divider too
+        messages.push({ blockId, text: '' });
+        inPendingSection = false;
+        continue;
+      }
+
+      // "Message —" heading starts a new message group
+      if (blockType === 'heading_3') {
+        const h3Text = extractRichText(block.heading_3);
+        if (h3Text.toLowerCase().includes('message')) {
+          // Flush previous message
+          if (currentMessageBlocks && currentMessageBlocks.lines.length > 0) {
+            messages.push({
+              blockId: currentMessageBlocks.ids[0],
+              text: currentMessageBlocks.lines.join('\n').trim(),
+            });
+            for (let i = 1; i < currentMessageBlocks.ids.length; i++) {
+              messages.push({ blockId: currentMessageBlocks.ids[i], text: '' });
+            }
+          }
+          currentMessageBlocks = { ids: [blockId], lines: [] };
+          continue;
+        }
+      }
+
+      // Collect text from all block types into current message
+      if (currentMessageBlocks) {
+        const text = extractBlockTextForOutbox(block);
+        if (text) {
+          currentMessageBlocks.ids.push(blockId);
+          currentMessageBlocks.lines.push(text);
         }
       }
     }
+
+    // Flush final message
+    if (currentMessageBlocks && currentMessageBlocks.lines.length > 0) {
+      messages.push({
+        blockId: currentMessageBlocks.ids[0],
+        text: currentMessageBlocks.lines.join('\n').trim(),
+      });
+      for (let i = 1; i < currentMessageBlocks.ids.length; i++) {
+        messages.push({ blockId: currentMessageBlocks.ids[i], text: '' });
+      }
+    }
+
+    // Filter out empty placeholder entries used only for deletion
+    // Keep them in the array so deleteBlock cleans them up, but don't send empty text
   } catch (err) {
     console.error('Failed to fetch outbox:', err);
   }
 
   return messages;
+}
+
+function extractRichText(blockContent: { rich_text?: Array<{ plain_text?: string }> } | undefined): string {
+  if (!blockContent?.rich_text) return '';
+  return blockContent.rich_text.map((rt: { plain_text?: string }) => rt.plain_text || '').join('');
+}
+
+function extractBlockTextForOutbox(block: Record<string, unknown>): string {
+  const blockType = block.type as string;
+  const textTypes = ['paragraph', 'bulleted_list_item', 'numbered_list_item', 'heading_1', 'heading_2', 'heading_3', 'callout', 'quote', 'toggle'];
+
+  if (textTypes.includes(blockType)) {
+    const content = block[blockType] as { rich_text?: Array<{ plain_text?: string; annotations?: { bold?: boolean }; href?: string }> } | undefined;
+    const richTexts = content?.rich_text || [];
+    // Convert to simple text, preserving bold as <b> for Telegram HTML
+    return richTexts.map((rt: { plain_text?: string; annotations?: { bold?: boolean }; href?: string }) => {
+      let text = rt.plain_text || '';
+      if (rt.annotations?.bold) text = `<b>${text}</b>`;
+      return text;
+    }).join('');
+  }
+
+  return '';
 }
 
 async function deleteBlock(notionToken: string, blockId: string): Promise<void> {
@@ -387,14 +520,22 @@ export async function GET(request: Request) {
 
   if (outboxMessages.length > 0) {
     let sentCount = 0;
+    let deletedCount = 0;
     for (const msg of outboxMessages) {
-      const sent = await sendTelegram(msg.text);
-      if (sent) {
+      if (msg.text) {
+        // Real message — send via Telegram, then delete the block
+        const sent = await sendTelegram(msg.text);
+        if (sent) {
+          await deleteBlock(notionToken, msg.blockId);
+          sentCount++;
+        }
+      } else {
+        // Empty entry — just a block to clean up (part of a multi-block message)
         await deleteBlock(notionToken, msg.blockId);
-        sentCount++;
+        deletedCount++;
       }
     }
-    results.outbox = `${sentCount}/${outboxMessages.length} outbox messages sent`;
+    results.outbox = `${sentCount} messages sent, ${deletedCount} blocks cleaned`;
   } else {
     results.outbox = 'no pending messages';
   }
