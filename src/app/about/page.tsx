@@ -9,7 +9,7 @@ import { generateBreadcrumbs } from '@/lib/utils';
 import { Award, GraduationCap, Heart, Star, Users, Home, Dumbbell } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'About Dr. Shiva Jain Sangoi | 5.0★ Physiotherapist in Borivali | PhysioSthanak',
+  title: 'About Dr. Shiva Jain Sangoi | 5.0★ Physiotherapist in Borivali',
   description:
     'Dr. Shiva Jain Sangoi — MPTh (Ortho), FIFA-certified physiotherapist in Borivali West. 9+ years experience, 8000+ patients treated, 5.0★ Google rated with 64+ reviews. Meet the expert behind PhysioSthanak.',
   keywords: [

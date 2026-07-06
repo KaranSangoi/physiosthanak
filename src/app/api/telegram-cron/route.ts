@@ -16,7 +16,7 @@ let lastSentDate = '';
 
 // ── Telegram ──────────────────────────────────────────────
 
-async function sendTelegram(message: string): Promise<boolean> {
+async function sendTelegramRaw(text: string): Promise<boolean> {
   if (!TELEGRAM_BOT_TOKEN) {
     console.error('TELEGRAM_BOT_TOKEN not set');
     return false;
@@ -29,7 +29,7 @@ async function sendTelegram(message: string): Promise<boolean> {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           chat_id: TELEGRAM_CHAT_ID,
-          text: message,
+          text,
           parse_mode: 'HTML',
         }),
       },
@@ -37,12 +37,72 @@ async function sendTelegram(message: string): Promise<boolean> {
     if (!resp.ok) {
       const body = await resp.text();
       console.error(`Telegram API error: ${resp.status} - ${body}`);
+      // If HTML parse fails, retry without parse_mode
+      if (resp.status === 400 && body.includes("can't parse")) {
+        console.log('Retrying without HTML parse mode...');
+        const retry = await fetch(
+          `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`,
+          {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              chat_id: TELEGRAM_CHAT_ID,
+              text: text.replace(/<[^>]+>/g, ''),
+            }),
+          },
+        );
+        return retry.ok;
+      }
     }
     return resp.ok;
   } catch (err) {
     console.error('Telegram send failed:', err);
     return false;
   }
+}
+
+// Split long messages at line boundaries to stay under Telegram's 4096 char limit
+function splitMessage(message: string, maxLen = 4000): string[] {
+  if (message.length <= maxLen) return [message];
+
+  const parts: string[] = [];
+  let remaining = message;
+  let partNum = 1;
+
+  while (remaining.length > 0) {
+    if (remaining.length <= maxLen) {
+      parts.push(remaining);
+      break;
+    }
+
+    // Find a good split point (double newline, single newline, or last space)
+    let splitAt = remaining.lastIndexOf('\n\n', maxLen);
+    if (splitAt < maxLen * 0.3) splitAt = remaining.lastIndexOf('\n', maxLen);
+    if (splitAt < maxLen * 0.3) splitAt = remaining.lastIndexOf(' ', maxLen);
+    if (splitAt < maxLen * 0.3) splitAt = maxLen;
+
+    parts.push(remaining.substring(0, splitAt).trimEnd());
+    remaining = remaining.substring(splitAt).trimStart();
+    partNum++;
+  }
+
+  // Add part labels if we split
+  if (parts.length > 1) {
+    return parts.map((p, i) => `${p}\n\n<i>(${i + 1}/${parts.length})</i>`);
+  }
+  return parts;
+}
+
+async function sendTelegram(message: string): Promise<boolean> {
+  const parts = splitMessage(message);
+  let allOk = true;
+  for (const part of parts) {
+    const ok = await sendTelegramRaw(part);
+    if (!ok) allOk = false;
+    // Small delay between parts to avoid rate limits
+    if (parts.length > 1) await new Promise(r => setTimeout(r, 500));
+  }
+  return allOk;
 }
 
 // ── Notion: Read Director's Brief blocks ──────────────────
