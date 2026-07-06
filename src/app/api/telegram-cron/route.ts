@@ -1,5 +1,9 @@
 import { NextResponse } from 'next/server';
 
+// Force dynamic — NEVER cache this route. It must execute fresh every time.
+export const dynamic = 'force-dynamic';
+export const fetchCache = 'force-no-store';
+
 // Vercel Cron Job: Two responsibilities:
 // 1. Daily digest: Reads Director's Brief + Content Calendar → sends summary (once/day at ~2PM IST)
 // 2. Outbox relay: Reads Notion "Telegram Outbox" page → sends any pending messages from scheduled tasks
@@ -630,5 +634,9 @@ export async function GET(request: Request) {
     results.dailyDigest = today === lastSentDate ? 'already sent today' : 'not digest time';
   }
 
-  return NextResponse.json({ status: 'ok', ...results });
+  return NextResponse.json({ status: 'ok', ...results }, {
+    headers: {
+      'Cache-Control': 'no-store, no-cache, must-revalidate',
+    },
+  });
 }
