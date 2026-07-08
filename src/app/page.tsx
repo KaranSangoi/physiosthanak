@@ -328,14 +328,6 @@ const medicalBusinessSchema = {
     "http://www.linkedin.com/in/drshivajain",
     "https://topmate.io/dr_shiva_jain_sangoi/1995923",
   ],
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "5.0",
-    bestRating: "5",
-    worstRating: "1",
-    ratingCount: "64",
-    reviewCount: "64",
-  },
   isAcceptingNewPatients: true,
 };
 

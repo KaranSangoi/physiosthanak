@@ -9,9 +9,9 @@ import { generateBreadcrumbs } from '@/lib/utils';
 import { Award, GraduationCap, Heart, Star, Users, Home, Dumbbell } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'About Dr. Shiva Jain Sangoi | 5.0★ Physiotherapist in Borivali',
+  title: 'About Dr. Shiva Jain Sangoi | Physiotherapist in Borivali',
   description:
-    'Dr. Shiva Jain Sangoi — MPTh (Ortho), FIFA-certified physiotherapist in Borivali West. 9+ years experience, 8000+ patients treated, 5.0★ Google rated with 64+ reviews. Meet the expert behind PhysioSthanak.',
+    'Dr. Shiva Jain Sangoi — MPTh (Ortho), FIFA-certified physiotherapist in Borivali West. 9+ years experience, 8000+ patients treated, 5.0★ Google rated with 60+ reviews. Meet the expert behind PhysioSthanak.',
   keywords: [
     'Dr Shiva Jain Sangoi',
     'physiotherapist Borivali',
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About Dr. Shiva Jain Sangoi | 5.0★ Physiotherapist in Borivali | PhysioSthanak',
+    title: 'About Dr. Shiva Jain Sangoi | 5.0★ Physiotherapist in Borivali',
     description:
       'MPTh (Ortho), FIFA-certified. 9+ years, 8000+ patients, 5.0★ Google rated. Meet the physiotherapist families across Mumbai trust.',
     images: ['/images/about/dr-shiva-jain.png'],
@@ -477,3 +477,4 @@ export default function AboutPage() {
     </>
   );
 }
+                
