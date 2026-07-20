@@ -29,6 +29,7 @@ export interface SiteConfig {
   doctorCredentials: string;
   googleReviewUrl: string;
   googleMapsPlaceUrl: string;
+  reviewCount: number;
 }
 
 export interface Service {

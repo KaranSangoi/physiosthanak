@@ -126,7 +126,7 @@ const aboutFaqs = [
   },
   {
     question: 'What makes PhysioSthanak different from other physiotherapy clinics?',
-    answer: 'PhysioSthanak combines Dr. Shiva\'s FIFA-certified sports medicine expertise with evidence-based orthopaedic rehabilitation. With a 5.0-star Google rating from 64+ reviews, over 8,000 successfully treated patients, and personalized one-on-one sessions, PhysioSthanak is trusted by families across Mumbai\'s western suburbs for results-driven physiotherapy.',
+    answer: 'PhysioSthanak combines Dr. Shiva\'s FIFA-certified sports medicine expertise with evidence-based orthopaedic rehabilitation. With a 5.0-star Google rating from 60+ reviews, over 8,000 successfully treated patients, and personalized one-on-one sessions, PhysioSthanak is trusted by families across Mumbai\'s western suburbs for results-driven physiotherapy.',
   },
   {
     question: 'Is PhysioSthanak good for sports injuries?',
@@ -325,7 +325,7 @@ export default function AboutPage() {
               </p>
 
               <p className="text-text-light leading-relaxed mb-4" data-speakable>
-                PhysioSthanak has earned 64+ five-star Google reviews and is trusted by families across Borivali, Dahisar, Kandivali, and Malad for personalized physiotherapy care. The clinic offers both in-clinic treatment and home visit physiotherapy for patients with mobility limitations.
+                PhysioSthanak has earned 60+ five-star Google reviews and is trusted by families across Borivali, Dahisar, Kandivali, and Malad for personalized physiotherapy care. The clinic offers both in-clinic treatment and home visit physiotherapy for patients with mobility limitations.
               </p>
 
               <p className="text-text-light leading-relaxed mb-6">
@@ -441,7 +441,7 @@ export default function AboutPage() {
               At PhysioSthanak, every patient receives a thorough initial assessment before treatment begins. Dr. Shiva believes in understanding the root cause of pain rather than just treating symptoms. Her treatment plans are personalized, evidence-based, and designed for lasting recovery — not temporary relief.
             </p>
             <p className="text-text-light leading-relaxed">
-              Each session combines hands-on manual therapy with targeted therapeutic exercises. Patients receive clear explanations of their condition, realistic timelines for recovery, and home exercise programs to maintain progress between sessions. This transparent, patient-first approach is why PhysioSthanak maintains a 5.0-star rating across 64+ Google reviews.
+              Each session combines hands-on manual therapy with targeted therapeutic exercises. Patients receive clear explanations of their condition, realistic timelines for recovery, and home exercise programs to maintain progress between sessions. This transparent, patient-first approach is why PhysioSthanak maintains a 5.0-star rating across 60+ Google reviews.
             </p>
 
             <div className="bg-white rounded-lg p-6 border-l-4 border-accent-pink">

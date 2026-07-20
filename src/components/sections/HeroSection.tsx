@@ -97,6 +97,14 @@ export default function HeroSection({
               </a>
             </div>
 
+            {/* Free consultation promise — matches Google Ads messaging */}
+            <p className="flex items-center gap-2 text-sm font-medium text-white pt-1">
+              <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-accent-pink/20 text-accent-pink text-xs">✓</span>
+              <span>
+                First consultation <span className="text-accent-pink font-semibold">FREE</span> — pay only for treatment sessions
+              </span>
+            </p>
+
             {/* Social proof */}
             {isHome && (
               <div className="flex items-center gap-3 pt-2">

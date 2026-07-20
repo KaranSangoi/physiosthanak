@@ -473,7 +473,7 @@ export default function HomePage() {
                 clinic specializes in orthopedic rehabilitation, sports injury
                 recovery, neurological physiotherapy, post-surgery rehab, and
                 home visit physiotherapy across Borivali, Dahisar, Kandivali,
-                and Malad. Backed by 64+ five-star Google reviews, PhysioSthanak
+                and Malad. Backed by 60+ five-star Google reviews, PhysioSthanak
                 is trusted by families across Mumbai&apos;s western suburbs for
                 evidence-based, personalized physiotherapy care.
               </p>

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { trackEvent } from '@/components/AnalyticsEvents';
 import { siteConfig } from '@/data/site-config';
 import { MessageSquare } from 'lucide-react';
 
@@ -41,6 +42,7 @@ export default function BookingForm() {
 
       if (data.success) {
         setSubmitStatus('success');
+        trackEvent('form_submit_lead', { source_page: 'Contact Page' });
         e.currentTarget.reset();
         // Open Google Calendar booking
         window.open(BOOKING_URL, '_blank');

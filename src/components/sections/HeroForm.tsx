@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, FormEvent } from 'react';
+import { trackEvent } from '@/components/AnalyticsEvents';
 
 const WEB3FORMS_KEY = '97e35895-6350-4c20-982e-f2fdb1996900';
 const BOOKING_URL = 'https://topmate.io/dr_shiva_jain_sangoi/1995923';
@@ -45,6 +46,7 @@ export default function HeroForm({
 
       if (data.success) {
         setFormState('success');
+        trackEvent('form_submit_lead', { source_page: pageName });
         window.open(activeBookingUrl, '_blank');
         setTimeout(() => {
           setFormState('idle');
