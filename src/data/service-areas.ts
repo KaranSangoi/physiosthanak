@@ -35,7 +35,7 @@ export const serviceAreas: ServiceArea[] = [
     ],
     metaDescription: 'Lady physiotherapist in Borivali — Dr. Shiva Jain, MPTh Ortho, FIFA certified. 5.0★ clinic & home service for pain, sports injuries & rehab. Book now.',
     h1: 'Physiotherapy Services in Borivali',
-    heroDescription: 'PhysioSthanak is Borivali\'s trusted physiotherapy clinic led by Dr. Shiva Jain Sangoi, MPTh Ortho with FIFA Diploma credentials. We deliver expert orthopaedic rehabilitation, sports injury treatment, and home visit physiotherapy services across Borivali West and East.',
+    heroDescription: 'PhysioSthanak is Borivali\'s trusted physiotherapy clinic led by Dr. Shiva Jain Sangoi, MPTh Ortho with FIFA Diploma credentials, and her expert team. We deliver expert orthopaedic rehabilitation, sports injury treatment, and home visit physiotherapy services across Borivali West and East.',
     benefits: [
       {
         title: 'Clinic Located in the Heart of Borivali West',
@@ -129,7 +129,7 @@ export const serviceAreas: ServiceArea[] = [
     ],
     metaDescription: 'Lady physiotherapist in Dahisar — Dr. Shiva Jain, MPTh Ortho. Pain relief, sports rehab & home service physiotherapy. 5.0★ rated. Book now.',
     h1: 'Physiotherapy Services in Dahisar',
-    heroDescription: 'Dahisar residents can access expert physiotherapy from PhysioSthanak, led by Dr. Shiva Jain Sangoi with MPTh Ortho and FIFA Diploma qualifications. Our clinic near Dahisar provides specialized orthopaedic rehabilitation, chronic pain treatment, and professional home visit physiotherapy services.',
+    heroDescription: 'Dahisar residents can access expert physiotherapy from PhysioSthanak, led by Dr. Shiva Jain Sangoi with MPTh Ortho and FIFA Diploma qualifications, and her expert team. Our clinic near Dahisar provides specialized orthopaedic rehabilitation, chronic pain treatment, and professional home visit physiotherapy services.',
     benefits: [
       {
         title: 'Specialist Orthopaedic Rehabilitation Nearby',

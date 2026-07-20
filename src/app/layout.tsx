@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     default: `${siteConfig.businessName} | ${siteConfig.tagline}`,
     template: `%s | 5.0★ ${siteConfig.businessName}`,
   },
-  description: `${siteConfig.tagline}. Expert physiotherapy services by ${siteConfig.doctorName} in Borivali, Mumbai. Book your consultation today.`,
+  description: `${siteConfig.tagline}. Expert physiotherapy services by ${siteConfig.doctorName} & team in Borivali, Mumbai. Book your consultation today.`,
   keywords: [
     'physiotherapy',
     'physical therapy',

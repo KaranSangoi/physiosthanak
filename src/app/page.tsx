@@ -174,7 +174,7 @@ const IconMap = ({ icon }: { icon: string }) => {
 const medicalBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "MedicalBusiness",
-  "@id": "https://physiosthanak.com/#business",
+  "@id": "https://physiosthanak.com/#organization",
   name: "PhysioSthanak",
   alternateName: "PhysioSthanak - Physiotherapy Center",
   url: "https://physiosthanak.com",
@@ -185,7 +185,7 @@ const medicalBusinessSchema = {
     "https://physiosthanak.com/images/about/dr-shiva-jain.png",
   ],
   description:
-    "Expert physiotherapy clinic in Borivali West, Mumbai led by Dr. Shiva Jain Sangoi, MPTh (Ortho) with FIFA Diploma in Football Medicine. Specializing in orthopedic rehabilitation, sports injuries, neurological physiotherapy, and home visit services. 9+ years experience, 8000+ cases treated.",
+    "Expert physiotherapy clinic in Borivali West, Mumbai led by Dr. Shiva Jain Sangoi, MPTh (Ortho) with FIFA Diploma in Football Medicine, and her trained physiotherapy team. Specializing in orthopedic rehabilitation, sports injuries, neurological physiotherapy, and home visit services. 9+ years experience, 8000+ cases treated.",
   medicalSpecialty: [
     "Musculoskeletal",
     "Orthopedic",
@@ -363,7 +363,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <HeroSection
         h1="Best Physiotherapist in Borivali"
-        description="5.0★ Google-rated physiotherapy clinic in Borivali West led by Dr. Shiva Jain Sangoi (MPTh Ortho, FIFA-certified). 9+ years experience, 8000+ patients treated successfully. Expert pain relief, sports rehab, and home visits across Mumbai's western suburbs."
+        description="5.0★ Google-rated physiotherapy clinic in Borivali West led by Dr. Shiva Jain Sangoi (MPTh Ortho, FIFA-certified) and her expert team. 9+ years experience, 8000+ patients treated successfully. Expert pain relief, sports rehab, and home visits across Mumbai's western suburbs."
         breadcrumbs={[]}
         isHome
         showForm

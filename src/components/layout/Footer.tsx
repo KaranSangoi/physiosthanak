@@ -140,7 +140,7 @@ export default function Footer() {
               {siteConfig.tagline}
             </p>
             <p className="text-slate-400 text-sm mb-5">
-              Expert physiotherapy services by {siteConfig.doctorName}
+              Expert physiotherapy services by {siteConfig.doctorName} &amp; Team
             </p>
 
             {/* Social Links */}

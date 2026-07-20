@@ -13,7 +13,7 @@ const WIKIPEDIA_URLS: Record<string, string> = {
 // ──────────────────────────────────────────────────────────────────
 const heroDescriptionPool: ((area: string, sub: string) => string)[] = [
   (area, sub) =>
-    `Looking for expert physiotherapy in ${sub}, ${area}? PhysioSthanak offers personalized treatment plans, advanced rehabilitation techniques, and convenient home visit services led by Dr. Shiva Jain Sangoi, MPTh Ortho specialist.`,
+    `Looking for expert physiotherapy in ${sub}, ${area}? PhysioSthanak offers personalized treatment plans, advanced rehabilitation techniques, and convenient home visit services led by Dr. Shiva Jain Sangoi, MPTh Ortho specialist, and the PhysioSthanak team.`,
   (area, sub) =>
     `PhysioSthanak brings professional physiotherapy services to ${sub}, ${area}. From sports injury recovery to chronic pain management, Dr. Shiva Jain Sangoi provides evidence-based treatment with FIFA-certified sports rehabilitation expertise.`,
   (area, sub) =>
@@ -23,7 +23,7 @@ const heroDescriptionPool: ((area: string, sub: string) => string)[] = [
   (area, sub) =>
     `PhysioSthanak serves ${sub}, ${area} with expert physiotherapy including orthopaedic rehabilitation, sports injury care, and neurological physiotherapy. Visit our Borivali West clinic or book a home session with Dr. Shiva Jain.`,
   (area, sub) =>
-    `Trusted physiotherapy for ${sub}, ${area} residents is available at PhysioSthanak. Our evidence-based approach, led by Dr. Shiva Jain Sangoi with FIFA Diploma credentials, ensures safe and effective recovery for every patient.`,
+    `Trusted physiotherapy for ${sub}, ${area} residents is available at PhysioSthanak. Our evidence-based approach, led by Dr. Shiva Jain Sangoi with FIFA Diploma credentials and delivered by her trained team, ensures safe and effective recovery for every patient.`,
   (area, sub) =>
     `Need physiotherapy near ${sub}, ${area}? PhysioSthanak offers specialized orthopaedic rehabilitation, geriatric care, and sports injury treatment. Dr. Shiva Jain Sangoi provides personalized home visit and clinic-based physiotherapy services.`,
   (area, sub) =>
