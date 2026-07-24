@@ -72,10 +72,22 @@ export default function HeroSection({
               </span>
             )}
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-tight uppercase">
+            {/* Visual headline for USERS — the offer. (The SEO H1 sits below, smaller.) */}
+            <div>
+              <p className="text-4xl sm:text-5xl md:text-6xl font-heading font-extrabold text-white leading-tight uppercase">
+                First Consultation{' '}
+                <span className="text-accent-pink">FREE</span>
+              </p>
+              <p className="text-lg sm:text-xl text-white/90 font-medium mt-2">
+                Pay only for treatment sessions — no hidden charges.
+              </p>
+            </div>
+
+            {/* SEO H1 — keeps keyword targeting, visually a supporting line */}
+            <h1 className="text-xl sm:text-2xl md:text-3xl font-heading font-bold text-white/95 leading-snug uppercase">
               {h1}
             </h1>
-            <p className="text-lg text-slate-300 leading-relaxed max-w-xl">
+            <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl">
               {description}
             </p>
 
@@ -95,16 +107,6 @@ export default function HeroSection({
               >
                 Call Now
               </a>
-            </div>
-
-            {/* Free consultation promise — matches Google Ads messaging */}
-            <div className="inline-block bg-accent-pink rounded-lg px-5 py-3 shadow-lg">
-              <span className="block text-xl sm:text-2xl font-heading font-extrabold text-white uppercase tracking-wide">
-                First Consultation FREE
-              </span>
-              <span className="block text-sm font-medium text-white/90 mt-0.5">
-                Pay only for treatment sessions
-              </span>
             </div>
 
             {/* Social proof */}
