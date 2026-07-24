@@ -107,7 +107,7 @@ const aboutPoints: WhyPoint[] = [
   {
     title: "Comprehensive Services",
     description:
-      "Offers 11+ specialized physiotherapy services covering pain management to sports injuries.",
+      "Offers 12 specialized physiotherapy services covering pain management to sports injuries.",
   },
 ];
 
@@ -133,7 +133,7 @@ const homeFaqs = [
   {
     question: "What conditions can physiotherapy treat?",
     answer:
-      "Physiotherapy treats a wide range of conditions including back pain, neck pain, sports injuries, post-surgery recovery, neurological conditions, arthritis, and mobility issues. We offer specialized treatment for 11+ different categories of physiotherapy services.",
+      "Physiotherapy treats a wide range of conditions including back pain, neck pain, sports injuries, post-surgery recovery, neurological conditions, arthritis, and mobility issues. We offer specialized treatment for 12 different categories of physiotherapy services.",
   },
   {
     question: "How long does a physiotherapy session last?",

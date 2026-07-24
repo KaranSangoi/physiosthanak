@@ -5,6 +5,7 @@ import './globals.css';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import AnalyticsEvents from '@/components/AnalyticsEvents';
+import StickyCallBar from '@/components/layout/StickyCallBar';
 import { siteConfig } from '@/data/site-config';
 
 const poppins = Poppins({
@@ -232,6 +233,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <StickyCallBar />
 
         {/* Google Analytics (GA4) — loaded after page is interactive, not render-blocking */}
         <Script
