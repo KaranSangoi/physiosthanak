@@ -23,8 +23,15 @@ export default function AnalyticsEvents() {
       if (href.startsWith('tel:')) {
         trackEvent('phone_click');
       } else if (href.includes('wa.me') || href.includes('api.whatsapp.com')) {
-        trackEvent('whatsapp_click');
+        // WhatsApp links with our pre-filled booking text are "Book" CTAs;
+        // anything else is a generic WhatsApp contact click.
+        if (href.toLowerCase().includes('book')) {
+          trackEvent('booking_click');
+        } else {
+          trackEvent('whatsapp_click');
+        }
       } else if (href.includes('topmate.io')) {
+        // Legacy paid booking (Instagram audience only)
         trackEvent('booking_click');
       }
     }

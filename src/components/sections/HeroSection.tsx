@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Breadcrumbs from '@/components/ui/Breadcrumbs';
 import HeroForm from './HeroForm';
 
-const BOOKING_URL = 'https://topmate.io/dr_shiva_jain_sangoi/1995923';
+const BOOKING_URL = 'https://wa.me/919324254297?text=Hi%20PhysioSthanak%2C%20I%20would%20like%20to%20book%20my%20FREE%20first%20consultation';
 
 interface HeroSectionProps {
   h1: string;
@@ -137,7 +137,7 @@ export default function HeroSection({
 
           {/* Lead Capture Form — client component (only interactive part) */}
           {showForm && (
-            <HeroForm pageName={pageName} bookingUrl={customBookingUrl} />
+            <HeroForm pageName={pageName} />
           )}
         </div>
       </div>

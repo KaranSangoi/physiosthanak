@@ -4,18 +4,15 @@ import { useState, FormEvent } from 'react';
 import { trackEvent } from '@/components/AnalyticsEvents';
 
 const WEB3FORMS_KEY = '97e35895-6350-4c20-982e-f2fdb1996900';
-const BOOKING_URL = 'https://topmate.io/dr_shiva_jain_sangoi/1995923';
+const WHATSAPP_URL = 'https://wa.me/919324254297?text=Hi%20PhysioSthanak,%20I%20just%20filled%20the%20form%20on%20your%20website%20for%20a%20free%20consultation';
 
 interface HeroFormProps {
   pageName?: string;
-  bookingUrl?: string;
 }
 
 export default function HeroForm({
   pageName = 'Unknown Page',
-  bookingUrl,
 }: HeroFormProps) {
-  const activeBookingUrl = bookingUrl || BOOKING_URL;
   const [formState, setFormState] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const [errorDetail, setErrorDetail] = useState<string>('');
   const [formData, setFormData] = useState({ name: '', phone: '', email: '' });
@@ -47,11 +44,6 @@ export default function HeroForm({
       if (data.success) {
         setFormState('success');
         trackEvent('form_submit_lead', { source_page: pageName });
-        window.open(activeBookingUrl, '_blank');
-        setTimeout(() => {
-          setFormState('idle');
-          setFormData({ name: '', phone: '', email: '' });
-        }, 5000);
       } else {
         setErrorDetail(`Web3Forms: ${data.message || 'Unknown error'}`);
         setFormState('error');
@@ -80,16 +72,26 @@ export default function HeroForm({
           </div>
           <p className="text-lg font-heading font-bold text-accent mb-2">Thank You!</p>
           <p className="text-text-light text-sm mb-4">
-            Your details have been sent. Please pick a time slot in the booking page that just opened.
+            Your details have been received. We&apos;ll get back to you shortly to
+            schedule your <strong>free consultation</strong>.
           </p>
-          <a
-            href={activeBookingUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-accent-pink font-heading font-bold text-sm uppercase tracking-wide hover:underline"
-          >
-            Didn&apos;t open? Click here to book →
-          </a>
+          <p className="text-text-light text-sm mb-3">Need help sooner?</p>
+          <div className="space-y-2">
+            <a
+              href="tel:+919324254297"
+              className="block w-full py-2.5 rounded-md bg-primary text-white font-heading font-bold text-sm uppercase tracking-wide hover:opacity-90 transition-opacity"
+            >
+              📞 Call +91 93242 54297
+            </a>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full py-2.5 rounded-md bg-green-600 text-white font-heading font-bold text-sm uppercase tracking-wide hover:opacity-90 transition-opacity"
+            >
+              💬 WhatsApp Us
+            </a>
+          </div>
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-4">

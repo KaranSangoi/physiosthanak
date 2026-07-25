@@ -6,7 +6,6 @@ import { siteConfig } from '@/data/site-config';
 import { MessageSquare } from 'lucide-react';
 
 const WEB3FORMS_KEY = '97e35895-6350-4c20-982e-f2fdb1996900';
-const BOOKING_URL = 'https://topmate.io/dr_shiva_jain_sangoi/1995923';
 
 export default function BookingForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -44,9 +43,6 @@ export default function BookingForm() {
         setSubmitStatus('success');
         trackEvent('form_submit_lead', { source_page: 'Contact Page' });
         e.currentTarget.reset();
-        // Open Google Calendar booking
-        window.open(BOOKING_URL, '_blank');
-        setTimeout(() => setSubmitStatus('idle'), 5000);
       } else {
         setSubmitStatus('error');
         setTimeout(() => setSubmitStatus('idle'), 3000);
@@ -167,10 +163,16 @@ export default function BookingForm() {
 
               {submitStatus === 'success' && (
                 <div className="p-4 bg-green-50 border border-green-200 rounded-lg text-green-800 text-sm">
-                  Thank you! Your request has been sent. Please pick a slot in the booking page that just opened.
-                  <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="block mt-2 text-green-700 font-medium underline">
-                    Didn&apos;t open? Click here to book →
-                  </a>
+                  Thank you! Your request has been received — we&apos;ll get back to
+                  you shortly to schedule your <strong>free consultation</strong>.
+                  Need help sooner? Call{' '}
+                  <a href={`tel:${siteConfig.phone}`} className="font-medium underline">
+                    {siteConfig.phone}
+                  </a>{' '}
+                  or{' '}
+                  <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="font-medium underline">
+                    message us on WhatsApp
+                  </a>.
                 </div>
               )}
 

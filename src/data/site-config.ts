@@ -6,7 +6,9 @@ export const siteConfig: SiteConfig = {
   phone: '+91 9324254297',
   email: 'physiosthanak@gmail.com',
   address: 'Shop No. 14, Ground Floor, Hari-Smruti Premises, Sardar Vallabhbhai Patel Rd, opp. HDFC Bank, Borivali West, Mumbai, Maharashtra 400092',
-  bookingUrl: 'https://topmate.io/dr_shiva_jain_sangoi/1995923',
+  // "Book" CTAs open WhatsApp with a booking message (free first consultation).
+  // Topmate (paid) is reserved for the Instagram audience, shared via chat.
+  bookingUrl: 'https://wa.me/919324254297?text=Hi%20PhysioSthanak%2C%20I%20would%20like%20to%20book%20my%20FREE%20first%20consultation',
   social: {
     instagram: 'https://www.instagram.com/physiosthanak',
     linkedin: 'http://www.linkedin.com/in/drshivajain',

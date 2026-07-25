@@ -1,4 +1,4 @@
-const BOOKING_URL = 'https://topmate.io/dr_shiva_jain_sangoi/1995923';
+const BOOKING_URL = 'https://wa.me/919324254297?text=Hi%20PhysioSthanak%2C%20I%20would%20like%20to%20book%20my%20FREE%20first%20consultation';
 
 // Mobile-only sticky action bar — most ad traffic is mobile, and a
 // thumb-reachable Call/Book bar removes the biggest conversion friction.
