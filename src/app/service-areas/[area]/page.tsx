@@ -114,6 +114,7 @@ export default async function AreaPage({ params }: PageProps) {
         description={areaData.heroDescription}
         breadcrumbs={breadcrumbs}
         pageName={`Area: ${areaData.name}`}
+        showOffer
       />
 
       {/* BENEFITS SECTION - per SOP: 3 unique USP bullets, 35+ words each, with location+service */}

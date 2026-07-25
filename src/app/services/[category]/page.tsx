@@ -120,6 +120,7 @@ export default async function ServiceCategoryPage({ params }: PageProps) {
         breadcrumbs={breadcrumbs}
         backgroundImage={service.image}
         pageName={`Service: ${service.name}`}
+        showOffer={category !== 'online-physiotherapy'}
       />
 
       {/* What Is Section — targets featured snippets & PAA */}

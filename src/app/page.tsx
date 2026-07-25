@@ -366,6 +366,7 @@ export default function HomePage() {
         description="5.0★ Google-rated physiotherapy clinic in Borivali West led by Dr. Shiva Jain Sangoi (MPTh Ortho, FIFA-certified) and her expert team. 9+ years experience, 8000+ patients treated successfully. Expert pain relief, sports rehab, and home visits across Mumbai's western suburbs."
         breadcrumbs={[]}
         isHome
+        showOffer
         showForm
         pageName="Homepage"
       />

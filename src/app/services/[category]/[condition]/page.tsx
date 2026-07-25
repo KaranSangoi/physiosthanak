@@ -131,6 +131,7 @@ export default async function ConditionPage({ params }: PageProps) {
         description={conditionData.heroDescription}
         breadcrumbs={breadcrumbs}
         pageName={`Condition: ${conditionData.name}`}
+        showOffer={category !== 'online-physiotherapy'}
       />
 
       {/* Benefits Section */}

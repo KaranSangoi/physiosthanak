@@ -13,6 +13,10 @@ interface HeroSectionProps {
   isHome?: boolean;
   pageName?: string;
   bookingUrl?: string;
+  /** Show the "First Consultation FREE" offer headline. Keep false on pages
+   *  where it's irrelevant (blog, about, contact) or contradicts another
+   *  offer (online physiotherapy's ₹99 intro). */
+  showOffer?: boolean;
 }
 
 export default function HeroSection({
@@ -24,6 +28,7 @@ export default function HeroSection({
   isHome = false,
   pageName = 'Unknown Page',
   bookingUrl: customBookingUrl,
+  showOffer = false,
 }: HeroSectionProps) {
   const activeBookingUrl = customBookingUrl || BOOKING_URL;
 
@@ -73,18 +78,26 @@ export default function HeroSection({
             )}
 
             {/* Visual headline for USERS — the offer. (The SEO H1 sits below, smaller.) */}
-            <div>
-              <p className="text-4xl sm:text-5xl md:text-6xl font-heading font-extrabold text-white leading-tight uppercase">
-                First Consultation{' '}
-                <span className="text-accent-pink">FREE</span>
-              </p>
-              <p className="text-lg sm:text-xl text-white/90 font-medium mt-2">
-                Pay only for treatment sessions — no hidden charges.
-              </p>
-            </div>
+            {showOffer && (
+              <div>
+                <p className="text-4xl sm:text-5xl md:text-6xl font-heading font-extrabold text-white leading-tight uppercase">
+                  First Consultation{' '}
+                  <span className="text-accent-pink">FREE</span>
+                </p>
+                <p className="text-lg sm:text-xl text-white/90 font-medium mt-2">
+                  Pay only for treatment sessions — no hidden charges.
+                </p>
+              </div>
+            )}
 
-            {/* SEO H1 — keeps keyword targeting, visually a supporting line */}
-            <h1 className="text-xl sm:text-2xl md:text-3xl font-heading font-bold text-white/95 leading-snug uppercase">
+            {/* SEO H1 — full-size when the offer is hidden, supporting line when shown */}
+            <h1
+              className={
+                showOffer
+                  ? 'text-xl sm:text-2xl md:text-3xl font-heading font-bold text-white/95 leading-snug uppercase'
+                  : 'text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-white leading-tight uppercase'
+              }
+            >
               {h1}
             </h1>
             <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl">

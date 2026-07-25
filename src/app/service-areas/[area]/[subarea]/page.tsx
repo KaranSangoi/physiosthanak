@@ -137,6 +137,7 @@ export default async function SubAreaPage({ params }: PageProps) {
         description={subAreaData.heroDescription}
         breadcrumbs={breadcrumbs}
         pageName={`SubArea: ${subAreaData.name} (${subAreaData.parentArea})`}
+        showOffer
       />
 
       {/* BENEFITS SECTION - per SOP: 3 unique USP bullets, 35+ words each */}

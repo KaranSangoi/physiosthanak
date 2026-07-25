@@ -41,6 +41,27 @@ async function sendTelegramRaw(text: string): Promise<boolean> {
     if (!resp.ok) {
       const body = await resp.text();
       console.error(`Telegram API error: ${resp.status} - ${body}`);
+      // Rate limited — wait the requested time and retry once
+      if (resp.status === 429) {
+        let retryAfter = 5;
+        try {
+          retryAfter = JSON.parse(body)?.parameters?.retry_after ?? 5;
+        } catch { /* use default */ }
+        await new Promise(r => setTimeout(r, Math.min(retryAfter, 30) * 1000 + 500));
+        const retry = await fetch(
+          `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`,
+          {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              chat_id: TELEGRAM_CHAT_ID,
+              text,
+              parse_mode: 'HTML',
+            }),
+          },
+        );
+        return retry.ok;
+      }
       // If HTML parse fails, retry without parse_mode
       if (resp.status === 400 && body.includes("can't parse")) {
         console.log('Retrying without HTML parse mode...');
@@ -305,8 +326,8 @@ async function fetchContentPipeline(notionToken: string): Promise<PipelineCounts
 // ── Notion: Read & clear Telegram Outbox ─────────────────
 
 interface OutboxMessage {
-  blockId: string;
-  text: string;
+  blockIds: string[]; // every block belonging to this message (heading + content)
+  text: string; // '' = nothing to send, blocks are just cleanup (orphan heading, divider, blank)
 }
 
 async function fetchOutboxMessages(notionToken: string): Promise<OutboxMessage[]> {
@@ -335,9 +356,23 @@ async function fetchOutboxMessages(notionToken: string): Promise<OutboxMessage[]
     // 1. Code blocks (original format — each code block = one message)
     // 2. Text blocks grouped by "Message —" headings (heading_3)
     //    Scheduled tasks may write as regular text instead of code blocks.
+    //
+    // IMPORTANT INVARIANT: a message's blocks (heading + content) live and die
+    // TOGETHER. If a send fails, nothing is deleted and it retries next run.
+    // Groups with no text (orphaned headings) are flushed as cleanup-only.
 
     let currentMessageBlocks: { ids: string[]; lines: string[] } | null = null;
     let inPendingSection = false;
+
+    const flush = () => {
+      if (currentMessageBlocks) {
+        messages.push({
+          blockIds: currentMessageBlocks.ids,
+          text: currentMessageBlocks.lines.join('\n').trim(),
+        });
+        currentMessageBlocks = null;
+      }
+    };
 
     for (const block of blocks) {
       const blockType = block.type as string;
@@ -345,27 +380,12 @@ async function fetchOutboxMessages(notionToken: string): Promise<OutboxMessage[]
 
       // Code blocks: standalone messages (original format)
       if (blockType === 'code') {
-        // Flush any text-based message in progress
-        if (currentMessageBlocks && currentMessageBlocks.lines.length > 0) {
-          messages.push({
-            blockId: currentMessageBlocks.ids[0],
-            text: currentMessageBlocks.lines.join('\n').trim(),
-          });
-          // Store all block IDs so we can delete the full message
-          for (let i = 1; i < currentMessageBlocks.ids.length; i++) {
-            messages.push({ blockId: currentMessageBlocks.ids[i], text: '' });
-          }
-          currentMessageBlocks = null;
-        }
-
+        flush();
         const codeBlock = block.code as { rich_text?: Array<{ plain_text?: string }> };
         const text = (codeBlock?.rich_text || [])
           .map((rt: { plain_text?: string }) => rt.plain_text || '')
           .join('');
-
-        if (text.trim()) {
-          messages.push({ blockId, text: text.trim() });
-        }
+        messages.push({ blockIds: [blockId], text: text.trim() });
         continue;
       }
 
@@ -379,17 +399,7 @@ async function fetchOutboxMessages(notionToken: string): Promise<OutboxMessage[]
         // Any other h2 ends the pending section
         if (inPendingSection) {
           inPendingSection = false;
-          // Flush current message
-          if (currentMessageBlocks && currentMessageBlocks.lines.length > 0) {
-            messages.push({
-              blockId: currentMessageBlocks.ids[0],
-              text: currentMessageBlocks.lines.join('\n').trim(),
-            });
-            for (let i = 1; i < currentMessageBlocks.ids.length; i++) {
-              messages.push({ blockId: currentMessageBlocks.ids[i], text: '' });
-            }
-            currentMessageBlocks = null;
-          }
+          flush();
         }
         continue;
       }
@@ -398,18 +408,8 @@ async function fetchOutboxMessages(notionToken: string): Promise<OutboxMessage[]
 
       // Dividers end current message and pending section
       if (blockType === 'divider') {
-        if (currentMessageBlocks && currentMessageBlocks.lines.length > 0) {
-          messages.push({
-            blockId: currentMessageBlocks.ids[0],
-            text: currentMessageBlocks.lines.join('\n').trim(),
-          });
-          for (let i = 1; i < currentMessageBlocks.ids.length; i++) {
-            messages.push({ blockId: currentMessageBlocks.ids[i], text: '' });
-          }
-          currentMessageBlocks = null;
-        }
-        // Delete the divider too
-        messages.push({ blockId, text: '' });
+        flush();
+        messages.push({ blockIds: [blockId], text: '' });
         inPendingSection = false;
         continue;
       }
@@ -418,44 +418,22 @@ async function fetchOutboxMessages(notionToken: string): Promise<OutboxMessage[]
       if (blockType === 'heading_3') {
         const h3Text = extractRichText(block.heading_3);
         if (h3Text.toLowerCase().includes('message')) {
-          // Flush previous message
-          if (currentMessageBlocks && currentMessageBlocks.lines.length > 0) {
-            messages.push({
-              blockId: currentMessageBlocks.ids[0],
-              text: currentMessageBlocks.lines.join('\n').trim(),
-            });
-            for (let i = 1; i < currentMessageBlocks.ids.length; i++) {
-              messages.push({ blockId: currentMessageBlocks.ids[i], text: '' });
-            }
-          }
+          flush();
           currentMessageBlocks = { ids: [blockId], lines: [] };
           continue;
         }
       }
 
-      // Collect text from all block types into current message
+      // Collect all blocks (even textless ones, for cleanup) into current message
       if (currentMessageBlocks) {
+        currentMessageBlocks.ids.push(blockId);
         const text = extractBlockTextForOutbox(block);
-        if (text) {
-          currentMessageBlocks.ids.push(blockId);
-          currentMessageBlocks.lines.push(text);
-        }
+        if (text) currentMessageBlocks.lines.push(text);
       }
     }
 
     // Flush final message
-    if (currentMessageBlocks && currentMessageBlocks.lines.length > 0) {
-      messages.push({
-        blockId: currentMessageBlocks.ids[0],
-        text: currentMessageBlocks.lines.join('\n').trim(),
-      });
-      for (let i = 1; i < currentMessageBlocks.ids.length; i++) {
-        messages.push({ blockId: currentMessageBlocks.ids[i], text: '' });
-      }
-    }
-
-    // Filter out empty placeholder entries used only for deletion
-    // Keep them in the array so deleteBlock cleans them up, but don't send empty text
+    flush();
   } catch (err) {
     console.error('Failed to fetch outbox:', err);
   }
@@ -584,22 +562,28 @@ export async function GET(request: Request) {
 
   if (outboxMessages.length > 0) {
     let sentCount = 0;
-    let deletedCount = 0;
+    let keptCount = 0;
+    let cleanedCount = 0;
     for (const msg of outboxMessages) {
       if (msg.text) {
-        // Real message — send via Telegram, then delete the block
+        // Real message — send via Telegram; delete ALL its blocks only on success.
+        // On failure, keep everything intact so the next run retries it.
         const sent = await sendTelegram(msg.text);
         if (sent) {
-          await deleteBlock(notionToken, msg.blockId);
+          for (const id of msg.blockIds) await deleteBlock(notionToken, id);
           sentCount++;
+        } else {
+          keptCount++;
         }
+        // Pace sends — Telegram allows ~1 msg/sec per chat; bursts cause 429s
+        await new Promise(r => setTimeout(r, 1200));
       } else {
-        // Empty entry — just a block to clean up (part of a multi-block message)
-        await deleteBlock(notionToken, msg.blockId);
-        deletedCount++;
+        // Cleanup-only group (orphaned heading, divider, blank blocks)
+        for (const id of msg.blockIds) await deleteBlock(notionToken, id);
+        cleanedCount++;
       }
     }
-    results.outbox = `${sentCount} messages sent, ${deletedCount} blocks cleaned`;
+    results.outbox = `${sentCount} sent, ${keptCount} kept for retry, ${cleanedCount} empty groups cleaned`;
   } else {
     results.outbox = 'no pending messages';
   }
