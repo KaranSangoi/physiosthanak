@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Breadcrumbs from '@/components/ui/Breadcrumbs';
 import HeroForm from './HeroForm';
 
-const BOOKING_URL = 'https://wa.me/919324254297?text=Hi%20PhysioSthanak%2C%20I%20would%20like%20to%20book%20my%20FREE%20first%20consultation';
+const BOOKING_URL = 'https://wa.me/919324254297?text=Hi%20PhysioSthanak%2C%20I%20would%20like%20to%20book%20my%20FREE%20first%20clinic%20consultation';
 
 interface HeroSectionProps {
   h1: string;
@@ -86,6 +86,10 @@ export default function HeroSection({
                 </p>
                 <p className="text-lg sm:text-xl text-white/90 font-medium mt-2">
                   Pay only for treatment sessions — no hidden charges.
+                </p>
+                <p className="text-xs sm:text-sm text-white/60 mt-1.5">
+                  Free consultation valid on clinic visits at Borivali West. Home-visit
+                  consultations are charged separately.
                 </p>
               </div>
             )}

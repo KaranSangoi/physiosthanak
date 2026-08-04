@@ -208,6 +208,15 @@ export default function TermsOfServicePage() {
               </h2>
               <ul className="list-disc list-inside text-text-light space-y-2 ml-4">
                 <li>
+                  <strong>Free first consultation offer:</strong> the &ldquo;First
+                  Consultation FREE&rdquo; offer applies to in-clinic consultations at
+                  our Borivali West clinic only. It covers the initial assessment and
+                  treatment-plan discussion; treatment sessions are charged separately.
+                  Home visit consultations involve travel and on-site assessment and are
+                  therefore chargeable &mdash; charges are communicated before the visit
+                  is confirmed. This offer may be modified or withdrawn at any time.
+                </li>
+                <li>
                   Consultation and treatment fees are communicated at the time of booking
                   or during your first visit
                 </li>

@@ -73,7 +73,8 @@ export default function HeroForm({
           <p className="text-lg font-heading font-bold text-accent mb-2">Thank You!</p>
           <p className="text-text-light text-sm mb-4">
             Your details have been received. We&apos;ll get back to you shortly to
-            schedule your <strong>free consultation</strong>.
+            schedule your <strong>free clinic consultation</strong> (home visits are
+            charged separately).
           </p>
           <p className="text-text-light text-sm mb-3">Need help sooner?</p>
           <div className="space-y-2">

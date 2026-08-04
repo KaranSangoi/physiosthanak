@@ -164,7 +164,8 @@ export default function BookingForm() {
               {submitStatus === 'success' && (
                 <div className="p-4 bg-green-50 border border-green-200 rounded-lg text-green-800 text-sm">
                   Thank you! Your request has been received — we&apos;ll get back to
-                  you shortly to schedule your <strong>free consultation</strong>.
+                  you shortly to schedule your <strong>free clinic consultation</strong>{' '}
+                  (home visits are charged separately).
                   Need help sooner? Call{' '}
                   <a href={`tel:${siteConfig.phone}`} className="font-medium underline">
                     {siteConfig.phone}
