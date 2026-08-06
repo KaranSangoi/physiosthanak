@@ -3,6 +3,9 @@ import { NextResponse } from 'next/server';
 // Force dynamic — NEVER cache this route. It must execute fresh every time.
 export const dynamic = 'force-dynamic';
 export const fetchCache = 'force-no-store';
+// Multi-message runs (Notion reads + several sends + paced deletes) can exceed
+// the default 10s function limit — allow up to 60s.
+export const maxDuration = 60;
 
 // Vercel Cron Job: Two responsibilities:
 // 1. Daily digest: Reads Director's Brief + Content Calendar → sends summary (once/day at ~2PM IST)
@@ -20,69 +23,48 @@ let lastSentDate = '';
 
 // ── Telegram ──────────────────────────────────────────────
 
-async function sendTelegramRaw(text: string): Promise<boolean> {
+interface SendResult {
+  ok: boolean;
+  status: number;
+  desc: string;
+  mode: 'html' | 'html-after-429' | 'plain-fallback' | 'error';
+}
+
+async function sendTelegramRaw(text: string): Promise<SendResult> {
   if (!TELEGRAM_BOT_TOKEN) {
-    console.error('TELEGRAM_BOT_TOKEN not set');
-    return false;
+    return { ok: false, status: 0, desc: 'TELEGRAM_BOT_TOKEN not set', mode: 'error' };
   }
+  const call = (payload: Record<string, unknown>) =>
+    fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
   try {
-    const resp = await fetch(
-      `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`,
-      {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          chat_id: TELEGRAM_CHAT_ID,
-          text,
-          parse_mode: 'HTML',
-        }),
-      },
-    );
-    if (!resp.ok) {
-      const body = await resp.text();
-      console.error(`Telegram API error: ${resp.status} - ${body}`);
-      // Rate limited — wait the requested time and retry once
-      if (resp.status === 429) {
-        let retryAfter = 5;
-        try {
-          retryAfter = JSON.parse(body)?.parameters?.retry_after ?? 5;
-        } catch { /* use default */ }
-        await new Promise(r => setTimeout(r, Math.min(retryAfter, 30) * 1000 + 500));
-        const retry = await fetch(
-          `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`,
-          {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              chat_id: TELEGRAM_CHAT_ID,
-              text,
-              parse_mode: 'HTML',
-            }),
-          },
-        );
-        return retry.ok;
-      }
-      // If HTML parse fails, retry without parse_mode
-      if (resp.status === 400 && body.includes("can't parse")) {
-        console.log('Retrying without HTML parse mode...');
-        const retry = await fetch(
-          `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`,
-          {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              chat_id: TELEGRAM_CHAT_ID,
-              text: text.replace(/<[^>]+>/g, ''),
-            }),
-          },
-        );
-        return retry.ok;
-      }
+    const resp = await call({ chat_id: TELEGRAM_CHAT_ID, text, parse_mode: 'HTML' });
+    if (resp.ok) return { ok: true, status: 200, desc: 'ok', mode: 'html' };
+
+    const body = await resp.text();
+    console.error(`Telegram API error: ${resp.status} - ${body}`);
+    let desc = body.slice(0, 160);
+    try { desc = JSON.parse(body)?.description ?? desc; } catch { /* keep raw */ }
+
+    // Rate limited — wait the requested time and retry once
+    if (resp.status === 429) {
+      let retryAfter = 5;
+      try { retryAfter = JSON.parse(body)?.parameters?.retry_after ?? 5; } catch { /* default */ }
+      await new Promise(r => setTimeout(r, Math.min(retryAfter, 30) * 1000 + 500));
+      const retry = await call({ chat_id: TELEGRAM_CHAT_ID, text, parse_mode: 'HTML' });
+      return { ok: retry.ok, status: retry.status, desc: retry.ok ? 'ok after 429' : desc, mode: 'html-after-429' };
     }
-    return resp.ok;
+    // HTML parse failure (e.g. a tag broken by message splitting) — send plain
+    if (resp.status === 400 && body.includes("can't parse")) {
+      const retry = await call({ chat_id: TELEGRAM_CHAT_ID, text: text.replace(/<[^>]+>/g, '') });
+      return { ok: retry.ok, status: retry.status, desc: retry.ok ? 'ok as plain text' : desc, mode: 'plain-fallback' };
+    }
+    return { ok: false, status: resp.status, desc, mode: 'error' };
   } catch (err) {
-    console.error('Telegram send failed:', err);
-    return false;
+    return { ok: false, status: 0, desc: String(err).slice(0, 160), mode: 'error' };
   }
 }
 
@@ -118,16 +100,15 @@ function splitMessage(message: string, maxLen = 4000): string[] {
   return parts;
 }
 
-async function sendTelegram(message: string): Promise<boolean> {
+async function sendTelegram(message: string): Promise<{ ok: boolean; parts: SendResult[] }> {
   const parts = splitMessage(message);
-  let allOk = true;
+  const results: SendResult[] = [];
   for (const part of parts) {
-    const ok = await sendTelegramRaw(part);
-    if (!ok) allOk = false;
+    results.push(await sendTelegramRaw(part));
     // Small delay between parts to avoid rate limits
     if (parts.length > 1) await new Promise(r => setTimeout(r, 500));
   }
-  return allOk;
+  return { ok: results.every(r => r.ok), parts: results };
 }
 
 // ── Notion: Read Director's Brief blocks ──────────────────
@@ -560,6 +541,7 @@ export async function GET(request: Request) {
   // ── 1. Process Telegram Outbox (every run) ──────────────
   const outboxMessages = await fetchOutboxMessages(notionToken);
 
+  const details: Array<{ preview: string; parts: number; delivered: boolean; results: SendResult[] }> = [];
   if (outboxMessages.length > 0) {
     let sentCount = 0;
     let keptCount = 0;
@@ -568,8 +550,14 @@ export async function GET(request: Request) {
       if (msg.text) {
         // Real message — send via Telegram; delete ALL its blocks only on success.
         // On failure, keep everything intact so the next run retries it.
-        const sent = await sendTelegram(msg.text);
-        if (sent) {
+        const send = await sendTelegram(msg.text);
+        details.push({
+          preview: msg.text.slice(0, 60).replace(/\n/g, ' '),
+          parts: send.parts.length,
+          delivered: send.ok,
+          results: send.parts,
+        });
+        if (send.ok) {
           for (const id of msg.blockIds) await deleteBlock(notionToken, id);
           sentCount++;
         } else {
@@ -618,7 +606,7 @@ export async function GET(request: Request) {
     results.dailyDigest = today === lastSentDate ? 'already sent today' : 'not digest time';
   }
 
-  return NextResponse.json({ status: 'ok', ...results }, {
+  return NextResponse.json({ status: 'ok', ...results, chatId: TELEGRAM_CHAT_ID, details }, {
     headers: {
       'Cache-Control': 'no-store, no-cache, must-revalidate',
     },
