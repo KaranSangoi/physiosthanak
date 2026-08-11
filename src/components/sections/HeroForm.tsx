@@ -44,6 +44,18 @@ export default function HeroForm({
       if (data.success) {
         setFormState('success');
         trackEvent('form_submit_lead', { source_page: pageName });
+        // Instant Telegram alert to the clinic — fire-and-forget, never blocks UX.
+        fetch('/api/lead-alert', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: formData.name,
+            phone: formData.phone,
+            email: formData.email,
+            page: pageName,
+            botcheck: '',
+          }),
+        }).catch(() => {});
       } else {
         setErrorDetail(`Web3Forms: ${data.message || 'Unknown error'}`);
         setFormState('error');

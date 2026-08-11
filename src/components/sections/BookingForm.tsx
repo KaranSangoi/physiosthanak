@@ -42,6 +42,20 @@ export default function BookingForm() {
       if (data.success) {
         setSubmitStatus('success');
         trackEvent('form_submit_lead', { source_page: 'Contact Page' });
+        // Instant Telegram alert to the clinic — fire-and-forget, never blocks UX.
+        fetch('/api/lead-alert', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: formData.get('name'),
+            phone: formData.get('phone'),
+            email: formData.get('email'),
+            service: formData.get('service'),
+            message: formData.get('message'),
+            page: 'Contact Page',
+            botcheck: '',
+          }),
+        }).catch(() => {});
         e.currentTarget.reset();
       } else {
         setSubmitStatus('error');

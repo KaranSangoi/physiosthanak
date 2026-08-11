@@ -93,6 +93,19 @@ function splitMessage(message: string, maxLen = 4000): string[] {
     partNum++;
   }
 
+  // Balance <b>/<i> tags across split points so each part is valid HTML on its
+  // own — otherwise Telegram rejects the part and it falls back to plain text.
+  for (const tag of ['b', 'i']) {
+    let carry = false;
+    for (let i = 0; i < parts.length; i++) {
+      if (carry) parts[i] = `<${tag}>` + parts[i];
+      const opens = (parts[i].match(new RegExp(`<${tag}>`, 'g')) || []).length;
+      const closes = (parts[i].match(new RegExp(`</${tag}>`, 'g')) || []).length;
+      carry = opens > closes;
+      if (carry) parts[i] = parts[i] + `</${tag}>`;
+    }
+  }
+
   // Add part labels if we split
   if (parts.length > 1) {
     return parts.map((p, i) => `${p}\n\n<i>(${i + 1}/${parts.length})</i>`);
