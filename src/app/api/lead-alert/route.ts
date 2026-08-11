@@ -8,6 +8,9 @@ import { NextRequest, NextResponse } from 'next/server';
 export const runtime = 'nodejs';
 
 const CHAT_ID = process.env.TELEGRAM_CHAT_ID || '1683559324';
+// "PhysioSthanak HQ" forum group — leads go to the 🚨 Leads topic (thread 2).
+const GROUP_ID = process.env.TELEGRAM_GROUP_ID || '';
+const TOPIC_LEADS = 2;
 
 function esc(s: string): string {
   return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -67,7 +70,9 @@ export async function POST(req: NextRequest) {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        chat_id: CHAT_ID,
+        ...(GROUP_ID
+          ? { chat_id: GROUP_ID, message_thread_id: TOPIC_LEADS }
+          : { chat_id: CHAT_ID }),
         text: lines.join('\n'),
         parse_mode: 'HTML',
         disable_web_page_preview: true,

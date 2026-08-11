@@ -15,6 +15,27 @@ export const maxDuration = 60;
 
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || '';
 const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID || '1683559324';
+// "PhysioSthanak HQ" forum group (topics enabled). When TELEGRAM_GROUP_ID is
+// set, messages go to the group routed into topics; otherwise personal chat.
+const TELEGRAM_GROUP_ID = process.env.TELEGRAM_GROUP_ID || '';
+// Topic thread IDs inside the HQ group (created Aug 12, 2026)
+const TOPIC_LEADS = 2;
+const TOPIC_REPORTS = 4;
+const TOPIC_IG_COMMENTS = 5;
+const TOPIC_SYSTEM = 6;
+
+// Route an outbox message to the right topic based on its content.
+function topicFor(text: string): number {
+  const t = text.toLowerCase();
+  if (t.includes('website lead') || t.includes('new lead')) return TOPIC_LEADS;
+  if (t.includes('instagram comments') || t.includes('engagement scout') || t.includes('comment analytics')) return TOPIC_IG_COMMENTS;
+  if (
+    t.includes('fixes applied') || t.includes('health check') || t.includes('browser offline') ||
+    t.includes('skipped after') || t.includes('system alert') || t.includes('error')
+  ) return TOPIC_SYSTEM;
+  // Ads reports, weekly digests, growth ideas, review pushes → Reports
+  return TOPIC_REPORTS;
+}
 const DIRECTORS_BRIEF_PAGE_ID = '34caf2b61f0f818cbd70e4715b6ea038';
 const CONTENT_CALENDAR_DB_ID = '79a89ed233dd4263b092138312e7a2b2';
 const TELEGRAM_OUTBOX_PAGE_ID = '356af2b61f0f81c7b02dc744f33fdf15';
@@ -30,18 +51,22 @@ interface SendResult {
   mode: 'html' | 'html-after-429' | 'plain-fallback' | 'error';
 }
 
-async function sendTelegramRaw(text: string): Promise<SendResult> {
+async function sendTelegramRaw(text: string, threadId?: number): Promise<SendResult> {
   if (!TELEGRAM_BOT_TOKEN) {
     return { ok: false, status: 0, desc: 'TELEGRAM_BOT_TOKEN not set', mode: 'error' };
   }
+  // Group + topic when configured; personal chat otherwise.
+  const base: Record<string, unknown> = TELEGRAM_GROUP_ID
+    ? { chat_id: TELEGRAM_GROUP_ID, message_thread_id: threadId ?? TOPIC_REPORTS }
+    : { chat_id: TELEGRAM_CHAT_ID };
   const call = (payload: Record<string, unknown>) =>
     fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload),
+      body: JSON.stringify({ ...base, ...payload }),
     });
   try {
-    const resp = await call({ chat_id: TELEGRAM_CHAT_ID, text, parse_mode: 'HTML' });
+    const resp = await call({ text, parse_mode: 'HTML' });
     if (resp.ok) return { ok: true, status: 200, desc: 'ok', mode: 'html' };
 
     const body = await resp.text();
@@ -54,12 +79,12 @@ async function sendTelegramRaw(text: string): Promise<SendResult> {
       let retryAfter = 5;
       try { retryAfter = JSON.parse(body)?.parameters?.retry_after ?? 5; } catch { /* default */ }
       await new Promise(r => setTimeout(r, Math.min(retryAfter, 30) * 1000 + 500));
-      const retry = await call({ chat_id: TELEGRAM_CHAT_ID, text, parse_mode: 'HTML' });
+      const retry = await call({ text, parse_mode: 'HTML' });
       return { ok: retry.ok, status: retry.status, desc: retry.ok ? 'ok after 429' : desc, mode: 'html-after-429' };
     }
     // HTML parse failure (e.g. a tag broken by message splitting) — send plain
     if (resp.status === 400 && body.includes("can't parse")) {
-      const retry = await call({ chat_id: TELEGRAM_CHAT_ID, text: text.replace(/<[^>]+>/g, '') });
+      const retry = await call({ text: text.replace(/<[^>]+>/g, '') });
       return { ok: retry.ok, status: retry.status, desc: retry.ok ? 'ok as plain text' : desc, mode: 'plain-fallback' };
     }
     return { ok: false, status: resp.status, desc, mode: 'error' };
@@ -113,11 +138,11 @@ function splitMessage(message: string, maxLen = 4000): string[] {
   return parts;
 }
 
-async function sendTelegram(message: string): Promise<{ ok: boolean; parts: SendResult[] }> {
+async function sendTelegram(message: string, threadId?: number): Promise<{ ok: boolean; parts: SendResult[] }> {
   const parts = splitMessage(message);
   const results: SendResult[] = [];
   for (const part of parts) {
-    results.push(await sendTelegramRaw(part));
+    results.push(await sendTelegramRaw(part, threadId));
     // Small delay between parts to avoid rate limits
     if (parts.length > 1) await new Promise(r => setTimeout(r, 500));
   }
@@ -563,7 +588,7 @@ export async function GET(request: Request) {
       if (msg.text) {
         // Real message — send via Telegram; delete ALL its blocks only on success.
         // On failure, keep everything intact so the next run retries it.
-        const send = await sendTelegram(msg.text);
+        const send = await sendTelegram(msg.text, topicFor(msg.text));
         details.push({
           preview: msg.text.slice(0, 60).replace(/\n/g, ' '),
           parts: send.parts.length,
@@ -602,12 +627,12 @@ export async function GET(request: Request) {
 
     if (!briefData && pipelineData.total === 0) {
       const fallback = `📊 <b>PhysioSthanak Daily</b>\n\n⚠️ Could not read Notion data. Check if NOTION_TOKEN is valid.`;
-      await sendTelegram(fallback);
+      await sendTelegram(fallback, TOPIC_SYSTEM);
       lastSentDate = today;
       results.dailyDigest = 'sent (fallback)';
     } else {
       const message = formatDailyDigest(briefData, pipelineData);
-      const sent = await sendTelegram(message);
+      const sent = await sendTelegram(message, TOPIC_REPORTS);
       if (sent) {
         lastSentDate = today;
         results.dailyDigest = 'sent';
