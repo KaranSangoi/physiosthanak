@@ -1,0 +1,26 @@
+name: Telegram Outbox Relay
+
+# Pings the site's telegram-cron endpoint every 30 minutes so Outbox messages
+# deliver promptly — independent of Vercel's loose Hobby-plan cron timing and
+# of the Chrome-extension trigger step in scheduled tasks (which fails when
+# the extension's service worker is asleep — the "outbox not draining" bug).
+#
+# SETUP (one-time, Karan): GitHub repo → Settings → Secrets and variables →
+# Actions → New repository secret: name CRON_SECRET, value = the same secret
+# used in Vercel env. Nothing else needed.
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch: {}
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Trigger telegram-cron
+        run: |
+          resp=$(curl -s -m 90 "https://physiosthanak.com/api/telegram-cron?secret=${{ secrets.CRON_SECRET }}")
+          echo "$resp"
+          echo "$resp" | grep -q '"status":"ok"' || exit 1
