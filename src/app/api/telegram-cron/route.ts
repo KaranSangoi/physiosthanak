@@ -24,14 +24,41 @@ const TOPIC_REPORTS = 4;
 const TOPIC_IG_COMMENTS = 5;
 const TOPIC_SYSTEM = 6;
 
-// Route an outbox message to the right topic based on its content.
-function topicFor(text: string): number {
-  const t = text.toLowerCase();
-  if (t.includes('website lead') || t.includes('new lead')) return TOPIC_LEADS;
-  if (t.includes('instagram comments') || t.includes('engagement scout') || t.includes('comment analytics')) return TOPIC_IG_COMMENTS;
+// ── Topic routing ─────────────────────────────────────────
+// PRIMARY (deterministic): senders declare their destination with an explicit
+// tag anywhere in the message: [topic:leads] [topic:reports] [topic:ig]
+// [topic:system] or a raw thread id like [topic:4]. The tag is stripped
+// before sending. FALLBACK (legacy messages without a tag): match the
+// HEADING region only (first ~200 chars) — never the body, because report
+// bodies can mention words like "website leads" (Aug 13 misroute bug).
+const TOPIC_NAMES: Record<string, number> = {
+  leads: TOPIC_LEADS,
+  reports: TOPIC_REPORTS,
+  ig: TOPIC_IG_COMMENTS,
+  igcomments: TOPIC_IG_COMMENTS,
+  system: TOPIC_SYSTEM,
+};
+
+function parseTopicTag(text: string): { topic: number | null; cleaned: string } {
+  const m = text.match(/\[topic:([a-z]+|\d+)\]/i);
+  if (!m) return { topic: null, cleaned: text };
+  const key = m[1].toLowerCase();
+  const topic = /^\d+$/.test(key) ? parseInt(key, 10) : TOPIC_NAMES[key] ?? null;
+  // Strip the tag (and any leftover double spaces) regardless of validity
+  const cleaned = text.replace(m[0], '').replace(/[ \t]{2,}/g, ' ').trim();
+  return { topic, cleaned };
+}
+
+function topicForHeading(text: string): number {
+  const head = text.slice(0, 200).toLowerCase();
   if (
-    t.includes('fixes applied') || t.includes('health check') || t.includes('browser offline') ||
-    t.includes('skipped after') || t.includes('system alert') || t.includes('error')
+    head.includes('instagram comments') || head.includes('engagement scout') ||
+    head.includes('comment analytics') || head.includes('comments for today')
+  ) return TOPIC_IG_COMMENTS;
+  if (
+    head.includes('fixes applied') || head.includes('health check') ||
+    head.includes('browser offline') || head.includes('skipped after') ||
+    head.includes('system alert')
   ) return TOPIC_SYSTEM;
   // Ads reports, weekly digests, growth ideas, review pushes → Reports
   return TOPIC_REPORTS;
@@ -588,7 +615,8 @@ export async function GET(request: Request) {
       if (msg.text) {
         // Real message — send via Telegram; delete ALL its blocks only on success.
         // On failure, keep everything intact so the next run retries it.
-        const send = await sendTelegram(msg.text, topicFor(msg.text));
+        const { topic, cleaned } = parseTopicTag(msg.text);
+        const send = await sendTelegram(cleaned, topic ?? topicForHeading(cleaned));
         details.push({
           preview: msg.text.slice(0, 60).replace(/\n/g, ' '),
           parts: send.parts.length,
