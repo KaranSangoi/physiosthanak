@@ -1995,4 +1995,155 @@ If you're looking for a physiotherapist home service in Borivali or anywhere in 
     relatedServices: ['home-visit-physiotherapy', 'post-surgery-rehabilitation', 'neurological-physiotherapy'],
     relatedAreas: ['borivali-west'],
   },
+  {
+    slug: 'sciatica-pain-relief-causes-warning-signs-physiotherapy',
+    title: 'Sciatica Pain Relief — Causes, Warning Signs, and When Physiotherapy Helps',
+    metaTitle: 'Sciatica Pain Relief | Causes, Red Flags & Physiotherapy (2026 Guide)',
+    metaDescription:
+      'Sciatica pain shooting down your leg? Understand the causes, red-flag symptoms, and when physiotherapy helps — by Dr. Shiva Jain, MPTh (Ortho), Borivali.',
+    keywords: [
+      'sciatica pain relief',
+      'sciatica treatment',
+      'sciatica physiotherapy',
+      'sciatica pain in leg',
+      'sciatica treatment in Borivali',
+      'physiotherapy for sciatica Mumbai',
+      'nerve pain down leg',
+    ],
+    publishDate: '2026-08-15',
+    author: 'Dr. Shiva Jain Sangoi',
+    authorCredentials: 'BPTh, MPTh (Ortho), FIFA Diploma in Football Medicine',
+    excerpt:
+      'Sciatica is a symptom, not a diagnosis — and that distinction changes everything about how it should be managed. Here is what actually causes that shooting leg pain, the warning signs that need urgent attention, and where physiotherapy fits in.',
+    readTime: '9 min read',
+    category: 'Guide',
+    content: `## What sciatica actually is — and what it isn't
+
+Sciatica pain relief starts with understanding one thing: **sciatica is not a diagnosis. It is a symptom.** The word simply describes pain travelling along the path of the sciatic nerve — the thickest nerve in the body, running from the lower back through the buttock and down the back of the leg.
+
+When someone walks into the clinic saying "I have sciatica," they usually mean a sharp, burning, or electric pain shooting from the lower back into one leg, sometimes all the way to the foot. The real question a physiotherapist has to answer is *why* that nerve is being irritated — because the answer changes everything about how it should be managed. Two people can describe identical leg pain and have completely different underlying causes. Treating both the same way is how people end up in their third month of sessions with no meaningful change.
+
+## The classic signs
+
+Sciatic nerve pain tends to follow a recognisable pattern:
+
+- Pain on **one side only** — symptoms in both legs equally are less typical and deserve a closer look
+- Pain that **travels along a line** rather than sitting in one spot
+- A burning, shooting, or electric quality rather than a dull ache
+- Often worse after sitting for long stretches; some find walking or standing eases it
+- Pins and needles, numbness, or heaviness in the calf or foot
+- Coughing, sneezing, or straining briefly makes it sharper
+
+A dull ache confined to the lower back with no leg symptoms is usually *not* sciatica — that points more towards mechanical low back pain, a different problem with a different management path. Our guide on [back pain treatment at home](/blog/back-pain-treatment-at-home-when-to-see-physiotherapist) covers that in detail.
+
+## What commonly causes sciatica
+
+Several different structures can irritate or compress the sciatic nerve or the nerve roots that form it. These are the causes seen most often in clinical practice:
+
+**Lumbar disc bulge or herniation.** The most common cause in adults between roughly 30 and 55. The softer inner material of a spinal disc pushes outward and contacts a nerve root as it exits the spine. This is what most people mean by "slip disc," though nothing actually slips.
+
+**Lumbar spinal stenosis.** More common after 60. The bony canal housing the nerves narrows with age-related changes. Patients often describe leg pain and heaviness that builds while walking and settles on sitting or leaning forward.
+
+**Spondylolisthesis.** One vertebra shifts slightly forward relative to the one below, narrowing the space available for the nerve root.
+
+**Piriformis-related irritation.** The sciatic nerve passes very close to — and in some people directly through — the piriformis muscle deep in the buttock. Tightness or overload there can produce sciatica-like symptoms with no disc involvement at all, and the treatment approach differs considerably from a disc-related presentation.
+
+**Pregnancy-related changes.** Shifts in posture, weight distribution, and ligament laxity can irritate the lower back and nerve roots. This usually settles after delivery but is worth assessing rather than enduring.
+
+## The Mumbai desk-job and commute connection
+
+There is a reason sciatica shows up so often in working adults across Mumbai's western suburbs. A typical day: an hour or more seated in a train or car, eight to nine hours at a desk, another commute home, then a couple of hours on the sofa — potentially twelve hours of sustained lumbar flexion with very little variation.
+
+Prolonged sitting increases pressure on the lumbar discs and shortens the hip flexors, while the deep stabilising muscles of the trunk get progressively less work. Add a weekend of unaccustomed heavy lifting and the system is loaded in a way it has not been prepared for. It explains why so many episodes begin with an ordinary movement the person had done a hundred times before without trouble.
+
+## Red flags — when it is not a physiotherapy problem first
+
+This section matters more than the rest of the article. Most sciatica is uncomfortable but not dangerous. A small number of presentations need urgent medical attention rather than a physiotherapy appointment.
+
+**Seek emergency medical care the same day if you experience:**
+
+- Loss of control over bladder or bowel function, or difficulty passing urine
+- Numbness around the inner thighs, groin, or saddle region
+- Progressive weakness in both legs
+- A foot that drags or cannot be lifted properly (foot drop)
+- Severe back pain with fever or unexplained weight loss
+- New severe back pain with a history of cancer or a recent significant fall
+
+The first three can indicate cauda equina syndrome, a rare but genuine surgical emergency where delay affects outcomes. The UK's National Health Service maintains a clear public summary of [sciatica symptoms and when to seek urgent care](https://www.nhs.uk/conditions/sciatica/) worth reading if you are unsure.
+
+## Does sciatica go away on its own?
+
+Often, yes. Research suggests a substantial proportion of acute sciatica episodes arising from disc-related irritation improve considerably within six to twelve weeks, with or without formal treatment — reassuring news for anyone lying awake at 2 a.m. convinced they will need surgery.
+
+The catch is recurrence. If the episode settles but the underlying pattern — sitting posture, a weak posterior chain, the sudden-loading habit — is never addressed, a second episode is common. Many patients seen in clinic are on their third bout, each lasting longer than the last.
+
+## Where physiotherapy actually fits
+
+A physiotherapy assessment for sciatica is not about handing over a sheet of exercises. A proper first session generally involves:
+
+- **Detailed history taking** — how symptoms began, what worsens and eases them, previous episodes, medical history
+- **Neurological screening** — reflexes, muscle power, and sensation testing to establish whether a nerve root is genuinely involved
+- **Movement assessment** — which positions ease symptoms and which provoke them, since this varies considerably between individuals
+- **Ruling out non-spinal contributors** — hip, sacroiliac, and gluteal involvement can mimic sciatic pain
+- **Realistic goals and a timeline**, with clear criteria for progression and for onward referral
+
+From there, management is individualised. Evidence-informed conservative care combines graded, progressive loading with education about movement and activity, manual therapy where indicated, and a structured return to normal function — rather than passive machine treatment alone. What that looks like for you depends on what the assessment finds, which is why this article deliberately does not prescribe exercises.
+
+At PhysioSthanak, sciatica cases fall under [back pain and spine physiotherapy](/services/back-pain-physiotherapy), assessed personally by Dr. Shiva Jain rather than delegated to a technician.
+
+## Things that commonly make sciatica worse
+
+Patients frequently arrive having already tried a few things. These are the ones that tend to backfire:
+
+- **Extended bed rest.** Beyond a day or two in the acute phase, prolonged immobility is generally associated with slower recovery, not faster.
+- **Aggressive stretching into sharp pain.** Pulling hard into shooting nerve pain is not the same as stretching a tight muscle, and it can flare symptoms.
+- **Copying exercises from videos.** What helps a disc-related presentation may aggravate a stenosis-related one. Without knowing which you have, it is a coin flip.
+- **Powering through heavy lifting**, particularly repeated bending with a rounded lower back during a flare.
+- **Ignoring genuine leg weakness.** Fluctuating pain is expected; a leg measurably losing strength is not something to wait out.
+
+## If travelling to a clinic is difficult
+
+Acute sciatica can make sitting in a rickshaw genuinely unbearable. For patients in that situation, [home visit physiotherapy](/services/home-visit-physiotherapy) across Borivali, Dahisar, Kandivali, and Malad lets assessment begin without the travel, with a transition to clinic sessions once the acute phase settles.
+
+## When to book an assessment
+
+Reasonable triggers for getting assessed rather than waiting it out:
+
+- Leg pain persisting beyond two weeks without clear improvement
+- Symptoms interfering with sleep or work
+- A second or third episode, even if each eventually settled
+- Any numbness or weakness, even mild
+
+The **first consultation at our Borivali West clinic is free** — a full assessment with Dr. Shiva Jain, MPTh (Ortho), with no obligation to book further sessions. You will leave knowing what is actually going on and what the realistic path forward looks like. (Home visits are charged separately, as they involve travel time.)
+
+To book, [contact PhysioSthanak](/) or call the clinic at Shop No. 14, Hari-Smruti Premises, SVP Road, opposite HDFC Bank, Borivali West.
+
+---
+
+*This article is for general information only and is not a substitute for professional assessment. Consult a qualified physiotherapist for advice specific to you.*`,
+    faqs: [
+      {
+        question: 'How long does sciatica take to heal?',
+        answer:
+          'Research suggests that a substantial proportion of acute sciatica episodes caused by disc-related nerve irritation improve considerably within six to twelve weeks. However, recovery timelines vary widely depending on the underlying cause, age, activity level, and whether contributing factors are addressed. Cases linked to spinal stenosis often follow a more gradual course. A physiotherapy assessment can give you a more realistic timeline for your specific presentation.',
+      },
+      {
+        question: 'Can physiotherapy help sciatica, or do I need surgery?',
+        answer:
+          'The large majority of sciatica cases are managed conservatively without surgery. Surgery is typically considered only when there is significant progressive neurological deficit, when symptoms fail to improve after an adequate trial of conservative care, or in emergency situations such as cauda equina syndrome. A physiotherapy assessment helps establish which category you fall into and whether onward referral is needed.',
+      },
+      {
+        question: 'What are the warning signs of sciatica that need emergency care?',
+        answer:
+          'Seek immediate medical attention if you experience loss of bladder or bowel control, numbness around the groin or inner thighs, progressive weakness in both legs, or a foot that drags when you walk. Severe back pain accompanied by fever, unexplained weight loss, or a history of cancer also warrants urgent medical review rather than a routine physiotherapy appointment.',
+      },
+      {
+        question: 'Is walking good for sciatica?',
+        answer:
+          'Many patients find that gentle walking is better tolerated than prolonged sitting, and extended bed rest is generally associated with slower recovery. That said, tolerance varies by cause — people with spinal stenosis often find walking distances limited while sitting provides relief, which is close to the opposite pattern. This is one reason an individual assessment matters more than general rules.',
+      },
+    ],
+    relatedServices: ['back-pain-physiotherapy', 'physiotherapy', 'home-visit-physiotherapy'],
+    relatedAreas: ['borivali-west'],
+  },
 ];
