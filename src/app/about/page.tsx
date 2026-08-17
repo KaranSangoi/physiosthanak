@@ -11,7 +11,7 @@ import { Award, GraduationCap, Heart, Star, Users, Home, Dumbbell } from 'lucide
 export const metadata: Metadata = {
   title: 'About Dr. Shiva Jain Sangoi | Physiotherapist in Borivali',
   description:
-    'Dr. Shiva Jain Sangoi — MPTh (Ortho), FIFA-certified physiotherapist in Borivali West. 9+ years experience, 8000+ patients treated, 5.0★ Google rated with 60+ reviews. Meet the expert behind PhysioSthanak.',
+    'Dr. Shiva Jain Sangoi — MPTh (Ortho), FIFA-certified physiotherapist in Borivali West. 10+ years experience, 8000+ patients treated, 5.0★ Google rated with 65+ reviews. Meet the expert behind PhysioSthanak.',
   keywords: [
     'Dr Shiva Jain Sangoi',
     'physiotherapist Borivali',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'About Dr. Shiva Jain Sangoi | 5.0★ Physiotherapist in Borivali',
     description:
-      'MPTh (Ortho), FIFA-certified. 9+ years, 8000+ patients, 5.0★ rated. Meet the expert behind PhysioSthanak — Borivali\'s most trusted physiotherapy clinic.',
+      'MPTh (Ortho), FIFA-certified. 10+ years, 8000+ patients, 5.0★ rated. Meet the expert behind PhysioSthanak — Borivali\'s most trusted physiotherapy clinic.',
     type: 'profile',
     locale: 'en_IN',
     url: `${siteConfig.domain}/about`,
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'About Dr. Shiva Jain Sangoi | 5.0★ Physiotherapist in Borivali',
     description:
-      'MPTh (Ortho), FIFA-certified. 9+ years, 8000+ patients, 5.0★ Google rated. Meet the physiotherapist families across Mumbai trust.',
+      'MPTh (Ortho), FIFA-certified. 10+ years, 8000+ patients, 5.0★ Google rated. Meet the physiotherapist families across Mumbai trust.',
     images: ['/images/about/dr-shiva-jain.png'],
   },
   alternates: {
@@ -114,7 +114,7 @@ const aboutFaqs = [
   },
   {
     question: 'How many patients has Dr. Shiva treated?',
-    answer: 'Dr. Shiva has successfully treated over 8,000 patients across her 9+ years of clinical practice. Her patients include individuals with orthopedic conditions, sports injuries, neurological disorders, post-surgery rehabilitation needs, and chronic pain.',
+    answer: 'Dr. Shiva has successfully treated over 8,000 patients across her 10+ years of clinical practice. Her patients include individuals with orthopedic conditions, sports injuries, neurological disorders, post-surgery rehabilitation needs, and chronic pain.',
   },
   {
     question: 'What is Dr. Shiva\'s approach to physiotherapy?',
@@ -126,7 +126,7 @@ const aboutFaqs = [
   },
   {
     question: 'What makes PhysioSthanak different from other physiotherapy clinics?',
-    answer: 'PhysioSthanak combines Dr. Shiva\'s FIFA-certified sports medicine expertise with evidence-based orthopaedic rehabilitation. With a 5.0-star Google rating from 60+ reviews, over 8,000 successfully treated patients, and personalized one-on-one sessions, PhysioSthanak is trusted by families across Mumbai\'s western suburbs for results-driven physiotherapy.',
+    answer: 'PhysioSthanak combines Dr. Shiva\'s FIFA-certified sports medicine expertise with evidence-based orthopaedic rehabilitation. With a 5.0-star Google rating from 65+ reviews, over 8,000 successfully treated patients, and personalized one-on-one sessions, PhysioSthanak is trusted by families across Mumbai\'s western suburbs for results-driven physiotherapy.',
   },
   {
     question: 'Is PhysioSthanak good for sports injuries?',
@@ -157,7 +157,7 @@ const personSchema = {
   familyName: 'Sangoi',
   honorificPrefix: 'Dr.',
   jobTitle: 'Physiotherapist & Founder',
-  description: 'Dr. Shiva Jain Sangoi is a 5.0-star Google-rated physiotherapist in Borivali West, Mumbai. With an MPTh in Orthopaedics, a FIFA Diploma in Football Medicine, 9+ years of clinical experience, and 8,000+ successfully treated patients, she is one of the most trusted physiotherapists in Mumbai\'s western suburbs.',
+  description: 'Dr. Shiva Jain Sangoi is a 5.0-star Google-rated physiotherapist in Borivali West, Mumbai. With an MPTh in Orthopaedics, a FIFA Diploma in Football Medicine, 10+ years of clinical experience, and 8,000+ successfully treated patients, she is one of the most trusted physiotherapists in Mumbai\'s western suburbs.',
   image: 'https://physiosthanak.com/images/about/dr-shiva-jain.png',
   url: 'https://physiosthanak.com/about',
   gender: 'Female',
@@ -269,7 +269,7 @@ export default function AboutPage() {
       {/* Hero */}
       <HeroSection
         h1="About Dr. Shiva Jain Sangoi"
-        description="MPTh (Ortho), FIFA-certified physiotherapist with 9+ years of experience and 8,000+ successfully treated patients. Founder of PhysioSthanak — Borivali's most trusted physiotherapy clinic, rated 5.0★ on Google."
+        description="MPTh (Ortho), FIFA-certified physiotherapist with 10+ years of experience and 8,000+ successfully treated patients. Founder of PhysioSthanak — Borivali's most trusted physiotherapy clinic, rated 5.0★ on Google."
         breadcrumbs={breadcrumbs}
         pageName="About"
       />

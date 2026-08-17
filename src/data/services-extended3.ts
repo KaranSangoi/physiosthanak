@@ -9,7 +9,7 @@ export const servicesExtended3: ServiceCategory[] = [
     keywords: ['child physiotherapist near me', 'child physiotherapist', 'pediatric physiotherapist near me', 'pediatric physiotherapy', 'child physiotherapy', 'developmental delay', 'cerebral palsy', 'Borivali pediatric physio'],
     metaDescription: 'Child physiotherapist in Borivali. 5.0★ rated pediatric physio clinic. Developmental delays, cerebral palsy & sports injuries. Book now.',
     h1: 'Child Physiotherapist in Borivali — Pediatric Physiotherapy & Rehabilitation',
-    heroDescription: 'Expert child physiotherapist in Borivali for developmental delays, cerebral palsy, and pediatric sports injuries by Dr. Shiva Jain.',
+    heroDescription: 'Expert child physiotherapist in Borivali for developmental delays, cerebral palsy, and pediatric sports injuries by Dr. Shiva Jain Sangoi.',
     image: '/images/services/pediatric-physiotherapy.jpg',
     externalLink: { url: 'https://en.wikipedia.org/wiki/Pediatric_physical_therapy', text: 'pediatric physical therapy' },
     benefits: [
@@ -272,12 +272,12 @@ export const servicesExtended3: ServiceCategory[] = [
   {
     slug: 'womens-health-physiotherapy',
     name: 'Women\'s Health Physiotherapy',
-    whatIs: 'Women\'s health physiotherapy addresses conditions unique to women across all life stages — from pregnancy and postpartum recovery to menopause-related issues. A lady physiotherapist like Dr. Shiva Jain understands these needs first-hand, creating a comfortable environment for sensitive treatments. Care includes pelvic floor strengthening, prenatal exercise programmes, postnatal rehabilitation, diastasis recti correction, and PCOS management through targeted physical therapy.',
+    whatIs: 'Women\'s health physiotherapy addresses conditions unique to women across all life stages — from pregnancy and postpartum recovery to menopause-related issues. A lady physiotherapist like Dr. Shiva Jain Sangoi understands these needs first-hand, creating a comfortable environment for sensitive treatments. Care includes pelvic floor strengthening, prenatal exercise programmes, postnatal rehabilitation, diastasis recti correction, and PCOS management through targeted physical therapy.',
     description: 'Specialized physiotherapy addressing women\'s unique health needs including prenatal, postnatal, and pelvic floor care.',
     keywords: ['lady physiotherapist', 'female physiotherapist', 'lady physiotherapist near me', 'women\'s health physiotherapy', 'pelvic floor physiotherapist near me', 'pelvic floor therapy', 'prenatal physiotherapy', 'postnatal rehabilitation', 'Borivali women\'s health'],
-    metaDescription: 'Lady physiotherapist in Borivali. 5.0★ rated female physio. Prenatal, postnatal, pelvic floor & PCOS care by Dr. Shiva Jain. Book now.',
+    metaDescription: 'Lady physiotherapist in Borivali. 5.0★ rated female physio. Prenatal, postnatal, pelvic floor & PCOS care by Dr. Shiva Jain Sangoi. Book now.',
     h1: 'Lady Physiotherapist in Borivali — Women\'s Health & Pelvic Floor Care',
-    heroDescription: 'Expert female physiotherapist in Borivali for women\'s health — prenatal, postnatal, pelvic floor therapy, and wellness by Dr. Shiva Jain.',
+    heroDescription: 'Expert female physiotherapist in Borivali for women\'s health — prenatal, postnatal, pelvic floor therapy, and wellness by Dr. Shiva Jain Sangoi.',
     image: '/images/services/womens-health-physiotherapy.jpg',
     externalLink: { url: 'https://en.wikipedia.org/wiki/Women%27s_health_physiotherapy', text: 'women\'s health physiotherapy' },
     benefits: [
@@ -440,7 +440,7 @@ export const servicesExtended3: ServiceCategory[] = [
         externalLink: { url: 'https://en.wikipedia.org/wiki/Pelvic_floor', text: 'pelvic floor' },
         description: 'Specialized pelvic floor dysfunction treatment addressing incontinence and pelvic pain.',
         keywords: ['pelvic floor therapy', 'pelvic floor physiotherapist near me', 'pelvic floor dysfunction', 'incontinence treatment', 'pelvic pain', 'lady physiotherapist pelvic floor', 'Borivali pelvic floor'],
-        metaDescription: 'Pelvic floor physiotherapist in Borivali — lady physiotherapist Dr. Shiva Jain. Expert treatment for incontinence & pelvic floor dysfunction. Book now.',
+        metaDescription: 'Pelvic floor physiotherapist in Borivali — lady physiotherapist Dr. Shiva Jain Sangoi. Expert treatment for incontinence & pelvic floor dysfunction. Book now.',
         h1: 'Pelvic Floor Therapy & Dysfunction Treatment',
         heroDescription: 'Expert pelvic floor therapy in Borivali treating incontinence and pelvic floor dysfunction effectively.',
         benefits: [
@@ -600,7 +600,7 @@ export const servicesExtended3: ServiceCategory[] = [
     whatIs: 'Hand and wrist physiotherapy is a subspecialty focused on rehabilitating injuries and conditions affecting the hand, wrist, and fingers — including carpal tunnel syndrome, trigger finger, de Quervain\'s tenosynovitis, and post-surgical recovery. Treatment involves fine motor exercises, splinting guidance, tendon gliding techniques, and grip strengthening to restore dexterity and function.',
     description: 'Specialized treatment for hand, wrist, and finger injuries and conditions.',
     keywords: ['hand physiotherapy', 'wrist injury', 'hand injury', 'carpal tunnel', 'hand rehabilitation', 'Borivali hand physio'],
-    metaDescription: 'Hand & wrist physiotherapy in Borivali. 5.0★ rated. Carpal tunnel, trigger finger & post-surgery rehab. Dr. Shiva Jain (MPTh). Book today.',
+    metaDescription: 'Hand & wrist physiotherapy in Borivali. 5.0★ rated. Carpal tunnel, trigger finger & post-surgery rehab. Dr. Shiva Jain Sangoi (MPTh). Book today.',
     h1: 'Hand & Wrist Physiotherapy Services',
     heroDescription: 'Expert hand and wrist physiotherapy in Borivali for injury recovery, function restoration, and pain relief.',
     image: '/images/services/hand-wrist-physiotherapy.jpg',

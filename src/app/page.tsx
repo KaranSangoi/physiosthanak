@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   title:
     "Best Physiotherapist in Borivali | 5.0★ Rated | 8000+ cases | PhysioSthanak",
   description:
-    "Best physiotherapist in Borivali West. Dr. Shiva Jain — female physiotherapist, 5.0★ Google, 9+ yrs, 8000+ cases. Clinic & home service. Book now.",
+    "Best physiotherapist in Borivali West. Dr. Shiva Jain Sangoi — female physiotherapist, 5.0★ Google, 10+ yrs, 8000+ cases. Clinic & home service. Book now.",
   keywords: [
     "physiotherapy Borivali",
     "physiotherapist Borivali",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     title:
       "Best Physiotherapist in Borivali | 5.0★ Rated | 8000+ cases | PhysioSthanak",
     description:
-      "Top-rated physiotherapy in Borivali West. 5.0★ Google rated, 9+ years exp, 8000+ cases. Clinic & home visits. Book now.",
+      "Top-rated physiotherapy in Borivali West. 5.0★ Google rated, 10+ years exp, 8000+ cases. Clinic & home visits. Book now.",
     type: "website",
     locale: "en_IN",
     url: `${siteConfig.domain}`,
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     title:
       "Best Physiotherapist in Borivali | 5.0★ Rated | 8000+ cases | PhysioSthanak",
     description:
-      "Expert physiotherapy services in Borivali by Dr. Shiva Jain. 9+ years experience, 8000+ cases treated.",
+      "Expert physiotherapy services in Borivali by Dr. Shiva Jain Sangoi. 10+ years experience, 8000+ cases treated.",
     images: ["/og-image.jpg"],
   },
   alternates: {
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
 const trustIndicators = [
   {
     icon: "clock",
-    number: "9+",
+    number: "10+",
     title: "Years Experience",
     description:
       "Trusted by thousands of patients with proven expertise in physiotherapy.",
@@ -97,7 +97,7 @@ const aboutPoints: WhyPoint[] = [
   {
     title: "Dr. Shiva Jain Sangoi",
     description:
-      "MPTh (Ortho), BPTh with FIFA Diploma in Football Medicine. 9+ years of clinical experience in comprehensive physiotherapy and rehabilitation services.",
+      "MPTh (Ortho), BPTh with FIFA Diploma in Football Medicine. 10+ years of clinical experience in comprehensive physiotherapy and rehabilitation services.",
   },
   {
     title: "Evidence-Based Treatment",
@@ -120,7 +120,7 @@ const whyChoose: Benefit[] = [
   {
     title: "Proven Track Record",
     description:
-      "With 9+ years of experience and 8000+ successfully treated cases, we have the expertise you can trust.",
+      "With 10+ years of experience and 8000+ successfully treated cases, we have the expertise you can trust.",
   },
   {
     title: "Convenient & Accessible",
@@ -185,7 +185,7 @@ const medicalBusinessSchema = {
     "https://physiosthanak.com/images/about/dr-shiva-jain.png",
   ],
   description:
-    "Expert physiotherapy clinic in Borivali West, Mumbai led by Dr. Shiva Jain Sangoi, MPTh (Ortho) with FIFA Diploma in Football Medicine, and her trained physiotherapy team. Specializing in orthopedic rehabilitation, sports injuries, neurological physiotherapy, and home visit services. 9+ years experience, 8000+ cases treated.",
+    "Expert physiotherapy clinic in Borivali West, Mumbai led by Dr. Shiva Jain Sangoi, MPTh (Ortho) with FIFA Diploma in Football Medicine, and her trained physiotherapy team. Specializing in orthopedic rehabilitation, sports injuries, neurological physiotherapy, and home visit services. 10+ years experience, 8000+ cases treated.",
   medicalSpecialty: [
     "Musculoskeletal",
     "Orthopedic",
@@ -250,7 +250,7 @@ const medicalBusinessSchema = {
     name: "Dr. Shiva Jain Sangoi",
     jobTitle: "Physiotherapist & Founder",
     description:
-      "MPTh (Ortho), BPTh, FIFA Diploma in Football Medicine. 9+ years of clinical experience with 8000+ cases treated.",
+      "MPTh (Ortho), BPTh, FIFA Diploma in Football Medicine. 10+ years of clinical experience with 8000+ cases treated.",
     image: "https://physiosthanak.com/images/about/dr-shiva-jain.png",
     hasCredential: [
       {
@@ -363,7 +363,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <HeroSection
         h1="Best Physiotherapist in Borivali"
-        description="5.0★ Google-rated physiotherapy clinic in Borivali West led by Dr. Shiva Jain Sangoi (MPTh Ortho, FIFA-certified) and her expert team. 9+ years experience, 8000+ patients treated successfully. Expert pain relief, sports rehab, and home visits across Mumbai's western suburbs."
+        description="5.0★ Google-rated physiotherapy clinic in Borivali West led by Dr. Shiva Jain Sangoi (MPTh Ortho, FIFA-certified) and her expert team. 10+ years experience, 8000+ patients treated successfully. Expert pain relief, sports rehab, and home visits across Mumbai's western suburbs."
         breadcrumbs={[]}
         isHome
         showOffer
@@ -435,13 +435,13 @@ export default function HomePage() {
                 New at PhysioSthanak
               </span>
               <h2 className="text-2xl sm:text-3xl font-heading font-bold text-accent mb-3 uppercase">
-                Mat Pilates Classes in Borivali West
+                Online Mat Pilates Classes for Women
               </h2>
               <p className="text-text-light leading-relaxed mb-4">
                 Strengthen your core, improve posture, and reduce back pain with
-                our expert-led Mat Pilates group classes. Guided by Dr. Shiva
-                Jain (MPTh Ortho) — combining physiotherapy expertise with
-                Pilates for safe, effective results.
+                live online women-only Mat Pilates — max 4 per batch. Designed by
+                Dr. Shiva Jain Sangoi (MPTh Ortho) and her physiotherapist team, with a
+                free assessment before and after your 4-week program.
               </p>
               <a href="/pilates" className="btn-primary inline-block">
                 Explore Mat Pilates Classes →
@@ -497,7 +497,7 @@ export default function HomePage() {
                     </h3>
                     <p className="text-text-light leading-relaxed text-sm">
                       MPTh (Ortho), BPTh with FIFA Diploma in Football Medicine.
-                      9+ years of clinical experience in comprehensive{" "}
+                      10+ years of clinical experience in comprehensive{" "}
                       <a
                         href="https://en.wikipedia.org/wiki/Physiotherapy"
                         target="_blank"
@@ -644,7 +644,7 @@ export default function HomePage() {
       {/* Final CTA */}
       <CTASection
         heading="Ready to Start Your Recovery?"
-        description="Book your consultation with Dr. Shiva Jain today. Take the first step toward pain relief and improved mobility."
+        description="Book your consultation with Dr. Shiva Jain Sangoi today. Take the first step toward pain relief and improved mobility."
       />
     </>
   );

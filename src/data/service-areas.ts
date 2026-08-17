@@ -33,7 +33,7 @@ export const serviceAreas: ServiceArea[] = [
       'female physiotherapist Borivali',
       'physiotherapist near me home service',
     ],
-    metaDescription: 'Lady physiotherapist in Borivali — Dr. Shiva Jain, MPTh Ortho, FIFA certified. 5.0★ clinic & home service for pain, sports injuries & rehab. Book now.',
+    metaDescription: 'Lady physiotherapist in Borivali — Dr. Shiva Jain Sangoi, MPTh Ortho, FIFA certified. 5.0★ clinic & home service for pain, sports injuries & rehab. Book now.',
     h1: 'Physiotherapy Services in Borivali',
     heroDescription: 'PhysioSthanak is Borivali\'s trusted physiotherapy clinic led by Dr. Shiva Jain Sangoi, MPTh Ortho with FIFA Diploma credentials, and her expert team. We deliver expert orthopaedic rehabilitation, sports injury treatment, and home visit physiotherapy services across Borivali West and East.',
     benefits: [
@@ -47,7 +47,7 @@ export const serviceAreas: ServiceArea[] = [
       },
       {
         title: 'Physiotherapy at Home Across Borivali',
-        description: 'For elderly residents, post-surgery patients, and those with limited mobility in Borivali, PhysioSthanak provides physiotherapy at home with the same clinical quality as the clinic. As a lady physiotherapist, Dr. Shiva Jain brings professional-grade treatment including manual therapy, therapeutic exercises, and electrotherapy directly to your doorstep anywhere in Borivali West and East.',
+        description: 'For elderly residents, post-surgery patients, and those with limited mobility in Borivali, PhysioSthanak provides physiotherapy at home with the same clinical quality as the clinic. As a lady physiotherapist, Dr. Shiva Jain Sangoi brings professional-grade treatment including manual therapy, therapeutic exercises, and electrotherapy directly to your doorstep anywhere in Borivali West and East.',
       },
     ],
     whyPoints: [
@@ -127,7 +127,7 @@ export const serviceAreas: ServiceArea[] = [
       'female physiotherapist Dahisar',
       'physiotherapist home service Dahisar',
     ],
-    metaDescription: 'Lady physiotherapist in Dahisar — Dr. Shiva Jain, MPTh Ortho. Pain relief, sports rehab & home service physiotherapy. 5.0★ rated. Book now.',
+    metaDescription: 'Lady physiotherapist in Dahisar — Dr. Shiva Jain Sangoi, MPTh Ortho. Pain relief, sports rehab & home service physiotherapy. 5.0★ rated. Book now.',
     h1: 'Physiotherapy Services in Dahisar',
     heroDescription: 'Dahisar residents can access expert physiotherapy from PhysioSthanak, led by Dr. Shiva Jain Sangoi with MPTh Ortho and FIFA Diploma qualifications, and her expert team. Our clinic near Dahisar provides specialized orthopaedic rehabilitation, chronic pain treatment, and professional home visit physiotherapy services.',
     benefits: [
@@ -137,7 +137,7 @@ export const serviceAreas: ServiceArea[] = [
       },
       {
         title: 'Physiotherapy at Home for Dahisar Residents',
-        description: 'PhysioSthanak\'s home service extends complete physiotherapy at home to Dahisar residents. Whether you live in Dahisar West, Dahisar East, Kandarpada, or any surrounding locality, Dr. Shiva Jain — a qualified lady physiotherapist — provides full-service rehabilitation at your doorstep including manual therapy, guided exercises, electrotherapy, and progress assessment.',
+        description: 'PhysioSthanak\'s home service extends complete physiotherapy at home to Dahisar residents. Whether you live in Dahisar West, Dahisar East, Kandarpada, or any surrounding locality, Dr. Shiva Jain Sangoi — a qualified lady physiotherapist — provides full-service rehabilitation at your doorstep including manual therapy, guided exercises, electrotherapy, and progress assessment.',
       },
       {
         title: 'Over 8000 Successfully Treated Cases',
@@ -169,10 +169,10 @@ export const serviceAreas: ServiceArea[] = [
       },
       {
         question: 'What types of physiotherapy are most requested by Dahisar patients?',
-        answer: 'The most common treatments requested by Dahisar patients include lower back pain rehabilitation, cervical spondylosis management, post-knee replacement therapy, frozen shoulder treatment, and sports injury recovery. Dr. Shiva Jain creates individualized plans for each condition based on thorough assessment.',
+        answer: 'The most common treatments requested by Dahisar patients include lower back pain rehabilitation, cervical spondylosis management, post-knee replacement therapy, frozen shoulder treatment, and sports injury recovery. Dr. Shiva Jain Sangoi creates individualized plans for each condition based on thorough assessment.',
       },
     ],
-    mapDescription: 'PhysioSthanak\'s Borivali West clinic is easily accessible to all Dahisar residents. Located on Sardar Vallabhbhai Patel Road opposite HDFC Bank, the clinic is just one railway station south of Dahisar on the Western line. Auto-rickshaws and BEST buses also provide direct connectivity from Dahisar West and East. For homebound patients, Dr. Shiva Jain offers doorstep physiotherapy throughout Dahisar.',
+    mapDescription: 'PhysioSthanak\'s Borivali West clinic is easily accessible to all Dahisar residents. Located on Sardar Vallabhbhai Patel Road opposite HDFC Bank, the clinic is just one railway station south of Dahisar on the Western line. Auto-rickshaws and BEST buses also provide direct connectivity from Dahisar West and East. For homebound patients, Dr. Shiva Jain Sangoi offers doorstep physiotherapy throughout Dahisar.',
     externalLink: {
       url: 'https://en.wikipedia.org/wiki/Dahisar',
       text: 'Dahisar',
@@ -214,13 +214,13 @@ export const serviceAreas: ServiceArea[] = [
       'female physiotherapist Kandivali',
       'physiotherapist home service Kandivali',
     ],
-    metaDescription: 'Lady physiotherapist in Kandivali — Dr. Shiva Jain at PhysioSthanak. Ortho rehab, sports injuries & home service physio. 5.0★ rated. Book today.',
+    metaDescription: 'Lady physiotherapist in Kandivali — Dr. Shiva Jain Sangoi at PhysioSthanak. Ortho rehab, sports injuries & home service physio. 5.0★ rated. Book today.',
     h1: 'Physiotherapy Services in Kandivali',
     heroDescription: 'PhysioSthanak delivers expert physiotherapy services to Kandivali residents through our nearby Borivali West clinic and professional home visits. Dr. Shiva Jain Sangoi, MPTh Ortho with FIFA Diploma, provides evidence-based rehabilitation for orthopaedic conditions, sports injuries, and chronic pain management.',
     benefits: [
       {
         title: 'Quick Access from Kandivali to Expert Care',
-        description: 'Kandivali residents are just one station north of PhysioSthanak\'s Borivali West clinic on the Western Railway line. This short commute puts specialist orthopaedic physiotherapy within easy reach. Patients from Kandivali West and East can access Dr. Shiva Jain\'s expert care without the time and expense of travelling to distant city hospitals for rehabilitation.',
+        description: 'Kandivali residents are just one station north of PhysioSthanak\'s Borivali West clinic on the Western Railway line. This short commute puts specialist orthopaedic physiotherapy within easy reach. Patients from Kandivali West and East can access Dr. Shiva Jain Sangoi\'s expert care without the time and expense of travelling to distant city hospitals for rehabilitation.',
       },
       {
         title: 'Evidence-Based Treatment Protocols',
@@ -228,7 +228,7 @@ export const serviceAreas: ServiceArea[] = [
       },
       {
         title: 'Complete Rehabilitation Services Including Home Visits',
-        description: 'From manual therapy and joint mobilization to electrotherapy and exercise prescription, PhysioSthanak offers Kandivali residents complete physiotherapy at home and at the clinic. Dr. Shiva Jain — a qualified lady physiotherapist — provides specialist-level care for post-operative rehabilitation, chronic pain management, neurological physiotherapy, and sports injury treatment.',
+        description: 'From manual therapy and joint mobilization to electrotherapy and exercise prescription, PhysioSthanak offers Kandivali residents complete physiotherapy at home and at the clinic. Dr. Shiva Jain Sangoi — a qualified lady physiotherapist — provides specialist-level care for post-operative rehabilitation, chronic pain management, neurological physiotherapy, and sports injury treatment.',
       },
     ],
     whyPoints: [
@@ -256,7 +256,7 @@ export const serviceAreas: ServiceArea[] = [
       },
       {
         question: 'Does PhysioSthanak treat work-related injuries for Kandivali professionals?',
-        answer: 'Yes, PhysioSthanak frequently treats Kandivali professionals suffering from work-related conditions including carpal tunnel syndrome, cervical spondylosis from desk work, tech neck, lower back pain from prolonged sitting, and repetitive strain injuries. Dr. Shiva Jain also provides ergonomic advice to prevent recurrence.',
+        answer: 'Yes, PhysioSthanak frequently treats Kandivali professionals suffering from work-related conditions including carpal tunnel syndrome, cervical spondylosis from desk work, tech neck, lower back pain from prolonged sitting, and repetitive strain injuries. Dr. Shiva Jain Sangoi also provides ergonomic advice to prevent recurrence.',
       },
     ],
     mapDescription: 'PhysioSthanak\'s Borivali West clinic is the closest specialist physiotherapy facility for most Kandivali residents. Located on Sardar Vallabhbhai Patel Road opposite HDFC Bank, the clinic is a short auto-rickshaw ride or one train station from Kandivali. The ground-floor clinic at Hari-Smruti Premises is wheelchair-accessible and offers ample parking. Home visits extend our expert physiotherapy services throughout Kandivali.',
@@ -302,7 +302,7 @@ export const serviceAreas: ServiceArea[] = [
       'female physiotherapist Malad',
       'physiotherapist home service Malad',
     ],
-    metaDescription: 'Lady physiotherapist in Malad — Dr. Shiva Jain, MPTh Ortho & FIFA Diploma. Rehab, sports injuries & home service physio. 5.0★. Book now.',
+    metaDescription: 'Lady physiotherapist in Malad — Dr. Shiva Jain Sangoi, MPTh Ortho & FIFA Diploma. Rehab, sports injuries & home service physio. 5.0★. Book now.',
     h1: 'Physiotherapy Services in Malad',
     heroDescription: 'Malad residents can access top-tier physiotherapy at PhysioSthanak, conveniently located in nearby Borivali West. Dr. Shiva Jain Sangoi brings MPTh Ortho expertise and FIFA Diploma credentials to treat musculoskeletal conditions, manage chronic pain, and rehabilitate sports injuries for the Malad community.',
     benefits: [
@@ -312,11 +312,11 @@ export const serviceAreas: ServiceArea[] = [
       },
       {
         title: 'Advanced Manual Therapy for Lasting Relief',
-        description: 'PhysioSthanak uses advanced manual therapy techniques including joint mobilization, soft tissue manipulation, and myofascial release for Malad patients. Dr. Shiva Jain\'s hands-on approach goes beyond symptom management to address the root biomechanical causes of pain. This results in longer-lasting relief compared to passive modality-only treatments offered elsewhere.',
+        description: 'PhysioSthanak uses advanced manual therapy techniques including joint mobilization, soft tissue manipulation, and myofascial release for Malad patients. Dr. Shiva Jain Sangoi\'s hands-on approach goes beyond symptom management to address the root biomechanical causes of pain. This results in longer-lasting relief compared to passive modality-only treatments offered elsewhere.',
       },
       {
         title: 'Physiotherapy at Home Across Malad',
-        description: 'Malad spans a wide geographic area from Link Road to Marve Road and Dindoshi to Gokuldham. PhysioSthanak\'s home service brings complete physiotherapy at home across all Malad localities. Dr. Shiva Jain — a qualified lady physiotherapist — ensures that patients recovering from surgery, elderly individuals, and those preferring home-based care receive the same quality treatment as clinic visitors.',
+        description: 'Malad spans a wide geographic area from Link Road to Marve Road and Dindoshi to Gokuldham. PhysioSthanak\'s home service brings complete physiotherapy at home across all Malad localities. Dr. Shiva Jain Sangoi — a qualified lady physiotherapist — ensures that patients recovering from surgery, elderly individuals, and those preferring home-based care receive the same quality treatment as clinic visitors.',
       },
     ],
     whyPoints: [
@@ -340,14 +340,14 @@ export const serviceAreas: ServiceArea[] = [
       },
       {
         question: 'What specialized physiotherapy does PhysioSthanak offer Malad patients?',
-        answer: 'PhysioSthanak offers Malad patients specialized services including orthopaedic rehabilitation, post-surgical physiotherapy, sports injury treatment with FIFA-certified expertise, geriatric rehabilitation, neurological physiotherapy, and chronic pain management. Dr. Shiva Jain creates condition-specific treatment plans after thorough assessment for every patient.',
+        answer: 'PhysioSthanak offers Malad patients specialized services including orthopaedic rehabilitation, post-surgical physiotherapy, sports injury treatment with FIFA-certified expertise, geriatric rehabilitation, neurological physiotherapy, and chronic pain management. Dr. Shiva Jain Sangoi creates condition-specific treatment plans after thorough assessment for every patient.',
       },
       {
         question: 'Can Malad patients book online appointments at PhysioSthanak?',
         answer: 'Yes, Malad patients can easily book appointments online using PhysioSthanak\'s Google Calendar scheduling system. You can also call +91 9324254297 to book by phone. We offer flexible timing with early morning, afternoon, and evening slots to accommodate Malad residents\' schedules.',
       },
     ],
-    mapDescription: 'PhysioSthanak\'s physiotherapy clinic in Borivali West is well-connected to all parts of Malad. Located on Sardar Vallabhbhai Patel Road at Hari-Smruti Premises opposite HDFC Bank, the clinic is just two train stations from Malad on the Western Railway. BEST bus routes and auto-rickshaws from both Malad West and Malad East provide direct access. For Malad patients preferring doorstep care, Dr. Shiva Jain offers home physiotherapy visits.',
+    mapDescription: 'PhysioSthanak\'s physiotherapy clinic in Borivali West is well-connected to all parts of Malad. Located on Sardar Vallabhbhai Patel Road at Hari-Smruti Premises opposite HDFC Bank, the clinic is just two train stations from Malad on the Western Railway. BEST bus routes and auto-rickshaws from both Malad West and Malad East provide direct access. For Malad patients preferring doorstep care, Dr. Shiva Jain Sangoi offers home physiotherapy visits.',
     externalLink: {
       url: 'https://en.wikipedia.org/wiki/Malad,_Mumbai',
       text: 'Malad',

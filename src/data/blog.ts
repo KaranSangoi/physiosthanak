@@ -6,7 +6,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Best Physiotherapist in Borivali West — How to Choose the Right One',
     metaTitle: 'Best Physiotherapist in Borivali West | How to Choose (2026 Guide)',
     metaDescription:
-      'Looking for the best physiotherapist in Borivali West? Here\'s what to check — qualifications, specialisation, Google reviews, and red flags to avoid. By Dr. Shiva Jain.',
+      'Looking for the best physiotherapist in Borivali West? Here\'s what to check — qualifications, specialisation, Google reviews, and red flags to avoid. By Dr. Shiva Jain Sangoi.',
     keywords: [
       'best physiotherapist in Borivali West',
       'physiotherapist Borivali',
@@ -39,7 +39,7 @@ In India, a qualified physiotherapist must have a **BPTh (Bachelor of Physiother
 - A clinic where the "physiotherapist" is actually a trained technician running machines
 - No degree certificates displayed anywhere in the clinic
 
-**What to ask:** "What is your qualification and specialisation?" A confident physiotherapist will answer this without hesitation. At PhysioSthanak, Dr. Shiva Jain holds a BPTh and MPTh (Ortho), plus a FIFA Diploma in Football Medicine — that's the kind of transparency you should expect.
+**What to ask:** "What is your qualification and specialisation?" A confident physiotherapist will answer this without hesitation. At PhysioSthanak, Dr. Shiva Jain Sangoi holds a BPTh and MPTh (Ortho), plus a FIFA Diploma in Football Medicine — that's the kind of transparency you should expect.
 
 ## How to check if they're experienced with your specific problem
 
@@ -162,7 +162,7 @@ If you're in Borivali West and want to start with a proper assessment, PhysioSth
     title: 'Posture Correction Exercises for Desk Workers — Do These at Your Office',
     metaTitle: 'Posture Correction Exercises for Desk Workers | 5 Easy Fixes (2026)',
     metaDescription:
-      'Fix your desk posture in 2 minutes with these 5 exercises. No equipment needed. Works for WFH and office workers. By Dr. Shiva Jain, Borivali.',
+      'Fix your desk posture in 2 minutes with these 5 exercises. No equipment needed. Works for WFH and office workers. By Dr. Shiva Jain Sangoi, Borivali.',
     keywords: [
       'posture correction exercises',
       'desk posture fix',
@@ -308,7 +308,7 @@ Your body wasn't designed to sit at a desk for 8 hours. But with 3 minutes of ta
     title: 'Physiotherapy vs Orthopaedic Doctor — Who Should You See First?',
     metaTitle: 'Physiotherapy vs Orthopaedic: Who Should You See First? (2026)',
     metaDescription:
-      'Confused whether to see a physiotherapist or orthopaedic doctor? Here\'s when each is the right choice — with real examples. By Dr. Shiva Jain, Borivali.',
+      'Confused whether to see a physiotherapist or orthopaedic doctor? Here\'s when each is the right choice — with real examples. By Dr. Shiva Jain Sangoi, Borivali.',
     keywords: [
       'physiotherapy vs orthopaedic',
       'orthopaedic vs physiotherapist',
@@ -441,7 +441,7 @@ For 70% of musculoskeletal problems, a physiotherapist should be your first call
     title: 'Back Pain Treatment at Home — And When You Actually Need a Physiotherapist',
     metaTitle: 'Back Pain Treatment at Home | When to See a Physio (2026 Guide)',
     metaDescription:
-      'Try these 6 home remedies for back pain first. But if you notice these 5 warning signs, you need a physiotherapist. By Dr. Shiva Jain, Borivali.',
+      'Try these 6 home remedies for back pain first. But if you notice these 5 warning signs, you need a physiotherapist. By Dr. Shiva Jain Sangoi, Borivali.',
     keywords: [
       'back pain treatment at home',
       'home remedies for back pain',
@@ -589,7 +589,7 @@ Start with home management for mild back pain — movement, ice/heat, gentle exe
     title: 'Sports Physiotherapy in Borivali — For Athletes, Gym-Goers, and Weekend Warriors',
     metaTitle: 'Sports Physiotherapy in Borivali | Injury Recovery & Prevention (2026)',
     metaDescription:
-      'Sports injury? Don\'t play through pain. Expert sports physiotherapy in Borivali by FIFA-certified Dr. Shiva Jain. Faster recovery, injury prevention, return-to-sport protocols.',
+      'Sports injury? Don\'t play through pain. Expert sports physiotherapy in Borivali by FIFA-certified Dr. Shiva Jain Sangoi. Faster recovery, injury prevention, return-to-sport protocols.',
     keywords: [
       'sports physiotherapy Borivali',
       'sports injury treatment Mumbai',
@@ -661,7 +661,7 @@ Despite the names, these conditions are common in gym-goers (heavy gripping exer
 
 ## The FIFA Diploma — what it means for your treatment
 
-Dr. Shiva Jain at PhysioSthanak holds a FIFA Diploma in Football Medicine. This isn't a weekend workshop — it's an intensive certification programme by FIFA's medical division that covers acute injury management, concussion protocols, return-to-play decision-making, and injury prevention strategies used at the highest levels of professional football.
+Dr. Shiva Jain Sangoi at PhysioSthanak holds a FIFA Diploma in Football Medicine. This isn't a weekend workshop — it's an intensive certification programme by FIFA's medical division that covers acute injury management, concussion protocols, return-to-play decision-making, and injury prevention strategies used at the highest levels of professional football.
 
 This training applies directly to treating recreational athletes because the principles are the same — whether you're a professional footballer or someone who plays cricket on Sundays. The methodology of assessment, rehabilitation, and safe return to activity follows the same evidence-based protocols.
 
@@ -723,7 +723,7 @@ Playing through pain isn't tough — it's how minor injuries become chronic prob
     title: 'Frozen Shoulder Exercises — A Home Recovery Guide for Every Stage',
     metaTitle: 'Frozen Shoulder Exercises at Home | Stage-by-Stage Guide',
     metaDescription:
-      'Safe frozen shoulder exercises for each recovery stage. 5.0★ rated PhysioSthanak by Dr. Shiva Jain, Borivali West. Book your assessment today.',
+      'Safe frozen shoulder exercises for each recovery stage. 5.0★ rated PhysioSthanak by Dr. Shiva Jain Sangoi, Borivali West. Book your assessment today.',
     keywords: [
       'frozen shoulder exercises',
       'frozen shoulder recovery',
@@ -896,7 +896,7 @@ Most patients need 12-20 sessions spread over 3-5 months for full recovery.
 
 Frozen shoulder is a slow condition — there is no shortcut. But doing the right exercises at the right stage makes the difference between recovering in 12 months and being stuck for 2+ years. Start with the exercises for your current stage, be consistent, and if progress stalls, do not wait — get professional help before the stiffness becomes entrenched.
 
-If you are in Borivali West and want a proper assessment to identify your stage and get a personalised recovery plan, [book a consultation at PhysioSthanak](/services/orthopedic-physiotherapy/frozen-shoulder-ortho). Dr. Shiva Jain will evaluate your shoulder, tell you exactly where you stand, and give you a clear path forward.
+If you are in Borivali West and want a proper assessment to identify your stage and get a personalised recovery plan, [book a consultation at PhysioSthanak](/services/orthopedic-physiotherapy/frozen-shoulder-ortho). Dr. Shiva Jain Sangoi will evaluate your shoulder, tell you exactly where you stand, and give you a clear path forward.
 
 **Related reading:** Dealing with back pain alongside your shoulder issues? Check out our guide on [back pain treatment at home — and when to see a physiotherapist](/blog/back-pain-treatment-at-home-when-to-see-physiotherapist). And for a deeper look at how physiotherapy compares with surgical options, read [physiotherapy vs orthopaedic — who to see first](/blog/physiotherapy-vs-orthopaedic-who-to-see-first).`,
     faqs: [
@@ -1506,7 +1506,7 @@ Most of the surgical recovery is behind you. Now the focus is on building enough
 
 The first 2-3 weeks after discharge are when [home visit physiotherapy](/services/home-visit-physiotherapy) is most valuable. Travelling to a clinic when you can barely walk is stressful, painful, and often impractical — especially for elderly patients or those without easy transport.
 
-At PhysioSthanak, we offer home visit physiotherapy across Borivali West and surrounding areas. Dr. Shiva Jain personally supervises early post-TKR rehabilitation at home, ensuring you start your recovery on the right track without the difficulty of clinic travel.
+At PhysioSthanak, we offer home visit physiotherapy across Borivali West and surrounding areas. Dr. Shiva Jain Sangoi personally supervises early post-TKR rehabilitation at home, ensuring you start your recovery on the right track without the difficulty of clinic travel.
 
 Once you are mobile enough to travel comfortably (usually by week 3-4), transitioning to clinic-based rehabilitation gives you access to equipment and supervised progressive exercises that are difficult to replicate at home.
 
@@ -1718,7 +1718,7 @@ Strong ankles prevent stumbles from turning into falls.
 Getting started with physiotherapy for a senior family member is straightforward:
 
 1. **Call or message PhysioSthanak** — describe the situation (post-surgery? general weakness? fall risk? specific condition?)
-2. **We schedule a home assessment** — Dr. Shiva Jain personally evaluates every patient
+2. **We schedule a home assessment** — Dr. Shiva Jain Sangoi personally evaluates every patient
 3. **Assessment at home** — thorough evaluation, goal setting, treatment plan
 4. **Regular sessions begin** — usually within the same week
 5. **Family training** — we teach family members how to assist between sessions
@@ -1762,7 +1762,7 @@ After 60, physiotherapy is not a luxury — it is maintenance. Just as you servi
     title: 'Lady Physiotherapist in Borivali — Why More Women Are Choosing Female Physios',
     metaTitle: 'Lady Physiotherapist in Borivali | Why Women Prefer Female Physio (2026)',
     metaDescription:
-      'Looking for a lady physiotherapist in Borivali? Dr. Shiva Jain explains why women prefer female physios for pelvic floor, prenatal & postnatal care. Book now.',
+      'Looking for a lady physiotherapist in Borivali? Dr. Shiva Jain Sangoi explains why women prefer female physios for pelvic floor, prenatal & postnatal care. Book now.',
     keywords: [
       'lady physiotherapist in Borivali',
       'lady physiotherapist near me',
@@ -1843,12 +1843,12 @@ Choosing a lady physiotherapist isn't about making a political statement. For sp
 
 The demand for female physios in Mumbai is growing because women are becoming better informed about their own healthcare options. And that's a good thing.
 
-If you're looking for a lady physiotherapist in Borivali or anywhere in Mumbai's western suburbs, [book a consultation at PhysioSthanak](/). Dr. Shiva Jain treats patients at the clinic in Borivali West and also offers [home visit physiotherapy](/services/home-visit-physiotherapy) across Borivali, Dahisar, Kandivali, and Malad.`,
+If you're looking for a lady physiotherapist in Borivali or anywhere in Mumbai's western suburbs, [book a consultation at PhysioSthanak](/). Dr. Shiva Jain Sangoi treats patients at the clinic in Borivali West and also offers [home visit physiotherapy](/services/home-visit-physiotherapy) across Borivali, Dahisar, Kandivali, and Malad.`,
     faqs: [
       {
         question: 'Is there a lady physiotherapist in Borivali West?',
         answer:
-          'Yes. Dr. Shiva Jain Sangoi at PhysioSthanak is a qualified female physiotherapist in Borivali West with MPTh (Ortho), FIFA Diploma in Football Medicine, and 9+ years of experience treating over 8,000 patients. The clinic is located on SVP Road, opposite HDFC Bank, Borivali West.',
+          'Yes. Dr. Shiva Jain Sangoi at PhysioSthanak is a qualified female physiotherapist in Borivali West with MPTh (Ortho), FIFA Diploma in Football Medicine, and 10+ years of experience treating over 8,000 patients. The clinic is located on SVP Road, opposite HDFC Bank, Borivali West.',
       },
       {
         question: 'Why should I choose a lady physiotherapist for pelvic floor therapy?',
@@ -1858,7 +1858,7 @@ If you're looking for a lady physiotherapist in Borivali or anywhere in Mumbai's
       {
         question: 'Does a female physiotherapist provide home visits in Borivali?',
         answer:
-          'Yes. Dr. Shiva Jain at PhysioSthanak provides home visit physiotherapy across Borivali, Dahisar, Kandivali, and Malad. Home visits are especially popular among new mothers, elderly women, and post-surgery patients who prefer being treated by a lady physiotherapist in the comfort of their home.',
+          'Yes. Dr. Shiva Jain Sangoi at PhysioSthanak provides home visit physiotherapy across Borivali, Dahisar, Kandivali, and Malad. Home visits are especially popular among new mothers, elderly women, and post-surgery patients who prefer being treated by a lady physiotherapist in the comfort of their home.',
       },
       {
         question: 'Is there a difference between a female physiotherapist and a male physiotherapist for general conditions?',
@@ -1948,7 +1948,7 @@ A legitimate home service physiotherapy session isn't someone showing up with a 
 
 **Verify the qualification.** This matters even more for home visits because you don't have the visual cues of a clinic setup. Ask for the therapist's BPTh or MPTh degree and MSOTPT registration number. Any qualified physiotherapist will share this without hesitation.
 
-**Check if the same therapist comes every time.** Continuity matters in physiotherapy. If a different person shows up each session, your treatment lacks consistency. At PhysioSthanak, Dr. Shiva Jain personally handles [home visit cases](/services/home-visit-physiotherapy) across Borivali, Dahisar, Kandivali, and Malad — the same therapist, every session.
+**Check if the same therapist comes every time.** Continuity matters in physiotherapy. If a different person shows up each session, your treatment lacks consistency. At PhysioSthanak, Dr. Shiva Jain Sangoi personally handles [home visit cases](/services/home-visit-physiotherapy) across Borivali, Dahisar, Kandivali, and Malad — the same therapist, every session.
 
 **Ask about the treatment plan.** A proper physiotherapist will give you a clear treatment plan with goals, expected timeline, and criteria for progression. "Come twice a week indefinitely" isn't a treatment plan — it's a subscription.
 
@@ -1969,7 +1969,7 @@ For all areas, sessions are available 6 days a week. Morning slots are particula
 
 Physiotherapy home service isn't a compromise — for many patients, it's the clinically better choice. The key is ensuring you're getting a qualified physiotherapist (BPTh/MPTh, registered with MSOTPT) who provides progressive, evidence-based treatment at your home, not just machine-based passive therapy.
 
-If you're looking for a physiotherapist home service in Borivali or anywhere in Mumbai's western suburbs, [contact PhysioSthanak](/) to book a home visit with Dr. Shiva Jain. Same-day appointments available for urgent post-surgery cases.`,
+If you're looking for a physiotherapist home service in Borivali or anywhere in Mumbai's western suburbs, [contact PhysioSthanak](/) to book a home visit with Dr. Shiva Jain Sangoi. Same-day appointments available for urgent post-surgery cases.`,
     faqs: [
       {
         question: 'How much does physiotherapy home service cost in Mumbai?',
@@ -1979,7 +1979,7 @@ If you're looking for a physiotherapist home service in Borivali or anywhere in 
       {
         question: 'Which areas does PhysioSthanak cover for home physiotherapy?',
         answer:
-          'PhysioSthanak provides home visit physiotherapy across Borivali (West and East), Dahisar, Kandivali, and Malad. Dr. Shiva Jain personally handles home visits to ensure treatment continuity. Sessions are available 6 days a week with morning and evening slots.',
+          'PhysioSthanak provides home visit physiotherapy across Borivali (West and East), Dahisar, Kandivali, and Malad. Dr. Shiva Jain Sangoi personally handles home visits to ensure treatment continuity. Sessions are available 6 days a week with morning and evening slots.',
       },
       {
         question: 'Is home physiotherapy as effective as clinic physiotherapy?',
@@ -2000,7 +2000,7 @@ If you're looking for a physiotherapist home service in Borivali or anywhere in 
     title: 'Sciatica Pain Relief — Causes, Warning Signs, and When Physiotherapy Helps',
     metaTitle: 'Sciatica Pain Relief | Causes, Red Flags & Physiotherapy (2026 Guide)',
     metaDescription:
-      'Sciatica pain shooting down your leg? Understand the causes, red-flag symptoms, and when physiotherapy helps — by Dr. Shiva Jain, MPTh (Ortho), Borivali.',
+      'Sciatica pain shooting down your leg? Understand the causes, red-flag symptoms, and when physiotherapy helps — by Dr. Shiva Jain Sangoi, MPTh (Ortho), Borivali.',
     keywords: [
       'sciatica pain relief',
       'sciatica treatment',
@@ -2089,7 +2089,7 @@ A physiotherapy assessment for sciatica is not about handing over a sheet of exe
 
 From there, management is individualised. Evidence-informed conservative care combines graded, progressive loading with education about movement and activity, manual therapy where indicated, and a structured return to normal function — rather than passive machine treatment alone. What that looks like for you depends on what the assessment finds, which is why this article deliberately does not prescribe exercises.
 
-At PhysioSthanak, sciatica cases fall under [back pain and spine physiotherapy](/services/back-pain-physiotherapy), assessed personally by Dr. Shiva Jain rather than delegated to a technician.
+At PhysioSthanak, sciatica cases fall under [back pain and spine physiotherapy](/services/back-pain-physiotherapy), assessed personally by Dr. Shiva Jain Sangoi rather than delegated to a technician.
 
 ## Things that commonly make sciatica worse
 
@@ -2114,7 +2114,7 @@ Reasonable triggers for getting assessed rather than waiting it out:
 - A second or third episode, even if each eventually settled
 - Any numbness or weakness, even mild
 
-The **first consultation at our Borivali West clinic is free** — a full assessment with Dr. Shiva Jain, MPTh (Ortho), with no obligation to book further sessions. You will leave knowing what is actually going on and what the realistic path forward looks like. (Home visits are charged separately, as they involve travel time.)
+The **first consultation at our Borivali West clinic is free** — a full assessment with Dr. Shiva Jain Sangoi, MPTh (Ortho), with no obligation to book further sessions. You will leave knowing what is actually going on and what the realistic path forward looks like. (Home visits are charged separately, as they involve travel time.)
 
 To book, [contact PhysioSthanak](/) or call the clinic at Shop No. 14, Hari-Smruti Premises, SVP Road, opposite HDFC Bank, Borivali West.
 

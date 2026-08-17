@@ -10,29 +10,29 @@ const WEB3FORMS_KEY = '97e35895-6350-4c20-982e-f2fdb1996900';
 
 const FAQS = [
   {
-    question: 'What is Mat Pilates?',
+    question: 'What is Mat Pilates, and why does it need no machines?',
     answer:
-      'Mat Pilates is a low-impact, full-body exercise method performed on a mat without machines. It focuses on core strength, flexibility, posture, and controlled breathing. Unlike gym workouts that isolate muscles, Pilates trains your body as a connected system — improving stability, balance, and body awareness. At PhysioSthanak, every session is designed by a physiotherapist to be safe and effective for your specific body.',
+      'Mat Pilates is a low-impact, full-body exercise method performed on a simple mat — no reformers, no springs, no bulky equipment. Your own body weight, controlled breathing, and precise movement do all the work. That is exactly what makes it perfect for online classes: you get the full benefit at home with nothing more than a yoga mat and a little floor space. It builds core strength, flexibility, posture, and body awareness — training your body as a connected system rather than isolated muscles. At PhysioSthanak, every session is designed by physiotherapists to be safe and effective for your specific body.',
   },
   {
-    question: 'Who can join these classes?',
+    question: 'Who benefits most from these classes?',
     answer:
-      'Our Mat Pilates classes are exclusively for women of all fitness levels — from complete beginners to experienced practitioners. Whether you are recovering from an injury, managing chronic pain, looking to improve posture, or simply want a structured fitness routine, our physiotherapist-instructors design exercises around your abilities. Women with conditions like back pain, joint stiffness, post-surgery recovery, and even pregnancy can benefit, as every exercise is modified to suit individual needs.',
+      'Our online Mat Pilates classes are exclusively for women of all fitness levels — and because every exercise is physiotherapist-designed and modified, they are safe even for those who have never exercised before. The women who benefit most: new mothers rebuilding core strength after delivery (including diastasis recti recovery), homemakers with back or neck pain from daily household strain, working women with desk-related posture problems, women managing joint stiffness or early arthritis, and seniors who want to stay strong and mobile safely. If you can lie down on a mat, there is a version of every exercise for you.',
   },
   {
-    question: 'What happens during the free consultation?',
+    question: 'What happens during the free assessment?',
     answer:
-      'Before your first class, Dr. Shiva personally conducts a one-on-one clinical biomechanical assessment. This includes evaluating your posture, spinal alignment, joint mobility, muscle strength, flexibility, and any existing injuries or medical conditions. Based on this assessment, she creates a personalized exercise plan that your physiotherapist-instructors follow — so even in a group setting, the movements are tailored to your body. This is what makes our Pilates genuinely different from a generic fitness class.',
+      'Before your first class, Dr. Shiva and/or her team of qualified physiotherapists conduct a one-on-one clinical biomechanical assessment — evaluating your posture, spinal alignment, joint mobility, muscle strength, flexibility, and any existing injuries or medical conditions. Based on this, your personalized exercise plan is created and your goals for the 4 weeks are set — so even in a group class, every movement is tailored to your body. And at the end of your 4-week program, you receive a complimentary re-assessment to measure exactly how far you have come. Both assessments are included free with every package.',
   },
   {
-    question: "What's the difference between online and offline batches?",
+    question: 'How is physiotherapist-led Pilates different from a regular fitness class?',
     answer:
-      'Offline batches are held at our clinic in Borivali West, Mumbai, where our physiotherapist-instructors personally supervise your form and technique in real time. Online batches are conducted via video call, allowing you to join from anywhere in India. Both formats include the same biomechanical assessment by Dr. Shiva, personalized modifications, and direct guidance from qualified instructors. The online batch is ideal if you live outside Mumbai or prefer the convenience of exercising at home.',
+      'Three things a fitness-only class cannot give you: a clinical assessment before you start (so exercises are chosen for your body, not a generic routine), medically-informed modifications during class (your instructor knows your injuries, conditions, and assessment results), and measurable goal-setting with a before-and-after comparison. Fitness instructors count reps; physiotherapists watch how your body moves and correct the pattern, not just the posture. That is why our classes are safe for post-partum recovery, back pain, and seniors — situations where a generic class could do more harm than good.',
   },
   {
-    question: 'What should I wear/bring to class?',
+    question: 'What do I need for the online classes?',
     answer:
-      'Wear comfortable, stretchy clothing that allows full range of movement — leggings or track pants and a fitted top work well. Avoid loose or baggy clothes as they make it harder for the instructor to check your form. For offline classes, bring a water bottle and a small towel; mats are provided at the clinic. For online classes, you will need a yoga mat, a stable internet connection, and enough space to stretch your arms and legs freely.',
+      'Just three things: a yoga mat, a stable internet connection, and enough floor space to stretch your arms and legs freely. Wear comfortable, stretchy clothing — leggings or track pants and a fitted top work well, as loose clothes make it harder for your instructor to check your form on screen. Classes are held live on video with a maximum of 4 women per batch, so your instructor can actually see and correct every participant — this is not a pre-recorded video you follow alone.',
   },
 ];
 
@@ -69,25 +69,30 @@ export default function PilatesContent({ batches }: PilatesContentProps) {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'HowTo',
-            name: 'How to Start Women-Only Physiotherapist-Led Mat Pilates at PhysioSthanak',
-            description: 'Join women-only Mat Pilates classes led by a qualified physiotherapist in Borivali, Mumbai. Every student gets a free biomechanical assessment before starting.',
+            name: 'How to Start Women-Only Physiotherapist-Led Online Mat Pilates at PhysioSthanak',
+            description: 'Join women-only online Mat Pilates classes led by qualified physiotherapists. Every student gets a free biomechanical assessment before starting and a complimentary re-assessment after 4 weeks.',
             totalTime: 'P7D',
             step: [
               {
                 '@type': 'HowToStep',
                 name: 'Register Online',
-                text: 'Fill out the registration form on our website with your name, phone, email, age, and preferred batch (online or offline). Choose a schedule that fits your routine.',
+                text: 'Fill out the registration form on our website with your name, phone, email, age, and preferred batch timing (Mon/Wed/Fri \u2014 8, 9, or 10 AM). Only 4 seats per batch.',
                 url: 'https://physiosthanak.com/pilates#register',
               },
               {
                 '@type': 'HowToStep',
-                name: 'Free Physiotherapy Consultation',
-                text: 'Dr. Shiva Jain Sangoi personally conducts a clinical biomechanical assessment evaluating your posture, joint mobility, muscle imbalances, flexibility, and any existing injuries or medical conditions. She creates your personalized plan.',
+                name: 'Free Physiotherapy Assessment & Goal Setting',
+                text: 'Dr. Shiva Jain Sangoi and/or her team of qualified physiotherapists conduct a clinical biomechanical assessment evaluating your posture, joint mobility, muscle imbalances, flexibility, and any existing injuries or medical conditions \u2014 then set your personal 4-week goals.',
               },
               {
                 '@type': 'HowToStep',
-                name: 'Join Your Customized Batch',
-                text: 'Start your Mat Pilates journey led by qualified physiotherapist-instructors who follow Dr. Shiva\u2019s personalized plan for your body. Every session is customized even in a group setting, progressively improving your strength, flexibility, and posture.',
+                name: 'Join Your Customized Online Batch',
+                text: 'Start your 12-session, 4-week Mat Pilates journey (Mon/Wed/Fri) led live on video by qualified physiotherapist-instructors who follow your personalized plan. Maximum 4 women per batch, so every movement is watched and corrected.',
+              },
+              {
+                '@type': 'HowToStep',
+                name: 'Complimentary 4-Week Re-assessment',
+                text: 'At the end of your program, receive a free follow-up biomechanical assessment comparing your strength, flexibility, and posture against your starting point \u2014 so your progress is measured, not guessed.',
               },
             ],
           }),
@@ -96,6 +101,7 @@ export default function PilatesContent({ batches }: PilatesContentProps) {
 
       <HeroSection />
       <WhyDifferentSection />
+      <BenefitsSection />
       <ImageStripSection />
       <HowItWorksSection />
       <PricingSection />
@@ -134,11 +140,12 @@ function HeroSection() {
           </span>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-tight uppercase">
-            Physiotherapist-Led Mat Pilates for Women in Borivali
+            Physiotherapist-Led Online Mat Pilates for Women
           </h1>
 
           <p className="text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl mx-auto">
-            Women-only classes led by qualified physiotherapist-instructors. Free consultation by Dr. Shiva. Customized to your body.
+            Live online women-only classes, max 4 per batch, led by qualified physiotherapist-instructors.
+            Free assessment by Dr. Shiva &amp; her team — before AND after your 4-week program.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
@@ -179,9 +186,9 @@ function WhyDifferentSection() {
         'Unlike most studios where instructors hold a fitness certification, every PhysioSthanak Pilates instructor is a qualified physiotherapist (BPTh). They understand anatomy, biomechanics, and rehabilitation at a clinical level — meaning every exercise is grounded in medical science, not just fitness trends. The entire program is designed and supervised by Dr. Shiva Jain Sangoi, MPTh (Ortho).',
     },
     {
-      title: 'Free Biomechanical Assessment by Dr. Shiva',
+      title: 'Free Assessment Before AND After — With Goal Setting',
       description:
-        'Every student gets a free one-on-one physiotherapy consultation with Dr. Shiva before their first class. She personally evaluates your posture, joint mobility, muscle imbalances, and injuries. Based on this clinical-grade assessment, your Pilates program is customized — so your instructors know exactly how to modify exercises for your body.',
+        'Every student gets a free one-on-one biomechanical assessment by Dr. Shiva and/or her team of qualified physiotherapists before the first class — posture, joint mobility, muscle imbalances, injuries — and your personal 4-week goals are set from it. Then, when your program ends, a complimentary re-assessment measures your progress against those goals. You see the change in numbers, not just feelings. Both assessments are included in every package at no extra cost.',
     },
     {
       title: 'Personalized Group Classes',
@@ -245,6 +252,85 @@ function WhyDifferentSection() {
   );
 }
 
+/* ─────────────── 2B. WHO BENEFITS / WHY MAT ─────────────── */
+
+function BenefitsSection() {
+  const audiences = [
+    {
+      title: 'New Mothers & Postpartum Recovery',
+      description:
+        'Gently rebuild core and pelvic floor strength after delivery — including structured recovery for diastasis recti (abdominal separation). Every exercise is physiotherapist-screened for postpartum safety, something a generic fitness class cannot promise.',
+    },
+    {
+      title: 'Homemakers with Back & Neck Strain',
+      description:
+        'Years of lifting, bending, and standing in the kitchen quietly load the spine. Mat Pilates strengthens the deep muscles that protect your back — so daily work stops hurting, and energy lasts longer through the day.',
+    },
+    {
+      title: 'Working Women & Desk Professionals',
+      description:
+        'Rounded shoulders, stiff neck, lower-back ache from long sitting hours — Pilates directly targets the postural muscles that desk life switches off. Just three mornings a week, from home, before work begins.',
+    },
+    {
+      title: 'Seniors & First-Time Exercisers',
+      description:
+        'Because Mat Pilates is low-impact and needs no equipment, it is one of the safest ways for older women to build strength, balance, and bone-loading — reducing fall risk and joint stiffness. Every movement has a gentler version, and your instructor knows exactly when to use it.',
+    },
+  ];
+
+  const matPoints = [
+    'No reformers, springs, or bulky machines — just a mat and your own body',
+    'Full clinical benefit at home: perfect for live online classes',
+    'Low-impact and joint-friendly — safe for every age and fitness level',
+    'Physiotherapist-set goals with a measured before-and-after comparison',
+  ];
+
+  return (
+    <section className="section-padding bg-bg-light">
+      <div className="container-max">
+        <div className="text-center mb-14">
+          <span className="section-eyebrow">Who Is This For?</span>
+          <h2 className="text-3xl sm:text-4xl font-heading font-bold text-accent mb-4 uppercase">
+            Made for Real Women, Real Bodies, Real Routines
+          </h2>
+          <p className="text-lg text-text-light max-w-2xl mx-auto">
+            Mat Pilates needs no machines and no gym — which is exactly why it works for the women
+            who need it most.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+          {audiences.map((item, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-lg p-6 shadow-lg border border-slate-100 hover:border-accent-pink/30 hover:shadow-xl transition-all"
+            >
+              <h3 className="text-base font-heading font-bold text-accent uppercase mb-2">
+                {item.title}
+              </h3>
+              <p className="text-text-light leading-relaxed text-sm">{item.description}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="bg-primary/5 border border-primary/15 rounded-lg p-6 md:p-8 max-w-3xl mx-auto">
+          <h3 className="text-lg font-heading font-bold text-accent uppercase mb-4 text-center">
+            Why Mat Pilates — and Why Online Works So Well
+          </h3>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {matPoints.map((point, index) => (
+              <li key={index} className="flex items-start gap-2 text-sm text-text-light">
+                <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                {point}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ─────────────── IMAGE STRIP ─────────────── */
 
 function ImageStripSection() {
@@ -292,17 +378,22 @@ function HowItWorksSection() {
     {
       title: 'Register',
       description:
-        'Fill out the registration form below with your details and preferred batch — choose between online or offline classes based on your schedule and location.',
+        'Fill out the registration form below and pick your batch timing — Monday/Wednesday/Friday, at 8, 9, or 10 AM. Only 4 seats per batch, so every student gets real attention.',
     },
     {
-      title: 'Free Consultation with Dr. Shiva',
+      title: 'Free Assessment & Goal Setting',
       description:
-        'Dr. Shiva personally conducts a clinical biomechanical assessment — evaluating your posture, flexibility, strength, and any existing conditions. She creates your personalized plan that your instructors follow.',
+        'Dr. Shiva and/or her team of qualified physiotherapists conduct your clinical biomechanical assessment — posture, flexibility, strength, existing conditions — and set your personal 4-week goals. Your instructors follow this plan in every class.',
     },
     {
-      title: 'Join Your Batch',
+      title: 'Train 3x a Week for 4 Weeks',
       description:
-        'Start your customized Mat Pilates journey led by qualified physiotherapist-instructors. Your exercises are tailored to your body based on Dr. Shiva\u2019s assessment. Every session builds on the last, progressively improving your strength and mobility.',
+        'Twelve live online sessions (Mon/Wed/Fri) with your physiotherapist-instructor. Exercises are tailored to your assessment, corrected live on video, and progressed week by week as your strength and control improve.',
+    },
+    {
+      title: 'Complimentary Progress Re-assessment',
+      description:
+        'After your 4 weeks, a free follow-up assessment measures your progress against your starting point \u2014 strength, flexibility, posture. You see exactly what changed, and what your next goal should be.',
     },
   ];
 
@@ -312,11 +403,11 @@ function HowItWorksSection() {
         <div className="text-center mb-14">
           <span className="section-eyebrow">How It Works</span>
           <h2 className="text-3xl sm:text-4xl font-heading font-bold text-accent mb-4 uppercase">
-            3 Simple Steps to Start
+            Your 4-Week Journey, Step by Step
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
           {steps.map((step, index) => (
             <div key={index} className="text-center">
               <div className="w-14 h-14 rounded-full bg-primary text-white flex items-center justify-center font-heading font-bold text-xl mx-auto mb-5">
@@ -348,7 +439,8 @@ function PricingSection() {
             Simple, Transparent Pricing
           </h2>
           <p className="text-lg text-text-light max-w-2xl mx-auto">
-            Includes free biomechanical assessment by Dr. Shiva before your first class
+            Every package includes a free biomechanical assessment with goal setting before your
+            first class — and a complimentary progress re-assessment after your 4 weeks.
           </p>
         </div>
 
@@ -356,70 +448,78 @@ function PricingSection() {
           {/* Group Batch */}
           <div className="bg-white rounded-lg p-8 shadow-lg border-2 border-primary/20 hover:border-accent-pink/40 transition-all relative overflow-hidden">
             <div className="absolute top-0 right-0 bg-accent-pink text-white text-xs font-heading font-bold uppercase tracking-wider px-4 py-1.5 rounded-bl-lg">
-              50% Off — First 10 Students
+              Founding Batch Price
             </div>
             <h3 className="text-lg font-heading font-bold text-accent uppercase mb-2 mt-4">
-              Group Batch
+              Group Batch — Only 4 Seats
             </h3>
-            <p className="text-text-light text-sm mb-4">8 sessions over 4 weeks — twice a week</p>
+            <p className="text-text-light text-sm mb-4">
+              12 live online sessions over 4 weeks — Mon/Wed/Fri
+            </p>
             <div className="flex items-baseline gap-2 mb-1">
-              <span className="text-3xl font-heading font-bold text-accent">₹3,000</span>
-              <span className="text-lg text-text-light line-through">₹6,000</span>
+              <span className="text-3xl font-heading font-bold text-accent">₹5,000</span>
+              <span className="text-lg text-text-light line-through">₹8,000</span>
             </div>
             <p className="text-xs text-accent-pink font-medium mb-6">
-              50% off launch offer for first 10 registrations
+              Founding-batch price — locked in for as long as you continue, till seats last
             </p>
             <ul className="space-y-2 mb-6 text-sm text-text-light">
               <li className="flex items-start gap-2">
                 <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                Free biomechanical assessment by Dr. Shiva
+                Free pre &amp; post assessment by Dr. Shiva and/or her team
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                Personal 4-week goals, measured at the end
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                Max 4 women per batch — every rep is watched &amp; corrected
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
                 All instructors are qualified physiotherapists
               </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                Exercises customized to your body
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                Online (Google Meet) or Offline (at clinic)
-              </li>
             </ul>
             <a href="#register" className="btn-primary text-center text-sm w-full block">
-              Register Now
+              Reserve Your Seat
             </a>
           </div>
 
           {/* 1:1 Batch */}
-          <div className="bg-white rounded-lg p-8 shadow-lg border border-slate-100 hover:border-primary/20 transition-all">
-            <h3 className="text-lg font-heading font-bold text-accent uppercase mb-2 mt-4">
-              1:1 Private Session
-            </h3>
-            <p className="text-text-light text-sm mb-4">8 sessions over 4 weeks — twice a week</p>
-            <div className="flex items-baseline gap-2 mb-1">
-              <span className="text-3xl font-heading font-bold text-accent">₹10,000</span>
+          <div className="bg-white rounded-lg p-8 shadow-lg border border-slate-100 hover:border-primary/20 transition-all relative overflow-hidden">
+            <div className="absolute top-0 right-0 bg-primary text-white text-xs font-heading font-bold uppercase tracking-wider px-4 py-1.5 rounded-bl-lg">
+              Launch Offer
             </div>
-            <p className="text-xs text-text-light mb-6">
-              Personalized one-on-one with your physiotherapist-instructor
+            <h3 className="text-lg font-heading font-bold text-accent uppercase mb-2 mt-4">
+              1:1 Private Sessions
+            </h3>
+            <p className="text-text-light text-sm mb-4">
+              12 live online sessions over 4 weeks — flexible scheduling
+            </p>
+            <div className="flex items-baseline gap-2 mb-1">
+              <span className="text-3xl font-heading font-bold text-accent">₹5,000</span>
+              <span className="text-lg text-text-light line-through">₹12,000</span>
+            </div>
+            <p className="text-xs text-accent-pink font-medium mb-6">
+              Introductory launch price — limited 1:1 slots per week
             </p>
             <ul className="space-y-2 mb-6 text-sm text-text-light">
               <li className="flex items-start gap-2">
                 <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                Free biomechanical assessment by Dr. Shiva
+                Free pre &amp; post assessment by Dr. Shiva and/or her team
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                Fully personalized program
+                Fully personalized program, one-on-one attention
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                Flexible scheduling
+                Flexible timing around your routine
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                Ideal for rehab or specific conditions
+                Ideal for rehab, postpartum, or specific conditions
               </li>
             </ul>
             <a href="#register" className="btn-outline text-center text-sm w-full block">
@@ -447,16 +547,16 @@ function BatchesSection({ batches }: { batches: PilatesBatch[] }) {
         <div className="text-center mb-14">
           <span className="section-eyebrow">Batches</span>
           <h2 className="text-3xl sm:text-4xl font-heading font-bold text-accent mb-4 uppercase">
-            Available Women-Only Batches
+            Available Online Batches — Mon · Wed · Fri
           </h2>
           <p className="text-lg text-text-light max-w-2xl mx-auto">
-            Choose a batch that fits your schedule. All batches include the free biomechanical
-            assessment.
+            Three morning slots, live on video, only 4 seats each. All batches include the free
+            pre &amp; post assessment.
           </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {batches.map((batch) => {
+          {batches.filter((b) => b.type === 'online').map((batch) => {
             const spotsRemaining = batch.capacity - batch.current_count;
             const isFull = spotsRemaining <= 0;
             const mode = batch.type === 'online' ? 'Online' : 'Offline';
@@ -506,7 +606,7 @@ function BatchesSection({ batches }: { batches: PilatesBatch[] }) {
                         Batch Full
                       </span>
                     ) : (
-                      <span>{spotsRemaining} {spotsRemaining === 1 ? 'spot' : 'spots'} remaining</span>
+                      <span>{spotsRemaining} of 4 {spotsRemaining === 1 ? 'seat' : 'seats'} remaining</span>
                     )}
                   </div>
                 </div>
@@ -546,7 +646,7 @@ function AboutDrShivaSection() {
     {
       title: 'A Team That Understands Your Body Clinically',
       description:
-        'With 9+ years of clinical experience and 8000+ cases across the team, every instructor understands how different bodies move, compensate, and recover. This clinical depth makes PhysioSthanak Pilates genuinely different from fitness-only studios.',
+        'With 10+ years of clinical experience and 8000+ cases across the team, every instructor understands how different bodies move, compensate, and recover. This clinical depth makes PhysioSthanak Pilates genuinely different from fitness-only studios.',
     },
   ];
 
@@ -603,7 +703,8 @@ function RegistrationFormSection({ batches }: { batches: PilatesBatch[] }) {
   const [formState, setFormState] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const [errorDetail, setErrorDetail] = useState<string>('');
   const [registrationStatus, setRegistrationStatus] = useState<'registered' | 'waitlisted' | null>(null);
-  const [preference, setPreference] = useState<'Offline' | 'Online'>('Offline');
+  // Classes are online-only — mode selection removed (Aug 2026)
+  const preference = 'Online' as const;
   const [batchType, setBatchType] = useState<'group' | '1:1' | ''>('');
   const [formData, setFormData] = useState({
     name: '',
@@ -614,7 +715,7 @@ function RegistrationFormSection({ batches }: { batches: PilatesBatch[] }) {
     medicalHistory: '',
   });
 
-  const filteredBatches = batchType === 'group' ? batches.filter((b) => b.type === preference.toLowerCase()) : [];
+  const filteredBatches = batchType === 'group' ? batches.filter((b) => b.type === 'online') : [];
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -697,12 +798,6 @@ function RegistrationFormSection({ batches }: { batches: PilatesBatch[] }) {
       setErrorDetail(err instanceof Error ? err.message : String(err));
       setFormState('error');
     }
-  }
-
-  // Reset batch selection when preference changes
-  function handlePreferenceChange(newPref: 'Offline' | 'Online') {
-    setPreference(newPref);
-    setFormData((prev) => ({ ...prev, batch: '' }));
   }
 
   const inputClass =
@@ -858,7 +953,7 @@ function RegistrationFormSection({ batches }: { batches: PilatesBatch[] }) {
                   Session Type <span className="text-accent-pink">*</span>
                 </label>
                 <div className="flex gap-4">
-                  {([{ value: 'group' as const, label: 'Group (₹3,000)', sub: '50% off launch' }, { value: '1:1' as const, label: '1:1 Private (₹10,000)', sub: '' }]).map((option) => (
+                  {([{ value: 'group' as const, label: 'Group (₹5,000)', sub: 'founding price · 4 seats/batch' }, { value: '1:1' as const, label: '1:1 Private (₹5,000)', sub: 'launch offer · was ₹12,000' }]).map((option) => (
                     <label
                       key={option.value}
                       className={`flex-1 flex flex-col items-center justify-center px-4 py-3 rounded-md border-2 cursor-pointer transition-all text-sm font-heading font-bold uppercase tracking-wide ${
@@ -887,39 +982,11 @@ function RegistrationFormSection({ batches }: { batches: PilatesBatch[] }) {
                 </div>
               </div>
 
-              {/* Preference — Online / Offline + Batch selector (only for group) */}
+              {/* Batch selector (only for group) — classes are online-only */}
               {batchType === 'group' && (<>
-              <div>
-                <label className="block text-sm font-heading font-bold text-accent mb-2 uppercase tracking-wide">
-                  Mode <span className="text-accent-pink">*</span>
-                </label>
-                <div className="flex gap-4">
-                  {(['Offline', 'Online'] as const).map((option) => (
-                    <label
-                      key={option}
-                      className={`flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-md border-2 cursor-pointer transition-all text-sm font-heading font-bold uppercase tracking-wide ${
-                        preference === option
-                          ? 'border-primary bg-primary/5 text-primary'
-                          : 'border-primary/20 text-text-light hover:border-primary/40'
-                      }`}
-                    >
-                      <input
-                        type="radio"
-                        name="preference"
-                        value={option}
-                        checked={preference === option}
-                        onChange={() => handlePreferenceChange(option)}
-                        className="sr-only"
-                      />
-                      {option === 'Offline' ? (
-                        <Building className="w-4 h-4" />
-                      ) : (
-                        <Monitor className="w-4 h-4" />
-                      )}
-                      {option}
-                    </label>
-                  ))}
-                </div>
+              <div className="bg-blue-50 border border-blue-200 rounded-md px-4 py-2.5 flex items-center gap-2 text-sm text-blue-800">
+                <Monitor className="w-4 h-4 flex-shrink-0" />
+                All classes are live online — join from anywhere in India.
               </div>
 
               {/* Batch selection — grouped time slot cards */}
@@ -1120,8 +1187,8 @@ function CTASectionLocal() {
           Start Your Pilates Journey Today
         </h2>
         <p className="text-lg text-slate-300 max-w-2xl mx-auto mb-10">
-          Register now and get a free physiotherapy consultation with Dr. Shiva before your first
-          class. Women-only batches with limited spots available.
+          Register now for live online women-only batches — free assessment by Dr. Shiva &amp; her
+          team before you start, complimentary re-assessment after 4 weeks. Only 4 seats per batch.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">

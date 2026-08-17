@@ -6,7 +6,7 @@ import HeroSection from '@/components/sections/HeroSection';
 import { Clock, Calendar, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Physiotherapy Blog | Expert Tips & Guides by Dr. Shiva Jain',
+  title: 'Physiotherapy Blog | Expert Tips & Guides by Dr. Shiva Jain Sangoi',
   description:
     'Evidence-based physiotherapy articles, exercise guides, and health tips by Dr. Shiva Jain Sangoi. Learn about back pain, posture correction, sports injuries, and more.',
   keywords: [
@@ -136,7 +136,7 @@ export default function BlogPage() {
           </h2>
           <p className="text-lg text-text-light max-w-2xl mx-auto mb-8">
             If you&apos;re dealing with pain or a movement problem, don&apos;t wait.
-            Book an assessment with Dr. Shiva Jain and get answers specific to your situation.
+            Book an assessment with Dr. Shiva Jain Sangoi and get answers specific to your situation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a

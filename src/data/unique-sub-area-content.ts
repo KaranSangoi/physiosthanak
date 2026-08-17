@@ -27,7 +27,7 @@ export const uniqueSubAreas: Record<string, SubArea> = {
       'sports injury physiotherapy Eksar',
     ],
     metaDescription:
-      'Physiotherapy near Eksar, Borivali West — Dr. Shiva Jain, MPTh Ortho, FIFA certified. Clinic 10-12 min via Eksar Road, plus home visits. Book now.',
+      'Physiotherapy near Eksar, Borivali West — Dr. Shiva Jain Sangoi, MPTh Ortho, FIFA certified. Clinic 10-12 min via Eksar Road, plus home visits. Book now.',
     h1: 'Physiotherapy Near Eksar, Borivali West',
     heroDescription:
       "Eksar's village lanes near the ancient Mandapeshwar caves and the Sanjay Gandhi National Park foothills meet modern orthopaedic care at PhysioSthanak, a short auto ride down Eksar Road to S.V. Road for expert, evidence-based physiotherapy treatment.",
@@ -106,7 +106,7 @@ export const uniqueSubAreas: Record<string, SubArea> = {
       'sports injury physiotherapy Borivali East',
     ],
     metaDescription:
-      'Physiotherapy near Daulat Nagar, Borivali East — Dr. Shiva Jain, MPTh Ortho, FIFA certified. Clinic 15 min via Borivali station, plus home visits.',
+      'Physiotherapy near Daulat Nagar, Borivali East — Dr. Shiva Jain Sangoi, MPTh Ortho, FIFA certified. Clinic 15 min via Borivali station, plus home visits.',
     h1: 'Physiotherapy Near Daulat Nagar, Borivali East',
     heroDescription:
       'Daulat Nagar residents, living beside the eastern gateway to Sanjay Gandhi National Park and the busy Western Express Highway corridor, can reach PhysioSthanak in about fifteen minutes by crossing to Borivali West for expert orthopaedic and home visit physiotherapy.',
@@ -162,7 +162,7 @@ export const uniqueSubAreas: Record<string, SubArea> = {
       },
     ],
     mapDescription:
-      "PhysioSthanak's clinic sits about 2 km from Daulat Nagar, across the tracks in Borivali West. Patients typically travel by auto-rickshaw along local roads to Borivali railway station, then cross the foot overbridge to the West side, arriving at our S.V. Road clinic opposite HDFC Bank in roughly 15 minutes. For residents deeper inside Daulat Nagar near the Sanjay Gandhi National Park entrance, Dr. Shiva Jain also offers home visit physiotherapy to avoid this crossing altogether.",
+      "PhysioSthanak's clinic sits about 2 km from Daulat Nagar, across the tracks in Borivali West. Patients typically travel by auto-rickshaw along local roads to Borivali railway station, then cross the foot overbridge to the West side, arriving at our S.V. Road clinic opposite HDFC Bank in roughly 15 minutes. For residents deeper inside Daulat Nagar near the Sanjay Gandhi National Park entrance, Dr. Shiva Jain Sangoi also offers home visit physiotherapy to avoid this crossing altogether.",
     externalLink: {
       url: 'https://en.wikipedia.org/wiki/Borivali',
       text: 'Borivali',
@@ -185,7 +185,7 @@ export const uniqueSubAreas: Record<string, SubArea> = {
       'knee pain physiotherapy Borivali East',
     ],
     metaDescription:
-      'Physiotherapy near Rajendra Nagar, Borivali East — Dr. Shiva Jain, MPTh Ortho, FIFA certified. Clinic 15 min via foot overbridge, plus home visits.',
+      'Physiotherapy near Rajendra Nagar, Borivali East — Dr. Shiva Jain Sangoi, MPTh Ortho, FIFA certified. Clinic 15 min via foot overbridge, plus home visits.',
     h1: 'Physiotherapy Near Rajendra Nagar, Borivali East',
     heroDescription:
       "Rajendra Nagar's tree-lined garden, a favourite morning walking spot for residents of all ages, sits close to PhysioSthanak, reachable in about fifteen minutes via Borivali East station and the foot overbridge for expert physiotherapy and home visit care.",
@@ -264,7 +264,7 @@ export const uniqueSubAreas: Record<string, SubArea> = {
       'physiotherapy near Mandapeshwar Road',
     ],
     metaDescription:
-      'Physiotherapy near Mandapeshwar, Borivali West — Dr. Shiva Jain, MPTh Ortho, FIFA certified. Clinic 15 min via Mandapeshwar Road, plus home visits.',
+      'Physiotherapy near Mandapeshwar, Borivali West — Dr. Shiva Jain Sangoi, MPTh Ortho, FIFA certified. Clinic 15 min via Mandapeshwar Road, plus home visits.',
     h1: 'Physiotherapy Near Mandapeshwar, Borivali West',
     heroDescription:
       "Mandapeshwar, home to Mumbai's 6th-century rock-cut caves at Mount Poinsur and the historic Mandapeshwar Church, retains a village character where PhysioSthanak, fifteen minutes away by auto via Mandapeshwar Road, provides expert physiotherapy and home visit care.",
@@ -343,7 +343,7 @@ export const uniqueSubAreas: Record<string, SubArea> = {
       'physiotherapy Western Express Highway Borivali',
     ],
     metaDescription:
-      'Physiotherapy near Asha Nagar, Borivali East — Dr. Shiva Jain, MPTh Ortho, FIFA certified. Clinic 15-20 min away, plus doorstep home visits.',
+      'Physiotherapy near Asha Nagar, Borivali East — Dr. Shiva Jain Sangoi, MPTh Ortho, FIFA certified. Clinic 15-20 min away, plus doorstep home visits.',
     h1: 'Physiotherapy Near Asha Nagar, Borivali East',
     heroDescription:
       "Asha Nagar's rapidly expanding residential colony near the Western Express Highway and Magathane is served by PhysioSthanak's clinic in Borivali West, roughly fifteen to twenty minutes away, offering expert orthopaedic physiotherapy and doorstep home visits.",
@@ -399,7 +399,7 @@ export const uniqueSubAreas: Record<string, SubArea> = {
       },
     ],
     mapDescription:
-      "PhysioSthanak's clinic is located on S.V. Road in Borivali West, roughly 15 to 20 minutes from Asha Nagar by auto-rickshaw. The route runs through connecting roads across Borivali East before reaching Borivali West, ending at our ground-floor premises opposite HDFC Bank. Given the slightly longer distance from Asha Nagar compared to more central Borivali localities, many residents opt for Dr. Shiva Jain's home visit physiotherapy service instead, particularly for elderly family members or those recovering from surgery.",
+      "PhysioSthanak's clinic is located on S.V. Road in Borivali West, roughly 15 to 20 minutes from Asha Nagar by auto-rickshaw. The route runs through connecting roads across Borivali East before reaching Borivali West, ending at our ground-floor premises opposite HDFC Bank. Given the slightly longer distance from Asha Nagar compared to more central Borivali localities, many residents opt for Dr. Shiva Jain Sangoi's home visit physiotherapy service instead, particularly for elderly family members or those recovering from surgery.",
     externalLink: {
       url: 'https://en.wikipedia.org/wiki/Borivali',
       text: 'Borivali',
@@ -426,7 +426,7 @@ export const uniqueSubAreas: Record<string, SubArea> = {
       'physiotherapy Dahisar to Borivali',
     ],
     metaDescription:
-      'Physiotherapy near Ashok Van, Dahisar — Dr. Shiva Jain, MPTh Ortho, FIFA certified. Clinic 15-20 min via Dahisar station, plus home visits.',
+      'Physiotherapy near Ashok Van, Dahisar — Dr. Shiva Jain Sangoi, MPTh Ortho, FIFA certified. Clinic 15-20 min via Dahisar station, plus home visits.',
     h1: 'Physiotherapy Near Ashok Van, Dahisar',
     heroDescription:
       "Ashok Van's settled residential blocks near the Dahisar river area are home to a close-knit community that reaches PhysioSthanak in about fifteen to twenty minutes, travelling from Dahisar station one stop south to our Borivali West clinic.",
@@ -505,7 +505,7 @@ export const uniqueSubAreas: Record<string, SubArea> = {
       'physiotherapy Dahisar East to Borivali',
     ],
     metaDescription:
-      'Physiotherapy near Ekta Nagar, Dahisar East — Dr. Shiva Jain, MPTh Ortho, FIFA certified. Clinic about 20 min away, plus home visits available.',
+      'Physiotherapy near Ekta Nagar, Dahisar East — Dr. Shiva Jain Sangoi, MPTh Ortho, FIFA certified. Clinic about 20 min away, plus home visits available.',
     h1: 'Physiotherapy Near Ekta Nagar, Dahisar East',
     heroDescription:
       'Ekta Nagar, a close-knit housing society colony near Dahisar Check Naka and the Western Express Highway, connects to PhysioSthanak in about twenty minutes via Dahisar station and a short train ride, for expert physiotherapy and home visits.',
@@ -584,7 +584,7 @@ export const uniqueSubAreas: Record<string, SubArea> = {
       'physiotherapy Dahisar village area',
     ],
     metaDescription:
-      'Physiotherapy near Ketkipada, Dahisar — Dr. Shiva Jain, MPTh Ortho, FIFA certified. Clinic 20-25 min away via Dahisar station, plus home visits.',
+      'Physiotherapy near Ketkipada, Dahisar — Dr. Shiva Jain Sangoi, MPTh Ortho, FIFA certified. Clinic 20-25 min away via Dahisar station, plus home visits.',
     h1: 'Physiotherapy Near Ketkipada, Dahisar',
     heroDescription:
       "Ketkipada, a traditional gaon-style locality along Ketkipada Road that is steadily developing, connects to PhysioSthanak's clinic in around twenty to twenty-five minutes via Dahisar station and train, for expert orthopaedic physiotherapy and home visit treatment.",
@@ -667,7 +667,7 @@ export const uniqueSubAreas: Record<string, SubArea> = {
       'physiotherapy Kandivali to Borivali',
     ],
     metaDescription:
-      'Physiotherapy near Kandivali West — Dr. Shiva Jain, MPTh Ortho, FIFA certified. Just one station from Kandivali, 5-8 min by train. Home visits too.',
+      'Physiotherapy near Kandivali West — Dr. Shiva Jain Sangoi, MPTh Ortho, FIFA certified. Just one station from Kandivali, 5-8 min by train. Home visits too.',
     h1: 'Physiotherapy Near Kandivali West',
     heroDescription:
       "Kandivali West's bustling Link Road commercial hub, packed with markets, schools, and hospitals, is just one station south of PhysioSthanak, a five to eight minute train ride or ten minute auto via S.V. Road for expert physiotherapy.",
@@ -746,7 +746,7 @@ export const uniqueSubAreas: Record<string, SubArea> = {
       'physiotherapy Mahavir Nagar Charkop',
     ],
     metaDescription:
-      'Physiotherapy near Mahavir Nagar, Kandivali West — Dr. Shiva Jain, MPTh Ortho, FIFA certified. Clinic 15-20 min via S.V. Road, plus home visits.',
+      'Physiotherapy near Mahavir Nagar, Kandivali West — Dr. Shiva Jain Sangoi, MPTh Ortho, FIFA certified. Clinic 15-20 min via S.V. Road, plus home visits.',
     h1: 'Physiotherapy Near Mahavir Nagar, Kandivali West',
     heroDescription:
       "Mahavir Nagar's well-established housing societies, close to Charkop and served by the local Mahavir Nagar bus stop, connect to PhysioSthanak in about fifteen to twenty minutes via S.V. Road for expert orthopaedic physiotherapy and home visits.",
@@ -764,7 +764,7 @@ export const uniqueSubAreas: Record<string, SubArea> = {
       {
         title: 'Serving the Wider Mahavir Nagar-Charkop Corridor',
         description:
-          "Mahavir Nagar's proximity to Charkop means PhysioSthanak effectively serves this combined residential corridor, home to a large population without a dedicated specialist orthopaedic and sports physiotherapy clinic nearby. Dr. Shiva Jain's FIFA-certified expertise fills this gap for both Mahavir Nagar and neighbouring Charkop families.",
+          "Mahavir Nagar's proximity to Charkop means PhysioSthanak effectively serves this combined residential corridor, home to a large population without a dedicated specialist orthopaedic and sports physiotherapy clinic nearby. Dr. Shiva Jain Sangoi's FIFA-certified expertise fills this gap for both Mahavir Nagar and neighbouring Charkop families.",
       },
     ],
     whyPoints: [
@@ -825,7 +825,7 @@ export const uniqueSubAreas: Record<string, SubArea> = {
       'physiotherapy Gandhi Nagar SV Road',
     ],
     metaDescription:
-      'Physiotherapy near Gandhi Nagar, Kandivali West — Dr. Shiva Jain, MPTh Ortho, FIFA certified. Clinic 15 min via S.V. Road, plus home visits.',
+      'Physiotherapy near Gandhi Nagar, Kandivali West — Dr. Shiva Jain Sangoi, MPTh Ortho, FIFA certified. Clinic 15 min via S.V. Road, plus home visits.',
     h1: 'Physiotherapy Near Gandhi Nagar, Kandivali West',
     heroDescription:
       "Gandhi Nagar's established residential societies, connected directly to PhysioSthanak via S.V. Road and the local Gandhi Nagar bus stop, reach our Borivali West clinic in about fifteen minutes for expert physiotherapy and doorstep home visits.",
@@ -881,7 +881,7 @@ export const uniqueSubAreas: Record<string, SubArea> = {
       },
     ],
     mapDescription:
-      "PhysioSthanak's clinic on S.V. Road in Borivali West is directly accessible from Gandhi Nagar via the same road corridor, making the auto-rickshaw journey approximately 15 minutes with no station crossings required. BEST buses from the Gandhi Nagar bus stop also run toward Borivali for residents preferring public transport. This straightforward connectivity, combined with Dr. Shiva Jain's home visit service, ensures Gandhi Nagar's established society residents have flexible, reliable access to expert physiotherapy care.",
+      "PhysioSthanak's clinic on S.V. Road in Borivali West is directly accessible from Gandhi Nagar via the same road corridor, making the auto-rickshaw journey approximately 15 minutes with no station crossings required. BEST buses from the Gandhi Nagar bus stop also run toward Borivali for residents preferring public transport. This straightforward connectivity, combined with Dr. Shiva Jain Sangoi's home visit service, ensures Gandhi Nagar's established society residents have flexible, reliable access to expert physiotherapy care.",
     externalLink: {
       url: 'https://en.wikipedia.org/wiki/Kandivali',
       text: 'Kandivali',
@@ -904,7 +904,7 @@ export const uniqueSubAreas: Record<string, SubArea> = {
       'sports injury physiotherapy Poisar',
     ],
     metaDescription:
-      'Physiotherapy near Poisar, Kandivali — Dr. Shiva Jain, MPTh Ortho, FIFA certified. Clinic 15-20 min via Link Road or S.V. Road, plus home visits.',
+      'Physiotherapy near Poisar, Kandivali — Dr. Shiva Jain Sangoi, MPTh Ortho, FIFA certified. Clinic 15-20 min via Link Road or S.V. Road, plus home visits.',
     h1: 'Physiotherapy Near Poisar, Kandivali',
     heroDescription:
       "Poisar, known for the Poisar river and the sports fields of Poisar Gymkhana, reaches PhysioSthanak in about fifteen to twenty minutes via Link Road or S.V. Road, ideal for the area's athletes and residents seeking expert physiotherapy.",
@@ -960,7 +960,7 @@ export const uniqueSubAreas: Record<string, SubArea> = {
       },
     ],
     mapDescription:
-      "PhysioSthanak's clinic on S.V. Road in Borivali West is roughly 15 to 20 minutes from Poisar by auto-rickshaw, with residents able to choose either the Link Road or S.V. Road route depending on traffic conditions. The clinic sits opposite HDFC Bank on the ground floor for easy access. Given Poisar's active sporting culture centred around Poisar Gymkhana and the river-adjacent walking paths, many patients travel specifically for Dr. Shiva Jain's FIFA-certified sports injury physiotherapy, while others opt for home visits instead.",
+      "PhysioSthanak's clinic on S.V. Road in Borivali West is roughly 15 to 20 minutes from Poisar by auto-rickshaw, with residents able to choose either the Link Road or S.V. Road route depending on traffic conditions. The clinic sits opposite HDFC Bank on the ground floor for easy access. Given Poisar's active sporting culture centred around Poisar Gymkhana and the river-adjacent walking paths, many patients travel specifically for Dr. Shiva Jain Sangoi's FIFA-certified sports injury physiotherapy, while others opt for home visits instead.",
     externalLink: {
       url: 'https://en.wikipedia.org/wiki/Poisar_River',
       text: 'Poisar River',

@@ -7,9 +7,9 @@ import PilatesContent from './PilatesContent';
 export const revalidate = 60; // ISR — revalidate every 60 seconds
 
 export const metadata: Metadata = {
-  title: 'Mat Pilates for Women in Borivali | Physiotherapist-Led Classes',
+  title: 'Online Mat Pilates for Women | Physiotherapist-Led Classes',
   description:
-    'Women-only Mat Pilates classes led by Dr. Shiva Jain Sangoi (MPTh Ortho) in Borivali West, Mumbai. Free biomechanical assessment. Online & offline batches available. Register now.',
+    'Live online women-only Mat Pilates by Dr. Shiva Jain Sangoi (MPTh Ortho) & her team. Free pre & post assessment with goal setting. Max 4 per batch. Register now.',
   keywords: [
     'mat pilates borivali',
     'pilates classes mumbai',
@@ -26,9 +26,9 @@ export const metadata: Metadata = {
     'ladies pilates classes mumbai',
   ],
   openGraph: {
-    title: 'Mat Pilates for Women in Borivali | PhysioSthanak',
+    title: 'Online Mat Pilates for Women | PhysioSthanak',
     description:
-      'Women-only Mat Pilates classes with free biomechanical assessment. Online & offline batches. Led by Dr. Shiva Jain Sangoi (MPTh Ortho).',
+      'Live online women-only Mat Pilates with free pre & post biomechanical assessment. Max 4 per batch. Led by Dr. Shiva Jain Sangoi (MPTh Ortho) & her team.',
     url: `${siteConfig.domain}/pilates`,
     siteName: siteConfig.businessName,
     type: 'website',
@@ -44,9 +44,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Mat Pilates for Women in Borivali | PhysioSthanak',
+    title: 'Online Mat Pilates for Women | PhysioSthanak',
     description:
-      'Women-only Mat Pilates with free biomechanical assessment. Online & offline batches available.',
+      'Live online women-only Mat Pilates with free pre & post assessment. Only 4 seats per batch.',
     images: ['/images/pilates-og.jpg'],
   },
   alternates: {

@@ -529,7 +529,7 @@ export default function CarouselPreview({
           <div className="cta-divider"></div>
           <div className="cta-doctor">{c.doctor || 'Dr. Shiva Jain Sangoi'}</div>
           <div className="cta-creds">{c.creds || 'MPTh (Ortho) · FIFA Certified'}</div>
-          <div className="cta-exp">{c.experience || '9+ Years · 8000+ Patients · Borivali West'}</div>
+          <div className="cta-exp">{c.experience || '10+ Years · 8000+ Patients · Borivali West'}</div>
           <div className="cta-handle">{c.handle || '@physiosthanak'}</div>
           <div className="cta-share-prompt">{c.sharePrompt || '📤 Share with someone who needs this'}</div>
           <div className="cta-tagline">Move · Heal · Improve</div>
