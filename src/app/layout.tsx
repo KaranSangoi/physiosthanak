@@ -140,9 +140,31 @@ export default function RootLayout({
                   },
                   geo: {
                     '@type': 'GeoCoordinates',
-                    latitude: 19.2307,
-                    longitude: 72.8567,
+                    latitude: 19.2328584,
+                    longitude: 72.8559077,
                   },
+                  medicalSpecialty: [
+                    'Musculoskeletal', 'Orthopedic', 'Sports Medicine', 'Neurological', 'Pediatric',
+                  ],
+                  availableService: [
+                    { '@type': 'MedicalTherapy', name: 'Physiotherapy', serviceType: 'Physical Therapy' },
+                    { '@type': 'MedicalTherapy', name: 'Home Visit Physiotherapy', serviceType: 'Home Health Care' },
+                    { '@type': 'MedicalTherapy', name: 'Sports Physiotherapy', serviceType: 'Sports Medicine' },
+                    { '@type': 'MedicalTherapy', name: 'Post-Surgery Rehabilitation', serviceType: 'Rehabilitation' },
+                    { '@type': 'MedicalTherapy', name: 'Neurological Physiotherapy', serviceType: 'Neurological Therapy' },
+                    { '@type': 'MedicalTherapy', name: 'Orthopedic Physiotherapy', serviceType: 'Orthopedic Therapy' },
+                    { '@type': 'MedicalTherapy', name: 'Pediatric Physiotherapy', serviceType: 'Pediatric Therapy' },
+                    { '@type': 'MedicalTherapy', name: "Women's Health Physiotherapy", serviceType: 'Women Health' },
+                    { '@type': 'MedicalTherapy', name: 'Hand & Wrist Physiotherapy', serviceType: 'Hand Therapy' },
+                    { '@type': 'MedicalTherapy', name: 'Online Physiotherapy', serviceType: 'Telehealth' },
+                  ],
+                  contactPoint: {
+                    '@type': 'ContactPoint',
+                    telephone: '+919324254297',
+                    contactType: 'appointments',
+                    availableLanguage: ['English', 'Hindi', 'Marathi'],
+                  },
+                  isAcceptingNewPatients: true,
                   areaServed: [
                     { '@type': 'City', name: 'Mumbai' },
                     { '@type': 'Place', name: 'Borivali West' },
@@ -171,6 +193,7 @@ export default function RootLayout({
                     'https://www.instagram.com/physiosthanak',
                     'https://www.linkedin.com/in/drshivajain',
                     'https://g.co/kgs/PhysioSthanak',
+                    'https://topmate.io/dr_shiva_jain_sangoi/1995923',
                   ],
                   hasOfferCatalog: {
                     '@type': 'OfferCatalog',

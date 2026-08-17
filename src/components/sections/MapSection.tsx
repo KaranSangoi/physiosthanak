@@ -22,6 +22,7 @@ export default function MapSection({
   const schemaMarkup = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
+    '@id': 'https://physiosthanak.com/#organization',
     name: 'PhysioSthanak',
     image: 'https://physiosthanak.com/images/Logo.png',
     description: description,
@@ -35,23 +36,10 @@ export default function MapSection({
     },
     telephone: '+919324254297',
     url: 'https://physiosthanak.com',
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: '19.2288',
-      longitude: '72.8563',
-    },
     areaServed: {
       '@type': 'Place',
       name: location,
     },
-    openingHoursSpecification: [
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-        opens: '09:00',
-        closes: '20:00',
-      },
-    ],
   };
 
   return (
