@@ -366,13 +366,23 @@ export default function TermsOfServicePage() {
               </p>
               <ul className="list-disc list-inside text-text-light space-y-2 ml-4 mb-4">
                 <li>
-                  <strong>Program Structure:</strong> Each batch consists of 8 sessions spread
-                  over 4 weeks (twice per week). Sessions are 45 minutes each.
+                  <strong>Program Structure:</strong> Each batch consists of 12 live online
+                  sessions spread over 4 weeks (Monday, Wednesday, and Friday). Sessions are
+                  45 minutes each. Group batches are limited to a maximum of 4 students. All
+                  classes are conducted online only.
                 </li>
                 <li>
-                  <strong>Pricing:</strong> Group Batch is ₹6,000 per batch (introductory
-                  offer of ₹3,000 for the first 10 registrations). 1:1 Private Sessions are
-                  ₹10,000 per batch of 8 sessions.
+                  <strong>Assessments Included:</strong> Every package includes a complimentary
+                  biomechanical assessment with goal setting (conducted by Dr. Shiva Jain
+                  Sangoi and/or her team) before the first class, and a complimentary progress
+                  re-assessment at the end of the 4-week program.
+                </li>
+                <li>
+                  <strong>Pricing:</strong> Group Batch is ₹8,000 per batch (founding-batch
+                  offer: ₹5,000, valid till seats last). 1:1 Private Sessions are ₹12,000 per
+                  batch of 12 sessions (introductory launch offer: ₹10,000). Offer pricing may
+                  be withdrawn or revised at any time; the price confirmed at enrollment
+                  applies to that batch.
                 </li>
                 <li>
                   <strong>Payment:</strong> Full payment is collected during the first

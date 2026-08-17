@@ -498,7 +498,7 @@ function PricingSection() {
               12 live online sessions over 4 weeks — flexible scheduling
             </p>
             <div className="flex items-baseline gap-2 mb-1">
-              <span className="text-3xl font-heading font-bold text-accent">₹5,000</span>
+              <span className="text-3xl font-heading font-bold text-accent">₹10,000</span>
               <span className="text-lg text-text-light line-through">₹12,000</span>
             </div>
             <p className="text-xs text-accent-pink font-medium mb-6">
@@ -953,7 +953,7 @@ function RegistrationFormSection({ batches }: { batches: PilatesBatch[] }) {
                   Session Type <span className="text-accent-pink">*</span>
                 </label>
                 <div className="flex gap-4">
-                  {([{ value: 'group' as const, label: 'Group (₹5,000)', sub: 'founding price · 4 seats/batch' }, { value: '1:1' as const, label: '1:1 Private (₹5,000)', sub: 'launch offer · was ₹12,000' }]).map((option) => (
+                  {([{ value: 'group' as const, label: 'Group (₹5,000)', sub: 'founding price · 4 seats/batch' }, { value: '1:1' as const, label: '1:1 Private (₹10,000)', sub: 'launch offer · was ₹12,000' }]).map((option) => (
                     <label
                       key={option.value}
                       className={`flex-1 flex flex-col items-center justify-center px-4 py-3 rounded-md border-2 cursor-pointer transition-all text-sm font-heading font-bold uppercase tracking-wide ${
