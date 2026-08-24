@@ -302,12 +302,12 @@ export default function HomePage() {
                 PhysioSthanak is a 5.0★ Google-rated physiotherapy clinic in
                 Borivali West, Mumbai, founded by Dr. Shiva Jain Sangoi. With an
                 MPTh in Orthopaedics, a BPTh, and a FIFA Diploma in Football
-                Medicine, Dr. Shiva brings over 9 years of clinical experience
+                Medicine, Dr. Shiva brings over 10 years of clinical experience
                 and has successfully treated more than 8,000 patients. The
                 clinic specializes in orthopedic rehabilitation, sports injury
                 recovery, neurological physiotherapy, post-surgery rehab, and
                 home visit physiotherapy across Borivali, Dahisar, Kandivali,
-                and Malad. Backed by 65+ five-star Google reviews, PhysioSthanak
+                and Malad. Backed by {siteConfig.reviewCount} five-star Google reviews, PhysioSthanak
                 is trusted by families across Mumbai&apos;s western suburbs for
                 evidence-based, personalized physiotherapy care.
               </p>

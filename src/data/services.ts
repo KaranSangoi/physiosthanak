@@ -834,6 +834,274 @@ export const services: ServiceCategory[] = [
         ],
       },
       {
+        slug: 'piriformis-syndrome',
+        name: 'Piriformis Syndrome Treatment',
+        parentCategory: 'back-pain-physiotherapy',
+        externalLink: { url: 'https://en.wikipedia.org/wiki/Piriformis_syndrome', text: 'piriformis syndrome' },
+        description: 'Targeted treatment for piriformis syndrome, where a tight deep hip muscle compresses the sciatic nerve and causes buttock and leg pain.',
+        keywords: ['piriformis syndrome', 'piriformis syndrome treatment', 'deep gluteal syndrome', 'buttock pain', 'hip nerve pain', 'Borivali piriformis treatment'],
+        metaDescription: 'Piriformis syndrome treatment in Borivali West. 5.0★ rated clinic, 8000+ cases. Dr. Shiva Jain Sangoi (MPTh Ortho). Deep hip nerve pain relief. Book now.',
+        h1: 'Piriformis Syndrome Treatment & Deep Buttock Pain Relief',
+        heroDescription: 'Expert piriformis syndrome treatment in Borivali that releases the tight deep hip muscle compressing your sciatic nerve, easing buttock pain and restoring comfortable sitting, walking and driving.',
+        benefits: [
+          {
+            title: 'Release of the Compressing Muscle',
+            description: 'Hands-on soft tissue release and targeted stretching reduce tension in the piriformis muscle that presses on the sciatic nerve. Most patients notice easier sitting and reduced deep buttock ache within the first two to three sessions of treatment.',
+          },
+          {
+            title: 'Correction of the Underlying Hip Weakness',
+            description: 'Piriformis syndrome usually develops because the larger gluteal muscles are weak and the piriformis overworks to compensate for them. Progressive hip and glute strengthening removes that overload, which is ultimately what stops the problem returning once your treatment ends.',
+          },
+          {
+            title: 'Comfortable Sitting and Driving Again',
+            description: 'Prolonged sitting is the single biggest aggravator of piriformis syndrome. We combine treatment with seating setup, cushion selection and movement breaks so desk workers and drivers can sit through a full day without the pain rebuilding.',
+          },
+        ],
+        whyPoints: [
+          {
+            title: 'Frequently Misdiagnosed as Disc Sciatica',
+            description: 'Piriformis syndrome produces sciatica-type leg pain but originates in the hip, not the spine. Treating it as a disc problem rarely helps. Accurate assessment separates the two and directs treatment to the actual source of nerve compression.',
+          },
+          {
+            title: 'Responds Very Well to Physiotherapy',
+            description: 'Because the compression comes from muscle rather than bone or disc, piriformis syndrome is highly responsive to manual therapy and exercise. Surgery is very rarely required, and most patients resolve within four to six weeks of consistent treatment.',
+          },
+          {
+            title: 'Assessed by an Orthopaedic Specialist',
+            description: 'Dr. Shiva Jain Sangoi holds an MPTh in Orthopaedics and has managed over 8,000 cases. Distinguishing hip-driven from spine-driven nerve pain requires specific clinical testing, which is carried out at your first assessment.',
+          },
+        ],
+        faqs: [
+          {
+            question: 'How is piriformis syndrome different from sciatica?',
+            answer: 'Sciatica describes the symptom of sciatic nerve pain. Piriformis syndrome is one specific cause of it, where the piriformis muscle in the buttock compresses the nerve. Other sciatica cases originate from a disc or the spinal canal, which need different treatment.',
+          },
+          {
+            question: 'How long does piriformis syndrome take to heal?',
+            answer: 'Most cases improve substantially within four to six weeks of physiotherapy. Pain often reduces in the first two weeks, but the hip strengthening that prevents recurrence takes longer and should be completed even after symptoms settle.',
+          },
+          {
+            question: 'Can I keep exercising with piriformis syndrome?',
+            answer: 'Usually yes, with modification. Running, cycling and deep squatting typically aggravate it, while walking, swimming and guided strength work are generally well tolerated. Your physiotherapist will adjust your routine rather than stop it entirely.',
+          },
+        ],
+        paa: [
+          {
+            question: 'What triggers piriformis syndrome?',
+            answer: 'The most common triggers are prolonged sitting on hard surfaces, a sudden increase in running or cycling volume, wallet-in-back-pocket pressure, and weakness in the gluteus medius muscle that forces the piriformis to overwork. Direct falls onto the buttock can also irritate the muscle. In desk workers it usually builds gradually over weeks rather than starting with a single injury, which is why people often cannot identify a specific moment when it began.',
+          },
+          {
+            question: 'What is the fastest way to relieve piriformis pain?',
+            answer: 'The fastest relief comes from combining soft tissue release of the piriformis with specific stretches such as the figure-four stretch and supine piriformis stretch, held for 30 seconds and repeated several times daily. Reducing sitting time and standing up every 30 minutes makes a measurable difference within days. Heat before stretching helps the muscle release more easily. These measures manage symptoms, but lasting relief requires addressing the gluteal weakness underneath.',
+          },
+          {
+            question: 'Should I use heat or ice for piriformis syndrome?',
+            answer: 'Heat is generally more effective for piriformis syndrome because the problem is muscle tightness rather than acute inflammation. Applying a heat pack for 15 to 20 minutes before stretching allows the muscle to lengthen more readily. Ice can be useful if there has been a recent direct injury to the buttock or if the area feels sharply irritated. Many patients find heat before activity and ice afterwards works best.',
+          },
+        ],
+      },
+      {
+        slug: 'lumbar-radiculopathy',
+        name: 'Lumbar Radiculopathy Treatment',
+        parentCategory: 'back-pain-physiotherapy',
+        externalLink: { url: 'https://en.wikipedia.org/wiki/Radiculopathy', text: 'radiculopathy' },
+        description: 'Physiotherapy for lumbar radiculopathy, where a compressed nerve root in the lower spine causes pain, numbness or weakness travelling into the leg.',
+        keywords: ['lumbar radiculopathy', 'nerve root compression', 'L5 S1 nerve pain', 'radiculopathy treatment', 'lumbar nerve pain', 'Borivali radiculopathy physiotherapy'],
+        metaDescription: 'Lumbar radiculopathy treatment in Borivali West. 5.0★ rated clinic, 8000+ cases. Dr. Shiva Jain Sangoi (MPTh Ortho). Nerve root pain relief. Book now.',
+        h1: 'Lumbar Radiculopathy Treatment & Nerve Root Pain Relief',
+        heroDescription: 'Specialist physiotherapy for lumbar radiculopathy in Borivali, relieving compression at the nerve root and restoring the strength, sensation and confident movement that nerve irritation takes away.',
+        benefits: [
+          {
+            title: 'Decompression at the Nerve Root',
+            description: 'Manual mobilisation and directional exercise open the space around the compressed nerve root, easing pressure at its source. Patients typically report their leg pain beginning to centralise back toward the spine, which is the clearest early sign that treatment is working.',
+          },
+          {
+            title: 'Recovery of Strength and Sensation',
+            description: 'Nerve compression causes measurable weakness and numbness in specific muscle groups supplied by that nerve. Targeted progressive loading rebuilds those muscles as the nerve recovers, restoring foot control, calf strength and balance rather than leaving lasting deficits behind.',
+          },
+          {
+            title: 'Clear Understanding of Your Own Condition',
+            description: 'Radiculopathy is frightening precisely because the symptoms travel down the leg. We map exactly which nerve level is involved and what each symptom means, so you understand which sensations indicate recovery and which genuinely warrant review rather than guessing.',
+          },
+        ],
+        whyPoints: [
+          {
+            title: 'Nerve Level Determines the Treatment',
+            description: 'L4, L5 and S1 nerve roots produce different symptom patterns and respond to different movement directions. Generic back exercises can worsen radiculopathy. Identifying the specific level involved is what makes treatment effective rather than aggravating.',
+          },
+          {
+            title: 'Most Cases Resolve Without Surgery',
+            description: 'The large majority of lumbar radiculopathy settles with conservative treatment over six to twelve weeks. Surgery is reserved for cases with progressive weakness or symptoms that fail to respond, which represent a small minority of presentations.',
+          },
+          {
+            title: 'Warning Signs Are Actively Monitored',
+            description: 'Progressive weakness, saddle numbness or bladder changes require urgent medical review rather than physiotherapy. These are screened at every session, so you are referred immediately if anything changes rather than continuing inappropriate treatment.',
+          },
+        ],
+        faqs: [
+          {
+            question: 'Is lumbar radiculopathy the same as sciatica?',
+            answer: 'They overlap but are not identical. Radiculopathy is the clinical term for nerve root compression at the spine. Sciatica describes leg pain along the sciatic nerve, which is most often caused by radiculopathy but can also arise from the piriformis muscle.',
+          },
+          {
+            question: 'Do I need an MRI before starting treatment?',
+            answer: 'Not usually. Clinical assessment identifies the affected nerve level reliably in most cases, and imaging findings often do not match symptoms. An MRI becomes useful if symptoms fail to improve or if surgery is being considered.',
+          },
+          {
+            question: 'Why does my leg feel numb rather than painful?',
+            answer: 'Numbness, tingling and weakness are all signs of nerve involvement and are as significant as pain. Some people experience mainly sensory changes with little pain. These respond to the same treatment approach and are monitored for recovery at each session.',
+          },
+        ],
+        paa: [
+          {
+            question: 'How long does lumbar radiculopathy take to recover?',
+            answer: 'Most cases of lumbar radiculopathy improve meaningfully within six to twelve weeks of consistent physiotherapy. Pain usually settles before numbness and weakness, and nerve sensation can take several months to fully normalise even after pain has gone. Recovery is generally faster when treatment begins early, when the person stays active within tolerable limits, and when the specific nerve level has been correctly identified so exercises push symptoms in the right direction.',
+          },
+          {
+            question: 'What is centralisation and why does it matter?',
+            answer: 'Centralisation is when pain that was travelling down the leg begins to retreat back toward the lower back. It is one of the most reliable indicators in physiotherapy that a treatment direction is correct, even if overall pain intensity has not yet dropped. The opposite, peripheralisation, means symptoms are moving further down the leg and the current exercise should be changed. Your physiotherapist tracks this at every visit to guide the programme.',
+          },
+          {
+            question: 'Can lumbar radiculopathy come back after it heals?',
+            answer: 'It can recur, particularly if the underlying causes are not addressed. The strongest protective factors are maintained core and hip strength, good lifting mechanics, avoiding prolonged static sitting, and keeping general activity levels up. Patients who complete the full strengthening phase of rehabilitation rather than stopping when pain resolves have noticeably lower recurrence rates. Occasional flare-ups are common and usually settle much faster than the original episode.',
+          },
+        ],
+      },
+      {
+        slug: 'spinal-stenosis',
+        name: 'Spinal Stenosis Treatment',
+        parentCategory: 'back-pain-physiotherapy',
+        externalLink: { url: 'https://en.wikipedia.org/wiki/Spinal_stenosis', text: 'spinal stenosis' },
+        description: 'Physiotherapy for lumbar spinal stenosis, improving walking distance and easing leg heaviness caused by narrowing of the spinal canal.',
+        keywords: ['spinal stenosis', 'lumbar spinal stenosis', 'spinal stenosis treatment', 'neurogenic claudication', 'leg heaviness walking', 'Borivali spinal stenosis physiotherapy'],
+        metaDescription: 'Spinal stenosis treatment in Borivali West. 5.0★ rated clinic, 8000+ cases. Dr. Shiva Jain Sangoi (MPTh Ortho). Walk further with less leg pain. Book now.',
+        h1: 'Spinal Stenosis Treatment & Walking Tolerance Recovery',
+        heroDescription: 'Physiotherapy for lumbar spinal stenosis in Borivali that rebuilds walking tolerance, eases leg heaviness and helps you stay independent without rushing toward spinal surgery.',
+        benefits: [
+          {
+            title: 'Increased Walking Distance',
+            description: 'Walking tolerance is the symptom that matters most in stenosis and the one we measure. Structured conditioning combined with positional strategies allows most patients to walk substantially further before leg heaviness forces them to stop and rest.',
+          },
+          {
+            title: 'Practical Strategies for Daily Life',
+            description: 'Stenosis symptoms ease with slight forward bending, which is why leaning on a trolley helps. We build this into practical routines for shopping, temple visits and market trips so you can complete outings you have started avoiding.',
+          },
+          {
+            title: 'Strength That Protects Independence',
+            description: 'Spinal stenosis commonly affects people over sixty, where reduced walking leads quickly to muscle loss and increased falls risk. Maintaining leg and core strength through structured exercise protects balance, confidence and independence well beyond the spine itself.',
+          },
+        ],
+        whyPoints: [
+          {
+            title: 'Flexion-Based Approach, Not Extension',
+            description: 'Stenosis responds to the opposite movement direction from most disc problems. Exercises that help a herniated disc frequently worsen stenosis. Getting this direction right is the single most important factor in whether treatment helps.',
+          },
+          {
+            title: 'A Genuine Alternative to Surgery',
+            description: 'Research supports conservative management as a reasonable first-line approach for lumbar stenosis, with many patients avoiding or delaying surgery. Physiotherapy is a legitimate first step rather than simply a waiting period before an operation.',
+          },
+          {
+            title: 'Experienced With Older Patients',
+            description: 'Dr. Shiva Jain Sangoi has managed over 8,000 cases including extensive work with older adults, and the clinic offers home visits across Borivali, Dahisar, Kandivali and Malad for patients who find travelling difficult.',
+          },
+        ],
+        faqs: [
+          {
+            question: 'Why does my leg pain ease when I sit down or lean forward?',
+            answer: 'Bending forward slightly opens the spinal canal and reduces pressure on the nerves, which relieves symptoms. This pattern, easing with flexion and worsening with standing or walking upright, is highly characteristic of lumbar spinal stenosis.',
+          },
+          {
+            question: 'Can physiotherapy cure spinal stenosis?',
+            answer: 'Physiotherapy does not reverse the structural narrowing, but it substantially improves function, walking distance and pain. Many patients manage well long-term without surgery. The goal is restoring what you can do rather than changing the scan.',
+          },
+          {
+            question: 'Will I definitely need surgery eventually?',
+            answer: 'No. Many people with stenosis remain stable or improve with conservative management for years. Surgery is considered when symptoms are severe, function is significantly limited despite treatment, or there is progressive neurological loss.',
+          },
+        ],
+        paa: [
+          {
+            question: 'What exercises should be avoided with spinal stenosis?',
+            answer: 'Movements that extend or arch the lower back generally aggravate spinal stenosis, because extension narrows the spinal canal further. This includes prone back extensions, cobra stretches, standing backbends and prolonged standing upright. Long walks on hard flat surfaces without rest breaks also tend to provoke symptoms. Cycling, especially on a bike with slightly forward-leaning posture, is usually far better tolerated than walking, and is often used to build fitness while symptoms are being managed.',
+          },
+          {
+            question: 'How can I walk further with spinal stenosis?',
+            answer: 'Interval walking is the most effective practical strategy. Rather than walking until symptoms force you to stop, walk for slightly less than your current limit, sit or lean forward briefly to let symptoms settle, then continue. Over several weeks this progressively extends total distance. Using a trolley or walking poles that encourage slight forward lean also helps, as does choosing routes with benches. Combining this with hip and core strengthening produces better results than walking practice alone.',
+          },
+          {
+            question: 'Is spinal stenosis a normal part of ageing?',
+            answer: 'Some narrowing of the spinal canal is extremely common with age and often causes no symptoms at all. Scans of people over sixty frequently show stenosis in individuals who have no pain whatsoever. Stenosis only becomes a clinical problem when the narrowing is sufficient to compress nerves and produce symptoms such as leg heaviness on walking. This is why treatment focuses on function and symptoms rather than on the appearance of the scan.',
+          },
+        ],
+      },
+      {
+        slug: 'pinched-nerve-leg-pain',
+        name: 'Pinched Nerve & Radiating Leg Pain',
+        parentCategory: 'back-pain-physiotherapy',
+        externalLink: { url: 'https://en.wikipedia.org/wiki/Nerve_compression_syndrome', text: 'nerve compression syndrome' },
+        description: 'Assessment and treatment for a pinched nerve causing radiating leg pain, tingling, numbness or weakness travelling from the back into the leg or foot.',
+        keywords: ['pinched nerve', 'pinched nerve in back', 'radiating leg pain', 'nerve pain in leg', 'tingling numbness leg', 'Borivali pinched nerve treatment'],
+        metaDescription: 'Pinched nerve & radiating leg pain treatment in Borivali West. 5.0★ clinic, 8000+ cases. Dr. Shiva Jain Sangoi (MPTh Ortho). Nerve relief. Book now.',
+        h1: 'Pinched Nerve Treatment & Radiating Leg Pain Relief',
+        heroDescription: 'Physiotherapy in Borivali for a pinched nerve causing pain, tingling or numbness that travels into the leg, starting with finding exactly where the nerve is being compressed.',
+        benefits: [
+          {
+            title: 'Finding the Actual Compression Point',
+            description: 'Radiating leg pain can originate at the spine, in the deep hip, or further along the nerve path. Systematic testing identifies the true compression point, which is what separates effective treatment from months of exercises aimed at the wrong place.',
+          },
+          {
+            title: 'Restoring Normal Nerve Movement',
+            description: 'Healthy nerves glide freely as you move. Compressed nerves become tethered and irritable. Specific nerve mobilisation restores that gliding capacity, which typically reduces the sharp, electric quality of the pain within the first few sessions.',
+          },
+          {
+            title: 'Resolving Tingling and Numbness',
+            description: 'Sensory symptoms often persist after the pain settles and are frequently dismissed as untreatable by others. Continued targeted treatment supports nerve recovery so that tingling, numbness and altered sensation resolve properly rather than becoming permanent background problems.',
+          },
+        ],
+        whyPoints: [
+          {
+            title: 'Symptoms Are Mapped, Not Guessed',
+            description: 'The exact distribution of your symptoms indicates which nerve is involved. A pattern down the back of the calf points somewhere different from one across the top of the foot. This mapping drives the treatment plan from the first session.',
+          },
+          {
+            title: 'Early Treatment Protects the Nerve',
+            description: 'Prolonged nerve compression can lead to lasting weakness or sensory loss. Nerves recover slowly, so the sooner pressure is relieved, the more complete the recovery tends to be. Delay is the main risk factor for incomplete outcomes.',
+          },
+          {
+            title: 'Orthopaedic Specialist Assessment',
+            description: 'Dr. Shiva Jain Sangoi holds an MPTh in Orthopaedics with over nine years of experience and 8,000 cases treated. Nerve presentations require careful clinical reasoning rather than a standard protocol applied to everyone.',
+          },
+        ],
+        faqs: [
+          {
+            question: 'What does a pinched nerve in the back feel like?',
+            answer: 'Typically a sharp, burning or electric pain that travels from the lower back into the buttock, thigh, calf or foot, often with tingling, pins and needles, or numbness. Some people mainly notice weakness, such as the foot catching when walking.',
+          },
+          {
+            question: 'Can a pinched nerve heal on its own?',
+            answer: 'Mild cases sometimes settle within a few weeks. However, symptoms that persist beyond two to three weeks, or that involve weakness or numbness, benefit substantially from assessment and treatment to relieve the compression and prevent lasting nerve changes.',
+          },
+          {
+            question: 'When should I be worried about nerve symptoms?',
+            answer: 'Seek urgent medical attention for numbness around the groin or inner thighs, loss of bladder or bowel control, or rapidly worsening leg weakness. These are uncommon but require immediate assessment rather than physiotherapy.',
+          },
+        ],
+        paa: [
+          {
+            question: 'How long does a pinched nerve take to heal?',
+            answer: 'Mild nerve compression often settles within two to six weeks once the source of pressure is relieved. More established cases involving numbness or weakness typically take three months or longer, because nerve tissue regenerates slowly compared with muscle or tendon. Pain usually improves first, followed by tingling, with strength and sensation returning last. Starting treatment early consistently produces faster and more complete recovery, which is why persistent nerve symptoms should not simply be waited out.',
+          },
+          {
+            question: 'Does sitting make a pinched nerve worse?',
+            answer: 'Very often, yes. Sitting increases pressure inside the lumbar discs and places the sciatic nerve under sustained tension, particularly in soft low chairs or car seats. Many people find their symptoms are worst after a long commute or a full day at a desk. Standing up every 30 minutes, using a firmer chair with lumbar support, and avoiding sitting on a wallet all reduce the load. If sitting is unavoidable, brief position changes matter more than finding one perfect posture.',
+          },
+          {
+            question: 'Should I rest or stay active with a pinched nerve?',
+            answer: 'Staying active within comfortable limits produces better outcomes than bed rest, which is now recognised to slow recovery and weaken supporting muscles. Gentle walking, position changes and prescribed nerve mobilisation exercises help maintain nerve health and circulation. What should be avoided is heavy lifting, prolonged sitting and any movement that pushes symptoms further down the leg. The guiding principle is that symptoms retreating toward the spine indicate you are on the right track.',
+          },
+        ],
+      },
+      {
         slug: 'slipped-disc',
         name: 'Slipped Disc Treatment',
         parentCategory: 'back-pain-physiotherapy',

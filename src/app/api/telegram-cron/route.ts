@@ -23,6 +23,7 @@ const TOPIC_LEADS = 2;
 const TOPIC_REPORTS = 4;
 const TOPIC_IG_COMMENTS = 5;
 const TOPIC_SYSTEM = 6;
+const TOPIC_FOLLOWUPS = 55; // "WhatsApp Follow-ups" topic (created Aug 19, 2026)
 
 // ── Topic routing ─────────────────────────────────────────
 // PRIMARY (deterministic): senders declare their destination with an explicit
@@ -37,6 +38,8 @@ const TOPIC_NAMES: Record<string, number> = {
   ig: TOPIC_IG_COMMENTS,
   igcomments: TOPIC_IG_COMMENTS,
   system: TOPIC_SYSTEM,
+  followups: TOPIC_FOLLOWUPS,
+  whatsapp: TOPIC_FOLLOWUPS,
 };
 
 function parseTopicTag(text: string): { topic: number | null; cleaned: string } {
@@ -51,6 +54,10 @@ function parseTopicTag(text: string): { topic: number | null; cleaned: string } 
 
 function topicForHeading(text: string): number {
   const head = text.slice(0, 200).toLowerCase();
+  if (
+    head.includes('follow-up plan') || head.includes('followup plan') ||
+    head.includes('whatsapp follow')
+  ) return TOPIC_FOLLOWUPS;
   if (
     head.includes('instagram comments') || head.includes('engagement scout') ||
     head.includes('comment analytics') || head.includes('comments for today')

@@ -19,35 +19,15 @@ export default function MapSection({
 
   const mapSrc = `https://www.google.com/maps?q=${query}&output=embed`;
 
-  const schemaMarkup = {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    '@id': 'https://physiosthanak.com/#organization',
-    name: 'PhysioSthanak',
-    image: 'https://physiosthanak.com/images/Logo.png',
-    description: description,
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'Shop No. 14, Ground Floor, Hari-Smruti Premises, Sardar Vallabhbhai Patel Rd, opp. HDFC Bank',
-      addressLocality: 'Borivali West',
-      addressRegion: 'Mumbai',
-      postalCode: '400092',
-      addressCountry: 'IN',
-    },
-    telephone: '+919324254297',
-    url: 'https://physiosthanak.com',
-    areaServed: {
-      '@type': 'Place',
-      name: location,
-    },
-  };
+  // No JSON-LD emitted here on purpose. The canonical business entity
+  // (https://physiosthanak.com/#organization) is declared once in
+  // src/app/layout.tsx with the full property set, including aggregateRating
+  // and openingHours. This component previously re-declared the SAME @id as a
+  // thin LocalBusiness node on every page that renders a map section, which
+  // produced two conflicting definitions of one entity site-wide.
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
-      />
       <section className="section-padding bg-bg-light">
         <div className="container-max">
           <div className="text-center mb-14">

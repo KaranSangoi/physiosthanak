@@ -23,7 +23,7 @@ export const servicesOnline: ServiceCategory[] = [
       },
       {
         title: 'Expert Care by FIFA-Certified Physiotherapist',
-        description: 'Receive treatment from Dr. Shiva Jain Sangoi, MPTh (Ortho) with a FIFA Diploma in Football Medicine and over 9 years of clinical experience across 8000+ cases. The same expertise you would receive in-clinic is now available through secure, high-quality video consultations on Google Meet.',
+        description: 'Receive treatment from Dr. Shiva Jain Sangoi, MPTh (Ortho) with a FIFA Diploma in Football Medicine and over 10 years of clinical experience across 8000+ cases. The same expertise you would receive in-clinic is now available through secure, high-quality video consultations on Google Meet.',
       },
     ],
     whyPoints: [

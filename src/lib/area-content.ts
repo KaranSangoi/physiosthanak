@@ -126,7 +126,7 @@ const benefitDescriptionPool: ((area: string, sub: string) => string)[] = [
   (area, sub) =>
     `PhysioSthanak's clinic serving ${sub}, ${area} is equipped with modern therapeutic devices including ultrasound machines, TENS units, and therapeutic exercise tools. This technology, combined with Dr. Shiva Jain Sangoi's expertise, ensures effective and efficient treatment sessions.`,
   (area, sub) =>
-    `With an MPTh in Orthopaedics and over nine years of clinical practice, Dr. Shiva Jain Sangoi brings deep specialist knowledge to patients in ${sub}, ${area}. Having treated over 8000 cases, her expertise spans across all orthopaedic and musculoskeletal conditions.`,
+    `With an MPTh in Orthopaedics and over ten years of clinical practice, Dr. Shiva Jain Sangoi brings deep specialist knowledge to patients in ${sub}, ${area}. Having treated over 8000 cases, her expertise spans across all orthopaedic and musculoskeletal conditions.`,
   (area, sub) =>
     `PhysioSthanak takes a holistic approach for patients in ${sub}, ${area}, addressing not just symptoms but root causes. Dr. Shiva Jain Sangoi educates patients about their condition, provides lifestyle modification advice, and empowers them with self-management strategies for long-term wellness.`,
   (area, sub) =>
@@ -260,7 +260,7 @@ const faqPool: ((area: string, sub: string) => FAQ)[] = [
   }),
   (area, sub) => ({
     question: `What qualifications does the physiotherapist treating ${sub} patients have?`,
-    answer: `Dr. Shiva Jain Sangoi, who treats patients from ${sub}, ${area}, holds a BPTh and MPTh in Orthopaedics along with a FIFA Diploma in Football Medicine. With over nine years of clinical experience and 8000+ successfully treated cases, she is one of the most qualified physiotherapists in the region.`,
+    answer: `Dr. Shiva Jain Sangoi, who treats patients from ${sub}, ${area}, holds a BPTh and MPTh in Orthopaedics along with a FIFA Diploma in Football Medicine. With over ten years of clinical experience and 8000+ successfully treated cases, she is one of the most qualified physiotherapists in the region.`,
   }),
   (area, sub) => ({
     question: `How much does physiotherapy cost for ${sub}, ${area} patients at PhysioSthanak?`,

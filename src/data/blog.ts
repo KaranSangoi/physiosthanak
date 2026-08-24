@@ -1823,7 +1823,7 @@ This is important: being female doesn't automatically make someone qualified to 
 - Sports medicine certifications (like the FIFA Diploma in Football Medicine)
 - Experience treating pelvic floor conditions specifically
 
-At PhysioSthanak in Borivali West, Dr. Shiva Jain Sangoi holds an MPTh in Orthopaedics from Terna Physiotherapy College and a FIFA Diploma in Football Medicine. With over 9 years of experience and 8,000+ cases treated, she combines orthopaedic expertise with specialised women's health physiotherapy — treating everything from [pelvic floor dysfunction](/services/womens-health-physiotherapy/pelvic-floor-therapy) to [sports injuries](/services/sports-injury-physiotherapy).
+At PhysioSthanak in Borivali West, Dr. Shiva Jain Sangoi holds an MPTh in Orthopaedics from Terna Physiotherapy College and a FIFA Diploma in Football Medicine. With over 10 years of experience and 8,000+ cases treated, she combines orthopaedic expertise with specialised women's health physiotherapy — treating everything from [pelvic floor dysfunction](/services/womens-health-physiotherapy/pelvic-floor-therapy) to [sports injuries](/services/sports-injury-physiotherapy).
 
 ## How to find a good lady physiotherapist near you
 
