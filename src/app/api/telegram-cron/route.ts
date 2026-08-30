@@ -383,6 +383,10 @@ interface OutboxMessage {
   text: string; // '' = nothing to send, blocks are just cleanup (orphan heading, divider, blank)
 }
 
+// Diagnostic breadcrumb for the outbox read, surfaced in the route's JSON
+// response so a broken relay is visible without digging through Vercel logs.
+let outboxDiagnostics = 'not run';
+
 async function fetchOutboxMessages(notionToken: string): Promise<OutboxMessage[]> {
   const messages: OutboxMessage[] = [];
 
@@ -398,12 +402,19 @@ async function fetchOutboxMessages(notionToken: string): Promise<OutboxMessage[]
     );
 
     if (!resp.ok) {
-      console.error(`Notion API error (Outbox): ${resp.status}`);
+      const body = await resp.text().catch(() => '');
+      console.error(`Notion API error (Outbox): ${resp.status} - ${body.slice(0, 300)}`);
+      // Surface the failure instead of returning an empty list, which the caller
+      // cannot distinguish from a genuinely empty outbox. A silent [] here made
+      // the relay look healthy ("no pending messages") while messages piled up
+      // unread — invisible for weeks. See Director's Brief 2026-08-26.
+      outboxDiagnostics = `notion read failed: ${resp.status}`;
       return messages;
     }
 
     const data = await resp.json();
     const blocks = data.results || [];
+    outboxDiagnostics = `notion read ok: ${blocks.length} blocks${data.has_more ? ' (has_more=true — TRUNCATED at 100)' : ''}`;
 
     // Strategy: collect messages in two ways:
     // 1. Code blocks (original format — each code block = one message)
@@ -646,7 +657,8 @@ export async function GET(request: Request) {
     }
     results.outbox = `${sentCount} sent, ${keptCount} kept for retry, ${cleanedCount} empty groups cleaned`;
   } else {
-    results.outbox = 'no pending messages';
+    // Distinguish "outbox is genuinely empty" from "we could not read it".
+    results.outbox = `no pending messages (${outboxDiagnostics})`;
   }
 
   // ── 2. Daily Digest (once per day, afternoon IST) ───────
