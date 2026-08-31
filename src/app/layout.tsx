@@ -6,6 +6,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import AnalyticsEvents from '@/components/AnalyticsEvents';
 import StickyCallBar from '@/components/layout/StickyCallBar';
+import ExitIntentModal from '@/components/ExitIntentModal';
 import { siteConfig } from '@/data/site-config';
 
 const poppins = Poppins({
@@ -257,6 +258,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <StickyCallBar />
+        <ExitIntentModal />
 
         {/* Google Analytics (GA4) — loaded after page is interactive, not render-blocking */}
         <Script

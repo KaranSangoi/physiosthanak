@@ -3,16 +3,16 @@ import Link from 'next/link';
 import { siteConfig } from '@/data/site-config';
 
 export const metadata: Metadata = {
-  title: 'World Physiotherapy Day — Free Assessment Week | Sep 6-14',
+  title: 'PhysioSthanak Turns 2 — Free Assessment Month | September',
   description:
-    'Celebrate World Physiotherapy Day with PhysioSthanak: a free full-body assessment week at our Borivali West clinic, Sep 6-14, with a special camp day on Sep 8.',
+    'PhysioSthanak was born on World Physiotherapy Day. To celebrate turning two, book a free full-body assessment at our Borivali West clinic any time in September — by appointment.',
   alternates: {
     canonical: `${siteConfig.domain}/physiotherapy-day`,
   },
   openGraph: {
-    title: 'World Physiotherapy Day — Free Assessment Week',
+    title: 'PhysioSthanak Turns 2 — Free Assessment Month',
     description:
-      'Free full-body physiotherapy assessments at PhysioSthanak, Borivali West, Sep 6-14. Camp day on World Physiotherapy Day, Sep 8.',
+      'Born on World Physiotherapy Day 2024. Celebrate with us: free full-body assessments all September at Borivali West, by appointment. Camp day Sep 8.',
     type: 'website',
     locale: 'en_IN',
     url: `${siteConfig.domain}/physiotherapy-day`,
@@ -22,35 +22,35 @@ export const metadata: Metadata = {
 
 const phoneHref = `tel:${siteConfig.phone.replace(/\s/g, '')}`;
 const waHref = `https://wa.me/${siteConfig.phone.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(
-  'Hi Dr. Shiva, I would like to book my free assessment during Physiotherapy Day week.',
+  'Hi Dr. Shiva, I would like to book my free anniversary-month assessment.',
 )}`;
 
 const events = [
   {
-    dates: 'Sep 6 – 14',
-    title: 'Free Full-Body Assessment Week',
-    text: 'Walk in or book a slot any day of the week at our Borivali West clinic. Dr. Shiva Jain Sangoi personally assesses how you stand, sit, bend and move — the full root-cause evaluation — completely free. No obligation to continue.',
+    dates: 'All September',
+    title: 'Free Full-Body Assessment — By Appointment',
+    text: 'Book a slot any day this month. Dr. Shiva Jain Sangoi personally assesses how you stand, sit, bend and move — the complete root-cause evaluation — free. Every slot is confirmed personally by Dr. Shiva, so booking ahead is essential.',
   },
   {
     dates: 'Sep 8 · World Physiotherapy Day',
-    title: 'Camp Day at the Clinic',
-    text: 'On World Physiotherapy Day itself, we run special camp hours: back-to-back free assessments, posture screenings, and honest answers to the aches you have been ignoring. Slots go fastest on this day — book early.',
+    title: 'Birthday Camp Day',
+    text: 'PhysioSthanak was born on World Physiotherapy Day — this is our actual birthday. Special camp hours with back-to-back assessments and posture screenings. Slots are limited and go fastest on this day; book early.',
   },
   {
-    dates: 'All week',
+    dates: 'Anytime',
     title: 'Bring Someone You Worry About',
-    text: 'A parent whose knees complain on stairs. A colleague who lives with neck stiffness. Anyone whose ache has quietly become part of their routine. One careful assessment often explains years of discomfort — and this week, it costs nothing to find out.',
+    text: 'A parent whose knees complain on stairs. A colleague living with neck stiffness. Anyone whose ache has quietly become routine. One careful assessment often explains years of discomfort — this month, it costs nothing to find out.',
   },
 ];
 
 const faqs = [
   {
     q: 'Is the assessment really free? What is the catch?',
-    a: 'There is no catch. The first consultation at our clinic has always been free — Physiotherapy Day week simply celebrates it louder, with camp hours on Sep 8. If you need treatment, Dr. Shiva will say so honestly. If you are doing fine, she will happily tell you that too.',
+    a: 'No catch. The first consultation at our clinic has always been free — our anniversary month simply celebrates it louder. If you need treatment, Dr. Shiva will say so honestly, with a clear plan. If you are doing fine, she will happily tell you that too.',
   },
   {
-    q: 'How do I book a slot?',
-    a: 'Call or WhatsApp us on +91 93242 54297, or use the booking button on this page. Walk-ins are welcome through the week, but booked slots are seen first — evening and camp-day slots fill fastest.',
+    q: 'How do I book? Can I just walk in?',
+    a: 'Booking is by appointment — every slot is personally confirmed by Dr. Shiva. Call or WhatsApp us on +91 93242 54297. Slots are limited each day, and camp day (Sep 8) fills fastest.',
   },
   {
     q: 'Who should come for an assessment?',
@@ -58,7 +58,7 @@ const faqs = [
   },
   {
     q: 'I am not in Mumbai — can I consult online?',
-    a: 'Yes — online video consultations with Dr. Shiva are available as a regular paid service, booked after payment and confirmation. The free assessment week applies to in-clinic visits at Borivali West.',
+    a: 'Yes — online video consultations with Dr. Shiva are available as a regular paid service, booked after payment and confirmation. The free assessment month applies to in-clinic visits at Borivali West.',
   },
 ];
 
@@ -75,9 +75,9 @@ const faqSchema = {
 const eventSchema = {
   '@context': 'https://schema.org',
   '@type': 'Event',
-  name: 'World Physiotherapy Day — Free Assessment Week at PhysioSthanak',
-  startDate: '2026-09-06',
-  endDate: '2026-09-14',
+  name: 'PhysioSthanak Turns 2 — Free Assessment Month',
+  startDate: '2026-09-01',
+  endDate: '2026-09-30',
   eventStatus: 'https://schema.org/EventScheduled',
   eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
   location: {
@@ -92,7 +92,7 @@ const eventSchema = {
   },
   isAccessibleForFree: true,
   description:
-    'Free full-body physiotherapy assessment week at PhysioSthanak, Borivali West, celebrating World Physiotherapy Day with a camp day on September 8.',
+    'PhysioSthanak celebrates its second anniversary with free full-body physiotherapy assessments all September at Borivali West, by appointment. Birthday camp day on World Physiotherapy Day, September 8.',
 };
 
 export default function PhysiotherapyDayPage() {
@@ -111,16 +111,16 @@ export default function PhysiotherapyDayPage() {
       <section className="section-padding bg-primary text-white">
         <div className="container-max text-center">
           <p className="text-accent-pink font-heading uppercase tracking-widest text-sm mb-4">
-            Sep 6 – 14 · Free Assessment Week
+            All September · Free Assessment Month
           </p>
           <h1 className="text-3xl sm:text-5xl font-heading font-bold uppercase tracking-wide">
-            World Physiotherapy Day
+            PhysioSthanak Turns Two
           </h1>
           <p className="mt-6 text-white/85 max-w-2xl mx-auto text-lg leading-relaxed">
-            Physiotherapy has one job we take seriously above all: find the root cause,
-            never just mask the symptom. This World Physiotherapy Day, we are celebrating
-            the profession the best way we know — a full week of free assessments for
-            Borivali.
+            Two years ago, on World Physiotherapy Day 2024, PhysioSthanak was born with
+            one promise: find the root cause, never just mask the symptom. To celebrate
+            our birthday, full-body assessments are free all September — by appointment
+            at our Borivali West clinic.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <a href={waHref} className="btn-primary" target="_blank" rel="noopener noreferrer">
@@ -130,7 +130,9 @@ export default function PhysiotherapyDayPage() {
               Call {siteConfig.phone}
             </a>
           </div>
-          <p className="mt-4 text-white/60 text-sm">Move . Heal . Improve</p>
+          <p className="mt-4 text-white/60 text-sm">
+            Move . Heal . Improve — born on World Physiotherapy Day
+          </p>
         </div>
       </section>
 
@@ -138,7 +140,7 @@ export default function PhysiotherapyDayPage() {
       <section className="section-padding bg-white">
         <div className="container-max">
           <h2 className="text-2xl sm:text-3xl font-heading font-bold text-accent uppercase text-center mb-12">
-            Physiotherapy Day Week — What&rsquo;s On
+            Anniversary Month — What&rsquo;s On
           </h2>
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {events.map((e) => (
@@ -154,21 +156,22 @@ export default function PhysiotherapyDayPage() {
         </div>
       </section>
 
-      {/* Why */}
+      {/* The story */}
       <section className="section-padding bg-gray-50">
         <div className="container-max max-w-3xl text-center">
           <h2 className="text-2xl sm:text-3xl font-heading font-bold text-accent uppercase mb-6">
-            Why a Whole Week Free?
+            Born on Physiotherapy&rsquo;s Own Day
           </h2>
           <p className="text-text-light leading-relaxed mb-4">
-            Because assessment-first care is the whole point of this clinic.
-            {' '}{siteConfig.doctorName} — MPTh (Ortho), BPTh, FIFA Diploma in Football
-            Medicine, with 10+ years and 8000+ cases — built PhysioSthanak on a habit most
-            clinics skip: understanding the whole body before treating any part of it.
+            It started on September 8, 2024 — World Physiotherapy Day — when
+            {' '}{siteConfig.doctorName} put a name to a conviction built over 10+ years
+            and 8000+ cases: that most pain is treated at the symptom when it should be
+            traced to its source. A year later, the PhysioSthanak clinic opened its doors
+            in Borivali West. Today it is rated 5.0 on Google by the people it serves.
           </p>
           <p className="text-text-light leading-relaxed mb-8">
-            A proper assessment is the most valuable thing we do, and for one week it is
-            our gift to the neighbourhood. Rated 5.0 on Google by the people of Borivali.
+            A proper assessment is the most valuable thing we do — and every September,
+            on the month of our birthday, it is our gift to the neighbourhood.
           </p>
           <Link href="/" className="text-accent-pink font-heading uppercase tracking-wide">
             Learn more about PhysioSthanak →
@@ -180,7 +183,7 @@ export default function PhysiotherapyDayPage() {
       <section className="section-padding bg-white">
         <div className="container-max max-w-3xl">
           <h2 className="text-2xl sm:text-3xl font-heading font-bold text-accent uppercase text-center mb-10">
-            Physiotherapy Day Week FAQs
+            Anniversary Month FAQs
           </h2>
           <div className="space-y-8">
             {faqs.map((f) => (
