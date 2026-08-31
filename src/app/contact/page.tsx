@@ -72,7 +72,7 @@ export default function ContactPage() {
                 {siteConfig.phone}
               </p>
               <p className="text-sm text-text-light mt-2">
-                Available Mon-Sat, 9 AM - 9 PM
+                Available Mon-Sat, 9 AM - 9 PM · Sunday by appointment
               </p>
             </a>
 
