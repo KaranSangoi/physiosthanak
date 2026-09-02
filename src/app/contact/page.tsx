@@ -7,7 +7,7 @@ import { generateBreadcrumbs } from '@/lib/utils';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Book Physiotherapy Appointment in Borivali | Call or Book Online',
+  title: 'Physiotherapy Appointment in Borivali',
   description:
     'Book your physiotherapy appointment at PhysioSthanak, Borivali West. Same-day slots available. 5.0★ Google rated. Call, WhatsApp, or book online instantly.',
   keywords: [
@@ -72,7 +72,7 @@ export default function ContactPage() {
                 {siteConfig.phone}
               </p>
               <p className="text-sm text-text-light mt-2">
-                Available Mon-Sat, 9 AM - 9 PM · Sunday by appointment
+                Available all 7 days, 9 AM - 9 PM · Sunday by appointment
               </p>
             </a>
 
@@ -124,10 +124,10 @@ export default function ContactPage() {
                 Hours
               </h3>
               <p className="text-sm text-text-light">
-                Mon-Sat: 9:00 AM - 9:00 PM
+                Open all 7 days: 9:00 AM - 9:00 PM
               </p>
               <p className="text-sm text-text-light">
-                Sunday: By Appointment
+                Sunday by appointment
               </p>
             </a>
           </div>

@@ -19,8 +19,7 @@ const MapSection = dynamic(() => import("@/components/sections/MapSection"));
 const AreaCard = dynamic(() => import("@/components/sections/AreaCard"));
 
 export const metadata: Metadata = {
-  title:
-    "Best Physiotherapist in Borivali | 5.0★ Rated | 8000+ cases | PhysioSthanak",
+  title: "Best Physiotherapist in Borivali | 5.0★ PhysioSthanak",
   description:
     "Best physiotherapist in Borivali West. Dr. Shiva Jain Sangoi — female physiotherapist, 5.0★ Google, 10+ yrs, 8000+ cases. Clinic & home service. Book now.",
   keywords: [

@@ -7,7 +7,7 @@ import PilatesContent from './PilatesContent';
 export const revalidate = 60; // ISR — revalidate every 60 seconds
 
 export const metadata: Metadata = {
-  title: 'Online Mat Pilates for Women | Physiotherapist-Led Classes',
+  title: 'Online Mat Pilates Classes for Women',
   description:
     'Live online women-only Mat Pilates by Dr. Shiva Jain Sangoi (MPTh Ortho) & her team. Free pre & post assessment with goal setting. Max 4 per batch. Register now.',
   keywords: [
