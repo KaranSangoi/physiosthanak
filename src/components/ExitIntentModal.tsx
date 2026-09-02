@@ -11,7 +11,13 @@ const SESSION_KEY = 'ps_exit_intent_shown';
 const ARM_DELAY_MS = 12000; // don't interrupt fresh visitors
 const MOBILE_DWELL_MS = 35000; // mobile fallback: show once after a real dwell
 
-export default function ExitIntentModal() {
+interface ExitIntentModalProps {
+  /** Live review count, resolved on the server. Falls back to site-config. */
+  reviewCount?: number;
+}
+
+export default function ExitIntentModal({ reviewCount }: ExitIntentModalProps = {}) {
+  const reviews = reviewCount ?? siteConfig.reviewCount;
   const [open, setOpen] = useState(false);
   const armedRef = useRef(false);
   const shownRef = useRef(false);
@@ -115,7 +121,7 @@ export default function ExitIntentModal() {
           </a>
         </div>
         <p className="mt-4 text-xs text-gray-400">
-          5.0★ on Google · {siteConfig.reviewCount}+ reviews · Borivali West
+          5.0★ on Google · {reviews}+ reviews · Borivali West
         </p>
       </div>
     </div>

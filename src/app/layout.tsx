@@ -8,6 +8,7 @@ import AnalyticsEvents from '@/components/AnalyticsEvents';
 import StickyCallBar from '@/components/layout/StickyCallBar';
 import ExitIntentModal from '@/components/ExitIntentModal';
 import { siteConfig } from '@/data/site-config';
+import { getReviewStats } from '@/lib/reviews';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -94,11 +95,13 @@ export const metadata: Metadata = {
   manifest: '/site.webmanifest',
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const reviews = await getReviewStats();
+
   return (
     <html lang="en">
       <head>
@@ -177,16 +180,24 @@ export default function RootLayout({
                   openingHoursSpecification: [
                     {
                       '@type': 'OpeningHoursSpecification',
-                      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+                      dayOfWeek: [
+                        'Monday',
+                        'Tuesday',
+                        'Wednesday',
+                        'Thursday',
+                        'Friday',
+                        'Saturday',
+                        'Sunday',
+                      ],
                       opens: '09:00',
                       closes: '21:00',
                     },
                   ],
                   aggregateRating: {
                     '@type': 'AggregateRating',
-                    ratingValue: '5.0',
-                    ratingCount: String(siteConfig.reviewCount),
-                    reviewCount: String(siteConfig.reviewCount),
+                    ratingValue: reviews.ratingDisplay,
+                    ratingCount: String(reviews.reviewCount),
+                    reviewCount: String(reviews.reviewCount),
                     bestRating: '5',
                     worstRating: '1',
                   },
@@ -258,7 +269,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <StickyCallBar />
-        <ExitIntentModal />
+        <ExitIntentModal reviewCount={reviews.reviewCount} />
 
         {/* Google Analytics (GA4) — loaded after page is interactive, not render-blocking */}
         <Script

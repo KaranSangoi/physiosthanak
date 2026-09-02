@@ -6,6 +6,7 @@ import HeroSection from "@/components/sections/HeroSection";
 import ServiceCard from "@/components/sections/ServiceCard";
 import { siteConfig, allServices, serviceAreas } from "@/data";
 import { Benefit, WhyPoint } from "@/types";
+import { getReviewStats } from "@/lib/reviews";
 import { Clock, Users, Home } from "lucide-react";
 
 // Lazy load below-fold components to reduce initial JS bundle
@@ -172,7 +173,9 @@ const IconMap = ({ icon }: { icon: string }) => {
 };
 
 
-export default function HomePage() {
+export default async function HomePage() {
+  const reviews = await getReviewStats();
+
   return (
     <>
       {/* Speakable schema for voice search (Google Assistant, Alexa) */}
@@ -307,7 +310,7 @@ export default function HomePage() {
                 clinic specializes in orthopedic rehabilitation, sports injury
                 recovery, neurological physiotherapy, post-surgery rehab, and
                 home visit physiotherapy across Borivali, Dahisar, Kandivali,
-                and Malad. Backed by {siteConfig.reviewCount}{' '}
+                and Malad. Backed by {reviews.reviewCount}{' '}
                 five-star Google reviews, PhysioSthanak
                 is trusted by families across Mumbai&apos;s western suburbs for
                 evidence-based, personalized physiotherapy care.
