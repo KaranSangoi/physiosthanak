@@ -11,7 +11,7 @@ const PROMPTS = [
   'Home visit physiotherapy Borivali',
   'Sports injury physiotherapy Mumbai',
   'Mat Pilates classes Borivali',
-  'Dr. Shiva Jain Sangoi physiotherapy',
+  'Dr. Shiva Jain Sangoi (PT) physiotherapy',
   'PhysioSthanak reviews',
   'Online physiotherapy consultation India',
   'Back pain treatment Borivali',

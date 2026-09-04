@@ -262,7 +262,7 @@ const MANUAL_THERAPY_OPTIONS = [
 function getInitialForm(): AssessmentFormData {
   return {
     assessment_date: new Date().toISOString().split('T')[0],
-    assessor: 'Dr. Shiva Jain Sangoi',
+    assessor: 'Dr. Shiva Jain Sangoi (PT)',
     client_details: {
       gender: '',
       occupation: '',
@@ -397,7 +397,7 @@ export default function PatientAssessmentPage() {
         setDraftId(draft.id);
         setForm({
           assessment_date: draft.assessment_date || new Date().toISOString().split('T')[0],
-          assessor: draft.assessor || 'Dr. Shiva Jain Sangoi',
+          assessor: draft.assessor || 'Dr. Shiva Jain Sangoi (PT)',
           client_details: { ...getInitialForm().client_details, ...(draft.client_details || {}) },
           history: { ...getInitialForm().history, ...(draft.history || {}) },
           lifestyle: { ...getInitialForm().lifestyle, ...(draft.lifestyle || {}) },

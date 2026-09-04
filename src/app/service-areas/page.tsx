@@ -5,7 +5,7 @@ import { serviceAreas, siteConfig } from '@/data';
 import { generateBreadcrumbs } from '@/lib/utils';
 
 export const metadata: Metadata = {
-  title: 'Physiotherapy Near You in Borivali & Mumbai | Home Visits Available',
+  title: 'Physiotherapy Near Me: Borivali, Mumbai',
   description:
     'Find expert physiotherapy near you — Borivali, Kandivali, Dahisar & Malad. Clinic + home visit options. 5.0★ rated, 8000+ cases treated. Book today.',
   keywords: [

@@ -98,7 +98,7 @@ function getInitialForm(studentId: string): FormData {
     student_id: studentId,
     type: 'initial',
     assessment_date: new Date().toISOString().split('T')[0],
-    assessor_name: 'Dr. Shiva Jain Sangoi',
+    assessor_name: 'Dr. Shiva Jain Sangoi (PT)',
     gender: 'female',
     occupation: '',
     referred_by: '',

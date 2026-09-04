@@ -106,7 +106,7 @@ export default function ProgressAssessmentPage() {
         student_id: studentId,
         type: 'progress',
         assessment_date: new Date().toISOString().split('T')[0],
-        assessor_name: 'Dr. Shiva Jain Sangoi',
+        assessor_name: 'Dr. Shiva Jain Sangoi (PT)',
         session_number: null,
         current_level: initial?.starting_level || '',
         weeks_at_level: null,

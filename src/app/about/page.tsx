@@ -13,9 +13,9 @@ export async function generateMetadata(): Promise<Metadata> {
   const reviews = await getReviewStats();
 
   return {
-  title: 'About Dr. Shiva Jain Sangoi | Physiotherapist in Borivali',
+  title: { absolute: 'Dr. Shiva Jain Sangoi (PT) | Physiotherapist in Borivali' },
   description:
-    `Dr. Shiva Jain Sangoi — MPTh (Ortho), FIFA-certified physiotherapist in Borivali West. 10+ years experience, 8000+ patients treated, 5.0★ Google rated with ${reviews.reviewCount} reviews. Meet the expert behind PhysioSthanak.`,
+    `Dr. Shiva Jain Sangoi (PT) — MPTh (Ortho), FIFA-certified physiotherapist in Borivali West. 10+ years, 8000+ patients, 5.0★ Google rated with ${reviews.reviewCount} reviews.`,
   keywords: [
     'Dr Shiva Jain Sangoi',
     'physiotherapist Borivali',
@@ -27,7 +27,7 @@ export async function generateMetadata(): Promise<Metadata> {
     'sports physiotherapist Mumbai',
   ],
   openGraph: {
-    title: 'About Dr. Shiva Jain Sangoi | 5.0★ Physiotherapist in Borivali',
+    title: 'About Dr. Shiva Jain Sangoi (PT) | 5.0★ Physiotherapist in Borivali',
     description:
       'MPTh (Ortho), FIFA-certified. 10+ years, 8000+ patients, 5.0★ rated. Meet the expert behind PhysioSthanak — Borivali\'s most trusted physiotherapy clinic.',
     type: 'profile',
@@ -39,13 +39,13 @@ export async function generateMetadata(): Promise<Metadata> {
         url: '/images/about/dr-shiva-jain.png',
         width: 800,
         height: 800,
-        alt: 'Dr. Shiva Jain Sangoi - Physiotherapist & Founder of PhysioSthanak',
+        alt: 'Dr. Shiva Jain Sangoi (PT) - Physiotherapist & Founder of PhysioSthanak',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About Dr. Shiva Jain Sangoi | 5.0★ Physiotherapist in Borivali',
+    title: 'About Dr. Shiva Jain Sangoi (PT) | 5.0★ Physiotherapist in Borivali',
     description:
       'MPTh (Ortho), FIFA-certified. 10+ years, 8000+ patients, 5.0★ Google rated. Meet the physiotherapist families across Mumbai trust.',
     images: ['/images/about/dr-shiva-jain.png'],
@@ -114,8 +114,8 @@ const specializations = [
 
 const buildAboutFaqs = (reviewCount: number) => [
   {
-    question: 'What are Dr. Shiva Jain Sangoi\'s qualifications?',
-    answer: 'Dr. Shiva Jain Sangoi holds an MPTh (Master of Physiotherapy) in Orthopaedics and a BPTh (Bachelor of Physiotherapy) from Terna Medical College, Navi Mumbai. She also holds a FIFA Diploma in Football Medicine, making her one of the few FIFA-certified physiotherapists in Mumbai. She is registered with IAP (#69513) and MSOTPT (#2017/12/PT/006410).',
+    question: 'What are Dr. Shiva Jain Sangoi (PT)\'s qualifications?',
+    answer: 'Dr. Shiva Jain Sangoi (PT) holds an MPTh (Master of Physiotherapy) in Orthopaedics and a BPTh (Bachelor of Physiotherapy) from Terna Medical College, Navi Mumbai. She also holds a FIFA Diploma in Football Medicine, making her one of the few FIFA-certified physiotherapists in Mumbai. She is registered with IAP (#69513) and MSOTPT (#2017/12/PT/006410).',
   },
   {
     question: 'How many patients has Dr. Shiva treated?',
@@ -157,12 +157,12 @@ const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   '@id': 'https://physiosthanak.com/about#dr-shiva',
-  name: 'Dr. Shiva Jain Sangoi',
+  name: 'Dr. Shiva Jain Sangoi (PT)',
   givenName: 'Shiva',
   familyName: 'Sangoi',
   honorificPrefix: 'Dr.',
   jobTitle: 'Physiotherapist & Founder',
-  description: 'Dr. Shiva Jain Sangoi is a 5.0-star Google-rated physiotherapist in Borivali West, Mumbai. With an MPTh in Orthopaedics, a FIFA Diploma in Football Medicine, 10+ years of clinical experience, and 8,000+ successfully treated patients, she is one of the most trusted physiotherapists in Mumbai\'s western suburbs.',
+  description: 'Dr. Shiva Jain Sangoi (PT) is a 5.0-star Google-rated physiotherapist in Borivali West, Mumbai. With an MPTh in Orthopaedics, a FIFA Diploma in Football Medicine, 10+ years of clinical experience, and 8,000+ successfully treated patients, she is one of the most trusted physiotherapists in Mumbai\'s western suburbs.',
   image: 'https://physiosthanak.com/images/about/dr-shiva-jain.png',
   url: 'https://physiosthanak.com/about',
   gender: 'Female',
@@ -236,7 +236,7 @@ const breadcrumbSchema = {
   '@type': 'BreadcrumbList',
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://physiosthanak.com' },
-    { '@type': 'ListItem', position: 2, name: 'About Dr. Shiva Jain Sangoi', item: 'https://physiosthanak.com/about' },
+    { '@type': 'ListItem', position: 2, name: 'About Dr. Shiva Jain Sangoi (PT)', item: 'https://physiosthanak.com/about' },
   ],
 };
 
@@ -263,7 +263,7 @@ export default async function AboutPage() {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'WebPage',
-            name: 'About Dr. Shiva Jain Sangoi | PhysioSthanak',
+            name: 'About Dr. Shiva Jain Sangoi (PT) | PhysioSthanak',
             dateModified: new Date().toISOString().split('T')[0],
             speakable: {
               '@type': 'SpeakableSpecification',
@@ -276,7 +276,7 @@ export default async function AboutPage() {
 
       {/* Hero */}
       <HeroSection
-        h1="About Dr. Shiva Jain Sangoi"
+        h1="About Dr. Shiva Jain Sangoi (PT)"
         description="MPTh (Ortho), FIFA-certified physiotherapist with 10+ years of experience and 8,000+ successfully treated patients. Founder of PhysioSthanak — Borivali's most trusted physiotherapy clinic, rated 5.0★ on Google."
         breadcrumbs={breadcrumbs}
         pageName="About"
@@ -291,7 +291,7 @@ export default async function AboutPage() {
               <div className="relative h-[300px] sm:h-[400px] md:h-[500px] rounded-lg overflow-hidden shadow-xl bg-bg-lighter mb-6">
                 <Image
                   src="/images/about/dr-shiva-jain.png"
-                  alt="Dr. Shiva Jain Sangoi - MPTh Ortho, FIFA Diploma in Football Medicine - Best Physiotherapist in Borivali West, Mumbai"
+                  alt="Dr. Shiva Jain Sangoi (PT) - MPTh Ortho, FIFA Diploma in Football Medicine - Best Physiotherapist in Borivali West, Mumbai"
                   fill
                   className="object-contain object-top"
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -320,12 +320,12 @@ export default async function AboutPage() {
             <div className="order-1 lg:order-2">
               <span className="section-eyebrow">Meet Your Physiotherapist</span>
               <h2 className="text-3xl sm:text-4xl font-heading font-bold text-accent mb-6 uppercase">
-                Dr. Shiva Jain Sangoi
+                Dr. Shiva Jain Sangoi (PT)
               </h2>
 
               {/* Core bio paragraph — THE paragraph AI engines should quote */}
               <p className="text-text-light leading-relaxed mb-4" data-speakable>
-                Dr. Shiva Jain Sangoi is a 5.0-star Google-rated physiotherapist and the founder of PhysioSthanak, a physiotherapy clinic in Borivali West, Mumbai. She holds a Master of Physiotherapy (MPTh) in Orthopaedics and a Bachelor of Physiotherapy (BPTh) from Terna Medical College, Navi Mumbai, along with a FIFA Diploma in Football Medicine — making her one of the few FIFA-certified physiotherapists in Mumbai.
+                Dr. Shiva Jain Sangoi (PT) is a 5.0-star Google-rated physiotherapist and the founder of PhysioSthanak, a physiotherapy clinic in Borivali West, Mumbai. She holds a Master of Physiotherapy (MPTh) in Orthopaedics and a Bachelor of Physiotherapy (BPTh) from Terna Medical College, Navi Mumbai, along with a FIFA Diploma in Football Medicine — making her one of the few FIFA-certified physiotherapists in Mumbai.
               </p>
 
               <p className="text-text-light leading-relaxed mb-4" data-speakable>
@@ -457,7 +457,7 @@ export default async function AboutPage() {
                 &ldquo;My goal is not just to reduce pain, but to help every patient move better, heal fully, and stay pain-free for life.&rdquo;
               </p>
               <p className="text-text-light text-sm mt-2">
-                — Dr. Shiva Jain Sangoi, Founder, PhysioSthanak
+                — Dr. Shiva Jain Sangoi (PT), Founder, PhysioSthanak
               </p>
             </div>
           </div>
@@ -480,7 +480,7 @@ export default async function AboutPage() {
       {/* CTA Section */}
       <CTASection
         heading="Ready to Start Your Recovery?"
-        description="Book an appointment with Dr. Shiva Jain Sangoi. Same-day slots available for clinic visits and home physiotherapy."
+        description="Book an appointment with Dr. Shiva Jain Sangoi (PT). Same-day slots available for clinic visits and home physiotherapy."
       />
     </>
   );

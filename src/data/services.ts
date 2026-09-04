@@ -7,7 +7,7 @@ export const services: ServiceCategory[] = [
     whatIs: 'Physiotherapy is a healthcare profession that uses evidence-based physical techniques — including exercise therapy, manual therapy, and electrotherapy — to treat pain, restore movement, and prevent disability. In India, physiotherapists hold BPTh or MPTh degrees and are registered with state councils to practice independently.',
     description: 'Comprehensive physiotherapy services for pain relief, mobility improvement, and recovery from injuries and conditions.',
     keywords: ['physiotherapy', 'physiotherapy near me', 'physiotherapist near me', 'physical therapy', 'rehabilitation', 'pain relief', 'mobility improvement', 'Borivali physiotherapy'],
-    metaDescription: 'Best physiotherapy clinic in Borivali West. 5.0★, 8000+ cases. Dr. Shiva Jain Sangoi (MPTh Ortho, FIFA). Clinic & home service. Book now.',
+    metaDescription: 'Best physiotherapy clinic in Borivali West. 5.0★, 8000+ cases. Dr. Shiva Jain Sangoi (PT), MPTh Ortho, FIFA. Clinic & home service. Book now.',
     h1: 'Professional Physiotherapy Services in Borivali',
     heroDescription: 'Comprehensive physiotherapy treatment for pain relief, injury recovery, and improved mobility in Borivali with proven results.',
     image: '/images/services/physiotherapy.jpg',
@@ -64,7 +64,7 @@ export const services: ServiceCategory[] = [
     keywords: ['physiotherapy at home', 'physiotherapy at home near me', 'physiotherapist near me home service', 'physiotherapist home service', 'home visit physiotherapy', 'home physiotherapy', 'in-home physical therapy', 'elderly care', 'post-surgery home therapy', 'Borivali home physiotherapy'],
     metaDescription: 'Physiotherapist home service in Borivali, Dahisar, Kandivali & Malad. 5.0★ rated home visit physio. Elderly & post-surgery care. Book now.',
     h1: 'Physiotherapist Home Service & Home Visit Physiotherapy in Borivali',
-    heroDescription: 'Expert physiotherapy at home in Borivali, Dahisar, Kandivali & Malad. Dr. Shiva Jain Sangoi delivers professional home visit physiotherapy with personalised care at your doorstep.',
+    heroDescription: 'Expert physiotherapy at home in Borivali, Dahisar, Kandivali & Malad. Dr. Shiva Jain Sangoi (PT) delivers professional home visit physiotherapy with personalised care at your doorstep.',
     image: '/images/services/home-visit-physiotherapy.jpg',
     externalLink: { url: 'https://en.wikipedia.org/wiki/Home_care', text: 'home care' },
     benefits: [
@@ -277,7 +277,7 @@ export const services: ServiceCategory[] = [
     name: 'Sports Injury Physiotherapy',
     description: 'Expert treatment for sports injuries focusing on rapid recovery, return to sport, and injury prevention for athletes.',
     keywords: ['sports injury physiotherapy', 'athletic injury treatment', 'sports rehab', 'athlete recovery', 'sports medicine', 'Borivali sports physiotherapy'],
-    metaDescription: 'Sports injury physiotherapy in Borivali by FIFA-certified Dr. Shiva Jain Sangoi. ACL, muscle tears, ligament rehab. 5.0★ rated. Book consultation.',
+    metaDescription: 'Sports injury physiotherapy in Borivali by FIFA-certified Dr. Shiva Jain Sangoi (PT). ACL, muscle tears, ligament rehab. 5.0★ rated. Book consultation.',
     h1: 'Sports Injury Physiotherapy & Athletic Rehabilitation',
     heroDescription: 'Expert sports injury physiotherapy in Borivali to accelerate athlete recovery, prevent re-injury, and return to peak performance.',
     image: '/images/services/sports-physiotherapy.jpg',
@@ -332,7 +332,7 @@ export const services: ServiceCategory[] = [
         externalLink: { url: 'https://en.wikipedia.org/wiki/Anterior_cruciate_ligament_injury', text: 'anterior cruciate ligament injury' },
         description: 'Comprehensive rehabilitation for anterior cruciate ligament injuries from surgical reconstruction or conservative management.',
         keywords: ['ACL rehabilitation', 'ACL tear treatment', 'ACL recovery', 'knee ligament injury', 'sports knee injury', 'Borivali ACL rehab'],
-        metaDescription: 'ACL injury rehab in Borivali by FIFA-certified Dr. Shiva Jain Sangoi. 5.0★ rated. Post-surgical & conservative recovery. Return to sport safely.',
+        metaDescription: 'ACL injury rehab in Borivali by FIFA-certified Dr. Shiva Jain Sangoi (PT). 5.0★ rated. Post-surgical & conservative recovery. Return to sport safely.',
         h1: 'ACL Injury Rehabilitation & Return to Sport',
         heroDescription: 'Expert ACL rehabilitation in Borivali for safe surgical recovery and sports return with evidence-based progression protocols.',
         benefits: [
@@ -651,7 +651,7 @@ export const services: ServiceCategory[] = [
     whatIs: 'Back pain physiotherapy is a non-surgical treatment approach that uses targeted exercises, manual therapy, and postural correction to relieve spinal pain and restore function. A physiotherapist assesses the root cause — whether it is a muscle strain, disc problem, or nerve compression — and creates a personalised rehabilitation plan to reduce pain and prevent recurrence.',
     description: 'Comprehensive treatment for back pain, spinal conditions, and posture problems with evidence-based rehabilitation.',
     keywords: ['back pain physiotherapy', 'spine treatment', 'lower back pain', 'back pain relief', 'spinal rehabilitation', 'Borivali back pain'],
-    metaDescription: 'Back pain & sciatica treatment in Borivali. 5.0★ rated clinic by Dr. Shiva Jain Sangoi (MPTh Ortho). Non-surgical disc, spondylosis & posture care. Book today.',
+    metaDescription: 'Back pain & sciatica treatment in Borivali. 5.0★ clinic, Dr. Shiva Jain Sangoi (PT), MPTh Ortho. Non-surgical disc, spondylosis & posture care.',
     h1: 'Back Pain & Spine Physiotherapy Services',
     heroDescription: 'Expert back pain physiotherapy in Borivali treating lower back pain, sciatica, and spinal conditions with personalized recovery.',
     image: '/images/services/back-pain-physiotherapy.jpg',
@@ -706,7 +706,7 @@ export const services: ServiceCategory[] = [
         externalLink: { url: 'https://en.wikipedia.org/wiki/Low_back_pain', text: 'low back pain' },
         description: 'Specialized treatment for lower back pain including mechanical pain, muscle strain, and chronic pain management.',
         keywords: ['lower back pain', 'low back pain', 'lumbar pain', 'lower back strain', 'chronic lower back pain', 'Borivali back pain'],
-        metaDescription: 'Lower back pain treatment in Borivali. 5.0★ rated, 10+ years experience. Non-surgical relief for acute & chronic pain. Book with Dr. Shiva Jain Sangoi.',
+        metaDescription: 'Lower back pain treatment in Borivali. 5.0★ rated, 10+ years experience. Non-surgical relief for acute & chronic pain. Book with Dr. Shiva Jain Sangoi (PT).',
         h1: 'Lower Back Pain Treatment & Relief',
         heroDescription: 'Expert lower back pain treatment in Borivali providing effective relief through targeted physiotherapy and exercise.',
         benefits: [
@@ -773,7 +773,7 @@ export const services: ServiceCategory[] = [
         externalLink: { url: 'https://en.wikipedia.org/wiki/Sciatica', text: 'sciatica' },
         description: 'Specialized treatment for sciatic nerve pain including radiculopathy and nerve compression.',
         keywords: ['sciatica', 'sciatic nerve pain', 'sciatica relief', 'nerve pain', 'radiculopathy', 'Borivali sciatica treatment'],
-        metaDescription: 'Sciatica treatment in Borivali without surgery. 5.0★ rated clinic, 8000+ cases. Dr. Shiva Jain Sangoi (MPTh Ortho). Fast nerve pain relief. Book now.',
+        metaDescription: 'Sciatica treatment in Borivali without surgery. 5.0★ rated clinic, 8000+ cases. Dr. Shiva Jain Sangoi (PT), MPTh Ortho. Fast nerve pain relief. Book now.',
         h1: 'Sciatica Treatment & Nerve Pain Relief',
         heroDescription: 'Expert sciatica treatment in Borivali for sciatic nerve pain relief and restored leg function.',
         benefits: [
@@ -840,7 +840,7 @@ export const services: ServiceCategory[] = [
         externalLink: { url: 'https://en.wikipedia.org/wiki/Piriformis_syndrome', text: 'piriformis syndrome' },
         description: 'Targeted treatment for piriformis syndrome, where a tight deep hip muscle compresses the sciatic nerve and causes buttock and leg pain.',
         keywords: ['piriformis syndrome', 'piriformis syndrome treatment', 'deep gluteal syndrome', 'buttock pain', 'hip nerve pain', 'Borivali piriformis treatment'],
-        metaDescription: 'Piriformis syndrome treatment in Borivali West. 5.0★ rated clinic, 8000+ cases. Dr. Shiva Jain Sangoi (MPTh Ortho). Deep hip nerve pain relief. Book now.',
+        metaDescription: 'Piriformis syndrome treatment in Borivali West. 5.0★ rated clinic, 8000+ cases. Dr. Shiva Jain Sangoi (PT), MPTh Ortho. Deep hip nerve pain relief. Book now.',
         h1: 'Piriformis Syndrome Treatment & Deep Buttock Pain Relief',
         heroDescription: 'Expert piriformis syndrome treatment in Borivali that releases the tight deep hip muscle compressing your sciatic nerve, easing buttock pain and restoring comfortable sitting, walking and driving.',
         benefits: [
@@ -868,7 +868,7 @@ export const services: ServiceCategory[] = [
           },
           {
             title: 'Assessed by an Orthopaedic Specialist',
-            description: 'Dr. Shiva Jain Sangoi holds an MPTh in Orthopaedics and has managed over 8,000 cases. Distinguishing hip-driven from spine-driven nerve pain requires specific clinical testing, which is carried out at your first assessment.',
+            description: 'Dr. Shiva Jain Sangoi (PT) holds an MPTh in Orthopaedics and has managed over 8,000 cases. Distinguishing hip-driven from spine-driven nerve pain requires specific clinical testing, which is carried out at your first assessment.',
           },
         ],
         faqs: [
@@ -907,7 +907,7 @@ export const services: ServiceCategory[] = [
         externalLink: { url: 'https://en.wikipedia.org/wiki/Radiculopathy', text: 'radiculopathy' },
         description: 'Physiotherapy for lumbar radiculopathy, where a compressed nerve root in the lower spine causes pain, numbness or weakness travelling into the leg.',
         keywords: ['lumbar radiculopathy', 'nerve root compression', 'L5 S1 nerve pain', 'radiculopathy treatment', 'lumbar nerve pain', 'Borivali radiculopathy physiotherapy'],
-        metaDescription: 'Lumbar radiculopathy treatment in Borivali West. 5.0★ rated clinic, 8000+ cases. Dr. Shiva Jain Sangoi (MPTh Ortho). Nerve root pain relief. Book now.',
+        metaDescription: 'Lumbar radiculopathy treatment in Borivali West. 5.0★ rated clinic, 8000+ cases. Dr. Shiva Jain Sangoi (PT), MPTh Ortho. Nerve root pain relief. Book now.',
         h1: 'Lumbar Radiculopathy Treatment & Nerve Root Pain Relief',
         heroDescription: 'Specialist physiotherapy for lumbar radiculopathy in Borivali, relieving compression at the nerve root and restoring the strength, sensation and confident movement that nerve irritation takes away.',
         benefits: [
@@ -974,7 +974,7 @@ export const services: ServiceCategory[] = [
         externalLink: { url: 'https://en.wikipedia.org/wiki/Spinal_stenosis', text: 'spinal stenosis' },
         description: 'Physiotherapy for lumbar spinal stenosis, improving walking distance and easing leg heaviness caused by narrowing of the spinal canal.',
         keywords: ['spinal stenosis', 'lumbar spinal stenosis', 'spinal stenosis treatment', 'neurogenic claudication', 'leg heaviness walking', 'Borivali spinal stenosis physiotherapy'],
-        metaDescription: 'Spinal stenosis treatment in Borivali West. 5.0★ rated clinic, 8000+ cases. Dr. Shiva Jain Sangoi (MPTh Ortho). Walk further with less leg pain. Book now.',
+        metaDescription: 'Spinal stenosis treatment in Borivali West. 5.0★ rated clinic, 8000+ cases. Dr. Shiva Jain Sangoi (PT), MPTh Ortho. Walk further with less leg pain. Book now.',
         h1: 'Spinal Stenosis Treatment & Walking Tolerance Recovery',
         heroDescription: 'Physiotherapy for lumbar spinal stenosis in Borivali that rebuilds walking tolerance, eases leg heaviness and helps you stay independent without rushing toward spinal surgery.',
         benefits: [
@@ -1002,7 +1002,7 @@ export const services: ServiceCategory[] = [
           },
           {
             title: 'Experienced With Older Patients',
-            description: 'Dr. Shiva Jain Sangoi has managed over 8,000 cases including extensive work with older adults, and the clinic offers home visits across Borivali, Dahisar, Kandivali and Malad for patients who find travelling difficult.',
+            description: 'Dr. Shiva Jain Sangoi (PT) has managed over 8,000 cases including extensive work with older adults, and the clinic offers home visits across Borivali, Dahisar, Kandivali and Malad for patients who find travelling difficult.',
           },
         ],
         faqs: [
@@ -1041,7 +1041,7 @@ export const services: ServiceCategory[] = [
         externalLink: { url: 'https://en.wikipedia.org/wiki/Nerve_compression_syndrome', text: 'nerve compression syndrome' },
         description: 'Assessment and treatment for a pinched nerve causing radiating leg pain, tingling, numbness or weakness travelling from the back into the leg or foot.',
         keywords: ['pinched nerve', 'pinched nerve in back', 'radiating leg pain', 'nerve pain in leg', 'tingling numbness leg', 'Borivali pinched nerve treatment'],
-        metaDescription: 'Pinched nerve & radiating leg pain treatment in Borivali West. 5.0★ clinic, 8000+ cases. Dr. Shiva Jain Sangoi (MPTh Ortho). Nerve relief. Book now.',
+        metaDescription: 'Pinched nerve & radiating leg pain treatment in Borivali West. 5.0★ clinic, 8000+ cases. Dr. Shiva Jain Sangoi (PT), MPTh Ortho. Nerve relief. Book now.',
         h1: 'Pinched Nerve Treatment & Radiating Leg Pain Relief',
         heroDescription: 'Physiotherapy in Borivali for a pinched nerve causing pain, tingling or numbness that travels into the leg, starting with finding exactly where the nerve is being compressed.',
         benefits: [
@@ -1069,7 +1069,7 @@ export const services: ServiceCategory[] = [
           },
           {
             title: 'Orthopaedic Specialist Assessment',
-            description: 'Dr. Shiva Jain Sangoi holds an MPTh in Orthopaedics with over nine years of experience and 8,000 cases treated. Nerve presentations require careful clinical reasoning rather than a standard protocol applied to everyone.',
+            description: 'Dr. Shiva Jain Sangoi (PT) holds an MPTh in Orthopaedics with over nine years of experience and 8,000 cases treated. Nerve presentations require careful clinical reasoning rather than a standard protocol applied to everyone.',
           },
         ],
         faqs: [
@@ -1108,7 +1108,7 @@ export const services: ServiceCategory[] = [
         externalLink: { url: 'https://en.wikipedia.org/wiki/Spinal_disc_herniation', text: 'spinal disc herniation' },
         description: 'Conservative treatment for disc herniation and disc bulge with specialized rehabilitation protocols.',
         keywords: ['slipped disc', 'disc herniation', 'disc bulge', 'herniated disc', 'disc prolapse', 'Borivali disc treatment'],
-        metaDescription: 'Slipped disc treatment in Borivali without surgery. 5.0★ rated. Conservative physiotherapy for disc herniation by Dr. Shiva Jain Sangoi. Book today.',
+        metaDescription: 'Slipped disc treatment in Borivali without surgery. 5.0★ rated. Conservative physiotherapy for disc herniation by Dr. Shiva Jain Sangoi (PT). Book today.',
         h1: 'Slipped Disc & Disc Herniation Treatment',
         heroDescription: 'Expert slipped disc treatment in Borivali with specialized physiotherapy achieving pain relief without surgery.',
         benefits: [
@@ -1156,7 +1156,7 @@ export const services: ServiceCategory[] = [
         paa: [
           {
             question: 'What is the best treatment for a slipped disc?',
-            answer: 'Physiotherapy is the most effective first-line treatment for slipped discs, with over 80% of patients recovering without surgery. Treatment includes spinal mobilization, core stabilization exercises, and nerve gliding techniques. At PhysioSthanak in Borivali, Dr. Shiva Jain Sangoi uses evidence-based McKenzie method and progressive loading protocols to reduce disc herniation symptoms within 4-8 weeks.',
+            answer: 'Physiotherapy is the most effective first-line treatment for slipped discs, with over 80% of patients recovering without surgery. Treatment includes spinal mobilization, core stabilization exercises, and nerve gliding techniques. At PhysioSthanak in Borivali, Dr. Shiva Jain Sangoi (PT) uses evidence-based McKenzie method and progressive loading protocols to reduce disc herniation symptoms within 4-8 weeks.',
           },
           {
             question: 'Can a slipped disc heal on its own?',
@@ -1175,7 +1175,7 @@ export const services: ServiceCategory[] = [
         externalLink: { url: 'https://en.wikipedia.org/wiki/Spondylitis', text: 'spondylitis' },
         description: 'Management of cervical and lumbar spondylitis with degenerative changes and arthritis.',
         keywords: ['spondylitis', 'cervical spondylitis', 'lumbar spondylitis', 'spinal arthritis', 'degenerative disc disease', 'Borivali spondylitis'],
-        metaDescription: 'Spondylitis treatment in Borivali. 5.0★ rated clinic. Cervical & lumbar spondylitis relief by Dr. Shiva Jain Sangoi (MPTh Ortho). Book consultation.',
+        metaDescription: 'Spondylitis treatment in Borivali. 5.0★ rated clinic. Cervical & lumbar spondylitis relief by Dr. Shiva Jain Sangoi (PT), MPTh Ortho. Book consultation.',
         h1: 'Spondylitis & Spinal Arthritis Treatment',
         heroDescription: 'Expert spondylitis treatment in Borivali managing spinal arthritis pain and improving mobility.',
         benefits: [
@@ -1282,7 +1282,7 @@ export const services: ServiceCategory[] = [
     whatIs: 'Cervical physiotherapy is a specialised treatment for neck pain, stiffness, and related conditions like cervical spondylosis and headaches. The physiotherapist uses manual mobilisation, strengthening exercises, and ergonomic advice to reduce pain, improve neck mobility, and address the underlying causes — which often include prolonged screen use, poor posture, or degenerative changes in the cervical spine.',
     description: 'Specialized treatment for neck pain, cervical conditions, and associated headaches with targeted rehabilitation.',
     keywords: ['neck pain physiotherapy', 'cervical pain treatment', 'neck stiffness', 'cervical physiotherapy', 'Borivali neck pain'],
-    metaDescription: 'Neck pain & cervical spondylosis treatment in Borivali. 5.0★ rated. Dr. Shiva Jain Sangoi (MPTh Ortho). Whiplash, frozen shoulder & tech neck care.',
+    metaDescription: 'Neck pain & cervical spondylosis treatment in Borivali. 5.0★ rated. Dr. Shiva Jain Sangoi (PT), MPTh Ortho. Whiplash, frozen shoulder & tech neck care.',
     h1: 'Neck Pain & Cervical Physiotherapy Services',
     heroDescription: 'Expert neck pain physiotherapy in Borivali for cervical conditions, pain relief, and restored mobility.',
     image: '/images/services/neck-pain-physiotherapy.jpg',
@@ -1337,7 +1337,7 @@ export const services: ServiceCategory[] = [
         externalLink: { url: 'https://en.wikipedia.org/wiki/Cervical_spondylosis', text: 'cervical spondylosis' },
         description: 'Management of cervical spondylosis and degenerative disc disease in the neck.',
         keywords: ['cervical spondylosis', 'cervical arthritis', 'neck arthritis', 'degenerative cervical spine', 'Borivali cervical treatment'],
-        metaDescription: 'Cervical spondylosis treatment in Borivali. 5.0★ rated, 8000+ cases. Non-surgical neck arthritis relief by Dr. Shiva Jain Sangoi (MPTh). Book now.',
+        metaDescription: 'Cervical spondylosis treatment in Borivali. 5.0★ rated, 8000+ cases. Non-surgical neck arthritis relief by Dr. Shiva Jain Sangoi (PT), MPTh. Book now.',
         h1: 'Cervical Spondylosis & Neck Arthritis Treatment',
         heroDescription: 'Expert cervical spondylosis treatment in Borivali managing neck arthritis pain with effective physiotherapy.',
         benefits: [
@@ -1385,7 +1385,7 @@ export const services: ServiceCategory[] = [
         paa: [
           {
             question: 'Is cervical spondylosis a serious condition?',
-            answer: 'Cervical spondylosis is common age-related wear affecting neck vertebrae and discs, present in over 85% of people above age 60. Most cases are manageable with physiotherapy and lifestyle modifications. It becomes serious only when nerve compression causes progressive weakness or myelopathy symptoms, which is rare. At PhysioSthanak in Borivali, Dr. Shiva Jain Sangoi assesses severity and creates targeted treatment plans.',
+            answer: 'Cervical spondylosis is common age-related wear affecting neck vertebrae and discs, present in over 85% of people above age 60. Most cases are manageable with physiotherapy and lifestyle modifications. It becomes serious only when nerve compression causes progressive weakness or myelopathy symptoms, which is rare. At PhysioSthanak in Borivali, Dr. Shiva Jain Sangoi (PT) assesses severity and creates targeted treatment plans.',
           },
           {
             question: 'What is the best exercise for cervical spondylosis?',
@@ -1404,7 +1404,7 @@ export const services: ServiceCategory[] = [
         externalLink: { url: 'https://en.wikipedia.org/wiki/Adhesive_capsulitis_of_the_shoulder', text: 'adhesive capsulitis' },
         description: 'Treatment for adhesive capsulitis and frozen shoulder with progressive mobilization.',
         keywords: ['frozen shoulder', 'adhesive capsulitis', 'shoulder stiffness', 'shoulder rehabilitation', 'Borivali frozen shoulder'],
-        metaDescription: 'Frozen shoulder treatment in Borivali. 5.0★ rated clinic. Expert adhesive capsulitis rehab by Dr. Shiva Jain Sangoi (MPTh Ortho). Book consultation.',
+        metaDescription: 'Frozen shoulder treatment in Borivali. 5.0★ rated clinic. Expert adhesive capsulitis rehab by Dr. Shiva Jain Sangoi (PT), MPTh Ortho. Book consultation.',
         h1: 'Frozen Shoulder & Adhesive Capsulitis Treatment',
         heroDescription: 'Expert frozen shoulder treatment in Borivali restoring mobility and function with specialized physiotherapy.',
         benefits: [
@@ -1452,7 +1452,7 @@ export const services: ServiceCategory[] = [
         paa: [
           {
             question: 'What is the fastest way to cure frozen shoulder?',
-            answer: 'The fastest recovery from frozen shoulder combines physiotherapy with progressive mobilization techniques. Stretching exercises, joint mobilization, and heat therapy can reduce recovery time from 18-36 months to 3-6 months. At PhysioSthanak in Borivali, Dr. Shiva Jain Sangoi uses Maitland mobilization and end-range stretching protocols that restore shoulder range of motion systematically.',
+            answer: 'The fastest recovery from frozen shoulder combines physiotherapy with progressive mobilization techniques. Stretching exercises, joint mobilization, and heat therapy can reduce recovery time from 18-36 months to 3-6 months. At PhysioSthanak in Borivali, Dr. Shiva Jain Sangoi (PT) uses Maitland mobilization and end-range stretching protocols that restore shoulder range of motion systematically.',
           },
           {
             question: 'What are the 3 stages of frozen shoulder?',

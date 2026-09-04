@@ -4,9 +4,9 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'best-physiotherapist-in-borivali-west-how-to-choose',
     title: 'Best Physiotherapist in Borivali West — How to Choose the Right One',
-    metaTitle: 'Best Physiotherapist in Borivali West | How to Choose (2026 Guide)',
+    metaTitle: 'Best Physiotherapist in Borivali West | How to Choose (2026)',
     metaDescription:
-      'Looking for the best physiotherapist in Borivali West? Here\'s what to check — qualifications, specialisation, Google reviews, and red flags to avoid. By Dr. Shiva Jain Sangoi.',
+      'Looking for the best physiotherapist in Borivali West? Here\'s what to check — qualifications, specialisation, Google reviews, and red flags to avoid. By Dr. Shiva Jain Sangoi (PT).',
     keywords: [
       'best physiotherapist in Borivali West',
       'physiotherapist Borivali',
@@ -16,7 +16,7 @@ export const blogPosts: BlogPost[] = [
       'best physio Mumbai',
     ],
     publishDate: '2026-05-21',
-    author: 'Dr. Shiva Jain Sangoi',
+    author: 'Dr. Shiva Jain Sangoi (PT)',
     authorCredentials: 'BPTh, MPTh (Ortho), FIFA Diploma in Football Medicine',
     excerpt:
       'Not all physiotherapists are equal. Here\'s exactly what to look for when choosing a physio in Borivali West — qualifications, red flags, and what questions to ask before your first visit.',
@@ -39,7 +39,7 @@ In India, a qualified physiotherapist must have a **BPTh (Bachelor of Physiother
 - A clinic where the "physiotherapist" is actually a trained technician running machines
 - No degree certificates displayed anywhere in the clinic
 
-**What to ask:** "What is your qualification and specialisation?" A confident physiotherapist will answer this without hesitation. At PhysioSthanak, Dr. Shiva Jain Sangoi holds a BPTh and MPTh (Ortho), plus a FIFA Diploma in Football Medicine — that's the kind of transparency you should expect.
+**What to ask:** "What is your qualification and specialisation?" A confident physiotherapist will answer this without hesitation. At PhysioSthanak, Dr. Shiva Jain Sangoi (PT) holds a BPTh and MPTh (Ortho), plus a FIFA Diploma in Football Medicine — that's the kind of transparency you should expect.
 
 ## How to check if they're experienced with your specific problem
 
@@ -129,7 +129,7 @@ If a physiotherapist skips the assessment and goes straight to machines, that's 
 
 Choosing a physiotherapist is a decision that affects your recovery. Take 15 minutes to check qualifications, read reviews, and ask questions before committing. Your body will thank you.
 
-If you're in Borivali West and want to start with a proper assessment, PhysioSthanak offers consultations where Dr. Shiva Jain Sangoi personally evaluates your condition, explains what's going on, and recommends a clear treatment plan — so you know exactly what to expect before committing to anything.
+If you're in Borivali West and want to start with a proper assessment, PhysioSthanak offers consultations where Dr. Shiva Jain Sangoi (PT) personally evaluates your condition, explains what's going on, and recommends a clear treatment plan — so you know exactly what to expect before committing to anything.
 
 **Related reading:** Not sure whether you need a physiotherapist or an orthopaedic doctor first? Read our guide on [physiotherapy vs orthopaedic — who to see first](/blog/physiotherapy-vs-orthopaedic-who-to-see-first). And if you're dealing with back pain specifically, check out our article on [back pain treatment at home](/blog/back-pain-treatment-at-home-when-to-see-physiotherapist).`,
     faqs: [
@@ -160,9 +160,9 @@ If you're in Borivali West and want to start with a proper assessment, PhysioSth
   {
     slug: 'desk-posture-correction-exercises-office-workers',
     title: 'Posture Correction Exercises for Desk Workers — Do These at Your Office',
-    metaTitle: 'Posture Correction Exercises for Desk Workers | 5 Easy Fixes (2026)',
+    metaTitle: 'Posture Correction Exercises for Desk Workers | 5 Easy Fixes',
     metaDescription:
-      'Fix your desk posture in 2 minutes with these 5 exercises. No equipment needed. Works for WFH and office workers. By Dr. Shiva Jain Sangoi, Borivali.',
+      'Fix your desk posture in 2 minutes with these 5 exercises. No equipment needed. Works for WFH and office workers. By Dr. Shiva Jain Sangoi (PT), Borivali.',
     keywords: [
       'posture correction exercises',
       'desk posture fix',
@@ -172,7 +172,7 @@ If you're in Borivali West and want to start with a proper assessment, PhysioSth
       'physiotherapy for posture Borivali',
     ],
     publishDate: '2026-05-21',
-    author: 'Dr. Shiva Jain Sangoi',
+    author: 'Dr. Shiva Jain Sangoi (PT)',
     authorCredentials: 'BPTh, MPTh (Ortho), FIFA Diploma in Football Medicine',
     excerpt:
       'Your desk is slowly wrecking your body. Here are 5 exercises you can do right at your desk — no equipment, no gym, just 2 minutes between meetings.',
@@ -306,9 +306,9 @@ Your body wasn't designed to sit at a desk for 8 hours. But with 3 minutes of ta
   {
     slug: 'physiotherapy-vs-orthopaedic-who-to-see-first',
     title: 'Physiotherapy vs Orthopaedic Doctor — Who Should You See First?',
-    metaTitle: 'Physiotherapy vs Orthopaedic: Who Should You See First? (2026)',
+    metaTitle: 'Physiotherapy vs Orthopaedic: Who Should You See First?',
     metaDescription:
-      'Confused whether to see a physiotherapist or orthopaedic doctor? Here\'s when each is the right choice — with real examples. By Dr. Shiva Jain Sangoi, Borivali.',
+      'Confused whether to see a physiotherapist or orthopaedic doctor? Here\'s when each is the right choice — with real examples. By Dr. Shiva Jain Sangoi (PT), Borivali.',
     keywords: [
       'physiotherapy vs orthopaedic',
       'orthopaedic vs physiotherapist',
@@ -318,7 +318,7 @@ Your body wasn't designed to sit at a desk for 8 hours. But with 3 minutes of ta
       'physiotherapy first or orthopaedic',
     ],
     publishDate: '2026-05-21',
-    author: 'Dr. Shiva Jain Sangoi',
+    author: 'Dr. Shiva Jain Sangoi (PT)',
     authorCredentials: 'BPTh, MPTh (Ortho), FIFA Diploma in Football Medicine',
     excerpt:
       'Most people go straight to an orthopaedic doctor. But for 70% of musculoskeletal problems, a physiotherapist should be your first stop. Here\'s how to decide.',
@@ -439,9 +439,9 @@ For 70% of musculoskeletal problems, a physiotherapist should be your first call
   {
     slug: 'back-pain-treatment-at-home-when-to-see-physiotherapist',
     title: 'Back Pain Treatment at Home — And When You Actually Need a Physiotherapist',
-    metaTitle: 'Back Pain Treatment at Home | When to See a Physio (2026 Guide)',
+    metaTitle: 'Back Pain Treatment at Home | When to See a Physio (2026)',
     metaDescription:
-      'Try these 6 home remedies for back pain first. But if you notice these 5 warning signs, you need a physiotherapist. By Dr. Shiva Jain Sangoi, Borivali.',
+      'Try these 6 home remedies for back pain first. But if you notice these 5 warning signs, you need a physiotherapist. By Dr. Shiva Jain Sangoi (PT), Borivali.',
     keywords: [
       'back pain treatment at home',
       'home remedies for back pain',
@@ -451,7 +451,7 @@ For 70% of musculoskeletal problems, a physiotherapist should be your first call
       'physiotherapy for back pain Borivali',
     ],
     publishDate: '2026-05-21',
-    author: 'Dr. Shiva Jain Sangoi',
+    author: 'Dr. Shiva Jain Sangoi (PT)',
     authorCredentials: 'BPTh, MPTh (Ortho), FIFA Diploma in Football Medicine',
     excerpt:
       'Not all back pain needs professional treatment. Here are 6 things you can try at home — and 5 red flags that mean you should see a physiotherapist immediately.',
@@ -587,9 +587,9 @@ Start with home management for mild back pain — movement, ice/heat, gentle exe
   {
     slug: 'sports-physiotherapy-borivali-athletes-fitness',
     title: 'Sports Physiotherapy in Borivali — For Athletes, Gym-Goers, and Weekend Warriors',
-    metaTitle: 'Sports Physiotherapy in Borivali | Injury Recovery & Prevention (2026)',
+    metaTitle: 'Sports Physiotherapy in Borivali | Recovery & Prevention',
     metaDescription:
-      'Sports injury? Don\'t play through pain. Expert sports physiotherapy in Borivali by FIFA-certified Dr. Shiva Jain Sangoi. Faster recovery, injury prevention, return-to-sport protocols.',
+      'Sports injury? Don\'t play through pain. Expert sports physiotherapy in Borivali by FIFA-certified Dr. Shiva Jain Sangoi (PT). Faster recovery, injury prevention, return-to-sport protocols.',
     keywords: [
       'sports physiotherapy Borivali',
       'sports injury treatment Mumbai',
@@ -599,7 +599,7 @@ Start with home management for mild back pain — movement, ice/heat, gentle exe
       'FIFA certified physiotherapist Mumbai',
     ],
     publishDate: '2026-05-21',
-    author: 'Dr. Shiva Jain Sangoi',
+    author: 'Dr. Shiva Jain Sangoi (PT)',
     authorCredentials: 'BPTh, MPTh (Ortho), FIFA Diploma in Football Medicine',
     excerpt:
       'Pulled a muscle at the gym? Twisted your ankle playing football? Here\'s why regular physiotherapy isn\'t enough for sports injuries — and what sports physiotherapy actually involves.',
@@ -661,7 +661,7 @@ Despite the names, these conditions are common in gym-goers (heavy gripping exer
 
 ## The FIFA Diploma — what it means for your treatment
 
-Dr. Shiva Jain Sangoi at PhysioSthanak holds a FIFA Diploma in Football Medicine. This isn't a weekend workshop — it's an intensive certification programme by FIFA's medical division that covers acute injury management, concussion protocols, return-to-play decision-making, and injury prevention strategies used at the highest levels of professional football.
+Dr. Shiva Jain Sangoi (PT) at PhysioSthanak holds a FIFA Diploma in Football Medicine. This isn't a weekend workshop — it's an intensive certification programme by FIFA's medical division that covers acute injury management, concussion protocols, return-to-play decision-making, and injury prevention strategies used at the highest levels of professional football.
 
 This training applies directly to treating recreational athletes because the principles are the same — whether you're a professional footballer or someone who plays cricket on Sundays. The methodology of assessment, rehabilitation, and safe return to activity follows the same evidence-based protocols.
 
@@ -723,7 +723,7 @@ Playing through pain isn't tough — it's how minor injuries become chronic prob
     title: 'Frozen Shoulder Exercises — A Home Recovery Guide for Every Stage',
     metaTitle: 'Frozen Shoulder Exercises at Home | Stage-by-Stage Guide',
     metaDescription:
-      'Safe frozen shoulder exercises for each recovery stage. 5.0★ rated PhysioSthanak by Dr. Shiva Jain Sangoi, Borivali West. Book your assessment today.',
+      'Safe frozen shoulder exercises for each recovery stage. 5.0★ rated PhysioSthanak by Dr. Shiva Jain Sangoi (PT), Borivali West. Book your assessment today.',
     keywords: [
       'frozen shoulder exercises',
       'frozen shoulder recovery',
@@ -734,7 +734,7 @@ Playing through pain isn't tough — it's how minor injuries become chronic prob
       'frozen shoulder treatment Borivali',
     ],
     publishDate: '2026-06-14',
-    author: 'Dr. Shiva Jain Sangoi',
+    author: 'Dr. Shiva Jain Sangoi (PT)',
     authorCredentials: 'BPTh, MPTh (Ortho), FIFA Diploma in Football Medicine',
     excerpt:
       'Frozen shoulder recovery depends on which stage you are in. Here are the right exercises for each stage — freezing, frozen, and thawing — plus the warning signs that mean you need professional help.',
@@ -896,7 +896,7 @@ Most patients need 12-20 sessions spread over 3-5 months for full recovery.
 
 Frozen shoulder is a slow condition — there is no shortcut. But doing the right exercises at the right stage makes the difference between recovering in 12 months and being stuck for 2+ years. Start with the exercises for your current stage, be consistent, and if progress stalls, do not wait — get professional help before the stiffness becomes entrenched.
 
-If you are in Borivali West and want a proper assessment to identify your stage and get a personalised recovery plan, [book a consultation at PhysioSthanak](/services/orthopedic-physiotherapy/frozen-shoulder-ortho). Dr. Shiva Jain Sangoi will evaluate your shoulder, tell you exactly where you stand, and give you a clear path forward.
+If you are in Borivali West and want a proper assessment to identify your stage and get a personalised recovery plan, [book a consultation at PhysioSthanak](/services/orthopedic-physiotherapy/frozen-shoulder-ortho). Dr. Shiva Jain Sangoi (PT) will evaluate your shoulder, tell you exactly where you stand, and give you a clear path forward.
 
 **Related reading:** Dealing with back pain alongside your shoulder issues? Check out our guide on [back pain treatment at home — and when to see a physiotherapist](/blog/back-pain-treatment-at-home-when-to-see-physiotherapist). And for a deeper look at how physiotherapy compares with surgical options, read [physiotherapy vs orthopaedic — who to see first](/blog/physiotherapy-vs-orthopaedic-who-to-see-first).`,
     faqs: [
@@ -940,7 +940,7 @@ If you are in Borivali West and want a proper assessment to identify your stage 
       'spondylosis neck exercises',
     ],
     publishDate: '2026-06-14',
-    author: 'Dr. Shiva Jain Sangoi',
+    author: 'Dr. Shiva Jain Sangoi (PT)',
     authorCredentials: 'BPTh, MPTh (Ortho), FIFA Diploma in Football Medicine',
     excerpt:
       'Cervical spondylosis does not have to mean a lifetime of neck pain. Here are 8 safe exercises that relieve stiffness and strengthen your neck — plus the ones you must absolutely avoid.',
@@ -1159,7 +1159,7 @@ Cervical spondylosis is a manageable condition. The degeneration on your X-ray m
       'knee physiotherapy Borivali',
     ],
     publishDate: '2026-06-14',
-    author: 'Dr. Shiva Jain Sangoi',
+    author: 'Dr. Shiva Jain Sangoi (PT)',
     authorCredentials: 'BPTh, MPTh (Ortho), FIFA Diploma in Football Medicine',
     excerpt:
       'Knee pain on stairs is one of the earliest warning signs of an underlying problem. Here is what causes it, which exercises help, and when you should stop ignoring it.',
@@ -1361,7 +1361,7 @@ Knee pain on stairs is your body's early warning system. Ignoring it does not ma
       'post knee surgery physiotherapy',
     ],
     publishDate: '2026-06-14',
-    author: 'Dr. Shiva Jain Sangoi',
+    author: 'Dr. Shiva Jain Sangoi (PT)',
     authorCredentials: 'BPTh, MPTh (Ortho), FIFA Diploma in Football Medicine',
     excerpt:
       'Had a knee replacement or planning one? Here is a realistic week-by-week recovery guide with the exact exercises for each phase — from the hospital bed to walking without a limp.',
@@ -1506,7 +1506,7 @@ Most of the surgical recovery is behind you. Now the focus is on building enough
 
 The first 2-3 weeks after discharge are when [home visit physiotherapy](/services/home-visit-physiotherapy) is most valuable. Travelling to a clinic when you can barely walk is stressful, painful, and often impractical — especially for elderly patients or those without easy transport.
 
-At PhysioSthanak, we offer home visit physiotherapy across Borivali West and surrounding areas. Dr. Shiva Jain Sangoi personally supervises early post-TKR rehabilitation at home, ensuring you start your recovery on the right track without the difficulty of clinic travel.
+At PhysioSthanak, we offer home visit physiotherapy across Borivali West and surrounding areas. Dr. Shiva Jain Sangoi (PT) personally supervises early post-TKR rehabilitation at home, ensuring you start your recovery on the right track without the difficulty of clinic travel.
 
 Once you are mobile enough to travel comfortably (usually by week 3-4), transitioning to clinic-based rehabilitation gives you access to equipment and supervised progressive exercises that are difficult to replicate at home.
 
@@ -1558,7 +1558,7 @@ If you are in Borivali West and need post-TKR rehabilitation — whether at home
       'physiotherapy after 60',
     ],
     publishDate: '2026-06-14',
-    author: 'Dr. Shiva Jain Sangoi',
+    author: 'Dr. Shiva Jain Sangoi (PT)',
     authorCredentials: 'BPTh, MPTh (Ortho), FIFA Diploma in Football Medicine',
     excerpt:
       'After 60, the right physiotherapy is not about fixing one injury — it is about maintaining independence. Here is why home visits work better for seniors and what a typical session looks like.',
@@ -1718,7 +1718,7 @@ Strong ankles prevent stumbles from turning into falls.
 Getting started with physiotherapy for a senior family member is straightforward:
 
 1. **Call or message PhysioSthanak** — describe the situation (post-surgery? general weakness? fall risk? specific condition?)
-2. **We schedule a home assessment** — Dr. Shiva Jain Sangoi personally evaluates every patient
+2. **We schedule a home assessment** — Dr. Shiva Jain Sangoi (PT) personally evaluates every patient
 3. **Assessment at home** — thorough evaluation, goal setting, treatment plan
 4. **Regular sessions begin** — usually within the same week
 5. **Family training** — we teach family members how to assist between sessions
@@ -1760,9 +1760,9 @@ After 60, physiotherapy is not a luxury — it is maintenance. Just as you servi
   {
     slug: 'lady-physiotherapist-in-borivali-why-women-prefer-female-physio',
     title: 'Lady Physiotherapist in Borivali — Why More Women Are Choosing Female Physios',
-    metaTitle: 'Lady Physiotherapist in Borivali | Why Women Prefer Female Physio (2026)',
+    metaTitle: 'Lady Physiotherapist in Borivali West | Female Physio Guide',
     metaDescription:
-      'Looking for a lady physiotherapist in Borivali? Dr. Shiva Jain Sangoi explains why women prefer female physios for pelvic floor, prenatal & postnatal care. Book now.',
+      'Lady physiotherapist in Borivali: Dr. Shiva Jain Sangoi (PT) on why women prefer female physios for pelvic floor, prenatal & postnatal care.',
     keywords: [
       'lady physiotherapist in Borivali',
       'lady physiotherapist near me',
@@ -1773,7 +1773,7 @@ After 60, physiotherapy is not a luxury — it is maintenance. Just as you servi
       'lady physio Borivali West',
     ],
     publishDate: '2026-06-20',
-    author: 'Dr. Shiva Jain Sangoi',
+    author: 'Dr. Shiva Jain Sangoi (PT)',
     authorCredentials: 'BPTh, MPTh (Ortho), FIFA Diploma in Football Medicine',
     excerpt:
       'More women across Mumbai are actively seeking lady physiotherapists — and it\'s not just about comfort. Here\'s why a female physio can make a real clinical difference for women\'s health conditions.',
@@ -1823,7 +1823,7 @@ This is important: being female doesn't automatically make someone qualified to 
 - Sports medicine certifications (like the FIFA Diploma in Football Medicine)
 - Experience treating pelvic floor conditions specifically
 
-At PhysioSthanak in Borivali West, Dr. Shiva Jain Sangoi holds an MPTh in Orthopaedics from Terna Physiotherapy College and a FIFA Diploma in Football Medicine. With over 10 years of experience and 8,000+ cases treated, she combines orthopaedic expertise with specialised women's health physiotherapy — treating everything from [pelvic floor dysfunction](/services/womens-health-physiotherapy/pelvic-floor-therapy) to [sports injuries](/services/sports-injury-physiotherapy).
+At PhysioSthanak in Borivali West, Dr. Shiva Jain Sangoi (PT) holds an MPTh in Orthopaedics from Terna Physiotherapy College and a FIFA Diploma in Football Medicine. With over 10 years of experience and 8,000+ cases treated, she combines orthopaedic expertise with specialised women's health physiotherapy — treating everything from [pelvic floor dysfunction](/services/womens-health-physiotherapy/pelvic-floor-therapy) to [sports injuries](/services/sports-physiotherapy).
 
 ## How to find a good lady physiotherapist near you
 
@@ -1843,12 +1843,12 @@ Choosing a lady physiotherapist isn't about making a political statement. For sp
 
 The demand for female physios in Mumbai is growing because women are becoming better informed about their own healthcare options. And that's a good thing.
 
-If you're looking for a lady physiotherapist in Borivali or anywhere in Mumbai's western suburbs, [book a consultation at PhysioSthanak](/). Dr. Shiva Jain Sangoi treats patients at the clinic in Borivali West and also offers [home visit physiotherapy](/services/home-visit-physiotherapy) across Borivali, Dahisar, Kandivali, and Malad.`,
+If you're looking for a lady physiotherapist in Borivali or anywhere in Mumbai's western suburbs, [book a consultation at PhysioSthanak](/). Dr. Shiva Jain Sangoi (PT) treats patients at the clinic in Borivali West and also offers [home visit physiotherapy](/services/home-visit-physiotherapy) across Borivali, Dahisar, Kandivali, and Malad.`,
     faqs: [
       {
         question: 'Is there a lady physiotherapist in Borivali West?',
         answer:
-          'Yes. Dr. Shiva Jain Sangoi at PhysioSthanak is a qualified female physiotherapist in Borivali West with MPTh (Ortho), FIFA Diploma in Football Medicine, and 10+ years of experience treating over 8,000 patients. The clinic is located on SVP Road, opposite HDFC Bank, Borivali West.',
+          'Yes. Dr. Shiva Jain Sangoi (PT) at PhysioSthanak is a qualified female physiotherapist in Borivali West with MPTh (Ortho), FIFA Diploma in Football Medicine, and 10+ years of experience treating over 8,000 patients. The clinic is located on SVP Road, opposite HDFC Bank, Borivali West.',
       },
       {
         question: 'Why should I choose a lady physiotherapist for pelvic floor therapy?',
@@ -1858,7 +1858,7 @@ If you're looking for a lady physiotherapist in Borivali or anywhere in Mumbai's
       {
         question: 'Does a female physiotherapist provide home visits in Borivali?',
         answer:
-          'Yes. Dr. Shiva Jain Sangoi at PhysioSthanak provides home visit physiotherapy across Borivali, Dahisar, Kandivali, and Malad. Home visits are especially popular among new mothers, elderly women, and post-surgery patients who prefer being treated by a lady physiotherapist in the comfort of their home.',
+          'Yes. Dr. Shiva Jain Sangoi (PT) at PhysioSthanak provides home visit physiotherapy across Borivali, Dahisar, Kandivali, and Malad. Home visits are especially popular among new mothers, elderly women, and post-surgery patients who prefer being treated by a lady physiotherapist in the comfort of their home.',
       },
       {
         question: 'Is there a difference between a female physiotherapist and a male physiotherapist for general conditions?',
@@ -1872,9 +1872,9 @@ If you're looking for a lady physiotherapist in Borivali or anywhere in Mumbai's
   {
     slug: 'physiotherapy-home-service-mumbai-when-clinic-visit-not-possible',
     title: 'Physiotherapy Home Service in Mumbai — When You Can\'t Make It to the Clinic',
-    metaTitle: 'Physiotherapist Home Service Mumbai | When to Choose Home Physio (2026)',
+    metaTitle: 'Physiotherapist Home Service in Mumbai | When to Choose It',
     metaDescription:
-      'Need a physiotherapist home service in Mumbai? Know when home physio is better than clinic visits — elderly care, post-surgery, bedridden patients. Book home visit.',
+      'Physiotherapist home service in Mumbai: when home physio beats a clinic visit — elderly care, post-surgery and bedridden patients. Book a home visit.',
     keywords: [
       'physiotherapist home service',
       'physiotherapist near me home service',
@@ -1885,7 +1885,7 @@ If you're looking for a lady physiotherapist in Borivali or anywhere in Mumbai's
       'post surgery physiotherapy at home',
     ],
     publishDate: '2026-06-20',
-    author: 'Dr. Shiva Jain Sangoi',
+    author: 'Dr. Shiva Jain Sangoi (PT)',
     authorCredentials: 'BPTh, MPTh (Ortho), FIFA Diploma in Football Medicine',
     excerpt:
       'Not everyone can get to a clinic. Here\'s when physiotherapy home service is clinically better than a clinic visit — and how to make sure you\'re getting proper treatment at home, not a compromised version of it.',
@@ -1948,7 +1948,7 @@ A legitimate home service physiotherapy session isn't someone showing up with a 
 
 **Verify the qualification.** This matters even more for home visits because you don't have the visual cues of a clinic setup. Ask for the therapist's BPTh or MPTh degree and MSOTPT registration number. Any qualified physiotherapist will share this without hesitation.
 
-**Check if the same therapist comes every time.** Continuity matters in physiotherapy. If a different person shows up each session, your treatment lacks consistency. At PhysioSthanak, Dr. Shiva Jain Sangoi personally handles [home visit cases](/services/home-visit-physiotherapy) across Borivali, Dahisar, Kandivali, and Malad — the same therapist, every session.
+**Check if the same therapist comes every time.** Continuity matters in physiotherapy. If a different person shows up each session, your treatment lacks consistency. At PhysioSthanak, Dr. Shiva Jain Sangoi (PT) personally handles [home visit cases](/services/home-visit-physiotherapy) across Borivali, Dahisar, Kandivali, and Malad — the same therapist, every session.
 
 **Ask about the treatment plan.** A proper physiotherapist will give you a clear treatment plan with goals, expected timeline, and criteria for progression. "Come twice a week indefinitely" isn't a treatment plan — it's a subscription.
 
@@ -1969,7 +1969,7 @@ For all areas, sessions are available 6 days a week. Morning slots are particula
 
 Physiotherapy home service isn't a compromise — for many patients, it's the clinically better choice. The key is ensuring you're getting a qualified physiotherapist (BPTh/MPTh, registered with MSOTPT) who provides progressive, evidence-based treatment at your home, not just machine-based passive therapy.
 
-If you're looking for a physiotherapist home service in Borivali or anywhere in Mumbai's western suburbs, [contact PhysioSthanak](/) to book a home visit with Dr. Shiva Jain Sangoi. Same-day appointments available for urgent post-surgery cases.`,
+If you're looking for a physiotherapist home service in Borivali or anywhere in Mumbai's western suburbs, [contact PhysioSthanak](/) to book a home visit with Dr. Shiva Jain Sangoi (PT). Same-day appointments available for urgent post-surgery cases.`,
     faqs: [
       {
         question: 'How much does physiotherapy home service cost in Mumbai?',
@@ -1979,7 +1979,7 @@ If you're looking for a physiotherapist home service in Borivali or anywhere in 
       {
         question: 'Which areas does PhysioSthanak cover for home physiotherapy?',
         answer:
-          'PhysioSthanak provides home visit physiotherapy across Borivali (West and East), Dahisar, Kandivali, and Malad. Dr. Shiva Jain Sangoi personally handles home visits to ensure treatment continuity. Sessions are available 6 days a week with morning and evening slots.',
+          'PhysioSthanak provides home visit physiotherapy across Borivali (West and East), Dahisar, Kandivali, and Malad. Dr. Shiva Jain Sangoi (PT) personally handles home visits to ensure treatment continuity. Sessions are available 6 days a week with morning and evening slots.',
       },
       {
         question: 'Is home physiotherapy as effective as clinic physiotherapy?',
@@ -1998,9 +1998,9 @@ If you're looking for a physiotherapist home service in Borivali or anywhere in 
   {
     slug: 'sciatica-pain-relief-causes-warning-signs-physiotherapy',
     title: 'Sciatica Pain Relief — Causes, Warning Signs, and When Physiotherapy Helps',
-    metaTitle: 'Sciatica Pain Relief | Causes, Red Flags & Physiotherapy (2026 Guide)',
+    metaTitle: 'Sciatica Pain Relief | Causes, Red Flags & Physiotherapy',
     metaDescription:
-      'Sciatica pain shooting down your leg? Understand the causes, red-flag symptoms, and when physiotherapy helps — by Dr. Shiva Jain Sangoi, MPTh (Ortho), Borivali.',
+      'Sciatica shooting down your leg? The causes, red-flag symptoms and when physiotherapy helps — by Dr. Shiva Jain Sangoi (PT), MPTh (Ortho), Borivali.',
     keywords: [
       'sciatica pain relief',
       'sciatica treatment',
@@ -2011,7 +2011,7 @@ If you're looking for a physiotherapist home service in Borivali or anywhere in 
       'nerve pain down leg',
     ],
     publishDate: '2026-08-15',
-    author: 'Dr. Shiva Jain Sangoi',
+    author: 'Dr. Shiva Jain Sangoi (PT)',
     authorCredentials: 'BPTh, MPTh (Ortho), FIFA Diploma in Football Medicine',
     excerpt:
       'Sciatica is a symptom, not a diagnosis — and that distinction changes everything about how it should be managed. Here is what actually causes that shooting leg pain, the warning signs that need urgent attention, and where physiotherapy fits in.',
@@ -2089,7 +2089,7 @@ A physiotherapy assessment for sciatica is not about handing over a sheet of exe
 
 From there, management is individualised. Evidence-informed conservative care combines graded, progressive loading with education about movement and activity, manual therapy where indicated, and a structured return to normal function — rather than passive machine treatment alone. What that looks like for you depends on what the assessment finds, which is why this article deliberately does not prescribe exercises.
 
-At PhysioSthanak, sciatica cases fall under [back pain and spine physiotherapy](/services/back-pain-physiotherapy), assessed personally by Dr. Shiva Jain Sangoi rather than delegated to a technician.
+At PhysioSthanak, sciatica cases fall under [back pain and spine physiotherapy](/services/back-pain-physiotherapy), assessed personally by Dr. Shiva Jain Sangoi (PT) rather than delegated to a technician.
 
 ## Things that commonly make sciatica worse
 
@@ -2114,7 +2114,7 @@ Reasonable triggers for getting assessed rather than waiting it out:
 - A second or third episode, even if each eventually settled
 - Any numbness or weakness, even mild
 
-The **first consultation at our Borivali West clinic is free** — a full assessment with Dr. Shiva Jain Sangoi, MPTh (Ortho), with no obligation to book further sessions. You will leave knowing what is actually going on and what the realistic path forward looks like. (Home visits are charged separately, as they involve travel time.)
+The **first consultation at our Borivali West clinic is free** — a full assessment with Dr. Shiva Jain Sangoi (PT), MPTh (Ortho), with no obligation to book further sessions. You will leave knowing what is actually going on and what the realistic path forward looks like. (Home visits are charged separately, as they involve travel time.)
 
 To book, [contact PhysioSthanak](/) or call the clinic at Shop No. 14, Hari-Smruti Premises, SVP Road, opposite HDFC Bank, Borivali West.
 
@@ -2151,7 +2151,7 @@ To book, [contact PhysioSthanak](/) or call the clinic at Shop No. 14, Hari-Smru
     title: 'Heel Pain in the Morning — Why the First Steps Hurt Most and What Helps',
     metaTitle: 'Heel Pain in the Morning | Plantar Fasciitis Guide (2026)',
     metaDescription:
-      'Sharp heel pain in the morning is usually plantar fasciitis. Causes, the heel spur myth, red flags and where physiotherapy helps — Dr. Shiva Jain Sangoi.',
+      'Sharp heel pain in the morning is usually plantar fasciitis. Causes, the heel spur myth, red flags and where physiotherapy helps — Dr. Shiva Jain Sangoi (PT).',
     keywords: [
       'heel pain in the morning',
       'plantar fasciitis',
@@ -2162,7 +2162,7 @@ To book, [contact PhysioSthanak](/) or call the clinic at Shop No. 14, Hari-Smru
       'plantar fasciitis physiotherapy',
     ],
     publishDate: '2026-09-01',
-    author: 'Dr. Shiva Jain Sangoi',
+    author: 'Dr. Shiva Jain Sangoi (PT)',
     authorCredentials: 'BPTh, MPTh (Ortho), FIFA Diploma in Football Medicine',
     excerpt:
       'That stabbing pain in the heel with the first few steps out of bed has a name, a mechanism, and a fairly predictable recovery pattern. Here is what plantar fasciitis actually is, why the heel spur usually is not the villain, and when heel pain needs a proper assessment.',
@@ -2257,7 +2257,7 @@ An assessment for heel pain is not a matter of handing over a stretch sheet. A u
 - **A loading plan** matched to your current tolerance, with clear progression criteria
 - **Practical adjustments** to footwear, standing time and activity, which often do more than any single exercise
 
-Because the right plan depends entirely on what the assessment finds, this article deliberately does not prescribe exercises. At PhysioSthanak, heel pain is managed under [plantar fasciitis and orthopedic physiotherapy](/services/orthopedic-physiotherapy/plantar-fasciitis), assessed personally by Dr. Shiva Jain Sangoi rather than delegated to a technician.
+Because the right plan depends entirely on what the assessment finds, this article deliberately does not prescribe exercises. At PhysioSthanak, heel pain is managed under [plantar fasciitis and orthopedic physiotherapy](/services/orthopedic-physiotherapy/plantar-fasciitis), assessed personally by Dr. Shiva Jain Sangoi (PT) rather than delegated to a technician.
 
 ## Things that commonly make it worse
 
@@ -2280,7 +2280,7 @@ Reasonable triggers for booking rather than waiting:
 - A second episode after a previous one settled
 - Any of the red flags listed above
 
-The **first consultation at our Borivali West clinic is free** — a full assessment with Dr. Shiva Jain Sangoi, MPTh (Ortho), with no obligation to book further sessions. You will leave knowing what is actually causing the pain and what a realistic timeline looks like. (Home visits are charged separately, as they involve travel time, and online consultations are a paid service.)
+The **first consultation at our Borivali West clinic is free** — a full assessment with Dr. Shiva Jain Sangoi (PT), MPTh (Ortho), with no obligation to book further sessions. You will leave knowing what is actually causing the pain and what a realistic timeline looks like. (Home visits are charged separately, as they involve travel time, and online consultations are a paid service.)
 
 To book, [contact PhysioSthanak](/) or visit the clinic at Shop No. 14, Hari-Smruti Premises, SVP Road, opposite HDFC Bank, Borivali West.
 
@@ -2310,6 +2310,167 @@ To book, [contact PhysioSthanak](/) or visit the clinic at Shop No. 14, Hari-Smr
       },
     ],
     relatedServices: ['orthopedic-physiotherapy', 'physiotherapy', 'home-visit-physiotherapy'],
+    relatedAreas: ['borivali-west'],
+  },
+  {
+    slug: 'slipped-disc-symptoms-vs-muscle-back-pain',
+    title: 'Slipped Disc Symptoms — How to Tell a Disc Problem From Ordinary Back Pain',
+    metaTitle: 'Slipped Disc Symptoms vs Muscular Back Pain | Physio Guide',
+    metaDescription:
+      'Slipped disc or just a muscle strain? The symptoms that separate the two, what a disc bulge on MRI really means, red flags, and where physiotherapy fits.',
+    keywords: [
+      'slipped disc symptoms',
+      'slip disc symptoms',
+      'slipped disc vs muscle pain',
+      'disc bulge symptoms',
+      'herniated disc symptoms',
+      'slipped disc treatment without surgery',
+      'slipped disc physiotherapy Borivali',
+      'back pain physiotherapy Mumbai',
+    ],
+    publishDate: '2026-09-04',
+    author: 'Dr. Shiva Jain Sangoi (PT)',
+    authorCredentials: 'BPTh, MPTh (Ortho), FIFA Diploma in Football Medicine',
+    excerpt:
+      '"Slip disc" is the diagnosis half of Mumbai gives itself after one bad morning. Most of the time it is wrong — and when it is right, the disc is rarely the villain people imagine. Here is how disc-related pain actually behaves, how it differs from a muscular strain, and what an MRI report does and does not tell you.',
+    readTime: '9 min read',
+    category: 'Guide',
+    content: `## Why "slip disc" is the most over-used phrase in back pain
+
+Slipped disc symptoms are searched for thousands of times a month across India, and a large share of those searches come from people who do not have a slipped disc at all. They bent to lift a water can, felt something "catch" in the lower back, and by evening a relative had declared it a slip disc. A week later they are lying flat, afraid to move, waiting for an MRI appointment.
+
+Two things are worth saying at the start. First, **nothing slips**. Spinal discs are firmly anchored between the vertebrae; what can happen is that the softer inner material bulges or pushes out through the tougher outer ring — a disc bulge, protrusion or herniation. Second, and more importantly, **most acute back pain is not disc-related**. It comes from muscles, ligaments and joints that have been asked to do more than they were prepared for. That kind of pain is unpleasant but usually short-lived, and it is managed quite differently from a nerve problem.
+
+Knowing which one you are dealing with changes what you should do in the first two weeks, which is why this guide exists.
+
+## What a disc actually does — and what goes wrong
+
+Each disc is a shock absorber sitting between two vertebrae: a firm fibrous outer ring around a gel-like centre. Discs are meant to be loaded; they need movement to stay healthy. Problems arise when the outer ring weakens over time and the inner material pushes outward. If that bulge presses on or irritates a nearby nerve root, you get nerve symptoms. If it does not, the disc change may cause nothing at all — which is where a great deal of confusion begins.
+
+Imaging studies of adults with **no back pain whatsoever** routinely find disc bulges. Research consistently suggests that degenerative disc changes and bulges are common findings in symptom-free people, and become more common with every decade of age. An MRI report describing a "diffuse disc bulge at L4-L5" is therefore not automatically the explanation for your pain. It may simply be a description of a 40-year-old spine.
+
+## Slipped disc symptoms — the pattern that points to a disc
+
+Disc-related pain has a fairly recognisable signature when a nerve root is involved:
+
+- **Leg pain that is worse than the back pain.** The classic disc presentation is pain travelling below the knee — into the calf, shin or foot — often more troubling than the back itself.
+- **A line of pain**, not a patch. It follows a route down the leg rather than sitting in one area.
+- **One side only** in the large majority of cases.
+- **Pins and needles, numbness or weakness** in a specific part of the leg or foot.
+- **Worse with sitting, bending forward, coughing, sneezing or straining**; often eased by standing or walking.
+- **Morning stiffness** and difficulty getting from lying to standing in the first days.
+- Onset after a bend-and-twist movement, a period of prolonged sitting, or an unaccustomed lift — though many people cannot point to a single moment.
+
+Our guide on [sciatica pain relief](/blog/sciatica-pain-relief-causes-warning-signs-physiotherapy) covers the leg-pain side of this picture in more depth; a disc herniation is the most common cause of sciatica in adults between roughly 30 and 55.
+
+## Muscular back pain — the pattern that points away from a disc
+
+Muscle and joint-related back pain looks different if you know what to look for:
+
+- Pain **stays in the back, buttock or upper thigh**. It may spread across both sides but rarely travels below the knee.
+- A **dull, tight or aching** quality rather than sharp, shooting or electric.
+- **No numbness, tingling or weakness.**
+- Worse with specific movements, better with rest or a change of position, and often stiffer in the morning before it loosens.
+- Tender to touch over the muscles beside the spine.
+- Tends to improve noticeably within **one to two weeks** even without treatment.
+
+If your pain fits this second list, the reassuring news is that the tissue involved heals readily. The less reassuring news is that "it settled on its own" does not mean the cause has gone anywhere — which is why the same back tends to flare again the next time it is loaded unexpectedly. Our earlier guide on [back pain treatment at home](/blog/back-pain-treatment-at-home-when-to-see-physiotherapist) walks through sensible early self-management for this pattern.
+
+## The Mumbai overlap: desk, commute, festival
+
+There is a reason both patterns show up so often in working adults across Borivali, Kandivali, Dahisar and Malad. A typical day involves an hour or more of sitting in a train or car, eight or nine hours at a desk, and a couple of hours on the sofa. Sustained sitting raises pressure inside the lumbar discs and steadily deconditions the muscles that are supposed to support the spine. The system is then loaded suddenly — a suitcase, a gas cylinder, a child on the hip — and something gives.
+
+September brings its own version of this. Ganeshotsav means carrying idols and decorations, hours of standing in queues and pandals, dancing to the dhol, and sleeping less. Every year the clinic sees a small cluster of new back complaints in the fortnight after visarjan, almost all in people who were sedentary in August and very active for ten days in September. Very few of those turn out to be disc herniations; most are muscular. But the ones that are disc-related tend to be in people who ignored an earlier warning episode.
+
+## What an MRI does — and does not — tell you
+
+Patients often arrive holding an MRI report as though it were a verdict. It is more useful to treat it as one piece of evidence.
+
+An MRI is excellent at showing structure. It cannot show pain. Disc bulges are common in people without symptoms; conversely, the size of a herniation on a scan correlates poorly with how much pain a person is in. A clinician's job is to match what the scan shows to what the examination finds — whether the nerve root the scan implicates is actually the one producing your numbness, reflex change or weakness. When those line up, the picture is clear. When they do not, the disc finding may be incidental, and treating it as the cause leads to months of the wrong plan.
+
+For an accessible overview of disc herniation, the UK National Health Service maintains a plain-language summary of [slipped disc symptoms and management](https://www.nhs.uk/conditions/slipped-disc/) worth reading before you google your MRI terminology.
+
+## Red flags — when this is not a physiotherapy problem first
+
+Most back pain, disc-related or not, is uncomfortable rather than dangerous. A small number of presentations need urgent medical attention the same day:
+
+- Loss of bladder or bowel control, or difficulty passing urine
+- Numbness around the groin, inner thighs or the area you sit on
+- Progressive weakness in one or both legs, or a foot that drags
+- Severe back pain with fever, unexplained weight loss, or a history of cancer
+- Back pain after a significant fall or accident
+- Pain that is constant, unrelenting and unaffected by position, particularly at night
+
+The first three can indicate cauda equina syndrome — rare, but a surgical emergency where delay matters.
+
+## Does a slipped disc need surgery?
+
+Usually not. Research suggests the large majority of symptomatic disc herniations improve considerably with conservative management over six to twelve weeks, and that herniated disc material is often reabsorbed by the body over time. Surgery is generally considered when there is progressive neurological loss, when symptoms fail to improve after an adequate trial of conservative care, or in emergencies. The [slipped disc treatment](/services/back-pain-physiotherapy/slipped-disc) pathway at PhysioSthanak is built around that conservative window — with clear criteria for onward referral if things are not moving in the right direction.
+
+## What a physiotherapy assessment actually involves
+
+A first session for suspected disc pain is not a matter of handing over a stretch sheet. A useful assessment generally covers:
+
+- **History** — how it started, what worsens and eases it, previous episodes, work and commute pattern, sleep position
+- **Neurological screening** — reflexes, muscle power and sensation, to establish whether a nerve root is genuinely involved and which one
+- **Movement testing** — which directions provoke the leg symptoms and which draw them back toward the spine, since that varies considerably between people
+- **Ruling out mimics** — hip, sacroiliac joint and gluteal muscle problems can produce very disc-like pain
+- **A plan with a timeline** — graded return to movement and load, education on positions and activity, manual therapy where indicated, and clear markers for progress
+
+Because the right plan depends entirely on what the assessment finds, this article deliberately does not prescribe exercises. What helps a disc-related presentation can aggravate a joint-related one, and vice versa.
+
+## Things that commonly make it worse
+
+- **Prolonged bed rest.** A day or two in the acute phase is reasonable; beyond that, immobility is associated with slower recovery and weaker supporting muscles.
+- **Aggressive forward-bending stretches** during a disc flare, particularly the toe-touch variety copied from a video.
+- **Belts and braces worn all day**, which can feel supportive but let the stabilising muscles switch off.
+- **Repeated "adjustments" or cracking** without an assessment of what is actually irritated.
+- **Ignoring leg weakness.** Pain that fluctuates is expected; a leg measurably losing strength is not something to wait out.
+
+## If travelling to the clinic is difficult
+
+Acute disc pain can make sitting in a rickshaw or car unbearable. For patients in that phase, [home visit physiotherapy](/services/home-visit-physiotherapy) across Borivali, Dahisar, Kandivali and Malad allows assessment to begin without the journey, moving to clinic sessions once sitting is tolerable.
+
+## When to book an assessment
+
+Reasonable triggers for getting seen rather than waiting:
+
+- Back pain that has not clearly improved within two weeks
+- Any pain travelling below the knee, or any numbness, tingling or weakness
+- A second or third episode, even if each settled on its own
+- Pain interfering with sleep or work
+- An MRI report you do not understand and nobody has properly explained
+
+The **first consultation at our Borivali West clinic is free** — a full assessment with Dr. Shiva Jain Sangoi (PT), MPTh (Ortho), with no obligation to book further sessions. You will leave knowing whether your pain fits a disc pattern or a muscular one, and what a realistic path forward looks like. (Home visits are charged separately, as they involve travel time, and online consultations are a paid service.)
+
+To book, [contact PhysioSthanak](/) or visit the clinic at Shop No. 14, Hari-Smruti Premises, SVP Road, opposite HDFC Bank, Borivali West.
+
+---
+
+*This article is for general information only and is not a substitute for professional assessment. Consult a qualified physiotherapist for advice specific to you.*`,
+    faqs: [
+      {
+        question: 'How do I know if my back pain is a slipped disc or a muscle strain?',
+        answer:
+          'The most useful distinction is where the pain goes. Disc-related pain that involves a nerve root typically travels down one leg, often below the knee, and may bring numbness, tingling or weakness with it. Muscular back pain tends to stay in the back, buttock or upper thigh, feels dull or tight rather than sharp and shooting, and has no nerve symptoms. A physiotherapy assessment including neurological screening can confirm which pattern you have.',
+      },
+      {
+        question: 'Does a disc bulge on MRI mean I have a slipped disc?',
+        answer:
+          'Not necessarily. Research consistently finds disc bulges and degenerative changes in adults who have no back pain at all, and these findings become more common with age. A bulge on MRI is only meaningful if it matches what the clinical examination finds — for example, if the nerve root the scan implicates is the one producing your specific leg symptoms. Many bulges are incidental findings rather than the cause of pain.',
+      },
+      {
+        question: 'Can a slipped disc heal without surgery?',
+        answer:
+          'In most cases, yes. Research suggests the large majority of symptomatic disc herniations improve considerably with conservative management over roughly six to twelve weeks, and herniated disc material is often reabsorbed by the body over time. Surgery is usually reserved for progressive neurological weakness, symptoms that fail to improve after an adequate trial of conservative care, or emergencies such as cauda equina syndrome.',
+      },
+      {
+        question: 'Should I rest in bed if I have a slipped disc?',
+        answer:
+          'A day or two of relative rest during the most acute phase is reasonable, but prolonged bed rest is generally associated with slower recovery and weakening of the muscles that support the spine. Most people do better staying gently active within comfortable limits and avoiding the specific positions that push symptoms further down the leg. Which positions those are varies between individuals, which is why an assessment matters more than general rules.',
+      },
+    ],
+    relatedServices: ['back-pain-physiotherapy', 'physiotherapy', 'home-visit-physiotherapy'],
     relatedAreas: ['borivali-west'],
   },
 ];

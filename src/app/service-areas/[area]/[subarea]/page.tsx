@@ -209,7 +209,7 @@ export default async function SubAreaPage({ params }: PageProps) {
             Ready for Expert Physiotherapy in {subAreaData.name}?
           </h2>
           <p className="text-lg text-gray-100 max-w-2xl mx-auto mb-4">
-            Book your consultation with Dr. Shiva Jain Sangoi today. Available for
+            Book your consultation with Dr. Shiva Jain Sangoi (PT) today. Available for
             clinic visits and home physiotherapy services in{' '}
             {subAreaData.name}. Also explore our complete{' '}
             <Link href="/" className="underline hover:text-gray-200">

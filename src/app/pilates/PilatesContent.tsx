@@ -82,7 +82,7 @@ export default function PilatesContent({ batches }: PilatesContentProps) {
               {
                 '@type': 'HowToStep',
                 name: 'Free Physiotherapy Assessment & Goal Setting',
-                text: 'Dr. Shiva Jain Sangoi and/or her team of qualified physiotherapists conduct a clinical biomechanical assessment evaluating your posture, joint mobility, muscle imbalances, flexibility, and any existing injuries or medical conditions \u2014 then set your personal 4-week goals.',
+                text: 'Dr. Shiva Jain Sangoi (PT) and/or her team of qualified physiotherapists conduct a clinical biomechanical assessment evaluating your posture, joint mobility, muscle imbalances, flexibility, and any existing injuries or medical conditions \u2014 then set your personal 4-week goals.',
               },
               {
                 '@type': 'HowToStep',
@@ -183,7 +183,7 @@ function WhyDifferentSection() {
     {
       title: 'Every Instructor Is a Physiotherapist',
       description:
-        'Unlike most studios where instructors hold a fitness certification, every PhysioSthanak Pilates instructor is a qualified physiotherapist (BPTh). They understand anatomy, biomechanics, and rehabilitation at a clinical level — meaning every exercise is grounded in medical science, not just fitness trends. The entire program is designed and supervised by Dr. Shiva Jain Sangoi, MPTh (Ortho).',
+        'Unlike most studios where instructors hold a fitness certification, every PhysioSthanak Pilates instructor is a qualified physiotherapist (BPTh). They understand anatomy, biomechanics, and rehabilitation at a clinical level — meaning every exercise is grounded in medical science, not just fitness trends. The entire program is designed and supervised by Dr. Shiva Jain Sangoi (PT), MPTh (Ortho).',
     },
     {
       title: 'Free Assessment Before AND After — With Goal Setting',
@@ -636,7 +636,7 @@ function AboutDrShivaSection() {
     {
       title: 'Program Designed by Dr. Shiva (MPTh Ortho)',
       description:
-        'Dr. Shiva Jain Sangoi personally designs every student\u2019s Pilates program based on her clinical biomechanical assessment. With an MPTh in Orthopedics, she brings deep expertise in musculoskeletal conditions, posture correction, and movement science to the program design.',
+        'Dr. Shiva Jain Sangoi (PT) personally designs every student\u2019s Pilates program based on her clinical biomechanical assessment. With an MPTh in Orthopedics, she brings deep expertise in musculoskeletal conditions, posture correction, and movement science to the program design.',
     },
     {
       title: 'Classes Led by Physiotherapist-Instructors',
@@ -661,7 +661,7 @@ function AboutDrShivaSection() {
               Designed by Dr. Shiva, Delivered by Expert Physiotherapist-Instructors
             </h2>
             <p className="text-lg text-text-light mb-8">
-              Every instructor at PhysioSthanak is a qualified physiotherapist (BPTh) and certified Pilates instructor, trained and supervised by Dr. Shiva Jain Sangoi (MPTh Ortho, FIFA Diploma)
+              Every instructor at PhysioSthanak is a qualified physiotherapist (BPTh) and certified Pilates instructor, trained and supervised by Dr. Shiva Jain Sangoi (PT), MPTh Ortho, FIFA Diploma
             </p>
 
             <div className="space-y-6">
@@ -685,7 +685,7 @@ function AboutDrShivaSection() {
           <div className="relative h-[250px] sm:h-[350px] md:h-[450px] rounded-lg overflow-hidden shadow-xl bg-bg-lighter">
             <Image
               src="/images/about/dr-shiva-jain.png"
-              alt="Dr. Shiva Jain Sangoi — Mat Pilates instructor and physiotherapist in Borivali"
+              alt="Dr. Shiva Jain Sangoi (PT) — Mat Pilates instructor and physiotherapist in Borivali"
               fill
               className="object-contain object-top"
               sizes="(max-width: 768px) 100vw, 50vw"

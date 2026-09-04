@@ -386,7 +386,7 @@ export default function TermsOfServicePage() {
                 </li>
                 <li>
                   <strong>Payment:</strong> Full payment is collected during the first
-                  consultation call with Dr. Shiva Jain Sangoi or her team. Payment must be
+                  consultation call with Dr. Shiva Jain Sangoi (PT) or her team. Payment must be
                   completed before the first class.
                 </li>
                 <li>

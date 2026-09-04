@@ -21,7 +21,7 @@ const AreaCard = dynamic(() => import("@/components/sections/AreaCard"));
 export const metadata: Metadata = {
   title: "Best Physiotherapist in Borivali | 5.0★ PhysioSthanak",
   description:
-    "Best physiotherapist in Borivali West. Dr. Shiva Jain Sangoi — female physiotherapist, 5.0★ Google, 10+ yrs, 8000+ cases. Clinic & home service. Book now.",
+    "Best physiotherapist in Borivali West. Dr. Shiva Jain Sangoi (PT) — female physiotherapist, 5.0★ Google, 10+ yrs, 8000+ cases. Clinic & home service. Book now.",
   keywords: [
     "physiotherapy Borivali",
     "physiotherapist Borivali",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     title:
       "Best Physiotherapist in Borivali | 5.0★ Rated | 8000+ cases | PhysioSthanak",
     description:
-      "Expert physiotherapy services in Borivali by Dr. Shiva Jain Sangoi. 10+ years experience, 8000+ cases treated.",
+      "Expert physiotherapy services in Borivali by Dr. Shiva Jain Sangoi (PT). 10+ years experience, 8000+ cases treated.",
     images: ["/og-image.jpg"],
   },
   alternates: {
@@ -95,7 +95,7 @@ const trustIndicators = [
 
 const aboutPoints: WhyPoint[] = [
   {
-    title: "Dr. Shiva Jain Sangoi",
+    title: "Dr. Shiva Jain Sangoi (PT)",
     description:
       "MPTh (Ortho), BPTh with FIFA Diploma in Football Medicine. 10+ years of clinical experience in comprehensive physiotherapy and rehabilitation services.",
   },
@@ -198,7 +198,7 @@ export default async function HomePage() {
       {/* Hero Section */}
       <HeroSection
         h1="Best Physiotherapist in Borivali"
-        description="5.0★ Google-rated physiotherapy clinic in Borivali West led by Dr. Shiva Jain Sangoi (MPTh Ortho, FIFA-certified) and her expert team. 10+ years experience, 8000+ patients treated successfully. Expert pain relief, sports rehab, and home visits across Mumbai's western suburbs."
+        description="5.0★ Google-rated physiotherapy clinic in Borivali West led by Dr. Shiva Jain Sangoi (PT), MPTh Ortho, FIFA-certified and her expert team. 10+ years experience, 8000+ patients treated successfully. Expert pain relief, sports rehab, and home visits across Mumbai's western suburbs."
         breadcrumbs={[]}
         isHome
         showOffer
@@ -275,7 +275,7 @@ export default async function HomePage() {
               <p className="text-text-light leading-relaxed mb-4">
                 Strengthen your core, improve posture, and reduce back pain with
                 live online women-only Mat Pilates — max 4 per batch. Designed by
-                Dr. Shiva Jain Sangoi (MPTh Ortho) and her physiotherapist team, with a
+                Dr. Shiva Jain Sangoi (PT), MPTh Ortho and her physiotherapist team, with a
                 free assessment before and after your 4-week program.
               </p>
               <a href="/pilates" className="btn-primary inline-block">
@@ -293,7 +293,7 @@ export default async function HomePage() {
             <div>
               <span className="section-eyebrow">About the Expert</span>
               <h2 className="text-3xl sm:text-4xl font-heading font-bold text-accent mb-4 uppercase">
-                About Dr. Shiva Jain Sangoi
+                About Dr. Shiva Jain Sangoi (PT)
               </h2>
 
               {/* Rich prose paragraph — crawlable by AI engines (Perplexity, ChatGPT, Gemini) */}
@@ -302,7 +302,7 @@ export default async function HomePage() {
                 data-speakable
               >
                 PhysioSthanak is a 5.0★ Google-rated physiotherapy clinic in
-                Borivali West, Mumbai, founded by Dr. Shiva Jain Sangoi. With an
+                Borivali West, Mumbai, founded by Dr. Shiva Jain Sangoi (PT). With an
                 MPTh in Orthopaedics, a BPTh, and a FIFA Diploma in Football
                 Medicine, Dr. Shiva brings over 10 years of clinical experience
                 and has successfully treated more than 8,000 patients. The
@@ -367,7 +367,7 @@ export default async function HomePage() {
             <div className="relative h-[250px] sm:h-[350px] md:h-[450px] rounded-lg overflow-hidden shadow-xl bg-bg-lighter">
               <Image
                 src="/images/about/dr-shiva-jain.png"
-                alt="Dr. Shiva Jain Sangoi - MPTh Ortho, FIFA Diploma - Best Physiotherapist in Borivali"
+                alt="Dr. Shiva Jain Sangoi (PT) - MPTh Ortho, FIFA Diploma - Best Physiotherapist in Borivali"
                 fill
                 className="object-contain object-top"
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -480,7 +480,7 @@ export default async function HomePage() {
       {/* Final CTA */}
       <CTASection
         heading="Ready to Start Your Recovery?"
-        description="Book your consultation with Dr. Shiva Jain Sangoi today. Take the first step toward pain relief and improved mobility."
+        description="Book your consultation with Dr. Shiva Jain Sangoi (PT) today. Take the first step toward pain relief and improved mobility."
       />
     </>
   );

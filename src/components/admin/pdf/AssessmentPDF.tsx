@@ -414,7 +414,7 @@ function Header() {
           <Text style={s.tagline}>MOVE  ·  HEAL  ·  IMPROVE</Text>
         </View>
         <View style={s.headerRight}>
-          <Text style={s.headerContact}>Dr. Shiva Jain Sangoi | MPTh (Ortho)</Text>
+          <Text style={s.headerContact}>Dr. Shiva Jain Sangoi (PT) | MPTh (Ortho)</Text>
           <Text style={s.headerContact}>+91 9324254297 | physiosthanak@gmail.com</Text>
           <Text style={s.headerContact}>Borivali West, Mumbai 400092</Text>
         </View>
@@ -1134,7 +1134,7 @@ export function AssessmentPDF({ assessment, student }: AssessmentPDFProps) {
   return (
     <Document
       title={`${student.name} - ${isInitial ? 'Initial' : 'Progress'} Assessment - PhysioSthanak`}
-      author="Dr. Shiva Jain Sangoi - PhysioSthanak"
+      author="Dr. Shiva Jain Sangoi (PT) - PhysioSthanak"
       subject="Mat Pilates Assessment Report"
       creator="PhysioSthanak"
     >

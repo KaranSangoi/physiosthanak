@@ -33,7 +33,7 @@ export async function generateMetadata({
   }
 
   return {
-    title: post.metaTitle,
+    title: { absolute: post.metaTitle },
     description: post.metaDescription,
     keywords: post.keywords,
     openGraph: {

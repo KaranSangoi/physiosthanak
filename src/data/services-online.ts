@@ -7,15 +7,15 @@ export const servicesOnline: ServiceCategory[] = [
     whatIs: 'Online physiotherapy — also called tele-rehabilitation or virtual physiotherapy — is a remote healthcare service where a qualified physiotherapist conducts assessments, prescribes exercises, and monitors recovery via video call. It is ideal for follow-up sessions, exercise guidance, ergonomic assessments, and patients in remote areas who cannot visit a clinic in person.',
     description: 'Professional online physiotherapy consultations and tele-rehabilitation via Google Meet. Get expert treatment from anywhere with an introductory offer of just ₹99 for 20 minutes.',
     keywords: ['online physiotherapy', 'virtual physiotherapy', 'tele-rehabilitation', 'online physio consultation', 'physiotherapy Google Meet', 'remote physiotherapy India', 'online physiotherapy consultation'],
-    metaDescription: 'Online physiotherapy via Google Meet by Dr. Shiva Jain Sangoi (MPTh). ₹99 intro offer for 20 min. Expert care from anywhere. Book now!',
+    metaDescription: 'Online physiotherapy via Google Meet by Dr. Shiva Jain Sangoi (PT), MPTh. ₹99 intro offer for 20 min. Expert care from anywhere. Book now!',
     h1: 'Online Physiotherapy Consultation — Expert Care from Anywhere',
-    heroDescription: 'Get expert physiotherapy from the comfort of your home via Google Meet. Introductory offer at just ₹99 for a 20-minute session with Dr. Shiva Jain Sangoi, MPTh (Ortho).',
+    heroDescription: 'Get expert physiotherapy from the comfort of your home via Google Meet. Introductory offer at just ₹99 for a 20-minute session with Dr. Shiva Jain Sangoi (PT), MPTh (Ortho).',
     image: '/images/services/home-visit-physiotherapy.jpg',
     externalLink: { url: 'https://en.wikipedia.org/wiki/Telehealth', text: 'telehealth' },
     benefits: [
       {
         title: 'Convenient Access from Anywhere',
-        description: 'Connect with Dr. Shiva Jain Sangoi from the comfort of your home, office, or while traveling. No commute, no waiting rooms, and no disruption to your daily schedule. Online sessions via Google Meet make professional physiotherapy accessible regardless of your location across India.',
+        description: 'Connect with Dr. Shiva Jain Sangoi (PT) from the comfort of your home, office, or while traveling. No commute, no waiting rooms, and no disruption to your daily schedule. Online sessions via Google Meet make professional physiotherapy accessible regardless of your location across India.',
       },
       {
         title: 'Affordable Introductory Offer at ₹99',
@@ -23,7 +23,7 @@ export const servicesOnline: ServiceCategory[] = [
       },
       {
         title: 'Expert Care by FIFA-Certified Physiotherapist',
-        description: 'Receive treatment from Dr. Shiva Jain Sangoi, MPTh (Ortho) with a FIFA Diploma in Football Medicine and over 10 years of clinical experience across 8000+ cases. The same expertise you would receive in-clinic is now available through secure, high-quality video consultations on Google Meet.',
+        description: 'Receive treatment from Dr. Shiva Jain Sangoi (PT), MPTh (Ortho) with a FIFA Diploma in Football Medicine and over 10 years of clinical experience across 8000+ cases. The same expertise you would receive in-clinic is now available through secure, high-quality video consultations on Google Meet.',
       },
     ],
     whyPoints: [
@@ -47,7 +47,7 @@ export const servicesOnline: ServiceCategory[] = [
       },
       {
         question: 'What is the ₹99 introductory offer?',
-        answer: 'The ₹99 introductory offer gives you a 20-minute online consultation with Dr. Shiva Jain Sangoi via Google Meet. This session includes an initial assessment, preliminary diagnosis, and recommendations. Further treatment packages are customized based on your individual needs after this initial consultation.',
+        answer: 'The ₹99 introductory offer gives you a 20-minute online consultation with Dr. Shiva Jain Sangoi (PT) via Google Meet. This session includes an initial assessment, preliminary diagnosis, and recommendations. Further treatment packages are customized based on your individual needs after this initial consultation.',
       },
       {
         question: 'What conditions can be treated through online physiotherapy?',
@@ -70,13 +70,13 @@ export const servicesOnline: ServiceCategory[] = [
         externalLink: { url: 'https://en.wikipedia.org/wiki/Telemedicine', text: 'telemedicine' },
         description: 'Initial assessment and follow-up physiotherapy consultations via Google Meet with personalized treatment planning.',
         keywords: ['virtual physiotherapy consultation', 'online physio assessment', 'video physiotherapy', 'remote consultation Mumbai', 'online physiotherapy Borivali'],
-        metaDescription: 'Virtual physiotherapy consultation via Google Meet. ₹99 intro session with Dr. Shiva Jain Sangoi. Expert assessment from home. Book now!',
+        metaDescription: 'Virtual physiotherapy consultation via Google Meet. ₹99 intro session with Dr. Shiva Jain Sangoi (PT). Expert assessment from home. Book now!',
         h1: 'Virtual Physiotherapy Consultation Online',
         heroDescription: 'Get a comprehensive physiotherapy assessment via Google Meet from anywhere. Start with our ₹99 introductory session for expert diagnosis and personalized treatment guidance.',
         benefits: [
           {
             title: 'Comprehensive Remote Assessment',
-            description: 'Our virtual consultations include detailed history-taking, visual movement analysis, posture assessment via video, and functional screening. Dr. Shiva Jain Sangoi uses structured assessment protocols adapted for online delivery to ensure accurate diagnosis and effective treatment planning.',
+            description: 'Our virtual consultations include detailed history-taking, visual movement analysis, posture assessment via video, and functional screening. Dr. Shiva Jain Sangoi (PT) uses structured assessment protocols adapted for online delivery to ensure accurate diagnosis and effective treatment planning.',
           },
           {
             title: 'Affordable First Step at Just ₹99',
@@ -123,7 +123,7 @@ export const servicesOnline: ServiceCategory[] = [
         externalLink: { url: 'https://en.wikipedia.org/wiki/Telerehabilitation', text: 'telerehabilitation' },
         description: 'Guided rehabilitation programs delivered remotely via video calls for patients who cannot visit the clinic regularly.',
         keywords: ['tele-rehabilitation', 'remote rehabilitation', 'online rehab physiotherapy', 'video call physio sessions', 'telehealth physiotherapy Mumbai'],
-        metaDescription: 'Tele-rehabilitation by Dr. Shiva Jain Sangoi (MPTh). Guided online rehab programs via Google Meet. Expert remote recovery. Book today!',
+        metaDescription: 'Tele-rehabilitation by Dr. Shiva Jain Sangoi (PT), MPTh. Guided online rehab programs via Google Meet. Expert remote recovery. Book today!',
         h1: 'Tele-Rehabilitation & Remote Physiotherapy Programs',
         heroDescription: 'Receive structured rehabilitation programs via Google Meet with real-time expert guidance. Ideal for patients recovering from surgery, injuries, or chronic conditions who need consistent professional support.',
         benefits: [
@@ -176,9 +176,9 @@ export const servicesOnline: ServiceCategory[] = [
         externalLink: { url: 'https://en.wikipedia.org/wiki/Physical_exercise', text: 'physical exercise' },
         description: 'Personalized home exercise programs with video demonstrations and progress tracking via online physiotherapy sessions.',
         keywords: ['remote exercise guidance', 'online exercise physiotherapy', 'home exercise program', 'video physio exercises', 'personalized exercise plan Mumbai'],
-        metaDescription: 'Remote exercise guidance by Dr. Shiva Jain Sangoi. Personalized home exercise plans with video demos. Track progress online. Book now!',
+        metaDescription: 'Remote exercise guidance by Dr. Shiva Jain Sangoi (PT). Personalized home exercise plans with video demos. Track progress online. Book now!',
         h1: 'Remote Exercise Guidance & Online Home Exercise Programs',
-        heroDescription: 'Get personalized exercise programs designed by Dr. Shiva Jain Sangoi with video demonstrations and regular progress reviews via Google Meet for effective recovery at home.',
+        heroDescription: 'Get personalized exercise programs designed by Dr. Shiva Jain Sangoi (PT) with video demonstrations and regular progress reviews via Google Meet for effective recovery at home.',
         benefits: [
           {
             title: 'Customized Exercise Programs for Your Condition',
@@ -229,9 +229,9 @@ export const servicesOnline: ServiceCategory[] = [
         externalLink: { url: 'https://en.wikipedia.org/wiki/Ergonomics', text: 'ergonomics' },
         description: 'Comprehensive workspace ergonomic assessment and posture correction for work-from-home professionals via online physiotherapy.',
         keywords: ['online ergonomic assessment', 'workspace ergonomics', 'WFH posture correction', 'desk ergonomics physiotherapy', 'remote ergonomic consultation Mumbai'],
-        metaDescription: 'Online ergonomic assessment by Dr. Shiva Jain Sangoi. Fix WFH posture, desk setup & prevent pain. Expert guidance via Google Meet.',
+        metaDescription: 'Online ergonomic assessment by Dr. Shiva Jain Sangoi (PT). Fix WFH posture, desk setup & prevent pain. Expert guidance via Google Meet.',
         h1: 'Online Ergonomic Assessment for Work-from-Home Professionals',
-        heroDescription: 'Get your workspace professionally assessed via Google Meet. Dr. Shiva Jain Sangoi evaluates your desk setup, posture, and habits to prevent pain and improve comfort for WFH professionals.',
+        heroDescription: 'Get your workspace professionally assessed via Google Meet. Dr. Shiva Jain Sangoi (PT) evaluates your desk setup, posture, and habits to prevent pain and improve comfort for WFH professionals.',
         benefits: [
           {
             title: 'Professional Workspace Evaluation from Home',
@@ -282,7 +282,7 @@ export const servicesOnline: ServiceCategory[] = [
         externalLink: { url: 'https://en.wikipedia.org/wiki/Follow-up_(medicine)', text: 'medical follow-up' },
         description: 'Continued physiotherapy care and progress monitoring after clinic treatment ends, delivered via online follow-up sessions.',
         keywords: ['post-discharge follow-up', 'online physiotherapy follow-up', 'remote progress monitoring', 'after treatment care', 'continued physiotherapy Mumbai'],
-        metaDescription: 'Post-discharge physiotherapy follow-up online. Continue recovery after clinic treatment with Dr. Shiva Jain Sangoi via Google Meet.',
+        metaDescription: 'Post-discharge physiotherapy follow-up online. Continue recovery after clinic treatment with Dr. Shiva Jain Sangoi (PT) via Google Meet.',
         h1: 'Post-Discharge Physiotherapy Follow-up Online',
         heroDescription: 'Continue your recovery journey after clinic treatment ends with scheduled online follow-ups via Google Meet. Dr. Shiva monitors your progress, adjusts exercises, and ensures sustained results.',
         benefits: [

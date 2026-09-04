@@ -9,7 +9,7 @@ export const revalidate = 60; // ISR — revalidate every 60 seconds
 export const metadata: Metadata = {
   title: 'Online Mat Pilates Classes for Women',
   description:
-    'Live online women-only Mat Pilates by Dr. Shiva Jain Sangoi (MPTh Ortho) & her team. Free pre & post assessment with goal setting. Max 4 per batch. Register now.',
+    'Live online women-only Mat Pilates by Dr. Shiva Jain Sangoi (PT), MPTh Ortho, & her team. Free pre & post assessment. Max 4 per batch. Register now.',
   keywords: [
     'mat pilates borivali',
     'pilates classes mumbai',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Online Mat Pilates for Women | PhysioSthanak',
     description:
-      'Live online women-only Mat Pilates with free pre & post biomechanical assessment. Max 4 per batch. Led by Dr. Shiva Jain Sangoi (MPTh Ortho) & her team.',
+      'Live online women-only Mat Pilates with free pre & post biomechanical assessment. Max 4 per batch. Led by Dr. Shiva Jain Sangoi (PT), MPTh Ortho & her team.',
     url: `${siteConfig.domain}/pilates`,
     siteName: siteConfig.businessName,
     type: 'website',

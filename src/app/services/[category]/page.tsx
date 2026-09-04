@@ -186,7 +186,7 @@ export default async function ServiceCategoryPage({ params }: PageProps) {
       {/* CTA Section */}
       <CTASection
         heading={`Ready for Expert ${service.name} Treatment?`}
-        description="Book your consultation with Dr. Shiva Jain Sangoi today and start your path to recovery."
+        description="Book your consultation with Dr. Shiva Jain Sangoi (PT) today and start your path to recovery."
         externalLink={service.externalLink}
       />
     </>

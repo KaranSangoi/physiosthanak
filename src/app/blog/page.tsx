@@ -6,9 +6,9 @@ import HeroSection from '@/components/sections/HeroSection';
 import { Clock, Calendar, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Physiotherapy Blog | Expert Tips & Guides by Dr. Shiva Jain Sangoi',
+  title: 'Physiotherapy Blog & Expert Guides',
   description:
-    'Evidence-based physiotherapy articles, exercise guides, and health tips by Dr. Shiva Jain Sangoi. Learn about back pain, posture correction, sports injuries, and more.',
+    'Evidence-based physiotherapy articles, exercise guides and health tips by Dr. Shiva Jain Sangoi (PT) — back pain, posture, sports injuries and more.',
   keywords: [
     'physiotherapy blog',
     'physiotherapy tips',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Physiotherapy Blog | PhysioSthanak',
     description:
-      'Expert physiotherapy articles and exercise guides by Dr. Shiva Jain Sangoi, Borivali West.',
+      'Expert physiotherapy articles and exercise guides by Dr. Shiva Jain Sangoi (PT), Borivali West.',
     type: 'website',
     locale: 'en_IN',
     url: `${siteConfig.domain}/blog`,
@@ -53,7 +53,7 @@ export default function BlogPage() {
       {/* Hero Section */}
       <HeroSection
         h1="Physiotherapy Blog"
-        description="Evidence-based articles, exercise guides, and health tips by Dr. Shiva Jain Sangoi. Real advice from a practising physiotherapist — no fluff, no jargon."
+        description="Evidence-based articles, exercise guides, and health tips by Dr. Shiva Jain Sangoi (PT). Real advice from a practising physiotherapist — no fluff, no jargon."
         breadcrumbs={breadcrumbs}
         pageName="Blog"
       />
@@ -136,7 +136,7 @@ export default function BlogPage() {
           </h2>
           <p className="text-lg text-text-light max-w-2xl mx-auto mb-8">
             If you&apos;re dealing with pain or a movement problem, don&apos;t wait.
-            Book an assessment with Dr. Shiva Jain Sangoi and get answers specific to your situation.
+            Book an assessment with Dr. Shiva Jain Sangoi (PT) and get answers specific to your situation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a

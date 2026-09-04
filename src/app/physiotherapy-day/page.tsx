@@ -3,9 +3,9 @@ import Link from 'next/link';
 import { siteConfig } from '@/data/site-config';
 
 export const metadata: Metadata = {
-  title: 'PhysioSthanak Turns 2 — Free Assessment Month | September',
+  title: { absolute: 'PhysioSthanak Turns 2 — Free Assessment Month' },
   description:
-    'PhysioSthanak was born on World Physiotherapy Day. To celebrate turning two, book a free full-body assessment at our Borivali West clinic any time in September — by appointment.',
+    'PhysioSthanak turns two on World Physiotherapy Day. Book a free full-body assessment at our Borivali West clinic any time in September, by appointment.',
   alternates: {
     canonical: `${siteConfig.domain}/physiotherapy-day`,
   },
@@ -29,7 +29,7 @@ const events = [
   {
     dates: 'All September',
     title: 'Free Full-Body Assessment — By Appointment',
-    text: 'Book a slot any day this month. Dr. Shiva Jain Sangoi personally assesses how you stand, sit, bend and move — the complete root-cause evaluation — free. Every slot is confirmed personally by Dr. Shiva, so booking ahead is essential.',
+    text: 'Book a slot any day this month. Dr. Shiva Jain Sangoi (PT) personally assesses how you stand, sit, bend and move — the complete root-cause evaluation — free. Every slot is confirmed personally by Dr. Shiva, so booking ahead is essential.',
   },
   {
     dates: 'Sep 8 · World Physiotherapy Day',

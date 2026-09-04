@@ -28,7 +28,7 @@ export default function RelatedBlogPosts({
             {heading}
           </h2>
           <p className="text-text-light mt-3 max-w-2xl mx-auto">
-            Learn more about your condition, treatment options, and recovery tips from Dr. Shiva Jain Sangoi.
+            Learn more about your condition, treatment options, and recovery tips from Dr. Shiva Jain Sangoi (PT).
           </p>
         </div>
 
