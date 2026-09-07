@@ -64,6 +64,7 @@ export const services: ServiceCategory[] = [
     keywords: ['physiotherapy at home', 'physiotherapy at home near me', 'physiotherapist near me home service', 'physiotherapist home service', 'home visit physiotherapy', 'home physiotherapy', 'in-home physical therapy', 'elderly care', 'post-surgery home therapy', 'Borivali home physiotherapy'],
     metaDescription: 'Physiotherapist home service in Borivali, Dahisar, Kandivali & Malad. 5.0★ rated home visit physio. Elderly & post-surgery care. Book now.',
     h1: 'Physiotherapist Home Service & Home Visit Physiotherapy in Borivali',
+    metaTitle: 'Home Visit Physiotherapy in Borivali | PhysioSthanak',
     heroDescription: 'Expert physiotherapy at home in Borivali, Dahisar, Kandivali & Malad. Dr. Shiva Jain Sangoi (PT) delivers professional home visit physiotherapy with personalised care at your doorstep.',
     image: '/images/services/home-visit-physiotherapy.jpg',
     externalLink: { url: 'https://en.wikipedia.org/wiki/Home_care', text: 'home care' },
@@ -273,12 +274,13 @@ export const services: ServiceCategory[] = [
   },
   {
     slug: 'sports-physiotherapy',
-    whatIs: 'Sports physiotherapy is a specialised branch of physiotherapy focused on preventing, diagnosing, and treating injuries related to sports and physical activity. Sports physiotherapists work with athletes of all levels — from weekend cricketers to professional footballers — using techniques like taping, dry needling, sport-specific rehabilitation, and return-to-play protocols.',
+    whatIs: 'Sports physiotherapy is a specialised branch of physiotherapy focused on preventing, diagnosing, and treating injuries related to sports and physical activity. Sports physiotherapists work with athletes of all levels — from weekend cricketers to professional footballers — using techniques like taping, manual therapy, sport-specific rehabilitation, and return-to-play protocols.',
     name: 'Sports Injury Physiotherapy',
     description: 'Expert treatment for sports injuries focusing on rapid recovery, return to sport, and injury prevention for athletes.',
     keywords: ['sports injury physiotherapy', 'athletic injury treatment', 'sports rehab', 'athlete recovery', 'sports medicine', 'Borivali sports physiotherapy'],
     metaDescription: 'Sports injury physiotherapy in Borivali by FIFA-certified Dr. Shiva Jain Sangoi (PT). ACL, muscle tears, ligament rehab. 5.0★ rated. Book consultation.',
     h1: 'Sports Injury Physiotherapy & Athletic Rehabilitation',
+    metaTitle: 'Sports Injury Physiotherapy in Borivali | PhysioSthanak',
     heroDescription: 'Expert sports injury physiotherapy in Borivali to accelerate athlete recovery, prevent re-injury, and return to peak performance.',
     image: '/images/services/sports-physiotherapy.jpg',
     externalLink: { url: 'https://en.wikipedia.org/wiki/Sports_medicine', text: 'sports medicine' },
@@ -842,6 +844,7 @@ export const services: ServiceCategory[] = [
         keywords: ['piriformis syndrome', 'piriformis syndrome treatment', 'deep gluteal syndrome', 'buttock pain', 'hip nerve pain', 'Borivali piriformis treatment'],
         metaDescription: 'Piriformis syndrome treatment in Borivali West. 5.0★ rated clinic, 8000+ cases. Dr. Shiva Jain Sangoi (PT), MPTh Ortho. Deep hip nerve pain relief. Book now.',
         h1: 'Piriformis Syndrome Treatment & Deep Buttock Pain Relief',
+        metaTitle: 'Piriformis Syndrome Treatment in Borivali | PhysioSthanak',
         heroDescription: 'Expert piriformis syndrome treatment in Borivali that releases the tight deep hip muscle compressing your sciatic nerve, easing buttock pain and restoring comfortable sitting, walking and driving.',
         benefits: [
           {
@@ -909,6 +912,7 @@ export const services: ServiceCategory[] = [
         keywords: ['lumbar radiculopathy', 'nerve root compression', 'L5 S1 nerve pain', 'radiculopathy treatment', 'lumbar nerve pain', 'Borivali radiculopathy physiotherapy'],
         metaDescription: 'Lumbar radiculopathy treatment in Borivali West. 5.0★ rated clinic, 8000+ cases. Dr. Shiva Jain Sangoi (PT), MPTh Ortho. Nerve root pain relief. Book now.',
         h1: 'Lumbar Radiculopathy Treatment & Nerve Root Pain Relief',
+        metaTitle: 'Lumbar Radiculopathy Treatment in Borivali | PhysioSthanak',
         heroDescription: 'Specialist physiotherapy for lumbar radiculopathy in Borivali, relieving compression at the nerve root and restoring the strength, sensation and confident movement that nerve irritation takes away.',
         benefits: [
           {
@@ -976,6 +980,7 @@ export const services: ServiceCategory[] = [
         keywords: ['spinal stenosis', 'lumbar spinal stenosis', 'spinal stenosis treatment', 'neurogenic claudication', 'leg heaviness walking', 'Borivali spinal stenosis physiotherapy'],
         metaDescription: 'Spinal stenosis treatment in Borivali West. 5.0★ rated clinic, 8000+ cases. Dr. Shiva Jain Sangoi (PT), MPTh Ortho. Walk further with less leg pain. Book now.',
         h1: 'Spinal Stenosis Treatment & Walking Tolerance Recovery',
+        metaTitle: 'Spinal Stenosis Physiotherapy in Borivali | PhysioSthanak',
         heroDescription: 'Physiotherapy for lumbar spinal stenosis in Borivali that rebuilds walking tolerance, eases leg heaviness and helps you stay independent without rushing toward spinal surgery.',
         benefits: [
           {
@@ -1043,6 +1048,7 @@ export const services: ServiceCategory[] = [
         keywords: ['pinched nerve', 'pinched nerve in back', 'radiating leg pain', 'nerve pain in leg', 'tingling numbness leg', 'Borivali pinched nerve treatment'],
         metaDescription: 'Pinched nerve & radiating leg pain treatment in Borivali West. 5.0★ clinic, 8000+ cases. Dr. Shiva Jain Sangoi (PT), MPTh Ortho. Nerve relief. Book now.',
         h1: 'Pinched Nerve Treatment & Radiating Leg Pain Relief',
+        metaTitle: 'Pinched Nerve Leg Pain Treatment Borivali | PhysioSthanak',
         heroDescription: 'Physiotherapy in Borivali for a pinched nerve causing pain, tingling or numbness that travels into the leg, starting with finding exactly where the nerve is being compressed.',
         benefits: [
           {

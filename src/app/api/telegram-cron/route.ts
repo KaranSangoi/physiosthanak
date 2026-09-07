@@ -381,6 +381,7 @@ async function fetchContentPipeline(notionToken: string): Promise<PipelineCounts
 interface OutboxMessage {
   blockIds: string[]; // every block belonging to this message (heading + content)
   text: string; // '' = nothing to send, blocks are just cleanup (orphan heading, divider, blank)
+  headingText?: string; // the "### Message — …" line: not sent, but used for topic routing
 }
 
 // Diagnostic breadcrumb for the outbox read, surfaced in the route's JSON
@@ -425,7 +426,7 @@ async function fetchOutboxMessages(notionToken: string): Promise<OutboxMessage[]
     // TOGETHER. If a send fails, nothing is deleted and it retries next run.
     // Groups with no text (orphaned headings) are flushed as cleanup-only.
 
-    let currentMessageBlocks: { ids: string[]; lines: string[] } | null = null;
+    let currentMessageBlocks: { ids: string[]; lines: string[]; heading: string } | null = null;
     let inPendingSection = false;
 
     const flush = () => {
@@ -433,6 +434,12 @@ async function fetchOutboxMessages(notionToken: string): Promise<OutboxMessage[]
         messages.push({
           blockIds: currentMessageBlocks.ids,
           text: currentMessageBlocks.lines.join('\n').trim(),
+          // The "### Message — date (Source)" heading is stripped from the sent
+          // text but MUST participate in topic routing: on Sep 7 the IG scout's
+          // messages (heading contained "Engagement Scout") were misrouted to
+          // Reports because a posting-rate alert displaced the body keywords
+          // out of the 200-char sniff window.
+          headingText: currentMessageBlocks.heading,
         });
         currentMessageBlocks = null;
       }
@@ -483,7 +490,7 @@ async function fetchOutboxMessages(notionToken: string): Promise<OutboxMessage[]
         const h3Text = extractRichText(block.heading_3);
         if (h3Text.toLowerCase().includes('message')) {
           flush();
-          currentMessageBlocks = { ids: [blockId], lines: [] };
+          currentMessageBlocks = { ids: [blockId], lines: [], heading: h3Text };
           continue;
         }
       }
@@ -633,8 +640,17 @@ export async function GET(request: Request) {
       if (msg.text) {
         // Real message — send via Telegram; delete ALL its blocks only on success.
         // On failure, keep everything intact so the next run retries it.
-        const { topic, cleaned } = parseTopicTag(msg.text);
-        const send = await sendTelegram(cleaned, topic ?? topicForHeading(cleaned));
+        // Route on heading + body: tags usually live in the heading line, which
+        // is stripped from the sent text — before Sep 7 they were invisible to
+        // routing and messages fell through to keyword-sniffing on the body.
+        const headingRoute = parseTopicTag(msg.headingText ?? '');
+        const bodyRoute = parseTopicTag(msg.text);
+        const topic = headingRoute.topic ?? bodyRoute.topic;
+        const cleaned = bodyRoute.cleaned;
+        const send = await sendTelegram(
+          cleaned,
+          topic ?? topicForHeading(`${msg.headingText ?? ''}\n${cleaned}`),
+        );
         details.push({
           preview: msg.text.slice(0, 60).replace(/\n/g, ' '),
           parts: send.parts.length,

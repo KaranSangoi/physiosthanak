@@ -36,7 +36,7 @@ export async function generateMetadata({
   }
 
   return {
-    title: service.h1,
+    title: service.metaTitle ? { absolute: service.metaTitle } : service.h1,
     description: service.metaDescription,
     keywords: service.keywords,
     openGraph: {

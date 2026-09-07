@@ -9,6 +9,7 @@ export const servicesOnline: ServiceCategory[] = [
     keywords: ['online physiotherapy', 'virtual physiotherapy', 'tele-rehabilitation', 'online physio consultation', 'physiotherapy Google Meet', 'remote physiotherapy India', 'online physiotherapy consultation'],
     metaDescription: 'Online physiotherapy via Google Meet by Dr. Shiva Jain Sangoi (PT), MPTh. ₹99 intro offer for 20 min. Expert care from anywhere. Book now!',
     h1: 'Online Physiotherapy Consultation — Expert Care from Anywhere',
+    metaTitle: 'Online Physiotherapy Consultation India | PhysioSthanak',
     heroDescription: 'Get expert physiotherapy from the comfort of your home via Google Meet. Introductory offer at just ₹99 for a 20-minute session with Dr. Shiva Jain Sangoi (PT), MPTh (Ortho).',
     image: '/images/services/home-visit-physiotherapy.jpg',
     externalLink: { url: 'https://en.wikipedia.org/wiki/Telehealth', text: 'telehealth' },
@@ -125,6 +126,7 @@ export const servicesOnline: ServiceCategory[] = [
         keywords: ['tele-rehabilitation', 'remote rehabilitation', 'online rehab physiotherapy', 'video call physio sessions', 'telehealth physiotherapy Mumbai'],
         metaDescription: 'Tele-rehabilitation by Dr. Shiva Jain Sangoi (PT), MPTh. Guided online rehab programs via Google Meet. Expert remote recovery. Book today!',
         h1: 'Tele-Rehabilitation & Remote Physiotherapy Programs',
+        metaTitle: 'Tele-Rehabilitation Physiotherapy Online | PhysioSthanak',
         heroDescription: 'Receive structured rehabilitation programs via Google Meet with real-time expert guidance. Ideal for patients recovering from surgery, injuries, or chronic conditions who need consistent professional support.',
         benefits: [
           {
@@ -178,6 +180,7 @@ export const servicesOnline: ServiceCategory[] = [
         keywords: ['remote exercise guidance', 'online exercise physiotherapy', 'home exercise program', 'video physio exercises', 'personalized exercise plan Mumbai'],
         metaDescription: 'Remote exercise guidance by Dr. Shiva Jain Sangoi (PT). Personalized home exercise plans with video demos. Track progress online. Book now!',
         h1: 'Remote Exercise Guidance & Online Home Exercise Programs',
+        metaTitle: 'Remote Exercise Guidance Online | PhysioSthanak',
         heroDescription: 'Get personalized exercise programs designed by Dr. Shiva Jain Sangoi (PT) with video demonstrations and regular progress reviews via Google Meet for effective recovery at home.',
         benefits: [
           {
@@ -231,6 +234,7 @@ export const servicesOnline: ServiceCategory[] = [
         keywords: ['online ergonomic assessment', 'workspace ergonomics', 'WFH posture correction', 'desk ergonomics physiotherapy', 'remote ergonomic consultation Mumbai'],
         metaDescription: 'Online ergonomic assessment by Dr. Shiva Jain Sangoi (PT). Fix WFH posture, desk setup & prevent pain. Expert guidance via Google Meet.',
         h1: 'Online Ergonomic Assessment for Work-from-Home Professionals',
+        metaTitle: 'Online Ergonomic Assessment for WFH | PhysioSthanak',
         heroDescription: 'Get your workspace professionally assessed via Google Meet. Dr. Shiva Jain Sangoi (PT) evaluates your desk setup, posture, and habits to prevent pain and improve comfort for WFH professionals.',
         benefits: [
           {

@@ -53,7 +53,7 @@ export async function generateMetadata({
   }
 
   return {
-    title: conditionData.h1,
+    title: conditionData.metaTitle ? { absolute: conditionData.metaTitle } : conditionData.h1,
     description: conditionData.metaDescription,
     keywords: conditionData.keywords,
     openGraph: {

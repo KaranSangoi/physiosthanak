@@ -4,7 +4,7 @@ import { allServices, siteConfig } from '@/data';
 import { generateBreadcrumbs } from '@/lib/utils';
 
 export const metadata: Metadata = {
-  title: 'Physiotherapy Services in Borivali',
+  title: 'All Physiotherapy Services | Borivali',
   description:
     'Explore our comprehensive physiotherapy services including pain management, sports injuries, post-operative care, and more in Borivali.',
   keywords: [

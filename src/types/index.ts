@@ -38,6 +38,8 @@ export interface Service {
   description: string;
   keywords: string[];
   metaDescription: string;
+  /** Optional full <title> override (rendered without the layout suffix). Falls back to h1 + suffix. */
+  metaTitle?: string;
   h1: string;
   heroDescription: string;
   benefits: Benefit[];
@@ -59,6 +61,8 @@ export interface ConditionPage {
   description: string;
   keywords: string[];
   metaDescription: string;
+  /** Optional full <title> override (rendered without the layout suffix). Falls back to h1 + suffix. */
+  metaTitle?: string;
   h1: string;
   heroDescription: string;
   benefits: Benefit[];
