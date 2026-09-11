@@ -29,5 +29,5 @@ export const siteConfig: SiteConfig = {
    * If you ever see a stale count on the live site, the bug is in the fetch —
    * editing this line will hide it rather than fix it.
    */
-  reviewCount: 75,
+  reviewCount: 76,
 };

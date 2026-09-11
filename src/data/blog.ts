@@ -2473,4 +2473,281 @@ To book, [contact PhysioSthanak](/) or visit the clinic at Shop No. 14, Hari-Smr
     relatedServices: ['back-pain-physiotherapy', 'physiotherapy', 'home-visit-physiotherapy'],
     relatedAreas: ['borivali-west'],
   },
+  {
+    slug: 'shoulder-pain-when-lifting-arm-rotator-cuff-impingement',
+    title: 'Shoulder Pain When Lifting Your Arm — Rotator Cuff, Impingement or Frozen Shoulder?',
+    metaTitle: 'Shoulder Pain When Lifting Arm — Rotator Cuff or Impingement? | Physio Guide',
+    metaDescription:
+      'Shoulder pain when lifting your arm? How to tell a rotator cuff problem from impingement or frozen shoulder, what makes it worse, and when to see a physio.',
+    keywords: [
+      'shoulder pain when lifting arm',
+      'rotator cuff injury symptoms',
+      'shoulder impingement symptoms',
+      'painful arc shoulder',
+      'shoulder pain raising arm overhead',
+      'rotator cuff vs frozen shoulder',
+      'shoulder pain physiotherapy Borivali',
+      'shoulder physiotherapist Mumbai',
+    ],
+    publishDate: '2026-09-08',
+    author: 'Dr. Shiva Jain Sangoi (PT)',
+    authorCredentials: 'BPTh, MPTh (Ortho), FIFA Diploma in Football Medicine',
+    excerpt:
+      'A shoulder that is fine at rest but catches sharply when you reach for a top shelf, hook a bra strap or lift a bag onto the overhead rack is one of the commonest complaints in the clinic. Here is how a rotator cuff problem, impingement and frozen shoulder each behave — and why the difference decides what you should do next.',
+    readTime: '9 min read',
+    category: 'Guide',
+    content: `## The shoulder that only hurts on the way up
+
+Shoulder pain when lifting your arm is a very specific complaint, and it deserves a more specific answer than "shoulder pain". Most people who describe it say the same things: the arm is comfortable hanging by the side, the first part of the lift is fine, then somewhere around shoulder height there is a sharp catch or pinch, and once the arm is fully overhead it often eases again. Reaching behind to fasten a strap or scratch the back hurts. Lying on that side at night wakes them up.
+
+That pattern has a name — the **painful arc** — and it points fairly reliably toward the group of structures that sit in the narrow space between the top of the arm bone and the bony roof of the shoulder. Which of those structures is the problem, and how far it has progressed, is what an assessment is for. But the broad categories are worth understanding before you arrive, because each one behaves differently and each is managed differently.
+
+## Three conditions people confuse with each other
+
+### Rotator cuff tendinopathy or tear
+
+The rotator cuff is a set of four small muscles whose tendons wrap around the ball of the shoulder joint and hold it centred in its shallow socket while the bigger muscles do the lifting. When those tendons are overloaded — through repetitive overhead work, a sudden pull, years of poor scapular control, or simply age-related wear — they become painful and less able to do their job. That is tendinopathy. If fibres actually give way, it is a tear, which can be partial or complete.
+
+Rotator cuff injury symptoms typically include:
+
+- Pain on the outer upper arm rather than on top of the shoulder — often felt a few inches below the joint
+- Pain and sometimes weakness when lifting the arm out to the side or rotating it outward
+- A painful arc between roughly 60 and 120 degrees of lifting
+- Night pain, particularly lying on the affected side
+- In a significant tear, difficulty lifting the arm at all, or the arm "dropping" when lowered slowly
+
+Tears are far more common after 50, and imaging studies suggest a large share of people in that age group have rotator cuff changes on scan without any symptoms — so, as with the spine, a scan finding is not automatically the cause of pain.
+
+### Subacromial impingement
+
+Impingement describes the tendons and the small fluid-filled cushion above them (the bursa) being pinched in that narrow space as the arm lifts. It overlaps heavily with rotator cuff tendinopathy — many clinicians now treat the two as different labels for the same continuum — but the impingement picture tends to be:
+
+- A sharp pinch at a predictable point in the lift, easing above it
+- Worse with reaching forward and up, as when placing something on a high shelf
+- Aggravated by repetitive overhead activity: painting a ceiling, badminton, swimming, hanging washing
+- Strongly associated with a rounded-shoulder, forward-head posture that tilts the roof of the shoulder downward and narrows the space further
+
+Desk workers across Borivali, Kandivali and Malad are an over-represented group here. A day of laptop work followed by a weekend of overhead activity is a classic set-up.
+
+### Frozen shoulder (adhesive capsulitis)
+
+Frozen shoulder is a different problem altogether: the joint capsule itself thickens and tightens. The give-away is **loss of movement in every direction, including when someone else moves the arm for you**. A rotator cuff problem hurts when you lift; a frozen shoulder simply will not go there, whether you lift it or a physiotherapist does. It is more common between 40 and 60, more common in women, and considerably more common in people with diabetes or thyroid conditions. Our detailed guide to [frozen shoulder exercises by stage](/blog/frozen-shoulder-exercises-home-recovery-guide) covers that condition on its own; this article is about the first two.
+
+## A quick self-check — not a diagnosis
+
+These observations do not replace an examination, but they help you describe the problem accurately:
+
+- **Can you lift the arm fully overhead, even if it hurts on the way?** If yes, a stiff capsule is less likely and the cuff or bursa more likely.
+- **Where is the pain?** Outer arm below the joint points toward cuff or bursa. Deep in the joint with global stiffness points toward the capsule. Pain at the very top of the shoulder near the collarbone suggests the small joint at the end of the collarbone.
+- **Does the pain travel below the elbow, or come with pins and needles in the hand?** That is usually a neck problem referring into the arm, not a shoulder problem, and it needs a different assessment. See our guide to [cervical spondylosis and neck pain](/blog/cervical-spondylosis-exercises-neck-pain-relief).
+- **Was there a specific injury?** A fall onto the arm or a sudden wrench followed by immediate weakness needs prompt assessment for a tear.
+
+## Why the shoulder gets into this state
+
+The subacromial space is small, and several everyday factors narrow it further:
+
+- **Posture.** A slumped upper back and forward-rolled shoulders tilt the shoulder blade so the bony roof sits lower. Every lift then pinches slightly more.
+- **Weak scapular muscles.** The shoulder blade is supposed to rotate upward as the arm lifts, lifting the roof out of the way. When the muscles that control it are weak or slow — very common in sedentary adults — the roof stays put and the tendons get squeezed.
+- **Sudden overload.** Carrying Ganeshotsav decorations overhead, a weekend of cricket after months off, a new gym programme with heavy overhead pressing. The tendons adapt to load only gradually.
+- **Age.** Tendon blood supply reduces with age and healing slows; the cuff tendons are especially vulnerable after 50.
+- **Sleeping position.** Lying directly on the shoulder compresses the tendons for hours; many patients trace their night pain to this rather than to the day's activity.
+
+## What a physiotherapy assessment involves
+
+For shoulder pain when lifting the arm, the useful first session is about establishing which structure is responsible and — just as importantly — why it became overloaded. That generally means:
+
+- **History** — onset, aggravating movements, sleep, work and sport, previous episodes, and any diabetes or thyroid history
+- **Observation of posture and shoulder blade movement** during lifting, since faulty scapular mechanics are a common driver
+- **Range of movement**, active and passive, to separate a capsule problem from a tendon problem
+- **Specific tests** that load each rotator cuff tendon and the bursa individually, plus a check of the neck to rule out referred pain
+- **Strength testing**, because a weak cuff and a painful cuff feel identical to the patient but are managed differently
+
+Imaging is not usually needed at the start. An ultrasound or MRI becomes useful when there is a history of trauma, significant weakness, or no progress after a reasonable period of conservative care. The UK National Health Service publishes a plain-language overview of [shoulder pain causes and when to seek help](https://www.nhs.uk/symptoms/shoulder-pain/) that is worth reading alongside this article.
+
+## Does it need surgery?
+
+Uncommonly. Research suggests that for most rotator cuff tendinopathy, impingement and even many partial tears, a structured programme of graded strengthening and movement retraining produces outcomes comparable to surgery over the medium term, without the recovery period. Surgery is generally considered for complete tears in younger or active people, tears following trauma with marked weakness, or persistent symptoms that have not responded to a genuine trial of rehabilitation. The [shoulder injury rehabilitation](/services/sports-physiotherapy/shoulder-injury-rehabilitation) pathway at PhysioSthanak is built around that conservative-first principle, with clear criteria for referring onward.
+
+## What tends to make it worse
+
+- **Complete rest.** A few days of avoiding the specific aggravating movements is sensible. Weeks of not using the arm weakens the cuff further and can tip an irritable shoulder toward stiffness.
+- **Pushing through overhead activity** on the assumption it will "loosen up". Tendons that are already irritated do not respond well to more of the same load.
+- **Aggressive stretching** of a painful cuff, particularly the arm-across-the-chest and behind-the-back stretches copied from videos — helpful for some shoulders, aggravating for others.
+- **Sleeping on the painful side** without any support.
+- **Repeated steroid injections** without addressing the mechanics that caused the problem. An injection may settle the pain for a while; it does not strengthen anything.
+
+This article deliberately does not prescribe an exercise routine, because what helps an impingement-type shoulder can worsen an irritable partial tear, and what helps either can be wrong for a frozen shoulder. The right programme follows the assessment, not the other way round.
+
+## When to book an assessment
+
+Reasonable triggers for getting the shoulder looked at rather than waiting:
+
+- Pain on lifting that has not clearly improved within two to three weeks
+- Night pain that is disturbing sleep
+- Any weakness — difficulty lifting a kettle, a bag or a child
+- Pain following a fall or a sudden wrench
+- A shoulder that is losing movement in several directions
+- A second or third episode in the same shoulder
+
+The **first consultation at our Borivali West clinic is free** — a full assessment with Dr. Shiva Jain Sangoi (PT), MPTh (Ortho), FIFA Diploma in Football Medicine, drawing on over 10 years and 8,000+ cases. You will leave knowing whether your shoulder pain fits a rotator cuff, impingement or capsular pattern, and what a realistic recovery looks like. (Home visits are charged separately, as they involve travel time, and online consultations are a paid service.)
+
+To book, [contact PhysioSthanak](/) or visit the clinic at Shop No. 14, Hari-Smruti Premises, SVP Road, opposite HDFC Bank, Borivali West.
+
+---
+
+*This article is for general information only and is not a substitute for professional assessment. Consult a qualified physiotherapist for advice specific to you.*`,
+    faqs: [
+      {
+        question: 'Why does my shoulder hurt only when I lift my arm?',
+        answer:
+          'Pain that appears at a particular point in the lift — commonly between shoulder height and overhead — usually comes from the rotator cuff tendons or the bursa being compressed in the narrow space beneath the bony roof of the shoulder. This is called a painful arc and is typical of rotator cuff tendinopathy and subacromial impingement. At rest the space is not loaded, so the shoulder feels normal. A physiotherapy assessment can identify which structure is involved and why it is being pinched.',
+      },
+      {
+        question: 'How can I tell a rotator cuff injury from a frozen shoulder?',
+        answer:
+          'The clearest difference is passive movement. With a rotator cuff or impingement problem, the arm can usually be moved through its full range by someone else, even if lifting it yourself is painful or weak. With a frozen shoulder, the joint capsule itself is tight, so the arm will not move fully in several directions no matter who is moving it. Frozen shoulder also tends to produce a deep, global stiffness rather than a sharp pinch at one point in the lift.',
+      },
+      {
+        question: 'Do I need an MRI or ultrasound for shoulder pain?',
+        answer:
+          'Not usually at the outset. Most shoulder pain when lifting the arm can be assessed clinically, and imaging often shows age-related changes in people who have no symptoms, which can be misleading. Imaging becomes useful when there has been a fall or sudden injury, when there is marked weakness suggesting a significant tear, or when symptoms have not improved after a reasonable period of physiotherapy. Your physiotherapist or doctor can advise when a scan would actually change the plan.',
+      },
+      {
+        question: 'Will a rotator cuff problem heal on its own if I rest it?',
+        answer:
+          'A short period of avoiding the specific movements that aggravate it is sensible, but complete rest for weeks generally makes things worse. The rotator cuff weakens quickly when unused, and an irritable shoulder that stops moving can stiffen. Research suggests that graded strengthening and retraining of shoulder blade control produces good outcomes for most tendinopathy and impingement presentations. The key is loading the tendon at the right level, which is what an assessment establishes.',
+      },
+    ],
+    relatedServices: ['sports-physiotherapy', 'orthopedic-physiotherapy', 'physiotherapy'],
+    relatedAreas: ['borivali-west'],
+  },
+  {
+    slug: 'first-physiotherapy-session-what-to-expect',
+    title: 'Your First Physiotherapy Session — What to Expect, What to Bring, and What You Should Leave With',
+    metaTitle: 'First Physiotherapy Session — What to Expect | PhysioSthanak Borivali',
+    metaDescription:
+      'Nervous about your first physiotherapy session? Here is what actually happens in the first hour — the questions, the tests, what to wear, and what a good session should leave you with.',
+    keywords: [
+      'first physiotherapy session what to expect',
+      'what happens in physiotherapy first visit',
+      'physiotherapy assessment what to expect',
+      'what to wear to physiotherapy',
+      'what to bring to physiotherapy appointment',
+      'is physiotherapy painful first session',
+      'physiotherapy consultation Borivali',
+      'physiotherapist Borivali West',
+    ],
+    publishDate: '2026-09-11',
+    author: 'Dr. Shiva Jain Sangoi (PT)',
+    authorCredentials: 'BPTh, MPTh (Ortho), FIFA Diploma in Football Medicine',
+    excerpt:
+      'Most people put off physiotherapy for weeks because they are not sure what the first visit involves. Here is a plain account of what happens in a first physiotherapy session — the questions, the movement tests, what to wear and carry, what should and should not hurt, and the five things you should walk out knowing.',
+    readTime: '8 min read',
+    category: 'Guide',
+    content: `## Why the first session is different from every session after it
+
+If you have never been to a physiotherapist, the first physiotherapy session is probably not what you are picturing. Many people expect to lie on a table and have a machine or a pair of hands applied to the sore spot for half an hour. Some of that may happen. But the first visit is mostly an **assessment** — a structured hour of questions, observation and movement tests whose purpose is to answer two things: what exactly is producing your pain, and why did it start now?
+
+That matters because a knee that hurts on stairs can come from the knee, the hip, the foot or the way you have been sitting for ten years. Two people with identical "lower back pain" can need almost opposite programmes. The treatment that follows is only as good as the assessment that precedes it, which is why a good physiotherapist spends the first session listening and testing before doing very much treating.
+
+Below is what a first session looks like at a clinic like ours, so you know what to expect, what to bring, and how to tell whether the hour was well spent.
+
+## Before you arrive: what to bring and what to wear
+
+- **Reports and scans, if you have them.** X-ray, MRI, ultrasound or blood reports, and any letters from your doctor or surgeon. Bring the actual images if possible, not only the summary — but do not delay booking to get a scan first. Most musculoskeletal problems are assessed clinically, and a scan is not a prerequisite for the first visit.
+- **A list of medicines you take**, including for diabetes, thyroid, blood pressure or blood thinners. Several of these change how a physiotherapist approaches assessment and treatment.
+- **Clothes you can move in.** The physiotherapist will need to see the joint and the joints around it. For a knee, shorts or loose track pants that roll up; for a shoulder or neck, a vest or a top with a wide neck; for the back, something that lets the spine be seen from behind. A sari or fitted kurta makes a proper assessment difficult — plenty of patients simply carry a change of clothes.
+- **Footwear you actually walk in**, not the pair you keep for occasions. How your shoe has worn tells its own story.
+- **A rough timeline.** When it started, what you were doing, whether it has changed, what makes it better or worse, how it behaves at night and first thing in the morning. You do not need it written down, but having thought about it saves ten minutes of the hour.
+
+## The first twenty minutes: the conversation
+
+The session begins with a detailed history, and this part is more important than most people assume. Expect questions such as:
+
+- Where exactly is the pain, and does it travel anywhere — down the arm, into the buttock, below the knee?
+- How did it start — a specific incident, or gradually over weeks?
+- What is it like in the morning, at the end of the day, and at night?
+- What movements or positions bring it on, and what settles it?
+- Has this happened before? What helped then?
+- What is your work like — desk, standing, lifting, driving? What exercise do you do, and has anything changed recently?
+- Any other health conditions, surgeries, or unexplained symptoms like weight loss, fever, numbness, or changes in bladder or bowel control?
+
+That last group is not small talk. A physiotherapist is trained to screen for the small number of problems that should not be treated with physiotherapy at all and need a doctor first. The history is where most of that screening happens, so answer fully even when a question seems unrelated.
+
+The conversation is also where you should describe what *you* want back — sitting through a two-hour meeting without shifting, climbing to a third-floor flat, getting through Ganeshotsav queues, returning to the gym, or simply sleeping through the night. Those goals shape the plan more than the diagnosis label does.
+
+## The physical assessment
+
+Next comes the hands-on part, and it is more systematic than it looks:
+
+- **Observation.** How you stand, sit and walk into the room; the alignment of your spine, shoulders, knees and feet; any swelling, wasting or asymmetry.
+- **Active movement.** You move the joint yourself in each direction while the physiotherapist watches how far it goes, where it hurts, and how the surrounding joints compensate.
+- **Passive movement.** The physiotherapist moves the joint for you. Comparing what the joint does on its own with what it does under your own effort separates a stiff joint from a weak or painful muscle — the difference, for example, between a [frozen shoulder and a rotator cuff problem](/blog/shoulder-pain-when-lifting-arm-rotator-cuff-impingement).
+- **Strength and control.** Resisted tests of specific muscles, often including ones some distance from the pain — hip muscles for knee pain, shoulder-blade muscles for neck pain.
+- **Special tests.** Specific positions or pressures that load one structure at a time to narrow down the source.
+- **Neurological checks** where relevant — reflexes, sensation and muscle power in the limb, particularly if pain travels, or there is numbness or tingling.
+- **Palpation.** Feeling the tissues for tenderness, tension, temperature and swelling — usually last, because it tells the least on its own.
+
+The physiotherapist will typically examine the joints above and below the painful one. Patients are sometimes surprised to have their hip and ankle checked for a knee complaint. That is not padding the hour; it is where the cause often turns out to be.
+
+## Will it hurt?
+
+Some of the assessment is meant to reproduce your pain briefly — that is how the physiotherapist confirms which movement or structure is responsible. It should be brief and controlled, and you should never be pushed into severe pain or asked to tolerate something you are not comfortable with. Say so if a test is too much; a good clinician adjusts. The UK National Health Service has a helpful plain-language explanation of [what physiotherapy involves and how to access it](https://www.nhs.uk/conditions/physiotherapy/) if you would like an independent overview.
+
+Mild soreness the evening after a first session is common, in the same way a first gym session leaves muscles aware of themselves. Sharp, worsening or new pain is not expected and is worth reporting.
+
+## Will I get treatment on the first day?
+
+Usually some, once the assessment is complete. In a first physiotherapy session the treatment portion is often shorter than in later sessions, and it might include hands-on techniques to ease movement, a small number of carefully chosen movements to begin at home, advice on positions and activities to modify, and clear guidance on what to stop doing for now. What it should not include is a long list of exercises handed over before anyone has worked out what is wrong. (We do not offer needling or cupping, so you will not encounter those here.)
+
+## The five things you should leave with
+
+This is how to judge whether the session was worth your time. By the end of a good first visit you should be able to answer:
+
+1. **What is most likely causing the pain**, in plain language, and — just as importantly — what has been ruled out.
+2. **Why it started**, or at least the leading theory: load, posture, weakness, an old injury, a change in routine.
+3. **What the plan is** — roughly how many sessions, how often, what each phase is trying to achieve, and what home work is expected of you.
+4. **What a realistic timeline looks like**, including how you will know it is working and when to reassess if it is not.
+5. **What to do and avoid until the next visit**, in specific terms rather than "take rest".
+
+If you leave without a working explanation and a plan, ask for one. If you leave having been told you need a large number of sessions before anyone has examined you properly, be cautious. Our earlier guide on [how to choose a physiotherapist in Borivali West](/blog/best-physiotherapist-in-borivali-west-how-to-choose) covers the other warning signs.
+
+## A note on home and online sessions
+
+A first assessment can also happen at home — useful after surgery, for older patients, or when travel is genuinely difficult; our [home visit physiotherapy](/services/home-visit-physiotherapy) page explains how that works. The structure is the same; the physiotherapist simply brings the assessment to your living room. Online consultations can cover the history, much of the movement observation and the advice, but not the hands-on part, so they suit follow-ups and some conditions better than others.
+
+## Booking a first session at PhysioSthanak
+
+The **first consultation at our Borivali West clinic is free** — a full assessment of the kind described above with Dr. Shiva Jain Sangoi (PT), MPTh (Ortho), FIFA Diploma in Football Medicine, drawing on over 10 years of practice and 8,000+ cases. Whether the problem is [back pain](/services/back-pain-physiotherapy), a knee, a shoulder or a neck, you will leave with an explanation and a plan, not just a sore spot that has been rubbed. (Home visits are charged separately as they involve travel time, and online consultations are a paid service.)
+
+To book, [contact PhysioSthanak](/) or walk in at Shop No. 14, Hari-Smruti Premises, SVP Road, opposite HDFC Bank, Borivali West.
+
+---
+
+*This article is for general information only and is not a substitute for professional assessment. Consult a qualified physiotherapist for advice specific to you.*`,
+    faqs: [
+      {
+        question: 'How long does a first physiotherapy session take?',
+        answer:
+          'A first physiotherapy session commonly runs 45 to 60 minutes, longer than follow-up visits, because most of it is assessment. The physiotherapist takes a detailed history, observes how you stand and move, tests the painful joint and the joints around it, and screens for anything that should be seen by a doctor first. Some treatment and initial advice usually follow once the picture is clear.',
+      },
+      {
+        question: 'What should I wear to a physiotherapy appointment?',
+        answer:
+          'Wear or carry clothes that let the physiotherapist see and move the affected area and the joints next to it. Shorts or loose track pants for knee, hip or back problems; a vest or wide-necked top for shoulder and neck problems. Bring the footwear you actually walk in every day, since wear patterns on the sole can be informative. Many patients simply carry a change of clothes.',
+      },
+      {
+        question: 'Do I need an MRI or X-ray before seeing a physiotherapist?',
+        answer:
+          'Usually not. Most muscle, joint and spine problems are assessed clinically through history and movement testing, and scans often show age-related changes in people with no symptoms, which can mislead. If you already have reports, bring them. If imaging would change the plan — after a fall, with significant weakness, or when progress stalls — the physiotherapist will say so and can coordinate with your doctor.',
+      },
+      {
+        question: 'Is the first physiotherapy session painful?',
+        answer:
+          'Parts of the assessment are designed to reproduce your pain briefly so the physiotherapist can identify its source, but this should be short and controlled, and you can ask to stop any test that is too uncomfortable. Mild muscle soreness the next day is common after a first session. Sharp, worsening or new pain is not expected and should be reported to your physiotherapist.',
+      },
+    ],
+    relatedServices: ['physiotherapy', 'back-pain-physiotherapy', 'home-visit-physiotherapy'],
+    relatedAreas: ['borivali-west'],
+  },
 ];
