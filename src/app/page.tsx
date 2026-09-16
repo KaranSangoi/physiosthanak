@@ -15,6 +15,9 @@ const BenefitsSection = dynamic(
 );
 const FAQSection = dynamic(() => import("@/components/sections/FAQSection"));
 const CTASection = dynamic(() => import("@/components/sections/CTASection"));
+const LatestBlogPosts = dynamic(
+  () => import("@/components/sections/LatestBlogPosts"),
+);
 const MapSection = dynamic(() => import("@/components/sections/MapSection"));
 const AreaCard = dynamic(() => import("@/components/sections/AreaCard"));
 
@@ -469,6 +472,9 @@ export default async function HomePage() {
         subheading="Everything you need to know about our physiotherapy services"
         faqs={homeFaqs}
       />
+
+      {/* Latest Blog Posts — homepage links = fast discovery/indexing of new posts */}
+      <LatestBlogPosts />
 
       {/* Map Section */}
       <MapSection

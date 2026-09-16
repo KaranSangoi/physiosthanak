@@ -2750,4 +2750,120 @@ To book, [contact PhysioSthanak](/) or walk in at Shop No. 14, Hari-Smruti Premi
     relatedServices: ['physiotherapy', 'back-pain-physiotherapy', 'home-visit-physiotherapy'],
     relatedAreas: ['borivali-west'],
   },
+  {
+    slug: 'knee-osteoarthritis-squatting-floor-sitting-stairs',
+    title: 'Knee Osteoarthritis — Why Squatting, Floor Sitting and Stairs Make It Worse',
+    metaTitle: 'Knee Osteoarthritis — Squatting, Floor Sitting & Stairs | PhysioSthanak',
+    metaDescription:
+      'Knee osteoarthritis feels worse on stairs, squats and floor sitting. Here is why, what actually helps, and when to see a physiotherapist in Borivali West.',
+    keywords: [
+      'knee osteoarthritis',
+      'knee osteoarthritis exercises',
+      'knee pain squatting floor sitting',
+      'osteoarthritis knee treatment without surgery',
+      'ghutne ka dard physiotherapy',
+      'knee arthritis physiotherapy Borivali',
+      'knee pain physiotherapist Borivali West',
+      'is walking good for knee osteoarthritis',
+    ],
+    publishDate: '2026-09-16',
+    author: 'Dr. Shiva Jain Sangoi (PT)',
+    authorCredentials: 'BPTh, MPTh (Ortho), FIFA Diploma in Football Medicine',
+    excerpt:
+      'Knee osteoarthritis behaves differently in Indian homes, where squatting, floor sitting and steep staircases are part of ordinary life. Here is what the condition actually is, why those specific positions hurt most, what research says about exercise and weight, and the signs that it is time for an assessment.',
+    readTime: '9 min read',
+    category: 'Guide',
+    content: `## What knee osteoarthritis actually is
+
+**Knee osteoarthritis** is the slow change of the knee joint's cartilage, bone and surrounding soft tissue over years of use. The word most people hear is "wear and tear", and it is a misleading phrase. It suggests a tyre wearing down, something that only gets worse and that you should protect by using it less. The joint is closer to a living, self-maintaining surface: it responds to load, it adapts, and — this is the part that surprises patients — it usually does better with the right amount of movement than with rest.
+
+What changes in osteoarthritis is that the cartilage lining the joint becomes thinner and less smooth, the bone underneath thickens, the joint lining can become irritated and swollen, and the muscles around the knee — the quadriceps above all — lose strength. That last point matters more than most people realise, because muscle is what absorbs load before it reaches the joint surface. The [World Health Organization and other public health bodies](https://en.wikipedia.org/wiki/Osteoarthritis) describe it as one of the most common causes of disability in older adults worldwide, and India carries a large share of it.
+
+The important thing to hold on to: an X-ray showing osteoarthritis does not predict how much pain you will have. Many people with clear changes on film walk comfortably; others with mild changes struggle. Pain, function and imaging often do not line up, which is why a physical assessment matters more than a report.
+
+## Why Indian knees face a harder job
+
+Most of the international advice written about knee osteoarthritis assumes chairs, Western toilets and lifts. Daily life in a Mumbai flat or a Borivali chawl asks a great deal more of a knee.
+
+- **Deep squatting.** Using an Indian-style toilet, sitting to clean or cook, or squatting to reach a lower shelf takes the knee to its end range under body weight. Joint loads at deep flexion are among the highest the knee experiences.
+- **Floor sitting and cross-legged positions.** Eating, praying, sitting at a function or playing with grandchildren on the floor means the knee holds full bend for long stretches, then has to get up from it — often with a twist and a push off one leg.
+- **Stairs, and steep ones.** Many older buildings have narrow, steep staircases and no lift. Climbing loads the kneecap at three to four times body weight; coming down is worse.
+- **Kneeling for household work.** Swabbing floors, scrubbing, sorting things in low cupboards.
+- **Weight and long-standing work.** Extra body weight multiplies every one of the loads above, and jobs that involve hours of standing on hard floors add to the total.
+
+None of this means these positions are forbidden. It means they concentrate load, so a knee that has lost cartilage quality and quadriceps strength will complain in exactly those positions first. Patients almost always describe the same sequence: stairs become uncomfortable, then getting up from the floor, then the deep squat becomes impossible, then flat walking starts to ache too.
+
+## The symptoms that suggest osteoarthritis rather than something else
+
+Commonly reported features include:
+
+- Pain that comes on with activity and settles with rest, rather than constant pain
+- **Morning stiffness lasting under 30 minutes**, or stiffness after sitting still for a while that eases once you start moving
+- Grinding, creaking or a catching sensation with bending
+- Mild swelling that comes and goes, especially after a busy day
+- Difficulty with deep bend — the squat, the floor, the last few steps
+- Gradual onset over months or years, usually after 45, often in both knees
+
+Compare that with a [meniscus or ligament problem](/blog/knee-pain-climbing-stairs-causes-treatment), which usually follows a specific twisting incident and tends to lock or give way. Inflammatory arthritis behaves differently again: prolonged morning stiffness beyond an hour, marked swelling, several joints involved, sometimes fever or fatigue. That pattern needs a doctor's review, not just physiotherapy.
+
+**See a doctor promptly** if the knee is hot and very swollen, if you cannot bear weight at all, if there was a significant fall, or if you have fever alongside joint pain.
+
+## What actually helps — and what research suggests
+
+This is the part patients find hardest to believe, so it is worth stating plainly. For knee osteoarthritis, international guidelines consistently place **exercise, education and weight management first**, ahead of injections and well ahead of surgery. Painkillers and injections have a role, but they manage symptoms rather than change the joint's capacity.
+
+Research suggests that the following make the biggest difference:
+
+**1. Strengthening the muscles around the knee.** Quadriceps strength is one of the strongest predictors of function in knee osteoarthritis. Stronger muscle means less load transmitted to the joint surface and better control on stairs.
+
+**2. Keeping moving.** Many patients find that walking, stationary cycling and swimming reduce pain over weeks even though they feel counter-intuitive at first. Cartilage has no blood supply of its own and relies on movement to exchange nutrients. Rest is useful for a flare that lasts a day or two; rest as a long-term strategy reliably makes knees weaker and stiffer.
+
+**3. Managing body weight.** Because the knee experiences several times body weight with each step, even a modest reduction lowers the load meaningfully. Patients often notice the difference in stairs first.
+
+**4. Modifying the positions that concentrate load — for now.** This is not a life sentence. Early on, using a Western toilet or a commode, sitting on a low stool rather than the floor, and taking stairs one at a time with the stronger leg leading up will often calm a knee down enough to start strengthening. As strength returns, tolerance for bend usually improves.
+
+**5. Small, boring habits.** A raised chair to get up from, a grab support near the toilet, decent footwear with cushioning rather than flat chappals for long walks, and breaking long standing into chunks.
+
+What a physiotherapist adds is the specific part: which muscles are actually weak on testing, how the hip and foot are contributing, how much load your knee can currently take, and how to progress it without setting off a flare. Generic exercise videos cannot do that assessment. If travelling is difficult, this work can be done at home — our [home visit physiotherapy](/services/home-visit-physiotherapy) service exists largely for exactly this group, and our guide on [physiotherapy for seniors](/blog/physiotherapy-for-seniors-home-visits-after-60) explains how home sessions are structured.
+
+## Does osteoarthritis always end in knee replacement?
+
+No. Knee replacement is an excellent operation for advanced disease that has stopped responding to conservative care, but the majority of people with knee osteoarthritis never need one. Many who do need one eventually still benefit from delaying it while strength and weight are addressed, because outcomes after surgery are better in people who go in stronger. If surgery does become the plan, structured rehabilitation before and after it is what determines the result — we cover that in our [knee replacement recovery guide](/blog/knee-replacement-recovery-exercises-week-by-week).
+
+We do not offer needling or cupping; the approach here is assessment, hands-on treatment where it is useful, and a progressive strengthening programme you can actually keep up with.
+
+## When to get it assessed
+
+Book an assessment if knee pain has been present for more than six weeks, if stairs or getting up from the floor have become a daily problem, if the knee is limiting what you do rather than just annoying you, or if you have been told you have arthritis and handed nothing but painkillers.
+
+The **first consultation at our Borivali West clinic is free** — a full assessment with Dr. Shiva Jain Sangoi (PT), MPTh (Ortho), FIFA Diploma in Football Medicine, with over 10 years of practice and 8,000+ cases treated. You will leave understanding what is happening in your knee and what the plan is. Our [orthopedic physiotherapy](/services/orthopedic-physiotherapy) page covers the wider range of joint conditions we treat, and you can [contact PhysioSthanak](/) or walk in at Shop No. 14, Hari-Smruti Premises, SVP Road, opposite HDFC Bank, Borivali West. (Home visits are charged separately as they involve travel time, and online consultations are a paid service.)
+
+---
+
+*This article is for general information only and is not a substitute for professional assessment. Consult a qualified physiotherapist for advice specific to you.*`,
+    faqs: [
+      {
+        question: 'Is walking good or bad for knee osteoarthritis?',
+        answer:
+          'For most people with knee osteoarthritis, regular walking on level ground is helpful rather than harmful. Movement helps nourish cartilage and maintains the muscle strength that protects the joint. What tends to aggravate an arthritic knee is sudden large increases in distance, steep slopes and stairs, and hard uneven surfaces. Building up gradually, in comfortable cushioned footwear, and stopping short of a sharp increase in pain is the usual approach. If walking consistently worsens the knee for more than a day afterwards, it is worth having the amount and technique reviewed.',
+      },
+      {
+        question: 'Should I stop sitting on the floor and using an Indian toilet completely?',
+        answer:
+          'Not permanently, but often temporarily. Deep squatting and prolonged floor sitting put the knee at its highest joint loads, so reducing them while the knee is painful usually helps settle symptoms enough to begin strengthening. Many patients use a commode or raised seat and a low stool in the early weeks. As quadriceps and hip strength improve, tolerance for bending generally improves too, and a good deal of normal activity comes back.',
+      },
+      {
+        question: 'Can physiotherapy reverse knee osteoarthritis?',
+        answer:
+          'Physiotherapy does not regrow cartilage, and no treatment currently does. What it can change is how much the joint hurts and how much you can do, which for most people is what actually matters. Strengthening the muscles around the knee, improving how the hip and foot share load, and managing daily activity commonly reduce pain and improve walking and stair climbing. Many people with visible arthritis on X-ray function well; the aim is to move you into that group.',
+      },
+      {
+        question: 'How long does physiotherapy take to help knee osteoarthritis?',
+        answer:
+          'Many patients notice some easing of pain within two to three weeks, but meaningful strength gains take longer, commonly six to twelve weeks of consistent work. Osteoarthritis is a long-term condition, so the programme usually shifts after that from supervised sessions to a maintenance routine you continue yourself, with occasional reviews. Consistency matters far more than intensity here.',
+      },
+    ],
+    relatedServices: ['physiotherapy', 'orthopedic-physiotherapy', 'home-visit-physiotherapy'],
+    relatedAreas: ['borivali-west'],
+  },
 ];
