@@ -388,6 +388,23 @@ interface OutboxMessage {
 // response so a broken relay is visible without digging through Vercel logs.
 let outboxDiagnostics = 'not run';
 
+const AUTOMATION_LOG_PAGE_ID = '348af2b61f0f813c92bfd36527e60184';
+
+// Hours since any task last wrote to the Automation Log (page last_edited_time).
+async function fleetSilenceHours(notionToken: string): Promise<number | null> {
+  try {
+    const resp = await fetch(`https://api.notion.com/v1/pages/${AUTOMATION_LOG_PAGE_ID}`, {
+      headers: { Authorization: `Bearer ${notionToken}`, 'Notion-Version': '2022-06-28' },
+    });
+    if (!resp.ok) return null;
+    const page = (await resp.json()) as { last_edited_time?: string };
+    if (!page.last_edited_time) return null;
+    return (Date.now() - new Date(page.last_edited_time).getTime()) / 36e5;
+  } catch {
+    return null;
+  }
+}
+
 async function fetchOutboxMessages(notionToken: string): Promise<OutboxMessage[]> {
   const messages: OutboxMessage[] = [];
 
@@ -626,7 +643,7 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: 'NOTION_TOKEN not configured' }, { status: 500 });
   }
 
-  const results: { dailyDigest?: string; outbox?: string } = {};
+  const results: { dailyDigest?: string; outbox?: string; fleet?: string } = {};
 
   // ── 1. Process Telegram Outbox (every run) ──────────────
   const outboxMessages = await fetchOutboxMessages(notionToken);
@@ -705,6 +722,28 @@ export async function GET(request: Request) {
     }
   } else {
     results.dailyDigest = today === lastSentDate ? 'already sent today' : 'not digest time';
+  }
+
+  // ── 3. Fleet silence detector (runs on Vercel, independent of the Cowork fleet) ──
+  // Lesson of Sep 26, 2026: the whole task fleet was disabled for 10 days and
+  // nobody noticed, because the watchdog was part of the fleet. This check
+  // lives outside it: if the Automation Log hasn't been written in >40h the
+  // fleet is dark. Alerts once per day (07:00 UTC cron run) or on ?fleetcheck=1.
+  const forceFleetCheck = url.searchParams.get('fleetcheck') === '1';
+  if (forceFleetCheck || now.getUTCHours() === 7) {
+    const silence = await fleetSilenceHours(notionToken);
+    if (silence === null) {
+      results.fleet = 'could not read Automation Log';
+    } else if (silence > 40) {
+      const msg =
+        `🚨 <b>FLEET SILENT</b> — no scheduled task has written to the Automation Log for ` +
+        `${Math.round(silence)} hours. The Cowork tasks are probably disabled or the PC is off. ` +
+        `Check the Scheduled section in Cowork.`;
+      await sendTelegram(msg, TOPIC_SYSTEM);
+      results.fleet = `ALERT sent — silent ${Math.round(silence)}h`;
+    } else {
+      results.fleet = `ok — last write ${Math.round(silence)}h ago`;
+    }
   }
 
   return NextResponse.json({ status: 'ok', ...results, chatId: TELEGRAM_CHAT_ID, details }, {
