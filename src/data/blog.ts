@@ -896,7 +896,7 @@ Most patients need 12-20 sessions spread over 3-5 months for full recovery.
 
 Frozen shoulder is a slow condition — there is no shortcut. But doing the right exercises at the right stage makes the difference between recovering in 12 months and being stuck for 2+ years. Start with the exercises for your current stage, be consistent, and if progress stalls, do not wait — get professional help before the stiffness becomes entrenched.
 
-If you are in Borivali West and want a proper assessment to identify your stage and get a personalised recovery plan, [book a consultation at PhysioSthanak](/services/orthopedic-physiotherapy/frozen-shoulder-ortho). Dr. Shiva Jain Sangoi (PT) will evaluate your shoulder, tell you exactly where you stand, and give you a clear path forward.
+If you are in Borivali West and want a proper assessment to identify your stage and get a personalised recovery plan, [book a consultation at PhysioSthanak](/services/neck-pain-physiotherapy/frozen-shoulder). Dr. Shiva Jain Sangoi (PT) will evaluate your shoulder, tell you exactly where you stand, and give you a clear path forward.
 
 **Related reading:** Dealing with back pain alongside your shoulder issues? Check out our guide on [back pain treatment at home — and when to see a physiotherapist](/blog/back-pain-treatment-at-home-when-to-see-physiotherapist). And for a deeper look at how physiotherapy compares with surgical options, read [physiotherapy vs orthopaedic — who to see first](/blog/physiotherapy-vs-orthopaedic-who-to-see-first).`,
     faqs: [
@@ -1823,7 +1823,7 @@ This is important: being female doesn't automatically make someone qualified to 
 - Sports medicine certifications (like the FIFA Diploma in Football Medicine)
 - Experience treating pelvic floor conditions specifically
 
-At PhysioSthanak in Borivali West, Dr. Shiva Jain Sangoi (PT) holds an MPTh in Orthopaedics from Terna Physiotherapy College and a FIFA Diploma in Football Medicine. With over 10 years of experience and 8,000+ cases treated, she combines orthopaedic expertise with specialised women's health physiotherapy — treating everything from [pelvic floor dysfunction](/services/womens-health-physiotherapy/pelvic-floor-therapy) to [sports injuries](/services/sports-physiotherapy).
+At PhysioSthanak in Borivali West, Dr. Shiva Jain Sangoi (PT) holds an MPTh in Orthopaedics from Terna Physiotherapy College and a FIFA Diploma in Football Medicine. With over 10 years of experience and 8,000+ cases treated, she combines orthopaedic expertise with specialised women's health physiotherapy — treating everything from [pelvic floor dysfunction](/services/womens-health-physiotherapy/pelvic-floor) to [sports injuries](/services/sports-physiotherapy).
 
 ## How to find a good lady physiotherapist near you
 
@@ -2915,7 +2915,7 @@ Patients usually arrive describing one problem and then, on questioning, report 
 
 **Stiffness turning the head,** particularly noticed while reversing a car or checking a blind spot.
 
-**Headache that starts at the back of the head and creeps forward** over the scalp to behind one eye. This is a **cervicogenic headache** — a headache arising from the upper neck joints and muscles rather than from the head itself. It is commonly mistaken for migraine, and it behaves differently: it is usually one-sided but always the same side, it worsens with sustained neck positions, and it often responds to treatment aimed at the neck. If headaches are your main problem, our [headache and migraine physiotherapy](/services/headache-migraine-physiotherapy) page covers how the neck is assessed as a source.
+**Headache that starts at the back of the head and creeps forward** over the scalp to behind one eye. This is a **cervicogenic headache** — a headache arising from the upper neck joints and muscles rather than from the head itself. It is commonly mistaken for migraine, and it behaves differently: it is usually one-sided but always the same side, it worsens with sustained neck positions, and it often responds to treatment aimed at the neck. If headaches are your main problem, our [headache and migraine physiotherapy](/services/neck-pain-physiotherapy/headache-migraine-physiotherapy) page covers how the neck is assessed as a source.
 
 **A burning knot between the shoulder blade and the spine,** which people constantly ask someone to press.
 
@@ -2927,7 +2927,7 @@ Patients usually arrive describing one problem and then, on questioning, report 
 
 The single most useful principle is **movement variety over perfect posture**. A neck does not mind being bent forward; it minds being bent forward for ninety minutes without a break. Patients who improve fastest are rarely the ones who buy an expensive chair — they are the ones who interrupt the position often, even briefly. Standing up when a call comes in, raising the phone closer to eye level rather than dropping the head to it, and looking up and around every twenty to thirty minutes are small changes that add up because of how often they are repeated.
 
-**Setting the screen up properly** matters for the hours you cannot break. The top of a monitor roughly at eye level, the laptop raised on a stack of books with a separate keyboard, feet supported, forearms resting. Our [posture correction](/services/posture-correction) service goes through this in detail, and our guide on [desk posture correction exercises for office workers](/blog/desk-posture-correction-exercises-office-workers) covers what you can do without leaving your chair.
+**Setting the screen up properly** matters for the hours you cannot break. The top of a monitor roughly at eye level, the laptop raised on a stack of books with a separate keyboard, feet supported, forearms resting. Our [posture correction](/services/back-pain-physiotherapy/posture-correction) service goes through this in detail, and our guide on [desk posture correction exercises for office workers](/blog/desk-posture-correction-exercises-office-workers) covers what you can do without leaving your chair.
 
 **Strength, not just stretching.** This is where most self-treatment goes wrong. People stretch an already overstretched, overworked neck for months and wonder why relief lasts twenty minutes. The deep neck flexors and the muscles that hold the shoulder blades back are usually the ones that need work, and they need loading, not lengthening. What exactly needs strengthening varies from person to person, which is why an assessment beats a generic video.
 
@@ -3080,6 +3080,237 @@ The **first consultation at our Borivali West clinic is free** — a full assess
       },
     ],
     relatedServices: ['back-pain-physiotherapy', 'orthopedic-physiotherapy', 'physiotherapy'],
+    relatedAreas: ['borivali-west'],
+  },
+  {
+    slug: 'osteoporosis-exercise-is-it-safe-weak-bones',
+    title: 'Exercise for Osteoporosis — Is It Safe to Exercise With Weak Bones?',
+    metaTitle: 'Exercise for Osteoporosis — Is It Safe? | PhysioSthanak',
+    metaDescription:
+      'Is exercise safe with osteoporosis? What research suggests about loading bone, which movements need care, and when to see a physiotherapist in Borivali.',
+    keywords: [
+      'exercise for osteoporosis',
+      'osteoporosis exercise safe',
+      'osteoporosis physiotherapy',
+      'weak bones exercise',
+      'osteopenia exercise',
+      'bone density exercise after menopause',
+      'osteoporosis physiotherapy Borivali',
+      'haddiyan kamzor exercise',
+    ],
+    publishDate: '2026-09-29',
+    author: 'Dr. Shiva Jain Sangoi (PT)',
+    authorCredentials: 'BPTh, MPTh (Ortho), FIFA Diploma in Football Medicine',
+    excerpt:
+      'A bone density report that says "osteoporosis" often makes people stop moving altogether, out of fear of a fracture. Research suggests that is usually the wrong response. Here is what exercise for osteoporosis can and cannot do, which movements need care, and when a physiotherapy assessment is worth it.',
+    readTime: '8 min read',
+    category: 'Myths & Facts',
+    content: `## The report that makes people stop moving
+
+A DEXA scan comes back with the word osteoporosis on it, and almost overnight a whole family changes how it treats someone. The mother who used to walk to the market is told to take a rickshaw. The father who climbed four floors every day is told to wait for the lift. Nobody wants a fracture, so the instinct is to protect the bones by doing less.
+
+That instinct is understandable, and it is mostly wrong. **Exercise for osteoporosis** is one of the few things research consistently supports for keeping bones and muscles stronger and, just as importantly, for reducing falls — which is what actually causes most fractures. The real question is not whether to move but how, and that is where many patients get stuck between internet advice that is too timid and gym advice that is too aggressive.
+
+## What osteoporosis actually is
+
+Bone is living tissue. It is constantly broken down and rebuilt, and it responds to the loads placed on it. **Osteoporosis** is a condition in which bone density and quality have dropped enough that bones break more easily — a wrist from a fall onto an outstretched hand, a hip from a fall sideways, or a vertebra in the spine that compresses, sometimes with surprisingly little force. **Osteopenia** is the in-between stage: lower than ideal density, but not yet in the osteoporosis range. The [general overview of osteoporosis](https://en.wikipedia.org/wiki/Osteoporosis) is a reasonable starting point if you want the background.
+
+It is often called a silent condition, because it usually causes no pain at all until something breaks. Women after menopause are at the highest risk, because the drop in oestrogen speeds up bone loss, but men are affected too, especially later in life. Long-term steroid use, low body weight, smoking, heavy alcohol use, a family history of hip fracture, and long periods of inactivity all add to the risk.
+
+## Myth: "Weak bones need rest"
+
+This is the core misunderstanding. Bones get stronger in response to load, and they lose strength without it. Astronauts lose bone in space; patients on prolonged bed rest lose bone in a matter of weeks. Resting weak bones does not protect them — it tends to weaken them further, along with the muscles and balance that stop a person from falling in the first place.
+
+What research commonly suggests instead is a combination of three things, adjusted to the individual:
+
+**Weight-bearing activity.** Anything done on your feet, where the skeleton carries your body weight — walking, climbing stairs, dancing. Swimming and cycling are excellent for the heart and joints but put little load through bone, so on their own they are not enough for bone health.
+
+**Progressive strength training.** Muscles pull on bones when they work, and that pull is a stimulus for bone. Studies suggest that supervised, gradually progressed resistance training can be safe and useful even in people with low bone density — a shift from older advice that told them to avoid anything heavier than a water bottle. The key words are supervised and progressive.
+
+**Balance training.** This is the part families most often overlook. A fracture needs a fall, in most cases. Improving balance, reaction and leg strength reduces the chance of that fall, and that protects the hip and wrist more directly than any bone density number.
+
+## Movements that need care
+
+Exercise is protective, but not every movement is equal. Commonly given guidance for people with osteoporosis — especially if they have already had a spinal fracture — is to be careful with:
+
+- **Repeated, loaded forward bending of the spine.** Deep toe-touches, full sit-ups and crunches, and lifting heavy objects with a rounded back put the front of the vertebrae under compression, which is where spinal fractures tend to happen.
+- **Forceful twisting of the trunk,** particularly combined with bending — some yoga poses, golf swings pushed to the end of range, or twisting to lift a heavy bucket.
+- **High-impact or jarring activity** if density is very low or there has been a recent fracture.
+- **Movements with a high fall risk** — standing on stools to reach the top shelf, or rushing to the bathroom at night in a dark flat.
+
+This does not mean these are banned for everyone. It depends on the bone density figures, fracture history, age, overall fitness and what the person already does comfortably. A 55-year-old with osteopenia who has been going to the gym for years is in a very different position from an 80-year-old with a previous vertebral fracture. That is exactly why a generic YouTube routine is a poor fit here.
+
+## What this looks like in a Mumbai home
+
+Much of the day-to-day risk is practical rather than medical. Wet bathroom floors, especially in the monsoon. A loose rug in the passage. Slippers without backs. Getting up quickly from floor sitting or a low sofa. The *jharu-pocha* done bent double. Reaching for the pressure cooker on the top shelf. None of these are dramatic, but a physiotherapist looking at how someone actually moves through their day often finds more to change there than in any exercise sheet.
+
+For older patients who find it hard to reach a clinic, a home assessment can be useful precisely because it happens in the real environment — the actual stairs, bathroom and bed. Our guide on [physiotherapy for seniors and home visits after 60](/blog/physiotherapy-for-seniors-home-visits-after-60) covers when that makes more sense than clinic visits, and our [elderly home physiotherapy](/services/home-visit-physiotherapy/elderly-home-physiotherapy) page explains how those visits work.
+
+## Where physiotherapy fits alongside your doctor
+
+Osteoporosis is diagnosed and medically managed by a doctor — usually through a bone density scan, blood tests, and sometimes medication, calcium and vitamin D. Physiotherapy does not replace any of that. Its role is the movement side: assessing strength, balance, posture and fall risk, building a programme that loads bone safely and progresses it over time, teaching safer ways to bend, lift and get up from the floor, and helping someone regain confidence after a fracture. Many patients find the confidence part matters as much as the strength — fear of falling on its own makes people move less, which feeds the cycle.
+
+If you are recovering from a wrist, hip or spinal fracture, rehabilitation is usually more structured and closely tied to the surgeon or physician's instructions. Our [osteoporosis management](/services/orthopedic-physiotherapy/osteoporosis) page describes how we approach both prevention and post-fracture care. We do not offer needling or cupping; treatment is assessment-led exercise, education and hands-on work where it helps.
+
+## When to book an assessment
+
+It is worth seeing a physiotherapist if you have been told you have osteoporosis or osteopenia and do not know what exercise is safe for you, if you have had a fall or a near-fall in the past year, if you feel unsteady on stairs or when turning, or if you are recovering from a fracture and want to get back to normal activity.
+
+**See a doctor promptly** if you have sudden, severe back pain after a minor strain, cough or lift — this can be a spinal fracture — or if you notice a loss of height, a new stoop, or pain after any fall. These need medical review before exercise.
+
+The **first consultation at our Borivali West clinic is free** — a full assessment with Dr. Shiva Jain Sangoi (PT), MPTh (Ortho), FIFA Diploma in Football Medicine, with over 10 years of practice and 8,000+ cases treated. You can [contact PhysioSthanak](/) or walk in at Shop No. 14, Hari-Smruti Premises, SVP Road, opposite HDFC Bank, Borivali West. (Home visits are charged separately as they involve travel time, and online consultations are a paid service.)
+
+---
+
+*This article is for general information only and is not a substitute for professional assessment. Consult a qualified physiotherapist for advice specific to you.*`,
+    faqs: [
+      {
+        question: 'Is walking enough exercise for osteoporosis?',
+        answer:
+          'Walking is a good foundation because it is weight-bearing, easy to keep up and good for overall health, but on its own it is usually not enough. Research suggests bone responds best to loads that are a little more than it is used to, which is why progressive strength training and balance work are commonly recommended alongside walking. The right mix depends on your bone density, fracture history and current fitness, so it is worth having it assessed rather than guessed.',
+      },
+      {
+        question: 'Can exercise reverse osteoporosis?',
+        answer:
+          'Exercise is unlikely to fully reverse osteoporosis, and it is not a substitute for any medical treatment your doctor recommends. What studies commonly show is that appropriate exercise can slow bone loss, sometimes produce modest gains in density, and substantially improve muscle strength and balance. Because most fractures follow a fall, better strength and balance can reduce fracture risk even when the bone density number changes only a little.',
+      },
+      {
+        question: 'Is yoga safe if I have osteoporosis?',
+        answer:
+          'Many people with osteoporosis enjoy yoga safely, and its balance and strength elements can be helpful. The caution is with poses that involve deep forward bending of the spine, forceful twisting, or combinations of the two, particularly for anyone with a previous spinal fracture or very low density. Modifying or avoiding those poses is common advice. It helps to tell your yoga teacher about the diagnosis, and a physiotherapist can suggest which movements suit your situation.',
+      },
+      {
+        question: 'I have osteopenia, not osteoporosis. Do I still need to worry about exercise?',
+        answer:
+          'Osteopenia means bone density is lower than ideal but not in the osteoporosis range, and it is a good moment to act rather than a reason to worry. Most people with osteopenia can do a wide range of activity, and building strength and balance now is one of the best ways to slow further loss. An assessment is still useful if you have other risk factors, a history of fractures, or are unsure how hard to push.',
+      },
+    ],
+    relatedServices: ['orthopedic-physiotherapy', 'home-visit-physiotherapy', 'womens-health-physiotherapy'],
+    relatedAreas: ['borivali-west'],
+  },
+  {
+    slug: 'tennis-elbow-vs-golfers-elbow-symptoms-causes-recovery',
+    title: 'Tennis Elbow vs Golfer\'s Elbow — Symptoms, Causes and When to See a Physiotherapist',
+    metaTitle: 'Tennis Elbow vs Golfer\'s Elbow — Symptoms & Causes | PhysioSthanak',
+    metaDescription:
+      'Tennis elbow or golfer\'s elbow? Learn how to tell them apart, why desk workers get them too, and when to see a physiotherapist in Borivali West.',
+    keywords: [
+      'tennis elbow',
+      'golfer\'s elbow',
+      'tennis elbow vs golfer\'s elbow',
+      'elbow pain physiotherapy',
+      'lateral epicondylitis',
+      'medial epicondylitis',
+      'tennis elbow physiotherapy Borivali',
+      'kohni ka dard',
+    ],
+    publishDate: '2026-09-29',
+    author: 'Dr. Shiva Jain Sangoi (PT)',
+    authorCredentials: 'BPTh, MPTh (Ortho), FIFA Diploma in Football Medicine',
+    excerpt:
+      'Despite the names, most people with tennis elbow have never held a racket. Here is how tennis elbow differs from golfer\'s elbow, why mouse users, cooks and parents get them, and when an assessment is worth booking.',
+    readTime: '7 min read',
+    category: 'Guide',
+    content: `## "But I have never played tennis"
+
+Many patients walk in with a sore outer elbow, hold it, and say the same thing: "Doctor, I don't even play tennis." Then we find out they spend nine hours a day on a laptop mouse, carry a heavy bag on a bent arm, or have just spent a weekend wringing out clothes and painting the flat. **Tennis elbow** is one of the most misnamed conditions in physiotherapy. Racket sports are only one of many ways to irritate the tendons around the elbow.
+
+The same goes for its look-alike, golfer's elbow, which sits on the *inner* side of the joint. This guide explains how the two differ, what commonly causes them, what tends to help, and when it is worth getting the elbow checked.
+
+## What these conditions actually are
+
+Both problems involve the tendons of the forearm muscles, where they attach to small bony bumps at the elbow. Those muscles move your wrist and fingers, so the tendons take a load every time you grip, lift, type or twist.
+
+**Tennis elbow** (lateral epicondylitis) affects the outer side of the elbow, at the attachment of the muscles that lift the wrist back and extend the fingers. **Golfer's elbow** (medial epicondylitis) affects the inner side, at the attachment of the muscles that bend the wrist and grip. The [general overview of tennis elbow](https://en.wikipedia.org/wiki/Tennis_elbow) gives more background if you want it.
+
+The "-itis" in the older names suggests inflammation, but research suggests that in long-standing cases the tendon is often better described as overloaded and irritated, with changes in how it handles stress, rather than simply "inflamed". That matters because it shapes what helps: gradually rebuilding the tendon's tolerance to load generally makes more sense than only resting it or masking the pain.
+
+## How to tell them apart
+
+The location of the pain is the biggest clue.
+
+**Tennis elbow** typically causes pain on the outer elbow that may travel down the top of the forearm. It tends to flare when you:
+
+- Lift a kettle, a water bottle or a *tawa*
+- Shake hands or turn a door handle
+- Use a mouse or keyboard for long periods
+- Twist a screwdriver or wring a cloth
+
+**Golfer's elbow** typically causes pain on the inner elbow, sometimes with a feeling of weakness in the grip. It tends to flare when you:
+
+- Carry a heavy bag or shopping with the palm facing you
+- Grip and flex the wrist repeatedly, such as in cricket bowling, throwing or gym pulling exercises
+- Chop vegetables or knead dough for long periods
+
+Both can start gradually and worsen over weeks. Tennis elbow is generally the more common of the two, and it commonly affects people in their thirties to fifties, though it can appear at any age.
+
+## Why desk workers and homemakers get it
+
+The Mumbai pattern we see most is not sports-related at all. Long hours with the wrist slightly bent upward over a mouse, a laptop placed too high or too low, a chair without forearm support, and then a sudden extra load — a weekend of moving boxes, a new gym programme, or a Ganpati decoration marathon — can tip an already-tired tendon into pain. In homes, repetitive grip tasks such as squeezing, wringing, lifting heavy vessels with one hand and long spells of cooking are common triggers.
+
+If a long desk day is part of your story, our guide to [desk posture and exercises for office workers](/blog/desk-posture-correction-exercises-office-workers) covers the setup habits that put less strain on the arm as well.
+
+## Is it really the elbow? Other causes of arm pain
+
+Not every sore elbow is a tendon problem. Pain felt at the elbow can sometimes come from the neck, where irritated nerves can refer symptoms down the arm, or from nerve compression at the wrist or elbow, which more often causes tingling or numbness than a sharp local ache. Joint problems and, less commonly, fractures or infection can also present with elbow pain.
+
+That is one reason to be cautious about diagnosing yourself from the internet. A physiotherapist will usually check the elbow, wrist, shoulder and neck together, because the cause of the pain is not always where you feel it. If your symptoms include pins and needles, arm weakness, or pain that starts in the neck, our page on [neck pain physiotherapy](/services/neck-pain-physiotherapy) explains how that is assessed.
+
+## What commonly helps
+
+Approaches vary from person to person, and this is general information rather than a prescription, but several themes appear consistently in the research:
+
+**Load management rather than complete rest.** Many patients find that cutting the aggravating activity back — not stopping everything — lets the tendon settle. Total rest for long periods can leave the tendon weaker and less able to cope when normal life resumes.
+
+**Gradual strengthening.** Rehabilitation programmes for tendon problems commonly build load tolerance in stages, guided by how the elbow responds. The exact exercises, how heavy and how often depend on the individual, which is why copying a random routine can leave people worse off.
+
+**Fixing what feeds the strain.** This may include the way you grip, how your desk is arranged, how you carry a bag, and how the shoulder and shoulder blade are working, since a weak shoulder can push more work onto the forearm.
+
+**Patience.** Tendons heal slowly. Many people notice gradual improvement over weeks to a few months, and some cases take longer, especially if the problem has been building for a long time. Quick fixes are tempting, but the evidence for a lasting result usually favours steady rehabilitation.
+
+Braces or straps are used by some people to reduce load during tasks, and a physiotherapist can advise whether one suits your situation. Our approach is assessment-led exercise, education and hands-on work where it helps. We do not offer needling or cupping.
+
+## When to see a physiotherapist
+
+Consider booking an assessment if:
+
+- Elbow pain has lasted more than two to three weeks despite easing activity
+- Everyday tasks — lifting a cup, opening a jar, typing — are becoming painful or weak
+- The pain keeps returning each time you go back to sport, the gym or work
+- You are not sure whether the problem is in the elbow, the neck or the wrist
+
+**See a doctor promptly** if the elbow is hot, swollen and red, if you cannot straighten or bend it after a fall or impact, if the arm looks deformed, or if you develop fever with elbow pain. These need medical review rather than exercise.
+
+Our [tennis elbow and golfer's elbow physiotherapy](/services/sports-physiotherapy/tennis-elbow-golfers-elbow) page describes how we assess and rehabilitate these conditions, and our wider [sports physiotherapy](/services/sports-physiotherapy) service covers gym-goers and athletes.
+
+The **first consultation at our Borivali West clinic is free**. You will be assessed by Dr. Shiva Jain Sangoi (PT), MPTh (Ortho), FIFA Diploma in Football Medicine, with over 10 years of practice and 8,000+ cases treated. You can reach us through the [PhysioSthanak homepage](/) or walk in at Shop No. 14, Hari-Smruti Premises, SVP Road, opposite HDFC Bank, Borivali West. (Home visits are charged separately as they involve travel time, and online consultations are a paid service.)
+
+---
+
+*This article is for general information only and is not a substitute for professional assessment. Consult a qualified physiotherapist for advice specific to you.*`,
+    faqs: [
+      {
+        question: 'Will tennis elbow go away on its own?',
+        answer:
+          'Many cases improve over time, but it can take weeks to months, and some linger or keep returning if the activities that overloaded the tendon do not change. Research suggests that a structured, gradual rehabilitation approach often gives better long-term results than rest alone. If the pain is not settling after a few weeks, an assessment can help identify what is keeping it going.',
+      },
+      {
+        question: 'Can I keep working on a computer with tennis elbow?',
+        answer:
+          'Most people can continue working, but small changes often help: supporting the forearm, keeping the wrist in a more neutral position, taking short breaks from mouse use, and avoiding long spells of repetitive gripping. How much you can do depends on how irritable the elbow is, so if typing itself is painful it is worth getting advice rather than pushing through.',
+      },
+      {
+        question: 'Is golfer\'s elbow the same as tennis elbow?',
+        answer:
+          'They are similar problems in different places. Tennis elbow affects the tendons on the outer side of the elbow, while golfer\'s elbow affects the tendons on the inner side. The muscles involved and the movements that aggravate them differ, but the general principles of load management and gradual strengthening are similar. A physiotherapist can confirm which one you have.',
+      },
+      {
+        question: 'Do I need an X-ray or scan for elbow pain?',
+        answer:
+          'Tennis elbow and golfer\'s elbow are usually diagnosed from your history and a physical examination. Imaging is generally reserved for cases where the diagnosis is unclear, there has been an injury, or symptoms are not improving as expected. Your physiotherapist or doctor can advise whether a scan would actually change the plan in your case.',
+      },
+    ],
+    relatedServices: ['sports-physiotherapy', 'hand-physiotherapy', 'neck-pain-physiotherapy'],
     relatedAreas: ['borivali-west'],
   },
 ];
