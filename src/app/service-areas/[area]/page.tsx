@@ -6,6 +6,7 @@ import WhySection from '@/components/sections/WhySection';
 import FAQSection from '@/components/sections/FAQSection';
 import CTASection from '@/components/sections/CTASection';
 import MapSection from '@/components/sections/MapSection';
+import LocalityBlogPosts from '@/components/sections/LocalityBlogPosts';
 import Link from 'next/link';
 import { MapPin, ArrowRight } from 'lucide-react';
 import { serviceAreas, siteConfig } from '@/data';
@@ -178,6 +179,9 @@ export default async function AreaPage({ params }: PageProps) {
         subheading={`About our services in ${areaData.name}`}
         faqs={areaData.faqs}
       />
+
+      {/* BLOG LINKS - locality pages link 3 rotated articles (indexing lever, Oct 2026) */}
+      <LocalityBlogPosts seed={areaData.slug} areaName={areaData.name} />
 
       {/* MAP SECTION - per SOP: 50+ word description with primary keyword, location-specific map */}
       <MapSection

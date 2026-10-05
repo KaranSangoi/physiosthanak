@@ -6,6 +6,7 @@ import WhySection from '@/components/sections/WhySection';
 import FAQSection from '@/components/sections/FAQSection';
 import CTASection from '@/components/sections/CTASection';
 import MapSection from '@/components/sections/MapSection';
+import LocalityBlogPosts from '@/components/sections/LocalityBlogPosts';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { serviceAreas, siteConfig, allServices } from '@/data';
@@ -193,6 +194,9 @@ export default async function SubAreaPage({ params }: PageProps) {
         subheading={`About physiotherapy services in ${subAreaData.name}`}
         faqs={subAreaData.faqs}
       />
+
+      {/* BLOG LINKS - locality pages link 3 rotated articles (indexing lever, Oct 2026) */}
+      <LocalityBlogPosts seed={subAreaData.slug} areaName={subAreaData.name} />
 
       {/* MAP SECTION - per SOP: 50+ word description with primary keyword, location-specific map */}
       <MapSection

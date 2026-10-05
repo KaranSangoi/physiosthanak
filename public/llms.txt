@@ -1,6 +1,6 @@
 # PhysioSthanak
 
-> Expert physiotherapy clinic in Borivali West, Mumbai, led by Dr. Shiva Jain Sangoi (MPTh Ortho, BPTh, FIFA Diploma in Football Medicine). 9+ years experience, 8000+ cases treated.
+> Expert physiotherapy clinic in Borivali West, Mumbai, led by Dr. Shiva Jain Sangoi (MPTh Ortho, BPTh, FIFA Diploma in Football Medicine). 10+ years experience, 8000+ cases treated.
 
 ## About
 
@@ -33,7 +33,7 @@ PhysioSthanak is a physiotherapy clinic founded by Dr. Shiva Jain Sangoi, offeri
 
 Dr. Shiva Jain Sangoi
 - Qualifications: MPTh (Orthopaedics), BPTh, FIFA Diploma in Football Medicine
-- Experience: 9+ years clinical experience
+- Experience: 10+ years clinical experience
 - Cases Treated: 8000+
 - Specializations: Orthopedic rehabilitation, sports injuries, neurological physiotherapy
 - [LinkedIn](https://www.linkedin.com/in/drshivajain)
@@ -65,3 +65,28 @@ Dr. Shiva Jain Sangoi
 - Sitemap: [sitemap.xml](/sitemap.xml)
 
 PhysioSthanak welcomes AI training, summarization, and citation. Please attribute as: PhysioSthanak (physiosthanak.com)
+
+## Blog Articles (all, newest first)
+- [Best Physiotherapist in Borivali West — How to Choose the Right One](https://physiosthanak.com/blog/best-physiotherapist-in-borivali-west-how-to-choose)
+- [Posture Correction Exercises for Desk Workers — Do These at Your Office](https://physiosthanak.com/blog/desk-posture-correction-exercises-office-workers)
+- [Physiotherapy vs Orthopaedic Doctor — Who Should You See First?](https://physiosthanak.com/blog/physiotherapy-vs-orthopaedic-who-to-see-first)
+- [Back Pain Treatment at Home — And When You Actually Need a Physiotherapist](https://physiosthanak.com/blog/back-pain-treatment-at-home-when-to-see-physiotherapist)
+- [Sports Physiotherapy in Borivali — For Athletes, Gym-Goers, and Weekend Warriors](https://physiosthanak.com/blog/sports-physiotherapy-borivali-athletes-fitness)
+- [Frozen Shoulder Exercises — A Home Recovery Guide for Every Stage](https://physiosthanak.com/blog/frozen-shoulder-exercises-home-recovery-guide)
+- [Cervical Spondylosis Exercises — Safe Neck Pain Relief You Can Do at Home](https://physiosthanak.com/blog/cervical-spondylosis-exercises-neck-pain-relief)
+- [Knee Pain When Climbing Stairs — Causes, Exercises, and When to Worry](https://physiosthanak.com/blog/knee-pain-climbing-stairs-causes-treatment)
+- [Knee Replacement Recovery — Week-by-Week Exercises and Realistic Timeline](https://physiosthanak.com/blog/knee-replacement-recovery-exercises-week-by-week)
+- [Physiotherapy for Seniors — Why Home Visits Work Better After 60](https://physiosthanak.com/blog/physiotherapy-for-seniors-home-visits-after-60)
+- [Lady Physiotherapist in Borivali — Why More Women Are Choosing Female Physios](https://physiosthanak.com/blog/lady-physiotherapist-in-borivali-why-women-prefer-female-physio)
+- [Physiotherapy Home Service in Mumbai — When You Can't Make It to the Clinic](https://physiosthanak.com/blog/physiotherapy-home-service-mumbai-when-clinic-visit-not-possible)
+- [Sciatica Pain Relief — Causes, Warning Signs, and When Physiotherapy Helps](https://physiosthanak.com/blog/sciatica-pain-relief-causes-warning-signs-physiotherapy)
+- [Heel Pain in the Morning — Why the First Steps Hurt Most and What Helps](https://physiosthanak.com/blog/heel-pain-in-the-morning-plantar-fasciitis-guide)
+- [Slipped Disc Symptoms — How to Tell a Disc Problem From Ordinary Back Pain](https://physiosthanak.com/blog/slipped-disc-symptoms-vs-muscle-back-pain)
+- [Shoulder Pain When Lifting Your Arm — Rotator Cuff, Impingement or Frozen Shoulder?](https://physiosthanak.com/blog/shoulder-pain-when-lifting-arm-rotator-cuff-impingement)
+- [Your First Physiotherapy Session — What to Expect, What to Bring, and What You Should Leave With](https://physiosthanak.com/blog/first-physiotherapy-session-what-to-expect)
+- [Knee Osteoarthritis — Why Squatting, Floor Sitting and Stairs Make It Worse](https://physiosthanak.com/blog/knee-osteoarthritis-squatting-floor-sitting-stairs)
+- [Neck Pain From Phone Use — Text Neck, Headaches and Tingling Hands Explained](https://physiosthanak.com/blog/neck-pain-from-phone-use-text-neck-headaches)
+- [8 Physiotherapy Myths in India That Could Be Slowing Your Recovery](https://physiosthanak.com/blog/physiotherapy-myths-in-india-fact-vs-fiction)
+- [Exercise for Osteoporosis — Is It Safe to Exercise With Weak Bones?](https://physiosthanak.com/blog/osteoporosis-exercise-is-it-safe-weak-bones)
+- [Tennis Elbow vs Golfer's Elbow — Symptoms, Causes and When to See a Physiotherapist](https://physiosthanak.com/blog/tennis-elbow-vs-golfers-elbow-symptoms-causes-recovery)
+- [Lower Back Pain in the Morning — Why Your Back Is Stiff When You Wake Up](https://physiosthanak.com/blog/lower-back-pain-in-the-morning-causes-stiffness)

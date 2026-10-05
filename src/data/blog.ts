@@ -3313,4 +3313,125 @@ The **first consultation at our Borivali West clinic is free**. You will be asse
     relatedServices: ['sports-physiotherapy', 'hand-physiotherapy', 'neck-pain-physiotherapy'],
     relatedAreas: ['borivali-west'],
   },
+  {
+    slug: 'lower-back-pain-in-the-morning-causes-stiffness',
+    title: 'Lower Back Pain in the Morning — Why Your Back Is Stiff When You Wake Up',
+    metaTitle: 'Lower Back Pain in the Morning — Causes & When to Worry | PhysioSthanak',
+    metaDescription:
+      'Why is lower back pain worse in the morning? Common causes of waking stiff, what long morning stiffness can signal, and when to see a physio in Borivali.',
+    keywords: [
+      'lower back pain in the morning',
+      'back pain after waking up',
+      'morning back stiffness',
+      'lower back stiffness in the morning',
+      'back pain worse in the morning',
+      'mattress and back pain',
+      'lower back pain physiotherapy Borivali',
+      'subah uthte hi kamar dard',
+    ],
+    publishDate: '2026-10-04',
+    author: 'Dr. Shiva Jain Sangoi (PT)',
+    authorCredentials: 'BPTh, MPTh (Ortho), FIFA Diploma in Football Medicine',
+    excerpt:
+      'If your lower back feels stiff and sore for the first few minutes of the day and then eases as you move, you are far from alone. Here is why morning back pain happens, what the length of the stiffness can tell you, and when it is worth getting assessed.',
+    readTime: '7 min read',
+    category: 'Guide',
+    content: `## The first ten minutes of the day
+
+You get out of bed, and for a few minutes your back feels like it belongs to someone twenty years older. Bending to brush your teeth is careful work. Wearing socks is a negotiation. Then, by the time you have had chai and walked around the flat, it has mostly eased off.
+
+**Lower back pain in the morning** is one of the most common complaints we hear, and in most people it is not a sign of anything serious. But "most people" is not everyone. The pattern of the pain — how long the stiffness lasts, whether it eases with movement, and what else comes with it — can say a lot about what is behind it. This guide explains the common causes, the warning signs worth knowing, and when to see a physiotherapist.
+
+## Why backs stiffen overnight
+
+During the day, movement keeps the joints, discs and muscles of the spine supplied and supple. At night you lie relatively still for six to eight hours, and a few things change.
+
+**The discs take on fluid.** The discs between your vertebrae absorb a little more water when they are unloaded at night. This is normal — it is part of why people are slightly taller in the morning — but research suggests it also makes the discs a little stiffer and more sensitive to bending in the first hour or so after waking.
+
+**Joints and muscles cool down and stiffen.** The small facet joints at the back of the spine and the surrounding muscles become less mobile after a long period without movement. If they were already irritated from the previous day, they tend to complain loudest when you first ask them to work.
+
+**Sensitised tissues feel it first.** If your back has been strained by a long commute, a heavy lift or a day at a poor desk setup, that sensitivity is often most noticeable at the moment you go from lying still to moving.
+
+For many people, this is why the pain is worst at 7 am and noticeably better by 9 am. The general overview of [low back pain](https://en.wikipedia.org/wiki/Low_back_pain) explains how common this kind of non-specific back pain is worldwide.
+
+## Common causes of waking up with back pain
+
+**Sleeping position.** Lying flat on your stomach often arches the lower back for hours. Lying on your back with legs straight can be uncomfortable for some people with stiff hips or backs. Side-lying with the top knee dropped forward can twist the spine. Small changes — a pillow under the knees when lying on your back, or between the knees when lying on your side — are commonly suggested and help many people.
+
+**The mattress.** There is no single "best" mattress for back pain. A mattress that is too soft can let the hips sink, and one that is too hard can create pressure points, especially for lighter people or side-sleepers. The old advice that a rock-hard bed is always better for the back is not well supported. If your mattress is sagging in the middle or you consistently feel better sleeping elsewhere, that is a useful clue.
+
+**What you did yesterday.** Long hours sitting — at a desk, in a local train, or in traffic on the Western Express Highway — commonly leave the back stiff the next morning. So do unaccustomed activity, a heavy lift, or the weekend clean-up of the flat.
+
+**Being generally deconditioned.** Weak or tired trunk and hip muscles mean the back has less support through the day, and that often shows up as next-morning stiffness. This is one of the reasons gradual, regular activity tends to help.
+
+**Disc-related pain.** People with disc problems often find bending forward first thing in the morning especially sore, and sitting tends to aggravate it. Our guide to [slipped disc symptoms versus ordinary muscular back pain](/blog/slipped-disc-symptoms-vs-muscle-back-pain) explains how these two differ.
+
+## The clue that matters: how long does the stiffness last?
+
+This is one of the first questions a physiotherapist will ask, because the answer helps narrow down the cause.
+
+**Stiffness that eases within about 30 minutes of getting up** and improves further as you move is the typical mechanical pattern described above. It is common, often linked to posture, activity and sleep, and usually responds well to staying active and addressing what is feeding it.
+
+**Stiffness that lasts well over 30 minutes to an hour, every morning,** especially in someone under 40, that improves with exercise but not with rest, and that may wake you in the second half of the night, can point to an inflammatory cause such as **axial spondyloarthritis (ankylosing spondylitis)**. This is less common, but it matters because it is diagnosed and treated by a doctor, often a rheumatologist, and earlier diagnosis can make a real difference. Pain that alternates between the buttocks, or comes with eye inflammation, psoriasis or bowel symptoms, adds to that picture.
+
+Neither pattern is a self-diagnosis. They are reasons to describe your symptoms clearly to a professional — "stiff for about two hours every morning for the past four months" is far more useful than "my back hurts".
+
+## What commonly helps with morning back pain
+
+This is general information, not a personal prescription, but several themes come up consistently.
+
+**Get moving gently rather than staying in bed.** Many patients find that a few minutes of easy movement — turning onto your side, sitting up slowly, a short walk around the house — eases morning stiffness faster than lying still and waiting.
+
+**Get out of bed the back-friendly way.** Rolling onto your side, letting the legs go over the edge and pushing up with your arms puts less strain on a stiff back than sitting straight up like a jack-knife.
+
+**Delay heavy bending for the first hour.** Because the discs and joints are stiffest early on, it is sensible to avoid lifting a heavy bucket, deep bending or the floor-level *jharu-pocha* immediately after waking where you can.
+
+**Look at the day, not just the night.** Regular breaks from sitting, a better desk setup and steady activity during the day often do more for morning pain than any pillow. Our guide on [desk posture for office workers](/blog/desk-posture-correction-exercises-office-workers) covers the basics.
+
+**Heat can feel good.** A warm shower in the morning helps many people feel looser. It eases symptoms; it does not treat the cause.
+
+## When to see a physiotherapist
+
+Consider an assessment if:
+
+- Morning back pain has been coming back for more than two or three weeks
+- The stiffness regularly lasts longer than 30 minutes
+- The pain spreads into the buttock or down the leg
+- You are changing how you sleep, sit or work to cope with it
+- You are not sure whether the problem is your mattress, your posture, or something else
+
+A physiotherapist will look at how your back, hips and posture work together, ask about your sleep, work and activity, and screen for signs that need medical review. Our [lower back pain treatment](/services/back-pain-physiotherapy/lower-back-pain) page explains how we assess and manage it, and our [back pain physiotherapy](/services/back-pain-physiotherapy) service covers the wider range of spine problems we see. Treatment is assessment-led exercise, education and hands-on work where it helps — we do not offer needling or cupping.
+
+**See a doctor promptly** if back pain comes with fever, unexplained weight loss, numbness around the groin or buttocks, new difficulty passing urine or controlling the bowels, weakness in the legs, a history of cancer, or pain that is severe and constant at night regardless of position. These need urgent medical attention rather than exercise.
+
+The **first consultation at our Borivali West clinic is free** — a full assessment with Dr. Shiva Jain Sangoi (PT), MPTh (Ortho), FIFA Diploma in Football Medicine, with over 10 years of practice and 8,000+ cases treated. You can reach us through the [PhysioSthanak homepage](/) or walk in at Shop No. 14, Hari-Smruti Premises, SVP Road, opposite HDFC Bank, Borivali West. (Home visits are charged separately as they involve travel time, and online consultations are a paid service.)
+
+---
+
+*This article is for general information only and is not a substitute for professional assessment. Consult a qualified physiotherapist for advice specific to you.*`,
+    faqs: [
+      {
+        question: 'Why does my lower back hurt in the morning but feel better later?',
+        answer:
+          'This is a very common pattern. After hours of lying relatively still, the discs hold a little more fluid and the joints and muscles of the spine stiffen, so the back is most sensitive when you first start moving. As you move around, circulation and mobility improve and the pain often eases within half an hour. Sleeping position, mattress, and the previous day\'s sitting or lifting commonly play a part.',
+      },
+      {
+        question: 'Can a bad mattress cause lower back pain in the morning?',
+        answer:
+          'It can contribute. A mattress that sags or is very soft can let the hips sink, while a very hard one can be uncomfortable for some people, especially side-sleepers. Research does not support one "best" firmness for everyone. If your mattress is old and sagging, or you consistently wake up better when sleeping elsewhere, it is worth considering. But a mattress is rarely the only factor, so daytime posture and activity matter too.',
+      },
+      {
+        question: 'When is morning back stiffness a sign of something serious?',
+        answer:
+          'Stiffness that regularly lasts more than 30 to 60 minutes, improves with exercise but not rest, wakes you in the second half of the night, or starts gradually in someone younger than 40 can suggest an inflammatory condition and should be checked by a doctor. Back pain with fever, weight loss, numbness around the groin, bladder or bowel changes, or leg weakness needs urgent medical attention.',
+      },
+      {
+        question: 'Should I rest in bed if my back is stiff in the morning?',
+        answer:
+          'Usually not. For most common, non-serious back pain, research suggests that staying gently active helps recovery more than bed rest. Getting up carefully, moving around the house and avoiding heavy bending for the first hour is a sensible approach for many people. If the pain is severe, getting worse, or comes with any warning signs, get it assessed.',
+      },
+    ],
+    relatedServices: ['back-pain-physiotherapy', 'physiotherapy', 'orthopedic-physiotherapy'],
+    relatedAreas: ['borivali-west'],
+  },
 ];
