@@ -3434,4 +3434,395 @@ The **first consultation at our Borivali West clinic is free** — a full assess
     relatedServices: ['back-pain-physiotherapy', 'physiotherapy', 'orthopedic-physiotherapy'],
     relatedAreas: ['borivali-west'],
   },
+  {
+    slug: 'knee-pain-after-garba-navratri-dancing',
+    title: 'Knee Pain After Garba — Why Navratri Nights Hurt Your Knees and Ankles',
+    metaTitle: 'Knee Pain After Garba — Causes & When to Worry | PhysioSthanak',
+    metaDescription:
+      'Knee pain after garba or dandiya? Why Navratri nights strain knees and ankles, what\'s normal soreness, warning signs, and when to see a physio in Borivali.',
+    keywords: [
+      'knee pain after garba',
+      'knee pain after dancing',
+      'garba knee pain',
+      'dandiya ankle sprain',
+      'navratri knee pain',
+      'knee pain while dancing',
+      'knee pain physiotherapy Borivali',
+      'garba ke baad ghutne ka dard',
+    ],
+    publishDate: '2026-10-06',
+    author: 'Dr. Shiva Jain Sangoi (PT)',
+    authorCredentials: 'BPTh, MPTh (Ortho), FIFA Diploma in Football Medicine',
+    excerpt:
+      'Nine nights of garba is a serious workout for knees that have spent the year at a desk. Here is why knees and ankles complain during Navratri, how to tell ordinary soreness from an injury, and when to get checked.',
+    readTime: '7 min read',
+    category: 'Guide',
+    content: `## Nine nights, thousands of pivots
+
+Every year, the week after Navratri brings a familiar group of people into physiotherapy clinics across Borivali and the western suburbs. Someone who danced four hours a night and now cannot climb stairs. Someone who "just twisted it a little" during dandiya and still has a swollen ankle. Someone whose knees ached a bit on night two, danced through it anyway, and by night seven was limping.
+
+**Knee pain after garba** is very common, and most of it settles with sensible care. But some of it is a real injury that deserves attention, and the festival atmosphere makes it easy to ignore early warnings. This guide explains why garba and dandiya are hard on the knees and ankles, how to tell normal soreness from something more, and when to see a physiotherapist.
+
+## Why garba is tougher on the knees than it looks
+
+Garba looks graceful, but from the knee's point of view it is a demanding activity, especially for a body that has spent most of the year sitting.
+
+**Constant bent-knee movement.** Many steps are done with the knees slightly bent, with repeated small bounces and dips. That loads the area behind and around the kneecap for hours. The joint between the kneecap and the thigh bone is particularly sensitive to this kind of load; the overview of [patellofemoral pain syndrome](https://en.wikipedia.org/wiki/Patellofemoral_pain_syndrome) describes this common front-of-knee problem.
+
+**Twisting on a planted foot.** Turns and spins, especially on a rough or sticky surface or in shoes with grip, can put a twisting force through the knee while the foot stays fixed. Twisting under load is one of the classic ways people irritate the knee cartilage (meniscus) or strain a ligament.
+
+**Sudden volume.** Very few people train for Navratri. Going from almost no activity to three or four hours of dancing a night, nine nights in a row, is a large jump in load. Tissues generally cope well with gradual increases and poorly with sudden spikes.
+
+**Hard floors and late nights.** Dancing on concrete, tiles or tightly packed ground, often barefoot or in flat *mojdis*, gives the legs little cushioning. Add short sleep, long workdays and not enough water, and recovery between nights becomes harder.
+
+**Fatigue changes technique.** Late in the night, tired thigh and hip muscles control the knee less well. Many sprains and twists happen in the last hour, not the first.
+
+## Common problems seen after Navratri
+
+This is general information to help you understand what might be going on, not a way to diagnose yourself.
+
+**Front-of-knee pain.** An ache around or behind the kneecap, worse on stairs, squatting or after sitting for a while with the knees bent. This is one of the most common complaints after a week of dancing. Our guide to [knee pain when climbing stairs](/blog/knee-pain-climbing-stairs-causes-treatment) explains this pattern in more detail.
+
+**Flare-ups of existing knee arthritis.** People who already have knee osteoarthritis often find that long nights of bent-knee movement and floor sitting stir up pain and stiffness for days afterwards.
+
+**Meniscus irritation or tears.** Pain on the inner or outer side of the knee after a twist, sometimes with swelling, a catching or clicking feeling, or difficulty fully straightening or bending the knee.
+
+**Ligament sprains.** A twist with a pop, rapid swelling within a few hours, or a feeling that the knee "gives way" can indicate a ligament injury and should be assessed.
+
+**Ankle sprains.** Rolling the ankle on uneven ground or someone's foot during dandiya is very common. Many people walk it off and assume it has healed, but a poorly rehabilitated sprain is a common cause of repeated ankle rolls later.
+
+**Calf and shin soreness, and heel pain.** Hours of bouncing on the balls of the feet on hard ground can leave the calves and shins sore and can irritate the heel, especially in people prone to [heel pain in the morning](/blog/heel-pain-in-the-morning-plantar-fasciitis-guide).
+
+## Normal soreness or an injury?
+
+Some soreness after a big night of dancing is normal. Muscle soreness that peaks a day or two after unaccustomed activity and steadily improves is your body adapting.
+
+Things that suggest more than ordinary soreness include:
+
+- Swelling in the knee or ankle, especially if it appeared quickly
+- A pop or a sharp twist at the moment the pain started
+- The knee locking, catching, or giving way
+- Not being able to fully straighten or bend the knee
+- Pain that is getting worse each night rather than better
+- Pain that is still there a week after the festival ends
+
+## What commonly helps during and after Navratri
+
+Everyone is different, so treat this as general guidance rather than a prescription.
+
+**Build up, not in.** If you can, walk or do light activity regularly in the weeks before the festival, and pace the first two nights instead of dancing flat out from the start.
+
+**Take breaks during the night.** Short rests between rounds give tiring muscles a chance to recover and protect your technique.
+
+**Think about the surface and footwear.** Where the ground is very hard or uneven, cushioned, well-fitting footwear can help many people. Avoid dancing on wet or slippery patches.
+
+**Listen to night-two pain.** A knee that aches on the second night is giving you information. Cutting back for a night or two is often better than pushing through and losing the rest of the festival.
+
+**Look after recovery.** Sleep, water and gentle movement the next day generally help more than staying completely still. Many people find ice or a cool pack comforting for a fresh, swollen injury.
+
+**Do not "massage it out" or force it.** Aggressive rubbing, cracking or forcing a painful knee or ankle through its range is a common reflex but can aggravate an injury.
+
+## When to see a physiotherapist
+
+Consider an assessment if:
+
+- Knee or ankle pain has not clearly improved within a week after Navratri
+- You had a twist, a pop or swelling at any point
+- Stairs, squatting or sitting cross-legged have become difficult
+- You keep rolling the same ankle or the knee feels unstable
+- You already have knee arthritis and the flare-up is not settling
+
+A physiotherapist will check how the knee, hip and ankle work together, test the ligaments and cartilage gently, and look at strength and control so the problem does not return next season. Our [ligament injury treatment](/services/sports-physiotherapy/ligament-injury-treatment) page explains how we manage knee sprains, our [ankle and foot injury rehab](/services/sports-physiotherapy/ankle-foot-injury-rehab) page covers rolled ankles, and our [joint pain physiotherapy](/services/orthopedic-physiotherapy/joint-pain) page covers arthritis flare-ups. Treatment is assessment-led exercise, education and hands-on work where it helps — we do not offer needling or cupping.
+
+**See a doctor or go to an emergency department promptly** if you cannot put weight on the leg, the knee or ankle looks deformed, you heard a loud pop with immediate severe swelling, the joint is hot and red with fever, or the calf becomes swollen, warm and painful. These need urgent medical attention.
+
+The **first consultation at our Borivali West clinic is free** — a full assessment with Dr. Shiva Jain Sangoi (PT), MPTh (Ortho), FIFA Diploma in Football Medicine, with over 10 years of practice and 8,000+ cases treated. You can reach us through the [PhysioSthanak homepage](/) or walk in at Shop No. 14, Hari-Smruti Premises, SVP Road, opposite HDFC Bank, Borivali West. (Home visits are charged separately as they involve travel time, and online consultations are a paid service.)
+
+---
+
+*This article is for general information only and is not a substitute for professional assessment. Consult a qualified physiotherapist for advice specific to you.*`,
+    faqs: [
+      {
+        question: 'Is it normal for my knees to hurt after garba?',
+        answer:
+          'Some soreness after several hours of dancing is common, especially if you have not been very active during the year. Muscle soreness that peaks a day or two later and gradually improves is usually your body adapting. Swelling, a pop, locking, giving way, or pain that keeps getting worse are signs that it may be more than ordinary soreness and is worth getting checked.',
+      },
+      {
+        question: 'Can I keep dancing garba with knee pain?',
+        answer:
+          'It depends on the cause and how irritable the knee is. Many people with mild, settling soreness can continue with shorter sessions and more breaks. If the knee is swollen, unstable, catching, or getting worse each night, continuing to dance can make an injury worse. When in doubt, it is safer to get the knee assessed before the remaining nights.',
+      },
+      {
+        question: 'I twisted my ankle during dandiya and can walk. Do I need to see anyone?',
+        answer:
+          'Many ankle sprains are mild, but being able to walk does not rule out a significant sprain. If there is marked swelling or bruising, pain on the bony points of the ankle, or you cannot take four steps, seek medical review. Even for milder sprains, a short period of guided rehabilitation commonly helps reduce the chance of rolling the same ankle again.',
+      },
+      {
+        question: 'How can I protect my knees during Navratri?',
+        answer:
+          'Gradually becoming more active in the weeks before the festival, pacing the first nights, taking breaks between rounds, choosing a reasonable surface and supportive footwear where possible, and staying hydrated and rested commonly help. People with existing knee arthritis or a past knee injury may benefit from advice tailored to their knees before the festival starts.',
+      },
+    ],
+    relatedServices: ['sports-physiotherapy', 'orthopedic-physiotherapy', 'physiotherapy'],
+    relatedAreas: ['borivali-west'],
+  },
+  {
+    slug: 'stroke-recovery-at-home-physiotherapy-first-three-months',
+    title: 'Stroke Recovery at Home — What Physiotherapy Looks Like in the First Three Months',
+    metaTitle: 'Stroke Recovery at Home — Physiotherapy Guide | PhysioSthanak',
+    metaDescription:
+      'Stroke recovery at home: what physiotherapy involves in the first three months, how families can help safely, and when to arrange a home visit in Borivali.',
+    keywords: [
+      'stroke recovery at home',
+      'physiotherapy after stroke',
+      'stroke rehabilitation at home',
+      'paralysis physiotherapy at home',
+      'stroke recovery timeline',
+      'home physiotherapy for stroke patients Mumbai',
+      'stroke rehab Borivali',
+      'lakwa ke baad physiotherapy',
+    ],
+    publishDate: '2026-10-09',
+    author: 'Dr. Shiva Jain Sangoi (PT)',
+    authorCredentials: 'BPTh, MPTh (Ortho), FIFA Diploma in Football Medicine',
+    excerpt:
+      'The hospital discharge after a stroke is not the end of treatment, it is the start of the most important phase. Here is what physiotherapy at home usually involves in the first three months, how families can help without overdoing it, and the warning signs nobody should ignore.',
+    readTime: '7 min read',
+    category: 'Guide',
+    content: `## The day you bring them home
+
+The ambulance or the taxi pulls up outside the building. The family has cleared the living room, borrowed a wheelchair from a relative, and someone has already asked the watchman whether the lift will be working. Then the questions begin. Should he be lying down all day? Can she sit up on her own? Who is going to help with the exercises the hospital mentioned in a rush at discharge?
+
+**Stroke recovery at home** is where much of the real rehabilitation happens. The hospital stay is often short, and the weeks that follow are when the brain and body are generally most ready to relearn movement. This guide explains, in general terms, what physiotherapy after a stroke usually looks like in the first three months, how families can support it safely, and when to get professional help at home.
+
+## Why the first few months matter
+
+After a stroke, part of the brain has been damaged by a blocked or burst blood vessel. The overview of [stroke recovery](https://en.wikipedia.org/wiki/Stroke_recovery) explains how other areas of the brain can gradually take over some of the lost work — a process often called neuroplasticity.
+
+Research suggests that a large share of movement recovery commonly happens in the first three to six months, with the fastest change often in the early weeks. That does not mean improvement stops after six months. Many patients keep making gains for a year or longer, especially in walking, confidence and daily tasks. But it does mean the early period is valuable, and spending most of it lying in bed waiting to "get stronger first" is a missed opportunity.
+
+Every stroke is different. Some people go home walking with a stick and a weak hand; others go home needing two people to help them stand. What physiotherapy looks like depends entirely on where the person is starting from.
+
+## What physiotherapy at home usually involves
+
+A physiotherapist will begin with a full assessment: how the person moves in bed, sits, stands and walks, how the affected arm and leg respond, balance, sensation, muscle tone, and what the home itself is like. From there, the work usually covers a few broad areas.
+
+**Positioning and bed mobility.** How the person lies and sits matters more than most families expect. Good positioning helps protect a weak shoulder, reduces the risk of pressure sores and stiffness, and makes it easier to start moving. Learning to roll, sit up at the edge of the bed and shift weight is often the first goal.
+
+**Sitting balance and standing.** Sitting steadily without support, then standing with help, then standing for longer, are building blocks for almost everything else, from using the toilet to walking to the door.
+
+**Walking and transfers.** Moving safely from bed to chair, chair to toilet, and eventually walking inside the flat with the right aid. A physiotherapist will advise on which walking aid, if any, suits the person, rather than whatever is available in the building.
+
+**Using the affected arm and hand.** Recovery of the arm is often slower than the leg. Physiotherapy commonly focuses on using the weak arm in real daily tasks wherever possible, because repeated, meaningful practice is generally thought to drive recovery better than leaving the arm to rest.
+
+**Managing stiffness and the shoulder.** Some people develop tightness or increased tone in the affected limbs, and a weak shoulder can become painful if it is pulled or left hanging. Families are usually taught how to handle and support the arm.
+
+**Training the family.** A physiotherapist may visit a few times a week, but the person lives with their family every day. Teaching carers how to help safely — and when *not* to help — is one of the most useful parts of home rehabilitation.
+
+Our [stroke rehabilitation](/services/neurological-physiotherapy/stroke-rehab) page explains how we approach assessment and recovery goals, and our [neurological physiotherapy](/services/neurological-physiotherapy) service covers the wider range of conditions we see.
+
+## A rough picture of the first three months
+
+This is a general outline, not a schedule. Some people move much faster and some much slower, and that is normal.
+
+**Weeks one to four.** The focus is usually safety, positioning, bed mobility, sitting and early standing, along with getting into a daily routine. Fatigue is very common in this phase, so short, frequent sessions often work better than one long one.
+
+**Weeks four to eight.** Many patients progress to transfers with less help, standing for longer, and walking short distances with support. Arm and hand work becomes more task-based — reaching, holding a cup, turning a tap.
+
+**Weeks eight to twelve.** The goals usually become more practical: walking around the flat, managing a step or the building entrance, going to the bathroom more independently, and perhaps a short walk in the corridor or compound with supervision.
+
+## How families can help — without overdoing it
+
+**Encourage, do not take over.** It is natural to want to do everything for a parent or spouse after a stroke. But every time someone else lifts the cup, the brain misses a chance to practise. Within what the physiotherapist has advised, give them time to try.
+
+**Approach from the affected side.** Many stroke survivors pay less attention to one side of their body. Talking to them and placing things on that side, when advised, can help draw attention to it.
+
+**Protect the weak shoulder.** Never lift or pull the person by the affected arm, and support it on a pillow when sitting.
+
+**Watch the tiredness.** Post-stroke fatigue is real and is not laziness. Rest between activities is part of the plan.
+
+**Look after the carers too.** Lifting and turning a family member strains backs and shoulders. Learning safe techniques protects everyone, and our guide to [physiotherapy for seniors at home](/blog/physiotherapy-for-seniors-home-visits-after-60) covers some of the practical side of home care.
+
+**Mood matters.** Low mood, frustration and tearfulness are common after a stroke and can slow recovery. Mention them to the doctor rather than assuming they will pass on their own.
+
+## When to call a doctor or emergency services
+
+**Call emergency services immediately** if there are new signs of stroke: sudden facial drooping, new weakness or numbness in an arm or leg, slurred or confused speech, sudden loss of vision, a severe sudden headache, or sudden loss of balance. The risk of another stroke is highest in the early period after the first, and time matters.
+
+**See a doctor promptly** for a swollen, warm or painful calf, chest pain or breathlessness, fever, a new fall, difficulty swallowing or coughing while eating, new confusion, or a red or broken area of skin that does not fade.
+
+## When to arrange home physiotherapy
+
+Consider professional physiotherapy at home if:
+
+- The person cannot travel to a clinic easily or safely
+- The family is unsure how to help them sit, stand or move safely
+- Progress seems to have stalled after the first few weeks
+- The affected shoulder has become painful or the arm and leg are getting stiffer
+- There has been a fall, or the family is worried about one
+
+Our [bedridden patient physiotherapy](/services/home-visit-physiotherapy/bedridden-patient-physiotherapy) and [home visit physiotherapy](/services/home-visit-physiotherapy) services bring assessment and treatment to your home across Borivali and nearby areas. Treatment is assessment-led exercise, functional training, family education and hands-on work where it helps — we do not offer needling or cupping.
+
+The **first consultation at our Borivali West clinic is free** — a full assessment with Dr. Shiva Jain Sangoi (PT), MPTh (Ortho), FIFA Diploma in Football Medicine, with over 10 years of practice and 8,000+ cases treated. For someone who cannot travel yet, home visits are available and are charged separately as they involve travel time; online consultations are a paid service. You can reach us through the [PhysioSthanak homepage](/) or visit us at Shop No. 14, Hari-Smruti Premises, SVP Road, opposite HDFC Bank, Borivali West.
+
+---
+
+*This article is for general information only and is not a substitute for professional assessment. Consult a qualified physiotherapist for advice specific to you.*`,
+    faqs: [
+      {
+        question: 'How soon after a stroke should physiotherapy start at home?',
+        answer:
+          'Rehabilitation usually begins in hospital, once the treating doctors consider the person medically stable, and it is generally best continued without a long gap after discharge. Many families find it helpful to arrange a physiotherapy assessment within the first few days at home, so that positioning, safe transfers and a daily routine are in place early. The exact timing should follow the treating doctor\'s advice.',
+      },
+      {
+        question: 'How long does stroke recovery take?',
+        answer:
+          'It varies widely from person to person. Research suggests that much of the movement recovery commonly happens in the first three to six months, often fastest in the early weeks, but many people continue to improve for a year or longer, particularly in walking, confidence and everyday tasks. The size and location of the stroke, general health and the amount of regular practice all play a part.',
+      },
+      {
+        question: 'Can family members do stroke exercises at home without a physiotherapist?',
+        answer:
+          'Families play a very important role, but it helps to be shown what to do first. Incorrect handling, especially pulling on a weak shoulder, can cause pain or injury, and some activities are not safe until balance has improved. A physiotherapist can assess the person, teach the family safe ways to help, and adjust the plan as recovery progresses.',
+      },
+      {
+        question: 'Is it normal for a stroke patient to feel very tired?',
+        answer:
+          'Yes. Fatigue is one of the most common problems after a stroke and can last for months. It is not laziness or lack of effort. Short, frequent activity sessions with rest in between often work better than long sessions. If tiredness is severe, sudden or comes with other new symptoms, mention it to the doctor.',
+      },
+    ],
+    relatedServices: ['neurological-physiotherapy', 'home-visit-physiotherapy', 'post-surgery-rehabilitation'],
+    relatedAreas: ['borivali-west'],
+  },
+  {
+    slug: 'back-pain-during-pregnancy-and-after-delivery',
+    title: 'Back Pain During Pregnancy and After Delivery — What Is Normal and When to Get Help',
+    metaTitle: 'Back Pain During Pregnancy & After Delivery | PhysioSthanak',
+    metaDescription:
+      'Back pain during pregnancy and after delivery: why it happens, how pelvic girdle pain differs, warning signs to know, and when to see a physio in Borivali.',
+    keywords: [
+      'back pain during pregnancy',
+      'back pain after delivery',
+      'postnatal back pain',
+      'pelvic girdle pain in pregnancy',
+      'lower back pain after C-section',
+      'pregnancy back pain physiotherapy',
+      'women\'s health physiotherapist Borivali',
+      'delivery ke baad kamar dard',
+    ],
+    publishDate: '2026-10-13',
+    author: 'Dr. Shiva Jain Sangoi (PT)',
+    authorCredentials: 'BPTh, MPTh (Ortho), FIFA Diploma in Football Medicine',
+    excerpt:
+      'Back pain is one of the most common complaints in pregnancy and in the months after a baby arrives, and many women are told it is simply part of the deal. It is common, but it is not something you have to quietly put up with. Here is why it happens, what is normal, and when to get help.',
+    readTime: '7 min read',
+    category: 'Guide',
+    content: `## "Every pregnant woman has back pain, na?"
+
+It is the sixth month. Getting up from the sofa takes planning, turning over in bed feels like a project, and standing in the kitchen for twenty minutes leaves the lower back aching. When you mention it, everyone — your mother, your mother-in-law, the neighbour — says the same thing: it is normal, it will go after the delivery.
+
+Then the baby arrives, and the back pain does not leave. Now it comes with feeding for hours, bending over the cot, lifting a baby who gets heavier every week, and very little sleep.
+
+**Back pain during pregnancy** and in the months after delivery is extremely common. Research suggests that around half of pregnant women experience some form of lower back or pelvic pain. But common does not mean you have to simply endure it. This guide explains why it happens, how ordinary back pain differs from pelvic girdle pain, the warning signs that need a doctor, and when a physiotherapist can help.
+
+## Why back pain is so common in pregnancy
+
+Several changes happen together, and each one adds a little load to the back and pelvis.
+
+**Hormonal changes.** During pregnancy the body produces hormones, including relaxin, that help the ligaments of the pelvis become more flexible in preparation for birth. That flexibility is useful, but it can also leave the joints of the pelvis and lower back a little less stable and more easily irritated.
+
+**A shifting centre of gravity.** As the baby grows, the bump moves your centre of gravity forward. Many women lean back to compensate, which increases the curve of the lower back and puts more load on the joints and muscles there.
+
+**Stretched abdominal muscles.** The tummy muscles lengthen and separate to make room for the baby, so they offer the spine less support than usual.
+
+**Weight gain, tiredness and daily life.** Normal pregnancy weight gain and poorer sleep mean the back has more to carry and less energy to do it with — and long commutes, low stools and stairs when the building lift is down all add up.
+
+## Lower back pain or pelvic girdle pain?
+
+Not all "back pain" in pregnancy is the same, and the difference matters for how it is managed.
+
+**Lower back pain** is usually felt across the lower back, above the waist and the buttocks. It often gets worse with long sitting or standing and eases with a change of position.
+
+**Pelvic girdle pain** is felt lower down — at the back of the pelvis over one or both buttocks, at the front over the pubic bone, or in the groin and inner thighs. It is commonly made worse by standing on one leg, climbing stairs, getting in and out of a car or auto, turning in bed, and walking for long. Some women notice a clicking or grinding at the front of the pelvis. The overview of [pelvic girdle pain](https://en.wikipedia.org/wiki/Pelvic_girdle_pain) explains this condition, which was previously often called symphysis pubis dysfunction (SPD).
+
+The two can occur together. A physiotherapist can usually tell them apart with a careful history and examination, without needing a scan.
+
+## Back pain after delivery
+
+For many women, back and pelvic pain settles within a few weeks to months after the birth. For others it continues, or starts for the first time once the baby is home. Common reasons include:
+
+**Feeding positions.** Hours a day spent hunched over the baby, often without proper support for the back or arms, commonly leads to upper and lower back pain and neck ache.
+
+**Lifting and carrying.** Lifting the baby out of a low cot, carrying the car seat or bucket, and bending to bathe the baby on the floor all load a back that is still recovering.
+
+**Recovering abdominal muscles.** The tummy muscles take time to regain their strength after pregnancy. Some women have a noticeable gap between the two sides of the abdominal muscles, called diastasis recti, which can be checked by a physiotherapist.
+
+**C-section recovery.** After a caesarean, the body is also healing from major abdominal surgery. Guarding the wound, moving awkwardly to protect it and spending more time in bed commonly leave the back stiff and sore. Our guide to [lower back pain in the morning](/blog/lower-back-pain-in-the-morning-causes-stiffness) covers why backs stiffen after long periods of rest.
+
+## What commonly helps
+
+This is general information, not a personal prescription. Always check with your obstetrician before starting any new exercise during or after pregnancy.
+
+**Change position often.** Most back pain in pregnancy is worse with staying in one position for long. Short, frequent changes between sitting, standing and walking help many women.
+
+**Support yourself in bed.** Lying on your side with a pillow between the knees, and sometimes one under the bump, is commonly suggested and often makes nights more comfortable. When turning over, keeping the knees together and rolling as one unit can reduce pelvic pain.
+
+**Set up feeding comfortably.** Bring the baby up to you with pillows rather than bending down to the baby, and support your back and arms. A few minutes spent setting up each feed can save hours of aching.
+
+**Lift smartly.** Bend at the knees, keep the baby close to your body, and avoid twisting while lifting. Raising the bathing and changing area to waist height, where possible, makes a real difference.
+
+**Stay gently active.** For most women with an uncomplicated pregnancy, research suggests that regular, appropriate activity helps with back pain and general wellbeing. What is appropriate depends on your pregnancy and should be agreed with your doctor.
+
+**Do not wait for it to "just pass".** Pelvic girdle pain in particular tends to do better when it is recognised and managed early rather than left until the third trimester.
+
+## Warning signs that need a doctor first
+
+**During pregnancy, contact your obstetrician or go to hospital promptly** if back pain comes with regular tightening or cramping in the abdomen, vaginal bleeding or a leak of fluid, fever or burning when passing urine, pain in the side or under the ribs, a sudden severe headache or swelling of the face and hands, or reduced movements of the baby. Back pain can sometimes be a sign of early labour or a kidney infection.
+
+**At any time, seek urgent medical care** for numbness around the groin or buttocks, new difficulty controlling the bladder or bowels, or weakness in the legs.
+
+**After delivery, see a doctor promptly** for a swollen, warm or painful calf, breathlessness or chest pain, fever, or a C-section wound that is red, hot, leaking or increasingly painful.
+
+## When to see a physiotherapist
+
+Consider an assessment if:
+
+- Back or pelvic pain is stopping you from walking, sleeping or managing daily tasks
+- You have pain at the front of the pelvis, in the groin, or when standing on one leg
+- Pain after delivery has not settled after six to eight weeks, or is getting worse
+- You notice a bulge or gap along the middle of your tummy
+- You are leaking urine when you cough, sneeze or lift, which is common but treatable
+- You want guidance on returning to exercise safely after the birth
+
+A women's health physiotherapist will listen to your history, look at how you move, sit, sleep and lift, and screen for signs that need a doctor. Our [prenatal physiotherapy](/services/womens-health-physiotherapy/prenatal-physiotherapy) and [postnatal rehabilitation](/services/womens-health-physiotherapy/postnatal-rehabilitation) pages explain how we approach each stage, and our wider [women's health physiotherapy](/services/womens-health-physiotherapy) service covers pelvic floor and abdominal recovery too. Many women feel more comfortable discussing these concerns with a female physiotherapist — our article on [why more women are choosing a lady physiotherapist](/blog/lady-physiotherapist-in-borivali-why-women-prefer-female-physio) explains why. Treatment is assessment-led exercise, education and gentle hands-on work where it helps — we do not offer needling or cupping.
+
+The **first consultation at our Borivali West clinic is free** — a full assessment with Dr. Shiva Jain Sangoi (PT), MPTh (Ortho), FIFA Diploma in Football Medicine, with over 10 years of practice and 8,000+ cases treated. If getting out with a newborn is difficult, home visits are available and are charged separately as they involve travel time; online consultations are a paid service. You can reach us through the [PhysioSthanak homepage](/) or visit us at Shop No. 14, Hari-Smruti Premises, SVP Road, opposite HDFC Bank, Borivali West.
+
+---
+
+*This article is for general information only and is not a substitute for professional assessment. Consult a qualified physiotherapist for advice specific to you, and always check with your obstetrician before starting exercise during or after pregnancy.*`,
+    faqs: [
+      {
+        question: 'Is back pain during pregnancy normal?',
+        answer:
+          'It is very common. Research suggests that around half of pregnant women have some lower back or pelvic pain, linked to hormonal changes, the growing bump shifting posture, stretched abdominal muscles and weight gain. Common does not mean you have to put up with it, though. A physiotherapist can often help, and back pain that comes with abdominal tightening, bleeding, fever or urinary symptoms should be checked by your obstetrician promptly.',
+      },
+      {
+        question: 'What is the difference between pregnancy back pain and pelvic girdle pain?',
+        answer:
+          'Lower back pain is usually felt across the lower back above the buttocks. Pelvic girdle pain is felt lower — over the buttocks, at the front over the pubic bone, or in the groin — and is often worse when climbing stairs, standing on one leg, turning in bed or getting in and out of a vehicle. The two can occur together, and a physiotherapist can usually tell them apart through examination.',
+      },
+      {
+        question: 'How long does back pain last after delivery?',
+        answer:
+          'For many women it settles within a few weeks to a few months after the birth. Feeding posture, lifting the baby, recovering abdominal muscles, C-section recovery and lack of sleep can keep it going. If pain has not improved after six to eight weeks, is getting worse, or is affecting daily life, it is worth getting assessed.',
+      },
+      {
+        question: 'Can I see a physiotherapist while I am pregnant?',
+        answer:
+          'Yes. Physiotherapy is commonly used to help with back and pelvic pain during pregnancy, using education, positioning advice, appropriate exercise and gentle hands-on techniques suited to pregnancy. Let your obstetrician know, and tell the physiotherapist how far along you are and about any pregnancy complications so that the approach can be adapted to you.',
+      },
+    ],
+    relatedServices: ['womens-health-physiotherapy', 'back-pain-physiotherapy', 'home-visit-physiotherapy'],
+    relatedAreas: ['borivali-west'],
+  },
 ];

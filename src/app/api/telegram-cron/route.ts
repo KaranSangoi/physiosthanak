@@ -621,9 +621,10 @@ function formatDailyDigest(
 function isDailyDigestTime(): boolean {
   const now = new Date();
   const istHour = new Date(now.getTime() + 5.5 * 60 * 60 * 1000).getUTCHours();
-  // Cron runs every 4 hours (0,4,8,12,16,20 UTC = 5:30,9:30,13:30,17:30,21:30,1:30 IST)
-  // Send daily digest on the 8 UTC run (1:30 PM IST — closest to 2 PM)
-  return istHour >= 13 && istHour < 17;
+  // vercel.json crons: 07:00, 07:30, 08:30, 10:30 UTC = 12:30, 13:00, 14:00,
+  // 16:00 IST. Exactly ONE of them (08:30 UTC = 14:00 IST) falls in this
+  // window, so the digest cannot double up even across cold starts.
+  return istHour === 14;
 }
 
 // ── GET handler ───────────────────────────────────────────
@@ -699,7 +700,13 @@ export async function GET(request: Request) {
   const istDate = new Date(now.getTime() + 5.5 * 60 * 60 * 1000);
   const today = istDate.toISOString().split('T')[0];
 
-  if (isDailyDigestTime() && today !== lastSentDate) {
+  // Only the Vercel cron's own call (Bearer header) may send the digest.
+  // Scheduled tasks trigger this route with ?secret= many times an afternoon,
+  // and `lastSentDate` lives in function memory that every cold start wipes —
+  // on Oct 8, 2026 that produced the same digest three times in two hours.
+  const isCronCall = !!cronSecret && authHeader === `Bearer ${cronSecret}`;
+
+  if (isCronCall && isDailyDigestTime() && today !== lastSentDate) {
     const [briefData, pipelineData] = await Promise.all([
       fetchDirectorsBrief(notionToken),
       fetchContentPipeline(notionToken),
@@ -710,6 +717,12 @@ export async function GET(request: Request) {
       await sendTelegram(fallback, TOPIC_SYSTEM);
       lastSentDate = today;
       results.dailyDigest = 'sent (fallback)';
+    } else if (!briefData || briefData.departments.length === 0) {
+      // The Brief's department table could not be parsed. Daily Ops already
+      // posts a full report at ~13:09 IST, so an empty "could not read" digest
+      // is pure noise — skip it rather than send it.
+      lastSentDate = today;
+      results.dailyDigest = 'skipped (brief unparsed; daily ops report covers it)';
     } else {
       const message = formatDailyDigest(briefData, pipelineData);
       const sent = await sendTelegram(message, TOPIC_REPORTS);
