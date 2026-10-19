@@ -8,6 +8,7 @@ import CTASection from '@/components/sections/CTASection';
 import MapSection from '@/components/sections/MapSection';
 import RelatedBlogPosts from '@/components/sections/RelatedBlogPosts';
 import PeopleAlsoAskSection from '@/components/sections/PeopleAlsoAskSection';
+import RelatedConditions from '@/components/sections/RelatedConditions';
 import Link from 'next/link';
 import { allServices, siteConfig } from '@/data';
 import {
@@ -169,6 +170,15 @@ export default async function ConditionPage({ params }: PageProps) {
 
       {/* Related Blog Posts */}
       <RelatedBlogPosts serviceSlug={category} />
+
+      {/* Related Conditions — internal links to sibling + rotated conditions */}
+      <RelatedConditions
+        categorySlug={category}
+        currentSlug={condition}
+        seed={condition}
+        heading="Related Conditions We Treat"
+        intro={`Pain rarely stays in one place. These conditions are often connected to ${conditionData.name.toLowerCase()} or share the same root causes.`}
+      />
 
       {/* CTA with Homepage Link */}
       <section className="section-padding bg-gradient-to-r from-primary to-primary-dark text-white">

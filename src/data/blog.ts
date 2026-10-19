@@ -3825,4 +3825,138 @@ The **first consultation at our Borivali West clinic is free** — a full assess
     relatedServices: ['womens-health-physiotherapy', 'back-pain-physiotherapy', 'home-visit-physiotherapy'],
     relatedAreas: ['borivali-west'],
   },
+  {
+    slug: 'stiff-neck-after-sleeping-wake-up-neck-pain',
+    title: 'Stiff Neck After Sleeping — Why You Wake Up Unable to Turn Your Head',
+    metaTitle: 'Stiff Neck After Sleeping? Causes & When to See a Physio',
+    metaDescription:
+      'Stiff neck after sleeping? Why you wake up unable to turn your head, what commonly helps, warning signs to know, and when to see a physio in Borivali West.',
+    keywords: [
+      'stiff neck after sleeping',
+      'neck pain after sleeping',
+      'woke up with stiff neck',
+      'cannot turn neck after sleeping',
+      'acute wry neck',
+      'neck catch in the morning',
+      'neck pain physiotherapist Borivali',
+      'subah uthte hi gardan mein dard',
+    ],
+    publishDate: '2026-10-16',
+    author: 'Dr. Shiva Jain Sangoi (PT)',
+    authorCredentials: 'BPTh, MPTh (Ortho), FIFA Diploma in Football Medicine',
+    excerpt:
+      'You went to bed fine and woke up unable to turn your head to one side. A stiff neck after sleeping is one of the most common reasons people search for a physiotherapist. Here is why it happens, what usually helps, the warning signs to know, and when to get it checked.',
+    readTime: '7 min read',
+    category: 'Guide',
+    content: `## "I just slept wrong"
+
+You went to bed perfectly fine. In the morning you try to look over your shoulder to check the time, and a sharp catch stops you halfway. Reversing the car now means turning your whole body.
+
+A **stiff neck after sleeping** is one of the most common neck complaints there is. Most people call it "sleeping wrong" or a "catch" in the neck. Clinicians often call it acute wry neck. The good news is that in most cases it settles on its own within a few days to a couple of weeks. The less good news is that a few habits can make it drag on, and a small number of neck problems that start this way need a doctor rather than a pillow change.
+
+## Why your neck stiffens overnight
+
+The neck is built for movement. Sleep is the one time those structures stay in a single position for hours, and that is usually where the trouble starts.
+
+**An awkward position held for a long time.** Sleeping on your stomach with the head turned fully to one side, falling asleep on the sofa with the head dropped forward, or dozing upright in a train or car can hold the neck near the end of its range for a long time. The small joints and muscles on one side get irritated, and the body responds with protective muscle spasm by morning.
+
+**The wrong pillow height.** A pillow that is too high bends the neck sideways or forward; one that is too flat lets it drop. Many people in Mumbai sleep on two stacked pillows out of habit, or on a thin one that has been flattened over years. Either can leave the neck out of line for the whole night.
+
+**A neck that was already tired.** A long day at a laptop, an evening scrolling the phone in bed, or carrying a heavy bag on one shoulder can leave the neck muscles fatigued before you even lie down. Our guide to [neck pain from phone use](/blog/neck-pain-from-phone-use-text-neck-headaches) explains how hours of looking down add load to the neck.
+
+**Cold air directly on the neck.** Many patients notice it after a night under an AC vent or a ceiling fan on full. Research on this is limited, but cold air on tired muscles may add to the stiffness for some people.
+
+**A small joint "locking".** In some people the pain comes from one of the small facet joints at the back of the neck becoming irritated. The pain is usually on one side, sharp at a particular point in the movement, and the neck may be held slightly turned or tilted. The overview of [torticollis](https://en.wikipedia.org/wiki/Torticollis) explains how a twisted or tilted neck posture can arise from several causes, most of them harmless and short-lived.
+
+## How it usually feels
+
+A typical morning stiff neck has a recognisable pattern:
+
+- Pain on one side of the neck, sometimes spreading towards the shoulder blade
+- Turning or tilting towards one side is limited and painful, while the other direction is easier
+- The head may be held slightly turned or tilted to protect the sore side
+- Pain is worst in the first hours of the morning and eases as you move during the day
+- No numbness, tingling or weakness in the arms
+
+If that matches what you feel, it is very likely a simple mechanical problem.
+
+## What commonly helps
+
+This is general information, not a personal prescription. If you are unsure or the pain is severe, get assessed before trying anything.
+
+**Keep it moving, gently.** The instinct is to hold the neck completely still. For most simple stiff necks, research suggests that gentle movement within comfort helps more than rest. Slowly turning and tilting the head as far as is comfortable, a few times every hour, tells the protective muscles that it is safe to relax. Do not force through sharp pain.
+
+**Warmth.** Many people find a warm shower or a warm compress on the sore side eases the muscle spasm, especially in the morning.
+
+**Avoid long static positions.** An hour at the laptop or on the phone without moving often makes it worse. Short breaks to move the neck and shoulders help.
+
+**Look at your sleep set-up.** Most people are comfortable with a single pillow that fills the gap between the shoulder and head when lying on the side, and a slightly lower one when lying on the back. Sleeping on the stomach with the head turned is the position most often linked with waking up stiff.
+
+**Do not let anyone crack or yank it.** Pulling the head hard or having someone "set" it with a jerk can make a sore neck much worse and, rarely, be dangerous. Hands-on treatment should only be done after a proper assessment by a qualified professional.
+
+**Give it time.** Many simple stiff necks improve noticeably within two to three days and settle within one to two weeks.
+
+## One-off stiff neck or something longer-term?
+
+Some people wake up stiff once a year. Others wake up stiff every few weeks, or never fully lose the ache in between. That second pattern is worth paying attention to.
+
+Frequent or long-lasting morning neck stiffness, particularly after the age of 40, can be linked to age-related changes in the neck, often called cervical spondylosis. Recurring stiffness can also come with headaches that start at the base of the skull. These benefit from a proper assessment rather than waiting for each episode to pass. Our pages on [cervical spondylosis](/services/neck-pain-physiotherapy/cervical-spondylosis) and [headache and migraine physiotherapy](/services/neck-pain-physiotherapy/headache-migraine-physiotherapy) explain how we approach these. If your lower back is also stiff every morning, our guide to [lower back pain in the morning](/blog/lower-back-pain-in-the-morning-causes-stiffness) covers why the spine stiffens overnight.
+
+## Warning signs that need a doctor first
+
+Most stiff necks are harmless, but **seek medical care promptly** if neck pain or stiffness comes with:
+
+- Fever, a severe headache, or discomfort looking at light, especially if you feel unwell or drowsy
+- Numbness, tingling or weakness spreading into the arm or hand
+- Difficulty walking, clumsiness of the hands, or problems with balance
+- Dizziness, double vision, slurred speech, difficulty swallowing or a drooping face
+- A recent fall, accident or blow to the head or neck
+- Pain that is severe and constant, including at night, and does not change with position
+- Unexplained weight loss, or a history of cancer
+
+A stiff neck in a child, especially with fever or a rash, should always be seen by a doctor the same day.
+
+## When to see a physiotherapist
+
+Consider an assessment if:
+
+- The stiffness has not clearly improved after three or four days
+- It has not settled after two weeks
+- You keep waking up with a stiff neck every few weeks
+- The pain is spreading to the shoulder blade or causing headaches
+- You cannot work, drive or sleep comfortably
+- You want to understand what is triggering it so it stops coming back
+
+A physiotherapist will ask about your sleep, work and screen habits, examine how the neck and upper back move, test the nerves to the arms, and screen for the warning signs above. From there, treatment usually combines gentle hands-on techniques where they help, a graded movement plan, and practical changes to pillow, desk and phone habits. Our [neck pain and cervical physiotherapy](/services/neck-pain-physiotherapy) service covers the full range of neck problems, from a one-off morning catch to long-standing stiffness. We do not offer needling or cupping.
+
+The **first consultation at our Borivali West clinic is free** — a full assessment with Dr. Shiva Jain Sangoi (PT), MPTh (Ortho), FIFA Diploma in Football Medicine, with over 10 years of practice and 8,000+ cases treated. If you cannot travel, home visits are available and are charged separately as they involve travel time; online consultations are a paid service. You can reach us through the [PhysioSthanak homepage](/) or visit us at Shop No. 14, Hari-Smruti Premises, SVP Road, opposite HDFC Bank, Borivali West.
+
+---
+
+*This article is for general information only and is not a substitute for professional assessment. Consult a qualified physiotherapist for advice specific to you.*`,
+    faqs: [
+      {
+        question: 'Why do I wake up with a stiff neck?',
+        answer:
+          'Most commonly because the neck was held in an awkward position for hours during sleep — for example, lying on the stomach with the head turned, using a pillow that is too high or too flat, or dozing with the head dropped forward. A neck that was already tired from screen use, and cold air from an AC or fan, may add to it. The small joints and muscles on one side get irritated, and protective muscle spasm makes turning painful by morning.',
+      },
+      {
+        question: 'How long does a stiff neck from sleeping last?',
+        answer:
+          'Many simple stiff necks improve noticeably within two to three days and settle within one to two weeks. Gentle movement within comfort, warmth and avoiding long static positions commonly help. If it has not clearly improved after three or four days, has not settled in two weeks, or keeps coming back, it is worth getting assessed.',
+      },
+      {
+        question: 'Should I rest my neck completely or keep moving it?',
+        answer:
+          'For most simple stiff necks, research suggests that gentle movement within a comfortable range helps more than holding the neck completely still. Move slowly and do not force through sharp pain. Avoid having anyone forcefully crack or pull the neck. If the pain is severe, or comes with numbness, weakness, fever or dizziness, see a doctor before doing anything.',
+      },
+      {
+        question: 'When is a stiff neck serious?',
+        answer:
+          'Seek medical care promptly if a stiff neck comes with fever, a severe headache or sensitivity to light, numbness or weakness in the arms, problems with walking or balance, dizziness, double vision or slurred speech, a recent fall or accident, or constant severe pain that does not change with position. A stiff neck with fever in a child should be seen by a doctor the same day.',
+      },
+    ],
+    relatedServices: ['neck-pain-physiotherapy', 'physiotherapy', 'orthopedic-physiotherapy'],
+    relatedAreas: ['borivali-west'],
+  },
 ];

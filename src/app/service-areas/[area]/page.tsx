@@ -7,6 +7,7 @@ import FAQSection from '@/components/sections/FAQSection';
 import CTASection from '@/components/sections/CTASection';
 import MapSection from '@/components/sections/MapSection';
 import LocalityBlogPosts from '@/components/sections/LocalityBlogPosts';
+import RelatedConditions from '@/components/sections/RelatedConditions';
 import Link from 'next/link';
 import { MapPin, ArrowRight } from 'lucide-react';
 import { serviceAreas, siteConfig } from '@/data';
@@ -182,6 +183,12 @@ export default async function AreaPage({ params }: PageProps) {
 
       {/* BLOG LINKS - locality pages link 3 rotated articles (indexing lever, Oct 2026) */}
       <LocalityBlogPosts seed={areaData.slug} areaName={areaData.name} />
+      <RelatedConditions
+        seed={`conditions-${areaData.slug}`}
+        extra={4}
+        heading={`Conditions We Treat for ${areaData.name} Patients`}
+        intro={`A few of the problems ${areaData.name} residents visit us for most. Every page explains the cause, the treatment and what recovery looks like.`}
+      />
 
       {/* MAP SECTION - per SOP: 50+ word description with primary keyword, location-specific map */}
       <MapSection

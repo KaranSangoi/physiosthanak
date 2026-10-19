@@ -24,6 +24,7 @@ const services = [
   { name: "Women's Health", href: '/services/womens-health-physiotherapy' },
   { name: 'Hand & Wrist Therapy', href: '/services/hand-physiotherapy' },
   { name: 'Online Physiotherapy', href: '/services/online-physiotherapy' },
+  { name: 'All Conditions A–Z', href: '/conditions' },
 ];
 
 const serviceAreas = [

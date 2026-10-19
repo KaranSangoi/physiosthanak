@@ -111,9 +111,16 @@ export default async function RootLayout({
         <meta name="theme-color" content="#14507c" />
       </head>
       <body className={`${poppins.variable} ${inter.variable} font-sans antialiased`}>
-        {/* Global Entity Schema — Organization + Person for AI knowledge graphs */}
-        <script
+        {/* Global Entity Schema — Organization + Person for AI knowledge graphs.
+            Rendered through next/script with a fixed id so it is emitted exactly
+            once per page: as a plain inline <script> in <body> it was duplicated
+            client-side on /contact, and Google Search Console flagged "Review has
+            multiple aggregate ratings" (detected Jun 7, 2026) because the same
+            #organization entity carried two AggregateRating nodes. */}
+        <Script
+          id="physiosthanak-entity-schema"
           type="application/ld+json"
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',

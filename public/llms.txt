@@ -51,6 +51,7 @@ Dr. Shiva Jain Sangoi
 
 - [Home](/)
 - [All Services](/services)
+- [All Conditions We Treat, A–Z](/conditions)
 - [Service Areas](/service-areas)
 - [Blog](/blog)
 - [Contact](/contact)
