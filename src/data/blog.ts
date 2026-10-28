@@ -4237,4 +4237,145 @@ The **first consultation at our Borivali West clinic is free**, with Dr. Shiva J
     relatedServices: ['hand-physiotherapy', 'orthopedic-physiotherapy', 'neck-pain-physiotherapy'],
     relatedAreas: ['borivali-west'],
   },
+  {
+    slug: 'side-hip-pain-at-night-lying-on-one-side-causes-physio',
+    title: 'Pain on the Side of Your Hip at Night? Why Lying on One Side Hurts and When to See a Physio',
+    metaTitle: 'Side Hip Pain at Night: Causes and Physio Guide | PhysioSthanak',
+    metaDescription:
+      'Side hip pain at night, worse lying on one side or climbing stairs? Learn the common causes, what to avoid and when to see a physio in Borivali West.',
+    keywords: [
+      'side hip pain at night',
+      'hip pain when lying on side',
+      'outer hip pain',
+      'greater trochanteric pain syndrome',
+      'gluteal tendinopathy',
+      'hip bursitis symptoms',
+      'hip pain physiotherapy Borivali',
+      'hip pain climbing stairs',
+    ],
+    publishDate: '2026-10-27',
+    author: 'Dr. Shiva Jain Sangoi (PT)',
+    authorCredentials: 'BPTh, MPTh (Ortho), FIFA Diploma in Football Medicine',
+    excerpt:
+      'A sore spot on the outer hip that makes lying on one side impossible is very common, especially in women over 40 and in people who sit a lot. Here is what usually causes it, how it differs from a true hip joint problem, and when to get it assessed.',
+    readTime: '7 min read',
+    category: 'Guide',
+    content: `## Why does the side of my hip hurt at night?
+
+Many people describe the same pattern: you lie on your side, and within minutes a deep ache on the bony point of the outer hip wakes you up. Rolling to the other side only moves the problem. If this sounds familiar, you may be dealing with **side hip pain at night**, most often coming from the tendons and soft tissue around the outer hip rather than from the hip joint itself.
+
+This guide explains the usual causes, how to tell outer hip pain from a joint problem, what commonly makes it worse and when to see a physiotherapist. It is general information, not a diagnosis.
+
+## What is happening on the outer hip?
+
+The bony point you feel on the side of your hip is called the greater trochanter. Several tendons from the buttock muscles (the gluteus medius and gluteus minimus) attach there, along with fluid-filled cushions called bursae. When these tendons are overloaded or compressed, the area becomes sore and tender to touch.
+
+Doctors and physios have used different names for this over the years: **greater trochanteric pain syndrome**, **gluteal tendinopathy** and **trochanteric bursitis**. Research suggests that in many cases the tendons, not only the bursa, are the main source of pain, which is one reason treatment today often focuses on gradual loading rather than on rest alone. The [Wikipedia overview of greater trochanteric pain syndrome](https://en.wikipedia.org/wiki/Greater_trochanteric_pain_syndrome) gives a good plain-language summary.
+
+## Typical symptoms
+
+Outer hip tendon pain commonly shows up as:
+
+- An ache or sharp tenderness on the bony point of the outer hip
+- Pain when lying on the affected side, and often on the other side too, because the upper leg pulls across the body and compresses the tendons
+- Pain when climbing stairs, getting up from a low chair or after sitting with legs crossed
+- Pain after walking, a long standing spell or a new exercise routine
+- Tenderness when you press on the spot, sometimes spreading down the outer thigh
+
+Pain is usually on one side, but it can occur on both. It often settles for a short while and then returns.
+
+## Why do desk workers and women over 40 get it often?
+
+Research suggests it is more common in women, especially after the mid-forties, and in people who are less active or who sit for long hours. Sitting keeps the buttock muscles switched off and the hip in a bent position, so when you suddenly walk more, take stairs or start a gym plan, the tendons can be overloaded. Hormonal changes around menopause are thought to play a part in how tendons cope with load, though the science is still developing.
+
+Other common contributors include:
+
+- **Sleeping on your side** with the top leg falling forward over the bottom leg
+- **Standing with weight on one leg**, hanging on one hip
+- **Crossing legs** for long periods
+- **A sudden jump in walking, running or stair climbing**
+- **Weak hip and buttock muscles**, or a stiff lower back that makes the hip work harder
+- **Differences in leg length or foot mechanics** in some people
+
+In Mumbai, local train commuting, long standing in crowded compartments and then sitting for hours at a desk often combine to produce exactly this picture.
+
+## Is it the hip joint, the back or the outer tendons?
+
+Pain around the hip can come from several places, so location is a useful clue. These are rough guides only.
+
+- **Outer hip tendons:** pain on the side of the hip, tender to touch, worse lying on that side
+- **True hip joint:** pain in the groin or deep front of the hip, sometimes down the inner thigh, with stiffness putting on socks or shoes. Our guide to [joint pain and arthritis](/services/orthopedic-physiotherapy/joint-pain) explains the wear-and-tear side
+- **Lower back or nerve:** pain in the buttock that may travel down the leg, sometimes with tingling. Read more about [sciatica](/blog/sciatica-pain-relief-causes-warning-signs-physiotherapy) and [lower back pain](/services/back-pain-physiotherapy/lower-back-pain)
+
+It is also possible to have more than one problem at once, which is why an assessment is better than guessing.
+
+## What commonly helps in the early stage
+
+This is general information, not a personal prescription. Many people find the following sensible while waiting for an assessment:
+
+- **Support the top leg** with a pillow between the knees when lying on your side, so the leg does not fall across the body
+- **Try lying on your back** or on the pain-free side with a pillow support
+- **Avoid standing with your weight hanging on one hip**, and avoid sitting with legs crossed for long
+- **Do not stretch the outer hip aggressively**, because pulling on irritated tendons can add compression
+- **Keep walking at an easy pace** rather than stopping all movement, and reduce stairs only if they clearly flare the pain
+- **Do not keep pressing or rolling the sore spot hard**, as this can irritate it further
+
+Gentle strengthening for the buttock muscles is often part of recovery, but the right choice and amount depend on what the assessment finds, so it is best guided by a professional.
+
+## What does not work well
+
+Rest alone commonly gives short relief, but the pain tends to return when you go back to normal activity. Heavy deep massage on the sore point can feel good for a few minutes and leave it sorer the next day. Repeated anti-inflammatory tablets without knowing the cause are also not a long-term plan; discuss any medicine with your doctor or pharmacist. Our post on [physiotherapy myths in India](/blog/physiotherapy-myths-in-india-fact-vs-fiction) covers why "just rest it" is not always the answer.
+
+## Warning signs: see a doctor promptly
+
+Get medical advice soon if:
+
+- You had a fall or injury and cannot put weight on the leg
+- The hip is hot, red or swollen, or you have fever with the pain
+- Pain is constant, severe and not changed by position, especially if it is unexplained
+- You have unexplained weight loss, a history of cancer or night pain that does not ease at all with movement
+- There is numbness around the groin or inner thighs, new bladder or bowel changes, or progressive leg weakness
+- You are older, have osteoporosis and pain started after even a small fall
+
+## When to see a physiotherapist
+
+Consider an assessment if:
+
+- Night pain on the side of the hip has lasted more than two to three weeks
+- It stops you from sleeping on either side
+- Stairs, walking or getting up from a chair are becoming difficult
+- You are unsure whether the pain comes from the hip, the back or the tendons
+
+A physiotherapist will ask about your sleep, work, sitting and walking routine, check hip movement, strength and balance, examine the back and hip together, and look for signs that you need a scan or a doctor. Treatment commonly combines advice on positions and daily load, gradual strengthening and, where appropriate, work on the back and hips. We do not offer needling or cupping. See our [orthopaedic physiotherapy](/services/orthopedic-physiotherapy) and [home visit physiotherapy](/services/home-visit-physiotherapy) pages for how we work.
+
+The **first consultation at our Borivali West clinic is free**, with Dr. Shiva Jain Sangoi (PT), MPTh (Ortho), FIFA Diploma in Football Medicine, with over 10 years of practice and 8,000+ cases treated. Home visits are available and charged separately; online consultations are a paid service. Start at the [PhysioSthanak homepage](/) or visit us at Shop No. 14, Hari-Smruti Premises, SVP Road, opposite HDFC Bank, Borivali West.
+
+---
+
+*This article is for general information only and is not a substitute for professional assessment. Consult a qualified physiotherapist for advice specific to you.*`,
+    faqs: [
+      {
+        question: 'Why does my hip hurt more at night when I lie on my side?',
+        answer:
+          'Lying on your side compresses the tendons and soft tissue over the bony point of the outer hip. If the leg on top falls forward across the body, it can pull those tendons tight against the bone as well. This is why people with outer hip tendon pain often cannot lie comfortably on either side.',
+      },
+      {
+        question: 'Is side hip pain the same as hip arthritis?',
+        answer:
+          'Not usually. Pain on the outer point of the hip that is tender to touch is more often from the tendons and bursae around it. Arthritis of the hip joint tends to cause groin or deep front-of-hip pain with stiffness. Both can occur together, so an assessment helps sort out which is which.',
+      },
+      {
+        question: 'Should I rest or keep walking with outer hip pain?',
+        answer:
+          'Complete rest commonly gives only short relief. Many people find that easy walking and avoiding the positions that clearly flare the pain, such as crossing legs or standing on one hip, works better. If walking makes the pain steadily worse, get it assessed.',
+      },
+      {
+        question: 'How long does outer hip tendon pain take to settle?',
+        answer:
+          'It varies. Mild, recent cases may settle in a few weeks once the aggravating habits change, while long-standing tendon pain can take a few months of gradual loading. Research suggests that a structured, progressive approach tends to do better than rest or a single treatment.',
+      },
+    ],
+    relatedServices: ['orthopedic-physiotherapy', 'back-pain-physiotherapy', 'home-visit-physiotherapy'],
+    relatedAreas: ['borivali-west'],
+  },
 ];
