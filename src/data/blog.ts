@@ -4378,4 +4378,137 @@ The **first consultation at our Borivali West clinic is free**, with Dr. Shiva J
     relatedServices: ['orthopedic-physiotherapy', 'back-pain-physiotherapy', 'home-visit-physiotherapy'],
     relatedAreas: ['borivali-west'],
   },
+  {
+    slug: 'acl-tear-symptoms-knee-pop-swelling-giving-way',
+    title: 'ACL Tear Symptoms — The Knee Pop, Swelling and Giving Way Explained',
+    metaTitle: 'ACL Tear Symptoms: Pop, Swelling, Giving Way | PhysioSthanak',
+    metaDescription:
+      'ACL tear symptoms explained: the pop, swelling and knee giving way, how it differs from a sprain or meniscus tear, and when to see a physio in Borivali.',
+    keywords: [
+      'ACL tear symptoms',
+      'ACL injury symptoms',
+      'knee popped and swelled',
+      'knee giving way',
+      'ACL tear vs meniscus tear',
+      'can you walk with a torn ACL',
+      'ACL physiotherapy Borivali',
+      'ligament injury knee',
+    ],
+    publishDate: '2026-10-30',
+    author: 'Dr. Shiva Jain Sangoi (PT)',
+    authorCredentials: 'BPTh, MPTh (Ortho), FIFA Diploma in Football Medicine',
+    excerpt:
+      'A twist on the football turf or badminton court, a pop inside the knee and swelling within hours: these are classic warning signs of an ACL injury. Here is what the symptoms mean, what else they could be and when to get the knee checked.',
+    readTime: '7 min read',
+    category: 'Guide',
+    content: `## What does an ACL tear feel like?
+
+You plant your foot to change direction during a weekend football game, land awkwardly after a jump in badminton, or slip on a wet Mumbai pavement. The knee twists, you feel or even hear a pop, and within a few hours the knee has swollen up. These are some of the most typical **ACL tear symptoms**, and they deserve a proper assessment rather than a "let it rest and see" approach.
+
+This guide explains what the ACL is, the common signs of an injury, how it differs from other knee problems and when to see a physiotherapist. It is general information, not a diagnosis.
+
+## What is the ACL?
+
+The anterior cruciate ligament (ACL) is a strong band inside the knee that connects the thigh bone to the shin bone. It stops the shin from sliding too far forward and helps control twisting. You lean on it every time you cut, pivot, land or stop suddenly. The [Wikipedia overview of anterior cruciate ligament injury](https://en.wikipedia.org/wiki/Anterior_cruciate_ligament_injury) gives a good plain-language summary of the anatomy.
+
+Most ACL injuries happen **without any contact**: a sudden change of direction, a jump landing with the knee falling inward, or a quick stop. Football, badminton, basketball, kabaddi, skiing and even dance forms with fast turns are common settings. Research suggests women and girls who play pivoting sports have a higher risk than men, partly due to differences in landing mechanics and muscle control.
+
+## Common ACL tear symptoms
+
+Not everyone has all of these, but many people describe:
+
+- **A pop** felt or heard at the moment of injury
+- **Rapid swelling**, often within the first few hours, because bleeding inside the joint fills it up
+- **Difficulty continuing to play** — most people have to stop
+- **A feeling of the knee "giving way"** or shifting when turning, pivoting or going down stairs
+- **Loss of full movement** — the knee may not straighten or bend fully in the first days
+- **Pain deep inside the knee**, though in some people pain settles surprisingly quickly
+
+That last point catches many people out. Once the first swelling eases, the knee can feel almost normal for straight-line walking. The instability usually shows up later, when you twist or try to return to sport.
+
+## Can you walk with a torn ACL?
+
+Often, yes. Many people walk within days of an ACL tear, which is why it is easy to assume it was "just a sprain". Walking in a straight line places little demand on the ACL. The problem appears with turning, sudden stops or uneven ground, where the knee can buckle. Repeated giving-way episodes can damage the cartilage and meniscus over time, which is why getting a clear answer early matters.
+
+## Is it an ACL tear, a sprain or a meniscus tear?
+
+Knee injuries overlap, and more than one structure can be hurt at once. Rough guides only:
+
+- **ACL injury:** twisting or landing injury, a pop, swelling within hours, later giving way when pivoting
+- **Meniscus tear:** twisting injury, swelling that builds more slowly (often overnight), catching, clicking or locking, pain along the joint line
+- **Collateral ligament sprain (MCL/LCL):** pain on the inner or outer side of the knee, often after a blow from the side; usually less swelling inside the joint
+- **Kneecap problems:** pain at the front of the knee, sometimes after the kneecap shifts out of place
+
+Our [ligament injury treatment](/services/sports-physiotherapy/ligament-injury-treatment) page explains how knee sprains are managed, and our guide on [knee pain when climbing stairs](/blog/knee-pain-climbing-stairs-causes-treatment) covers the front-of-knee problems that are often confused with ligament injuries.
+
+## What commonly helps in the first few days
+
+This is general information, not a personal prescription. Many people find the following sensible while waiting to be assessed:
+
+- **Stop playing** — trying to "run it off" risks further damage
+- **Protect the knee** and avoid twisting, pivoting and deep squats
+- **Use ice and elevation** for comfort and to help control swelling
+- **Keep gently moving the knee** within a comfortable range rather than holding it completely still for days
+- **Use support** such as crutches if walking is painful or the knee feels unstable
+- **Avoid hard massage or forceful local manipulation** on a freshly swollen knee, even if someone tells you the "nas chadh gayi" — this can add to the irritation
+
+Discuss any pain medicine with your doctor or pharmacist.
+
+## Warning signs: see a doctor promptly
+
+Get medical advice soon if:
+
+- You cannot put any weight on the leg
+- The knee is **locked** and will not straighten
+- There is a visible deformity, or the kneecap appears out of place
+- The calf becomes swollen, hot and painful, or you notice numbness or a cold foot
+- Swelling is large and builds within minutes, or you have fever with a hot, red knee
+
+## Does every ACL tear need surgery?
+
+Not always. Whether surgery is advised depends on your age, the sports you want to return to, how unstable the knee feels and whether other structures are damaged. Some people manage well with structured rehabilitation alone; others, especially those returning to pivoting sports, may be advised to have a reconstruction. This is a decision to make with an orthopaedic surgeon, and a physiotherapist can help you understand your options and prepare the knee.
+
+Either way, rehabilitation is central. Research suggests that working on swelling, full knee straightening and quadriceps strength **before** surgery is linked to smoother recovery afterwards. Our [ACL rehabilitation](/services/sports-physiotherapy/acl-rehabilitation) page explains how we support patients before and after surgery, and how return-to-sport decisions are usually made in stages rather than by the calendar alone.
+
+## When to see a physiotherapist
+
+Consider an assessment if:
+
+- You twisted your knee, felt a pop and it swelled the same day
+- Your knee gives way when turning or going down stairs, even weeks after an injury
+- You are unsure whether you have a sprain, a meniscus problem or a ligament tear
+- You have been told you need ACL surgery and want to prepare the knee, or you have had surgery and need structured rehab
+
+A physiotherapist will ask how the injury happened, check swelling, movement, strength and stability, perform gentle ligament tests and look for signs that you need a scan or a surgeon's opinion. Treatment commonly combines swelling control, restoring movement, progressive strengthening, balance work and sport-specific training. We do not offer needling or cupping. See our [sports physiotherapy](/services/sports-physiotherapy) and [post-surgery rehabilitation](/services/post-surgery-rehabilitation) pages for how we work.
+
+The **first consultation at our Borivali West clinic is free**, with Dr. Shiva Jain Sangoi (PT), MPTh (Ortho), FIFA Diploma in Football Medicine, with over 10 years of practice and 8,000+ cases treated. Home visits are available and charged separately; online consultations are a paid service. Start at the [PhysioSthanak homepage](/) or visit us at Shop No. 14, Hari-Smruti Premises, SVP Road, opposite HDFC Bank, Borivali West.
+
+---
+
+*This article is for general information only and is not a substitute for professional assessment. Consult a qualified physiotherapist for advice specific to you.*`,
+    faqs: [
+      {
+        question: 'What are the first signs of an ACL tear?',
+        answer:
+          'Many people feel or hear a pop at the moment of injury, usually during a twist, sudden stop or jump landing. The knee commonly swells within a few hours, and most people cannot continue playing. Later, the knee may feel unstable or give way when turning.',
+      },
+      {
+        question: 'Can I walk if I have torn my ACL?',
+        answer:
+          'Often yes. Walking in a straight line places little demand on the ACL, so many people walk within days. The instability usually shows up with turning, pivoting or uneven ground. Being able to walk does not rule out a tear, so get the knee assessed if it swelled quickly after a twisting injury.',
+      },
+      {
+        question: 'How is an ACL tear different from a meniscus tear?',
+        answer:
+          'Both can happen with a twisting injury, and they often occur together. An ACL tear typically causes a pop and swelling within hours, followed by giving way. A meniscus tear more often causes slower swelling, joint-line pain, catching or locking. A physiotherapist or doctor can examine the knee and advise if a scan is needed.',
+      },
+      {
+        question: 'Do all ACL tears need surgery?',
+        answer:
+          'No. The decision depends on age, activity goals, how unstable the knee feels and whether other parts of the knee are injured. Some people do well with structured rehabilitation alone, while others are advised reconstruction. Rehabilitation is important in both cases, before and after any surgery.',
+      },
+    ],
+    relatedServices: ['sports-physiotherapy', 'post-surgery-rehabilitation', 'orthopedic-physiotherapy'],
+    relatedAreas: ['borivali-west'],
+  },
 ];
