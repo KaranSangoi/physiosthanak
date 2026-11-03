@@ -4511,4 +4511,134 @@ The **first consultation at our Borivali West clinic is free**, with Dr. Shiva J
     relatedServices: ['sports-physiotherapy', 'post-surgery-rehabilitation', 'orthopedic-physiotherapy'],
     relatedAreas: ['borivali-west'],
   },
+  {
+    slug: 'hip-replacement-recovery-what-to-expect-first-three-months',
+    title: 'Hip Replacement Recovery — What to Expect in the First Three Months',
+    metaTitle: 'Hip Replacement Recovery: First 3 Months | PhysioSthanak',
+    metaDescription:
+      'Hip replacement recovery explained: first days, walking, hip precautions, stairs, driving and warning signs, plus when to start physiotherapy in Borivali.',
+    keywords: [
+      'hip replacement recovery',
+      'hip replacement recovery time',
+      'physiotherapy after hip replacement',
+      'hip replacement precautions',
+      'walking after hip replacement',
+      'THR rehabilitation',
+      'hip replacement physiotherapy Borivali',
+      'post surgery physiotherapy at home Mumbai',
+    ],
+    publishDate: '2026-11-03',
+    author: 'Dr. Shiva Jain Sangoi (PT)',
+    authorCredentials: 'BPTh, MPTh (Ortho), FIFA Diploma in Football Medicine',
+    excerpt:
+      'A hip replacement gives most people a new start, but the first three months decide how smoothly it goes. Here is what recovery commonly looks like, which habits protect the new hip, and which warning signs need a call to your surgeon.',
+    readTime: '7 min read',
+    category: 'Guide',
+    content: `## What does hip replacement recovery look like?
+
+Your surgeon has told you the hip needs replacing, or the operation is already done, and the questions start immediately. When will I walk without support? When can I use the Indian toilet, climb the stairs in my building, sit cross-legged or drive? **Hip replacement recovery** is a gradual process, and most of the progress happens in the first three months. This guide explains what the stages commonly look like and when physiotherapy fits in. It is general information, not advice for your specific case, because your surgeon's instructions always come first.
+
+## Why the hip gets replaced
+
+The hip is a ball-and-socket joint. Over the years, wear of the smooth cartilage (osteoarthritis), a fracture of the thigh bone's neck after a fall, or loss of blood supply to the hip bone can make every step painful. When medicines and rehabilitation no longer give enough relief, surgeons replace the damaged surfaces with an artificial joint. The [Wikipedia overview of hip replacement](https://en.wikipedia.org/wiki/Hip_replacement) explains the types of implants and approaches in plain language.
+
+Hip replacement is common in older adults, but it is also done in people in their forties and fifties with severe arthritis or injury. Recovery speed varies with age, general health, strength before surgery, the surgical approach and how closely the plan is followed.
+
+## The first days in hospital
+
+Most patients are encouraged to get out of bed early, often within a day of surgery, with a nurse or physiotherapist helping. A walker or crutches are commonly used at first. Early movement is linked to lower risk of blood clots, chest problems and stiffness, and many patients find that standing and taking a few steps is easier than they feared.
+
+In these first days, a physiotherapist commonly helps with:
+
+- Getting in and out of bed safely
+- Standing up and walking short distances with a walker
+- Learning the **movement precautions** your surgeon wants you to follow
+- Gentle ankle and leg movements in bed to help circulation
+
+## Hip precautions: why they matter
+
+Depending on the surgical approach, your surgeon may ask you to avoid certain positions for the first weeks, because the new joint is more vulnerable to slipping out of place while the tissues heal. Commonly mentioned precautions include not bending the hip very deeply, not crossing the legs and not twisting the body over a fixed foot. Your surgeon will tell you exactly which ones apply to you and for how long. Do not rely on a neighbour's or a relative's instructions from their own operation, because approaches differ.
+
+This is where everyday Indian life needs some planning:
+
+- **Toilet:** a low Indian-style toilet usually means deep hip bending. Many patients use a raised seat or commode during the early weeks if their surgeon advises it.
+- **Sitting on the floor:** cross-legged sitting for puja or meals is commonly restricted early on. A firm, higher chair with arms makes sitting down and standing up easier.
+- **Bed height:** a very low bed or soft sagging mattress makes getting up harder.
+- **Footwear and mats:** slippers that slide, loose rugs and wet bathroom floors are fall risks. A fall in the first months is the last thing a new hip needs.
+
+## Weeks 1 to 6: getting moving at home
+
+After discharge, the focus is on safe walking, regaining confidence and keeping swelling and stiffness in check. Many people find that walking short distances several times a day suits them better than one long walk. Pain and swelling around the thigh are common and usually improve gradually, but a swollen, hot, painful calf needs urgent medical attention (see warning signs below).
+
+Typical goals physiotherapists work towards in this period include:
+
+- Walking safely indoors with a walker or sticks, and then reducing support when the surgeon and physiotherapist agree
+- Getting in and out of bed, chair and car safely
+- Managing stairs with a safe technique and a rail
+- Waking up the thigh and buttock muscles that become weak before and after surgery
+
+The exact exercises, number of repetitions and timeline must come from your surgical team and physiotherapist after assessing you. Avoid copying routines from the internet.
+
+## Weeks 6 to 12: building strength and normal walking
+
+By this stage, many patients are walking with less support and notice the pain from the original arthritis has gone. This is also when it is tempting to "do too much" because you feel good. Research suggests that a steady increase in activity, with strengthening for the hip, thigh and core, supports a better walking pattern. A limp that lingers is common when the hip muscles are still weak, and it can often be improved with targeted work.
+
+Over this period your surgeon may relax some precautions and clear you for activities like longer walks, and later cycling on a stationary bike or swimming once the wound has healed. Return to driving, climbing a full flight of stairs without fear and sitting on the floor are all individual decisions. Ask your surgeon before you attempt them.
+
+## What slows recovery
+
+Some patterns that physiotherapists commonly see:
+
+- **Weak muscles before surgery.** People who have avoided walking for months because of pain often begin recovery with less strength. Strengthening before surgery, when possible, is linked to smoother recovery.
+- **Staying in bed or on the sofa too long.** Too little movement leads to stiffness and weakness.
+- **Doing too much too soon.** A sudden jump in walking or stairs can flare up pain and swelling.
+- **Ignoring the other hip and the back.** Years of limping often leave the other leg and the lower back stiff or weak.
+- **Falls.** Loose rugs, slippery bathrooms and poor lighting at night are common culprits.
+
+## Warning signs: call your surgeon
+
+Contact your surgeon or go to hospital promptly if you notice:
+
+- Increasing redness, heat, swelling or discharge from the wound, or fever
+- A **swollen, painful, warm calf**, or sudden breathlessness or chest pain, which can signal a blood clot
+- A sudden severe pain in the hip, a leg that looks shorter or turned outward, or inability to bear weight
+- A fall on the operated side
+- Numbness or weakness in the foot that is new or worsening
+
+## How physiotherapy helps after a hip replacement
+
+Physiotherapy is a standard part of recovery after hip replacement, not an optional extra. A physiotherapist assesses your strength, movement and walking, teaches safe ways to move within your surgeon's precautions and progresses the plan step by step. Treatment commonly combines walking practice, strengthening, balance work, stair training and advice for daily activities. We do not offer needling or cupping.
+
+If travelling to the clinic is hard in the early weeks, [post-surgery home rehabilitation](/services/home-visit-physiotherapy/post-surgery-home-rehab) is an option, with the physiotherapist working in your own bedroom, stairs and bathroom. Our [post-surgery rehabilitation](/services/post-surgery-rehabilitation) page explains the approach, and our guide on [knee replacement recovery week by week](/blog/knee-replacement-recovery-exercises-week-by-week) shows how a similar recovery unfolds for the knee. If you are helping an older parent through surgery, read [physiotherapy for seniors and home visits after 60](/blog/physiotherapy-for-seniors-home-visits-after-60).
+
+The **first consultation at our Borivali West clinic is free**, with Dr. Shiva Jain Sangoi (PT), MPTh (Ortho), FIFA Diploma in Football Medicine, with over 10 years of practice and 8,000+ cases treated. Home visits are available and charged separately; online consultations are a paid service. Start at the [PhysioSthanak homepage](/) or visit us at Shop No. 14, Hari-Smruti Premises, SVP Road, opposite HDFC Bank, Borivali West.
+
+---
+
+*This article is for general information only and is not a substitute for professional assessment. Consult a qualified physiotherapist for advice specific to you.*`,
+    faqs: [
+      {
+        question: 'How long does hip replacement recovery take?',
+        answer:
+          'Many people notice major improvement in the first six to twelve weeks, but full recovery of strength and walking pattern often takes several months. Age, general health, the surgical approach and how consistently you follow your rehabilitation plan all influence the pace. Your surgeon can give you a timeline for your case.',
+      },
+      {
+        question: 'When can I walk without a walker after hip replacement?',
+        answer:
+          'It varies. Many patients move from a walker to sticks and then to walking independently over the first weeks, but the timing depends on your strength, balance and your surgeon\'s advice. A physiotherapist can assess when it is safe to reduce support.',
+      },
+      {
+        question: 'Can I sit cross-legged or use an Indian toilet after hip replacement?',
+        answer:
+          'Often not in the early weeks, because deep hip bending and crossing the legs can be restricted. Whether and when you can return to these positions depends on the surgical approach and your surgeon\'s advice, so ask before attempting them.',
+      },
+      {
+        question: 'Do I need physiotherapy after hip replacement?',
+        answer:
+          'Physiotherapy is a standard part of recovery. It helps you move safely within your precautions, rebuild muscle strength, improve walking and return to daily activities with more confidence. Home-based physiotherapy is an option if travelling is difficult early on.',
+      },
+    ],
+    relatedServices: ['post-surgery-rehabilitation', 'orthopedic-physiotherapy', 'home-visit-physiotherapy'],
+    relatedAreas: ['borivali-west'],
+  },
 ];
